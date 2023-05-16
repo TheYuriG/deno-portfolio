@@ -53,6 +53,21 @@ input[type='checkbox']:checked::before {
 	background: linear-gradient(111.3deg, #9c27b0 9.6%, #00bcd4 93.6%);
 }
 
+.waving {
+	transform: scale(-1, 1);
+	transform: rotate(0deg);
+	/* animation: wave 3s linear infinite; */
+}
+
+@keyframes wave {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
 .pretty-link {
 	text-underline-offset: 0.2em;
 	text-decoration: underline dotted var(--neutral-color) 0.1em;
@@ -66,9 +81,11 @@ input[type='checkbox']:checked::before {
 }
 
 .blinking-caret {
+	color: var(--neutral-color);
+	fill: currentColor;
 	position: relative;
-	height: 1.5em;
-	left: -0.4em;
+	height: 1.2em;
+	left: 0.1em;
 	top: -0.1em;
 	animation: 1.5s blink step-end infinite;
 }
