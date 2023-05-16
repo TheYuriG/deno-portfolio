@@ -1,19 +1,21 @@
 :root {
-	--base-color: rgb(0 0 0);
-	--accent-color: rgb(255 255 255);
+	--base-color: rgb(25 25 25);
+	--neutral-color: rgb(220 220 220);
+	--accent-color: rgb(125, 125, 255);
 	accent-color: var(--base-color);
+	user-select: none;
 }
 
 html {
 	height: 100vh;
 	font-family: 'Fragment Mono', monospace;
 	background-color: var(--base-color);
-	color: var(--accent-color);
+	color: var(--neutral-color);
 }
 
 input[type='checkbox'] {
 	appearance: none;
-	background-color: var(--accent-color);
+	background-color: var(--neutral-color);
 	margin: 0;
 	font: inherit;
 	color: currentColor;
@@ -34,4 +36,88 @@ input[type='checkbox']::before {
 
 input[type='checkbox']:checked::before {
 	transform: scale(1);
+}
+
+.gradient-underline {
+	position: relative;
+	text-decoration: none;
+}
+
+.gradient-underline:before {
+	content: '';
+	position: absolute;
+	top: 100%;
+	width: 100%;
+	left: 0;
+	height: 3px;
+	background: linear-gradient(111.3deg, #9c27b0 9.6%, #00bcd4 93.6%);
+}
+
+.wave-emoji {
+	display: none;
+	animation: wave 0.4s linear infinite alternate;
+}
+
+.gradient-underline:hover + .wave-emoji {
+	display: inline-block;
+}
+
+@keyframes wave {
+	0% {
+		transform: translate(15%, -15%) rotate(60deg);
+	}
+	100% {
+		transform: translate(0%, -10%) rotate(0deg);
+	}
+}
+
+.pretty-link {
+	text-underline-offset: 0.2em;
+	text-decoration: underline dotted var(--neutral-color) 0.1em;
+	transition: text-underline-offset 600ms, text-decoration 600ms, color 600ms;
+}
+
+.pretty-link:hover {
+	text-decoration: underline solid var(--accent-color) 0.1em;
+	color: var(--accent-color);
+	text-underline-offset: 0.3em;
+}
+
+.blinking-caret {
+	color: var(--neutral-color);
+	fill: currentColor;
+	position: relative;
+	height: 1.2em;
+	left: 0.1em;
+	top: -0.1em;
+	animation: 1.5s blink step-end infinite;
+}
+
+@keyframes blink {
+	from,
+	to {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+}
+
+footer {
+	position: absolute;
+	display: inline-flex;
+	align-items: center;
+	width: max-content;
+	bottom: 1.1rem; /* 20px */
+	right: 2.5rem; /* 40px */
+	font-size: 0.875rem; /* 14px */
+	line-height: 1.25rem; /* 20px */
+	white-space: nowrap;
+}
+
+footer img {
+	margin-left: 0.4rem;
+	margin-right: 0.4rem;
+	height: 18px;
+	width: 18px;
 }
