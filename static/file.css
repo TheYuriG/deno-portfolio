@@ -1,6 +1,7 @@
 :root {
-	--base-color: rgb(0 0 0);
-	--accent-color: rgb(255 255 255);
+	--base-color: rgb(25 25 25);
+	--neutral-color: rgb(220 220 220);
+	--accent-color: rgb(125, 125, 255);
 	accent-color: var(--base-color);
 }
 
@@ -8,12 +9,12 @@ html {
 	height: 100vh;
 	font-family: 'Fragment Mono', monospace;
 	background-color: var(--base-color);
-	color: var(--accent-color);
+	color: var(--neutral-color);
 }
 
 input[type='checkbox'] {
 	appearance: none;
-	background-color: var(--accent-color);
+	background-color: var(--neutral-color);
 	margin: 0;
 	font: inherit;
 	color: currentColor;
@@ -36,12 +37,12 @@ input[type='checkbox']:checked::before {
 	transform: scale(1);
 }
 
-.underline {
+.gradient-underline {
 	position: relative;
 	text-decoration: none;
 }
 
-.underline:before {
+.gradient-underline:before {
 	content: '';
 	position: absolute;
 	top: 100%;
@@ -49,6 +50,18 @@ input[type='checkbox']:checked::before {
 	left: 0;
 	height: 3px;
 	background: linear-gradient(111.3deg, #9c27b0 9.6%, #00bcd4 93.6%);
+}
+
+.pretty-link {
+	text-underline-offset: 0.2em;
+	text-decoration: underline dotted var(--neutral-color) 0.1em;
+	transition: text-underline-offset 600ms, text-decoration 600ms, color 600ms;
+}
+
+.pretty-link:hover {
+	text-decoration: underline solid var(--accent-color) 0.1em;
+	color: var(--accent-color);
+	text-underline-offset: 0.3em;
 }
 
 footer {

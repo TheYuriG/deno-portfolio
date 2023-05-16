@@ -28,12 +28,18 @@ export default function Home() {
 					<p class="block text-2xl ml-4">
 						I am{' '}
 						<strong>
-							<span class="underline">TheYuriG</span>
+							<span class="gradient-underline">TheYuriG</span>
 						</strong>
 						,
 					</p>
-					<p class="block text-2xl ml-8">a Node/Deno Full Stack developer.</p>
-					<p class="block ml-12">I'm responsible for the backend of Trophy Place.</p>
+					<p class="block text-2xl ml-8">Node/Deno Full Stack developer.</p>
+					<p class="block ml-12">
+						Backend developer at{' '}
+						<a href="https://trophy.place" target="_blank" class="pretty-link">
+							Trophy Place
+						</a>
+						.
+					</p>
 				</main>
 				<Footer></Footer>
 			</body>
