@@ -3,6 +3,7 @@
 	--neutral-color: rgb(220 220 220);
 	--accent-color: rgb(125, 125, 255);
 	accent-color: var(--base-color);
+	user-select: none;
 }
 
 html {
