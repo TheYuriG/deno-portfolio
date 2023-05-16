@@ -64,6 +64,24 @@ input[type='checkbox']:checked::before {
 	text-underline-offset: 0.3em;
 }
 
+.blinking-caret {
+	position: relative;
+	height: 1.5em;
+	left: -0.4em;
+	top: -0.1em;
+	animation: 1.5s blink step-end infinite;
+}
+
+@keyframes blink {
+	from,
+	to {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+}
+
 footer {
 	position: absolute;
 	display: inline-flex;
