@@ -1,4 +1,5 @@
 import { Head } from '$fresh/runtime.ts';
+import { Footer } from '../components/Footer.tsx';
 
 export default function Home() {
 	return (
@@ -34,6 +35,7 @@ export default function Home() {
 					<p class="block text-2xl ml-8">a Node/Deno Full Stack developer.</p>
 					<p class="block ml-12">I'm responsible for the backend of Trophy Place.</p>
 				</main>
+				<Footer></Footer>
 			</body>
 		</>
 	);

@@ -50,3 +50,22 @@ input[type='checkbox']:checked::before {
 	height: 3px;
 	background: linear-gradient(111.3deg, #9c27b0 9.6%, #00bcd4 93.6%);
 }
+
+footer {
+	position: absolute;
+	display: inline-flex;
+	align-items: center;
+	width: max-content;
+	bottom: 1.1rem; /* 20px */
+	right: 2.5rem; /* 40px */
+	font-size: 0.875rem; /* 14px */
+	line-height: 1.25rem; /* 20px */
+	white-space: nowrap;
+}
+
+footer img {
+	margin-left: 0.4rem;
+	margin-right: 0.4rem;
+	height: 18px;
+	width: 18px;
+}
