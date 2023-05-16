@@ -23,9 +23,16 @@ export default function Home() {
 					</label>
 				</div>
 				<main class="absolute top-10 left-10 bottom-10 right-10 p-4 border-grey border-2">
-					<h1 class="inline-block text-4xl">Welcome!</h1>
-					<p class="text-2xl">example normal</p>
-					<p class="font-bold text-2xl">example bold</p>
+					<h1 class="inline-block text-4xl">Hello!</h1>
+					<p class="block text-2xl ml-4">
+						I am{' '}
+						<strong>
+							<span class="underline">TheYuriG</span>
+						</strong>
+						,
+					</p>
+					<p class="block text-2xl ml-8">a Node/Deno Full Stack developer.</p>
+					<p class="block ml-12">I'm responsible for the backend of Trophy Place.</p>
 				</main>
 			</body>
 		</>

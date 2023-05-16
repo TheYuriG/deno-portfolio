@@ -35,3 +35,18 @@ input[type='checkbox']::before {
 input[type='checkbox']:checked::before {
 	transform: scale(1);
 }
+
+.underline {
+	position: relative;
+	text-decoration: none;
+}
+
+.underline:before {
+	content: '';
+	position: absolute;
+	top: 100%;
+	width: 100%;
+	left: 0;
+	height: 3px;
+	background: linear-gradient(111.3deg, #9c27b0 9.6%, #00bcd4 93.6%);
+}
