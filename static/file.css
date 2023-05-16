@@ -1,0 +1,37 @@
+:root {
+	--base-color: rgb(0 0 0);
+	--accent-color: rgb(255 255 255);
+	accent-color: var(--base-color);
+}
+
+html {
+	height: 100vh;
+	font-family: 'Fragment Mono', monospace;
+	background-color: var(--base-color);
+	color: var(--accent-color);
+}
+
+input[type='checkbox'] {
+	appearance: none;
+	background-color: var(--accent-color);
+	margin: 0;
+	font: inherit;
+	color: currentColor;
+	width: 1rem;
+	height: 1rem;
+	border: 0.15em solid;
+	border-radius: 0.25em;
+}
+
+input[type='checkbox']::before {
+	content: '';
+	width: 0.65em;
+	height: 0.65em;
+	transform: scale(0);
+	transition: 120ms transform ease-in-out;
+	box-shadow: inset 1em 1em var(--form-control-color);
+}
+
+input[type='checkbox']:checked::before {
+	transform: scale(1);
+}
