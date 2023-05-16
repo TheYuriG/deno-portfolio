@@ -24,7 +24,7 @@ export default function Home() {
 						I am{' '}
 						<strong>
 							<span class="gradient-underline">TheYuriG</span>
-							<span class="waving w-max">👋</span>
+							<span class="wave-emoji">👋</span>
 						</strong>
 					</p>
 					<p class="block text-2xl ml-8">Node/Deno Full Stack developer.</p>

@@ -53,18 +53,21 @@ input[type='checkbox']:checked::before {
 	background: linear-gradient(111.3deg, #9c27b0 9.6%, #00bcd4 93.6%);
 }
 
-.waving {
-	transform: scale(-1, 1);
-	transform: rotate(0deg);
-	/* animation: wave 3s linear infinite; */
+.wave-emoji {
+	display: none;
+	animation: wave 0.4s linear infinite alternate;
+}
+
+.gradient-underline:hover + .wave-emoji {
+	display: inline-block;
 }
 
 @keyframes wave {
-	from {
-		transform: rotate(0deg);
+	0% {
+		transform: translate(15%, -15%) rotate(60deg);
 	}
-	to {
-		transform: rotate(360deg);
+	100% {
+		transform: translate(0%, -10%) rotate(0deg);
 	}
 }
 
