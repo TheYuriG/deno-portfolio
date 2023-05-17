@@ -44,7 +44,7 @@ input[type='checkbox'] {
     as if it was greeting the user */
 .wave-emoji {
 	display: none;
-	animation: wave 1s linear infinite alternate;
+	animation: wave 0.3s linear infinite alternate;
 }
 
 /* Makes the wave emoji visible when hovering my Persona name */
@@ -53,12 +53,13 @@ input[type='checkbox'] {
 }
 
 /* Animates the wave emoji to wave */
+/* 15 -15 0 -5 */
 @keyframes wave {
 	0% {
-		transform: translate(15%, -15%) rotate(60deg);
+		transform: translate(10%, 0%) rotate(60deg);
 	}
 	100% {
-		transform: translate(0%, -5%) rotate(0deg);
+		transform: translate(-10%, 10%) rotate(0deg);
 	}
 }
 
