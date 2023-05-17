@@ -27,7 +27,7 @@ export function Footer() {
 					title="Logo for the Typescript Programming Language"
 				></img>
 			</a>
-			and{' '}
+			and
 			<a href="https://github.com/TheYuriG" target="_blank" rel="noopener noreferrer">
 				<span class="ml-1" title="Love, the reason why I write code every single day">
 					❤️
