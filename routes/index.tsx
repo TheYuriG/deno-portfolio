@@ -17,8 +17,13 @@ export default function Home() {
 				<link rel="stylesheet" href="file.css" />
 			</Head>
 			<body>
+				{/* Theme switcher */}
 				<Aside />
-				<main class="absolute top-10 left-10 bottom-10 right-10 p-4 border-grey border-2">
+				{/* Main content: name, role, company */}
+				<main
+					class="absolute top-10 left-10 bottom-10 right-10 p-4"
+					style="border: 2px solid var(--accent-color); transition: border 0.7s ease-in-out 0.3s"
+				>
 					<h1 class="inline-block text-4xl">Hello!</h1>
 					<p class="block text-2xl ml-4">
 						I am{' '}
@@ -27,9 +32,9 @@ export default function Home() {
 							<span class="wave-emoji">👋</span>
 						</strong>
 					</p>
-					<p class="block text-2xl ml-8">Node/Deno Full Stack developer.</p>
+					<p class="block text-2xl ml-8">a Node/Deno Full Stack developer.</p>
 					<p class="block ml-8">
-						Backend developer at{' '}
+						Currently working as Backend developer at{' '}
 						<a href="https://trophy.place" target="_blank" class="pretty-link">
 							Trophy Place
 						</a>
@@ -42,6 +47,7 @@ export default function Home() {
 						</svg>
 					</p>
 				</main>
+				{/* Footer with Tech Stack on bottom right corner */}
 				<Footer />
 			</body>
 		</>
