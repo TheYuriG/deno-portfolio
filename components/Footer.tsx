@@ -4,7 +4,7 @@ export function Footer() {
 	return (
 		<footer>
 			Built with
-			<a href="https://github.com/denoland/fresh">
+			<a href="https://fresh.deno.dev/" target="_blank" rel="noopener noreferrer">
 				<img
 					src="fresh-logo.png"
 					alt="Fresh's logo'"
@@ -12,7 +12,7 @@ export function Footer() {
 				></img>
 			</a>
 			and
-			<a href="https://deno.com/runtime">
+			<a href="https://deno.com/runtime" target="_blank" rel="noopener noreferrer">
 				<img
 					src="deno-logo.svg"
 					alt="Deno's logo"
@@ -20,7 +20,7 @@ export function Footer() {
 				></img>
 			</a>
 			using
-			<a href="https://www.typescriptlang.org/">
+			<a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer">
 				<img
 					src="ts-logo-128.svg"
 					alt="Typescript's logo"
@@ -28,7 +28,7 @@ export function Footer() {
 				></img>
 			</a>
 			and{' '}
-			<a href="https://github.com/TheYuriG">
+			<a href="https://github.com/TheYuriG" target="_blank" rel="noopener noreferrer">
 				<span class="ml-1" title="Love, the reason why I write code every single day">
 					❤️
 				</span>
