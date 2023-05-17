@@ -1,11 +1,13 @@
 :root {
 	--base-color: rgb(25 25 25);
 	--neutral-color: rgb(220 220 220);
-	--accent-color: rgb(125, 125, 255);
-	accent-color: var(--base-color);
+	--accent-color: rgb(120, 50, 200);
+	/* Color for the radio buttons */
+	accent-color: var(--accent-color);
 	user-select: none;
 }
 
+/* Expand page to use full screen and set page default font and color scheme */
 html {
 	height: 100vh;
 	font-family: 'Fragment Mono', monospace;
@@ -13,36 +15,21 @@ html {
 	color: var(--neutral-color);
 }
 
+/* Radio buttons, colored by accent color on :root */
 input[type='checkbox'] {
 	appearance: none;
-	background-color: var(--neutral-color);
 	margin: 0;
-	font: inherit;
-	color: currentColor;
 	width: 1rem;
 	height: 1rem;
-	border: 0.15em solid;
-	border-radius: 0.25em;
 }
 
-input[type='checkbox']::before {
-	content: '';
-	width: 0.65em;
-	height: 0.65em;
-	transform: scale(0);
-	transition: 120ms transform ease-in-out;
-	box-shadow: inset 1em 1em var(--form-control-color);
-}
-
-input[type='checkbox']:checked::before {
-	transform: scale(1);
-}
-
+/* Creates the gradient underline below my Persona name */
 .gradient-underline {
 	position: relative;
 	text-decoration: none;
 }
 
+/* Colors the gradient underline */
 .gradient-underline:before {
 	content: '';
 	position: absolute;
@@ -53,36 +40,44 @@ input[type='checkbox']:checked::before {
 	background: linear-gradient(111.3deg, #9c27b0 9.6%, #00bcd4 93.6%);
 }
 
+/* Animates the emoji that displays when hovering over my Persona name,
+    as if it was greeting the user */
 .wave-emoji {
 	display: none;
-	animation: wave 0.4s linear infinite alternate;
+	animation: wave 1s linear infinite alternate;
 }
 
+/* Makes the wave emoji visible when hovering my Persona name */
 .gradient-underline:hover + .wave-emoji {
 	display: inline-block;
 }
 
+/* Animates the wave emoji to wave */
 @keyframes wave {
 	0% {
 		transform: translate(15%, -15%) rotate(60deg);
 	}
 	100% {
-		transform: translate(0%, -10%) rotate(0deg);
+		transform: translate(0%, -5%) rotate(0deg);
 	}
 }
 
+/* Creates an initial dotted underline below the link to Trophy Place */
 .pretty-link {
 	text-underline-offset: 0.2em;
 	text-decoration: underline dotted var(--neutral-color) 0.1em;
 	transition: text-underline-offset 600ms, text-decoration 600ms, color 600ms;
 }
 
+/* Animates the link to Trophy Place on hover to change color,
+    underline style and underline offset */
 .pretty-link:hover {
 	text-decoration: underline solid var(--accent-color) 0.1em;
 	color: var(--accent-color);
 	text-underline-offset: 0.3em;
 }
 
+/* Creates a blinking caret after the website name */
 .blinking-caret {
 	color: var(--neutral-color);
 	fill: currentColor;
@@ -93,6 +88,7 @@ input[type='checkbox']:checked::before {
 	animation: 1.5s blink step-end infinite;
 }
 
+/* Animates the blinking caret */
 @keyframes blink {
 	from,
 	to {
@@ -103,6 +99,7 @@ input[type='checkbox']:checked::before {
 	}
 }
 
+/* Positions the footer on the bottom right side of the page, below the frame */
 footer {
 	position: absolute;
 	display: inline-flex;
@@ -115,6 +112,7 @@ footer {
 	white-space: nowrap;
 }
 
+/* Style the images on the footer */
 footer img {
 	margin-left: 0.4rem;
 	margin-right: 0.4rem;

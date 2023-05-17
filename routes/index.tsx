@@ -17,7 +17,9 @@ export default function Home() {
 				<link rel="stylesheet" href="file.css" />
 			</Head>
 			<body>
+				{/* Theme switcher */}
 				<Aside />
+				{/* Main content: name, role, company */}
 				<main class="absolute top-10 left-10 bottom-10 right-10 p-4 border-grey border-2">
 					<h1 class="inline-block text-4xl">Hello!</h1>
 					<p class="block text-2xl ml-4">
@@ -42,6 +44,7 @@ export default function Home() {
 						</svg>
 					</p>
 				</main>
+				{/* Footer with Tech Stack on bottom right corner */}
 				<Footer />
 			</body>
 		</>
