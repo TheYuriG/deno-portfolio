@@ -106,6 +106,24 @@ input[type='checkbox'] {
 	}
 }
 
+/* Set transitions for Navigation Menu links, space them out */
+.navigation-link {
+	transition: color 0.5s ease-in-out;
+	text-decoration-color: var(--neutral-color);
+	margin-bottom: 0.2em;
+	font-size: 3rem; /* 48px */
+	line-height: 1;
+}
+
+/* Assign color change and underline decoration on hover */
+.navigation-link:hover {
+	color: var(--accent-color);
+	text-decoration-line: underline;
+	text-decoration-skip-ink: none;
+	text-underline-offset: -0.2em;
+	text-decoration-thickness: 0.3em;
+}
+
 /* Positions the footer on the bottom right side of the page, below the frame */
 footer {
 	position: absolute;

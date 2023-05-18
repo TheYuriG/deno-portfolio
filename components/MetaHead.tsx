@@ -22,6 +22,10 @@ export function MetaHead() {
 					href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Kanit:wght@400;700&display=swap"
 					rel="stylesheet"
 				></link>
+				<link
+					href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap"
+					rel="stylesheet"
+				></link>
 				<link rel="stylesheet" href="home.css" />
 			</Head>
 		</>
