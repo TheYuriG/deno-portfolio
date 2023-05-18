@@ -1,5 +1,3 @@
-//? Head component with all Meta tags pre-set
-import { MetaHead } from '../components/MetaHead.tsx';
 //? Lateral text with theme switcher
 import { Aside } from '../components/Aside.tsx';
 //? Footer with tech stack
@@ -10,7 +8,6 @@ import { JSX, toChildArray } from 'preact';
 export function Base(props: { children: Array<JSX.Element> | JSX.Element }) {
 	return (
 		<body>
-			<MetaHead />
 			{/* Theme switcher */}
 			<Aside />
 			{/* Main content: name, role, company */}

@@ -1,34 +1,3 @@
-:root {
-	/* TW Slate 900 background color */
-	--base-color: rgb(15 23 42);
-	/* TW Slate 300 text color */
-	--neutral-color: rgb(203 213 225);
-	/* TW Purple 700 accent */
-	--accent-color: rgb(120 50 200);
-	/* Color for the radio buttons */
-	accent-color: var(--accent-color);
-	user-select: none;
-	/* Transition effect to make the switch to
-        Light theme on load less jarring */
-	transition: color 0.9s ease-in-out 0.1s, background-color 0.8s ease-in-out 0.2s;
-}
-
-/* Expand page to use full screen and set page default font and color scheme */
-html {
-	height: 100vh;
-	font-family: 'Fragment Mono', monospace;
-	background-color: var(--base-color);
-	color: var(--neutral-color);
-}
-
-/* Radio buttons, colored by accent color on :root */
-input[type='checkbox'] {
-	appearance: none;
-	margin: 0;
-	width: 1rem;
-	height: 1rem;
-}
-
 /* Creates the gradient underline below my Persona name */
 .gradient-underline {
 	position: relative;
@@ -122,25 +91,4 @@ input[type='checkbox'] {
 	text-decoration-skip-ink: none;
 	text-underline-offset: -0.2em;
 	text-decoration-thickness: 0.3em;
-}
-
-/* Positions the footer on the bottom right side of the page, below the frame */
-footer {
-	position: absolute;
-	display: inline-flex;
-	align-items: center;
-	width: max-content;
-	bottom: 1.1rem; /* 20px */
-	right: 2.5rem; /* 40px */
-	font-size: 0.875rem; /* 14px */
-	line-height: 1.25rem; /* 20px */
-	white-space: nowrap;
-}
-
-/* Style the images on the footer */
-footer img {
-	margin-left: 0.4rem;
-	margin-right: 0.4rem;
-	height: 18px;
-	width: 18px;
 }

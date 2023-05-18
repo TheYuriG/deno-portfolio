@@ -1,7 +1,7 @@
 //? HTML Head to import CSS and fonts
 import { Head } from '$fresh/runtime.ts';
 
-export function MetaHead() {
+export function HomeHead() {
 	return (
 		<>
 			<Head>
@@ -26,6 +26,7 @@ export function MetaHead() {
 					href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap"
 					rel="stylesheet"
 				></link>
+				<link rel="stylesheet" href="base.css" />
 				<link rel="stylesheet" href="home.css" />
 			</Head>
 		</>
