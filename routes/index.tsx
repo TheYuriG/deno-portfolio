@@ -1,5 +1,5 @@
-//? HTML Head to import CSS and fonts
-import { Head } from '$fresh/runtime.ts';
+//? Head component with all Meta tags pre-set
+import { MetaHead } from '../components/MetaHead.tsx';
 //? Lateral text with theme switcher
 import { Aside } from '../components/Aside.tsx';
 //? Lateral text with theme switcher
@@ -10,15 +10,8 @@ import { Footer } from '../components/Footer.tsx';
 export default function Home() {
 	return (
 		<>
-			<Head>
-				<title>TheYuriG</title>
-				<link
-					href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Kanit:wght@400;700&display=swap"
-					rel="stylesheet"
-				></link>
-				<link rel="stylesheet" href="home.css" />
-			</Head>
 			<body>
+				<MetaHead />
 				{/* Theme switcher */}
 				<Aside />
 				{/* Main content: name, role, company */}
