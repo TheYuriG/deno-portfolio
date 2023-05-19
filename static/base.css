@@ -7,7 +7,6 @@
 	--accent-color: rgb(120 50 200);
 	/* Color for the radio buttons */
 	accent-color: var(--accent-color);
-	user-select: none;
 	/* Transition effect to make the switch to
         Light theme on load less jarring */
 	transition: color 0.9s ease-in-out 0.1s, background-color 0.8s ease-in-out 0.2s;
@@ -24,7 +23,7 @@ html {
 /* Positioning for the main frame, border color, transition for theme switch */
 main {
 	position: absolute;
-	min-width: calc(100% - 2 * 1.5rem);
+	width: calc(100% - 2 * 1.5rem);
 	min-height: calc(100% - 2 * 1.5rem);
 	padding: 1rem;
 	margin: 1.5rem;
