@@ -23,7 +23,7 @@ article {
 	--h1-margin: 1rem;
 	/* Viewport height - (2 * base marginY) - (2 * base paddingY) - (2 * article h1 marginY) - (2 * base borderWidth) */
 	min-height: calc(
-		100vh - 2 * var(--main-margin) - 2 * var(--main-padding) - 2 * var(--h1-margin) - 4px
+		100dvh - 2 * var(--main-margin) - 2 * var(--main-padding) - 2 * var(--h1-margin) - 4px
 	);
 	display: flex;
 	flex-direction: column;

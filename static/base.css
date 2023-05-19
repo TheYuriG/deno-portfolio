@@ -36,8 +36,8 @@ main {
 	--main-padding: 1rem;
 	--main-margin: 1.5rem;
 	position: absolute;
-	width: calc(100% - 2 * var(--main-margin));
-	min-height: calc(100% - 2 * var(--main-margin));
+	width: calc(100dvw - 2 * var(--main-margin));
+	min-height: calc(100dvh - 2 * var(--main-margin));
 	padding: var(--main-padding);
 	margin: var(--main-margin);
 	border: 2px solid var(--accent-color);
