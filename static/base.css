@@ -33,11 +33,13 @@ html {
 
 /* Positioning for the main frame, border color, transition for theme switch */
 main {
+	--main-padding: 1rem;
+	--main-margin: 1.5rem;
 	position: absolute;
-	width: calc(100% - 2 * 1.5rem);
-	min-height: calc(100% - 2 * 1.5rem);
-	padding: 1rem;
-	margin: 1.5rem;
+	width: calc(100% - 2 * var(--main-margin));
+	min-height: calc(100% - 2 * var(--main-margin));
+	padding: var(--main-padding);
+	margin: var(--main-margin);
 	border: 2px solid var(--accent-color);
 	border-radius: 1.5rem;
 	transition: border 0.7s ease-in-out 0.3s;

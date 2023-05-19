@@ -19,6 +19,12 @@
 
 /* Define article as flexible centered column */
 article {
+	/* Vertical margin to the article's heading */
+	--h1-margin: 1rem;
+	/* Viewport height - (2 * base marginY) - (2 * base paddingY) - (2 * article h1 marginY) - (2 * base borderWidth) */
+	min-height: calc(
+		100vh - 2 * var(--main-margin) - 2 * var(--main-padding) - 2 * var(--h1-margin) - 4px
+	);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -26,10 +32,23 @@ article {
 
 /* Style article's heading */
 h1 {
-	margin: 1rem 0;
+	margin: var(--h1-margin) 0;
 	font-family: 'Alfa Slab One', cursive;
 	font-size: 2.5rem;
 	line-height: 1;
+}
+
+/* Spacer to push the blog footer to the end of the page,
+    if the page doesn't have enough content to max out
+    the height by itself */
+.spacer {
+	flex-grow: 1;
+}
+
+/* Ending note at the end of a blog post */
+.blog-footer {
+	font-size: 0.75rem;
+	align-self: end;
 }
 
 /* Reduce heading font size on smaller resolutions */

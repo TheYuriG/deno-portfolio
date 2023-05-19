@@ -42,7 +42,11 @@ export default function Home() {
 						like I am fucking crazy 🤪. It's okay... It's like water under the bridge
 						🌉. Did I ever tell you the definition... of insanity?
 					</p>
-					
+					<div class="spacer"></div>
+					<footer class="blog-footer">
+						This page exists to text the responsiveness of the layout whenever changes
+						happens.
+					</footer>
 				</article>
 			</Base>
 		</>
