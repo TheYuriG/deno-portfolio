@@ -23,8 +23,8 @@ export function BlogHead() {
 					href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap"
 					rel="stylesheet"
 				></link>
-				<link rel="stylesheet" href="base.css" />
-				<link rel="stylesheet" href="blog.css" />
+				<link rel="stylesheet" href="/base.css" />
+				<link rel="stylesheet" href="/blog.css" />
 			</Head>
 		</>
 	);

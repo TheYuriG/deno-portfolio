@@ -1,5 +1,19 @@
+article {
+	/* flex flex-col items-center lg:w-[900px] lg:mx-auto */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 h1 {
 	font-family: 'Alfa Slab One', cursive;
 	font-size: 3rem; /* 48px */
 	line-height: 1;
+}
+
+@media (min-width: 1024px) {
+	article {
+		width: 900px;
+		margin: 0 auto;
+	}
 }

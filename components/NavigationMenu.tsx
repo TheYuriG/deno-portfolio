@@ -16,7 +16,7 @@ export function NavigationMenu() {
 			<a href="/me" class="navigation-link">
 				Me
 			</a>
-			<a href="/this" class="text-sm" style="color: yellow; margin-top: 2em;">
+			<a href="/blog/this" class="text-sm" style="color: yellow; margin-top: 2em;">
 				this
 			</a>
 		</nav>
