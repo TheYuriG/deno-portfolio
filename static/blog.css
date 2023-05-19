@@ -1,22 +1,3 @@
-/* Styling for navigation buttons above article */
-.navigation-button {
-	display: flex;
-	align-items: center;
-	padding-right: 0.25rem;
-	font-size: 1.3rem;
-	transition: color 0s ease-in-out;
-}
-
-/* Size for SVGs inside navigation */
-.navigation-button svg {
-	width: 2rem;
-}
-
-/* Change navigation color on hover */
-.navigation-button:hover {
-	color: var(--accent-color);
-}
-
 /* Define article as flexible centered column */
 article {
 	/* Vertical margin to the article's heading */
