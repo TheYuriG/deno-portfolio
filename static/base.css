@@ -68,7 +68,7 @@ input[type='checkbox'] {
 }
 
 /* Positions the footer on the bottom right side of the page, below the frame */
-footer {
+.page-footer {
 	position: absolute;
 	display: inline-flex;
 	align-items: center;

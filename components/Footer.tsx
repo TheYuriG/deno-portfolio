@@ -2,7 +2,7 @@
 //? of the Home page. All related CSS is in the file.css file
 export function Footer() {
 	return (
-		<footer>
+		<footer class="page-footer">
 			Built with
 			<a href="https://fresh.deno.dev/" target="_blank" rel="noopener noreferrer">
 				<img
