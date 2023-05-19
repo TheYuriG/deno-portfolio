@@ -15,7 +15,7 @@
 
 /* Expand page to use full screen and set page default font and color scheme */
 html {
-	min-height: 100vh;
+	max-height: fit-content;
 	font-family: 'Fragment Mono', monospace;
 	background-color: var(--base-color);
 	color: var(--neutral-color);
@@ -24,13 +24,29 @@ html {
 /* Positioning for the main frame, border color, transition for theme switch */
 main {
 	position: absolute;
-	top: 1.5rem;
-	left: 1.5rem;
-	bottom: 1.5rem;
-	right: 1.5rem;
+	min-width: calc(100% - 2 * 1.5rem);
+	min-height: calc(100% - 2 * 1.5rem);
 	padding: 1rem;
+	margin: 1.5rem;
 	border: 2px solid var(--accent-color);
+	border-radius: 1.5rem;
 	transition: border 0.7s ease-in-out 0.3s;
+}
+
+/* Position the theme switcher on the bottom left corner */
+aside {
+	position: fixed;
+	bottom: 5.5rem;
+	rotate: -90deg;
+	translate: -70%;
+
+	font-size: 1.25rem; /* 20px */
+	line-height: 1.75rem; /* 28px */
+}
+
+/* Space-X-2 */
+aside > * + * {
+	margin-left: 0.5rem; /* 8px */
 }
 
 /* Radio buttons, colored by accent color on :root */
@@ -47,8 +63,8 @@ footer {
 	display: inline-flex;
 	align-items: center;
 	width: max-content;
-	bottom: 0;
-	right: 1.5rem; /* 24px */
+	bottom: -1.5rem;
+	right: 0;
 	font-size: 0.875rem; /* 14px */
 	line-height: 1.25rem;
 	white-space: nowrap;
