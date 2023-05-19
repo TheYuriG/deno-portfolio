@@ -7,18 +7,56 @@
 	--accent-color: rgb(120 50 200);
 	/* Color for the radio buttons */
 	accent-color: var(--accent-color);
-	user-select: none;
 	/* Transition effect to make the switch to
         Light theme on load less jarring */
 	transition: color 0.9s ease-in-out 0.1s, background-color 0.8s ease-in-out 0.2s;
 }
 
+/* Scrollbar styling */
+body::-webkit-scrollbar {
+	width: 0.8em;
+}
+body::-webkit-scrollbar-thumb {
+	background-color: transparent;
+	outline: 2px solid var(--accent-color);
+	outline-offset: -0.1rem;
+	border-radius: 0.3rem;
+}
+
 /* Expand page to use full screen and set page default font and color scheme */
 html {
-	min-height: 100vh;
+	max-height: fit-content;
 	font-family: 'Fragment Mono', monospace;
 	background-color: var(--base-color);
 	color: var(--neutral-color);
+}
+
+/* Positioning for the main frame, border color, transition for theme switch */
+main {
+	position: absolute;
+	width: calc(100% - 2 * 1.5rem);
+	min-height: calc(100% - 2 * 1.5rem);
+	padding: 1rem;
+	margin: 1.5rem;
+	border: 2px solid var(--accent-color);
+	border-radius: 1.5rem;
+	transition: border 0.7s ease-in-out 0.3s;
+}
+
+/* Position the theme switcher on the bottom left corner */
+aside {
+	position: fixed;
+	bottom: 5.5rem;
+	rotate: -90deg;
+	translate: -70%;
+
+	font-size: 1.25rem; /* 20px */
+	line-height: 1.75rem; /* 28px */
+}
+
+/* Space-X-2 */
+aside > * + * {
+	margin-left: 0.5rem; /* 8px */
 }
 
 /* Radio buttons, colored by accent color on :root */
@@ -35,10 +73,10 @@ footer {
 	display: inline-flex;
 	align-items: center;
 	width: max-content;
-	bottom: 1.1rem; /* 20px */
-	right: 2.5rem; /* 40px */
+	bottom: -1.5rem;
+	right: 0;
 	font-size: 0.875rem; /* 14px */
-	line-height: 1.25rem; /* 20px */
+	line-height: 1.25rem;
 	white-space: nowrap;
 }
 

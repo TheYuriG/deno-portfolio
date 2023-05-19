@@ -1,0 +1,48 @@
+/* Styling for navigation buttons above article */
+.navigation-button {
+	display: flex;
+	align-items: center;
+	padding-right: 0.25rem;
+	font-size: 1.3rem;
+	transition: color 0s ease-in-out;
+}
+
+/* Size for SVGs inside navigation */
+.navigation-button svg {
+	width: 2rem;
+}
+
+/* Change navigation color on hover */
+.navigation-button:hover {
+	color: var(--accent-color);
+}
+
+/* Define article as flexible centered column */
+article {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* Style article's heading */
+h1 {
+	margin: 1rem 0;
+	font-family: 'Alfa Slab One', cursive;
+	font-size: 2.5rem;
+	line-height: 1;
+}
+
+/* Reduce heading font size on smaller resolutions */
+@media (max-width: 600px) {
+	h1 {
+		font-size: 1.5rem;
+	}
+}
+
+/* Article doesn't expand horizontally forever on larger resolutions */
+@media (min-width: 1024px) {
+	article {
+		width: 900px;
+		margin: 0 auto;
+	}
+}

@@ -8,17 +8,14 @@ import { JSX, toChildArray } from 'preact';
 export function Base(props: { children: Array<JSX.Element> | JSX.Element }) {
 	return (
 		<body>
-			{/* Theme switcher */}
-			<Aside />
 			{/* Main content: name, role, company */}
-			<main
-				class="absolute top-10 left-10 bottom-10 right-10 p-4"
-				style="border: 2px solid var(--accent-color); transition: border 0.7s ease-in-out 0.3s"
-			>
+			<main>
+				{/* Theme switcher */}
+				<Aside />
 				{...toChildArray(props.children)}
+				{/* Footer with Tech Stack on bottom right corner */}
+				<Footer />
 			</main>
-			{/* Footer with Tech Stack on bottom right corner */}
-			<Footer />
 		</body>
 	);
 }

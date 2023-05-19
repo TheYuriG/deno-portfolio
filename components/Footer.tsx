@@ -6,7 +6,7 @@ export function Footer() {
 			Built with
 			<a href="https://fresh.deno.dev/" target="_blank" rel="noopener noreferrer">
 				<img
-					src="fresh-logo.png"
+					src="/fresh-logo.png"
 					alt="Fresh's logo'"
 					title="Fresh, the official framework to build Web apps on Deno"
 				></img>
@@ -14,7 +14,7 @@ export function Footer() {
 			and
 			<a href="https://deno.com/runtime" target="_blank" rel="noopener noreferrer">
 				<img
-					src="deno-logo.svg"
+					src="/deno-logo.svg"
 					alt="Deno's logo"
 					title="Deno, Ryan Dahl's second attempt to make Javascript the best Language in the planet"
 				></img>
@@ -22,7 +22,7 @@ export function Footer() {
 			using
 			<a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer">
 				<img
-					src="ts-logo-128.svg"
+					src="/ts-logo-128.svg"
 					alt="Typescript's logo"
 					title="Logo for the Typescript Programming Language"
 				></img>
