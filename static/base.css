@@ -21,6 +21,18 @@ html {
 	color: var(--neutral-color);
 }
 
+/* Positioning for the main frame, border color, transition for theme switch */
+main {
+	position: absolute;
+	top: 1.5rem;
+	left: 1.5rem;
+	bottom: 1.5rem;
+	right: 1.5rem;
+	padding: 1rem;
+	border: 2px solid var(--accent-color);
+	transition: border 0.7s ease-in-out 0.3s;
+}
+
 /* Radio buttons, colored by accent color on :root */
 input[type='checkbox'] {
 	appearance: none;
@@ -35,10 +47,10 @@ footer {
 	display: inline-flex;
 	align-items: center;
 	width: max-content;
-	bottom: 1.1rem; /* 20px */
-	right: 2.5rem; /* 40px */
+	bottom: 0;
+	right: 1.5rem; /* 24px */
 	font-size: 0.875rem; /* 14px */
-	line-height: 1.25rem; /* 20px */
+	line-height: 1.25rem;
 	white-space: nowrap;
 }
 
