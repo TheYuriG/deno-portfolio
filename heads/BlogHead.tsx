@@ -25,6 +25,7 @@ export function BlogHead() {
 				></link>
 				<link rel="stylesheet" href="/base.css" />
 				<link rel="stylesheet" href="/blog.css" />
+				<link rel="stylesheet" href="/styled-button.css" />
 			</Head>
 		</>
 	);

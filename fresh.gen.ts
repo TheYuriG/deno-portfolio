@@ -9,7 +9,8 @@ import * as $2 from "./routes/api/joke.ts";
 import * as $3 from "./routes/index.tsx";
 import * as $$0 from "./islands/BlogNavigationButtons.tsx";
 import * as $$1 from "./islands/InsanitySection.tsx";
-import * as $$2 from "./islands/ThemeSwitcher.tsx";
+import * as $$2 from "./islands/StyledButton.tsx";
+import * as $$3 from "./islands/ThemeSwitcher.tsx";
 
 const manifest = {
   routes: {
@@ -21,7 +22,8 @@ const manifest = {
   islands: {
     "./islands/BlogNavigationButtons.tsx": $$0,
     "./islands/InsanitySection.tsx": $$1,
-    "./islands/ThemeSwitcher.tsx": $$2,
+    "./islands/StyledButton.tsx": $$2,
+    "./islands/ThemeSwitcher.tsx": $$3,
   },
   baseUrl: import.meta.url,
   config,

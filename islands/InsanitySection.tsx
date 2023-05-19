@@ -1,5 +1,7 @@
 //? Import useState hook to manage the insanityArray
 import { useState } from 'preact/hooks';
+//? Imports the Styled Button template
+import StyledButton from './StyledButton.tsx';
 
 //? Exports a button that will add more Insanity text when clicked.
 //? Also ships with basic Insanity text by default
@@ -7,21 +9,19 @@ export default function InsanitySection() {
 	//? Simple array to track how many Insanity should be displayed
 	const [insanityArray, setInsanity] = useState([null]);
 
-	// { style }: { style: string }
 	return (
 		<>
-			{/* Button that adds another null to the insanityArray, which
-                then renders more Insanity to the page */}
-			<button
-				class="styled-button"
-				onClick={() => {
-					setInsanity((currentInsanity) => [...currentInsanity, null]);
-				}}
-			>
-				Dial ⤴️ the Insanity 🤪
-			</button>
-			{/* Insanity section. Can be expanded by clicking the button above */}
 			<section>
+				{/* Button that adds another null to the insanityArray, which
+                then renders more Insanity to the page */}
+				{/* Insanity section. Can be expanded by clicking the button above */}
+				<StyledButton
+					text="Dial ⤴️ the Insanity 🤪"
+					style="align-self: end; margin-bottom: 0.5rem;"
+					onClickFunction={() => {
+						setInsanity((currentInsanity) => [...currentInsanity, null]);
+					}}
+				/>
 				{/* Returns two labels and Radio buttons for Dark and Light themes */}
 				{insanityArray.map(() => (
 					<>

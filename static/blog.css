@@ -39,6 +39,12 @@ h1 {
 	line-height: 1;
 }
 
+/* Style section as flex colunn */
+section {
+	display: flex;
+	flex-direction: column;
+}
+
 /* Justify blog post body */
 p {
 	text-align: justify;
