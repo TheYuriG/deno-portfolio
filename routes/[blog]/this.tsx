@@ -4,6 +4,8 @@ import { Base } from '../../components/Base.tsx';
 import { BlogHead } from '../../heads/BlogHead.tsx';
 //? Navigation Buttons to go back to the previous page or to the next article
 import BlogNavigationButtons from '../../islands/BlogNavigationButtons.tsx';
+//? Infinitely expandable insanity section
+import InsanitySection from '../../islands/InsanitySection.tsx';
 
 export default function Home() {
 	return (
@@ -13,75 +15,17 @@ export default function Home() {
 			<Base>
 				<BlogNavigationButtons />
 				<article>
-					<h1>
-						Hi, sorry about this, I'm using this page to check the responsiveness of my
-						layout. :)
-					</h1>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos unde
-						sapiente, dolor ducimus distinctio architecto alias, eaque at repellendus
-						modi totam quas sint exercitationem. Culpa ipsam esse eum distinctio odio.
-					</p>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos unde
-						sapiente, dolor ducimus distinctio architecto alias, eaque at repellendus
-						modi totam quas sint exercitationem. Culpa ipsam esse eum distinctio odio.
-					</p>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos unde
-						sapiente, dolor ducimus distinctio architecto alias, eaque at repellendus
-						modi totam quas sint exercitationem. Culpa ipsam esse eum distinctio odio.
-					</p>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos unde
-						sapiente, dolor ducimus distinctio architecto alias, eaque at repellendus
-						modi totam quas sint exercitationem. Culpa ipsam esse eum distinctio odio.
-					</p>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos unde
-						sapiente, dolor ducimus distinctio architecto alias, eaque at repellendus
-						modi totam quas sint exercitationem. Culpa ipsam esse eum distinctio odio.
-					</p>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos unde
-						sapiente, dolor ducimus distinctio architecto alias, eaque at repellendus
-						modi totam quas sint exercitationem. Culpa ipsam esse eum distinctio odio.
-					</p>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos unde
-						sapiente, dolor ducimus distinctio architecto alias, eaque at repellendus
-						modi totam quas sint exercitationem. Culpa ipsam esse eum distinctio odio.
-					</p>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos unde
-						sapiente, dolor ducimus distinctio architecto alias, eaque at repellendus
-						modi totam quas sint exercitationem. Culpa ipsam esse eum distinctio odio.
-					</p>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos unde
-						sapiente, dolor ducimus distinctio architecto alias, eaque at repellendus
-						modi totam quas sint exercitationem. Culpa ipsam esse eum distinctio odio.
-					</p>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos unde
-						sapiente, dolor ducimus distinctio architecto alias, eaque at repellendus
-						modi totam quas sint exercitationem. Culpa ipsam esse eum distinctio odio.
-					</p>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos unde
-						sapiente, dolor ducimus distinctio architecto alias, eaque at repellendus
-						modi totam quas sint exercitationem. Culpa ipsam esse eum distinctio odio.
-					</p>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos unde
-						sapiente, dolor ducimus distinctio architecto alias, eaque at repellendus
-						modi totam quas sint exercitationem. Culpa ipsam esse eum distinctio odio.
-					</p>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos unde
-						sapiente, dolor ducimus distinctio architecto alias, eaque at repellendus
-						modi totam quas sint exercitationem. Culpa ipsam esse eum distinctio odio.
-					</p>
+					{/* Static Insanity Heading */}
+					<h1>Did I ever tell you what the definition of insanity is?</h1>
+					{/* Infinitely expandable Insanity text section */}
+					<InsanitySection />
+					{/* Spacer to push the post footer text to the bottom */}
+					<div class="spacer"></div>
+					{/* Small notice about this page */}
+					<footer class="blog-footer">
+						This page exists to text the responsiveness of the layout whenever changes
+						happens.
+					</footer>
 				</article>
 			</Base>
 		</>
