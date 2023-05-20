@@ -1,0 +1,115 @@
+#cubes-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+/* #cubes-container > div + div {
+	margin-left: 6em;
+} */
+
+/* Positions the cubes */
+.cube {
+	position: relative;
+	font-size: 1rem;
+	user-select: none;
+	transform-style: preserve-3d;
+}
+
+/* Positions the divs inside the cubes */
+.cube > div {
+	position: absolute;
+	transform-style: preserve-3d;
+}
+
+/* Define animations and colors for words cube */
+#named-cube {
+	animation: spin 12s linear infinite;
+}
+#named-cube .close {
+	color: green;
+}
+#named-cube .far {
+	color: red;
+}
+@keyframes spin {
+	from {
+		transform: rotateX(-0.1turn) rotateY(0turn);
+	}
+	to {
+		transform: rotateX(-0.1turn) rotateY(1turn);
+	}
+}
+.anti-spinner {
+	animation: un-spin 12s linear infinite;
+}
+@keyframes un-spin {
+	from {
+		transform: rotateY(0turn) rotateX(0.1turn);
+	}
+	to {
+		transform: rotateY(-1turn) rotateX(0.1turn);
+	}
+}
+
+/* Define animations for flower cube */
+#flower-cube {
+	animation: turn 8s linear infinite;
+	margin-left: 5em;
+	bottom: 1.5em;
+}
+@keyframes turn {
+	from {
+		transform: rotateX(0turn) rotateY(0.1turn);
+	}
+	to {
+		transform: rotateX(1turn) rotateY(0.1turn);
+	}
+}
+.anti-turner {
+	animation: un-turn 8s linear infinite;
+}
+@keyframes un-turn {
+	0% {
+		transform: rotateY(-0.1turn) rotateX(0turn);
+	}
+	100% {
+		transform: rotateY(-0.1turn) rotateX(-1turn);
+	}
+}
+
+/* Define animations for place cube */
+#party-cube {
+	animation: flip 4s linear infinite;
+	margin-left: 5em;
+	bottom: 1.5em;
+}
+@keyframes flip {
+	from {
+		transform: rotateZ(0turn) rotateX(0.05turn) rotateY(0.05turn);
+	}
+	to {
+		transform: rotateZ(1turn) rotateX(0.05turn) rotateY(0.05turn);
+	}
+}
+.anti-flipper {
+	animation: un-flip 4s linear infinite;
+}
+@keyframes un-flip {
+	0% {
+		transform: rotateY(-0.05turn) rotateX(-0.05turn) rotateZ(0turn);
+	}
+	100% {
+		transform: rotateY(-0.05turn) rotateX(-0.05turn) rotateZ(-1turn);
+	}
+}
+
+/* Pause the animation of either cube upon hover */
+#named-cube:hover,
+#named-cube:hover *,
+#flower-cube:hover,
+#flower-cube:hover *,
+#party-cube:hover,
+#party-cube:hover * {
+	animation-play-state: paused;
+}
