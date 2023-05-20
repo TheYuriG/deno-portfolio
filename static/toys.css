@@ -1,0 +1,77 @@
+/* Style carousel spacing, flex-col and overflow */
+.carousel {
+	--card-margin: 0.5em;
+	display: flex;
+	flex: 1;
+	flex-direction: row;
+	max-width: calc(100dvw - 2 * var(--main-margin) - 2 * var(--main-padding));
+	overflow: auto;
+}
+
+/* Position the spin animataions */
+#translate-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.translate {
+	position: relative;
+	font-size: 3rem;
+	user-select: none;
+	transform-style: preserve-3d;
+}
+.translate > div {
+	position: absolute;
+	transform-style: preserve-3d;
+}
+
+/* Define animations for bottom right spin */
+#x-spin {
+	animation: x-rotation 4s linear infinite;
+}
+@keyframes x-rotation {
+	0% {
+		transform: rotateX(0turn);
+	}
+	100% {
+		transform: rotateX(1turn);
+	}
+}
+
+/* Define animations for bottom left spin */
+#y-spin {
+	animation: y-rotation 5s linear infinite;
+	right: 0em;
+}
+@keyframes y-rotation {
+	0% {
+		transform: rotateY(0turn);
+	}
+	100% {
+		transform: rotateY(1turn);
+	}
+}
+
+/* Define animations for top right spin */
+#z-spin {
+	animation: z-rotation 6s linear infinite;
+	bottom: 0em;
+}
+@keyframes z-rotation {
+	0% {
+		transform: rotateZ(0turn);
+	}
+	100% {
+		transform: rotateZ(1turn);
+	}
+}
+
+/* Pause the animation on hover */
+#x-spin:hover,
+#x-spin:hover *,
+#y-spin:hover,
+#y-spin:hover *,
+#z-spin:hover,
+#z-spin:hover * {
+	animation-play-state: paused;
+}

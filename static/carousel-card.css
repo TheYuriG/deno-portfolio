@@ -1,0 +1,32 @@
+/* Adds border+border-radius, flex-col, expands heigth to stretch */
+.card {
+	display: flex;
+	flex-direction: column;
+	margin: var(--card-margin);
+	min-height: 20em;
+	height: calc(100% - 2 * var(--card-margin));
+	width: 18em;
+	border: 0.25em solid var(--neutral-color);
+	border-radius: 2em;
+}
+
+/* Bigger h3 font, bold it and add margin */
+.card h3 {
+	font-size: 1.5rem;
+	margin: 1em auto;
+	font-weight: bold;
+}
+
+/* Add pulsating effect to cards on hover */
+.card:hover {
+	animation: pulse 1.2s ease-out infinite;
+}
+@keyframes pulse {
+	50% {
+		box-shadow: 0 0 0.2em 0.1em var(--neutral-color) inset, 0 0 0.2em 0.1em var(--neutral-color);
+	}
+
+	100% {
+		box-shadow: 0 0 0 0 var(--neutral-color) inset, 0 0 0 0 var(--neutral-color);
+	}
+}
