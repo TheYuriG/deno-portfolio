@@ -16,8 +16,9 @@ export default function App({ Component }: AppProps) {
             const selectedTheme = localStorage.getItem('theme');
 
             // Save on the window object if we should enable Dark Mode
-            if (selectedTheme === undefined) {
+            if (selectedTheme === null) {
                 window.showDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+                localStorage.setItem('theme', window.showDarkMode ? 'Dark' : 'Light');
             } else {
                 window.showDarkMode = selectedTheme === 'Dark';
             }
