@@ -59,6 +59,18 @@ aside svg {
     display: flex;
     flex-direction: row;
     text-justify: center;
+    animation: fadeThemeSwitcherIn 0.3s;
+}
+
+/* Animate the Theme Switcher to fade in gracefully instead of popping in */
+@keyframes fadeThemeSwitcherIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 /* Positions the footer on the bottom right side of the page, below the frame */
