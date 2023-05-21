@@ -1,0 +1,95 @@
+/* Set global twinkle duration */
+:root {
+    --twinkle-duration: 4s;
+}
+
+/* Groups together the collection of all stars */
+.stars-wrapper {
+    position: absolute;
+    pointer-events: none;
+    width: 100vw;
+    height: 100vh;
+    background: var(--base-color);
+    overflow: hidden;
+}
+
+/* Creates overlaying fields of stars on top of each other */
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    animation: twinkle var(--twinkle-duration) ease-in-out infinite;
+}
+
+.stars:nth-child(2) {
+    animation-delay: calc(var(--twinkle-duration) * -0.33);
+}
+
+.stars:nth-child(3) {
+    animation-delay: calc(var(--twinkle-duration) * -0.66);
+}
+
+/* Make the overlaying field of stars shine twinkle for a second */
+@keyframes twinkle {
+    25% {
+        opacity: 0;
+    }
+}
+
+/* Paint stars and their siblings with the opposite color of the background */
+.star {
+    fill: var(--neutral-color);
+}
+
+.star:nth-child(3n) {
+    opacity: 0.8;
+}
+
+.star:nth-child(7n) {
+    opacity: 0.6;
+}
+
+.star:nth-child(13n) {
+    opacity: 0.4;
+}
+
+.star:nth-child(19n) {
+    opacity: 0.2;
+}
+
+/* Create the comet that crosses the screen randomly */
+.comet {
+    transform-origin: center center;
+    animation: comet 10s linear infinite;
+}
+
+/* Animate the comet to cross the screen */
+@keyframes comet {
+
+    0%,
+    40% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    60%,
+    100% {
+        transform: translateX(-100vmax);
+        opacity: 0;
+    }
+}
+
+/* Change the delay from the sibling comets so they are debounced */
+.comet-b {
+    animation-delay: -3.3s;
+}
+
+.comet-c {
+    animation-delay: -5s;
+}
