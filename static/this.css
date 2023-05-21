@@ -1,0 +1,12 @@
+.inline-code {
+	display: inline-block;
+	background-color: rgb(140, 140, 140);
+	padding: 0 0.5em;
+	border-radius: 0.5em;
+}
+
+.blog-image {
+	height: 10em;
+	width: 10em;
+	margin: 1em;
+}

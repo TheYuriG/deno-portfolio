@@ -1,20 +1,3 @@
-/* Creates the gradient underline below my Persona name */
-.gradient-underline {
-	position: relative;
-	text-decoration: none;
-}
-
-/* Colors the gradient underline */
-.gradient-underline:before {
-	content: '';
-	position: absolute;
-	top: 100%;
-	width: 100%;
-	left: 0;
-	height: 3px;
-	background: linear-gradient(111.3deg, #9c27b0 9.6%, #00bcd4 93.6%);
-}
-
 /* Animates the emoji that displays when hovering over my Persona name,
     as if it was greeting the user */
 .wave-emoji {
