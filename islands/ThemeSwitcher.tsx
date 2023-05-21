@@ -14,7 +14,7 @@ export default function ThemeSwitcher() {
   const isInitialMount = useRef(true);
 
   //? Manages the theme state
-  const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "Dark");
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "");
 
   //? Saves switched theme on change, but not on first load
   useEffect(() => {
@@ -72,7 +72,7 @@ export default function ThemeSwitcher() {
         </button>
       </>
     );
-  } else {
+  } else if (theme === "Dark") {
     return (
       <>
         <button onClick={() => setTheme(() => "Light")}>
@@ -86,6 +86,12 @@ export default function ThemeSwitcher() {
             Dark
           </div>
         </button>
+      </>
+    );
+  } else {
+    return (
+      <>
+        <div></div>
       </>
     );
   }
