@@ -28,6 +28,7 @@ export function HomeHead() {
 				></link>
 				<link rel="stylesheet" href="base.css" />
 				<link rel="stylesheet" href="home.css" />
+				<link rel="stylesheet" href="/gradient-underline.css" />
 			</Head>
 		</>
 	);
