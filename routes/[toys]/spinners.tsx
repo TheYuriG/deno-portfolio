@@ -1,19 +1,22 @@
 //? Create blog content inside Base component
 import { Base } from '../../components/Base.tsx';
-//? Toys Head with appropriate metadata
-import { ToysHead } from '../../heads/ToysHead.tsx';
+//? Import CustomHead with appropriate metadata
+import { CustomHead } from '../../components/CustomHead.tsx';
 //? Navigation Buttons to go back to the previous page or to the next article
 import BlogNavigationButtons from '../../islands/BlogNavigationButtons.tsx';
 
 export default function Home() {
 	return (
 		<>
-			<ToysHead
-				title="Playground | TheYuriG"
-				description="Various experimentations over things I've seen online."
+			<CustomHead
+				title="Spinners"
+				description="Playing with CSS translate3d!"
+				link="https://www.theyurig.com/toys/spinners"
 			>
+				<link rel="stylesheet" href="/content.css" />
+				<link rel="stylesheet" href="/navigation-buttons.css" />
 				<link rel="stylesheet" href="/spinners.css" />
-			</ToysHead>
+			</CustomHead>
 			{/* Base page layout with theme switching and footer outside of accent box */}
 			<Base>
 				<BlogNavigationButtons />
