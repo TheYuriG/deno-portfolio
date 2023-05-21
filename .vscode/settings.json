@@ -23,29 +23,35 @@
 		"fresh.gen.ts"
 	],
 	"files.exclude": {
-		"**/.git": true,
-		"**/.svn": true,
-		"**/.hg": true,
-		"**/CVS": true,
-		"**/.DS_Store": true,
-		"**/Thumbs.db": true,
-		"static/android-chrome-192x192.png": true,
-		"static/android-chrome-512x512.png": true,
-		"static/apple-touch-icon.png": true,
-		"static/deno-logo.svg": true,
-		"static/favicon-16x16.png": true,
-		"static/favicon-32x32.png": true,
-		"static/favicon.ico": true,
-		"static/ts-logo-128.svg": true,
-		"static/logo.svg": true,
-		"static/fresh-logo.png": true,
-		"deno.json": true,
-		"deno.lock": true,
-		"import_map.json": true,
-		"dev.ts": true,
-		"twind.config.ts": true,
-		".vscode": true,
-		"main.ts": true,
-		"fresh.gen.ts": true
-	}
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "static/android-chrome-192x192.png": true,
+        "static/android-chrome-512x512.png": true,
+        "static/apple-touch-icon.png": true,
+        "static/deno-logo.svg": true,
+        "static/favicon-16x16.png": true,
+        "static/favicon-32x32.png": true,
+        "static/favicon.ico": true,
+        "static/ts-logo-128.svg": true,
+        "static/logo.svg": true,
+        "static/fresh-logo.png": true,
+        "deno.json": true,
+        "deno.lock": true,
+        "import_map.json": true,
+        "dev.ts": true,
+        "twind.config.ts": true,
+        ".vscode": true,
+        "main.ts": true,
+        "fresh.gen.ts": true
+    },
+    "[css]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "denoland.vscode-deno"
+    }
 }
