@@ -7,15 +7,16 @@ import { JSX } from 'preact/jsx-runtime';
 interface HeadOptions {
 	title: string;
 	description: string;
+	link?: string;
 	children: JSX.Element | JSX.Element[];
 }
 
-//? Creates and exports the Head to be used on all /toys pages
-export function ToysHead(options: HeadOptions) {
+//? Creates and exports the Head to be used on all pages
+export function CustomHead(options: HeadOptions) {
 	return (
 		<>
 			<Head>
-				<title>{options.title}</title>
+				<title>{options.title} | TheYuriG</title>
 				<meta property="og:title" content={options.title} />
 				<meta property="og:site_name" content="TheYuriG" />
 				<meta property="og:description" content={options.description} />
@@ -24,7 +25,7 @@ export function ToysHead(options: HeadOptions) {
 					property="og:image"
 					content="https://rockcontent.com/br/wp-content/uploads/sites/2/2014/09/zuckerberg-620×316.png"
 				/> */}
-				<meta property="og:url" content="https://www.theyurig.com/toys" />
+				<meta property="og:url" content={options.link ?? 'https://www.theyurig.com/blog'} />
 				<link
 					href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Kanit:wght@400;700&display=swap"
 					rel="stylesheet"
@@ -34,8 +35,6 @@ export function ToysHead(options: HeadOptions) {
 					rel="stylesheet"
 				></link>
 				<link rel="stylesheet" href="/base.css" />
-				<link rel="stylesheet" href="/content.css" />
-				<link rel="stylesheet" href="/navigation-buttons.css" />
 				{...toChildArray(options.children)}
 			</Head>
 		</>

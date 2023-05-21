@@ -1,7 +1,7 @@
 //? Create blog content inside Base component
 import { Base } from '../../components/Base.tsx';
-//? Blog Head with appropriate metadata
-import { BlogHead } from '../../heads/BlogHead.tsx';
+//? Head component with all Meta tags pre-set
+import { CustomHead } from '../../components/CustomHead.tsx';
 //? Navigation Buttons to go back to the previous page or to the next article
 import BlogNavigationButtons from '../../islands/BlogNavigationButtons.tsx';
 //? Infinitely expandable insanity section
@@ -10,7 +10,15 @@ import InsanitySection from '../../islands/InsanitySection.tsx';
 export default function Home() {
 	return (
 		<>
-			<BlogHead />
+			<CustomHead
+				title="Insanity 🤪"
+				description="Testing CLS and various layout changes."
+				link="https://www.theyurig.com/toys/insanity"
+			>
+				<link rel="stylesheet" href="/content.css" />
+				<link rel="stylesheet" href="/styled-button.css" />
+				<link rel="stylesheet" href="/navigation-buttons.css" />
+			</CustomHead>
 			{/* Base page layout with theme switching and footer outside of accent box */}
 			<Base>
 				<BlogNavigationButtons />

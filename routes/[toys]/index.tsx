@@ -3,21 +3,24 @@ import { Base } from '../../components/Base.tsx';
 //? Import a Card component that automatically creates
 //? redirection link, card title and centers card child
 import { CarouselCard } from '../../components/CarouselCard.tsx';
-//? Toys Head with appropriate metadata
-import { ToysHead } from '../../heads/ToysHead.tsx';
-//? Navigation Buttons to go back to the previous page or to the next article
+//? Import CustomHead with appropriate metadata
+import { CustomHead } from '../../components/CustomHead.tsx';
+//? Navigation Buttons to go back to the previous page or to the next page (optional)
 import BlogNavigationButtons from '../../islands/BlogNavigationButtons.tsx';
 
 export default function Home() {
 	return (
 		<>
-			<ToysHead
-				title="Playground | TheYuriG"
+			<CustomHead
+				title="Playground"
 				description="Various experimentations over things I've seen online."
+				link="https://www.theyurig.com/toys"
 			>
+				<link rel="stylesheet" href="/content.css" />
+				<link rel="stylesheet" href="/navigation-buttons.css" />
 				<link rel="stylesheet" href="/toys.css" />
 				<link rel="stylesheet" href="/carousel-card.css" />
-			</ToysHead>
+			</CustomHead>
 			{/* Base page layout with theme switching and footer outside of accent box */}
 			<Base>
 				<BlogNavigationButtons />

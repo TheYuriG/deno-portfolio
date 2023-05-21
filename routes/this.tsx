@@ -1,21 +1,23 @@
 //? Lateral text with theme switcher
 import { Base } from '../components/Base.tsx';
-//? Head component with all Meta tags pre-set
-import { ToysHead } from '../heads/ToysHead.tsx';
+//? Import CustomHead with appropriate metadata
+import { CustomHead } from '../components/CustomHead.tsx';
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
 import BlogNavigationButtons from '../islands/BlogNavigationButtons.tsx';
 
 export default function Home() {
 	return (
 		<>
-			<ToysHead
-				title='What is "this"? | TheYuriG'
-				description="Tech stack used when creating this page."
+			<CustomHead
+				title='What is "this"?'
+				description="Tech stack used to create this website."
+				link="https://www.theyurig.com/this"
 			>
-				<link rel="stylesheet" href="/navigation-menu.css" />
+				<link rel="stylesheet" href="/content.css" />
+				<link rel="stylesheet" href="/navigation-buttons.css" />
 				<link rel="stylesheet" href="/this.css" />
 				<link rel="stylesheet" href="/gradient-underline.css" />
-			</ToysHead>
+			</CustomHead>
 			{/* Base page layout with theme switching and footer outside of accent box */}
 			<Base>
 				<BlogNavigationButtons />
