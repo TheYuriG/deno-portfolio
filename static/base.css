@@ -1,91 +1,84 @@
-:root {
-	/* TW Slate 900 background color */
-	--base-color: rgb(15 23 42);
-	/* TW Slate 300 text color */
-	--neutral-color: rgb(203 213 225);
-	/* TW Purple 700 accent */
-	--accent-color: rgb(120 50 200);
-	/* Color for the radio buttons */
-	accent-color: var(--accent-color);
-	/* Transition effect to make the switch to
-        Light theme on load less jarring */
-	transition: color 0.9s ease-in-out 0.1s, background-color 0.8s ease-in-out 0.2s;
-}
+/* Note: Color scheme variables are set on routes/_app.tsx script tag */
 
 /* Scrollbar styling */
 body::-webkit-scrollbar {
-	width: 0.8em;
+    width: 0.8em;
 }
+
 body::-webkit-scrollbar-thumb {
-	background-color: transparent;
-	outline: 2px solid var(--accent-color);
-	outline-offset: -0.1rem;
-	border-radius: 0.3rem;
+    background-color: transparent;
+    outline: 2px solid var(--accent-color);
+    outline-offset: -0.1rem;
+    border-radius: 0.3rem;
 }
 
 /* Expand page to use full screen and set page default font and color scheme */
 html {
-	max-height: fit-content;
-	font-family: 'Fragment Mono', monospace;
-	background-color: var(--base-color);
-	color: var(--neutral-color);
+    max-height: fit-content;
+    font-family: 'Fragment Mono', monospace;
+    background-color: var(--base-color);
+    color: var(--neutral-color);
 }
 
 /* Positioning for the main frame, border color, transition for theme switch */
 main {
-	--main-padding: 1rem;
-	--main-margin: 1.5rem;
-	position: absolute;
-	width: calc(100dvw - 2 * var(--main-margin));
-	min-height: calc(100dvh - 2 * var(--main-margin));
-	padding: var(--main-padding);
-	margin: var(--main-margin);
-	border: 2px solid var(--accent-color);
-	border-radius: 1.5rem;
-	transition: border 0.7s ease-in-out 0.3s;
+    --main-padding: 1rem;
+    --main-margin: 1.5rem;
+    position: absolute;
+    width: calc(100dvw - 2 * var(--main-margin));
+    min-height: calc(100dvh - 2 * var(--main-margin));
+    padding: var(--main-padding);
+    margin: var(--main-margin);
+    border: 2px solid var(--accent-color);
+    border-radius: 1.5rem;
+    transition: border 0.7s ease-in-out 0.3s;
 }
 
 /* Position the theme switcher on the bottom left corner */
 aside {
-	position: fixed;
-	bottom: 5.5rem;
-	rotate: -90deg;
-	translate: -70%;
-
-	font-size: 1.25rem; /* 20px */
-	line-height: 1.75rem; /* 28px */
+    height: 1em;
+    width: 5em;
+    height: min-content;
+    position: fixed;
+    bottom: 3.2em;
+    rotate: -90deg;
+    translate: -78%;
+    font-size: 1.25rem;
+    line-height: 1em;
 }
 
-/* Space-X-2 */
-aside > * + * {
-	margin-left: 0.5rem; /* 8px */
+/* Define theme SVG size, push text away */
+aside svg {
+    height: 1em;
+    width: 1em;
+    margin-right: 0.2em;
 }
 
-/* Radio buttons, colored by accent color on :root */
-input[type='checkbox'] {
-	appearance: none;
-	margin: 0;
-	width: 1rem;
-	height: 1rem;
+/* Organize theme button horizontally and align vertically */
+.theme-switcher {
+    display: flex;
+    flex-direction: row;
+    text-justify: center;
 }
 
 /* Positions the footer on the bottom right side of the page, below the frame */
 .page-footer {
-	position: absolute;
-	display: inline-flex;
-	align-items: center;
-	width: max-content;
-	bottom: -1.5rem;
-	right: 0;
-	font-size: 0.875rem; /* 14px */
-	line-height: 1.25rem;
-	white-space: nowrap;
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    width: max-content;
+    bottom: -1.5rem;
+    right: 0;
+    font-size: 0.875rem;
+    /* 14px */
+    line-height: 1.25rem;
+    white-space: nowrap;
 }
 
 /* Style the images on the footer */
 footer img {
-	margin-left: 0.4rem;
-	margin-right: 0.4rem;
-	height: 18px;
-	width: 18px;
+    margin-left: 0.4rem;
+    margin-right: 0.4rem;
+    height: 18px;
+    width: 18px;
 }
