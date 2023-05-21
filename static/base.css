@@ -1,3 +1,5 @@
+/* Note: Color scheme variables are set on routes/_app.tsx script tag */
+
 /* Scrollbar styling */
 body::-webkit-scrollbar {
     width: 0.8em;
@@ -34,31 +36,29 @@ main {
 
 /* Position the theme switcher on the bottom left corner */
 aside {
-    /* Color for the radio buttons */
-    accent-color: var(--accent-color);
+    height: 1em;
+    width: 5em;
+    height: min-content;
     position: fixed;
-    bottom: 5.5rem;
+    bottom: 3.2em;
     rotate: -90deg;
-    translate: -70%;
-
+    translate: -78%;
     font-size: 1.25rem;
-    /* 20px */
-    line-height: 1.75rem;
-    /* 28px */
+    line-height: 1em;
 }
 
-/* Space-X-2 */
-aside>*+* {
-    margin-left: 0.5rem;
-    /* 8px */
+/* Define theme SVG size, push text away */
+aside svg {
+    height: 1em;
+    width: 1em;
+    margin-right: 0.2em;
 }
 
-/* Radio buttons, colored by accent color on :root */
-input[type='checkbox'] {
-    appearance: none;
-    margin: 0;
-    width: 1rem;
-    height: 1rem;
+/* Organize theme button horizontally and align vertically */
+.theme-switcher {
+    display: flex;
+    flex-direction: row;
+    text-justify: center;
 }
 
 /* Positions the footer on the bottom right side of the page, below the frame */
