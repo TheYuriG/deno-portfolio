@@ -20,6 +20,7 @@ export function CustomHead(options: HeadOptions) {
         <meta property="og:title" content={options.title} />
         <meta property="og:site_name" content="TheYuriG" />
         <meta property="og:description" content={options.description} />
+        <meta property="description" content={options.description} />
         <meta property="og:type" content="blog" />
         {
           /* Image tag, if I ever put one <meta
