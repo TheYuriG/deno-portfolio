@@ -14,7 +14,10 @@ export default function ThemeSwitcher() {
   const isInitialMount = useRef(true);
 
   //? Manages the theme state
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "");
+  const [theme, setTheme] = useState(
+    // @ts-ignore This type get set by the script in /routes/_app.tsx
+    window.showDarkMode === true ? "Dark" : "Light",
+  );
 
   //? Saves switched theme on change, but not on first load
   useEffect(() => {
