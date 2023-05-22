@@ -1,11 +1,46 @@
-# fresh project
+# TheYuriG.com's repository
 
-### Usage
+Here you will find the code that powers the website
+[TheYuriG.com](https://theyurig.com).
 
-Start the project:
+![Tech Stack used](https://github.com/TheYuriG/deno-portfolio/blob/master/stack-logo.png "Logos, left to right: Deno, Fresh, Preact")
 
-```
-deno task start
-```
+📝 All of the code is written in Typescript and CSS, powered by Deno, Fresh,
+Preact and Twind and served as static HTML files using the Islands architecture
+(you can see a more broad overview [here](https://www.theyurig.com/this)).
 
-This will watch the project directory and restart as necessary.
+☀️🌒 The website comes with a built-in theme switcher and it hosts all of my
+projects, which are being slowly ported to Typescript. Feel free to visit the
+site and poke around. All related code is well commented, so if you find
+anything interesting, it should be pretty easy to transverse the files to
+understand how it works.
+
+## How does it work?
+
+🤔 For all pages, a base layout is used, which then gets populated with content
+on a route-by-route basis. Every page receives the base colors based on the user
+OS-preferred (or user-chosen) theme, some basic CSS for animations and the two
+fonts: [Alfa Slab One](https://fonts.google.com/specimen/Alfa+Slab+One) (for
+headings and high hierarchy items) and
+[Fragment Mono](https://fonts.google.com/specimen/Fragment+Mono) (for overall
+text).
+
+⚙️ While I do consider myself a Full Stack developer (and I'm capable of getting
+near 100 Lighthouse score, keep the website accessible and stick to best
+practices), I'm much stronger working on the backend. I enjoy a lot more
+managing data, user authentication, and databases and I try to show that on my
+[/work](https://www.theyurig.com/work) page.
+
+## Contributing
+
+🤝🏽 If you feel like you can contribute in some way to this repository, don't
+hesitate in creating an issue to explain what you would like to add or fix, I'm
+very open to suggestions and bug reports!
+
+## Cloning
+
+🤖 If you like what I do, feel free to clone the project and remove all the
+personal information related to me (so deleting the content of the folders
+`/[toys]`, `/[work]`, `/[blog]` and route `/me`). I don't mind if this gets used
+as inspiration or template, just make sure that you don't do it in a way that
+might mislead people to think that we are the same person. 😊
