@@ -32,7 +32,7 @@ export function CustomHead(options: HeadOptions) {
           property="og:url"
           content={options.link ?? "https://www.theyurig.com/blog"}
         />
-        <script src="themeSwitcherMinified.js"></script>
+        <script src="/themeSwitcherMinified.js"></script>
         <link
           href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Kanit:wght@400;700&display=swap"
           rel="stylesheet"

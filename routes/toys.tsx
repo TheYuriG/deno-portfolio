@@ -1,12 +1,12 @@
 //? Create blog content inside Base component
-import { Base } from "../../components/Base.tsx";
+import { Base } from "../components/Base.tsx";
 //? Import a Card component that automatically creates
 //? redirection link, card title and centers card child
-import { CarouselCard } from "../../components/CarouselCard.tsx";
+import { CarouselCard } from "../components/CarouselCard.tsx";
 //? Import CustomHead with appropriate metadata
-import { CustomHead } from "../../components/CustomHead.tsx";
+import { CustomHead } from "../components/CustomHead.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
-import BlogNavigationButtons from "../../islands/BlogNavigationButtons.tsx";
+import BlogNavigationButtons from "../islands/BlogNavigationButtons.tsx";
 
 export default function Home() {
   return (
@@ -16,15 +16,15 @@ export default function Home() {
         description="Various experimentations over things I've seen online."
         link="https://www.theyurig.com/toys"
       >
-        <link rel="stylesheet" href="/content.css" />
-        <link rel="stylesheet" href="/navigation-buttons.css" />
-        <link rel="stylesheet" href="/toys.css" />
-        <link rel="stylesheet" href="/carousel-card.css" />
+        <link rel="stylesheet" href="content.css" />
+        <link rel="stylesheet" href="navigation-buttons.css" />
+        <link rel="stylesheet" href="toys.css" />
+        <link rel="stylesheet" href="carousel-card.css" />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
         <BlogNavigationButtons />
-        <article>
+        <article class="center">
           <h1>Toys</h1>
           <details style="width: 100%;">
             <p style="margin-bottom: 1em;">
