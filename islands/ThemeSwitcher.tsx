@@ -15,8 +15,14 @@ export default function ThemeSwitcher() {
 
   //? Manages the theme state
   const [theme, setTheme] = useState(
-    // @ts-ignore This type get set by the script in /routes/_app.tsx
-    window.showDarkMode === true ? "Dark" : "Light",
+    // @ts-ignore This type initially unset, so we start with an empty block
+    window.showDarkMode === undefined
+      ? ""
+      // @ts-ignore When the type gets set by the script in
+      // /routes/_app.tsx, we can then set what will be the button displayed
+      : window.showDarkMode === true
+      ? "Dark"
+      : "Light",
   );
 
   //? Saves switched theme on change, but not on first load
@@ -58,6 +64,7 @@ export default function ThemeSwitcher() {
     }
   }, [theme]);
 
+  //? If the selected theme is Light mode, display the "Sun icon + Light" button
   if (theme === "Light") {
     return (
       <>
@@ -75,7 +82,8 @@ export default function ThemeSwitcher() {
         </button>
       </>
     );
-  } else if (theme === "Dark") {
+  } //? If the selected theme is Dark mode, display the "Moon icon + Dark" button
+  else if (theme === "Dark") {
     return (
       <>
         <button onClick={() => setTheme(() => "Light")}>
@@ -91,7 +99,9 @@ export default function ThemeSwitcher() {
         </button>
       </>
     );
-  } else {
+  } //? While we don't have access to the theme selection, display nothing
+  //? so that we can later use a transition animation to fade in the button
+  else {
     return (
       <>
         <div></div>
