@@ -21,7 +21,7 @@ export default function Home() {
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
         <BlogNavigationButtons />
-        <article>
+        <article class="center">
           <h1>What is this?</h1>
           <p>
             <span class="inline-code">this</span>{" "}

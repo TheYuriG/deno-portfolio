@@ -1,60 +1,58 @@
 /* Define article as flexible centered column */
-article {
-	/* Vertical margin to the article's heading */
-	--h1-margin: 1rem;
-	/* Viewport height - (2 * base marginY) - (2 * base paddingY) - (2 * article h1 marginY) - (2 * base borderWidth) */
-	min-height: calc(
-		100dvh - 2 * var(--main-margin) - 2 * var(--main-padding) - 2 * var(--h1-margin) - 4px
-	);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+.center {
+    /* Vertical margin to the article's heading */
+    --h1-margin: 1rem;
+    /* Viewport height - (2 * base marginY) - (2 * base paddingY) - (2 * article h1 marginY) - (2 * base borderWidth) */
+    min-height: calc(100dvh - 2 * var(--main-margin) - 2 * var(--main-padding) - 2 * var(--h1-margin) - 4px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Style article's heading */
 h1 {
-	margin: var(--h1-margin) 0;
-	font-family: 'Alfa Slab One', cursive;
-	font-size: 2.5rem;
-	text-align: center;
-	line-height: 1;
+    margin: var(--h1-margin) 0;
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 2.5rem;
+    text-align: center;
+    line-height: 1;
 }
 
 /* Style section as flex colunn */
 section {
-	display: flex;
-	flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Justify blog post body */
 p {
-	text-align: justify;
+    text-align: justify;
 }
 
 /* Spacer to push the blog footer to the end of the page,
     if the page doesn't have enough content to max out
     the height by itself */
 .spacer {
-	flex-grow: 1;
+    flex-grow: 1;
 }
 
 /* Ending note at the end of a blog post */
 .blog-footer {
-	font-size: 0.75rem;
-	align-self: end;
+    font-size: 0.75rem;
+    align-self: end;
 }
 
 /* Reduce heading font size on smaller resolutions */
 @media (max-width: 600px) {
-	h1 {
-		font-size: 1.5rem;
-	}
+    h1 {
+        font-size: 1.5rem;
+    }
 }
 
 /* Article doesn't expand horizontally forever on larger resolutions */
 @media (min-width: 1024px) {
-	article {
-		width: 900px;
-		margin: 0 auto;
-	}
+    article {
+        width: 900px;
+        margin: 0 auto;
+    }
 }

@@ -16,15 +16,15 @@ export default function Home() {
         description="Various experimentations over things I've seen online."
         link="https://www.theyurig.com/toys"
       >
-        <link rel="stylesheet" href="/content.css" />
-        <link rel="stylesheet" href="/navigation-buttons.css" />
-        <link rel="stylesheet" href="/toys.css" />
-        <link rel="stylesheet" href="/carousel-card.css" />
+        <link rel="stylesheet" href="content.css" />
+        <link rel="stylesheet" href="navigation-buttons.css" />
+        <link rel="stylesheet" href="toys.css" />
+        <link rel="stylesheet" href="carousel-card.css" />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
         <BlogNavigationButtons />
-        <article>
+        <article class="center">
           <h1>Toys</h1>
           <details style="width: 100%;">
             <p style="margin-bottom: 1em;">
