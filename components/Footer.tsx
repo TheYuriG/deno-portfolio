@@ -10,7 +10,7 @@ export function Footer() {
         rel="noopener noreferrer"
       >
         <img
-          src="/fresh-logo.png"
+          src="/fresh-logo.svg"
           alt="Fresh's logo'"
           title="Fresh, the official framework to build Web apps on Deno"
         >
