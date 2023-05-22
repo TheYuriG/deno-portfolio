@@ -145,6 +145,9 @@
     "https://raw.githubusercontent.com/lucacasonato/esbuild_deno_loader/8031f71afa1bbcd3237a94b11f53a2e5c5c0e7bf/src/deno.ts": "71bee6b14e72ca193c0686d8b4f1f47d639a64745b6f5c7576f7a3616f436f57",
     "https://raw.githubusercontent.com/lucacasonato/esbuild_deno_loader/8031f71afa1bbcd3237a94b11f53a2e5c5c0e7bf/src/native_loader.ts": "2a0f5a7b68a57c4651ad48161b32532356b434597a6cf282683427482b38f6fa",
     "https://raw.githubusercontent.com/lucacasonato/esbuild_deno_loader/8031f71afa1bbcd3237a94b11f53a2e5c5c0e7bf/src/portable_loader.ts": "47adb6d9a00f13a87d0a15f2af79118eb93503234008c31392d71270bc0a42fa",
-    "https://raw.githubusercontent.com/lucacasonato/esbuild_deno_loader/8031f71afa1bbcd3237a94b11f53a2e5c5c0e7bf/src/shared.ts": "007e8d575cb6ebcac4110f1f72188a8bec3aa29287b4ad26e98403c00bebf036"
+    "https://raw.githubusercontent.com/lucacasonato/esbuild_deno_loader/8031f71afa1bbcd3237a94b11f53a2e5c5c0e7bf/src/shared.ts": "007e8d575cb6ebcac4110f1f72188a8bec3aa29287b4ad26e98403c00bebf036",
+    "https://unpkg.com/@speed-highlight/core@1.1.11/dist/index.js": "3f06bcb851f0ad78de4ab1886611d1253a57d875c287a93ae92efa80c5e7593b",
+    "https://unpkg.com/@speed-highlight/core@1.1.11/dist/languages/js.js": "7876640e51ac364ccc44ed578a7ad0c7d8e430524a27307d91c960a0adf7836e",
+    "https://unpkg.com/@speed-highlight/core@1.1.11/dist/terminal.js": "7077ecb9f3f0e6f8d0b341dd106dee521c82a9d0bdabacf86cd4fb3b25388b98"
   }
 }

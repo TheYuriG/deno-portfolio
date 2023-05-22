@@ -9,3 +9,17 @@
     font-size: 0.8rem;
     margin-bottom: 0.5em;
 }
+
+/* Size blog's small images to a square */
+.small-image {
+    margin: 1em auto;
+    height: 10em;
+    width: 10em;
+    object-fit: cover;
+}
+
+/* Size blog's large images to span the entire screen */
+.large-image {
+    margin: 1em auto;
+    object-fit: cover;
+}

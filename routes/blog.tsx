@@ -1,11 +1,11 @@
-//? Lateral text with theme switcher
-import { Base } from "../components/Base.tsx";
-//? Import the template for Blog Post summaries
-import { BlogPostSummary } from "../components/BlogPostSummary.tsx";
 //? Head component with all Meta tags pre-set
 import { CustomHead } from "../components/CustomHead.tsx";
+//? Lateral text with theme switcher
+import { Base } from "../components/Base.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
 import BlogNavigationButtons from "../islands/BlogNavigationButtons.tsx";
+//? Import the template for Blog Post summaries
+import { BlogPostSummary } from "../components/BlogPostSummary.tsx";
 //? All posts so far
 import createdPosts from "../blog_posts/all-blog-posts.ts";
 

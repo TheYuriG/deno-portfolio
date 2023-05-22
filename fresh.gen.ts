@@ -3,36 +3,38 @@
 // This file is automatically updated during development when running `dev.ts`.
 
 import config from "./deno.json" assert { type: "json" };
-import * as $0 from "./routes/[toys]/insanity.tsx";
-import * as $1 from "./routes/[toys]/spinners.tsx";
-import * as $2 from "./routes/api/joke.ts";
-import * as $3 from "./routes/blog.tsx";
-import * as $4 from "./routes/index.tsx";
-import * as $5 from "./routes/toys.tsx";
-import * as $6 from "./routes/what-is-this.tsx";
+import * as $0 from "./routes/[blog]/[post].tsx";
+import * as $1 from "./routes/[toys]/insanity.tsx";
+import * as $2 from "./routes/[toys]/spinners.tsx";
+import * as $3 from "./routes/api/joke.ts";
+import * as $4 from "./routes/blog.tsx";
+import * as $5 from "./routes/index.tsx";
+import * as $6 from "./routes/toys.tsx";
+import * as $7 from "./routes/what-is-this.tsx";
 import * as $$0 from "./islands/BlogNavigationButtons.tsx";
 import * as $$1 from "./islands/InsanitySection.tsx";
 import * as $$2 from "./islands/StyledButton.tsx";
 import * as $$3 from "./islands/ThemeSwitcher.tsx";
 
 const manifest = {
-    routes: {
-        "./routes/[toys]/insanity.tsx": $0,
-        "./routes/[toys]/spinners.tsx": $1,
-        "./routes/api/joke.ts": $2,
-        "./routes/blog.tsx": $3,
-        "./routes/index.tsx": $4,
-        "./routes/toys.tsx": $5,
-        "./routes/what-is-this.tsx": $6,
-    },
-    islands: {
-        "./islands/BlogNavigationButtons.tsx": $$0,
-        "./islands/InsanitySection.tsx": $$1,
-        "./islands/StyledButton.tsx": $$2,
-        "./islands/ThemeSwitcher.tsx": $$3,
-    },
-    baseUrl: import.meta.url,
-    config,
+  routes: {
+    "./routes/[blog]/[post].tsx": $0,
+    "./routes/[toys]/insanity.tsx": $1,
+    "./routes/[toys]/spinners.tsx": $2,
+    "./routes/api/joke.ts": $3,
+    "./routes/blog.tsx": $4,
+    "./routes/index.tsx": $5,
+    "./routes/toys.tsx": $6,
+    "./routes/what-is-this.tsx": $7,
+  },
+  islands: {
+    "./islands/BlogNavigationButtons.tsx": $$0,
+    "./islands/InsanitySection.tsx": $$1,
+    "./islands/StyledButton.tsx": $$2,
+    "./islands/ThemeSwitcher.tsx": $$3,
+  },
+  baseUrl: import.meta.url,
+  config,
 };
 
 export default manifest;
