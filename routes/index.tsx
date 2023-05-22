@@ -13,8 +13,8 @@ export default function Home() {
   return (
     <>
       <CustomHead
-        title="TheYuriG - Node/Deno Developer"
-        description="Showcasing Yuri's experience, thoughts and projects created."
+        title="Full Stack Development"
+        description="Get to know more about Yuri's experience, thoughts and past projects."
         link="https://www.theyurig.com/"
       >
         <link rel="stylesheet" href="home.css" />
