@@ -21,7 +21,7 @@ export function NavigationMenu() {
         Me
       </a>
       <a
-        href="/this"
+        href="/what-is-this"
         class="text-sm"
         style="color: yellow; margin-top: 2em;"
         title="information about how this website is built"
