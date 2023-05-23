@@ -1,129 +1,79 @@
-/* I'm not even going to try to comment the styles in this
-    file since I didn't write any of them. This is imported
-    for code-highlighting from speed-highlight.js
-    Docs are outdated, but it's the least of our concerns:
-    https://deno.land/x/speed_highlight_js@1.1.11 */
+/* Docs (outdated): https://deno.land/x/speed_highlight_js@1.1.11 */
 
+/* Applies to all code blocks */
 [class*=shj-lang-] {
-    white-space: pre;
-    margin: 10px 0;
-    border-radius: 10px;
-    padding: 30px 20px;
-    background: white;
+    white-space: pre-wrap;
+    border-radius: 1em;
+    background: rgb(255, 246, 239);
+    /* light orange background */
     color: #112;
-    box-shadow: 0 0 5px #0001;
-    text-shadow: none;
-    font: 18px Consolas, Courier New, Monaco, Andale Mono, Ubuntu Mono, monospace;
-    line-height: 24px;
-    box-sizing: border-box;
-    max-width: min(100%, 100vw)
+    /* black default text color */
+    line-height: 1.3em;
 }
 
+/* Add large margin and padding only to div elements with the highlight class */
+div[class*=shj-lang-] {
+    margin: 1em 0;
+    padding: 1em;
+    box-shadow: 0 0 1em 0.3em grey;
+}
+
+/* Formatting for inline code blocks <span> */
 .shj-inline {
     margin: 0;
-    padding: 2px 5px;
+    padding: 0 0.5em;
     display: inline-block;
-    border-radius: 5px
-}
-
-[class*=shj-lang-]::selection,
-[class*=shj-lang-] ::selection {
-    background: #bdf5
-}
-
-[class*=shj-lang-]>div {
-    display: flex;
-    overflow: auto
-}
-
-[class*=shj-lang-]>div :last-child {
-    flex: 1;
-    outline: none
-}
-
-.shj-numbers {
-    padding-left: 5px;
-    counter-reset: line
-}
-
-.shj-numbers div {
-    padding-right: 5px
-}
-
-.shj-numbers div:before {
-    color: #999;
-    display: block;
-    content: counter(line);
-    opacity: .5;
-    text-align: right;
-    margin-right: 5px;
-    counter-increment: line
+    border-radius: 0.5em
 }
 
 .shj-syn-cmnt {
     font-style: italic
 }
 
+/* Keywords syntax highlighting */
 .shj-syn-err,
+/* error, keyword */
 .shj-syn-kwd {
     color: #e16
 }
 
 .shj-syn-num,
+/* syntax number, class */
 .shj-syn-class {
     color: #f60
 }
 
 .shj-numbers,
+/* number, comment */
 .shj-syn-cmnt {
     color: #999
 }
 
 .shj-syn-insert,
+/* strings */
 .shj-syn-str {
     color: #7d8
 }
 
 .shj-syn-bool {
+    /* boolean */
     color: #3bf
 }
 
 .shj-syn-type,
+/* types, mathematical operators */
 .shj-syn-oper {
     color: #5af
 }
 
 .shj-syn-section,
+/* functions */
 .shj-syn-func {
     color: #84f
 }
 
 .shj-syn-deleted,
+/* variables */
 .shj-syn-var {
     color: #f44
-}
-
-.shj-oneline {
-    padding: 12px 10px
-}
-
-.shj-lang-http.shj-oneline .shj-syn-kwd {
-    background: #25f;
-    color: #fff;
-    padding: 5px 7px;
-    border-radius: 5px
-}
-
-.shj-multiline.shj-mode-header {
-    padding: 20px
-}
-
-.shj-multiline.shj-mode-header:before {
-    content: attr(data-lang);
-    color: #58f;
-    display: block;
-    padding: 10px 20px;
-    background: #58f3;
-    border-radius: 5px;
-    margin-bottom: 20px
 }

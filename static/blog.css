@@ -23,3 +23,13 @@
     margin: 1em auto;
     object-fit: cover;
 }
+
+/* Add some space around the blog post paragraphs */
+p.space {
+    margin: 1em 0;
+}
+
+/* Size a subtopic header */
+h2.subtopic {
+    font-size: 2rem;
+}

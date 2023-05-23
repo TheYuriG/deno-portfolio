@@ -4,73 +4,40 @@ import { CustomHead } from "../../components/CustomHead.tsx";
 import { Base } from "../../components/Base.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
 import BlogNavigationButtons from "../../islands/BlogNavigationButtons.tsx";
+//? To know what is the current route
+import { Handlers } from "$fresh/server.ts";
+//? Parse content from a file into JSX
+import contentParser from "../../services/contentParser.tsx";
+//? Fetch a post from source and return it as a CompletePost type
+import fetchPost from "../../services/fetchPost.ts";
+//? Import CompletePost type
+import type {
+  CompletePost, // Post interface
+} from "../../types/Post.ts";
+import FetchPostError from "../../types/FetchPostError.ts";
 
-import { PageProps } from "$fresh/server.ts";
-import { JSX } from "preact";
-
-//? Possible options of content
-enum contentPieceType {
-  Text = "text",
-  //todo add Mixed type for Text+InlineCode
-  Image = "image",
-  LargeImage = "largeImage",
-  CodeBlock = "codeBlock",
-  InlineBlock = "inlineCode",
-}
-//? How content pieces are created
-type ContentPìece = [contentPieceType, string];
-//! First one could be an Enum, since it's always going
-//! to be one of very few specific select types
-
-//? All the data a post is required to have
-interface CompletePost {
-  title: string;
-  content: ContentPìece[];
-  date: number;
-  author: string;
-}
+//? Runs before the render function to fetch the post from the files, then
+//? pushes
+export const handler: Handlers = {
+  async GET(req, ctx) {
+    const blogpost = await fetchPost(ctx.params.post);
+    if (blogpost instanceof FetchPostError) {
+      return ctx.renderNotFound();
+    }
+    return ctx.render(blogpost);
+  },
+};
 
 //? Exports a single Blog Post Summary
-export default function CompleteBlogPost(props: PageProps) {
-  const { post } = props.params;
-
-  //! Fetch post
-
-  //? Mock post data
-  const currentPost: CompletePost = {
-    title: post,
-    content: [[
-      contentPieceType.Text,
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, beatae autem consequatur fugiat enim nam, deserunt voluptate eaque, rerum magni at tenetur dolorem? Porro nihil sapiente aut fugiat omnis quia?",
-    ], [
-      contentPieceType.LargeImage,
-      "https://res.cloudinary.com/practicaldev/image/fetch/s--8eb2ZxJZ--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/am7bndcbz2iel9sjw7oc.png",
-    ], [
-      contentPieceType.Image,
-      "https://fresh.deno.dev/logo.svg?__frsh_c=414f858427046bd41a702d524fadc4215ab7180f",
-    ], [
-      contentPieceType.Text,
-      "Inline code:",
-    ], [
-      contentPieceType.InlineBlock,
-      "const num = 20",
-    ], [
-      contentPieceType.Text,
-      "Block code:",
-    ], [
-      contentPieceType.CodeBlock,
-      "const aaa = null\nconst bbb = undefined",
-    ]],
-    date: Date.now(),
-    author: "TheYuriG",
-  };
-
+export default function CompleteBlogPost(
+  { data: savedPost }: { data: CompletePost },
+) {
   return (
     <>
       <CustomHead
-        title="Blog"
-        description="Blog posts and articles about my experience with certain tech stacks or situations I had to untangle myself out of."
-        link="https://www.theyurig.com/blog"
+        title={savedPost.title}
+        description={savedPost.description}
+        link={"https://www.theyurig.com/blog" + savedPost.link}
       >
         <link rel="stylesheet" href="/home.css" />
         <link rel="stylesheet" href="/navigation-buttons.css" />
@@ -81,6 +48,11 @@ export default function CompleteBlogPost(props: PageProps) {
           /* Syntax highlight for code. How can we do this better
             so we don't cause Cumulative Layout Shift?
             There must be a better way... */
+
+          // Checked March 23rd, 2023 and there is currently no better
+          // option for Deno. As for NPM packages, options to consider are
+          // rc-highlight: https://www.npmjs.com/package/rc-highlight
+          // and lowlight: https://github.com/wooorm/lowlight
         }
         <script
           type="module"
@@ -98,70 +70,21 @@ export default function CompleteBlogPost(props: PageProps) {
         {/* Complete Post */}
         <article class="center">
           {/* Centered heading */}
-          <h2 class="navigation-link blog-title">{currentPost.title}</h2>
+          <h2 class="navigation-link blog-title">{savedPost.title}</h2>
           {/* Post creation date */}
-          <p class="post-date">{new Date(currentPost.date).toLocaleString()}</p>
+          <p class="post-date">
+            {new Date(savedPost.date).toLocaleString()}
+          </p>
           {/* Post content, parsed and spread */}
-          <div class="justified">{...contentParser(currentPost.content)}</div>
+          <div class="justified">
+            {...contentParser(savedPost.content)}
+          </div>
           {/* Post author */}
           <footer class="blog-footer" style="margin-top: auto;">
-            {currentPost.author}
+            {savedPost.author}
           </footer>
         </article>
       </Base>
     </>
   );
-}
-
-//? Parses content to be used as Post Content
-function contentParser(content: ContentPìece[]): JSX.Element[] {
-  //? Initializes the Array that will hold all the JSX elements to be rendered
-  const parsedContent: JSX.Element[] = [];
-
-  //? Loop through all the content, push appropriate elements to parsedContent[]
-  for (let pieceIndex = 0; pieceIndex < content.length; pieceIndex++) {
-    //? Destructure the content for legibility
-    const [contentType, contentValue] = content[pieceIndex];
-
-    //? Use a switch-case to process the blog content for better performance
-    switch (contentType) {
-      case contentPieceType.Text:
-        parsedContent.push(<p>{contentValue}</p>);
-        break;
-      case contentPieceType.Image:
-        parsedContent.push(
-          <img
-            src={contentValue}
-            class="small-image"
-          />,
-        );
-        break;
-      case contentPieceType.LargeImage:
-        parsedContent.push(
-          <img src={contentValue} class="large-image" />,
-        );
-        break;
-      case contentPieceType.InlineBlock:
-        parsedContent.push(
-          <code class="shj-lang-js">
-            {contentValue}
-          </code>,
-        );
-        break;
-      case contentPieceType.CodeBlock:
-        parsedContent.push(
-          <div class="shj-lang-js">
-            {contentValue}
-          </div>,
-        );
-        break;
-      default: {
-        const thisShouldNeverRun: never = contentType;
-        throw new Error(thisShouldNeverRun);
-      }
-    }
-  }
-
-  //? Return the array of JSX elements to be rendered
-  return parsedContent;
 }
