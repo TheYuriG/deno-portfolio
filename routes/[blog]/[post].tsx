@@ -6,8 +6,8 @@ import { Base } from "../../components/Base.tsx";
 import BlogNavigationButtons from "../../islands/BlogNavigationButtons.tsx";
 //? To know what is the current route
 import { PageProps } from "$fresh/server.ts";
-//? To define types as JSX.Element
-import { JSX } from "preact";
+//? Parse content from a file into JSX
+import contentParser from "../../serivces/contentParser.tsx";
 
 //? Possible options of content
 enum contentPieceType {
@@ -43,9 +43,6 @@ interface CompletePost {
   date: number;
   author: string;
 }
-
-//? Regex for inline code blocks
-const inlineCodeSpanCreatorRegex = new RegExp(/^`.*`$/);
 
 //? Exports a single Blog Post Summary
 export default function CompleteBlogPost(props: PageProps) {
@@ -105,76 +102,6 @@ export default function CompleteBlogPost(props: PageProps) {
       </Base>
     </>
   );
-}
-
-//? Parses content to be used as Post Content
-function contentParser(content: ContentPìece[]): JSX.Element[] {
-  //? Initializes the Array that will hold all the JSX elements to be rendered
-  const parsedContent: JSX.Element[] = [];
-
-  //? Loop through all the content, push appropriate elements to parsedContent[]
-  for (let pieceIndex = 0; pieceIndex < content.length; pieceIndex++) {
-    //? Destructure the content for legibility
-    const [contentType, contentValue] = content[pieceIndex];
-
-    //? Use a switch-case to process the blog content for better performance
-    switch (contentType) {
-      case contentPieceType.Text:
-        parsedContent.push(<p>{contentValue}</p>);
-        break;
-      case contentPieceType.Image:
-        parsedContent.push(
-          <img
-            src={contentValue}
-            class="small-image"
-          />,
-        );
-        break;
-      case contentPieceType.LargeImage:
-        parsedContent.push(
-          <img src={contentValue} class="large-image" />,
-        );
-        break;
-      case contentPieceType.InlineBlock: {
-        const inlineCodeBlockContent: JSX.Element[] = [];
-        for (
-          let subContentIndex = 0;
-          subContentIndex < contentValue.length;
-          subContentIndex++
-        ) {
-          if (inlineCodeSpanCreatorRegex.test(contentValue[subContentIndex])) {
-            inlineCodeBlockContent.push(
-              <code class="shj-lang-js">
-                {contentValue[subContentIndex].replace(/^`|`$/g, "")}
-              </code>,
-            );
-          } else {
-            inlineCodeBlockContent.push(<>{contentValue[subContentIndex]}</>);
-          }
-        }
-        parsedContent.push(
-          <p>
-            {inlineCodeBlockContent}
-          </p>,
-        );
-        break;
-      }
-      case contentPieceType.CodeBlock:
-        parsedContent.push(
-          <div class="shj-lang-js">
-            {contentValue}
-          </div>,
-        );
-        break;
-      default: {
-        const thisShouldNeverRun: never = contentType;
-        throw new Error(thisShouldNeverRun);
-      }
-    }
-  }
-
-  //? Return the array of JSX elements to be rendered
-  return parsedContent;
 }
 
 //? Mock function to fetch a post, however it might be
