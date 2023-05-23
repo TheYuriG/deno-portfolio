@@ -35,9 +35,9 @@ export default function CompleteBlogPost(
   return (
     <>
       <CustomHead
-        title="Blog"
-        description="Blog posts and articles about my experience with certain tech stacks or situations I had to untangle myself out of."
-        link="https://www.theyurig.com/blog"
+        title={savedPost.title}
+        description={savedPost.description}
+        link={"https://www.theyurig.com/blog" + savedPost.link}
       >
         <link rel="stylesheet" href="/home.css" />
         <link rel="stylesheet" href="/navigation-buttons.css" />

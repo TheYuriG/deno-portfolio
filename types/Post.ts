@@ -28,6 +28,8 @@ export type ContentPiece =
 //? All the data a post is required to have
 export interface CompletePost {
     title: string;
+    description: string,
+    link: '/how-to-create-theme-switcher-deno-fresh',
     content: ContentPiece[];
     date: number;
     author: string;
