@@ -22,7 +22,7 @@ function contentParser(content: ContentPiece[]): JSX.Element[] {
     //? Use a switch-case to process the blog content for better performance
     switch (contentType) {
       case contentPieceType.Text:
-        parsedContent.push(<p>{contentValue}</p>);
+        parsedContent.push(<p class="space">{contentValue}</p>);
         break;
       case contentPieceType.Image:
         parsedContent.push(
