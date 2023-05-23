@@ -8,47 +8,17 @@ import BlogNavigationButtons from "../../islands/BlogNavigationButtons.tsx";
 import { PageProps } from "$fresh/server.ts";
 //? Parse content from a file into JSX
 import contentParser from "../../serivces/contentParser.tsx";
-
-//? Possible options of content
-enum contentPieceType {
-  Text = "text",
-  Image = "image",
-  LargeImage = "largeImage",
-  CodeBlock = "codeBlock",
-  InlineBlock = "inlineCode",
-}
-//? How content pieces are created
-type ContentPìece =
-  // Simple string types: Text (<p>), CodeBlock <div>, Image and LargeImage (both <img>)
-  | [
-    (
-      | contentPieceType.Text // Pure text paragraph
-      | contentPieceType.Image // URL string
-      | contentPieceType.LargeImage // URL string
-      | contentPieceType.CodeBlock // Self contained code block
-    ),
-    string, // All of the types above are simple strings
-  ]
-  // Array of strings type: InlineBlock (<p><span?></p>)
-  | [
-    contentPieceType.InlineBlock, // Paragraph with nested code spans
-    string[], // Array of strings. A string surrounded by trailing and
-    // leading ` will be converted to an inline code block
-  ];
-
-//? All the data a post is required to have
-interface CompletePost {
-  title: string;
-  content: ContentPìece[];
-  date: number;
-  author: string;
-}
+//? Import Post types
+import {
+  type CompletePost, // Post interface
+  contentPieceType, // Post section enum types
+} from "../../types/Post.ts";
 
 //? Exports a single Blog Post Summary
 export default function CompleteBlogPost(props: PageProps) {
   const { post } = props.params;
 
-  //? Mock post data
+  //? Post's content, before it's converted to JSX
   const currentPost: CompletePost = fetchPost(post);
 
   return (
