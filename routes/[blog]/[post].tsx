@@ -5,7 +5,7 @@ import { Base } from "../../components/Base.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
 import BlogNavigationButtons from "../../islands/BlogNavigationButtons.tsx";
 //? To know what is the current route
-import { PageProps } from "$fresh/server.ts";
+import { Handlers } from "$fresh/server.ts";
 //? Parse content from a file into JSX
 import contentParser from "../../services/contentParser.tsx";
 //? Fetch a post from source and return it as a CompletePost type
@@ -14,14 +14,24 @@ import fetchPost from "../../services/fetchPost.ts";
 import type {
   CompletePost, // Post interface
 } from "../../types/Post.ts";
+import FetchPostError from "../../types/FetchPostError.ts";
+
+//? Runs before the render function to fetch the post from the files, then
+//? pushes
+export const handler: Handlers = {
+  async GET(req, ctx) {
+    const blogpost = await fetchPost(ctx.params.post);
+    if (blogpost instanceof FetchPostError) {
+      return ctx.renderNotFound();
+    }
+    return ctx.render(blogpost);
+  },
+};
 
 //? Exports a single Blog Post Summary
-export default function CompleteBlogPost(props: PageProps) {
-  const { post } = props.params;
-
-  //? Post's content, before it's converted to JSX
-  const currentPost: CompletePost = fetchPost(post);
-
+export default function CompleteBlogPost(
+  { data: savedPost }: { data: CompletePost },
+) {
   return (
     <>
       <CustomHead
@@ -60,14 +70,18 @@ export default function CompleteBlogPost(props: PageProps) {
         {/* Complete Post */}
         <article class="center">
           {/* Centered heading */}
-          <h2 class="navigation-link blog-title">{currentPost.title}</h2>
+          <h2 class="navigation-link blog-title">{savedPost.title}</h2>
           {/* Post creation date */}
-          <p class="post-date">{new Date(currentPost.date).toLocaleString()}</p>
+          <p class="post-date">
+            {new Date(savedPost.date).toLocaleString()}
+          </p>
           {/* Post content, parsed and spread */}
-          <div class="justified">{...contentParser(currentPost.content)}</div>
+          <div class="justified">
+            {...contentParser(savedPost.content)}
+          </div>
           {/* Post author */}
           <footer class="blog-footer" style="margin-top: auto;">
-            {currentPost.author}
+            {savedPost.author}
           </footer>
         </article>
       </Base>
