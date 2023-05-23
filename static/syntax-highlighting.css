@@ -1,19 +1,24 @@
-/* Docs are outdated, but it's the least of our concerns:
-    https://deno.land/x/speed_highlight_js@1.1.11 */
+/* Docs (outdated): https://deno.land/x/speed_highlight_js@1.1.11 */
 
+/* Applies to all code blocks */
 [class*=shj-lang-] {
     white-space: pre-wrap;
-    margin: 1em 0;
     border-radius: 1em;
-    padding: 2em 1.5em;
-    background: white;
+    background: rgb(255, 246, 239);
+    /* light orange background */
     color: #112;
-    box-shadow: 0 0 0.5em #0001;
-    text-shadow: none;
-    font: 1rem Consolas, Courier New, Monaco, Andale Mono, Ubuntu Mono, monospace;
+    /* black default text color */
     line-height: 1.3em;
 }
 
+/* Add large margin and padding only to div elements with the highlight class */
+div[class*=shj-lang-] {
+    margin: 1em 0;
+    padding: 1em;
+    box-shadow: 0 0 1em 0.3em grey;
+}
+
+/* Formatting for inline code blocks <span> */
 .shj-inline {
     margin: 0;
     padding: 0 0.5em;
@@ -21,83 +26,54 @@
     border-radius: 0.5em
 }
 
-[class*=shj-lang-]::selection,
-[class*=shj-lang-] ::selection {
-    background: #bdf5
-}
-
-[class*=shj-lang-]>div {
-    display: flex;
-    overflow: auto
-}
-
-[class*=shj-lang-]>div :last-child {
-    flex: 1;
-    outline: none
-}
-
 .shj-syn-cmnt {
     font-style: italic
 }
 
+/* Keywords syntax highlighting */
 .shj-syn-err,
+/* error, keyword */
 .shj-syn-kwd {
     color: #e16
 }
 
 .shj-syn-num,
+/* syntax number, class */
 .shj-syn-class {
     color: #f60
 }
 
 .shj-numbers,
+/* number, comment */
 .shj-syn-cmnt {
     color: #999
 }
 
 .shj-syn-insert,
+/* strings */
 .shj-syn-str {
     color: #7d8
 }
 
 .shj-syn-bool {
+    /* boolean */
     color: #3bf
 }
 
 .shj-syn-type,
+/* types, mathematical operators */
 .shj-syn-oper {
     color: #5af
 }
 
 .shj-syn-section,
+/* functions */
 .shj-syn-func {
     color: #84f
 }
 
 .shj-syn-deleted,
+/* variables */
 .shj-syn-var {
     color: #f44
-}
-
-.shj-oneline {
-    padding: 1.2em 1em
-}
-
-.shj-lang-http.shj-oneline .shj-syn-kwd {
-    background: #25f;
-    color: #fff;
-    padding: 0.5em 7px;
-    border-radius: 0.5em
-}
-
-.shj-multiline.shj-mode-header {
-    padding: 2em
-}
-
-.shj-multiline.shj-mode-header:before {
-    color: #58f;
-    padding: 1em 2em;
-    background: #58f3;
-    border-radius: 0.5em;
-    margin-bottom: 2em
 }
