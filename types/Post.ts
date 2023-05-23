@@ -35,7 +35,7 @@ export type ContentPiece =
 export interface CompletePost {
   title: string;
   description: string;
-  link: "/how-to-create-theme-switcher-deno-fresh";
+  link: string;
   content: ContentPiece[];
   date: number;
   author: string;
