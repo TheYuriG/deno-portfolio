@@ -21,9 +21,15 @@ function contentParser(content: ContentPiece[]): JSX.Element[] {
 
     //? Use a switch-case to process the blog content for better performance
     switch (contentType) {
+      //? Create a medium sized heading
+      case contentPieceType.Heading:
+        parsedContent.push(<h2 class="subtopic">{contentValue}</h2>);
+        break;
+      //? Bland paragraph with no additional information
       case contentPieceType.Text:
         parsedContent.push(<p class="space">{contentValue}</p>);
         break;
+      //? Small image that doesn't fill the entire content width
       case contentPieceType.Image:
         parsedContent.push(
           <img
@@ -32,13 +38,17 @@ function contentParser(content: ContentPiece[]): JSX.Element[] {
           />,
         );
         break;
+      //? Large image that fills the entire content width
       case contentPieceType.LargeImage:
         parsedContent.push(
           <img src={contentValue} class="large-image" />,
         );
         break;
+      //? Paragraph with nested inline-code blocks
       case contentPieceType.InlineBlock: {
         const inlineCodeBlockContent: JSX.Element[] = [];
+        //? Loop through every array item to create the nested inline-code
+        //? blocks inside the overall paragraph
         for (
           let subContentIndex = 0;
           subContentIndex < contentValue.length;
@@ -61,6 +71,7 @@ function contentParser(content: ContentPiece[]): JSX.Element[] {
         );
         break;
       }
+      //? Large and independent code blocks
       case contentPieceType.CodeBlock:
         parsedContent.push(
           <div class="shj-lang-js">
@@ -68,6 +79,7 @@ function contentParser(content: ContentPiece[]): JSX.Element[] {
           </div>,
         );
         break;
+      //? Guard clause to avoid adding new types that aren't being rendered
       default: {
         const thisShouldNeverRun: never = contentType;
         throw new Error(thisShouldNeverRun);

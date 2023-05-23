@@ -28,3 +28,8 @@
 p.space {
     margin: 1em 0;
 }
+
+/* Size a subtopic header */
+h2.subtopic {
+    font-size: 2rem;
+}
