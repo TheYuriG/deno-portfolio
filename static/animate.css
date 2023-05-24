@@ -1,0 +1,37 @@
+/* Animate header items in sequence */
+.animate-to-left {
+    animation: 0.7s linear calc(var(--dur)*0.6s) to-left;
+    animation-fill-mode: both;
+}
+
+/* Start invisible right, fade in left */
+@keyframes to-left {
+    0% {
+        opacity: 0;
+        transform: translateX(3em);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animate menu items in sequence, after header items */
+.animate-to-right {
+    animation: 0.7s linear calc(var(--dur)*0.6s) to-right;
+    animation-fill-mode: both;
+}
+
+/* Start invisible left, fade in right */
+@keyframes to-right {
+    0% {
+        opacity: 0;
+        transform: translateX(-3em);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

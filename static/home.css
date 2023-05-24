@@ -1,77 +1,81 @@
 /* Animates the emoji that displays when hovering over my Persona name,
     as if it was greeting the user */
 .wave-emoji {
-	display: none;
-	animation: wave 0.3s linear infinite alternate;
+    display: none;
+    animation: wave 0.3s linear infinite alternate;
 }
 
 /* Makes the wave emoji visible when hovering my Persona name */
-.gradient-underline:hover + .wave-emoji {
-	display: inline-block;
+.gradient-underline:hover+.wave-emoji {
+    display: inline-block;
 }
 
 /* Animates the wave emoji to wave */
 /* 15 -15 0 -5 */
 @keyframes wave {
-	0% {
-		transform: translate(10%, 0%) rotate(60deg);
-	}
-	100% {
-		transform: translate(-10%, 10%) rotate(0deg);
-	}
+    0% {
+        transform: translate(10%, 0%) rotate(60deg);
+    }
+
+    100% {
+        transform: translate(-10%, 10%) rotate(0deg);
+    }
 }
 
 /* Creates an initial dotted underline below the link to Trophy Place */
 .pretty-link {
-	text-underline-offset: 0.2em;
-	text-decoration: underline dotted var(--neutral-color) 0.1em;
-	transition: text-underline-offset 600ms, text-decoration 600ms, color 600ms;
+    text-underline-offset: 0.2em;
+    text-decoration: underline dotted var(--neutral-color) 0.1em;
+    transition: text-underline-offset 600ms, text-decoration 600ms, color 600ms;
 }
 
 /* Animates the link to Trophy Place on hover to change color,
     underline style and underline offset */
 .pretty-link:hover {
-	text-decoration: underline solid var(--accent-color) 0.1em;
-	color: var(--accent-color);
-	text-underline-offset: 0.3em;
+    text-decoration: underline solid var(--accent-color) 0.1em;
+    color: var(--accent-color);
+    text-underline-offset: 0.3em;
 }
 
 /* Creates a blinking caret after the website name */
 .blinking-caret {
-	color: var(--neutral-color);
-	fill: currentColor;
-	position: relative;
-	height: 1.2em;
-	left: 0.1em;
-	top: -0.1em;
-	animation: 1.5s blink step-end infinite;
+    color: var(--neutral-color);
+    fill: currentColor;
+    position: relative;
+    height: 1.2em;
+    left: 0.1em;
+    top: -0.1em;
+    animation: 1.5s blink step-end infinite;
 }
 
 /* Animates the blinking caret */
 @keyframes blink {
-	from,
-	to {
-		opacity: 0;
-	}
-	50% {
-		opacity: 1;
-	}
+
+    from,
+    to {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
 }
 
 /* Set transitions for Navigation Menu links, space them out */
 .navigation-link {
-	transition: color 0.5s ease-in-out;
-	text-decoration-color: var(--neutral-color);
-	margin-bottom: 0.2em;
-	font-size: 3rem; /* 48px */
-	line-height: 1;
+    transition: color 0.5s ease-in-out;
+    text-decoration-color: var(--neutral-color);
+    margin-bottom: 0.2em;
+    font-size: 3rem;
+    /* 48px */
+    line-height: 1;
 }
 
 /* Assign color change and underline decoration on hover */
 .navigation-link:hover {
-	color: var(--accent-color);
-	text-decoration-line: underline;
-	text-decoration-skip-ink: none;
-	text-underline-offset: -0.2em;
-	text-decoration-thickness: 0.3em;
+    color: var(--accent-color);
+    text-decoration-line: underline;
+    text-decoration-skip-ink: none;
+    text-underline-offset: -0.2em;
+    text-decoration-thickness: 0.3em;
 }

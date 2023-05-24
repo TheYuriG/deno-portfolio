@@ -13,10 +13,10 @@ export default function Home() {
         description="A guide on how to create your own Theme Switcher using Deno and Fresh"
         link="https://www.theyurig.com/blog/how-create-theme-switcher-deno-fresh"
       >
-        <link rel="stylesheet" href="/home.css" />
         <link rel="stylesheet" href="/navigation-buttons.css" />
         <link rel="stylesheet" href="/content.css" />
         <link rel="stylesheet" href="/blog.css" />
+        <link rel="stylesheet" href="/gradient-underline.css" />
         <link rel="stylesheet" href="/syntax-highlighting.css" />
         {
           /* Syntax highlight for code. How can we do this better
@@ -53,6 +53,8 @@ export default function Home() {
           {/* Blog post opening image */}
           <img
             src={"https://web-dev.imgix.net/image/vS06HQ1YTsbMKSFTIPl2iogUQP73/skKcjSv1gMQRYk1AdEp7.png?auto=format&w=1600"}
+            alt="Sun and Moon montage with the words Light and Dark accompanying them"
+            title="To many people, themes are an important part of the User Experience"
             class="large-image"
           />
           {/* Introduction */}
@@ -69,26 +71,36 @@ export default function Home() {
             how I've managed to create my theme, what pitfalls I've faced, and
             how I've circumvented them.
           </p>
-          {/* Image introducing to next topic: Fresh */}
+          {/* Heading and image introducing to next topic: Fresh */}
+          <h2 class="subtopic">What is Fresh?</h2>
           <img
             src={"https://fresh.deno.dev/logo.svg?__frsh_c=3171c5e64510907f14fca32f4e0ba9a86bc5247c"}
+            alt="Fresh's logo"
+            title="Fresh, the official framework to build Web apps on Deno"
             class="small-image"
           />
-          <h2 class="subtopic">What is Fresh?</h2>
           {/* Explaining what is Fresh */}
           <p class="space">
-            Let's start from the top: what is Fresh? Fresh is the official
-            framework to create web apps using the Deno javascript runtime. It
-            features no build-time, zero-config, typescript support
-            out-of-the-box, JIT-rendering, and uses the Island design
-            architecture (more about this in a minute). The premise here is very
-            simple: Single Page Applications rely heavily on the Client's
-            devices to build the webpages and that will impact your performance.
-            Fresh, just like Remix (and to some extent Next), aims to move all
-            the rendering back to the server and serves exclusively static HTML
-            pages, hydrating any potential Javascript interactivity only when
-            necessary. While that's amazing for Lighthouse performance, it comes
-            with its own sets of drawbacks (more on that in the next post).
+            <a
+              class="gradient-underline pretty-link"
+              href="https://fresh.deno.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Fresh
+            </a>{" "}
+            is the official framework to create web apps using the Deno
+            javascript runtime. It features no build-time, zero-config,
+            typescript support out-of-the-box, JIT-rendering, and uses the
+            Island design architecture (more about this in a minute). The
+            premise here is very simple: Single Page Applications rely heavily
+            on the Client's devices to build the webpages and that will impact
+            your performance. Fresh, just like Remix (and to some extent Next),
+            aims to move all the rendering back to the server and serves
+            exclusively static HTML pages, hydrating any potential Javascript
+            interactivity only when necessary. While that's amazing for
+            Lighthouse performance, it comes with its own sets of drawbacks
+            (more on that in the next post).
           </p>
           {/* Further explanation about Fresh */}
           <p class="space">
@@ -99,7 +111,7 @@ export default function Home() {
             projects.
           </p>
           {/* Main content start */}
-          <h2 class="subtopic">Creating your first theme</h2>
+          <h2 class="subtopic">Creating A Theme Switcher</h2>
           <p class="space">Let's create a very simple Theme Switcher:</p>
           {/* Code block with initial implementation */}
           <div class="shj-lang-js">
@@ -172,7 +184,8 @@ export default function ThemeSwitcher() {
           </p>
           {/* Improved implementation with localStorage */}
           <div class="shj-lang-js">
-            {`import { useEffect, useRef, useState } from "preact/hooks";
+            {`// /islands/ThemeSwitcher.tsx (updated)
+import { useEffect, useRef, useState } from "preact/hooks";
 ...
 const isInitialMount = useRef(true);
 
@@ -192,8 +205,23 @@ useEffect(() => {
 ...`}
           </div>
           {/* Second code block explanation */}
+          <p class="space">
+            We have added a reference to the{" "}
+            <code class="shj-lang-js">
+              useEffect
+            </code>{" "}
+            to avoid having it saving the current{" "}
+            <code class="shj-lang-js">
+              theme
+            </code>{" "}
+            to{" "}
+            <code class="shj-lang-js">
+              localStorage
+            </code>{" "}
+            on the first render.
+          </p>
           <p>
-            What the{"  "}
+            What the{" "}
             <code class="shj-lang-js">
               useEffect()
             </code>{" "}
@@ -230,7 +258,10 @@ useEffect(() => {
             <code class="shj-lang-js">
               theme
             </code>{" "}
-            equal to localStorage's{" "}
+            equal to{" "}
+            <code class="shj-lang-js">
+              localStorage
+            </code>'s{" "}
             <code class="shj-lang-js">
               savedTheme
             </code>{" "}
@@ -250,7 +281,11 @@ useEffect(() => {
           </p>
           {/* Explanation part 3 */}
           <p>
-            3- (Optional) If the theme is switched, it will skip both{"  "}
+            3- (Optional) If the{" "}
+            <code class="shj-lang-js">
+              theme
+            </code>{" "}
+            is updated, it will skip both{" "}
             <code class="shj-lang-js">
               if
             </code>{" "}
@@ -260,10 +295,31 @@ useEffect(() => {
             </code>
             , and applies it.
           </p>
-          {/* Conclusion */}
+          {/* Linking to repository version */}
           <p class="space">
-            So there you have it, a theme switcher built with Preact and Fresh.
-            But can we make this better?
+            This website uses an improved version of this Theme Switcher, which
+            you can check the source code for{" "}
+            <a
+              class="gradient-underline pretty-link"
+              href="https://github.com/TheYuriG/deno-portfolio/blob/0051fc7369f714a7562d303f760e148efc753ea4/islands/ThemeSwitcher.tsx"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              right here
+            </a>.
+          </p>
+          {/* Conclusion and link to next post */}
+          <p class="space">
+            So there you have it, a Theme Switcher built with Preact and Fresh.
+            If you have been following along, you might have noticed a few
+            issues with it, like flickering on first load. Let's work on those
+            on the{" "}
+            <a
+              class="gradient-underline pretty-link"
+              href="/how-remove-theme-flickering-deno-fresh"
+            >
+              next blog post
+            </a>.
           </p>
           {/* Post author */}
           <footer class="blog-footer" style="margin-top: auto;">

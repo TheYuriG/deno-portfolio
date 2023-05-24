@@ -13,8 +13,8 @@ export default function Home() {
         description="Tech stack used to create this website."
         link="https://www.theyurig.com/this"
       >
-        <link rel="stylesheet" href="/content.css" />
         <link rel="stylesheet" href="/navigation-buttons.css" />
+        <link rel="stylesheet" href="/content.css" />
         <link rel="stylesheet" href="/this.css" />
         <link rel="stylesheet" href="/gradient-underline.css" />
       </CustomHead>
@@ -45,7 +45,6 @@ export default function Home() {
               class="gradient-underline"
               href="/blog"
               target="_blank"
-              rel="noopener noreferrer"
             >
               thoughts
             </a>{" "}
@@ -54,7 +53,6 @@ export default function Home() {
               class="gradient-underline"
               href="/toys"
               target="_blank"
-              rel="noopener noreferrer"
             >
               creative expression
             </a>

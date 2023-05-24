@@ -7,8 +7,8 @@
 .stars-wrapper {
     position: absolute;
     pointer-events: none;
-    width: 100vw;
-    height: 100vh;
+    width: 100dvw;
+    height: 100dvh;
     background: var(--base-color);
     overflow: hidden;
 }
