@@ -30,10 +30,6 @@ export default function Home() {
           {...createdPosts.map((post) => (
             <BlogPostSummary {...post}></BlogPostSummary>
           ))}
-          <footer class="blog-footer">
-            Disclaimer: I haven't created any of these posts myself, just using
-            them as mock data to test the layout.
-          </footer>
         </section>
       </Base>
     </>
