@@ -65,8 +65,8 @@ export default function Home() {
           {/* Presenting the problem */}
           <p class="space">
             However, if you have tried to do this on your own before, you might
-            have ran into a problem... or many. In this blog post, I'll explain
-            how I've managed to create my theme, what pitfalls I've faced and
+            have run into a problem... or many. In this blog post, I'll explain
+            how I've managed to create my theme, what pitfalls I've faced, and
             how I've circumvented them.
           </p>
           {/* Image introducing to next topic: Fresh */}
@@ -74,20 +74,21 @@ export default function Home() {
             src={"https://fresh.deno.dev/logo.svg?__frsh_c=3171c5e64510907f14fca32f4e0ba9a86bc5247c"}
             class="small-image"
           />
+          <h2 class="subtopic">What is Fresh?</h2>
           {/* Explaining what is Fresh */}
           <p class="space">
             Let's start from the top: what is Fresh? Fresh is the official
             framework to create web apps using the Deno javascript runtime. It
-            features no build-time, zero config, typescript support
-            out-of-the-box, JIT-rendering and uses the Island design
+            features no build-time, zero-config, typescript support
+            out-of-the-box, JIT-rendering, and uses the Island design
             architecture (more about this in a minute). The premise here is very
-            simple: Single Page Applications rely really heavily on the Client's
+            simple: Single Page Applications rely heavily on the Client's
             devices to build the webpages and that will impact your performance.
             Fresh, just like Remix (and to some extent Next), aims to move all
             the rendering back to the server and serves exclusively static HTML
             pages, hydrating any potential Javascript interactivity only when
-            absolutely necessary. While that's amazing for Lighthouse
-            performance, it comes with its own sets of drawbacks.
+            necessary. While that's amazing for Lighthouse performance, it comes
+            with its own sets of drawbacks (more on that in the next post).
           </p>
           {/* Further explanation about Fresh */}
           <p class="space">
@@ -167,7 +168,7 @@ export default function ThemeSwitcher() {
             <code class="shj-lang-js">
               --accent-color
             </code>{" "}
-            with the values for your own theme.
+            with the values for your theme.
           </p>
           {/* Improved implementation with localStorage */}
           <div class="shj-lang-js">
@@ -208,7 +209,7 @@ useEffect(() => {
             <code class="shj-lang-js">
               null
             </code>
-            ) and sets the current theme as the{" "}
+            ), and sets the current theme as the{" "}
             <code class="shj-lang-js">
               savedTheme
             </code>
@@ -220,7 +221,8 @@ useEffect(() => {
             <code class="shj-lang-js">
               theme
             </code>{" "}
-            as dependency so not returning here would cause an infinite loop!).
+            as a dependency so not returning here would cause an infinite
+            loop!).
           </p>
           {/* Explanation part 2 */}
           <p>
@@ -232,7 +234,7 @@ useEffect(() => {
             <code class="shj-lang-js">
               savedTheme
             </code>{" "}
-            is the same as{" "}
+            is the same as the{" "}
             <code class="shj-lang-js">
               theme
             </code>
@@ -244,7 +246,7 @@ useEffect(() => {
             <code class="shj-lang-js">
               isInitialMount
             </code>{" "}
-            value and stop
+            value and stop.
           </p>
           {/* Explanation part 3 */}
           <p>
@@ -252,15 +254,15 @@ useEffect(() => {
             <code class="shj-lang-js">
               if
             </code>{" "}
-            checks, save the theme to
+            checks, save the theme to{" "}
             <code class="shj-lang-js">
               localStorage
-            </code>{" "}
-            and applies it.
+            </code>
+            , and applies it.
           </p>
           {/* Conclusion */}
           <p class="space">
-            So there you have it, a theme switcher build with Preact and Fresh.
+            So there you have it, a theme switcher built with Preact and Fresh.
             But can we make this better?
           </p>
           {/* Post author */}
