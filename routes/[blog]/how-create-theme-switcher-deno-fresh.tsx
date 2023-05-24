@@ -111,7 +111,7 @@ export default function Home() {
             projects.
           </p>
           {/* Main content start */}
-          <h2 class="subtopic">Creating your first theme</h2>
+          <h2 class="subtopic">Creating A Theme Switcher</h2>
           <p class="space">Let's create a very simple Theme Switcher:</p>
           {/* Code block with initial implementation */}
           <div class="shj-lang-js">
@@ -184,7 +184,8 @@ export default function ThemeSwitcher() {
           </p>
           {/* Improved implementation with localStorage */}
           <div class="shj-lang-js">
-            {`import { useEffect, useRef, useState } from "preact/hooks";
+            {`// /islands/ThemeSwitcher.tsx (updated)
+import { useEffect, useRef, useState } from "preact/hooks";
 ...
 const isInitialMount = useRef(true);
 
@@ -204,8 +205,23 @@ useEffect(() => {
 ...`}
           </div>
           {/* Second code block explanation */}
+          <p class="space">
+            We have added a reference to the{" "}
+            <code class="shj-lang-js">
+              useEffect
+            </code>{" "}
+            to avoid having it saving the current{" "}
+            <code class="shj-lang-js">
+              theme
+            </code>{" "}
+            to{" "}
+            <code class="shj-lang-js">
+              localStorage
+            </code>{" "}
+            on the first render.
+          </p>
           <p>
-            What the{"  "}
+            What the{" "}
             <code class="shj-lang-js">
               useEffect()
             </code>{" "}
@@ -242,7 +258,10 @@ useEffect(() => {
             <code class="shj-lang-js">
               theme
             </code>{" "}
-            equal to localStorage's{" "}
+            equal to{" "}
+            <code class="shj-lang-js">
+              localStorage
+            </code>'s{" "}
             <code class="shj-lang-js">
               savedTheme
             </code>{" "}
@@ -262,7 +281,11 @@ useEffect(() => {
           </p>
           {/* Explanation part 3 */}
           <p>
-            3- (Optional) If the theme is switched, it will skip both{"  "}
+            3- (Optional) If the{" "}
+            <code class="shj-lang-js">
+              theme
+            </code>{" "}
+            is updated, it will skip both{" "}
             <code class="shj-lang-js">
               if
             </code>{" "}
@@ -272,9 +295,22 @@ useEffect(() => {
             </code>
             , and applies it.
           </p>
-          {/* Conclusion */}
+          {/* Linking to repository version */}
           <p class="space">
-            So there you have it, a theme switcher built with Preact and Fresh.
+            This website uses an improved version of this Theme Switcher, which
+            you can check the source code for{" "}
+            <a
+              class="gradient-underline pretty-link"
+              href="https://github.com/TheYuriG/deno-portfolio/blob/0051fc7369f714a7562d303f760e148efc753ea4/islands/ThemeSwitcher.tsx"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              right here
+            </a>.
+          </p>
+          {/* Conclusion and link to next post */}
+          <p class="space">
+            So there you have it, a Theme Switcher built with Preact and Fresh.
             If you have been following along, you might have noticed a few
             issues with it, like flickering on first load. Let's work on those
             on the{" "}
