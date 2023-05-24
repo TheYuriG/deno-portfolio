@@ -24,12 +24,18 @@
     object-fit: cover;
 }
 
+/* Align text to the left */
+p {
+    align-self: self-start;
+}
+
 /* Add some space around the blog post paragraphs */
 p.space {
-    margin: 1em 0;
+    margin: 0.5em 0;
 }
 
 /* Size a subtopic header */
 h2.subtopic {
     font-size: 2rem;
+    font-family: 'Alfa Slab One', cursive;
 }

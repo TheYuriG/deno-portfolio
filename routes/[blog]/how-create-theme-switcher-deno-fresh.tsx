@@ -244,7 +244,7 @@ useEffect(() => {
             <code class="shj-lang-js">
               isInitialMount
             </code>{" "}
-            value and stop
+            value and stop.
           </p>
           {/* Explanation part 3 */}
           <p>
