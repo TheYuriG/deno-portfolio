@@ -9,9 +9,9 @@ export default function Home() {
   return (
     <>
       <CustomHead
-        title="How to Create a Theme Switcher with Fresh"
-        description="A guide on how to create your own Theme Switcher using Deno and Fresh"
-        link="https://www.theyurig.com/blog/how-create-theme-switcher-deno-fresh"
+        title="How to stop Theme flickering in Fresh"
+        description="A guide on how to make your Theme Switcher to no longer flicker when the page loads."
+        link="https://www.theyurig.com/blog/stopping-theme-flickering-deno-fresh"
       >
         <link rel="stylesheet" href="/navigation-buttons.css" />
         <link rel="stylesheet" href="/content.css" />
