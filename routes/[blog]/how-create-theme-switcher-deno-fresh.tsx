@@ -59,17 +59,17 @@ export default function Home() {
           />
           {/* Introduction */}
           <p class="space">
-            Being able to customize your Theme is a huge user experience upgrade
-            to any website. While some websites use a default Dark Theme, the
-            majority of the internet still sticks to creating content in Light
-            Mode as default (and sometimes the only option).
+            Being able to customize your Theme can be a huge user experience
+            upgrade to any website. While some websites use a default Dark
+            Theme, the majority of the internet still sticks to creating content
+            in Light Mode as default (and sometimes the only option).
           </p>
           {/* Presenting the problem */}
           <p class="space">
-            However, if you have tried to do this on your own before, you might
-            have run into a problem... or many. In this blog post, I'll explain
-            how I've managed to create my theme, what pitfalls I've faced, and
-            how I've circumvented them.
+            However, if you have tried to do this on your own using Fresh
+            before, you might have run into a problem... or many. In this blog
+            post, I'll explain how I've created my theme, what issues I've
+            faced, and how I've solved them.
           </p>
           {/* Heading and image introducing to next topic: Fresh */}
           <h2 class="subtopic">What is Fresh?</h2>
@@ -89,26 +89,58 @@ export default function Home() {
             >
               Fresh
             </a>{" "}
-            is the official framework to create web apps using the Deno
-            javascript runtime. It features no build-time, zero-config,
-            typescript support out-of-the-box, JIT-rendering, and uses the
-            Island design architecture (more about this in a minute). The
-            premise here is very simple: Single Page Applications rely heavily
-            on the Client's devices to build the webpages and that will impact
-            your performance. Fresh, just like Remix (and to some extent Next),
-            aims to move all the rendering back to the server and serves
-            exclusively static HTML pages, hydrating any potential Javascript
-            interactivity only when necessary. While that's amazing for
-            Lighthouse performance, it comes with its own sets of drawbacks
-            (more on that in the next post).
+            is the official framework to create web apps using Deno's Javascript
+            runtime. It features no build step, zero-config, Typescript support
+            out-of-the-box, JIT-rendering, and uses the Island design
+            architecture (more about this in a minute). The premise here is very
+            simple: Single Page Applications rely heavily on the client's
+            devices to build the content of webpages and that creates overhead
+            that impacts performance. Fresh, just like{" "}
+            <a
+              class="gradient-underline pretty-link"
+              href="https://remix.run/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Remix
+            </a>{" "}
+            (and to some extent{" "}
+            <a
+              class="gradient-underline pretty-link"
+              href="https://nextjs.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Next.JS
+            </a>), aims to move all the rendering back to the server, serving
+            exclusively static HTML pages, hydrating any interactivity only
+            when/if necessary. While that's amazing for Lighthouse performance,
+            it comes with its own sets of drawbacks (more on that in the next
+            post).
           </p>
           {/* Further explanation about Fresh */}
           <p class="space">
             Fresh uses Preact under the hood to compile the JSX/TSX files into
-            static HTML that gets sent to clients. If you have any experience
-            with React, SolidJS or Remix, you shouldn't have any trouble
-            adapting, specially if you have experience building React+NextJS
-            projects.
+            static HTML that is then sent to the client. If you have experience
+            with{" "}
+            <a
+              class="gradient-underline pretty-link"
+              href="https://react.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              React
+            </a>{" "}
+            or{" "}
+            <a
+              class="gradient-underline pretty-link"
+              href="https://www.solidjs.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Solid
+            </a>, you shouldn't have any trouble adapting, especially if you
+            have experience building Full Stack projects.
           </p>
           {/* Main content start */}
           <h2 class="subtopic">Creating A Theme Switcher</h2>
@@ -208,7 +240,7 @@ useEffect(() => {
           <p class="space">
             We have added a reference to the{" "}
             <code class="shj-lang-js">
-              useEffect
+              useEffect()
             </code>{" "}
             to avoid having it saving the current{" "}
             <code class="shj-lang-js">
@@ -297,8 +329,8 @@ useEffect(() => {
           </p>
           {/* Linking to repository version */}
           <p class="space">
-            This website uses an improved version of this Theme Switcher, which
-            you can check the source code for{" "}
+            This website uses an improved version of the same Theme Switcher
+            created in this post, which you can check the source code for{" "}
             <a
               class="gradient-underline pretty-link"
               href="https://github.com/TheYuriG/deno-portfolio/blob/0051fc7369f714a7562d303f760e148efc753ea4/islands/ThemeSwitcher.tsx"
@@ -309,14 +341,15 @@ useEffect(() => {
             </a>.
           </p>
           {/* Conclusion and link to next post */}
+          <h2 className="subtopic">What's next?</h2>
           <p class="space">
-            So there you have it, a Theme Switcher built with Preact and Fresh.
             If you have been following along, you might have noticed a few
-            issues with it, like flickering on first load. Let's work on those
-            on the{" "}
+            issues with it, like flickering on first load or the inability to
+            check for user preferences. Let's address those problems on those on
+            the{" "}
             <a
               class="gradient-underline pretty-link"
-              href="/how-remove-theme-flickering-deno-fresh"
+              href="/blog/stopping-theme-flickering-deno-fresh"
             >
               next blog post
             </a>.
