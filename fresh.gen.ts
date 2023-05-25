@@ -12,8 +12,9 @@ import * as $5 from "./routes/_404.tsx";
 import * as $6 from "./routes/api/joke.ts";
 import * as $7 from "./routes/blog.tsx";
 import * as $8 from "./routes/index.tsx";
-import * as $9 from "./routes/toys.tsx";
-import * as $10 from "./routes/what-is-this.tsx";
+import * as $9 from "./routes/me.tsx";
+import * as $10 from "./routes/toys.tsx";
+import * as $11 from "./routes/what-is-this.tsx";
 import * as $$0 from "./islands/BlogNavigationButtons.tsx";
 import * as $$1 from "./islands/InsanitySection.tsx";
 import * as $$2 from "./islands/StyledButton.tsx";
@@ -30,8 +31,9 @@ const manifest = {
     "./routes/api/joke.ts": $6,
     "./routes/blog.tsx": $7,
     "./routes/index.tsx": $8,
-    "./routes/toys.tsx": $9,
-    "./routes/what-is-this.tsx": $10,
+    "./routes/me.tsx": $9,
+    "./routes/toys.tsx": $10,
+    "./routes/what-is-this.tsx": $11,
   },
   islands: {
     "./islands/BlogNavigationButtons.tsx": $$0,
