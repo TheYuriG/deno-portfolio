@@ -341,7 +341,7 @@ useEffect(() => {
             </a>.
           </p>
           {/* Conclusion and link to next post */}
-          <h2 className="subtopic">What's next?</h2>
+          <h2 class="subtopic">What's next?</h2>
           <p class="space">
             If you have been following along, you might have noticed a few
             issues with it, like flickering on first load or the inability to

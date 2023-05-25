@@ -1,0 +1,223 @@
+//? Create blog content inside Base component
+import { Base } from "../components/Base.tsx";
+//? Head component with all Meta tags pre-set
+import { CustomHead } from "../components/CustomHead.tsx";
+//? Navigation Buttons to go back to the previous page or to the next article
+import BlogNavigationButtons from "../islands/BlogNavigationButtons.tsx";
+
+export default function Home() {
+  return (
+    <>
+      <CustomHead
+        title="Who am I?"
+        description="Some details on who is the person behind TheYuriG."
+        link="https://www.theyurig.com/me"
+      >
+        <link rel="stylesheet" href="/navigation-buttons.css" />
+        <link rel="stylesheet" href="/content.css" />
+        <link rel="stylesheet" href="/blog.css" />
+        <link rel="stylesheet" href="/gradient-underline.css" />
+      </CustomHead>
+      {/* Base page layout with theme switching and footer outside of accent box */}
+      <Base>
+        <BlogNavigationButtons />
+        <article class="center">
+          <h1 class="blog-title">Who is TheYuriG?</h1>
+          <img
+            src="https://media.discordapp.net/attachments/576538316296421399/1111343977736712232/23112022-IMG_0537.jpg?width=884&height=554"
+            alt="A picture of Yuri, in a very sandy vacation."
+            class="large-image"
+          />
+
+          <p class="space">
+            I'm Yuri Gabriel, also known online as{" "}
+            <a
+              class="gradient-underline pretty-link"
+              href="https://github.com/TheYuriG"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              TheYuriG
+            </a>. I used to be a{" "}
+            <a
+              class="gradient-underline pretty-link"
+              href="https://trophy.place/user/TheYuriG"
+              target="_blank"
+            >
+              hardcore gamer
+            </a>, but now obsessed with writing code and creating pretty things
+            to look at and fun to use.
+          </p>
+          <p class="space">
+            For some good portion of the most last decade, I was using the
+            majority of my free time earning some of the hardest trophies out
+            there on PSN, never shying away from the next hard game to complete.
+          </p>
+          <p class="space">
+            Trophy hunting, while fun, often times can feel like another job.
+            You often feel like you have to track so many moving parts at once
+            to make sure you don't miss anything and you stay efficient,
+            otherwise you either never complete your backlog, or tank your
+            average completion or end up adding some unobtainable trophies to
+            your account.
+          </p>
+          <h2 class="subtopic">Gym</h2>
+          <p class="space">
+            I'm an absolute gym rat. It's part of my routine to write code and
+            {" "}
+            <a
+              class="gradient-underline pretty-link"
+              href="https://youtu.be/4UlgXIL0-3g?t=10"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              lift heavy ass circles
+            </a>
+            , almost every single day. Rest days are really important... for
+            people settling to{" "}
+            <a
+              class="gradient-underline pretty-link"
+              href="https://youtu.be/PNO2yxuzm04?t=76"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              be smaller
+            </a>{" "}
+            than they could be.
+          </p>
+          <p class="space">
+            I track my physical/body progress every week on Instagram and it has
+            been inspiring for some of my peers to watch my progress, but I
+            honestly have no desire of becoming a celebrity. It's so easy to
+            waste so much good useful time on social media and I feel far more
+            productive on days where I barely look at my phone.
+          </p>
+          <p class="space">
+            I've had people asking me what is my secret for changing so much and
+            the truth is that there is no secret. If you just eat properly,
+            sleep enough, and push your limit as often as possible (with proper
+            form), you will grow bigger. Your muscles simply don't know that
+            they are being forced so hard because you are a masochist, they just
+            assume you are going through extreme survival scenarios and more
+            muscle is needed for increased odds at your survival. It's just that
+            simple. When in doubt, simply{" "}
+            <a
+              class="gradient-underline pretty-link"
+              href="https://www.youtube.com/watch?v=bGhBbpObA7s"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              go jim now
+            </a>!
+          </p>
+
+          <h2 class="subtopic">Programming</h2>
+          <p class="space">
+            In late 2017, I felt like trophy hunting would be greatly improved
+            if we could get a way to link and display our trophies on Discord,
+            but no bots out there offered this kind of data.
+          </p>
+          <p class="space">
+            After not really getting anywhere with it, in March 2018 I decided
+            that if no one was willing to create a Discord bot for trophy
+            hunting, then I was going to need to{" "}
+            <a
+              class="gradient-underline pretty-link"
+              href="https://www.youtube.com/watch?v=EzWNBmjyv7Y"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              do it myself
+            </a>. And so I did, I learned how to write Javascript and started
+            Yura.
+          </p>
+          <img
+            src="https://images-ext-2.discordapp.net/external/MrGU7E1Vw1ks2LSlDu4fiYOrT8wgVB4fCfoxRii6SrE/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/555126737038737408/a61db2e4c1f0a92cacee54f7b1aea624.png?width=554&height=554"
+            alt="Yura's latest avatar"
+            class="small-image"
+          />
+          <p class="space">
+            I've kept maintainining and adding new features to Yura for several
+            years, before it ultimately collapsed when its data source killed
+            all external access by implementing a stronger DDoS protection
+            through Cloudflare.
+          </p>
+          <p class="space">
+            Myself and a few other members had been asking for several new
+            features for years, but ultimately all of our feedback fell in deaf
+            ears. It couldn't go on like that anymore, something had to be done
+            about it.
+          </p>
+          <h2 class="subtopic">Trophy Place</h2>
+          <p class="space">
+            Myself and{" "}
+            <a
+              class="gradient-underline pretty-link"
+              href="https://github.com/Makowo"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Makowo
+            </a>{" "}
+            decided to start our own trophy hunting website that would end up
+            addressing the majority of the community requests and complaints.
+            After all, who knows better what the trophy hunting community wants,
+            if not the community itself?
+          </p>
+          <p class="space">
+            Since I've already had some experience building the backend, I chose
+            to manage all of the infrastructure for{" "}
+            <a
+              class="gradient-underline pretty-link"
+              href="https://trophy.place/"
+              target="_blank"
+            >
+              Trophy Place
+            </a>{" "}
+            while Makowo was responsible for the frontend.
+          </p>
+          <p class="space">
+            Our chosen tech stack is{" "}
+            <a
+              class="gradient-underline pretty-link"
+              href="https://vuejs.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Vue 3
+            </a>{" "}
+            +{" "}
+            <a
+              class="gradient-underline pretty-link"
+              href="https://nuxt.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Nuxt 3
+            </a>{" "}
+            for the frontend, with{" "}
+            <a
+              class="gradient-underline pretty-link"
+              href="https://expressjs.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Express
+            </a>{" "}
+            for the backend for our MVP. Once we go into actual production, I'll
+            rewrite the backend using{" "}
+            <a
+              class="gradient-underline pretty-link"
+              href="https://github.com/oakserver/oak"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Oak
+            </a>{" "}
+            so that I can write exclusively Typescript code.
+          </p>
+        </article>
+      </Base>
+    </>
+  );
+}

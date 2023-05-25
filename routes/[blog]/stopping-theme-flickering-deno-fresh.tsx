@@ -178,8 +178,8 @@ export default function Home() {
           </p>
           {/* Script tag warning */}
           {/*  */}
-          <h2 className="subtopic">Adding a script file to every response</h2>
-          <p className="space">
+          <h2 class="subtopic">Adding a script file to every response</h2>
+          <p class="space">
             Be very careful about the <code class="shj-lang-js">script</code>
             {" "}
             tags that you import on your project. Not knowing what you are doing
@@ -196,7 +196,7 @@ export default function Home() {
             code that suggests using these and, if in doubt, don't use them in
             your project!
           </p>
-          <p className="space">
+          <p class="space">
             In our case, our implementation is incredibly simple. We just add a
             small script to the response's{" "}
             <code class="shj-lang-js">&lt;head&gt;</code>{" "}
@@ -220,7 +220,7 @@ export default function Home() {
     );
 }`}
           </div>
-          <p className="space">And inside the script file:</p>
+          <p class="space">And inside the script file:</p>
           <div class="shj-lang-js">
             {`// /static/themeSwitcher.js
 const selectedTheme = localStorage.getItem("theme");
@@ -241,7 +241,7 @@ if (window.showDarkMode === true) {
     cssRoot.style.setProperty("--accent-color", "rgb(220 38 38)");
 }`}
           </div>
-          <p className="space">In order:</p>
+          <p class="space">In order:</p>
           <ol style="align-self: start;">
             <li>
               1 &#183; Check if there is a theme already saved on{" "}
@@ -270,7 +270,7 @@ if (window.showDarkMode === true) {
               .
             </li>
           </ol>
-          <p className="space">
+          <p class="space">
             Now all we gotta do is update our component and we are done!
           </p>
           <div class="shj-lang-js">
@@ -290,7 +290,7 @@ useEffect(() => {
 }
 ...`}
           </div>
-          <p className="space">
+          <p class="space">
             Because{" "}
             <code class="shj-lang-js">
               window.showDarkMode
@@ -305,21 +305,21 @@ useEffect(() => {
             bit too, leaving the initial check to only validate if it's the
             first run and skip when it is.
           </p>
-          <p className="space">
+          <p class="space">
             So there you have it, a Theme Switcher that sets the correct theme,
             acknowledges the user's preferences, and doesn't flicker on the
             initial load.
           </p>
           {/* Alternative options to this */}
-          <h2 className="subtopic">
+          <h2 class="subtopic">
             Alternatives to using script tags
           </h2>
-          <p className="space">
+          <p class="space">
             What other ways could you possibly implement a Theme Switcher
             without needing to script files on every request?
           </p>
           {/* Route based */}
-          <p className="space">
+          <p class="space">
             One of the options would be to use route-based theming. You could
             create your entire website nested in either a{" "}
             <code class="shj-lang-js">
@@ -341,7 +341,7 @@ useEffect(() => {
             could implement.
           </p>
           {/* App router, but maybe just use NextJS instead? */}
-          <p className="space">
+          <p class="space">
             Another option would be to not save the theme to{" "}
             <code class="shj-lang-js">
               localStorage
