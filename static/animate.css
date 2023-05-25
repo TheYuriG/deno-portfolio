@@ -1,6 +1,6 @@
 /* Animate header items in sequence */
 .animate-to-left {
-    animation: 0.7s linear calc(var(--dur)*0.6s) to-left;
+    animation: 0.5s linear calc(var(--dur)*0.4s) to-left;
     animation-fill-mode: both;
 }
 
@@ -19,7 +19,7 @@
 
 /* Animate menu items in sequence, after header items */
 .animate-to-right {
-    animation: 0.7s linear calc(var(--dur)*0.6s) to-right;
+    animation: 0.5s linear calc(var(--dur)*0.4s) to-right;
     animation-fill-mode: both;
 }
 

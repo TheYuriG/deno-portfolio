@@ -15,14 +15,9 @@ export default function ThemeSwitcher() {
 
   //? Manages the theme state
   const [theme, setTheme] = useState(
-    // @ts-ignore This type initially unset, so we start with an empty block
-    window.showDarkMode === undefined
-      ? ""
-      // @ts-ignore When the type gets set by the script in
-      // /routes/_app.tsx, we can then set what will be the button displayed
-      : window.showDarkMode === true
-      ? "Dark"
-      : "Light",
+    // @ts-ignore When the type gets set by the script in
+    // /routes/_app.tsx, we can then set what will be the button displayed
+    window.showDarkMode === true ? "Dark" : "Light",
   );
 
   //? Saves switched theme on change, but not on first load
