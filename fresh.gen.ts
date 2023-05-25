@@ -5,14 +5,15 @@
 import config from "./deno.json" assert { type: "json" };
 import * as $0 from "./routes/[blog]/[post].tsx";
 import * as $1 from "./routes/[blog]/how-create-theme-switcher-deno-fresh.tsx";
-import * as $2 from "./routes/[toys]/insanity.tsx";
-import * as $3 from "./routes/[toys]/spinners.tsx";
-import * as $4 from "./routes/_404.tsx";
-import * as $5 from "./routes/api/joke.ts";
-import * as $6 from "./routes/blog.tsx";
-import * as $7 from "./routes/index.tsx";
-import * as $8 from "./routes/toys.tsx";
-import * as $9 from "./routes/what-is-this.tsx";
+import * as $2 from "./routes/[blog]/stopping-theme-flickering-deno-fresh.tsx";
+import * as $3 from "./routes/[toys]/insanity.tsx";
+import * as $4 from "./routes/[toys]/spinners.tsx";
+import * as $5 from "./routes/_404.tsx";
+import * as $6 from "./routes/api/joke.ts";
+import * as $7 from "./routes/blog.tsx";
+import * as $8 from "./routes/index.tsx";
+import * as $9 from "./routes/toys.tsx";
+import * as $10 from "./routes/what-is-this.tsx";
 import * as $$0 from "./islands/BlogNavigationButtons.tsx";
 import * as $$1 from "./islands/InsanitySection.tsx";
 import * as $$2 from "./islands/StyledButton.tsx";
@@ -22,14 +23,15 @@ const manifest = {
   routes: {
     "./routes/[blog]/[post].tsx": $0,
     "./routes/[blog]/how-create-theme-switcher-deno-fresh.tsx": $1,
-    "./routes/[toys]/insanity.tsx": $2,
-    "./routes/[toys]/spinners.tsx": $3,
-    "./routes/_404.tsx": $4,
-    "./routes/api/joke.ts": $5,
-    "./routes/blog.tsx": $6,
-    "./routes/index.tsx": $7,
-    "./routes/toys.tsx": $8,
-    "./routes/what-is-this.tsx": $9,
+    "./routes/[blog]/stopping-theme-flickering-deno-fresh.tsx": $2,
+    "./routes/[toys]/insanity.tsx": $3,
+    "./routes/[toys]/spinners.tsx": $4,
+    "./routes/_404.tsx": $5,
+    "./routes/api/joke.ts": $6,
+    "./routes/blog.tsx": $7,
+    "./routes/index.tsx": $8,
+    "./routes/toys.tsx": $9,
+    "./routes/what-is-this.tsx": $10,
   },
   islands: {
     "./islands/BlogNavigationButtons.tsx": $$0,
