@@ -4,6 +4,8 @@ import { CustomHead } from "../../components/CustomHead.tsx";
 import { Base } from "../../components/Base.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
 import BlogNavigationButtons from "../../islands/BlogNavigationButtons.tsx";
+//? A HTML Link component to pre-format links and reduce boiletplate
+import { GradientLink } from "../../components/GradientLink.tsx";
 
 export default function Home() {
   return (
@@ -81,14 +83,12 @@ export default function Home() {
           />
           {/* Explaining what is Fresh */}
           <p class="space">
-            <a
-              class="gradient-underline pretty-link"
-              href="https://fresh.deno.dev/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Fresh
-            </a>{" "}
+            <GradientLink
+              link="https://fresh.deno.dev/"
+              title="It's dripping!"
+              content="Fresh"
+              customRel="noopener noreferrer"
+            />{" "}
             is the official framework to create web apps using Deno's Javascript
             runtime. It features no build step, zero-config, Typescript support
             out-of-the-box, JIT-rendering, and uses the Island design
@@ -96,23 +96,20 @@ export default function Home() {
             simple: Single Page Applications rely heavily on the client's
             devices to build the content of webpages and that creates overhead
             that impacts performance. Fresh, just like{" "}
-            <a
-              class="gradient-underline pretty-link"
-              href="https://remix.run/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Remix
-            </a>{" "}
+            <GradientLink
+              link="https://remix.run/"
+              title="The same, but different"
+              content="Remix"
+              customRel="noopener noreferrer"
+            />{" "}
             (and to some extent{" "}
-            <a
-              class="gradient-underline pretty-link"
-              href="https://nextjs.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Next.JS
-            </a>), aims to move all the rendering back to the server, serving
+            <GradientLink
+              link="https://nextjs.org/"
+              title="Probably the staple of building modern React apps by now"
+              content="NextJS"
+              customRel="noopener noreferrer"
+            />
+            ), aims to move all the rendering back to the server, serving
             exclusively static HTML pages, hydrating any interactivity only
             when/if necessary. While that's amazing for Lighthouse performance,
             it comes with its own sets of drawbacks (more on that in the next
@@ -123,24 +120,21 @@ export default function Home() {
             Fresh uses Preact under the hood to compile the JSX/TSX files into
             static HTML that is then sent to the client. If you have experience
             with{" "}
-            <a
-              class="gradient-underline pretty-link"
-              href="https://react.dev/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              React
-            </a>{" "}
+            <GradientLink
+              link="https://react.dev/"
+              title="React, the open sourced UI library by Meta"
+              content="React"
+              customRel="noopener noreferrer"
+            />{" "}
             or{" "}
-            <a
-              class="gradient-underline pretty-link"
-              href="https://www.solidjs.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Solid
-            </a>, you shouldn't have any trouble adapting, especially if you
-            have experience building Full Stack projects.
+            <GradientLink
+              link="https://www.solidjs.com/"
+              title="It's like React, but fun and doesn't offer nearly as many options to blow your feet out!"
+              content="Solid"
+              customRel="noopener noreferrer"
+            />
+            , you shouldn't have any trouble adapting, especially if you have
+            experience building Full Stack projects.
           </p>
           {/* Main content start */}
           <h2 class="subtopic">Creating A Theme Switcher</h2>
@@ -331,14 +325,12 @@ useEffect(() => {
           <p class="space">
             This website uses an improved version of the same Theme Switcher
             created in this post, which you can check the source code for{" "}
-            <a
-              class="gradient-underline pretty-link"
-              href="https://github.com/TheYuriG/deno-portfolio/blob/0051fc7369f714a7562d303f760e148efc753ea4/islands/ThemeSwitcher.tsx"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              right here
-            </a>.
+            <GradientLink
+              link="https://github.com/TheYuriG/deno-portfolio/blob/0051fc7369f714a7562d303f760e148efc753ea4/islands/ThemeSwitcher.tsx"
+              title="It's a trip down memory lane"
+              content="right here"
+              customRel="noopener noreferrer"
+            />.
           </p>
           {/* Conclusion and link to next post */}
           <h2 class="subtopic">What's next?</h2>
@@ -347,12 +339,13 @@ useEffect(() => {
             issues with it, like flickering on first load or the inability to
             check for user preferences. Let's address those problems on those on
             the{" "}
-            <a
-              class="gradient-underline pretty-link"
-              href="/blog/stopping-theme-flickering-deno-fresh"
-            >
-              next blog post
-            </a>.
+            <GradientLink
+              link="/blog/stopping-theme-flickering-deno-fresh"
+              title="Part 2 of this blog post. Please click, it has really good information!"
+              content="next blog post"
+              newTab={false}
+              customRel="next"
+            />.
           </p>
           {/* Post author */}
           <footer class="blog-footer" style="margin-top: auto;">

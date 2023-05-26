@@ -4,6 +4,8 @@ import { CustomHead } from "../../components/CustomHead.tsx";
 import { Base } from "../../components/Base.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
 import BlogNavigationButtons from "../../islands/BlogNavigationButtons.tsx";
+//? A HTML Link component to pre-format links and reduce boiletplate
+import { GradientLink } from "../../components/GradientLink.tsx";
 
 export default function Home() {
   return (
@@ -60,13 +62,12 @@ export default function Home() {
           {/* Introduction */}
           <p class="space">
             In the{" "}
-            <a
-              class="gradient-underline pretty-link"
-              href="/blog/how-create-theme-switcher-deno-fresh"
-              target="_blank"
-            >
-              previous post
-            </a>
+            <GradientLink
+              link="/blog/how-create-theme-switcher-deno-fresh"
+              title="Part 1 of this blog post. You read that before, right...?"
+              content="previous post"
+              customRel="prev"
+            />
             , we built a simple Theme Switcher using Preact and Fresh on top of
             Deno. Two things were missing in that implementation we are going to
             fix both of them now:
@@ -88,14 +89,12 @@ export default function Home() {
           {/* Explaining topic */}
           <p class="space">
             The{" "}
-            <a
-              class="gradient-underline pretty-link"
-              href="https://www.patterns.dev/posts/islands-architecture"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Islands Architecture
-            </a>{" "}
+            <GradientLink
+              link="https://www.patterns.dev/posts/islands-architecture"
+              title="It's called like that because it's a lot of one thing with sprinkles of something else"
+              content="Islands Architecture"
+              customRel="noopener noreferrer"
+            />{" "}
             is a very interesting design pattern. You serve static HTML content
             (the "ocean") to the client's browser and only hydrate a little of
             Javascript (the "island") in specific portions of the User
@@ -111,33 +110,27 @@ export default function Home() {
           />
           <p class="space">
             Fresh wasn't the first to come up with this idea, mind you.{" "}
-            <a
-              class="gradient-underline pretty-link"
-              href="https://remix.run/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Remix
-            </a>{" "}
+            <GradientLink
+              link="https://remix.run/"
+              title="You should watch the 'Everything is a Remix' documentary on YouTube, it was a cornerstone of my Marketing graduation"
+              content="Remix"
+              customRel="noopener noreferrer"
+            />{" "}
             (from the same creators of{" "}
-            <a
-              class="gradient-underline pretty-link"
-              href="https://reactrouter.com/en/main/start/overview"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              React Router
-            </a>{" "}
+            <GradientLink
+              link="https://reactrouter.com/en/main/start/overview"
+              title="What if you could load a bunch of pages without leaving the first page? With React Router, you can!"
+              content="React Router"
+              customRel="noopener noreferrer"
+            />{" "}
             (!))had already started working on this in early 2022, they even
             tried to sell a license to use the framework, which{" "}
-            <a
-              class="gradient-underline pretty-link"
-              href="https://twitter.com/remix_run/status/1460652199269179393"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              didn't work well
-            </a>{" "}
+            <GradientLink
+              link="https://twitter.com/remix_run/status/1460652199269179393"
+              title="That was a certified 'ouchie!' moment"
+              content="didn't work well"
+              customRel="noopener noreferrer"
+            />{" "}
             for them.
           </p>
           {/* Further insight into the problem */}
@@ -184,14 +177,12 @@ export default function Home() {
             {" "}
             tags that you import on your project. Not knowing what you are doing
             can leave you (and your users) vulnerable to{" "}
-            <a
-              class="gradient-underline pretty-link"
-              href="https://en.wikipedia.org/wiki/Cross-site_scripting"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Cross Site Scripting
-            </a>{" "}
+            <GradientLink
+              link="https://en.wikipedia.org/wiki/Cross-site_scripting"
+              title="XSS is really, really bad"
+              content="Cross Site Scripting"
+              customRel="noopener noreferrer"
+            />{" "}
             attacks (XSS, for short). Make sure that you properly review any
             code that suggests using these and, if in doubt, don't use them in
             your project!
@@ -348,14 +339,12 @@ useEffect(() => {
             </code>{" "}
             and also never redirect, essentially turning your application into a
             SPA, making your users navigate through pages using{" "}
-            <a
-              class="gradient-underline pretty-link"
-              href="https://reactrouter.com/en/main/start/overview"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              React Router
-            </a>{" "}
+            <GradientLink
+              link="https://reactrouter.com/en/main/start/overview"
+              title="You are here, but then suddenly you are there"
+              content="React Router"
+              customRel="noopener noreferrer"
+            />{" "}
             instead. The drawback to this approach would be to have the theme
             reset on every visit, which would be annoying if people had to come
             back to your website regularly. If you are just creating a portfolio
@@ -364,14 +353,12 @@ useEffect(() => {
             pretty much unacceptable. This option also isn't really what Fresh
             is going for either, so at this point you might as well just use
             another framework entirely instead, maybe even going full{" "}
-            <a
-              class="gradient-underline pretty-link"
-              href="https://vercel.com/templates/next.js/nextjs-boilerplate"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              NextJS + React
-            </a>{" "}
+            <GradientLink
+              link="https://vercel.com/templates/next.js/nextjs-boilerplate"
+              title="Quickly start a new NextJS project in seconds"
+              content="NextJS + React"
+              customRel="noopener noreferrer"
+            />{" "}
             instead.
           </p>
           {/* Post author */}
