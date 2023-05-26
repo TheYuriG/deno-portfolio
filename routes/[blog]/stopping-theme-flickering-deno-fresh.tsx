@@ -148,18 +148,20 @@ export default function Home() {
             It's possible that we can ship the required Javascript on every
             page, but in doing so, you need to understand the tradeoffs:
           </p>
-          <ol style="align-self: start;">
+          <ol
+            start={1}
+            style="align-self: start; list-style-type: lower-greek;"
+          >
             <li>
-              1 &#183; You introduce consistent overhead to every page load,
-              which will progressively worsen your Lighthouse page performance
-              score, the more you do it.
+              You introduce consistent overhead to every page load, which will
+              progressively worsen your Lighthouse page performance score, the
+              more you do it.
             </li>
             <li>
-              2 &#183; You are deviating from the main design choice for the
-              framework, which means that you will not find a lot of resources
-              to do things this way from this point onwards. If you have
-              questions, you will have to mostly figure something out by
-              yourself.
+              You are deviating from the main design choice for the framework,
+              which means that you will not find a lot of resources to do things
+              this way from this point onwards. If you have questions, you will
+              have to mostly figure something out by yourself.
             </li>
           </ol>
           <p class="space">
@@ -233,9 +235,12 @@ if (window.showDarkMode === true) {
 }`}
           </div>
           <p class="space">In order:</p>
-          <ol style="align-self: start;">
+          <ol
+            start={1}
+            style="align-self: start; list-style-type: lower-greek;"
+          >
             <li>
-              1 &#183; Check if there is a theme already saved on{" "}
+              Check if there is a theme already saved on{" "}
               <code class="shj-lang-js">localStorage</code>. If there isn't one,
               check what's the user preferred color scheme, save it, and set
               {" "}
@@ -247,8 +252,7 @@ if (window.showDarkMode === true) {
               on/off based on the saved theme.
             </li>
             <li>
-              2 &#183; Check window.showDarkMode and apply the colors to the
-              {" "}
+              Check window.showDarkMode and apply the colors to the{" "}
               <code class="shj-lang-js">root</code>{"  "}
               element for either mode based on that being{" "}
               <code class="shj-lang-js">

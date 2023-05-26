@@ -253,74 +253,79 @@ useEffect(() => {
             </code>{" "}
             does, in order:
           </p>
-          {/* Explanation part 1 */}
-          <p>
-            1- Runs on start, checks if there is a theme saved (if not,{" "}
-            <code class="shj-lang-js">
-              savedTheme
-            </code>{" "}
-            will be{" "}
-            <code class="shj-lang-js">
-              null
-            </code>
-            ), and sets the current theme as the{" "}
-            <code class="shj-lang-js">
-              savedTheme
-            </code>
-            , if they are different, then stops (remember that{" "}
-            <code class="shj-lang-js">
-              useEffect()
-            </code>{" "}
-            is using the{" "}
-            <code class="shj-lang-js">
-              theme
-            </code>{" "}
-            as a dependency so not returning here would cause an infinite
-            loop!).
-          </p>
-          {/* Explanation part 2 */}
-          <p>
-            2- After setting the{" "}
-            <code class="shj-lang-js">
-              theme
-            </code>{" "}
-            equal to{" "}
-            <code class="shj-lang-js">
-              localStorage
-            </code>'s{" "}
-            <code class="shj-lang-js">
-              savedTheme
-            </code>{" "}
-            is the same as the{" "}
-            <code class="shj-lang-js">
-              theme
-            </code>
-            , it will skip the first{" "}
-            <code class="shj-lang-js">
-              if
-            </code>{" "}
-            check and negate the{" "}
-            <code class="shj-lang-js">
-              isInitialMount
-            </code>{" "}
-            value and stop.
-          </p>
-          {/* Explanation part 3 */}
-          <p>
-            3- (Optional) If the{" "}
-            <code class="shj-lang-js">
-              theme
-            </code>{" "}
-            is updated, it will skip both{" "}
-            <code class="shj-lang-js">
-              if
-            </code>{" "}
-            checks, save the theme to{" "}
-            <code class="shj-lang-js">
-              localStorage
-            </code>
-            , and applies it.
-          </p>
+          <ol
+            start={1}
+            style="align-self: start; list-style-type: lower-greek; margin: 1em 0;"
+          >
+            {/* Explanation part 1 */}
+            <li>
+              Runs on start, checks if there is a theme saved (if not,{" "}
+              <code class="shj-lang-js">
+                savedTheme
+              </code>{" "}
+              will be{" "}
+              <code class="shj-lang-js">
+                null
+              </code>
+              ), and sets the current theme as the{" "}
+              <code class="shj-lang-js">
+                savedTheme
+              </code>
+              , if they are different, then stops (remember that{" "}
+              <code class="shj-lang-js">
+                useEffect()
+              </code>{" "}
+              is using the{" "}
+              <code class="shj-lang-js">
+                theme
+              </code>{" "}
+              as a dependency so not returning here would cause an infinite
+              loop!).
+            </li>
+            {/* Explanation part 2 */}
+            <li>
+              After setting the{" "}
+              <code class="shj-lang-js">
+                theme
+              </code>{" "}
+              equal to{" "}
+              <code class="shj-lang-js">
+                localStorage
+              </code>'s{" "}
+              <code class="shj-lang-js">
+                savedTheme
+              </code>{" "}
+              is the same as the{" "}
+              <code class="shj-lang-js">
+                theme
+              </code>
+              , it will skip the first{" "}
+              <code class="shj-lang-js">
+                if
+              </code>{" "}
+              check and negate the{" "}
+              <code class="shj-lang-js">
+                isInitialMount
+              </code>{" "}
+              value and stop.
+            </li>
+            {/* Explanation part 3 */}
+            <li>
+              (Optional) If the{" "}
+              <code class="shj-lang-js">
+                theme
+              </code>{" "}
+              is updated, it will skip both{" "}
+              <code class="shj-lang-js">
+                if
+              </code>{" "}
+              checks, save the theme to{" "}
+              <code class="shj-lang-js">
+                localStorage
+              </code>
+              , and applies it.
+            </li>
+          </ol>
           {/* Linking to repository version */}
           <p class="space">
             This website uses an improved version of the same Theme Switcher
