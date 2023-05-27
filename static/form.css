@@ -45,10 +45,6 @@ div.helper {
     transition: background-color 0.8s ease-in-out, color 0.9s ease-in-out;
 }
 
-/* Change the color of the placeholder text */
-.styled-input::placeholder {
-    color: var(--neutral-color);
-}
 
 /* Tooltip container */
 div.tooltip {
@@ -89,6 +85,12 @@ div.tooltip:hover span.tooltiptext {
     border: 2px solid var(--accent-color);
     border-radius: 1em;
     transition: background-color 0.8s ease-in-out, color 0.9s ease-in-out;
+}
+
+/* Change the color of the placeholder texts */
+.styled-text-area::placeholder,
+.styled-input::placeholder {
+    color: var(--neutral-color);
 }
 
 /* Use a media query to move the label to the side of the input on larger resolutions */
