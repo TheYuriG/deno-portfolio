@@ -39,7 +39,6 @@ export default function FormWithValidation() {
         <StyledInput
           key={"age"}
           inputType="number"
-          autoFocus={true}
           label="Age"
           name="age"
           value={formValues.age.toString()}
@@ -57,7 +56,6 @@ export default function FormWithValidation() {
         <StyledInput
           key={"profession"}
           inputType="text"
-          autoFocus={true}
           label="Profession"
           name="profession"
           value={formValues.profession}

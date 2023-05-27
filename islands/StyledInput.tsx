@@ -7,7 +7,7 @@ interface StyledInputProperties {
   placeholder: string;
   validationPattern?: string;
   value: string;
-  autoFocus: boolean;
+  autoFocus?: boolean;
   inputFunction: (input: string) => void;
   min?: number;
   max?: number;
@@ -25,7 +25,7 @@ export default function StyledInput(
     placeholder,
     validationPattern,
     value,
-    autoFocus = false,
+    autoFocus,
     inputFunction,
     min,
     max,
