@@ -35,6 +35,7 @@ export default function FormWithValidation() {
               name: inputName,
             }));
           }}
+          helpInformation="Validation: 3 to 40 alphabet characters (a-zA-Z)"
         />
         {/* Age number */}
         <StyledInput
@@ -52,6 +53,7 @@ export default function FormWithValidation() {
           }}
           min={18}
           max={100}
+          helpInformation="Validation: Number between 18 and 100 (18 < value < 100)"
         />
         {/* Profession input */}
         <StyledInput
@@ -67,6 +69,7 @@ export default function FormWithValidation() {
               profession: inputProfession,
             }));
           }}
+          helpInformation="Validation: 6 to 20 alphabet characters (a-zA-Z)"
         />
         {/* Confirm button (prints to text area) */}
         <StyledButton

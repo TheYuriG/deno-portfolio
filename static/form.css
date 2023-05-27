@@ -29,6 +29,14 @@ div.label-wrapper {
     width: max-content;
 }
 
+/*  */
+div.helper {
+    display: flex;
+    align-items: center;
+    /* flex-grow: 1; */
+    width: 100%;
+}
+
 /* Style the input to take the remainder space */
 .styled-input {
     caret-color: var(--accent-color);
@@ -42,6 +50,38 @@ div.label-wrapper {
     color: var(--neutral-color);
 }
 
+/* Tooltip container */
+div.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+div.tooltip span.tooltiptext {
+    visibility: hidden;
+    opacity: 0;
+    width: max-content;
+    background-color: var(--accent-color);
+    color: var(--neutral-color);
+    text-align: center;
+    font-weight: 600;
+    padding: 0.5em;
+    border-radius: 0.3em;
+    position: absolute;
+    /* positions the tooltip at bottom left of icon */
+    right: 0;
+    top: 2em;
+    z-index: 1;
+    transition: opacity 0.4s ease-in-out, color 0.9s ease-in-out;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+div.tooltip:hover span.tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Style the disabled text-area that holds the submitted dummy data */
 .styled-text-area {
     min-height: 10em;
     flex-grow: 1;
