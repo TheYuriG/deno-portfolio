@@ -28,7 +28,6 @@ export default function FormWithValidation() {
           label="Name"
           name="name"
           value={formValues.name}
-          placeholder=""
           inputFunction={(inputName) => {
             setValues((currentForm) => ({
               ...currentForm,
@@ -44,7 +43,6 @@ export default function FormWithValidation() {
           label="Age"
           name="age"
           value={formValues.age.toString()}
-          placeholder=""
           inputFunction={(inputAge) => {
             setValues((currentForm) => ({
               ...currentForm,
@@ -62,7 +60,6 @@ export default function FormWithValidation() {
           label="Profession"
           name="profession"
           value={formValues.profession}
-          placeholder=""
           inputFunction={(inputProfession) => {
             setValues((currentForm) => ({
               ...currentForm,

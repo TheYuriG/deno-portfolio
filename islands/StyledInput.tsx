@@ -4,7 +4,7 @@ interface StyledInputProperties {
   key: string;
   inputType: string;
   name: string;
-  placeholder: string;
+  placeholder?: string;
   validationPattern?: string;
   value: string;
   autoFocus?: boolean;
