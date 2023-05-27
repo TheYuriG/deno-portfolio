@@ -1,0 +1,111 @@
+/* Base styling applied to most form components */
+.base-form-style {
+    width: 100%;
+    padding: 0.5em;
+    background-color: var(--base-color);
+    border: 2px solid var(--accent-color);
+    border-radius: 1em;
+}
+
+/* Styles applied to the form that holds the inputs and the button */
+.styled-form {
+    width: 100%;
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style the div that holds the label+input combo */
+div.label-wrapper {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-items: center;
+    flex-direction: column;
+}
+
+/* Style the label to never shrink */
+.styled-label {
+    width: max-content;
+}
+
+/*  */
+div.helper {
+    display: flex;
+    align-items: center;
+    /* flex-grow: 1; */
+    width: 100%;
+}
+
+/* Style the input to take the remainder space */
+.styled-input {
+    caret-color: var(--accent-color);
+    margin: 0.25em 0.5em;
+    flex-grow: 1;
+    transition: background-color 0.8s ease-in-out, color 0.9s ease-in-out;
+}
+
+/* Change border color on invalid input value */
+.invalid-input {
+    border-color: red;
+}
+
+/* Change border color on valid input value */
+.valid-input {
+    border-color: green;
+}
+
+/* Tooltip container */
+div.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+div.tooltip span.tooltiptext {
+    visibility: hidden;
+    opacity: 0;
+    width: max-content;
+    background-color: var(--accent-color);
+    color: var(--neutral-color);
+    text-align: center;
+    font-weight: 600;
+    padding: 0.5em;
+    border-radius: 0.3em;
+    position: absolute;
+    /* positions the tooltip at bottom left of icon */
+    right: 0;
+    top: 2em;
+    z-index: 1;
+    transition: opacity 0.4s ease-in-out, color 0.9s ease-in-out;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+div.tooltip:hover span.tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Style the disabled text-area that holds the submitted dummy data */
+.styled-text-area {
+    min-height: 10em;
+    flex-grow: 1;
+    width: 100%;
+    border: 2px solid var(--accent-color);
+    border-radius: 1em;
+    transition: background-color 0.8s ease-in-out, color 0.9s ease-in-out;
+}
+
+/* Change the color of the placeholder texts */
+.styled-text-area::placeholder,
+.styled-input::placeholder {
+    color: var(--neutral-color);
+}
+
+/* Use a media query to move the label to the side of the input on larger resolutions */
+@media (min-width: 600px) {
+    div.label-wrapper {
+        flex-direction: row;
+        margin-left: 0em;
+    }
+}

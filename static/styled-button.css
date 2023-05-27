@@ -1,22 +1,22 @@
 /* Style, space and animate default styled button */
 .styled-button {
-	display: flex;
-	align-self: center;
-	color: var(--neutral-color);
-	background-color: var(--base-color);
-	box-shadow: 0.1em 0.2em var(--accent-color);
-	border: 0.15em solid var(--neutral-color);
-	text-shadow: 0.05em 0.05em 0 var(--accent-color);
-	transition: color 0.4s, box-shadow 0.4s, border 0.4s, text-shadow 0.4s;
-	border-radius: 0.5rem;
-	padding: 0.3rem 0.6rem;
+    display: flex;
+    align-self: center;
+    color: var(--neutral-color);
+    background-color: var(--base-color);
+    box-shadow: 0.1em 0.2em var(--accent-color);
+    border: 0.15em solid var(--neutral-color);
+    text-shadow: 0.05em 0.05em 0 var(--accent-color);
+    transition: background-color 0.8s ease-in-out, color 0.9s, box-shadow 0.4s, border 0.8s, text-shadow 0.4s;
+    border-radius: 0.5rem;
+    padding: 0.3rem 0.6rem;
 }
 
 /* Inverse colorset when button is hovered */
 .styled-button:hover {
-	color: var(--accent-color);
-	background-color: var(--base-color);
-	box-shadow: 0.1em 0.2em var(--neutral-color);
-	border: 0.15em solid var(--accent-color);
-	text-shadow: 0.05em 0.05em 0 var(--neutral-color);
+    color: var(--accent-color);
+    background-color: var(--base-color);
+    box-shadow: 0.1em 0.2em var(--neutral-color);
+    border: 0.15em solid var(--accent-color);
+    text-shadow: 0.05em 0.05em 0 var(--neutral-color);
 }

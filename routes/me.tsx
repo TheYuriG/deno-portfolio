@@ -2,6 +2,8 @@
 import { Base } from "../components/Base.tsx";
 //? Head component with all Meta tags pre-set
 import { CustomHead } from "../components/CustomHead.tsx";
+//? A HTML Link component to pre-format links and reduce boiletplate
+import { GradientLink } from "../components/GradientLink.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
 import BlogNavigationButtons from "../islands/BlogNavigationButtons.tsx";
 
@@ -26,27 +28,26 @@ export default function Home() {
           <img
             src="https://media.discordapp.net/attachments/576538316296421399/1111343977736712232/23112022-IMG_0537.jpg?width=884&height=554"
             alt="A picture of Yuri, in a very sandy vacation."
+            title="Inked them ankles"
             class="large-image"
           />
 
           <p class="space">
             I'm Yuri Gabriel, also known online as{" "}
-            <a
-              class="gradient-underline pretty-link"
-              href="https://github.com/TheYuriG"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              TheYuriG
-            </a>. I used to be a{" "}
-            <a
-              class="gradient-underline pretty-link"
-              href="https://trophy.place/user/TheYuriG"
-              target="_blank"
-            >
-              hardcore gamer
-            </a>, but now obsessed with writing code and creating pretty things
-            to look at and fun to use.
+            <GradientLink
+              link="https://github.com/TheYuriG"
+              content="TheYuriG"
+              title="Hi, this is me!"
+              customRel="noopener noreferrer"
+            />. I used to be a{" "}
+            <GradientLink
+              link="https://trophy.place/user/TheYuriG"
+              content="hardcore gamer"
+              title="My 'retired' gaming profile"
+              customRel="external"
+            />
+            , but now obsessed with writing code and creating pretty things to
+            look at and fun to use.
           </p>
           <p class="space">
             For some good portion of the most last decade, I was using the
@@ -65,24 +66,19 @@ export default function Home() {
           <p class="space">
             I'm an absolute gym rat. It's part of my routine to write code and
             {" "}
-            <a
-              class="gradient-underline pretty-link"
-              href="https://youtu.be/4UlgXIL0-3g?t=10"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              lift heavy ass circles
-            </a>
+            <GradientLink
+              link="https://youtu.be/4UlgXIL0-3g?t=10"
+              content="lift heavy ass circles"
+              title="Ronnie Coleman, the Greatest Of All Time"
+              customRel="noopener noreferrer"
+            />
             , almost every single day. Rest days are really important... for
             people settling to{" "}
-            <a
-              class="gradient-underline pretty-link"
-              href="https://youtu.be/PNO2yxuzm04?t=76"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              be smaller
-            </a>{" "}
+            <GradientLink
+              link="https://youtu.be/PNO2yxuzm04?t=76"
+              content="be smaller"
+              customRel="noopener noreferrer"
+            />{" "}
             than they could be.
           </p>
           <p class="space">
@@ -101,14 +97,11 @@ export default function Home() {
             assume you are going through extreme survival scenarios and more
             muscle is needed for increased odds at your survival. It's just that
             simple. When in doubt, simply{" "}
-            <a
-              class="gradient-underline pretty-link"
-              href="https://www.youtube.com/watch?v=bGhBbpObA7s"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              go jim now
-            </a>!
+            <GradientLink
+              link="https://www.youtube.com/watch?v=bGhBbpObA7s"
+              content="we go jim"
+              customRel="noopener noreferrer"
+            />!
           </p>
 
           <h2 class="subtopic">Programming</h2>
@@ -121,14 +114,12 @@ export default function Home() {
             After not really getting anywhere with it, in March 2018 I decided
             that if no one was willing to create a Discord bot for trophy
             hunting, then I was going to need to{" "}
-            <a
-              class="gradient-underline pretty-link"
-              href="https://www.youtube.com/watch?v=EzWNBmjyv7Y"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              do it myself
-            </a>. And so I did, I learned how to write Javascript and started
+            <GradientLink
+              link="https://www.youtube.com/watch?v=EzWNBmjyv7Y"
+              content="do it myself"
+              title="Just like Thanos"
+              customRel="noopener noreferrer"
+            />. And so I did, I learned how to write Javascript and started
             Yura.
           </p>
           <img
@@ -151,14 +142,12 @@ export default function Home() {
           <h2 class="subtopic">Trophy Place</h2>
           <p class="space">
             Myself and{" "}
-            <a
-              class="gradient-underline pretty-link"
-              href="https://github.com/Makowo"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Makowo
-            </a>{" "}
+            <GradientLink
+              link="https://github.com/Makowo"
+              content="Makowo"
+              title="Professional Payday 2 modder and ModWorkshop moderator"
+              customRel="noopener noreferrer"
+            />{" "}
             decided to start our own trophy hunting website that would end up
             addressing the majority of the community requests and complaints.
             After all, who knows better what the trophy hunting community wants,
@@ -167,53 +156,43 @@ export default function Home() {
           <p class="space">
             Since I've already had some experience building the backend, I chose
             to manage all of the infrastructure for{" "}
-            <a
-              class="gradient-underline pretty-link"
-              href="https://trophy.place/"
-              target="_blank"
-            >
-              Trophy Place
-            </a>{" "}
+            <GradientLink
+              link="https://trophy.place/"
+              content="Trophy Place"
+              title="Where we build greatness 😊"
+              customRel="external"
+            />{" "}
             while Makowo was responsible for the frontend.
           </p>
           <p class="space">
             Our chosen tech stack is{" "}
-            <a
-              class="gradient-underline pretty-link"
-              href="https://vuejs.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Vue 3
-            </a>{" "}
+            <GradientLink
+              link="https://vuejs.org/"
+              content="Vue 3"
+              title="It means 'View' in french and 'Delight' in software development"
+              customRel="noopener noreferrer"
+            />{" "}
             +{" "}
-            <a
-              class="gradient-underline pretty-link"
-              href="https://nuxt.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Nuxt 3
-            </a>{" "}
+            <GradientLink
+              link="https://nuxt.com/"
+              content="Nuxt 3"
+              customRel="noopener noreferrer"
+            />{" "}
             for the frontend, with{" "}
-            <a
-              class="gradient-underline pretty-link"
-              href="https://expressjs.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Express
-            </a>{" "}
+            <GradientLink
+              link="https://expressjs.com/"
+              content="Express"
+              title="Express is basically the backbone of NodeJS development."
+              customRel="noopener noreferrer"
+            />{" "}
             for the backend for our MVP. Once we go into actual production, I'll
             rewrite the backend using{" "}
-            <a
-              class="gradient-underline pretty-link"
-              href="https://github.com/oakserver/oak"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Oak
-            </a>{" "}
+            <GradientLink
+              link="https://github.com/oakserver/oak"
+              content="Oak"
+              title="It's like Koa, but for Deno"
+              customRel="noopener noreferrer"
+            />{" "}
             so that I can write exclusively Typescript code.
           </p>
         </article>

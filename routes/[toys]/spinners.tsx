@@ -2,6 +2,8 @@
 import { Base } from "../../components/Base.tsx";
 //? Import CustomHead with appropriate metadata
 import { CustomHead } from "../../components/CustomHead.tsx";
+//? A HTML Link component to pre-format links and reduce boiletplate
+import { GradientLink } from "../../components/GradientLink.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
 import BlogNavigationButtons from "../../islands/BlogNavigationButtons.tsx";
 
@@ -14,15 +16,17 @@ export default function Home() {
         link="https://www.theyurig.com/toys/spinners"
       >
         <link rel="stylesheet" href="/content.css" />
+        <link rel="stylesheet" href="/blog.css" />
         <link rel="stylesheet" href="/navigation-buttons.css" />
         <link rel="stylesheet" href="/spinners.css" />
+        <link rel="stylesheet" href="/gradient-underline.css" />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
         <BlogNavigationButtons />
-        <article>
+        <article class="center">
           <h1>Spinners</h1>
-          <p style="margin-bottom: 2em;">
+          <p class="space" style="margin: 0 auto;">
             Experimenting with translate3d (hover for information!)
           </p>
           <section style="flex: 1;">
@@ -129,21 +133,19 @@ export default function Home() {
           </section>
           <footer class="blog-footer" style="margin-top: 1em;">
             this experimentation helped me learn{" "}
-            <a
-              href="https://codepen.io/TheYuriG/pen/yLRQqmr?editors=1100"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <strong>this</strong>
-            </a>
+            <GradientLink
+              link="https://codepen.io/TheYuriG/pen/yLRQqmr?editors=1100"
+              title="The order of your transforms are important!"
+              content="this"
+              customRel="noopener noreferrer"
+            />
             . inspiration{" "}
-            <a
-              href="https://x.st/spinning-diagrams-with-css/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <strong>here</strong>.
-            </a>
+            <GradientLink
+              link="https://x.st/spinning-diagrams-with-css/"
+              title="Thank you, Harold Cooper, for your very detailed blog post about 'translate3d'!"
+              content="here"
+              customRel="noopener noreferrer"
+            />.
           </footer>
         </article>
       </Base>
