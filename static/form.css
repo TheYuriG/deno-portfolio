@@ -1,3 +1,4 @@
+/* Base styling applied to most form components */
 .base-form-style {
     width: 100%;
     padding: 0.5em;
@@ -6,6 +7,7 @@
     border-radius: 1em;
 }
 
+/* Styles applied to the form that holds the inputs and the button */
 .styled-form {
     width: 100%;
     margin-bottom: 1em;
@@ -13,23 +15,29 @@
     flex-direction: column;
 }
 
+/* Style the div that holds the label+input combo */
 div.label-wrapper {
     display: flex;
+    flex-grow: 1;
     align-items: center;
-    width: 100%;
+    justify-items: center;
     flex-direction: column;
 }
 
+/* Style the label to never shrink */
 .styled-label {
     width: max-content;
 }
 
+/* Style the input to take the remainder space */
 .styled-input {
     caret-color: var(--accent-color);
-    margin: 0.25em 0em;
+    margin: 0.25em 0.5em;
     flex-grow: 1;
+    transition: background-color 0.8s ease-in-out, color 0.9s ease-in-out;
 }
 
+/* Change the color of the placeholder text */
 .styled-input::placeholder {
     color: var(--neutral-color);
 }
@@ -40,14 +48,13 @@ div.label-wrapper {
     width: 100%;
     border: 2px solid var(--accent-color);
     border-radius: 1em;
+    transition: background-color 0.8s ease-in-out, color 0.9s ease-in-out;
 }
 
+/* Use a media query to move the label to the side of the input on larger resolutions */
 @media (min-width: 600px) {
     div.label-wrapper {
         flex-direction: row;
-    }
-
-    .styled-label {
-        margin-right: 0.5em;
+        margin-left: 0em;
     }
 }

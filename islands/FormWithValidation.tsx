@@ -2,17 +2,18 @@
 import { useState } from "preact/hooks";
 //? Responsive and styled Label + Input
 import StyledInput from "./StyledInput.tsx";
-//? Styled Button
+//? Styled Button to confirm sending the form
 import StyledButton from "./StyledButton.tsx";
 
 //? Creates a form that uses RegExp validation
 export default function FormWithValidation() {
+  //? Manages current state for form data
   const [formValues, setValues] = useState({
     name: "",
     age: 18,
     profession: "",
   });
-  //? Handles textarea's content
+  //? Handles textarea's content being populated when "Send" is clicked
   const [sumOfAllInputs, extendSum] = useState([] as Array<string>);
 
   return (
@@ -88,6 +89,7 @@ export default function FormWithValidation() {
           }}
         />
       </form>
+      {/* Text Area that will hold all sent information */}
       <textarea
         class="base-form-style styled-text-area"
         name="formInput"
