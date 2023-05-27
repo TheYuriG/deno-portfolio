@@ -97,7 +97,9 @@ export default function FormWithValidation() {
         class="base-form-style styled-text-area"
         name="formInput"
         id="form"
-        placeholder={sumOfAllInputs.join("\n")}
+        placeholder={sumOfAllInputs.length > 0
+          ? sumOfAllInputs.join("\n")
+          : 'Data will be displayed here as you click "Send"'}
         disabled
       >
       </textarea>
