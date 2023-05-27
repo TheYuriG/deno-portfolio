@@ -41,3 +41,16 @@ h2.subtopic {
     font-size: 2rem;
     font-family: 'Alfa Slab One', cursive;
 }
+
+/* Add margin-left to lists on smaller resolutions */
+li {
+    margin-left: 2.5em;
+    transition: margin-left ease-in-out 0.5s;
+}
+
+/* Remove margin-left to lists on larger resolutions */
+@media (min-width: 1050px) {
+    li {
+        margin-left: 0em;
+    }
+}
