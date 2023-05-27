@@ -16,13 +16,25 @@ export default function FormWithValidation() {
   //? Handles textarea's content being populated when "Send" is clicked
   const [sumOfAllInputs, extendSum] = useState([] as Array<string>);
 
+  //? Placeholder text to be used on the textArea before any data got sent
+  const textAreaPlaceholder =
+    'Data will be displayed here as you click "Send".' +
+    "\n\nSome key insights for when building this:" +
+    "\n- When using other websites, it's very annoying when you tap into a " +
+    "field and tap out (without typing anything) and the field gives you a " +
+    "validation error. This form doesn't have that problem, it only " +
+    "attempts to validate the value if a value was actually provided." +
+    "\n- Regexes are very powerful. I use them to validate login/signup" +
+    " on Trophy Place, the form above and probably too many places that" +
+    " could probably just use a simple deep equality check";
+
   return (
     <>
       {/* The whole form */}
       <form class="styled-form">
         {/* Name input */}
         <StyledInput
-          key={"name"}
+          key={"first_input"}
           inputType="text"
           autoFocus={true}
           label="Name"
@@ -35,10 +47,11 @@ export default function FormWithValidation() {
             }));
           }}
           helpInformation="Validation: 3 to 40 alphabet characters (a-zA-Z)"
+          validationPattern="^[a-zA-Z]{3,40}$"
         />
         {/* Age number */}
         <StyledInput
-          key={"age"}
+          key={"second_input"}
           inputType="number"
           label="Age"
           name="age"
@@ -55,7 +68,7 @@ export default function FormWithValidation() {
         />
         {/* Profession input */}
         <StyledInput
-          key={"profession"}
+          key={"third_input"}
           inputType="text"
           label="Profession"
           name="profession"
@@ -66,6 +79,7 @@ export default function FormWithValidation() {
               profession: inputProfession,
             }));
           }}
+          validationPattern="^[a-zA-Z]{6,20}$"
           helpInformation="Validation: 6 to 20 alphabet characters (a-zA-Z)"
         />
         {/* Confirm button (prints to text area) */}
@@ -96,7 +110,7 @@ export default function FormWithValidation() {
         id="form"
         placeholder={sumOfAllInputs.length > 0
           ? sumOfAllInputs.join("\n")
-          : 'Data will be displayed here as you click "Send"'}
+          : textAreaPlaceholder}
         disabled
       >
       </textarea>

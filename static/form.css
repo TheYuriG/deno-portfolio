@@ -45,6 +45,15 @@ div.helper {
     transition: background-color 0.8s ease-in-out, color 0.9s ease-in-out;
 }
 
+/* Change border color on invalid input value */
+.invalid-input {
+    border-color: red;
+}
+
+/* Change border color on valid input value */
+.valid-input {
+    border-color: green;
+}
 
 /* Tooltip container */
 div.tooltip {

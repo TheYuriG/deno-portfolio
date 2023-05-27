@@ -1,21 +1,35 @@
+//? Import from Preact to be able to change state
+import { useState } from "preact/hooks";
 //? Define optional and required properties for inputs
 interface StyledInputProperties {
+  //? Text for the label related to this input
   label: string;
+  //? Key that helps Preact to track this input on the DOM
   key: string;
+  //? Whether this input is a file, image, text, number or anything else
+  //! Reference: https://www.w3schools.com/tags/tag_input.asp
   inputType: string;
+  //? Input name, helps Screenreaders to connect label+input
   name: string;
+  //? Placeholder text to display on input, if relevant
   placeholder?: string;
-  validationPattern?: string;
-  value: string;
+  //? If this field should have automatic focus on page load
   autoFocus?: boolean;
+  //? Initial/current value for this input
+  value: string;
+  //? Function that updates the input state when typing in the input field
   inputFunction: (input: string) => void;
+  //? String to be turned into a RegExp. Don't enclose with forward slashes (/)!
+  validationPattern?: string;
+  //? Mininum and maximum values for numerical inputs
   min?: number;
   max?: number;
+  //? Optional string to be used on the optional help Information icon
   helpInformation?: string;
 }
 
 //? Exports a styled combo of label + input
-//! Styling sheet form.css will organize in column on smaller
+//! Requires form.css! Will organize in column on smaller
 //! resolutions and as row on larger resolutions
 export default function StyledInput(
   {
@@ -24,31 +38,50 @@ export default function StyledInput(
     inputType,
     name,
     placeholder,
-    validationPattern,
-    value,
     autoFocus,
+    value,
     inputFunction,
+    validationPattern,
     min,
     max,
     helpInformation,
   }: StyledInputProperties,
 ) {
+  //? State that managed validation when the field is clicked out of.
+  //! Managed by the onBlur function
+  const [validInput, validateInput] = useState(0);
   return (
     <>
       <div class="label-wrapper">
         <label class="styled-label" htmlFor={name}>
-          {label + " "}
+          {label}
         </label>
         <div class="helper">
           <input
+            //? Assigns this input as required
+            required
+            //? Unique key to allow Preact to know which node gets removed
             key={key}
+            //? The type of this input (file, number, text, date, etc)
+            //! Reference: https://www.w3schools.com/tags/tag_input.asp
             type={inputType}
-            class="base-form-style styled-input"
+            //? Base class + validation class if needed
+            //! The value of 'validInput' is managed by the onBlur function
+            class={"base-form-style styled-input" +
+              (validInput === 1
+                ? " valid-input"
+                : validInput === -1
+                ? " invalid-input"
+                : "")}
             name={name}
+            //? Placeholder value, if provided
             placeholder={placeholder}
-            pattern={validationPattern}
-            value={value}
+            //? If this
             autofocus={autoFocus}
+            //? Initial value for the input, mostly used by the number input
+            //! Gets updated by onInput()
+            value={value}
+            //? Updates the value on typing
             onInput={(e) => {
               const { target } = e;
               if (target) {
@@ -56,10 +89,33 @@ export default function StyledInput(
                 inputFunction(changedValue);
               }
             }}
+            //? Validates the input when the input loses focus
+            onBlur={() => {
+              //? If the field is empty, reset validation
+              if (value === "") {
+                validateInput(0);
+              } //? If the field is not empty, check if a validation RegEx pattern was provided
+              else if (
+                typeof validationPattern === "string"
+              ) {
+                //? If it was, create a RegEx out of it and then validate the value
+                const validation = new RegExp(validationPattern);
+                //? If the value passes validation, add the 'valid-input' class
+                if (validation.test(value)) {
+                  validateInput(1);
+                } //? If it fails then RegEx, add the 'invalid-input' class
+                else {
+                  validateInput(-1);
+                }
+              }
+            }}
+            //? Mininum and maximum thresholds for numerical values
             min={min}
             max={max}
           />
+          {/* Tooltip on the right side, with user information about what data is valid */}
           <div class="tooltip">
+            {/* Information icon */}
             <svg
               height="1.5em"
               width="1.5em"
@@ -70,6 +126,7 @@ export default function StyledInput(
               <path d="M356.004,61.156c-81.37-81.47-213.377-81.551-294.848-0.182c-81.47,81.371-81.552,213.379-0.181,294.85 c81.369,81.47,213.378,81.551,294.849,0.181C437.293,274.636,437.375,142.626,356.004,61.156z M237.6,340.786 c0,3.217-2.607,5.822-5.822,5.822h-46.576c-3.215,0-5.822-2.605-5.822-5.822V167.885c0-3.217,2.607-5.822,5.822-5.822h46.576 c3.215,0,5.822,2.604,5.822,5.822V340.786z M208.49,137.901c-18.618,0-33.766-15.146-33.766-33.765 c0-18.617,15.147-33.766,33.766-33.766c18.619,0,33.766,15.148,33.766,33.766C242.256,122.755,227.107,137.901,208.49,137.901z">
               </path>
             </svg>
+            {/* Displays the tooltip text if one was provided */}
             {helpInformation && (
               <span class="tooltiptext">{helpInformation}</span>
             )}
