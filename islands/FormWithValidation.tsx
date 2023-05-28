@@ -86,18 +86,63 @@ export default function FormWithValidation() {
   });
   //? Handles textarea's content being populated when "Send" is clicked
   const [sumOfAllInputs, extendSum] = useState([] as Array<string>);
+  //? Manages if there is an error text to be displayed
+  const [validationError, updateValidationError] = useState(false);
 
-  //? Placeholder text to be used on the textArea before any data got sent
-  const textAreaPlaceholder =
-    'Data will be displayed here as you click "Send".' +
-    "\n\nSome key insights for when building this:" +
-    "\n- When using other websites, it's very annoying when you tap into a " +
-    "field and tap out (without typing anything) and the field gives you a " +
-    "validation error. This form doesn't have that problem, it only " +
-    "attempts to validate the value if a value was actually provided." +
-    "\n- Regexes are very powerful. I use them to validate login/signup" +
-    " on Trophy Place, the form above and probably too many places that" +
-    " could probably just use a simple deep equality check";
+  //? Runs when the user clicks the "Send" button. Validates if the data
+  //? should be accepted and wiped or kept and have errors informed.
+  function validateBeforeSend(): void {
+    //? Initialize the number of errors variable
+    let validationErrors = 0;
+
+    //? If the name is empty or invalid, increase errors counter
+    if (formValues.name === "") {
+      setValues((currentValues) => ({ ...currentValues, name: "N/A" }));
+      validationErrors++;
+    } else if (validateInput(formValues.name, "", validateName) === -1) {
+      validationErrors++;
+    }
+    //? If the profession is empty or invalid, increase errors counter
+    if (formValues.profession === "") {
+      setValues((currentValues) => ({ ...currentValues, profession: "N/A" }));
+      validationErrors++;
+    } else if (
+      validateInput(formValues.profession, "", validateProfession) === -1
+    ) {
+      validationErrors++;
+    }
+    //? If the age is invalid, increase errors counter
+    if (validateInput(formValues.age.toString(), "", validateAge) === -1) {
+      validationErrors++;
+    }
+
+    //? If all data is valid, add to the block below
+    if (validationErrors > 0) {
+      updateValidationError(true);
+    } else {
+      //? Reset error text
+      updateValidationError(false);
+
+      //? When valid data is submitted, reset the form so the user can
+      //? try to submit more data
+      setValues(() => ({
+        name: "",
+        age: 18,
+        profession: "",
+      }));
+
+      //? And add the current data to the display below for checking
+      extendSum((
+        currentSum,
+      ) => [
+        ...currentSum,
+        //? Adds "number - name: name, age: age, profession: profession"
+        `${
+          currentSum.length + 1
+        } - name: ${formValues.name}, age: ${formValues.age}, profession: ${formValues.profession}`,
+      ]);
+    }
+  }
 
   return (
     <>
@@ -161,22 +206,18 @@ export default function FormWithValidation() {
         <StyledButton
           text="Send"
           style="margin-top: 0.5em;"
-          onClickFunction={() => {
-            setValues(() => ({
-              name: "",
-              age: 18,
-              profession: "",
-            }));
-            extendSum((
-              currentSum,
-            ) => [
-              ...currentSum,
-              `${
-                currentSum.length + 1
-              } - name: ${formValues.name}, age: ${formValues.age}, profession: ${formValues.profession}`,
-            ]);
-          }}
+          onClickFunction={validateBeforeSend}
         />
+        {validationError === true && (
+          <>
+            <p class="space">
+              Some fields have invalid data being provided! Please fix them
+              before submitting! Invalid fields will not have a green border
+              around them. Hover/click the information icon on the right side
+              for more information.
+            </p>
+          </>
+        )}
       </form>
       {/* Text Area that will hold all sent information */}
       <textarea
