@@ -141,6 +141,19 @@ export default function FormWithValidation() {
           currentSum.length + 1
         } - name: ${formValues.name}, age: ${formValues.age}, profession: ${formValues.profession}`,
       ]);
+
+      //? Fetch all elements with 'valid-input' class (the ones with the green border)
+      const greenBorderInputs = document.getElementsByClassName("valid-input");
+
+      //? Toggle the class for all of them
+      //! This works a bit funny because they will immediately get removed from the
+      //! HTMLCollectionOf<HTMLInputElement> as soon as the class is removed, so if
+      //! you try to do a for...loop, it will skip every other item
+      while (
+        greenBorderInputs.length > 0
+      ) {
+        greenBorderInputs[0].classList.toggle("valid-input");
+      }
     }
   }
 
