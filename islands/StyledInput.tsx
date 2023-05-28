@@ -20,7 +20,7 @@ interface StyledInputProperties {
   //? Function that updates the input state when typing in the input field
   inputFunction: (input: string) => void;
   //? String to be turned into a RegExp. Don't enclose with forward slashes (/)!
-  validationPattern?: string;
+  validationFunction: (input: string | number) => number;
   //? Mininum and maximum values for numerical inputs
   min?: number;
   max?: number;
@@ -41,7 +41,7 @@ export default function StyledInput(
     autoFocus,
     value,
     inputFunction,
-    validationPattern,
+    validationFunction,
     min,
     max,
     helpInformation,
@@ -91,23 +91,7 @@ export default function StyledInput(
             }}
             //? Validates the input when the input loses focus
             onBlur={() => {
-              //? If the field is empty, reset validation
-              if (value === "") {
-                validateInput(0);
-              } //? If the field is not empty, check if a validation RegEx pattern was provided
-              else if (
-                typeof validationPattern === "string"
-              ) {
-                //? If it was, create a RegEx out of it and then validate the value
-                const validation = new RegExp(validationPattern);
-                //? If the value passes validation, add the 'valid-input' class
-                if (validation.test(value)) {
-                  validateInput(1);
-                } //? If it fails then RegEx, add the 'invalid-input' class
-                else {
-                  validateInput(-1);
-                }
-              }
+              validateInput(validationFunction(value));
             }}
             //? Mininum and maximum thresholds for numerical values
             min={min}
