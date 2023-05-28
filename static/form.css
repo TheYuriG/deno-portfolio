@@ -42,7 +42,7 @@ div.helper {
     caret-color: var(--accent-color);
     margin: 0.25em 0.5em;
     flex-grow: 1;
-    transition: background-color 0.8s ease-in-out, color 0.9s ease-in-out;
+    transition: background-color 0.8s ease-in-out, color 0.9s ease-in-out, border-color 0.3s ease-in-out;
 }
 
 /* Change border color on invalid input value */
