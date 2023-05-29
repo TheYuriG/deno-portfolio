@@ -27,20 +27,20 @@ div.label-wrapper {
 /* Style the label to never shrink */
 .styled-label {
     width: max-content;
+    white-space: nowrap;
 }
 
-/*  */
+/* Extends group of input + information icon together to expand the whole width */
 div.helper {
     display: flex;
     align-items: center;
-    /* flex-grow: 1; */
     width: 100%;
 }
 
 /* Style the input to take the remainder space */
 .styled-input {
     caret-color: var(--accent-color);
-    margin: 0.25em 0.5em;
+    margin: 0.25em 0.5em 0.25em 0em;
     flex-grow: 1;
     transition: background-color 0.8s ease-in-out, color 0.9s ease-in-out, border-color 0.3s ease-in-out;
 }
@@ -107,5 +107,9 @@ div.tooltip:hover span.tooltiptext {
     div.label-wrapper {
         flex-direction: row;
         margin-left: 0em;
+    }
+
+    .styled-input {
+        margin: 0.25em 0.5em;
     }
 }
