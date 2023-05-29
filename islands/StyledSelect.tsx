@@ -2,6 +2,7 @@
 interface SelectProperties {
   name: string;
   label: string;
+  validationReference: -1 | 0 | 1;
   value: string;
   optionsArray: Array<string>;
   onChangeFunction: (value: string) => void;
@@ -11,6 +12,7 @@ interface SelectProperties {
 export default function StyledSelect({
   name,
   label,
+  validationReference,
   value,
   optionsArray,
   onChangeFunction,
@@ -23,7 +25,12 @@ export default function StyledSelect({
       </label>
       {/* Select dropdown */}
       <select
-        class="styled-select"
+        class={"styled-select" +
+          (validationReference === 1
+            ? " valid-input"
+            : validationReference === -1
+            ? " invalid-input"
+            : "")}
         name={name} //? Link to label
         value={value} //? Tracks current value
         //? Updates state when an option is selected
