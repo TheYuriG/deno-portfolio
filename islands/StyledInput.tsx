@@ -1,3 +1,6 @@
+//? Validation values for typecasting
+import { validationStatus } from "../types/validationStatus.ts";
+
 //? Define optional and required properties for inputs
 interface StyledInputProperties {
   //? Text for the label related to this input
@@ -8,7 +11,7 @@ interface StyledInputProperties {
   //! Reference: https://www.w3schools.com/tags/tag_input.asp
   inputType: string;
   //? Tracks the validation reference state for this input
-  validationReference: -1 | 0 | 1;
+  validationReference: validationStatus;
   //? Input name, helps Screenreaders to connect label+input
   name: string;
   //? Placeholder text to display on input, if relevant
@@ -20,7 +23,7 @@ interface StyledInputProperties {
   //? Function that updates the input state when typing in the input field
   inputFunction: (input: string) => void;
   //? String to be turned into a RegExp. Don't enclose with forward slashes (/)!
-  validationFunction: (input: string | number) => -1 | 0 | 1;
+  validationFunction: (input: string | number) => validationStatus;
   //? Mininum and maximum values for numerical inputs
   min?: number;
   max?: number;
@@ -65,9 +68,9 @@ export default function StyledInput(
             type={inputType}
             //? Base class + validation class if needed
             class={"base-form-style styled-input" +
-              (validationReference === 1
+              (validationReference === validationStatus.Valid
                 ? " valid-input"
-                : validationReference === -1
+                : validationReference === validationStatus.Invalid
                 ? " invalid-input"
                 : "")}
             name={name}

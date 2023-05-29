@@ -8,10 +8,12 @@ import StyledButton from "./StyledButton.tsx";
 import StyledSelect from "./StyledSelect.tsx";
 
 //? Validation values for typecasting
-type validationStatus = -1 | 0 | 1;
+import { validationStatus } from "../types/validationStatus.ts";
 
 //? Validates the form's name input field
-const validateName = (name: string): -1 | 1 => {
+const validateName = (
+  name: string,
+): validationStatus.Invalid | validationStatus.Valid => {
   //? This RegEx looks for a string of 3 to 40 alphabet characters + space
   //? and dash, but will fail validation if two consecutive spaces/dashes
   //? are provided
@@ -21,35 +23,39 @@ const validateName = (name: string): -1 | 1 => {
   //? Validates the input against the RegEx, returning 1 for
   //? valid and -1 for invalid input
   if (validation.test(name)) {
-    return 1;
+    return validationStatus.Valid;
   } else {
-    return -1;
+    return validationStatus.Invalid;
   }
 };
 
 //? Validates the form's profession input field
-const validateProfession = (profession: string): -1 | 1 => {
+const validateProfession = (
+  profession: string,
+): validationStatus.Invalid | validationStatus.Valid => {
   //? This RegEx looks for a string of 6 to 20 alphabet characters + space
   //? and dash, but will fail validation if two consecutive spaces/dashes
   //? are provided
   const regularExpression = "^(?!.*[ -]{2})[a-zA-Z -]{6,20}$";
   //? Creates a RegEx with the expression above
   const validation = new RegExp(regularExpression);
-  //? Validates the input against the RegEx, returning 1 for
-  //? valid and -1 for invalid input
+  //? Validates the input against the RegEx, returning
+  //? validationStatus.Valid or validationStatus.Invalid
   if (validation.test(profession)) {
-    return 1;
+    return validationStatus.Valid;
   } else {
-    return -1;
+    return validationStatus.Invalid;
   }
 };
 
 //? Validates the form's age numeric input field
-const validateAge = (age: string): -1 | 1 => {
+const validateAge = (
+  age: string,
+): validationStatus.Invalid | validationStatus.Valid => {
   if (+age >= 18 && +age <= 100) {
-    return 1;
+    return validationStatus.Valid;
   } else {
-    return -1;
+    return validationStatus.Invalid;
   }
 };
 
@@ -59,11 +65,13 @@ const validateAge = (age: string): -1 | 1 => {
 function validateInput(
   value: string,
   initialState: string,
-  pattern: (valueToValidate: string) => -1 | 1,
+  pattern: (
+    valueToValidate: string,
+  ) => validationStatus.Invalid | validationStatus.Valid,
 ): validationStatus {
   //? If the field is at initial state, reset validation
   if (value === initialState) {
-    return 0;
+    return validationStatus.Unchanged;
   } //? If the field is not empty, check if a validation RegEx pattern was provided
   else {
     return pattern(value);
@@ -83,26 +91,25 @@ const textAreaPlaceholder = 'Data will be displayed here as you click "Send".' +
   " could probably just use a simple deep equality check.";
 
 //? Assign default form values and validation to avoid duplicating them everywhere
-const defaultFormValues = {
-  name: "",
-  age: 18,
-  profession: "",
-  employment: "Select one",
-};
-const defaultFormValidation = {
-  name: 0,
-  age: 0,
-  profession: 0,
-  employment: 0,
-};
-
-const selectOptions = [
+const selectDropdownOptions = [
   "Select one",
   "Too Young to Work",
   "Between Jobs",
   "Employed",
   "Retired",
 ];
+const defaultFormValues = {
+  name: "",
+  age: 18,
+  profession: "",
+  employment: selectDropdownOptions[0],
+};
+const defaultFormValidation = {
+  name: validationStatus.Unchanged,
+  age: validationStatus.Unchanged,
+  profession: validationStatus.Unchanged,
+  employment: validationStatus.Unchanged,
+};
 
 //? Creates a form that uses RegExp validation
 export default function FormWithValidation() {
@@ -133,17 +140,17 @@ export default function FormWithValidation() {
       setValues((currentValues) => ({ ...currentValues, name: "N/A" }));
       updateValidation((currentValidationStatus) => ({
         ...currentValidationStatus,
-        name: -1,
+        name: validationStatus.Invalid,
       }));
       validationErrors++;
     } else if (
       validateInput(formValues.name, defaultFormValues.name, validateName) ===
-        -1
+        validationStatus.Invalid
     ) {
       validationErrors++;
       updateValidation((currentValidationStatus) => ({
         ...currentValidationStatus,
-        name: -1,
+        name: validationStatus.Invalid,
       }));
     }
     //? If the profession is empty or invalid, increase errors counter
@@ -152,19 +159,19 @@ export default function FormWithValidation() {
       validationErrors++;
       updateValidation((currentValidationStatus) => ({
         ...currentValidationStatus,
-        profession: -1,
+        profession: validationStatus.Invalid,
       }));
     } else if (
       validateInput(
         formValues.profession,
         defaultFormValues.profession,
         validateProfession,
-      ) === -1
+      ) === validationStatus.Invalid
     ) {
       validationErrors++;
       updateValidation((currentValidationStatus) => ({
         ...currentValidationStatus,
-        profession: -1,
+        profession: validationStatus.Invalid,
       }));
     }
     //? If the age is invalid, increase errors counter
@@ -173,12 +180,12 @@ export default function FormWithValidation() {
         formValues.age.toString(),
         defaultFormValues.age.toString(),
         validateAge,
-      ) === -1
+      ) === validationStatus.Invalid
     ) {
       validationErrors++;
       updateValidation((currentValidationStatus) => ({
         ...currentValidationStatus,
-        age: -1,
+        age: validationStatus.Invalid,
       }));
     }
     //? If the age is invalid, increase errors counter
@@ -186,7 +193,7 @@ export default function FormWithValidation() {
       validationErrors++;
       updateValidation((currentValidationStatus) => ({
         ...currentValidationStatus,
-        employment: -1,
+        employment: validationStatus.Invalid,
       }));
     }
 
@@ -223,7 +230,7 @@ export default function FormWithValidation() {
         <StyledInput
           key={"first_input"}
           inputType="text"
-          validationReference={formValidationStatus.name as validationStatus}
+          validationReference={formValidationStatus.name}
           autoFocus={true}
           label="Name"
           name="name"
@@ -314,16 +321,16 @@ export default function FormWithValidation() {
           validationReference={formValidationStatus
             .employment as validationStatus}
           value={formValues.employment}
-          optionsArray={selectOptions}
+          optionsArray={selectDropdownOptions}
           onChangeFunction={(input) => {
             setValues((currentForm) => ({
               ...currentForm,
               employment: input,
             }));
-            if (input !== selectOptions[0]) {
+            if (input !== selectDropdownOptions[0]) {
               updateValidation((currentValidation) => ({
                 ...currentValidation,
-                employment: 1,
+                employment: validationStatus.Valid,
               }));
             }
           }}

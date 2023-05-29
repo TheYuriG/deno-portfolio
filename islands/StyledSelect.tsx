@@ -1,8 +1,11 @@
+//? Validation values for typecasting
+import { validationStatus } from "../types/validationStatus.ts";
+
 //? Properties required to build a Select dropdown
 interface SelectProperties {
   name: string;
   label: string;
-  validationReference: -1 | 0 | 1;
+  validationReference: validationStatus;
   value: string;
   optionsArray: Array<string>;
   onChangeFunction: (value: string) => void;
@@ -26,9 +29,9 @@ export default function StyledSelect({
       {/* Select dropdown */}
       <select
         class={"styled-select" +
-          (validationReference === 1
+          (validationReference === validationStatus.Valid
             ? " valid-input"
-            : validationReference === -1
+            : validationReference === validationStatus.Invalid
             ? " invalid-input"
             : "")}
         name={name} //? Link to label
