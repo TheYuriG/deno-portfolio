@@ -9,6 +9,7 @@ import StyledSelect from "./StyledSelect.tsx";
 
 //? Validation values for typecasting
 import { validationStatus } from "../types/validationStatus.ts";
+import StyledRadio from "./StyledRadio.tsx";
 
 //? Validates the form's name input field
 const validateName = (
@@ -132,7 +133,7 @@ export default function FormWithValidation() {
 
     updateValidation((currentValidationStatus) => ({
       ...currentValidationStatus,
-      age: 1,
+      age: validationStatus.Valid,
     }));
 
     //? If the name is empty or invalid, increase errors counter
@@ -334,6 +335,13 @@ export default function FormWithValidation() {
               }));
             }
           }}
+        />
+        {/* Styled radio */}
+        <StyledRadio
+          label="Times on Welfare"
+          name="aa"
+          onChangeFunction={() => {}}
+          optionsArray={["None", "Once", "Twice or More"]}
         />
         {/* Confirm button (prints to text area) */}
         <StyledButton

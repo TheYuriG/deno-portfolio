@@ -26,6 +26,9 @@ div.label-wrapper {
 
 /* Style the label to never shrink */
 .styled-label {
+    /* Needed to make the radio buttons stay in a row */
+    display: flex;
+    flex-direction: row;
     width: max-content;
     white-space: nowrap;
 }
@@ -106,6 +109,82 @@ div.tooltip:hover span.tooltiptext {
     opacity: 1;
 }
 
+/* Name for group of radio inputs */
+.radio-label-inputs-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Label for radio input */
+.radio-label {
+    width: max-content;
+}
+
+/* Collection of radio inputs and labels */
+.radio-input-group {
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+}
+
+/* Styles the radio to use customized balls for toggles */
+input[type="radio"] {
+    /* Remove default selection circle */
+    -webkit-appearance: none;
+    appearance: none;
+    /* For iOS < 15 to remove gradient background */
+    background-color: var(--base-color);
+    /* Not removed via appearance */
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 0.9em;
+    height: 0.9em;
+    border: 0.15em solid currentColor;
+    border-radius: 50%;
+    margin-right: 0.5em;
+    /* Move the circle a little down */
+    transform: translateY(0.3em);
+    /* Enable the radio check icon to be centered inside the circle */
+    display: grid;
+    place-content: center;
+}
+
+/* Create positioning for the 'checked' ball */
+input[type="radio"]::before {
+    content: "";
+    width: 0.4em;
+    height: 0.4em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    /* Inner colored ball for whenever checked */
+    box-shadow: inset 1em 1em var(--accent-color);
+}
+
+/* Grow the inner ball when checked */
+input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+
+/* Puts a circle around the clicked radio input */
+input[type="radio"]:focus {
+    outline: max(2px, 0.15em) solid currentColor;
+    outline-offset: max(2px, 0.15em);
+}
+
+/* Pushes the radio input label a little to the side */
+.radio-input-group .styled-label {
+    margin-left: 1em;
+}
+
+/* Styles radio inputs */
+.styled-radio {
+    margin: 0.5em 0.25em;
+}
+
 /* Style the disabled text-area that holds the submitted dummy data */
 .styled-text-area {
     min-height: 10em;
@@ -122,11 +201,12 @@ div.tooltip:hover span.tooltiptext {
     color: var(--neutral-color);
 }
 
-/* TextArea scrollbar styling */
+/* TextArea scrollbar area size */
 .styled-text-area::-webkit-scrollbar {
     width: 0.8em;
 }
 
+/* TextArea scrollbar styling */
 .styled-text-area::-webkit-scrollbar-thumb {
     background-color: var(--base-color);
     overflow: hidden;
@@ -149,5 +229,9 @@ div.tooltip:hover span.tooltiptext {
 
     .styled-input {
         margin: 0.25em 0.5em;
+    }
+
+    .radio-label-inputs-group {
+        flex-direction: row;
     }
 }

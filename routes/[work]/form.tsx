@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <CustomHead
         title="Form"
-        description="A form built with Preact. Alerts the window on submit."
+        description="A form to pretend to request Stimulus Check built with Preact."
         link="https://www.theyurig.com/work/form"
       >
         <link rel="stylesheet" href="/navigation-buttons.css" />
@@ -26,7 +26,9 @@ export default function Home() {
       <Base>
         <BlogNavigationButtons />
         <article class="center">
-          <h1 class="blog-title">Form (with validation)</h1>
+          <h1 class="blog-title">
+            Stimulus Checks Eligibility Form
+          </h1>
           <FormWithValidation />
         </article>
       </Base>
