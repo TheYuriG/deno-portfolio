@@ -56,8 +56,13 @@ div.helper {
     margin: 0.25em 0em;
     font-size: 1.25rem;
     cursor: pointer;
-    color: var(--accent-color);
+    color: var(--neutral-color);
     transition: background-color 0.8s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+/* Updates background color for dropdown options to enable good contrast always */
+.styled-select option {
+    background-color: var(--base-color);
 }
 
 /* Change border color on invalid input value */
