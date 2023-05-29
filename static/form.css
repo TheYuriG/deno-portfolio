@@ -45,6 +45,21 @@ div.helper {
     transition: background-color 0.8s ease-in-out, color 0.9s ease-in-out, border-color 0.3s ease-in-out;
 }
 
+/* Style the select */
+.styled-select {
+    position: relative;
+    width: 100%;
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
+    border-radius: 0.5em;
+    padding: 0.25em 0.5em;
+    margin: 0.25em 0em;
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: var(--accent-color);
+    transition: background-color 0.8s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
 /* Change border color on invalid input value */
 .invalid-input {
     border-color: red;
@@ -107,6 +122,11 @@ div.tooltip:hover span.tooltiptext {
     div.label-wrapper {
         flex-direction: row;
         margin-left: 0em;
+    }
+
+    .styled-select {
+        margin: 0.25em 0em 0.25em 0.5em;
+        width: calc(100% - 0.5em);
     }
 
     .styled-input {

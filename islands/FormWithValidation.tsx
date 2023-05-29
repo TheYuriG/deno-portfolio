@@ -138,6 +138,8 @@ export default function FormWithValidation() {
     ) {
       validationErrors++;
     }
+    //? If the age is invalid, increase errors counter
+    if (formValues.employment === defaultFormValues.employment) {
       validationErrors++;
     }
 
@@ -160,7 +162,7 @@ export default function FormWithValidation() {
         //? Adds "number - name: name, age: age, profession: profession"
         `${
           currentSum.length + 1
-        } - name: ${formValues.name}, age: ${formValues.age}, profession: ${formValues.profession}`,
+        } - name: ${formValues.name}, age: ${formValues.age}, profession: ${formValues.profession}, employment status: ${formValues.employment}`,
       ]);
 
       //? Fetch all elements with 'valid-input' class (the ones with the green border)
@@ -247,6 +249,25 @@ export default function FormWithValidation() {
               validateProfession,
             )}
           helpInformation="Validation: 6 to 20 alphabet characters (a-zA-Z)"
+        />
+        {/* Select for employment */}
+        <StyledSelect
+          name="employment"
+          label="Employment Status"
+          value={formValues.employment}
+          optionsArray={[
+            "Select one",
+            "Too Young to Work",
+            "Between Jobs",
+            "Employed",
+            "Retired",
+          ]}
+          onChangeFunction={(input) => {
+            setValues((currentForm) => ({
+              ...currentForm,
+              employment: input,
+            }));
+          }}
         />
         {/* Confirm button (prints to text area) */}
         <StyledButton

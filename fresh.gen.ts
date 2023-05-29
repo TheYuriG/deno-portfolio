@@ -22,7 +22,8 @@ import * as $$1 from "./islands/FormWithValidation.tsx";
 import * as $$2 from "./islands/InsanitySection.tsx";
 import * as $$3 from "./islands/StyledButton.tsx";
 import * as $$4 from "./islands/StyledInput.tsx";
-import * as $$5 from "./islands/ThemeSwitcher.tsx";
+import * as $$5 from "./islands/StyledSelect.tsx";
+import * as $$6 from "./islands/ThemeSwitcher.tsx";
 
 const manifest = {
   routes: {
@@ -47,7 +48,8 @@ const manifest = {
     "./islands/InsanitySection.tsx": $$2,
     "./islands/StyledButton.tsx": $$3,
     "./islands/StyledInput.tsx": $$4,
-    "./islands/ThemeSwitcher.tsx": $$5,
+    "./islands/StyledSelect.tsx": $$5,
+    "./islands/ThemeSwitcher.tsx": $$6,
   },
   baseUrl: import.meta.url,
   config,
