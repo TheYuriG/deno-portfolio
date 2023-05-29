@@ -7,8 +7,13 @@ import StyledButton from "./StyledButton.tsx";
 //? Styled Select for Employment Status dropdown
 import StyledSelect from "./StyledSelect.tsx";
 
+//? Validation values for typecasting
+import { validationStatus } from "../types/validationStatus.ts";
+
 //? Validates the form's name input field
-const validateName = (name: string): -1 | 1 => {
+const validateName = (
+  name: string,
+): validationStatus.Invalid | validationStatus.Valid => {
   //? This RegEx looks for a string of 3 to 40 alphabet characters + space
   //? and dash, but will fail validation if two consecutive spaces/dashes
   //? are provided
@@ -18,35 +23,39 @@ const validateName = (name: string): -1 | 1 => {
   //? Validates the input against the RegEx, returning 1 for
   //? valid and -1 for invalid input
   if (validation.test(name)) {
-    return 1;
+    return validationStatus.Valid;
   } else {
-    return -1;
+    return validationStatus.Invalid;
   }
 };
 
 //? Validates the form's profession input field
-const validateProfession = (profession: string): -1 | 1 => {
+const validateProfession = (
+  profession: string,
+): validationStatus.Invalid | validationStatus.Valid => {
   //? This RegEx looks for a string of 6 to 20 alphabet characters + space
   //? and dash, but will fail validation if two consecutive spaces/dashes
   //? are provided
   const regularExpression = "^(?!.*[ -]{2})[a-zA-Z -]{6,20}$";
   //? Creates a RegEx with the expression above
   const validation = new RegExp(regularExpression);
-  //? Validates the input against the RegEx, returning 1 for
-  //? valid and -1 for invalid input
+  //? Validates the input against the RegEx, returning
+  //? validationStatus.Valid or validationStatus.Invalid
   if (validation.test(profession)) {
-    return 1;
+    return validationStatus.Valid;
   } else {
-    return -1;
+    return validationStatus.Invalid;
   }
 };
 
 //? Validates the form's age numeric input field
-const validateAge = (age: string): -1 | 1 => {
+const validateAge = (
+  age: string,
+): validationStatus.Invalid | validationStatus.Valid => {
   if (+age >= 18 && +age <= 100) {
-    return 1;
+    return validationStatus.Valid;
   } else {
-    return -1;
+    return validationStatus.Invalid;
   }
 };
 
@@ -56,11 +65,13 @@ const validateAge = (age: string): -1 | 1 => {
 function validateInput(
   value: string,
   initialState: string,
-  pattern: (valueToValidate: string) => -1 | 1,
-): number {
+  pattern: (
+    valueToValidate: string,
+  ) => validationStatus.Invalid | validationStatus.Valid,
+): validationStatus {
   //? If the field is at initial state, reset validation
   if (value === initialState) {
-    return 0;
+    return validationStatus.Unchanged;
   } //? If the field is not empty, check if a validation RegEx pattern was provided
   else {
     return pattern(value);
@@ -75,25 +86,39 @@ const textAreaPlaceholder = 'Data will be displayed here as you click "Send".' +
   "validation error. This form doesn't have that problem, it only " +
   "attempts to validate the value if a value was actually provided and " +
   "will reset if the value gets removed." +
-  "\n- To reduce animation spam, after successfully sending data for the first" +
-  " time, subsequent inputs will not paint the input border green, unless you " +
-  "fail validation or clear input again." +
   "\n- Regexes are very powerful. I use them to validate login/signup" +
   " on Trophy Place, the form above and probably too many places that" +
   " could probably just use a simple deep equality check.";
 
-//? Assign default form values to avoid duplicating them everywhere
+//? Assign default form values and validation to avoid duplicating them everywhere
+const selectDropdownOptions = [
+  "Select one",
+  "Too Young to Work",
+  "Between Jobs",
+  "Employed",
+  "Retired",
+];
 const defaultFormValues = {
   name: "",
   age: 18,
   profession: "",
-  employment: "Select one",
+  employment: selectDropdownOptions[0],
+};
+const defaultFormValidation = {
+  name: validationStatus.Unchanged,
+  age: validationStatus.Unchanged,
+  profession: validationStatus.Unchanged,
+  employment: validationStatus.Unchanged,
 };
 
 //? Creates a form that uses RegExp validation
 export default function FormWithValidation() {
   //? Manages current state for form data
   const [formValues, setValues] = useState(defaultFormValues);
+  //? Manages the validation of form fields
+  const [formValidationStatus, updateValidation] = useState(
+    defaultFormValidation,
+  );
   //? Handles textarea's content being populated when "Send" is clicked
   const [sumOfAllInputs, extendSum] = useState([] as Array<string>);
   //? Manages if there is an error text to be displayed
@@ -105,28 +130,49 @@ export default function FormWithValidation() {
     //? Initialize the number of errors variable
     let validationErrors = 0;
 
+    updateValidation((currentValidationStatus) => ({
+      ...currentValidationStatus,
+      age: 1,
+    }));
+
     //? If the name is empty or invalid, increase errors counter
     if (formValues.name === "") {
       setValues((currentValues) => ({ ...currentValues, name: "N/A" }));
+      updateValidation((currentValidationStatus) => ({
+        ...currentValidationStatus,
+        name: validationStatus.Invalid,
+      }));
       validationErrors++;
     } else if (
       validateInput(formValues.name, defaultFormValues.name, validateName) ===
-        -1
+        validationStatus.Invalid
     ) {
       validationErrors++;
+      updateValidation((currentValidationStatus) => ({
+        ...currentValidationStatus,
+        name: validationStatus.Invalid,
+      }));
     }
     //? If the profession is empty or invalid, increase errors counter
     if (formValues.profession === "") {
       setValues((currentValues) => ({ ...currentValues, profession: "N/A" }));
       validationErrors++;
+      updateValidation((currentValidationStatus) => ({
+        ...currentValidationStatus,
+        profession: validationStatus.Invalid,
+      }));
     } else if (
       validateInput(
         formValues.profession,
         defaultFormValues.profession,
         validateProfession,
-      ) === -1
+      ) === validationStatus.Invalid
     ) {
       validationErrors++;
+      updateValidation((currentValidationStatus) => ({
+        ...currentValidationStatus,
+        profession: validationStatus.Invalid,
+      }));
     }
     //? If the age is invalid, increase errors counter
     if (
@@ -134,21 +180,30 @@ export default function FormWithValidation() {
         formValues.age.toString(),
         defaultFormValues.age.toString(),
         validateAge,
-      ) === -1
+      ) === validationStatus.Invalid
     ) {
       validationErrors++;
+      updateValidation((currentValidationStatus) => ({
+        ...currentValidationStatus,
+        age: validationStatus.Invalid,
+      }));
     }
     //? If the age is invalid, increase errors counter
     if (formValues.employment === defaultFormValues.employment) {
       validationErrors++;
+      updateValidation((currentValidationStatus) => ({
+        ...currentValidationStatus,
+        employment: validationStatus.Invalid,
+      }));
     }
 
     //? If all data is valid, add to the block below
     if (validationErrors > 0) {
       updateValidationError(true);
     } else {
-      //? Reset error text
+      //? Reset error text and form validation
       updateValidationError(false);
+      updateValidation(defaultFormValidation);
 
       //? When valid data is submitted, reset the form so the user can
       //? try to submit more data
@@ -164,19 +219,6 @@ export default function FormWithValidation() {
           currentSum.length + 1
         } - name: ${formValues.name}, age: ${formValues.age}, profession: ${formValues.profession}, employment status: ${formValues.employment}`,
       ]);
-
-      //? Fetch all elements with 'valid-input' class (the ones with the green border)
-      const greenBorderInputs = document.getElementsByClassName("valid-input");
-
-      //? Toggle the class for all of them
-      //! This works a bit funny because they will immediately get removed from the
-      //! HTMLCollectionOf<HTMLInputElement> as soon as the class is removed, so if
-      //! you try to do a for...loop, it will skip every other item
-      while (
-        greenBorderInputs.length > 0
-      ) {
-        greenBorderInputs[0].classList.toggle("valid-input");
-      }
     }
   }
 
@@ -188,6 +230,7 @@ export default function FormWithValidation() {
         <StyledInput
           key={"first_input"}
           inputType="text"
+          validationReference={formValidationStatus.name}
           autoFocus={true}
           label="Name"
           name="name"
@@ -199,17 +242,24 @@ export default function FormWithValidation() {
             }));
           }}
           helpInformation="Validation: 3 to 40 alphabet characters (a-zA-Z)"
-          validationFunction={() =>
-            validateInput(
+          validationFunction={() => {
+            const result = validateInput(
               formValues.name,
               defaultFormValues.name,
               validateName,
-            )}
+            );
+            updateValidation((currentValidation) => ({
+              ...currentValidation,
+              name: result,
+            }));
+            return result;
+          }}
         />
         {/* Age number */}
         <StyledInput
           key={"second_input"}
           inputType="number"
+          validationReference={formValidationStatus.age as validationStatus}
           label="Age"
           name="age"
           value={formValues.age.toString()}
@@ -219,12 +269,18 @@ export default function FormWithValidation() {
               age: Number(inputAge),
             }));
           }}
-          validationFunction={() =>
-            validateInput(
+          validationFunction={() => {
+            const result = validateInput(
               formValues.age.toString(),
               defaultFormValues.age.toString(),
               validateAge,
-            )}
+            );
+            updateValidation((currentValidation) => ({
+              ...currentValidation,
+              age: result,
+            }));
+            return result;
+          }}
           min={18}
           max={100}
           helpInformation="Validation: Number between 18 and 100 (18 < value < 100)"
@@ -233,6 +289,8 @@ export default function FormWithValidation() {
         <StyledInput
           key={"third_input"}
           inputType="text"
+          validationReference={formValidationStatus
+            .profession as validationStatus}
           label="Profession"
           name="profession"
           value={formValues.profession}
@@ -242,31 +300,39 @@ export default function FormWithValidation() {
               profession: inputProfession,
             }));
           }}
-          validationFunction={() =>
-            validateInput(
+          validationFunction={() => {
+            const result = validateInput(
               formValues.profession,
               defaultFormValues.profession,
               validateProfession,
-            )}
+            );
+            updateValidation((currentValidation) => ({
+              ...currentValidation,
+              profession: result,
+            }));
+            return result;
+          }}
           helpInformation="Validation: 6 to 20 alphabet characters (a-zA-Z)"
         />
         {/* Select for employment */}
         <StyledSelect
           name="employment"
           label="Employment Status"
+          validationReference={formValidationStatus
+            .employment as validationStatus}
           value={formValues.employment}
-          optionsArray={[
-            "Select one",
-            "Too Young to Work",
-            "Between Jobs",
-            "Employed",
-            "Retired",
-          ]}
+          optionsArray={selectDropdownOptions}
           onChangeFunction={(input) => {
             setValues((currentForm) => ({
               ...currentForm,
               employment: input,
             }));
+            if (input !== selectDropdownOptions[0]) {
+              updateValidation((currentValidation) => ({
+                ...currentValidation,
+                employment: validationStatus.Valid,
+              }));
+            }
           }}
         />
         {/* Confirm button (prints to text area) */}
@@ -278,10 +344,9 @@ export default function FormWithValidation() {
         {validationError === true && (
           <>
             <p class="space">
-              Some fields have invalid data being provided! Please fix them
-              before submitting! Invalid fields will not have a green border
-              around them. Hover/click the information icon on the right side
-              for more information.
+              Some fields have invalid data being provided (will display a red
+              border), please fix them before submitting! Hover/click the
+              information icon on the right side for more information.
             </p>
           </>
         )}

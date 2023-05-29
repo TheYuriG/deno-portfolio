@@ -56,8 +56,13 @@ div.helper {
     margin: 0.25em 0em;
     font-size: 1.25rem;
     cursor: pointer;
-    color: var(--accent-color);
+    color: var(--neutral-color);
     transition: background-color 0.8s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+/* Updates background color for dropdown options to enable good contrast always */
+.styled-select option {
+    background-color: var(--base-color);
 }
 
 /* Change border color on invalid input value */
@@ -115,6 +120,19 @@ div.tooltip:hover span.tooltiptext {
 .styled-text-area::placeholder,
 .styled-input::placeholder {
     color: var(--neutral-color);
+}
+
+/* TextArea scrollbar styling */
+.styled-text-area::-webkit-scrollbar {
+    width: 0.8em;
+}
+
+.styled-text-area::-webkit-scrollbar-thumb {
+    background-color: var(--base-color);
+    overflow: hidden;
+    outline: 2px solid var(--accent-color);
+    outline-offset: -0.1rem;
+    border-radius: 0.3rem;
 }
 
 /* Use a media query to move the label to the side of the input on larger resolutions */

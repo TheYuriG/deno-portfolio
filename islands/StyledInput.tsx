@@ -1,5 +1,6 @@
-//? Import from Preact to be able to change state
-import { useState } from "preact/hooks";
+//? Validation values for typecasting
+import { validationStatus } from "../types/validationStatus.ts";
+
 //? Define optional and required properties for inputs
 interface StyledInputProperties {
   //? Text for the label related to this input
@@ -9,6 +10,8 @@ interface StyledInputProperties {
   //? Whether this input is a file, image, text, number or anything else
   //! Reference: https://www.w3schools.com/tags/tag_input.asp
   inputType: string;
+  //? Tracks the validation reference state for this input
+  validationReference: validationStatus;
   //? Input name, helps Screenreaders to connect label+input
   name: string;
   //? Placeholder text to display on input, if relevant
@@ -20,7 +23,7 @@ interface StyledInputProperties {
   //? Function that updates the input state when typing in the input field
   inputFunction: (input: string) => void;
   //? String to be turned into a RegExp. Don't enclose with forward slashes (/)!
-  validationFunction: (input: string | number) => number;
+  validationFunction: (input: string | number) => validationStatus;
   //? Mininum and maximum values for numerical inputs
   min?: number;
   max?: number;
@@ -36,6 +39,7 @@ export default function StyledInput(
     label,
     key,
     inputType,
+    validationReference,
     name,
     placeholder,
     autoFocus,
@@ -47,9 +51,6 @@ export default function StyledInput(
     helpInformation,
   }: StyledInputProperties,
 ) {
-  //? State that managed validation when the field is clicked out of.
-  //! Managed by the onBlur function
-  const [validInput, validateInput] = useState(0);
   return (
     <>
       <div class="label-wrapper">
@@ -66,11 +67,10 @@ export default function StyledInput(
             //! Reference: https://www.w3schools.com/tags/tag_input.asp
             type={inputType}
             //? Base class + validation class if needed
-            //! The value of 'validInput' is managed by the onBlur function
             class={"base-form-style styled-input" +
-              (validInput === 1
+              (validationReference === validationStatus.Valid
                 ? " valid-input"
-                : validInput === -1
+                : validationReference === validationStatus.Invalid
                 ? " invalid-input"
                 : "")}
             name={name}
@@ -91,7 +91,7 @@ export default function StyledInput(
             }}
             //? Validates the input when the input loses focus
             onBlur={() => {
-              validateInput(validationFunction(value));
+              validationFunction(value);
             }}
             //? Mininum and maximum thresholds for numerical values
             min={min}
