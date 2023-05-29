@@ -122,6 +122,19 @@ div.tooltip:hover span.tooltiptext {
     color: var(--neutral-color);
 }
 
+/* TextArea scrollbar styling */
+.styled-text-area::-webkit-scrollbar {
+    width: 0.8em;
+}
+
+.styled-text-area::-webkit-scrollbar-thumb {
+    background-color: var(--base-color);
+    overflow: hidden;
+    outline: 2px solid var(--accent-color);
+    outline-offset: -0.1rem;
+    border-radius: 0.3rem;
+}
+
 /* Use a media query to move the label to the side of the input on larger resolutions */
 @media (min-width: 600px) {
     div.label-wrapper {
