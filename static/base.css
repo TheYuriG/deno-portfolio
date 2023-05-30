@@ -14,7 +14,6 @@ body::-webkit-scrollbar-thumb {
 
 /* Expand page to use full screen and set page default font and color scheme */
 html {
-    max-height: fit-content;
     font-family: 'Fragment Mono', monospace;
     background-color: var(--base-color);
     color: var(--neutral-color);
@@ -36,20 +35,17 @@ main {
 
 /* Position the theme switcher on the bottom left corner */
 aside {
-    height: 1em;
     width: 5em;
     height: min-content;
     position: fixed;
     bottom: 3.2em;
     rotate: -90deg;
-    translate: -78%;
-    font-size: 1.25rem;
-    line-height: 1em;
+    translate: -75%;
+    font-size: 1.2rem;
 }
 
 /* Define theme SVG size, push text away */
 aside svg {
-    height: 1em;
     width: 1em;
     margin-right: 0.2em;
 }
@@ -57,7 +53,6 @@ aside svg {
 /* Organize theme button horizontally and align vertically */
 .theme-switcher {
     display: flex;
-    flex-direction: row;
     text-justify: center;
     animation: fadeThemeSwitcherIn 0.3s;
 }
