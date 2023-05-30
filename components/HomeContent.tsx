@@ -2,11 +2,11 @@ export function HomeContent() {
   return (
     <>
       {/* Greeting */}
-      <h1 class="inline-block text-4xl animate-to-left" style="--dur: 0">
+      <h1 class="inline-block text-4xl animate-to-top" style="--dur: 0">
         Hello!
       </h1>
       {/* Name */}
-      <p class="block text-2xl ml-4 animate-to-left" style="--dur: 1">
+      <p class="block text-2xl ml-4 animate-to-top" style="--dur: 1">
         I am{" "}
         <strong>
           <span class="gradient-underline">TheYuriG</span>
@@ -14,11 +14,11 @@ export function HomeContent() {
         </strong>
       </p>
       {/* Skillset */}
-      <p class="block text-2xl ml-8 animate-to-left" style="--dur: 2">
+      <p class="block text-2xl ml-8 animate-to-top" style="--dur: 2">
         Sky afficionado, gym rat, full stack developer
       </p>
       {/* Role */}
-      <p class="block ml-12 animate-to-left" style="--dur: 3">
+      <p class="block ml-12 animate-to-top" style="--dur: 3">
         Currently building greatness at{" "}
         <a href="https://trophy.place" target="_blank" class="pretty-link">
           Trophy Place
