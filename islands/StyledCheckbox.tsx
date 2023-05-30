@@ -26,7 +26,7 @@ export default function StyledCheckbox({
       <span class="radio-label">
         {label}
       </span>
-      <div className="radio-input-group">
+      <div class="base-form-style radio-input-group">
         {/* Programatically creates radio inputs from array of strings provided */}
         {optionsArray.map(({ value, name }: CheckboxItem) => (
           <>

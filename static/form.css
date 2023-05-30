@@ -111,23 +111,25 @@ div.tooltip:hover span.tooltiptext {
 
 /* Name for group of radio inputs */
 .radio-label-inputs-group {
-    margin: 0.5em 0;
+    margin: 0.25em 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
 }
 
 /* Label for radio input */
 .radio-label {
     width: max-content;
+    flex-shrink: 0;
 }
 
 /* Collection of radio inputs and labels */
 .radio-input-group {
     display: flex;
-    flex-grow: 1;
+    flex-direction: column;
+    width: min-content;
     flex-wrap: wrap;
+    place-content: center;
 }
 
 /* Styles the radio to use customized balls for toggles */
@@ -195,11 +197,6 @@ input[type="checkbox"]:focus {
     outline-offset: max(2px, 0.15em);
 }
 
-/* Pushes the input+label to the right */
-.radio-input-group .styled-label {
-    margin-left: 1em;
-}
-
 /* Styles radio inputs */
 .styled-radio,
 .styled-checkbox {
@@ -257,7 +254,20 @@ input[type="checkbox"]:focus {
     }
 
     /* Turns radio/checkbox and overlaying label into a row */
-    .radio-label-inputs-group {
+    .radio-label-inputs-group,
+    .radio-input-group {
         flex-direction: row;
+    }
+
+
+    .radio-input-group {
+        margin-left: 1em;
+        width: fit-content;
+    }
+
+    /* Pushes the input+label to the right */
+    .radio-input-group .styled-label {
+        margin-right: 0.5em;
+        margin-left: 0.5em;
     }
 }
