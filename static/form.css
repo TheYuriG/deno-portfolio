@@ -111,6 +111,7 @@ div.tooltip:hover span.tooltiptext {
 
 /* Name for group of radio inputs */
 .radio-label-inputs-group {
+    margin: 0.5em 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -130,7 +131,8 @@ div.tooltip:hover span.tooltiptext {
 }
 
 /* Styles the radio to use customized balls for toggles */
-input[type="radio"] {
+input[type="radio"],
+input[type="checkbox"] {
     /* Remove default selection circle */
     -webkit-appearance: none;
     appearance: none;
@@ -140,48 +142,67 @@ input[type="radio"] {
     margin: 0;
     font: inherit;
     color: currentColor;
+    /* Sizing */
     width: 0.9em;
     height: 0.9em;
+    /* Outline for checker */
     border: 0.15em solid currentColor;
-    border-radius: 50%;
+    /* Border radius for checkbox, radio gets overriden below */
+    border-radius: 0.2em;
+    /* Push right the label text */
     margin-right: 0.5em;
-    /* Move the circle a little down */
+    /* Push down the checker */
     transform: translateY(0.3em);
-    /* Enable the radio check icon to be centered inside the circle */
+    /* Enable the radio check icon to be centered inside the checker */
     display: grid;
     place-content: center;
 }
 
-/* Create positioning for the 'checked' ball */
-input[type="radio"]::before {
+/* Create positioning for the checker, common to radio and checkbox */
+input[type="radio"]::before,
+input[type="checkbox"]::before {
     content: "";
-    width: 0.4em;
-    height: 0.4em;
-    border-radius: 50%;
+    width: 0.5em;
+    height: 0.5em;
     transform: scale(0);
-    transition: 120ms transform ease-in-out;
+    transition: 0.2s transform ease-in-out;
     /* Inner colored ball for whenever checked */
     box-shadow: inset 1em 1em var(--accent-color);
 }
 
-/* Grow the inner ball when checked */
-input[type="radio"]:checked::before {
+/* Turn the checker into a ball for radio inputs only */
+input[type="radio"],
+input[type="radio"]::before {
+    border-radius: 50%;
+}
+
+/* Turns the checkbox checker into a confirmation */
+input[type="checkbox"]::before {
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+/* Grow the inner ball/confirmation when checked */
+input[type="radio"]:checked::before,
+input[type="checkbox"]:checked::before {
     transform: scale(1);
 }
 
-/* Puts a circle around the clicked radio input */
-input[type="radio"]:focus {
+/* Puts an outline around the clicked radio/checkbox input */
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
     outline: max(2px, 0.15em) solid var(--accent-color);
     outline-offset: max(2px, 0.15em);
 }
 
-/* Pushes the radio input label a little to the side */
+/* Pushes the input+label to the right */
 .radio-input-group .styled-label {
     margin-left: 1em;
 }
 
 /* Styles radio inputs */
-.styled-radio {
+.styled-radio,
+.styled-checkbox {
     margin: 0.5em 0.25em;
 }
 
@@ -217,20 +238,25 @@ input[type="radio"]:focus {
 
 /* Use a media query to move the label to the side of the input on larger resolutions */
 @media (min-width: 600px) {
+
+    /* Turns input box labels into rows */
     div.label-wrapper {
         flex-direction: row;
         margin-left: 0em;
     }
 
+    /* Spaces left and right on the input fields */
+    .styled-input {
+        margin: 0.25em 0.5em;
+    }
+
+    /* Spaces left and right on the select dropdown */
     .styled-select {
         margin: 0.25em 0em 0.25em 0.5em;
         width: calc(100% - 0.5em);
     }
 
-    .styled-input {
-        margin: 0.25em 0.5em;
-    }
-
+    /* Turns radio/checkbox and overlaying label into a row */
     .radio-label-inputs-group {
         flex-direction: row;
     }

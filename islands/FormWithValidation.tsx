@@ -6,10 +6,13 @@ import StyledInput from "./StyledInput.tsx";
 import StyledButton from "./StyledButton.tsx";
 //? Styled Select for Employment Status dropdown
 import StyledSelect from "./StyledSelect.tsx";
+//? Styled radio for Welfare option
+import StyledRadio from "./StyledRadio.tsx";
+//? Styled checkbox for Stimulus Check option
+import StyledCheckbox from "./StyledCheckbox.tsx";
 
 //? Validation values for typecasting
 import { validationStatus } from "../types/validationStatus.ts";
-import StyledRadio from "./StyledRadio.tsx";
 
 //? Validates the form's name input field
 const validateName = (
@@ -100,6 +103,11 @@ const selectDropdownOptions = [
   "Retired",
 ];
 const radioOptions = ["None", "Once", "Twice or More"];
+const checkboxOptions = [
+  "Individual ($1000)",
+  "Family ($2000)",
+  "Business ($10000)",
+];
 const defaultFormValues = {
   name: "",
   age: 18,
@@ -350,6 +358,17 @@ export default function FormWithValidation() {
             }));
           }}
           optionsArray={radioOptions}
+        />
+        {/* Styled checkbox */}
+        <StyledCheckbox
+          label="Stimulus Check pack"
+          onChangeFunction={(newWelfareValue) => {
+            setValues((currentFormValues) => ({
+              ...currentFormValues,
+              welfare: newWelfareValue,
+            }));
+          }}
+          optionsArray={checkboxOptions}
         />
         {/* Confirm button (prints to text area) */}
         <StyledButton
