@@ -171,7 +171,7 @@ input[type="radio"]:checked::before {
 
 /* Puts a circle around the clicked radio input */
 input[type="radio"]:focus {
-    outline: max(2px, 0.15em) solid currentColor;
+    outline: max(2px, 0.15em) solid var(--accent-color);
     outline-offset: max(2px, 0.15em);
 }
 

@@ -99,11 +99,13 @@ const selectDropdownOptions = [
   "Employed",
   "Retired",
 ];
+const radioOptions = ["None", "Once", "Twice or More"];
 const defaultFormValues = {
   name: "",
   age: 18,
   profession: "",
   employment: selectDropdownOptions[0],
+  welfare: radioOptions[0],
 };
 const defaultFormValidation = {
   name: validationStatus.Unchanged,
@@ -215,10 +217,10 @@ export default function FormWithValidation() {
         currentSum,
       ) => [
         ...currentSum,
-        //? Adds "number - name: name, age: age, profession: profession"
+        //? Adds "number - name: name, age: age, profession: profession, employment: employment, welfare: welfare"
         `${
           currentSum.length + 1
-        } - name: ${formValues.name}, age: ${formValues.age}, profession: ${formValues.profession}, employment status: ${formValues.employment}`,
+        } - name: ${formValues.name}, age: ${formValues.age}, profession: ${formValues.profession}, employment status: ${formValues.employment}, times on welfare: ${formValues.welfare}`,
       ]);
     }
   }
@@ -339,9 +341,15 @@ export default function FormWithValidation() {
         {/* Styled radio */}
         <StyledRadio
           label="Times on Welfare"
-          name="aa"
-          onChangeFunction={() => {}}
-          optionsArray={["None", "Once", "Twice or More"]}
+          name="welfare"
+          starterValue={formValues.welfare}
+          onChangeFunction={(newWelfareValue) => {
+            setValues((currentFormValues) => ({
+              ...currentFormValues,
+              welfare: newWelfareValue,
+            }));
+          }}
+          optionsArray={radioOptions}
         />
         {/* Confirm button (prints to text area) */}
         <StyledButton
