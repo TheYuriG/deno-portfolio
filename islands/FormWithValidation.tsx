@@ -125,6 +125,7 @@ const defaultFormValidation = {
   age: validationStatus.Unchanged,
   profession: validationStatus.Unchanged,
   employment: validationStatus.Unchanged,
+  welfare: validationStatus.Unchanged,
   check: validationStatus.Unchanged,
 };
 
@@ -205,12 +206,23 @@ export default function FormWithValidation() {
         age: validationStatus.Invalid,
       }));
     }
-    //? If the age is invalid, increase errors counter
+    //? If the employment status is invalid, increase errors counter
     if (formValues.employment === defaultFormValues.employment) {
       validationErrors++;
       updateValidation((currentValidationStatus) => ({
         ...currentValidationStatus,
         employment: validationStatus.Invalid,
+      }));
+    }
+    //? If no stimulus checks were chosen, increase errors counter
+    if (
+      Object.values(formValues.check).filter((status) => status !== false)
+        .length === 0
+    ) {
+      validationErrors++;
+      updateValidation((currentValidationStatus) => ({
+        ...currentValidationStatus,
+        check: validationStatus.Invalid,
       }));
     }
 
@@ -377,6 +389,9 @@ export default function FormWithValidation() {
         <StyledCheckbox
           label="Stimulus Check desired"
           optionsArray={checkboxOptions}
+          stateForCheckedReference={formValues.check}
+          validationReference={formValidationStatus
+            .check as validationStatus}
           onChangeFunction={(
             checkName: stimulusCheckboxOptions,
           ) => {

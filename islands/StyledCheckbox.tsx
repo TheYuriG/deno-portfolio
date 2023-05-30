@@ -1,5 +1,7 @@
 //? Types for typecasting
 import { stimulusCheckboxOptions } from "../types/stimulusCheckboxOptions.ts";
+//? Validation values for typecasting
+import { validationStatus } from "../types/validationStatus.ts";
 
 //? Every checkbox item needs to have a name and an associated
 //? value to enable changing its state
@@ -11,7 +13,10 @@ type CheckboxItem = {
 //? Properties required to build a Checkbox input
 interface CheckboxProperties {
   label: string;
+  //? Tracks the validation reference state for this input
+  validationReference: validationStatus;
   optionsArray: Array<CheckboxItem>;
+  stateForCheckedReference: Record<string, boolean>;
   onChangeFunction: (name: stimulusCheckboxOptions) => void;
 }
 
@@ -19,6 +24,8 @@ interface CheckboxProperties {
 export default function StyledCheckbox({
   label,
   optionsArray,
+  validationReference,
+  stateForCheckedReference,
   onChangeFunction,
 }: CheckboxProperties) {
   return (
@@ -26,7 +33,14 @@ export default function StyledCheckbox({
       <span class="radio-label">
         {label}
       </span>
-      <div class="base-form-style radio-input-group">
+      <div
+        class={"base-form-style radio-input-group" +
+          (
+            validationReference === validationStatus.Invalid
+              ? " invalid-input"
+              : ""
+          )}
+      >
         {/* Programatically creates radio inputs from array of strings provided */}
         {optionsArray.map(({ value, name }: CheckboxItem) => (
           <>
@@ -35,6 +49,7 @@ export default function StyledCheckbox({
               <input
                 class="styled-checkbox"
                 type="checkbox"
+                checked={stateForCheckedReference[value] === true}
                 //? Updates state when an option is clicked
                 onClick={() => {
                   onChangeFunction(value as stimulusCheckboxOptions);
