@@ -37,7 +37,7 @@ export default function Home() {
           >
             <li>
               <GradientLink
-                content="Form"
+                content="Form (with validation)"
                 title="A simple form that uses Alert() once you submit it."
                 link="/work/form"
                 newTab={false}
