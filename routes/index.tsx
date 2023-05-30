@@ -26,7 +26,6 @@ export default function Home() {
       <StarryNight />
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
-        <div style="background-color: var(--base-color);"></div>
         {/* Content with greeting, name, workplace */}
         <HomeContent />
         {/* Navigation menu to other routes */}

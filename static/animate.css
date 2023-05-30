@@ -1,25 +1,25 @@
 /* Animate header items in sequence */
-.animate-to-left {
-    animation: 0.5s linear calc(var(--dur)*0.4s) to-left;
+.animate-to-top {
+    animation: 0.6s ease-in-out calc(var(--dur)*0.3s) to-top;
     animation-fill-mode: both;
 }
 
-/* Start invisible right, fade in left */
-@keyframes to-left {
+/* Start invisible right, fade in top */
+@keyframes to-top {
     0% {
         opacity: 0;
-        transform: translateX(3em);
+        transform: translateY(5em);
     }
 
     100% {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateY(0);
     }
 }
 
 /* Animate menu items in sequence, after header items */
 .animate-to-right {
-    animation: 0.5s linear calc(var(--dur)*0.4s) to-right;
+    animation: 0.5s linear calc(var(--dur)*0.2s) to-right;
     animation-fill-mode: both;
 }
 
