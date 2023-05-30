@@ -1,8 +1,18 @@
+//? Types for typecasting
+import { stimulusCheckboxOptions } from "../types/stimulusCheckboxOptions.ts";
+
+//? Every checkbox item needs to have a name and an associated
+//? value to enable changing its state
+type CheckboxItem = {
+  name: string;
+  value: string;
+};
+
 //? Properties required to build a Checkbox input
 interface CheckboxProperties {
   label: string;
-  optionsArray: Array<string>;
-  onChangeFunction: (value: string) => void;
+  optionsArray: Array<CheckboxItem>;
+  onChangeFunction: (name: stimulusCheckboxOptions) => void;
 }
 
 //? Exports a styled select with label and options
@@ -18,27 +28,21 @@ export default function StyledCheckbox({
       </span>
       <div className="radio-input-group">
         {/* Programatically creates radio inputs from array of strings provided */}
-        {optionsArray.map((checkbox) => (
+        {optionsArray.map(({ value, name }: CheckboxItem) => (
           <>
             <label class="styled-label">
               {/* Checkbox */}
               <input
                 class="styled-checkbox"
                 type="checkbox"
-                //? Tracks current value
-                value={checkbox}
                 //? Updates state when an option is clicked
-                onChange={(e) => {
-                  const { target } = e;
-                  if (target) {
-                    const changedValue = (target as HTMLInputElement).value;
-                    onChangeFunction(changedValue);
-                  }
+                onClick={() => {
+                  onChangeFunction(value as stimulusCheckboxOptions);
                 }}
               >
               </input>
               {/* Label for what this is for */}
-              {checkbox}
+              {name}
             </label>
           </>
         ))}

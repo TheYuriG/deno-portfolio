@@ -11,8 +11,9 @@ import StyledRadio from "./StyledRadio.tsx";
 //? Styled checkbox for Stimulus Check option
 import StyledCheckbox from "./StyledCheckbox.tsx";
 
-//? Validation values for typecasting
+//? Types for typecasting
 import { validationStatus } from "../types/validationStatus.ts";
+import type { stimulusCheckboxOptions } from "../types/stimulusCheckboxOptions.ts";
 
 //? Validates the form's name input field
 const validateName = (
@@ -103,23 +104,28 @@ const selectDropdownOptions = [
   "Retired",
 ];
 const radioOptions = ["None", "Once", "Twice or More"];
-const checkboxOptions = [
-  "Individual ($1000)",
-  "Family ($2000)",
-  "Business ($10000)",
-];
+const checkboxOptions: Array<{ value: stimulusCheckboxOptions; name: string }> =
+  [
+    { value: "individual", name: "Individual ($1000)" },
+    { value: "family", name: "Family ($2000)" },
+    { value: "business", name: "Business ($10000)" },
+  ];
 const defaultFormValues = {
   name: "",
   age: 18,
   profession: "",
   employment: selectDropdownOptions[0],
   welfare: radioOptions[0],
+  //? Check properties must match stimulusCheckboxOptions' values property
+  //! Record<stimulusCheckboxOptions, boolean>
+  check: { individual: false, family: false, business: false },
 };
 const defaultFormValidation = {
   name: validationStatus.Unchanged,
   age: validationStatus.Unchanged,
   profession: validationStatus.Unchanged,
   employment: validationStatus.Unchanged,
+  check: validationStatus.Unchanged,
 };
 
 //? Creates a form that uses RegExp validation
@@ -228,7 +234,15 @@ export default function FormWithValidation() {
         //? Adds "number - name: name, age: age, profession: profession, employment: employment, welfare: welfare"
         `${
           currentSum.length + 1
-        } - name: ${formValues.name}, age: ${formValues.age}, profession: ${formValues.profession}, employment status: ${formValues.employment}, times on welfare: ${formValues.welfare}`,
+        } - name: ${formValues.name}, age: ${formValues.age}, profession: ${formValues.profession}, employment status: ${formValues.employment}, times on welfare: ${formValues.welfare}, checks desired: ${
+          //? Gets all properties, filters to only the ones selected as true
+          // {1: true, 2: false, 3: true}
+          Object.entries(formValues.check).filter((check) => check[1] === true) // [[1,true],[3,true]]
+            //? Return property names
+            .map((check) => check[0]) // [1,3]
+            //? Join property names with forward slash
+            .join("/") // 1/3
+        }`,
       ]);
     }
   }
@@ -361,14 +375,21 @@ export default function FormWithValidation() {
         />
         {/* Styled checkbox */}
         <StyledCheckbox
-          label="Stimulus Check pack"
-          onChangeFunction={(newWelfareValue) => {
-            setValues((currentFormValues) => ({
-              ...currentFormValues,
-              welfare: newWelfareValue,
-            }));
-          }}
+          label="Stimulus Check desired"
           optionsArray={checkboxOptions}
+          onChangeFunction={(
+            checkName: stimulusCheckboxOptions,
+          ) => {
+            setValues((currentFormValues) => {
+              const editedValues = {
+                ...currentFormValues,
+                check: { ...currentFormValues.check },
+              };
+              editedValues.check[checkName] = !editedValues.check[checkName];
+              console.log("editedValues:", editedValues);
+              return editedValues;
+            });
+          }}
         />
         {/* Confirm button (prints to text area) */}
         <StyledButton
