@@ -24,7 +24,9 @@ export default function Home() {
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
-        <BlogNavigationButtons />
+        <BlogNavigationButtons
+          back={{ title: "Return to the works page", link: "/work" }}
+        />
         <article class="center">
           <h1 class="blog-title">
             Stimulus Checks Eligibility Form

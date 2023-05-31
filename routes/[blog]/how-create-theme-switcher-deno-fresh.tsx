@@ -42,7 +42,13 @@ export default function Home() {
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
         {/* Back button */}
-        <BlogNavigationButtons />
+        <BlogNavigationButtons
+          back={{ title: "Browse more blog posts", link: "/blog" }}
+          next={{
+            title: "Read next: Stop theme flickering",
+            link: "/blog/stopping-theme-flickering-deno-fresh",
+          }}
+        />
         <article class="center">
           {/* Centered heading */}
           <h2 class="navigation-link blog-title">

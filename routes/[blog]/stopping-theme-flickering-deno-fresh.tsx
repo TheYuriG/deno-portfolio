@@ -42,7 +42,12 @@ export default function Home() {
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
         {/* Back button */}
-        <BlogNavigationButtons />
+        <BlogNavigationButtons
+          back={{
+            title: "Read again: Part 1 - Creating a Theme Switcher",
+            link: "/blog/how-create-theme-switcher-deno-fresh",
+          }}
+        />
         <article class="center">
           {/* Centered heading */}
           <h2 class="navigation-link blog-title">
