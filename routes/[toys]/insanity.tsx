@@ -21,7 +21,9 @@ export default function Home() {
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
-        <BlogNavigationButtons />
+        <BlogNavigationButtons
+          back={{ title: "Return to all toys", link: "/toys" }}
+        />
         <article>
           {/* Static Insanity Heading */}
           <h1>Did I ever tell you what the definition of insanity is?</h1>

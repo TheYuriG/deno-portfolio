@@ -23,7 +23,9 @@ export default function Home() {
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
-        <BlogNavigationButtons />
+        <BlogNavigationButtons
+          back={{ title: "Return to all toys", link: "/toys" }}
+        />
         <article class="center">
           <h1>Spinners</h1>
           <p class="space" style="margin: 0 auto;">
