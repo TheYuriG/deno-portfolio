@@ -49,9 +49,9 @@ p {
     }
 }
 
-/* Article doesn't expand horizontally forever on larger resolutions */
+/* Center class doesn't expand horizontally forever on larger resolutions */
 @media (min-width: 1024px) {
-    article {
+    .center {
         width: 900px;
         margin: 0 auto;
     }
