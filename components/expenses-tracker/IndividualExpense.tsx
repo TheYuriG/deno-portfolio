@@ -5,12 +5,12 @@ import { ExpenseDate } from "./ExpenseDate.tsx";
 interface IndividualExpenseProperties {
   date: Date;
   description: string;
-  price: number;
+  cost: number;
 }
 
 //? Make the individual expense component available to everything else
 export function IndividualExpense(
-  { date, description, price }: IndividualExpenseProperties,
+  { date, description, cost }: IndividualExpenseProperties,
 ) {
   return (
     <>
@@ -21,7 +21,7 @@ export function IndividualExpense(
         {/* Expense Description */}
         <div class="expense-description">{description}</div>
         {/* Expense Price */}
-        <div class="expense-price">${price.toLocaleString()}</div>
+        <div class="expense-cost">${cost.toLocaleString()}</div>
       </div>
     </>
   );
