@@ -203,6 +203,15 @@ input[type="checkbox"]:focus {
     margin: 0.5em 0.25em;
 }
 
+/* Styles the date picker icon */
+/* Couldn't figure out how to change the icon's color, without removing it */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background-color: white;
+    padding: 0.3em;
+    cursor: pointer;
+    border-radius: 0.25em;
+}
+
 /* Style the disabled text-area that holds the submitted dummy data */
 .styled-text-area {
     min-height: 10em;

@@ -9,9 +9,17 @@
     padding-top: 0.5em;
     padding-right: 1em;
     padding-left: 1em;
+    margin-bottom: 1em;
     border: 2px solid var(--neutral-color);
     border-radius: 1em;
     box-shadow: 0.1em 0.1em 0.3em var(--neutral-color);
+}
+
+.new-expense-title {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0.25em 0;
+    font-family: 'Alfa Slab One', cursive;
 }
 
 /* Groups all expense items together */

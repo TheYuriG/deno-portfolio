@@ -9,7 +9,7 @@ import StyledButton from "./StyledButton.tsx";
 import { validationStatus } from "../types/validationStatus.ts";
 
 //? Validates the form's description input field
-const validateDescription = (
+const descriptionValidation = (
   description: string,
 ): validationStatus.Invalid | validationStatus.Valid => {
   //? This RegEx looks for a string of 3 to 40 alphabet characters + space
@@ -27,19 +27,19 @@ const validateDescription = (
   }
 };
 
-//? Validates the form's profession input field
-const validateProfession = (
-  profession: string,
+//? Validates the form's date input field
+const dateValidation = (
+  date: string,
 ): validationStatus.Invalid | validationStatus.Valid => {
   //? This RegEx looks for a string of 6 to 20 alphabet characters + space
   //? and dash, but will fail validation if two consecutive spaces/dashes
   //? are provided
-  const regularExpression = "^(?!.*[ -]{2})[a-zA-Z -]{6,20}$";
+  const regularExpression = "^\\d{4}-\\d{2}-\\d{2}$";
   //? Creates a RegEx with the expression above
   const validation = new RegExp(regularExpression);
   //? Validates the input against the RegEx, returning
   //? validationStatus.Valid or validationStatus.Invalid
-  if (validation.test(profession)) {
+  if (validation.test(date)) {
     return validationStatus.Valid;
   } else {
     return validationStatus.Invalid;
@@ -47,7 +47,7 @@ const validateProfession = (
 };
 
 //? Validates the form's cost numeric input field
-const validateCost = (
+const costValidation = (
   cost: string,
 ): validationStatus.Invalid | validationStatus.Valid => {
   if (+cost >= 1) {
@@ -77,13 +77,13 @@ function validateInput(
 }
 const defaultFormValues = {
   description: "",
-  cost: 18,
-  profession: "",
+  cost: 1,
+  date: new Date().toISOString().split("T")[0],
 };
 const defaultFormValidation = {
   description: validationStatus.Unchanged,
   cost: validationStatus.Unchanged,
-  profession: validationStatus.Unchanged,
+  date: validationStatus.Unchanged,
 };
 
 //? Creates a form that uses RegExp validation
@@ -120,7 +120,7 @@ export default function FormWithValidation() {
       validateInput(
         formValues.description,
         defaultFormValues.description,
-        validateDescription,
+        descriptionValidation,
       ) ===
         validationStatus.Invalid
     ) {
@@ -130,25 +130,28 @@ export default function FormWithValidation() {
         description: validationStatus.Invalid,
       }));
     }
-    //? If the profession is empty or invalid, increase errors counter
-    if (formValues.profession === "") {
-      setValues((currentValues) => ({ ...currentValues, profession: "N/A" }));
+    //? If the date is empty or invalid, increase errors counter
+    if (formValues.date === "") {
+      setValues((currentValues) => ({
+        ...currentValues,
+        date: new Date(2020, 0, 1).toISOString().split("T")[0],
+      }));
       validationErrors++;
       updateValidation((currentValidationStatus) => ({
         ...currentValidationStatus,
-        profession: validationStatus.Invalid,
+        date: validationStatus.Invalid,
       }));
     } else if (
       validateInput(
-        formValues.profession,
-        defaultFormValues.profession,
-        validateProfession,
+        formValues.date,
+        defaultFormValues.date,
+        dateValidation,
       ) === validationStatus.Invalid
     ) {
       validationErrors++;
       updateValidation((currentValidationStatus) => ({
         ...currentValidationStatus,
-        profession: validationStatus.Invalid,
+        date: validationStatus.Invalid,
       }));
     }
     //? If the cost is invalid, increase errors counter
@@ -156,7 +159,7 @@ export default function FormWithValidation() {
       validateInput(
         formValues.cost.toString(),
         defaultFormValues.cost.toString(),
-        validateCost,
+        costValidation,
       ) === validationStatus.Invalid
     ) {
       validationErrors++;
@@ -182,15 +185,18 @@ export default function FormWithValidation() {
 
   return (
     <div class="add-new-expense">
+      <h2 class="new-expense-title">
+        Add new expense
+      </h2>
       {/* The whole form */}
       <form class="styled-form">
         {/* Expense description */}
         <StyledInput
-          key={"first_input"}
+          key={"text_input"}
           inputType="text"
           validationReference={formValidationStatus.description}
           autoFocus={true}
-          label="Expense description"
+          label="Description"
           name="description"
           value={formValues.description}
           inputFunction={(inputName) => {
@@ -203,7 +209,7 @@ export default function FormWithValidation() {
             const result = validateInput(
               formValues.description,
               defaultFormValues.description,
-              validateDescription,
+              descriptionValidation,
             );
             updateValidation((currentValidation) => ({
               ...currentValidation,
@@ -214,10 +220,10 @@ export default function FormWithValidation() {
         />
         {/* Expense Cost */}
         <StyledInput
-          key={"second_input"}
+          key={"number_input"}
           inputType="number"
           validationReference={formValidationStatus.cost as validationStatus}
-          label="Cost"
+          label="Cost ($)"
           name="cost"
           value={formValues.cost.toString()}
           inputFunction={(inputAge) => {
@@ -230,7 +236,7 @@ export default function FormWithValidation() {
             const result = validateInput(
               formValues.cost.toString(),
               defaultFormValues.cost.toString(),
-              validateCost,
+              costValidation,
             );
             updateValidation((currentValidation) => ({
               ...currentValidation,
@@ -242,28 +248,29 @@ export default function FormWithValidation() {
         />
         {/* Profession input */}
         <StyledInput
-          key={"third_input"}
-          inputType="text"
+          key={"date_input"}
+          inputType="date"
           validationReference={formValidationStatus
-            .profession as validationStatus}
-          label="Profession"
-          name="profession"
-          value={formValues.profession}
-          inputFunction={(inputProfession) => {
+            .date as validationStatus}
+          label="Date"
+          name="date"
+          value={formValues.date}
+          inputFunction={(inputDate) => {
+            console.log(inputDate);
             setValues((currentForm) => ({
               ...currentForm,
-              profession: inputProfession,
+              date: inputDate,
             }));
           }}
           validationFunction={() => {
             const result = validateInput(
-              formValues.profession,
-              defaultFormValues.profession,
-              validateProfession,
+              formValues.date,
+              defaultFormValues.date,
+              dateValidation,
             );
             updateValidation((currentValidation) => ({
               ...currentValidation,
-              profession: result,
+              date: result,
             }));
             return result;
           }}
@@ -275,7 +282,7 @@ export default function FormWithValidation() {
         />
         {validationError === true && (
           <>
-            <p class="space">
+            <p style="margin-top: 0.5em;">
               Some fields have invalid data being provided (will display a red
               border), please fix them before submitting! Hover/click the
               information icon on the right side for more information.
