@@ -11,7 +11,7 @@ type CheckboxItem = {
 };
 
 //? Properties required to build a Checkbox input
-interface CheckboxProperties {
+interface CheckboxGroupProperties {
   label: string;
   //? Tracks the validation reference state for this input
   validationReference: validationStatus;
@@ -21,13 +21,13 @@ interface CheckboxProperties {
 }
 
 //? Exports a styled select with label and options
-export default function StyledCheckbox({
+export default function StyledCheckboxGroup({
   label,
   optionsArray,
   validationReference,
   stateForCheckedReference,
   onChangeFunction,
-}: CheckboxProperties) {
+}: CheckboxGroupProperties) {
   return (
     <div class="radio-label-inputs-group">
       <span class="radio-label">

@@ -9,7 +9,7 @@ import StyledSelect from "./StyledSelect.tsx";
 //? Styled radio for Welfare option
 import StyledRadio from "./StyledRadio.tsx";
 //? Styled checkbox for Stimulus Check option
-import StyledCheckbox from "./StyledCheckbox.tsx";
+import StyledCheckboxGroup from "./StyledCheckboxGroup.tsx";
 
 //? Types for typecasting
 import { validationStatus } from "../types/validationStatus.ts";
@@ -386,7 +386,7 @@ export default function FormWithValidation() {
           optionsArray={radioOptions}
         />
         {/* Styled checkbox */}
-        <StyledCheckbox
+        <StyledCheckboxGroup
           label="Stimulus Check desired"
           optionsArray={checkboxOptions}
           stateForCheckedReference={formValues.check}
