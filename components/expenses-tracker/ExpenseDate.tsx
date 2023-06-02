@@ -1,16 +1,22 @@
 //? Define properties required for this component
 interface ExpenseDateProperties {
-  date: Date;
+  date: string;
 }
 
 //? Make the expense date component available to everything else
 export function ExpenseDate(
   { date }: ExpenseDateProperties,
 ) {
+  //? Converts the date from string to a Date object to be used
+  const dateAsDateObject = new Date(date);
   //? Parse the Date into understandable data
-  const expenseMonth = date.toLocaleString("en-US", { month: "long" });
-  const expenseYear = date.getFullYear();
-  const expenseDay = date.toLocaleString("en-US", { day: "2-digit" });
+  const expenseMonth = dateAsDateObject.toLocaleString("en-US", {
+    month: "long",
+  });
+  const expenseYear = dateAsDateObject.getFullYear();
+  const expenseDay = dateAsDateObject.toLocaleString("en-US", {
+    day: "2-digit",
+  });
 
   return (
     <div class="expense-date">

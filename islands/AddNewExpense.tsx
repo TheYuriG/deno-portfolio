@@ -7,6 +7,11 @@ import StyledButton from "./StyledButton.tsx";
 
 //? Types for typecasting
 import { validationStatus } from "../types/validationStatus.ts";
+interface ExpenseFormProperties {
+  addNewExpenseFunction: (
+    input: { date: Date; description: string; cost: number },
+  ) => void;
+}
 
 //? Validates the form's description input field
 const descriptionValidation = (
@@ -15,7 +20,7 @@ const descriptionValidation = (
   //? This RegEx looks for a string of 3 to 40 alphabet characters + space
   //? and dash, but will fail validation if two consecutive spaces/dashes
   //? are provided
-  const regularExpression = "^(?!.*[ -]{2})[a-zA-Z -]{3,40}$";
+  const regularExpression = "^(?!.*[ -]{2}).{3,}$";
   //? Creates a RegEx with the expression above
   const validation = new RegExp(regularExpression);
   //? Validates the input against the RegEx, returning 1 for
@@ -75,10 +80,11 @@ function validateInput(
     return pattern(value);
   }
 }
+const [timezonelessDate, timezoneDateGap] = new Date().toISOString().split("T");
 const defaultFormValues = {
   description: "",
   cost: 1,
-  date: new Date().toISOString().split("T")[0],
+  date: timezonelessDate,
 };
 const defaultFormValidation = {
   description: validationStatus.Unchanged,
@@ -87,7 +93,9 @@ const defaultFormValidation = {
 };
 
 //? Creates a form that uses RegExp validation
-export default function FormWithValidation() {
+export default function AddNewExpenseForm(
+  { addNewExpenseFunction }: ExpenseFormProperties,
+) {
   //? Manages current state for form data
   const [formValues, setValues] = useState(defaultFormValues);
   //? Manages the validation of form fields
@@ -130,6 +138,20 @@ export default function FormWithValidation() {
         description: validationStatus.Invalid,
       }));
     }
+    //? If the cost is invalid, increase errors counter
+    if (
+      validateInput(
+        formValues.cost.toString(),
+        defaultFormValues.cost.toString(),
+        costValidation,
+      ) === validationStatus.Invalid
+    ) {
+      validationErrors++;
+      updateValidation((currentValidationStatus) => ({
+        ...currentValidationStatus,
+        cost: validationStatus.Invalid,
+      }));
+    }
     //? If the date is empty or invalid, increase errors counter
     if (formValues.date === "") {
       setValues((currentValues) => ({
@@ -154,20 +176,6 @@ export default function FormWithValidation() {
         date: validationStatus.Invalid,
       }));
     }
-    //? If the cost is invalid, increase errors counter
-    if (
-      validateInput(
-        formValues.cost.toString(),
-        defaultFormValues.cost.toString(),
-        costValidation,
-      ) === validationStatus.Invalid
-    ) {
-      validationErrors++;
-      updateValidation((currentValidationStatus) => ({
-        ...currentValidationStatus,
-        cost: validationStatus.Invalid,
-      }));
-    }
 
     //? If all data is valid, add to the block below
     if (validationErrors > 0) {
@@ -176,6 +184,14 @@ export default function FormWithValidation() {
       //? Reset error text and form validation
       updateValidationError(false);
       updateValidation(defaultFormValidation);
+
+      addNewExpenseFunction({
+        date: new Date(
+          formValues.date + "T" + timezoneDateGap,
+        ),
+        description: formValues.description,
+        cost: formValues.cost,
+      });
 
       //? When valid data is submitted, reset the form so the user can
       //? try to submit more data
@@ -256,7 +272,6 @@ export default function FormWithValidation() {
           name="date"
           value={formValues.date}
           inputFunction={(inputDate) => {
-            console.log(inputDate);
             setValues((currentForm) => ({
               ...currentForm,
               date: inputDate,
