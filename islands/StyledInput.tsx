@@ -25,8 +25,8 @@ interface StyledInputProperties {
   //? String to be turned into a RegExp. Don't enclose with forward slashes (/)!
   validationFunction: (input: string | number) => validationStatus;
   //? Mininum and maximum values for numerical inputs
-  min?: number;
-  max?: number;
+  min?: number | string;
+  max?: number | string;
   //? Optional string to be used on the optional help Information icon
   helpInformation?: string;
 }

@@ -43,9 +43,20 @@ const dateValidation = (
   //? Creates a RegEx with the expression above
   const validation = new RegExp(regularExpression);
   //? Validates the input against the RegEx, returning
-  //? validationStatus.Valid or validationStatus.Invalid
+  //? validationStatus.Invalid if not in the proper format
   if (validation.test(date)) {
-    return validationStatus.Valid;
+    //! Should we limit expenses to past expenses,
+    //! rather than allowing to calculate future needs?
+    const today = new Date().getTime();
+    const jan1st2020 = new Date(2020, 1, 1).getTime();
+    const inputDate = new Date(date).getTime();
+    //? If the format is correct, check if the date is within
+    //? the limit of Jan 1st 2020 and today
+    if (jan1st2020 < inputDate && inputDate < today) {
+      return validationStatus.Valid;
+    } else {
+      return validationStatus.Invalid;
+    }
   } else {
     return validationStatus.Invalid;
   }
@@ -262,7 +273,7 @@ export default function AddNewExpenseForm(
           }}
           min={1}
         />
-        {/* Profession input */}
+        {/* Expense Date */}
         <StyledInput
           key={"date_input"}
           inputType="date"
@@ -289,6 +300,8 @@ export default function AddNewExpenseForm(
             }));
             return result;
           }}
+          min="2020-01-01"
+          max={timezonelessDate}
         />
         <StyledButton
           text="Send"
