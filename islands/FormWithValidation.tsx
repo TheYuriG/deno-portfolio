@@ -401,7 +401,6 @@ export default function FormWithValidation() {
                 check: { ...currentFormValues.check },
               };
               editedValues.check[checkName] = !editedValues.check[checkName];
-              console.log("editedValues:", editedValues);
               return editedValues;
             });
           }}

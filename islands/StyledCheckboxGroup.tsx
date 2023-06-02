@@ -2,6 +2,7 @@
 import { stimulusCheckboxOptions } from "../types/stimulusCheckboxOptions.ts";
 //? Validation values for typecasting
 import { validationStatus } from "../types/validationStatus.ts";
+import StyledSingleCheckbox from "./StyledSingleCheckbox.tsx";
 
 //? Every checkbox item needs to have a name and an associated
 //? value to enable changing its state
@@ -44,21 +45,13 @@ export default function StyledCheckboxGroup({
         {/* Programatically creates radio inputs from array of strings provided */}
         {optionsArray.map(({ value, name }: CheckboxItem) => (
           <>
-            <label class="styled-label">
-              {/* Checkbox */}
-              <input
-                class="styled-checkbox"
-                type="checkbox"
-                checked={stateForCheckedReference[value] === true}
-                //? Updates state when an option is clicked
-                onClick={() => {
-                  onChangeFunction(value as stimulusCheckboxOptions);
-                }}
-              >
-              </input>
-              {/* Label for what this is for */}
-              {name}
-            </label>
+            <StyledSingleCheckbox
+              label={name}
+              shouldBeChecked={stateForCheckedReference[value] === true}
+              onChangeFunction={() => {
+                onChangeFunction(value as stimulusCheckboxOptions);
+              }}
+            />
           </>
         ))}
       </div>
