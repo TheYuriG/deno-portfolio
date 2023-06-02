@@ -1,41 +1,34 @@
+// //? To know what is the current route
+import { Handlers } from "$fresh/server.ts";
+//? Fetch a post from source and return it as a CompletePost type
+import fetchExpenses from "../../services/fetchExpenses.ts";
+//todo Import
+import FetchExpenseError from "../../types/FetchExpenseError.ts";
+//todo
+import { Expense } from "../../types/Expense.ts";
 //? Create blog content inside Base component
 import { Base } from "../../components/Base.tsx";
 //? Head component with all Meta tags pre-set
 import { CustomHead } from "../../components/CustomHead.tsx";
-import { IndividualExpense } from "../../components/expenses-tracker/IndividualExpense.tsx";
-import AddNewExpense from "../../islands/AddNewExpense.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
 import BlogNavigationButtons from "../../islands/BlogNavigationButtons.tsx";
+import ExpensesTracker from "../../islands/ExpensesTracker.tsx";
 
-export default function Home() {
-  const expenses = [
-    {
-      date: new Date(2022, 5, 3),
-      description: "Shoes",
-      cost: 200,
-    },
-    {
-      date: new Date(2022, 9, 20),
-      description: "Car",
-      cost: 40000,
-    },
-    {
-      date: new Date(2022, 8, 18),
-      description: "House",
-      cost: 250000,
-    },
-    {
-      date: new Date(2022, 1, 1),
-      description: "Medical Insurance",
-      cost: 3600,
-    },
-    {
-      date: new Date(2022, 11, 28),
-      description: "Kids",
-      cost: 10000,
-    },
-  ];
+//? Runs before the render function to fetch the post from the files, then
+//? pushes
+export const handler: Handlers = {
+  async GET(req, ctx) {
+    const expenses = await fetchExpenses();
+    if (expenses instanceof FetchExpenseError) {
+      return ctx.render([]);
+    }
+    return ctx.render(expenses);
+  },
+};
 
+export default function Home(
+  { data: savedExpenses }: { data: Expense[] },
+) {
   return (
     <>
       {
@@ -58,20 +51,7 @@ export default function Home() {
         <BlogNavigationButtons
           back={{ title: "Return to projects overview", link: "/projects" }}
         />
-        <section class="center">
-          <div class="year-expenses">
-          </div>
-          <AddNewExpense />
-          <div class="expenses-group">
-            {expenses.map((expense) => (
-              <IndividualExpense
-                date={expense.date}
-                description={expense.description}
-                cost={expense.cost}
-              />
-            ))}
-          </div>
-        </section>
+        <ExpensesTracker expenses={savedExpenses} />
       </Base>
     </>
   );
