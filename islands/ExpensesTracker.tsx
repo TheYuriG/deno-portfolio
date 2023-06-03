@@ -5,7 +5,8 @@ import { IndividualExpense } from "../components/expenses-tracker/IndividualExpe
 //? Import expense creation form
 import AddNewExpense from "./AddNewExpense.tsx";
 //? Import the Expense type for casting
-import { Expense } from "../types/Expense.ts";
+import type { Expense } from "../types/Expense.ts";
+import ExpensesYearlySummary from "./ExpensesYearlySummary.tsx";
 
 export default function ExpensesTracker(
   { expenses: savedExpenses }: { expenses: Expense[] },
@@ -14,9 +15,15 @@ export default function ExpensesTracker(
 
   return (
     <div style="width: 100%;">
-      <div class="year-expenses">
-      </div>
+      <ExpensesYearlySummary
+        //? Set displayed Expenses to current selected year only
+        expensesFilter={(year) =>
+          updateExpenses(savedExpenses.filter((expense) =>
+            new Date(expense.date).getFullYear() === Number(year)
+          ))}
+      />
       <AddNewExpense
+        //? Add new expense to the database
         addNewExpenseFunction={(newExpense) => {
           updateExpenses((currentState) => {
             return [...currentState, newExpense];
@@ -24,6 +31,7 @@ export default function ExpensesTracker(
         }}
       />
       <div class="expenses-group">
+        {/* Display all expenses filtered */}
         {expenses.map((expense) => (
           <IndividualExpense
             date={expense.date}

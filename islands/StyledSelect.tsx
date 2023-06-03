@@ -5,7 +5,7 @@ import { validationStatus } from "../types/validationStatus.ts";
 interface SelectProperties {
   name: string;
   label: string;
-  validationReference: validationStatus;
+  validationReference?: validationStatus;
   value: string;
   optionsArray: Array<string>;
   onChangeFunction: (value: string) => void;
