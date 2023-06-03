@@ -107,8 +107,10 @@ const defaultFormValidation = {
 export default function AddNewExpenseForm(
   { addNewExpenseFunction }: ExpenseFormProperties,
 ) {
+  //? Manages if form data should be visible
+  const [displayForm, showOrHideForm] = useState(false);
   //? Manages current state for form data
-  const [formValues, setValues] = useState(defaultFormValues);
+  const [formValues, updateFormValues] = useState(defaultFormValues);
   //? Manages the validation of form fields
   const [formValidationStatus, updateValidation] = useState(
     defaultFormValidation,
@@ -129,7 +131,10 @@ export default function AddNewExpenseForm(
 
     //? If the description is empty or invalid, increase errors counter
     if (formValues.description === "") {
-      setValues((currentValues) => ({ ...currentValues, description: "N/A" }));
+      updateFormValues((currentValues) => ({
+        ...currentValues,
+        description: "N/A",
+      }));
       updateValidation((currentValidationStatus) => ({
         ...currentValidationStatus,
         description: validationStatus.Invalid,
@@ -165,7 +170,7 @@ export default function AddNewExpenseForm(
     }
     //? If the date is empty or invalid, increase errors counter
     if (formValues.date === "") {
-      setValues((currentValues) => ({
+      updateFormValues((currentValues) => ({
         ...currentValues,
         date: new Date(2020, 0, 1).toISOString().split("T")[0],
       }));
@@ -206,12 +211,13 @@ export default function AddNewExpenseForm(
 
       //? When valid data is submitted, reset the form so the user can
       //? try to submit more data
-      setValues(() => defaultFormValues);
+      updateFormValues(() => defaultFormValues);
     }
   }
 
-  return (
-    <div class="add-new-expense">
+  //? Create the newExpenseForm to be used if the user clicked "Add New Expense?""
+  const newExpenseForm = (
+    <>
       <h2 class="new-expense-title">
         Add new expense
       </h2>
@@ -227,7 +233,7 @@ export default function AddNewExpenseForm(
           name="description"
           value={formValues.description}
           inputFunction={(inputName) => {
-            setValues((currentForm) => ({
+            updateFormValues((currentForm) => ({
               ...currentForm,
               description: inputName,
             }));
@@ -254,7 +260,7 @@ export default function AddNewExpenseForm(
           name="cost"
           value={formValues.cost.toString()}
           inputFunction={(inputAge) => {
-            setValues((currentForm) => ({
+            updateFormValues((currentForm) => ({
               ...currentForm,
               cost: Number(inputAge),
             }));
@@ -283,7 +289,7 @@ export default function AddNewExpenseForm(
           name="date"
           value={formValues.date}
           inputFunction={(inputDate) => {
-            setValues((currentForm) => ({
+            updateFormValues((currentForm) => ({
               ...currentForm,
               date: inputDate,
             }));
@@ -303,14 +309,29 @@ export default function AddNewExpenseForm(
           min="2020-01-01"
           max={timezonelessDate}
         />
-        <StyledButton
-          text="Send"
-          style="margin-top: 0.5em;"
-          onClickFunction={validateBeforeSend}
-        />
+        <div style="display: flex; align-self: end;">
+          <StyledButton
+            text="Reset & Cancel"
+            style="margin-top: 0.5em; margin-right: 2em;"
+            onClickFunction={() => {
+              showOrHideForm(false);
+              updateValidation({
+                description: validationStatus.Unchanged,
+                cost: validationStatus.Unchanged,
+                date: validationStatus.Unchanged,
+              });
+              updateFormValues(defaultFormValues);
+            }}
+          />
+          <StyledButton
+            text="Send"
+            style="margin-top: 0.5em;"
+            onClickFunction={validateBeforeSend}
+          />
+        </div>
         {validationError === true && (
           <>
-            <p style="margin-top: 0.5em;">
+            <p style="margin-top: 1em;">
               Some fields have invalid data being provided (will display a red
               border), please fix them before submitting! Hover/click the
               information icon on the right side for more information.
@@ -318,6 +339,29 @@ export default function AddNewExpenseForm(
           </>
         )}
       </form>
+    </>
+  );
+
+  return (
+    <div class="add-new-expense">
+      {
+        /* If the user never clicked to display the form or cancelled the form,
+        show the button that prompts to display the form */
+      }
+      {!displayForm && (
+        <StyledButton
+          text="Add new expense?"
+          style="margin: 0.5em auto;"
+          onClickFunction={() => {
+            showOrHideForm(true);
+          }}
+        />
+      )}
+      {
+        /* If the user clicked to show the form, hide the button and
+        show the form instead */
+      }
+      {displayForm && newExpenseForm}
     </div>
   );
 }

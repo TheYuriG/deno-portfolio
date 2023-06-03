@@ -2,13 +2,14 @@
 import StyledSelect from "./StyledSelect.tsx";
 
 //? Define component properties
-interface YearlyExpensesSummaryProperties {
+interface ExpensesYearSelectProperties {
+  selectedYear: string;
   expensesFilter: (year: string) => void;
 }
 
 //? Exports select button
-export default function YearlyExpensesSummary(
-  { expensesFilter }: YearlyExpensesSummaryProperties,
+export default function ExpensesYearSelect(
+  { expensesFilter, selectedYear }: ExpensesYearSelectProperties,
 ) {
   return (
     <div class="year-expenses">
@@ -16,7 +17,7 @@ export default function YearlyExpensesSummary(
         label="Year"
         name="year-filter"
         optionsArray={["2020", "2021", "2022", "2023"]}
-        value={"2020"}
+        value={selectedYear}
         onChangeFunction={(input) => {
           expensesFilter(input);
         }}

@@ -6,21 +6,30 @@ import { IndividualExpense } from "../components/expenses-tracker/IndividualExpe
 import AddNewExpense from "./AddNewExpense.tsx";
 //? Import the Expense type for casting
 import type { Expense } from "../types/Expense.ts";
-import ExpensesYearlySummary from "./ExpensesYearlySummary.tsx";
+import ExpensesYearSelect from "./ExpensesYearSelect.tsx";
+import ExpenseChart from "../components/expenses-tracker/ExpensesChart.tsx";
 
 export default function ExpensesTracker(
   { expenses: savedExpenses }: { expenses: Expense[] },
 ) {
+  //? Manages currently displayed expenses for the chosen year
   const [expenses, updateExpenses] = useState(savedExpenses);
+  //? Tracks what year's expenses are being displayed
+  const [expensesYear, setExpensesYear] = useState("2020");
 
   return (
     <div style="width: 100%;">
-      <ExpensesYearlySummary
-        //? Set displayed Expenses to current selected year only
-        expensesFilter={(year) =>
+      <ExpenseChart year={expensesYear} />
+      <ExpensesYearSelect
+        selectedYear={expensesYear}
+        expensesFilter={(year) => {
+          //? Update expensesYear on value change
+          setExpensesYear(year);
+          //? Set displayed Expenses to current selected year only
           updateExpenses(savedExpenses.filter((expense) =>
             new Date(expense.date).getFullYear() === Number(year)
-          ))}
+          ));
+        }}
       />
       <AddNewExpense
         //? Add new expense to the database

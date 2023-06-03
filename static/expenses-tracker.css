@@ -6,9 +6,7 @@
 /* Group together the input fields to add a new expense */
 .add-new-expense {
     width: 100%;
-    padding-top: 0.5em;
-    padding-right: 1em;
-    padding-left: 1em;
+    padding: 0.5em 1em;
     margin-bottom: 1em;
     border: 2px solid var(--neutral-color);
     border-radius: 1em;
