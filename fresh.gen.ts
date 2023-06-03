@@ -26,11 +26,12 @@ import * as $$3 from "./islands/FormWithValidation.tsx";
 import * as $$4 from "./islands/InsanitySection.tsx";
 import * as $$5 from "./islands/ProjectDiscovery.tsx";
 import * as $$6 from "./islands/StyledButton.tsx";
-import * as $$7 from "./islands/StyledCheckbox.tsx";
+import * as $$7 from "./islands/StyledCheckboxGroup.tsx";
 import * as $$8 from "./islands/StyledInput.tsx";
 import * as $$9 from "./islands/StyledRadio.tsx";
 import * as $$10 from "./islands/StyledSelect.tsx";
-import * as $$11 from "./islands/ThemeSwitcher.tsx";
+import * as $$11 from "./islands/StyledSingleCheckbox.tsx";
+import * as $$12 from "./islands/ThemeSwitcher.tsx";
 
 const manifest = {
   routes: {
@@ -59,11 +60,12 @@ const manifest = {
     "./islands/InsanitySection.tsx": $$4,
     "./islands/ProjectDiscovery.tsx": $$5,
     "./islands/StyledButton.tsx": $$6,
-    "./islands/StyledCheckbox.tsx": $$7,
+    "./islands/StyledCheckboxGroup.tsx": $$7,
     "./islands/StyledInput.tsx": $$8,
     "./islands/StyledRadio.tsx": $$9,
     "./islands/StyledSelect.tsx": $$10,
-    "./islands/ThemeSwitcher.tsx": $$11,
+    "./islands/StyledSingleCheckbox.tsx": $$11,
+    "./islands/ThemeSwitcher.tsx": $$12,
   },
   baseUrl: import.meta.url,
   config,

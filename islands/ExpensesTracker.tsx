@@ -13,7 +13,7 @@ export default function ExpensesTracker(
   const [expenses, updateExpenses] = useState(savedExpenses);
 
   return (
-    <section class="center">
+    <div style="width: 100%;">
       <div class="year-expenses">
       </div>
       <AddNewExpense
@@ -32,6 +32,6 @@ export default function ExpensesTracker(
           />
         ))}
       </div>
-    </section>
+    </div>
   );
 }
