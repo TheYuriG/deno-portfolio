@@ -5,7 +5,7 @@ import BlogPostSummaryProperties from "../../types/BlogPostSummaryProperties.ts"
 export function BlogPostSummary(summary: BlogPostSummaryProperties) {
   return (
     // What a Post Summary looks like
-    <article class="blog-post" style="margin: 1em 0">
+    <article style="margin: 1em 0; width: 100%;">
       {/* Post link */}
       <a href={"/blog" + summary.link}>
         {/* Centered heading */}
