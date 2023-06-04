@@ -18,7 +18,7 @@ export default function ProjectDiscovery(
     <section style="display: flex; flex-direction: column; align-items: end; width: 100%; margin: 0.5em 0">
       {/* Display a checkbox to enable/disable displaying the discovery text */}
       <StyledSingleCheckbox
-        label="What did this project teach me?"
+        label="What did I learn?"
         onChangeFunction={() => {
           toggleDisplayDiscovery((curr) => !curr);
         }}
