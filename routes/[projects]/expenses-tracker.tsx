@@ -64,7 +64,7 @@ export default function Home(
               // second paragraph
               "I learned some theorical things which might be useful when dealing with" +
               " legacy codebases, like how React (the course's focus) can render components " +
-              "by nesting React.render(component, properties, child1, child2, child3, ...," +
+              "by nesting React.createElement(component, properties, child1, child2, child3, ...," +
               " childN) and this is the way that it was done before JSX.",
               // third paragraph
               "It makes sense why everything is a component, otherwise it would get really " +
