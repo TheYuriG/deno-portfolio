@@ -1,9 +1,9 @@
 //? Head component with all Meta tags pre-set
-import { CustomHead } from "../components/CustomHead.tsx";
+import { CustomHead } from "../components/base/CustomHead.tsx";
 //? Lateral text with theme switcher
-import { Base } from "../components/Base.tsx";
+import { Base } from "../components/base/Base.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
-import BlogNavigationButtons from "../islands/BlogNavigationButtons.tsx";
+import BlogNavigationButtons from "../components/blog/BlogNavigationButtons.tsx";
 //? Enable fetching the error URL
 import { UnknownPageProps } from "$fresh/server.ts";
 

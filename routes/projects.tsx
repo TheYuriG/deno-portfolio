@@ -1,10 +1,10 @@
 //? Create blog content inside Base component
-import { Base } from "../components/Base.tsx";
+import { Base } from "../components/base/Base.tsx";
 //? Head component with all Meta tags pre-set
-import { CustomHead } from "../components/CustomHead.tsx";
-import { GradientLink } from "../components/GradientLink.tsx";
+import { CustomHead } from "../components/base/CustomHead.tsx";
+import { GradientLink } from "../components/base/GradientLink.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
-import BlogNavigationButtons from "../islands/BlogNavigationButtons.tsx";
+import BlogNavigationButtons from "../components/blog/BlogNavigationButtons.tsx";
 
 export default function Home() {
   return (

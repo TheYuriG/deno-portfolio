@@ -1,4 +1,4 @@
-/* Note: Color scheme variables are set on components/CustomHead.tsx script tag */
+/* Note: Color scheme variables are set on components/base/CustomHead.tsx script tag */
 
 /* Scrollbar styling */
 body::-webkit-scrollbar {
