@@ -14,6 +14,7 @@ interface ExpenseChartProperties {
 export default function ExpenseChart(
   { year, expenses }: ExpenseChartProperties,
 ) {
+  //? Create an expense object for every month
   const monthExpenses = [
     { label: "Jan", cost: 0 },
     { label: "Feb", cost: 0 },
@@ -29,11 +30,14 @@ export default function ExpenseChart(
     { label: "Dez", cost: 0 },
   ];
 
+  //? Cycle through all expenses received and
+  //? assign them to the appropriate months
   for (const expense of expenses) {
     const monthNumber = new Date(expense.date).getMonth();
     monthExpenses[monthNumber].cost += expense.cost;
   }
 
+  //? Calculate how much was spent through the entire year
   const yearTotalCost = monthExpenses.reduce(
     (oldValue, currentValue) => oldValue + currentValue.cost,
     0,
