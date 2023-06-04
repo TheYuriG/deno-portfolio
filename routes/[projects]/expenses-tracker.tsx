@@ -7,11 +7,11 @@ import FetchExpenseError from "../../types/FetchExpenseError.ts";
 //? Import the Expense type to typecast the data we get from fetchExpenses()
 import type { Expense } from "../../types/Expense.ts";
 //? Create blog content inside Base component
-import { Base } from "../../components/Base.tsx";
+import { Base } from "../../components/base/Base.tsx";
 //? Head component with all Meta tags pre-set
-import { CustomHead } from "../../components/CustomHead.tsx";
+import { CustomHead } from "../../components/base/CustomHead.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
-import BlogNavigationButtons from "../../components/BlogNavigationButtons.tsx";
+import BlogNavigationButtons from "../../components/blog/BlogNavigationButtons.tsx";
 //? Import the component responsible for tracking all expenses
 import ExpensesTracker from "../../islands/ExpensesTracker.tsx";
 //? Describe things that were learned with this current project

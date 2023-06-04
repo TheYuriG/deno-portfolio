@@ -1,7 +1,7 @@
 //? Lateral text with theme switcher
-import { Aside } from "../components/Aside.tsx";
+import { Aside } from "./Aside.tsx";
 //? Footer with tech stack
-import { Footer } from "../components/Footer.tsx";
+import { Footer } from "./Footer.tsx";
 //? Import Preact JSX so we can define the props.children type
 import { JSX, toChildArray } from "preact";
 

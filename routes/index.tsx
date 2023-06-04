@@ -1,13 +1,13 @@
 //? Lateral text with theme switcher
-import { Base } from "../components/Base.tsx";
+import { Base } from "../components/base/Base.tsx";
 //? Content displayed on the Home page, including header and navigation menu
-import { HomeContent } from "../components/HomeContent.tsx";
+import { HomeContent } from "../components/home/HomeContent.tsx";
 //? Head component with all Meta tags pre-set
-import { CustomHead } from "../components/CustomHead.tsx";
+import { CustomHead } from "../components/base/CustomHead.tsx";
 //? Navigation Menu with redirects to different pages
-import { NavigationMenu } from "../components/NavigationMenu.tsx";
+import { NavigationMenu } from "../components/home/NavigationMenu.tsx";
 //? Create a Starry Night background
-import { StarryNight } from "../components/StarryNight.tsx";
+import { StarryNight } from "../components/home/StarryNight.tsx";
 
 export default function Home() {
   return (
