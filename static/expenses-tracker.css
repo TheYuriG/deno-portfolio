@@ -1,11 +1,51 @@
 /* Group together the graphics for the year expenses */
 .year-expenses {
+    padding: 0.5em 1em;
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid var(--neutral-color);
+    border-radius: 1em;
+    box-shadow: 0.1em 0.1em 0.3em var(--neutral-color);
+}
+
+/* Cluster all 12 month expense bars together */
+.month-expenses__group {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+/* Contain all individual month expense content */
+.month-expenses {
+    border: 1px solid blue;
     padding: 0.5em;
+}
+
+/* Creates default dimensions for every fill container */
+.month-expenses__bar-container {
+    height: 10em;
+    width: 2em;
+    margin-bottom: 0.5em;
+    display: flex;
+    flex-direction: column;
+    justify-items: end;
+    border: 2px solid var(--accent-color);
+    border-radius: 1em;
+    overflow: hidden;
+}
+
+/* Assigns fill color to the month expenses inner div */
+.month-expenses__bar-fill {
+    width: 100%;
+    background-color: var(--neutral-color);
 }
 
 /* Group together the input fields to add a new expense */
 .add-new-expense {
-    width: 100%;
     padding: 0.5em 1em;
     margin-bottom: 1em;
     border: 2px solid var(--neutral-color);
@@ -13,6 +53,7 @@
     box-shadow: 0.1em 0.1em 0.3em var(--neutral-color);
 }
 
+/* Style the "Add new expense" title after clicking to add new expense */
 .new-expense-title {
     font-size: 1.5rem;
     text-align: center;
