@@ -16,12 +16,15 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
 }
 
 /* Contain all individual month expense content */
 .month-expenses {
-    border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Display 6 months per row on lower resolutions */
+    width: calc(100% / 6);
     padding: 0.5em;
 }
 
@@ -32,7 +35,7 @@
     margin-bottom: 0.5em;
     display: flex;
     flex-direction: column;
-    justify-items: end;
+    justify-content: end;
     border: 2px solid var(--accent-color);
     border-radius: 1em;
     overflow: hidden;
@@ -42,6 +45,11 @@
 .month-expenses__bar-fill {
     width: 100%;
     background-color: var(--neutral-color);
+}
+
+/* Centers the label underneath the filled bar */
+.month-expenses__label {
+    text-align: center;
 }
 
 /* Group together the input fields to add a new expense */
@@ -140,5 +148,10 @@
 
     .expense-description {
         margin-right: 0.5em;
+    }
+
+    /* Display all 12 months in the Expenses Chart on higher resolutions */
+    .month-expenses {
+        width: calc(100% / 12);
     }
 }

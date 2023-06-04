@@ -12,7 +12,7 @@ export default function ExpensesYearSelect(
   { expensesFilter, selectedYear }: ExpensesYearSelectProperties,
 ) {
   return (
-    <div class="year-expenses">
+    <span style="align-self: end;">
       <StyledSelect
         label="Year"
         name="year-filter"
@@ -22,6 +22,6 @@ export default function ExpensesYearSelect(
           expensesFilter(input);
         }}
       />
-    </div>
+    </span>
   );
 }

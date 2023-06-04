@@ -22,7 +22,7 @@ import * as $15 from "./routes/work.tsx";
 import * as $$0 from "./islands/AddNewExpense.tsx";
 import * as $$1 from "./islands/BlogNavigationButtons.tsx";
 import * as $$2 from "./islands/ExpensesTracker.tsx";
-import * as $$3 from "./islands/ExpensesYearlySummary.tsx";
+import * as $$3 from "./islands/ExpensesYearSelect.tsx";
 import * as $$4 from "./islands/FormWithValidation.tsx";
 import * as $$5 from "./islands/InsanitySection.tsx";
 import * as $$6 from "./islands/ProjectDiscovery.tsx";
@@ -57,7 +57,7 @@ const manifest = {
     "./islands/AddNewExpense.tsx": $$0,
     "./islands/BlogNavigationButtons.tsx": $$1,
     "./islands/ExpensesTracker.tsx": $$2,
-    "./islands/ExpensesYearlySummary.tsx": $$3,
+    "./islands/ExpensesYearSelect.tsx": $$3,
     "./islands/FormWithValidation.tsx": $$4,
     "./islands/InsanitySection.tsx": $$5,
     "./islands/ProjectDiscovery.tsx": $$6,
