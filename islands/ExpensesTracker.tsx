@@ -9,28 +9,38 @@ import type { Expense } from "../types/Expense.ts";
 import ExpensesYearSelect from "./ExpensesYearSelect.tsx";
 import ExpenseChart from "../components/expenses-tracker/ExpensesChart.tsx";
 
+//? Filters expenses by year
+function filterExpensesByYear(year: string, savedExpenses: Expense[]) {
+  return savedExpenses.filter((expense) =>
+    new Date(expense.date).getFullYear() === Number(year)
+  );
+}
+
 export default function ExpensesTracker(
   { expenses: savedExpenses }: { expenses: Expense[] },
 ) {
-  //? Manages currently displayed expenses for the chosen year
-  const [expenses, updateExpenses] = useState(savedExpenses);
   //? Tracks what year's expenses are being displayed
   const [expensesYear, setExpensesYear] = useState("2020");
+  //? Manages currently displayed expenses for the chosen year
+  const [expenses, updateExpenses] = useState(
+    filterExpensesByYear(expensesYear, savedExpenses),
+  );
 
   return (
     <div style="width: 100%;">
-      <ExpenseChart year={expensesYear} />
-      <ExpensesYearSelect
-        selectedYear={expensesYear}
-        expensesFilter={(year) => {
-          //? Update expensesYear on value change
-          setExpensesYear(year);
-          //? Set displayed Expenses to current selected year only
-          updateExpenses(savedExpenses.filter((expense) =>
-            new Date(expense.date).getFullYear() === Number(year)
-          ));
-        }}
-      />
+      <div class="year-expenses">
+        {/* Displays bars for  */}
+        <ExpenseChart year={expensesYear} expenses={expenses} />
+        <ExpensesYearSelect
+          selectedYear={expensesYear}
+          expensesFilter={(year) => {
+            //? Update expensesYear on value change
+            setExpensesYear(year);
+            //? Set displayed Expenses to current selected year only
+            updateExpenses(filterExpensesByYear(year, savedExpenses));
+          }}
+        />
+      </div>
       <AddNewExpense
         //? Add new expense to the database
         addNewExpenseFunction={(newExpense) => {
