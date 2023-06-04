@@ -7,10 +7,18 @@ export function NavigationMenu() {
       <a
         href="/work"
         class="navigation-link animate-to-right"
-        style="--dur: 3.8;"
+        style="--dur: 3"
         title="Things I've done for money"
       >
         Work
+      </a>
+      <a
+        href="/projects"
+        class="navigation-link animate-to-right"
+        style="--dur: 3.8;"
+        title="Things I've created to learn a tech stack"
+      >
+        Projects
       </a>
       <a
         href="/toys"

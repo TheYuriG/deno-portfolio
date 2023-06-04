@@ -1,0 +1,157 @@
+/* Group together the graphics for the year expenses */
+.year-expenses {
+    padding: 0.5em 1em;
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid var(--neutral-color);
+    border-radius: 1em;
+    box-shadow: 0.1em 0.1em 0.3em var(--neutral-color);
+}
+
+/* Cluster all 12 month expense bars together */
+.month-expenses__group {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/* Contain all individual month expense content */
+.month-expenses {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Display 6 months per row on lower resolutions */
+    width: calc(100% / 6);
+    padding: 0.5em;
+}
+
+/* Creates default dimensions for every fill container */
+.month-expenses__bar-container {
+    height: 10em;
+    width: 2em;
+    margin-bottom: 0.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    border: 2px solid var(--accent-color);
+    border-radius: 1em;
+    overflow: hidden;
+}
+
+/* Assigns fill color to the month expenses inner div */
+.month-expenses__bar-fill {
+    width: 100%;
+    background-color: var(--neutral-color);
+}
+
+/* Centers the label underneath the filled bar */
+.month-expenses__label {
+    text-align: center;
+}
+
+/* Group together the input fields to add a new expense */
+.add-new-expense {
+    padding: 0.5em 1em;
+    margin-bottom: 1em;
+    border: 2px solid var(--neutral-color);
+    border-radius: 1em;
+    box-shadow: 0.1em 0.1em 0.3em var(--neutral-color);
+}
+
+/* Style the "Add new expense" title after clicking to add new expense */
+.new-expense-title {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0.25em 0;
+    font-family: 'Alfa Slab One', cursive;
+}
+
+/* Groups all expense items together */
+.expenses-group {
+    width: 100%;
+    margin-bottom: 0.5em;
+}
+
+/* Give margin, padding and border to an expense */
+.single-expense {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0.5em 0em;
+    padding: 0.5em;
+    border: 2px solid var(--neutral-color);
+    border-radius: 1em;
+    box-shadow: 0.1em 0.1em 0.3em var(--neutral-color);
+}
+
+/* Create a border to cluster together the expense date */
+.expense-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 7.5em;
+    padding: 0.25em 0.5em;
+    border: 2px solid var(--neutral-color);
+    border-radius: 0.5em;
+}
+
+/* Bold and grow expense date month */
+.expense-date .expense-date__month {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* Grow expense date year */
+.expense-date .expense-date__year {
+    font-size: 0.9rem;
+}
+
+/* Bold and grow expense date day */
+.expense-date .expense-date__day {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+/* Align and space the expense description */
+.expense-description {
+    flex-grow: 1;
+    justify-self: center;
+    font-size: 1.2rem;
+}
+
+/* Create a button-like wrapper for the expense price */
+.expense-cost {
+    font-size: 1.5rem;
+    padding: 0.1em 0.5em;
+    color: var(--neutral-color);
+    background-color: var(--accent-color);
+    border: 2px solid var(--neutral-color);
+    border-radius: 0.5em;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Make expenses a row of data and add proper margin on larger resolutions */
+@media (min-width: 600px) {
+    .single-expense {
+        flex-direction: row;
+        text-align: start;
+        width: 100%;
+    }
+
+    .expense-date {
+        margin-right: 0.5em;
+    }
+
+    .expense-description {
+        margin-right: 0.5em;
+    }
+
+    /* Display all 12 months in the Expenses Chart on higher resolutions */
+    .month-expenses {
+        width: calc(100% / 12);
+    }
+}
