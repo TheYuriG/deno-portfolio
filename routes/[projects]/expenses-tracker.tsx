@@ -11,10 +11,10 @@ import { Base } from "../../components/Base.tsx";
 //? Head component with all Meta tags pre-set
 import { CustomHead } from "../../components/CustomHead.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
-import BlogNavigationButtons from "../../islands/BlogNavigationButtons.tsx";
-//todo
+import BlogNavigationButtons from "../../components/BlogNavigationButtons.tsx";
+//? Import the component responsible for tracking all expenses
 import ExpensesTracker from "../../islands/ExpensesTracker.tsx";
-//todo
+//? Describe things that were learned with this current project
 import ProjectDiscovery from "../../islands/ProjectDiscovery.tsx";
 
 //? Runs before the render function to fetch the post from the files, then

@@ -6,7 +6,7 @@
 // //? Lateral text with theme switcher
 // import { Base } from "../../components/Base.tsx";
 // //? Navigation Buttons to go back to the previous page or to the next page (optional)
-// import BlogNavigationButtons from "../../islands/BlogNavigationButtons.tsx";
+// import BlogNavigationButtons from "../../components/BlogNavigationButtons.tsx";
 // //? To know what is the current route
 // import { Handlers } from "$fresh/server.ts";
 // //? Parse content from a file into JSX

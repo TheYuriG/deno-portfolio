@@ -3,7 +3,7 @@ import { CustomHead } from "../../components/CustomHead.tsx";
 //? Lateral text with theme switcher
 import { Base } from "../../components/Base.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
-import BlogNavigationButtons from "../../islands/BlogNavigationButtons.tsx";
+import BlogNavigationButtons from "../../components/BlogNavigationButtons.tsx";
 //? A HTML Link component to pre-format links and reduce boiletplate
 import { GradientLink } from "../../components/GradientLink.tsx";
 

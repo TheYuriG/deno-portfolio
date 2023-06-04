@@ -3,7 +3,7 @@ import { Base } from "../../components/Base.tsx";
 //? Head component with all Meta tags pre-set
 import { CustomHead } from "../../components/CustomHead.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
-import BlogNavigationButtons from "../../islands/BlogNavigationButtons.tsx";
+import BlogNavigationButtons from "../../components/BlogNavigationButtons.tsx";
 //? Infinitely expandable insanity section
 import InsanitySection from "../../islands/InsanitySection.tsx";
 
