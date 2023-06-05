@@ -28,7 +28,7 @@ export default function ExpensesTracker(
 
   return (
     <div style="width: 100%;">
-      <div class="year-expenses">
+      <div class="card card-shadow year-expenses">
         {/* Displays bars for  */}
         <ExpenseChart year={expensesYear} expenses={expenses} />
         <ExpensesYearSelect
