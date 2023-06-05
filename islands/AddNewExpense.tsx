@@ -343,7 +343,7 @@ export default function AddNewExpenseForm(
   );
 
   return (
-    <div class="add-new-expense">
+    <div class="card card-shadow">
       {
         /* If the user never clicked to display the form or cancelled the form,
         show the button that prompts to display the form */

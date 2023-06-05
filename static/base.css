@@ -19,6 +19,19 @@ html {
     color: var(--neutral-color);
 }
 
+/* Define default card styling to be reused */
+.card {
+    padding: 0.5em 1em;
+    margin-bottom: 1em;
+    border: 2px solid var(--neutral-color);
+    border-radius: 1rem;
+}
+
+/* Define default card shadow */
+.card-shadow {
+    box-shadow: 0.1em 0.1em 0.3em var(--neutral-color);
+}
+
 /* Positioning for the main frame, border color, transition for theme switch */
 main {
     --main-padding: 1rem;

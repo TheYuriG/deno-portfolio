@@ -4,7 +4,6 @@
     flex-direction: column;
     margin: var(--card-margin);
     height: 25em;
-    /* height: calc(100% - 2 * var(--card-margin)); */
     width: 15em;
     border: 0.25em solid var(--neutral-color);
     border-radius: 2em;
@@ -32,10 +31,12 @@
     }
 }
 
+/* Define size for insanity emoji */
 .insanity {
     font-size: 10rem;
 }
 
+/* Assign animation for insanity emoji when hovered */
 .insanity:hover {
     animation: grow-and-shrink 1.2s ease-out infinite;
 }

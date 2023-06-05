@@ -15,7 +15,6 @@ export default function Home() {
         link="https://www.theyurig.com/projects"
       >
         <link rel="stylesheet" href="/content.css" />
-        <link rel="stylesheet" href="/blog.css" />
         <link rel="stylesheet" href="/navigation-buttons.css" />
         <link rel="stylesheet" href="/gradient-underline.css" />
       </CustomHead>

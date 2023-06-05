@@ -5,9 +5,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid var(--neutral-color);
-    border-radius: 1em;
-    box-shadow: 0.1em 0.1em 0.3em var(--neutral-color);
 }
 
 /* Cluster all 12 month expense bars together */
@@ -52,15 +49,6 @@
     text-align: center;
 }
 
-/* Group together the input fields to add a new expense */
-.add-new-expense {
-    padding: 0.5em 1em;
-    margin-bottom: 1em;
-    border: 2px solid var(--neutral-color);
-    border-radius: 1em;
-    box-shadow: 0.1em 0.1em 0.3em var(--neutral-color);
-}
-
 /* Style the "Add new expense" title after clicking to add new expense */
 .new-expense-title {
     font-size: 1.5rem;
@@ -83,9 +71,6 @@
     text-align: center;
     margin: 0.5em 0em;
     padding: 0.5em;
-    border: 2px solid var(--neutral-color);
-    border-radius: 1em;
-    box-shadow: 0.1em 0.1em 0.3em var(--neutral-color);
 }
 
 /* Create a border to cluster together the expense date */

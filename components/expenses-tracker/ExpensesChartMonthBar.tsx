@@ -12,9 +12,10 @@ export default function ExpensesChartMonthBar(
   //? Using the month's expenses and the year's expenses,
   //? calculate how much this given month expenses were
   //? in comparison to the whole year
-  const percentageOfYearExpenses =
-    Math.round((cost / maxCost) * 100).toString() +
-    "%";
+  const percentageOfYearExpenses = maxCost === 0
+    ? "0%" // If the whole month has no expenses, set the percentage to 0%
+    : Math.round((cost / maxCost) * 100).toString() +
+      "%";
 
   //? Render the expense bar for the given month
   return (

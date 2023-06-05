@@ -16,7 +16,6 @@ export default function Home() {
         link="https://www.theyurig.com/toys/spinners"
       >
         <link rel="stylesheet" href="/content.css" />
-        <link rel="stylesheet" href="/blog.css" />
         <link rel="stylesheet" href="/navigation-buttons.css" />
         <link rel="stylesheet" href="/spinners.css" />
         <link rel="stylesheet" href="/gradient-underline.css" />
@@ -133,7 +132,7 @@ export default function Home() {
             </div>
             <div id="spacer-top" style="flex: 1;"></div>
           </section>
-          <footer class="blog-footer" style="margin-top: 1em;">
+          <footer style="margin-top: 1em; align-self: end;">
             this experimentation helped me learn{" "}
             <GradientLink
               link="https://codepen.io/TheYuriG/pen/yLRQqmr?editors=1100"

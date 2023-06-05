@@ -26,7 +26,19 @@ section {
 
 /* Justify blog post body */
 p {
+    align-self: self-start;
     text-align: justify;
+}
+
+/* Add some space around the blog post paragraphs */
+p.space {
+    margin: 0.5em 0;
+}
+
+/* Size a subtopic header */
+.subtopic {
+    font-size: 2rem;
+    font-family: 'Alfa Slab One', cursive;
 }
 
 /* Spacer to push the blog footer to the end of the page,
@@ -34,12 +46,6 @@ p {
     the height by itself */
 .spacer {
     flex-grow: 1;
-}
-
-/* Ending note at the end of a blog post */
-.blog-footer {
-    font-size: 0.75rem;
-    align-self: end;
 }
 
 /* Reduce heading font size on smaller resolutions */
