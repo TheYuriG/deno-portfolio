@@ -26,26 +26,16 @@
     object-fit: cover;
 }
 
-/* Align text to the left */
-p {
-    align-self: self-start;
-}
-
-/* Add some space around the blog post paragraphs */
-p.space {
-    margin: 0.5em 0;
-}
-
-/* Size a subtopic header */
-h2.subtopic {
-    font-size: 2rem;
-    font-family: 'Alfa Slab One', cursive;
-}
-
 /* Add margin-left to lists on smaller resolutions */
 li {
     margin-left: 2.5em;
     transition: margin-left ease-in-out 0.5s;
+}
+
+/* Ending note at the end of a blog post */
+.blog-footer {
+    font-size: 0.75rem;
+    align-self: end;
 }
 
 /* Remove margin-left to lists on larger resolutions */

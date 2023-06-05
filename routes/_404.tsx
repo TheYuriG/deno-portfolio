@@ -19,21 +19,17 @@ export default function NotFoundPage({ url }: UnknownPageProps) {
         <link rel="stylesheet" href="/home.css" />
         <link rel="stylesheet" href="/navigation-buttons.css" />
         <link rel="stylesheet" href="/content.css" />
-        <link rel="stylesheet" href="/blog.css" />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
-        {/* Back button */}
         <BlogNavigationButtons />
-        <article class="center">
-          <h2 class="navigation-link blog-title">Page not found!</h2>
-          <p>
+        <section class="center">
+          <h1 class="navigation-link">Page not found!</h1>
+          <p class="space">
             Hi there! Seems like you have reached a page that doesn't exist
             (...yet?). 🤔
           </p>
-          <p>↖️ Maybe go back to the previous page?</p>
-          <details>Dead URL path: {url.href}</details>
-        </article>
+        </section>
       </Base>
     </>
   );

@@ -44,7 +44,6 @@ export default function Home(
         link="https://www.theyurig.com/projects/expenses-tracker"
       >
         <link rel="stylesheet" href="/content.css" />
-        <link rel="stylesheet" href="/blog.css" />
         <link rel="stylesheet" href="/navigation-buttons.css" />
         <link rel="stylesheet" href="/expenses-tracker.css" />
         <link rel="stylesheet" href="/form.css" />

@@ -17,7 +17,6 @@ export default function Home() {
       >
         <link rel="stylesheet" href="/navigation-buttons.css" />
         <link rel="stylesheet" href="/content.css" />
-        <link rel="stylesheet" href="/blog.css" />
         <link rel="stylesheet" href="/gradient-underline.css" />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
