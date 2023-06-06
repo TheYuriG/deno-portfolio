@@ -4,6 +4,8 @@ import { useState } from "preact/hooks";
 import type { Food } from "../types/Food.ts";
 //todo
 import { FoodItem } from "../components/food-order/FoodItem.tsx";
+//todo
+import ModalWithBackdrop from "./ModalWithBackdrop.tsx";
 
 //todo
 interface FoodOrderProperties {
@@ -12,21 +14,37 @@ interface FoodOrderProperties {
 
 //todo
 export default function FoodOrder({ foods }: FoodOrderProperties) {
+  //todo
   const [cartContent, updateCartContent] = useState({
     totalItems: 0,
     items: new Map(),
     cost: 0,
   });
+  //todo
+  const [displayModal, toggleDisplayModal] = useState(false);
 
   return (
     <section class="food-group">
-      {/* Backdrop */}
-      {/* Modal */}
+      <ModalWithBackdrop
+        key="backdrop-modal"
+        display={displayModal}
+        closeModalFunction={() => toggleDisplayModal(false)}
+      >
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+          magnam maiores ad ipsum, architecto corporis. Voluptas totam nostrum
+          doloribus, voluptate quod voluptatum, cum necessitatibus atque quos
+          architecto beatae, perspiciatis porro!
+        </div>
+      </ModalWithBackdrop>
       {/* Header with cart */}
       <div class="food-header">
         <h2 class="subtopic">Meals of the day</h2>
-        {/* <FoodCart /> */}
-        <button class="food-cart styled-button">
+        {/* <CartButton /> */}
+        <button
+          class="food-cart styled-button"
+          onClick={() => toggleDisplayModal(true)}
+        >
           <span class="cart-total-items">
             <svg
               xmlns="http://www.w3.org/2000/svg"
