@@ -6,7 +6,7 @@ import { Base } from "../../components/base/Base.tsx";
 import { CustomHead } from "../../components/base/CustomHead.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
 import BlogNavigationButtons from "../../components/blog/BlogNavigationButtons.tsx";
-import { FoodItem } from "../../components/food-order/FoodItem.tsx";
+import FoodOrder from "../../islands/FoodOrder.tsx";
 //? Describe things that were learned with this current project
 import ProjectDiscovery from "../../islands/ProjectDiscovery.tsx";
 //? Fetch food options from the database
@@ -54,6 +54,7 @@ export default function Home(
           back={{ title: "Return to projects overview", link: "/projects" }}
         />
         <section class="center">
+          {/* Insights */}
           <ProjectDiscovery
             innerText={[
               // first paragraph
@@ -64,21 +65,8 @@ export default function Home(
               "However, since this project could become an actual freelance gig (there are plenty of business owners needing a website), I might just make a mockup website and put it on my Work page. I'll check with my designer if she can come up with something pretty.",
             ]}
           />
-          {/* <FoodCart /> */}
-          <section class="food-group">
-            {foods.map((food) => (
-              <FoodItem
-                imageLink={food.imageLink}
-                imageAlt={food.imageAlt}
-                imageTitle={food.imageTitle}
-                name={food.name}
-                description={food.description}
-                price={food.price}
-                feedsHowMany={food.feedsHowMany}
-                addToCartFunction={() => {}}
-              />
-            ))}
-          </section>
+          {/* Page content */}
+          <FoodOrder foods={foods} />
         </section>
       </Base>
     </>
