@@ -5,5 +5,5 @@ export interface Food {
     name: string;
     description: string;
     feedsHowMany: string;
-    price: string;
+    price: number;
 }

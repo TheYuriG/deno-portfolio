@@ -9,35 +9,28 @@ import BlogNavigationButtons from "../../components/blog/BlogNavigationButtons.t
 import { FoodItem } from "../../components/food-order/FoodItem.tsx";
 //? Describe things that were learned with this current project
 import ProjectDiscovery from "../../islands/ProjectDiscovery.tsx";
+//? Fetch food options from the database
+import fetchFood from "../../services/fetchFood.ts";
 //? Import Food type to typecast the data received
 import type { Food } from "../../types/Food.ts";
+//? Import database error instance to check for errors
+import DatabaseFetchError from "../../types/error/DatabaseFetchError.ts";
 
 //? Runs before the render function to fetch the food from the
 //? database, then pushes the data into the rendered page function
-// export const handler: Handlers = {
-//   async GET(req, ctx) {
-//     const expenses = await fetchExpenses();
-//     if (expenses instanceof FetchExpenseError) {
-//       return ctx.render([]);
-//     }
-//     return ctx.render(expenses);
-//   },
-// };
+export const handler: Handlers = {
+  async GET(req, ctx) {
+    const foods = await fetchFood();
+    if (foods instanceof DatabaseFetchError) {
+      return ctx.render([]);
+    }
+    return ctx.render(foods);
+  },
+};
 
 export default function Home(
-  //   { data: savedExpenses }: { data: Expense[] },
+  { data: foods }: { data: Food[] },
 ) {
-  const foods: Food[] = [{
-    imageLink:
-      "https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80",
-    name: "Full buffet meal",
-    description:
-      "Pork ribs, vegetables, beans and french fries with cheese. Food for 2.",
-    price: "70",
-    imageAlt: "",
-    imageTitle: "",
-    addToCartFunction: () => {},
-  }];
   return (
     <>
       {
@@ -64,11 +57,15 @@ export default function Home(
           <ProjectDiscovery
             innerText={[
               // first paragraph
-              "Between the previous project (expenses tracker) and this one, there was an extended section about useContext and useRef, that was very interesting and helped solidify what I learned on the Preact tutorial. The things I've learned on that section are used in this project.",
+              "Between the previous project (expenses tracker) and this one, there was an extended section about 'useContext' and 'useRef', that was very interesting and helped solidify what I learned on the Preact tutorial. The things I've learned on that section are used in this project.",
+              // second paragraph
+              "I've also realized that this design looks very similar to the previous project, which just reminded me about how little creativity I have to design things and that designers are important. I could have just copied and pasted the styling from the course, but then this project would not fit in the overall theme for my website.",
+              // third paragraph
+              "However, since this project could become an actual freelance gig (there are plenty of business owners needing a website), I might just make a mockup website and put it on my Work page. I'll check with my designer if she can come up with something pretty.",
             ]}
           />
           {/* <FoodCart /> */}
-          <section class="card card-shadow food-group">
+          <section class="food-group">
             {foods.map((food) => (
               <FoodItem
                 imageLink={food.imageLink}
@@ -77,7 +74,8 @@ export default function Home(
                 name={food.name}
                 description={food.description}
                 price={food.price}
-                addToCartFunction={food.addToCartFunction}
+                feedsHowMany={food.feedsHowMany}
+                addToCartFunction={() => {}}
               />
             ))}
           </section>
