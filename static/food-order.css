@@ -1,0 +1,56 @@
+.cart {
+    border-color: var(--accent-color);
+}
+
+/* .food-group {} */
+
+.single-food {
+    min-height: 10em;
+    width: 100%;
+    padding: 0;
+    padding-bottom: 1em;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.food-image {
+    height: 10em;
+    object-fit: cover;
+
+}
+
+.food-name-and-description {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
+    text-align: center;
+    margin: 0.5em;
+}
+
+.food-name {
+    font-size: 1.7rem;
+    font-family: 'Alfa Slab One', cursive;
+}
+
+.food-description {
+    font-size: 0.9rem;
+}
+
+@media (min-width: 900px) {
+    .single-food {
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 0.5em;
+    }
+
+    .food-image {
+        width: 10em;
+    }
+
+    .food-name-and-description {
+        text-align: left;
+        margin: 0 0.5em;
+    }
+}
