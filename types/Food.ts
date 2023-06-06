@@ -4,6 +4,6 @@ export interface Food {
     imageTitle: string;
     name: string;
     description: string;
+    feedsHowMany: string;
     price: string;
-    addToCartFunction: () => void;
 }
