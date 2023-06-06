@@ -1,7 +1,9 @@
+//todo
 import StyledButton from "../../islands/StyledButton.tsx";
 //? Import Food type to typecast the data received
 import type { Food } from "../../types/Food.ts";
 
+//todo
 export function FoodItem(
   {
     imageLink,
