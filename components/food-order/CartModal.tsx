@@ -8,7 +8,11 @@ import { StateUpdater } from "preact/hooks";
 interface CartModalProperties {
   closeModal: () => void;
   updateCartFunction: StateUpdater<
-    { totalItems: number; items: Map<string, number>; cost: number }
+    {
+      totalItems: number;
+      items: Map<string, { quantity: number; cost: number }>;
+      cost: number;
+    }
   >;
   items: Map<string, { quantity: number; cost: number }>;
   cost: number;
@@ -50,11 +54,42 @@ export default function CartModal({
       <ol>
         {cartItems.map(([foodName, { quantity, cost }]) => (
           <li>
-            <div style="display: flex; justify-content: space-between;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
               <span>
                 {foodName}: {quantity}x ${cost.toFixed(2)}
               </span>
               <div style="display: inline-flex;">
+                {/* Increase item count */}
+                <span
+                  style="margin-left: 0.5em"
+                  onClick={() => {
+                    updateCartFunction((curr) => {
+                      const updatedCart = { ...curr };
+                      ++updatedCart.totalItems;
+                      updatedCart.cost += cost;
+                      const increasedCountItem = updatedCart.items.get(
+                        foodName,
+                      );
+                      if (increasedCountItem !== undefined) {
+                        increasedCountItem.quantity += 1;
+                        updatedCart.items.set(
+                          foodName,
+                          increasedCountItem,
+                        );
+                      }
+                      return updatedCart;
+                    });
+                  }}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="1.5em"
+                    fill="var(--neutral-color)"
+                    viewBox="0 0 448 512"
+                  >
+                    <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />
+                  </svg>
+                </span>
                 {/* Remove item */}
                 <span
                   style="margin-left: 0.5em"
