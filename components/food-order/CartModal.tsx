@@ -1,4 +1,5 @@
-//todo
+//? Import the StyledButton to close the modal on empty carts or
+//? confirm orders on a filled cart
 import StyledButton from "../../islands/StyledButton.tsx";
 
 //? Define Cart Modal properties
@@ -8,7 +9,8 @@ interface CartModalProperties {
   cost: number;
 }
 
-//todo
+//? Exports the content of the cart modal that will either display the
+//? information about the cart being empty or a list with all cart items
 export default function CartModal({
   closeModal,
   items,

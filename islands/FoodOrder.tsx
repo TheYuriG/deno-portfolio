@@ -2,12 +2,13 @@
 import { useState } from "preact/hooks";
 //? Import Food type to typecast the data received
 import type { Food } from "../types/Food.ts";
-//todo
+//? Renders invidual food items on the page
 import { FoodItem } from "../components/food-order/FoodItem.tsx";
-//todo
+//? Creates a modal with a shaded/blurred backdrop over the content behind it
 import ModalWithBackdrop from "./ModalWithBackdrop.tsx";
-//todo
+//? Cart Button that opens the current Cart as a Modal
 import CartButton from "../components/food-order/CartButton.tsx";
+//? Content of the current Cart in a modal for the user to view Cart Items
 import CartModal from "../components/food-order/CartModal.tsx";
 
 //? Define properties required for this component
@@ -15,15 +16,15 @@ interface FoodOrderProperties {
   foods: Food[];
 }
 
-//todo
+//? Renders the card with all food options and the header with the cart
 export default function FoodOrder({ foods }: FoodOrderProperties) {
-  //todo
+  //? Manages what items are currently in a cart and the overall cart price
   const [cartContent, updateCartContent] = useState({
     totalItems: 0,
     items: new Map(),
     cost: 0,
   });
-  //todo
+  //? Manages if the modal should be toggled on or off
   const [displayModal, toggleDisplayModal] = useState(false);
 
   return (
@@ -94,6 +95,9 @@ export default function FoodOrder({ foods }: FoodOrderProperties) {
           }}
         />
       ))}
+      {/* //todo Add a "complete order" button at the bottom of the page */}
+      {/* //todo Add the loading spinner to the modal when completing the order */}
+      {/* //todo disable clicking out of the modal when submitted */}
     </section>
   );
 }

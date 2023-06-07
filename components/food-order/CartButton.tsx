@@ -5,7 +5,7 @@ interface CartButtonProperties {
   cost: number;
 }
 
-//todo
+//? Renders a cart button that will open the cart modal
 export default function CartButton({
   openModal,
   totalItems,

@@ -28,7 +28,7 @@ export const handler: Handlers = {
   },
 };
 
-//todo
+//? Renders the food-order page, with a list of items and a cart
 export default function Home(
   { data: foods }: { data: Food[] },
 ) {
@@ -65,6 +65,8 @@ export default function Home(
               "I've also realized that this design looks very similar to the previous project, which just reminded me about how little creativity I have to design things and that designers are important. I could have just copied and pasted the styling from the course, but then this project would not fit in the overall theme for my website.",
               // third paragraph
               "However, since this project could become an actual freelance gig (there are plenty of business owners needing a website), I might just make a mockup website and put it on my Work page. I'll check with my designer if she can come up with something pretty.",
+              // fourth paragraph
+              "This section also made me look up how to create a modal in React (I've previously only made them with pure JS and in Vue), so that was a fun component to build and that I'll be reusing quite a few times.",
             ]}
           />
           {/* Page content */}
