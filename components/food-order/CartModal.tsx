@@ -55,18 +55,70 @@ export default function CartModal({
         {cartItems.map(([foodName, { quantity, cost }]) => (
           <li>
             <div style="display: flex; justify-content: space-between; align-items: center;">
+              {/* Cart item name */}
               <span>
                 {foodName}: {quantity}x ${cost.toFixed(2)}
               </span>
+              {/* Update cart item count */}
               <div style="display: inline-flex;">
-                {/* Increase item count */}
+                {/* Decrease item count. If last item, remove it from the cart */}
                 <span
-                  style="margin-left: 0.5em"
+                  style="margin-right: 0.5em"
                   onClick={() => {
                     updateCartFunction((curr) => {
+                      //? Instantiate current cart
                       const updatedCart = { ...curr };
-                      ++updatedCart.totalItems;
+
+                      //? Decrease the total item count by 1
+                      updatedCart.totalItems -= 1;
+                      //? Discount the overall cart price by the
+                      //? cost of another of this item
+                      updatedCart.cost -= cost;
+
+                      //? Increase the count of this specific item on the cart
+                      const decreasedCountItem = updatedCart.items.get(
+                        foodName,
+                      );
+                      if (decreasedCountItem !== undefined) {
+                        if (decreasedCountItem.quantity > 1) {
+                          decreasedCountItem.quantity -= 1;
+                          updatedCart.items.set(
+                            foodName,
+                            decreasedCountItem,
+                          );
+                        } else {
+                          updatedCart.items.delete(foodName);
+                        }
+                      }
+
+                      //? Return the updated cart as updated state
+                      return updatedCart;
+                    });
+                  }}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="1.5em"
+                    fill="var(--neutral-color)"
+                    viewBox="0 0 448 512"
+                  >
+                    <path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z" />
+                  </svg>
+                </span>
+                {/* Increase item count */}
+                <span
+                  onClick={() => {
+                    updateCartFunction((curr) => {
+                      //? Instantiate current cart
+                      const updatedCart = { ...curr };
+
+                      //? Increase the total item count by 1
+                      updatedCart.totalItems += 1;
+                      //? Increase the overall cart price by the
+                      //? cost of another of this item
                       updatedCart.cost += cost;
+
+                      //? Increase the count of this specific item on the cart
                       const increasedCountItem = updatedCart.items.get(
                         foodName,
                       );
@@ -77,6 +129,8 @@ export default function CartModal({
                           increasedCountItem,
                         );
                       }
+
+                      //? Return the updated cart as updated state
                       return updatedCart;
                     });
                   }}
@@ -95,10 +149,17 @@ export default function CartModal({
                   style="margin-left: 0.5em"
                   onClick={() => {
                     updateCartFunction((curr) => {
+                      //? Instantiate current cart
                       const updatedCart = { ...curr };
+
+                      //? Remove as many items from the cart as were added of this item
                       updatedCart.totalItems -= quantity;
+                      //? Discount the cart by the cost of all items of this type
                       updatedCart.cost -= quantity * cost;
+                      //? Remove this item from the tracked items
                       updatedCart.items.delete(foodName);
+
+                      //? Return the updated cart as updated state
                       return updatedCart;
                     });
                   }}
