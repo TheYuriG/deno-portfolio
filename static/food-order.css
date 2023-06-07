@@ -42,6 +42,37 @@
     fill: var(--accent-color)
 }
 
+/* Makes the modal content use all the modal width */
+.food-cart-content {
+    max-width: 100%;
+    padding: 0.7em;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Increase font size for modal header */
+.food-cart-content__header {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+
+/* Space the total value from the other things */
+.food-cart-content__total {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: end;
+}
+
+/* Row of buttons for the modal when there are items */
+.food-cart-content__button-row {
+    display: flex;
+    align-self: end;
+}
+
 /* Style each individual food item */
 .single-food {
     min-height: 8em;

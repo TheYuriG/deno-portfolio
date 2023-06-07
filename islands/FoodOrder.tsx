@@ -8,6 +8,7 @@ import { FoodItem } from "../components/food-order/FoodItem.tsx";
 import ModalWithBackdrop from "./ModalWithBackdrop.tsx";
 //todo
 import CartButton from "../components/food-order/CartButton.tsx";
+import CartModal from "../components/food-order/CartModal.tsx";
 
 //? Define properties required for this component
 interface FoodOrderProperties {
@@ -27,17 +28,16 @@ export default function FoodOrder({ foods }: FoodOrderProperties) {
 
   return (
     <section class="food-group">
+      {/* Cart modal with currently selected food items, if any */}
       <ModalWithBackdrop
-        key="backdrop-modal"
         display={displayModal}
         closeModalFunction={() => toggleDisplayModal(false)}
       >
-        <div>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-          magnam maiores ad ipsum, architecto corporis. Voluptas totam nostrum
-          doloribus, voluptate quod voluptatum, cum necessitatibus atque quos
-          architecto beatae, perspiciatis porro!
-        </div>
+        <CartModal
+          items={cartContent.items}
+          cost={cartContent.cost}
+          closeModal={() => toggleDisplayModal(false)}
+        />
       </ModalWithBackdrop>
       {/* Header with cart */}
       <div class="food-header">
