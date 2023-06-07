@@ -10,6 +10,7 @@ import ModalWithBackdrop from "./ModalWithBackdrop.tsx";
 import CartButton from "../components/food-order/CartButton.tsx";
 //? Content of the current Cart in a modal for the user to view Cart Items
 import CartModal from "../components/food-order/CartModal.tsx";
+//? Import accent button to create the Order now! button at the bottom
 import AccentButton from "./AccentButton.tsx";
 
 //? Define properties required for this component
@@ -51,7 +52,7 @@ export default function FoodOrder({ foods }: FoodOrderProperties) {
           cost={cartContent.cost}
         />
       </div>
-      {/* List of invidual food options */}
+      {/* List of individual food options */}
       {foods.map((food) => (
         <FoodItem
           {

@@ -1,20 +1,21 @@
 //? Import the StyledButton to close the modal on empty carts or
 //? confirm orders on a filled cart
 import StyledButton from "../../islands/StyledButton.tsx";
-//
-import { StateUpdater } from "preact/hooks";
+//? Import the functions that will update the Cart state
+import {
+  deleteItemFromCart,
+  increaseCartItemByOne,
+  reduceCartItemByOne,
+} from "../../services/food-order/updateFoodOrder.ts";
+//? Import types for typecasting
+import type { foodCartItemsMap } from "../../types/food-order/foodCartItemsMap.ts";
+import type { updateCartFunction } from "../../types/food-order/updateCartFunction.ts";
 
 //? Define Cart Modal properties
 interface CartModalProperties {
   closeModal: () => void;
-  updateCartFunction: StateUpdater<
-    {
-      totalItems: number;
-      items: Map<string, { quantity: number; cost: number }>;
-      cost: number;
-    }
-  >;
-  items: Map<string, { quantity: number; cost: number }>;
+  updateCartFunction: updateCartFunction;
+  items: foodCartItemsMap;
   cost: number;
 }
 
@@ -27,7 +28,7 @@ export default function CartModal({
   cost,
 }: CartModalProperties) {
   //? If no items are in the cartContent, return a simple "empty cart" message
-  if (cost === 0) {
+  if (items.size === 0) {
     return (
       <div class="food-cart-content">
         <span class="food-cart-content__header">
@@ -65,37 +66,14 @@ export default function CartModal({
                 <span
                   style="margin-right: 0.5em"
                   onClick={() => {
-                    updateCartFunction((curr) => {
-                      //? Instantiate current cart
-                      const updatedCart = { ...curr };
-
-                      //? Decrease the total item count by 1
-                      updatedCart.totalItems -= 1;
-                      //? Discount the overall cart price by the
-                      //? cost of another of this item
-                      updatedCart.cost -= cost;
-
-                      //? Increase the count of this specific item on the cart
-                      const decreasedCountItem = updatedCart.items.get(
-                        foodName,
-                      );
-                      if (decreasedCountItem !== undefined) {
-                        if (decreasedCountItem.quantity > 1) {
-                          decreasedCountItem.quantity -= 1;
-                          updatedCart.items.set(
-                            foodName,
-                            decreasedCountItem,
-                          );
-                        } else {
-                          updatedCart.items.delete(foodName);
-                        }
-                      }
-
-                      //? Return the updated cart as updated state
-                      return updatedCart;
+                    reduceCartItemByOne({
+                      foodName,
+                      foodCost: cost,
+                      updateCartFunction,
                     });
                   }}
                 >
+                  {/* Minus sign SVG */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     height="1.5em"
@@ -108,33 +86,14 @@ export default function CartModal({
                 {/* Increase item count */}
                 <span
                   onClick={() => {
-                    updateCartFunction((curr) => {
-                      //? Instantiate current cart
-                      const updatedCart = { ...curr };
-
-                      //? Increase the total item count by 1
-                      updatedCart.totalItems += 1;
-                      //? Increase the overall cart price by the
-                      //? cost of another of this item
-                      updatedCart.cost += cost;
-
-                      //? Increase the count of this specific item on the cart
-                      const increasedCountItem = updatedCart.items.get(
-                        foodName,
-                      );
-                      if (increasedCountItem !== undefined) {
-                        increasedCountItem.quantity += 1;
-                        updatedCart.items.set(
-                          foodName,
-                          increasedCountItem,
-                        );
-                      }
-
-                      //? Return the updated cart as updated state
-                      return updatedCart;
+                    increaseCartItemByOne({
+                      foodName,
+                      foodCost: cost,
+                      updateCartFunction,
                     });
                   }}
                 >
+                  {/* Plus sign SVG */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     height="1.5em"
@@ -144,26 +103,19 @@ export default function CartModal({
                     <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />
                   </svg>
                 </span>
-                {/* Remove item */}
+                {/* Remove item completely from cart */}
                 <span
                   style="margin-left: 0.5em"
                   onClick={() => {
-                    updateCartFunction((curr) => {
-                      //? Instantiate current cart
-                      const updatedCart = { ...curr };
-
-                      //? Remove as many items from the cart as were added of this item
-                      updatedCart.totalItems -= quantity;
-                      //? Discount the cart by the cost of all items of this type
-                      updatedCart.cost -= quantity * cost;
-                      //? Remove this item from the tracked items
-                      updatedCart.items.delete(foodName);
-
-                      //? Return the updated cart as updated state
-                      return updatedCart;
+                    deleteItemFromCart({
+                      foodName,
+                      foodQuantity: quantity,
+                      foodCost: cost,
+                      updateCartFunction,
                     });
                   }}
                 >
+                  {/* XMark SVG */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     height="1.5em"
