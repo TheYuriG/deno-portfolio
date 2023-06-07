@@ -10,6 +10,7 @@ import ModalWithBackdrop from "./ModalWithBackdrop.tsx";
 import CartButton from "../components/food-order/CartButton.tsx";
 //? Content of the current Cart in a modal for the user to view Cart Items
 import CartModal from "../components/food-order/CartModal.tsx";
+import AccentButton from "./AccentButton.tsx";
 
 //? Define properties required for this component
 interface FoodOrderProperties {
@@ -95,7 +96,16 @@ export default function FoodOrder({ foods }: FoodOrderProperties) {
           }}
         />
       ))}
-      {/* //todo Add a "complete order" button at the bottom of the page */}
+      {cartContent.totalItems > 0
+        ? (
+          <AccentButton
+            style="align-self: end; margin: 0.5em 1em;"
+            onClickFunction={() => toggleDisplayModal(true)}
+          >
+            View order
+          </AccentButton>
+        )
+        : <></>}
       {/* //todo Add the loading spinner to the modal when completing the order */}
       {/* //todo disable clicking out of the modal when submitted */}
     </section>
