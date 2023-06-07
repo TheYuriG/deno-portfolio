@@ -1,3 +1,5 @@
+import AccentButton from "../../islands/AccentButton.tsx";
+
 //? Define Cart Button properties
 interface CartButtonProperties {
   openModal: () => void;
@@ -12,9 +14,8 @@ export default function CartButton({
   cost,
 }: CartButtonProperties) {
   return (
-    <button
-      class="food-cart styled-button"
-      onClick={openModal}
+    <AccentButton
+      onClickFunction={openModal}
     >
       <span class="cart-total-items">
         <svg
@@ -28,6 +29,6 @@ export default function CartButton({
         {totalItems}
       </span>
       <span>${cost.toFixed(2)}</span>
-    </button>
+    </AccentButton>
   );
 }

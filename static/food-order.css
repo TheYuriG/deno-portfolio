@@ -13,16 +13,6 @@
     padding: 0.5em 1em;
 }
 
-/* Style the food cart on the header */
-.food-cart {
-    display: flex;
-    align-items: center;
-    padding: 0.25em 0.5em;
-    background-color: var(--accent-color);
-    border: 2px solid var(--neutral-color);
-    border-radius: 2em;
-}
-
 /* Space the total items away from the cart price */
 .cart-total-items {
     display: flex;
@@ -34,12 +24,6 @@
 /* Space between the cart SVG and the total items count */
 .cart-total-items svg {
     margin-right: 0.25em;
-    transition: fill ease-in-out 0.8s;
-}
-
-/* Animate cart SVG on cart button hover */
-.food-cart:hover svg {
-    fill: var(--accent-color)
 }
 
 /* Makes the modal content use all the modal width */
