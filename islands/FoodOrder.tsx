@@ -38,6 +38,7 @@ export default function FoodOrder({ foods }: FoodOrderProperties) {
         <CartModal
           items={cartContent.items}
           cost={cartContent.cost}
+          updateCartFunction={updateCartContent}
           closeModal={() => toggleDisplayModal(false)}
         />
       </ModalWithBackdrop>
