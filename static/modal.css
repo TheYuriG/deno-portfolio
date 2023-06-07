@@ -13,7 +13,8 @@
 /* Styles centered modal within backdrop-overlay */
 .modal {
     /* Centers the modal in the center of the backdrop */
-    position: absolute;
+    position: fixed;
+    z-index: 2;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);

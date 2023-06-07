@@ -19,10 +19,12 @@ export default function ModalWithBackdrop(
 
   //? If the display is true, display the overlay with the content provided
   return (
-    <div class="backdrop-overlay" onClick={closeModalFunction}>
+    <>
+      <div class="backdrop-overlay" onClick={closeModalFunction}>
+      </div>
       <div class="card card-shadow modal">
         {children}
       </div>
-    </div>
+    </>
   );
 }
