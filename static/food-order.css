@@ -72,6 +72,11 @@
     align-self: end;
 }
 
+/* Row of buttons for the modal when there are items */
+.food-cart-content__button-row svg:hover {
+    cursor: pointer
+}
+
 /* Style each individual food item */
 .single-food {
     min-height: 8em;
@@ -123,15 +128,14 @@
 number of people for this meal in a line */
 .food-for-how-many {
     display: flex;
-    font-size: 1rem;
+    align-items: center;
+    font-size: 0.8em;
 }
 
 /* Defines size for the people icon near the food name */
 .food-for-how-many svg {
     margin-left: 0.5em;
-    margin-right: 0.25em;
-    height: 1.5em;
-    width: 1.5em;
+    margin-right: 0.05em;
 }
 
 /* Slightly reduces the size of food descriptions */
