@@ -21,6 +21,14 @@ export function NavigationMenu() {
         Projects
       </a>
       <a
+        href="/certificates"
+        class="navigation-link animate-to-right"
+        style="--dur: 2;"
+        title="Cerfications I've got from completing various courses"
+      >
+        Certificates
+      </a>
+      <a
         href="/toys"
         class="navigation-link animate-to-right"
         style="--dur: 2;"
