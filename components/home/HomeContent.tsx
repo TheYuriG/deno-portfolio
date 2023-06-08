@@ -6,7 +6,7 @@ export function HomeContent() {
         Hello!
       </h1>
       {/* Name */}
-      <p class="block text-2xl ml-4 animate-to-top" style="--dur: 1">
+      <p class="block text-2xl ml-4 animate-to-top" style="--dur: 0.5">
         I am{" "}
         <strong>
           <span class="gradient-underline">TheYuriG</span>
@@ -14,12 +14,12 @@ export function HomeContent() {
         </strong>
       </p>
       {/* Skillset */}
-      <p class="block text-2xl ml-8 animate-to-top" style="--dur: 2">
+      <p class="block text-2xl ml-8 animate-to-top" style="--dur: 1">
         Sky afficionado, gym rat, full stack developer
       </p>
       {/* Role */}
-      <p class="block ml-12 animate-to-top" style="--dur: 3">
-        Currently building greatness at{" "}
+      <p class="block ml-12 animate-to-top" style="--dur: 1.5">
+        Building the next-gen Trophy Hunting website at{" "}
         <a href="https://trophy.place" target="_blank" class="pretty-link">
           Trophy Place
         </a>{" "}
