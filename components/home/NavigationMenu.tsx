@@ -7,7 +7,7 @@ export function NavigationMenu() {
       <a
         href="/work"
         class="navigation-link animate-to-right"
-        style="--dur: 3"
+        style="--dur: 1"
         title="Things I've done for money"
       >
         Work
@@ -15,7 +15,7 @@ export function NavigationMenu() {
       <a
         href="/projects"
         class="navigation-link animate-to-right"
-        style="--dur: 3.8;"
+        style="--dur: 1.5;"
         title="Things I've created to learn a tech stack"
       >
         Projects
@@ -23,7 +23,7 @@ export function NavigationMenu() {
       <a
         href="/toys"
         class="navigation-link animate-to-right"
-        style="--dur: 5;"
+        style="--dur: 2;"
         title="Curiosity projects"
       >
         Toys
@@ -31,7 +31,7 @@ export function NavigationMenu() {
       <a
         href="/blog"
         class="navigation-link animate-to-right"
-        style="--dur: 6;"
+        style="--dur: 1.5;"
         title="Development findings shared over the years"
       >
         Blog
@@ -39,7 +39,7 @@ export function NavigationMenu() {
       <a
         href="/me"
         class="navigation-link animate-to-right"
-        style="--dur: 7;"
+        style="--dur: 1;"
         title="Who is Yuri?"
       >
         Me
@@ -47,7 +47,7 @@ export function NavigationMenu() {
       <a
         href="/what-is-this"
         class="text-sm animate-to-right"
-        style="color: yellow; margin-top: 2em; --dur: 8;"
+        style="color: yellow; margin-top: 2em; --dur: 2;"
         title="information about how this website is built"
       >
         this
