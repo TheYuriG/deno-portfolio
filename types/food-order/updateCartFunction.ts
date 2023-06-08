@@ -4,9 +4,9 @@ import type { foodCartItemsMap } from "./foodCartItemsMap.ts";
 
 //? Export what the state updating function should look like
 export type updateCartFunction = StateUpdater<
-    {
-        totalItems: number;
-        items: foodCartItemsMap;
-        cost: number;
-    }
+  {
+    totalItems: number;
+    items: foodCartItemsMap;
+    cost: number;
+  }
 >;
