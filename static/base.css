@@ -50,28 +50,24 @@ main {
     transition: border 0.7s ease-in-out 0.3s;
 }
 
-/* Position the theme switcher on the bottom left corner */
-aside {
-    width: 5em;
-    height: min-content;
-    position: fixed;
-    bottom: 3.2em;
-    rotate: -90deg;
-    translate: -75%;
-    font-size: 1.2rem;
-}
-
-/* Define theme SVG size, push text away */
-aside svg {
-    width: 1em;
-    margin-right: 0.2em;
-}
 
 /* Organize theme button horizontally and align vertically */
 .theme-switcher {
     display: flex;
-    text-justify: center;
+    align-items: center;
+    width: 4em;
+    height: 1.3em;
+    position: fixed;
+    bottom: 2.5em;
+    rotate: -90deg;
+    translate: -83%;
+    font-size: 1.3rem;
     animation: fadeThemeSwitcherIn 0.3s;
+}
+
+/* Define theme SVG size, push text away */
+.theme-switcher svg {
+    margin-right: 0.2em;
 }
 
 /* Animate the Theme Switcher to fade in gracefully instead of popping in */
@@ -100,7 +96,7 @@ aside svg {
 }
 
 /* Style the images on the footer */
-footer img {
+.page-footer img {
     margin-left: 0.4rem;
     margin-right: 0.4rem;
     height: 18px;

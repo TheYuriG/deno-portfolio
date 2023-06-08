@@ -1,6 +1,8 @@
 //? Import hooks so a theme can be loaded on pageLoad and
 //? set on a click to the Radio buttons
 import { useEffect, useRef, useState } from "preact/hooks";
+import SunIcon from "../assets/SunIcon.tsx";
+import MoonIcon from "../assets/MoonIcon.tsx";
 
 //? Exports the ThemeSwitcher Island, so users can switch
 //? themes, if so they desire
@@ -63,17 +65,9 @@ export default function ThemeSwitcher() {
   if (theme === "Light") {
     return (
       <>
-        <button onClick={() => setTheme(() => "Dark")}>
-          <div class="theme-switcher">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 16 16"
-            >
-              <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
-            </svg>
-            Light
-          </div>
+        <button class="theme-switcher" onClick={() => setTheme(() => "Dark")}>
+          <SunIcon iconHeight="1em" iconWidth="1em" />
+          Light
         </button>
       </>
     );
@@ -81,16 +75,9 @@ export default function ThemeSwitcher() {
   else if (theme === "Dark") {
     return (
       <>
-        <button onClick={() => setTheme(() => "Light")}>
-          <div class="theme-switcher">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path
-                fill="currentColor"
-                d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938 7.999 7.999 0 0 0 4 12z"
-              />
-            </svg>
-            Dark
-          </div>
+        <button class="theme-switcher" onClick={() => setTheme(() => "Light")}>
+          <MoonIcon iconHeight="1em" iconWidth="1em" />
+          Dark
         </button>
       </>
     );
@@ -99,7 +86,6 @@ export default function ThemeSwitcher() {
   else {
     return (
       <>
-        <div></div>
       </>
     );
   }

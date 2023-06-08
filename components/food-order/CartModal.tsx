@@ -1,5 +1,8 @@
 //? Import the StyledButton to close the modal on empty carts or
 //? confirm orders on a filled cart
+import MinusIcon from "../../assets/MinusIcon.tsx";
+import PlusIcon from "../../assets/PlusIcon.tsx";
+import XMarkIcon from "../../assets/XMarkIcon.tsx";
 import StyledButton from "../../islands/StyledButton.tsx";
 //? Import the functions that will update the Cart state
 import {
@@ -74,14 +77,7 @@ export default function CartModal({
                   }}
                 >
                   {/* Minus sign SVG */}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="1.5em"
-                    fill="var(--neutral-color)"
-                    viewBox="0 0 448 512"
-                  >
-                    <path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z" />
-                  </svg>
+                  <MinusIcon iconHeight="1.5em" iconWidth="1.5em" />
                 </span>
                 {/* Increase item count */}
                 <span
@@ -94,14 +90,7 @@ export default function CartModal({
                   }}
                 >
                   {/* Plus sign SVG */}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="1.5em"
-                    fill="var(--neutral-color)"
-                    viewBox="0 0 448 512"
-                  >
-                    <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />
-                  </svg>
+                  <PlusIcon iconHeight="1.5em" iconWidth="1.5em" />
                 </span>
                 {/* Remove item completely from cart */}
                 <span
@@ -116,19 +105,13 @@ export default function CartModal({
                   }}
                 >
                   {/* XMark SVG */}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="1.5em"
-                    viewBox="0 0 384 512"
-                  >
-                    <g
-                      fill="red"
-                      stroke="var(--neutral-color)"
-                      stroke-width="20"
-                    >
-                      <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
-                    </g>
-                  </svg>
+                  <XMarkIcon
+                    iconHeight="1.5em"
+                    iconWidth="1.5em"
+                    iconFillColor="red"
+                    iconStrokeColor="var(--neutral-color)"
+                    iconStrokeWidth="30"
+                  />
                 </span>
               </div>
             </div>
@@ -148,7 +131,6 @@ export default function CartModal({
         </button>
         <StyledButton
           style="margin-left: 1em;"
-          key="modal__order"
           text="Order"
           onClickFunction={closeModal}
         />
