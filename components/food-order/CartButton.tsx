@@ -2,6 +2,7 @@ import AccentButton from "../../islands/AccentButton.tsx";
 
 //? Define Cart Button properties
 interface CartButtonProperties {
+  pulseState: boolean;
   openModal: () => void;
   totalItems: number;
   cost: number;
@@ -9,12 +10,17 @@ interface CartButtonProperties {
 
 //? Renders a cart button that will open the cart modal
 export default function CartButton({
+  pulseState,
   openModal,
   totalItems,
   cost,
 }: CartButtonProperties) {
   return (
     <AccentButton
+      //? Adds the pulsing animation when a food item is added
+      style={pulseState
+        ? "animation: pulseCartOnItemAdd 0.3s ease-in-out;"
+        : ""}
       onClickFunction={openModal}
     >
       <span class="cart-total-items">

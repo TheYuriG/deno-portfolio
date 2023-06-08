@@ -21,6 +21,21 @@
     margin-right: 1em;
 }
 
+/* Defines pulsating animation for cart button when adding new food item */
+@keyframes pulseCartOnItemAdd {
+    0% {
+        transform: scale(1);
+    }
+
+    70% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
 /* Space between the cart SVG and the total items count */
 .cart-total-items svg {
     margin-right: 0.25em;

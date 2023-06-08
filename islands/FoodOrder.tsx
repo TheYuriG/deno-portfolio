@@ -1,5 +1,5 @@
 //? Import from Preact to be able to change state
-import { useState } from "preact/hooks";
+import { useEffect, useState } from "preact/hooks";
 //? Import Food type to typecast the data received
 import type { Food } from "../types/Food.ts";
 //? Renders invidual food items on the page
@@ -28,6 +28,27 @@ export default function FoodOrder({ foods }: FoodOrderProperties) {
   });
   //? Manages if the modal should be toggled on or off
   const [displayModal, toggleDisplayModal] = useState(false);
+  //? Tracks if the pulsing animation should be triggered
+  const [pulseState, togglePulse] = useState(false);
+  //? Tracks if the if pulsing animation is active and remove
+  //? the pulsing style once it ends
+  useEffect(() => {
+    //? If the pulsing animation isn't active, stop
+    if (pulseState === false) return;
+
+    //? Create a debouncer that tracks when the pulsing
+    //? animation should be stopped
+    const debouncer = setTimeout(() => {
+      togglePulse(false);
+    }, 300);
+
+    //? Cleanup function to avoid restarting the animation
+    //? when a new item is clicked, before the previous
+    //? addition has completed animating
+    return () => {
+      clearTimeout(debouncer);
+    };
+  }, [pulseState]);
 
   return (
     <section class="food-group">
@@ -47,6 +68,9 @@ export default function FoodOrder({ foods }: FoodOrderProperties) {
       <div class="food-header">
         <h2 class="subtopic">Meals of the day</h2>
         <CartButton
+          //? Pulses the cart when a new item is added
+          pulseState={pulseState}
+          //? Opens the modal when clicked
           openModal={() => toggleDisplayModal(true)}
           totalItems={cartContent.totalItems}
           cost={cartContent.cost}
@@ -91,6 +115,10 @@ export default function FoodOrder({ foods }: FoodOrderProperties) {
                   cost: food.price,
                 });
               }
+
+              //? Triggers the pulsing animation when an item
+              //? is added to the cart
+              togglePulse(true);
 
               //? Return the updated cart
               return newCart;
