@@ -1,10 +1,10 @@
 //? Import IconProperties for props typecasting
-import { IconProperties } from "../types/IconProperties.ts";
+import { IconPropertiesWithStroke } from "../types/IconProperties.ts";
 
 //? Renders a XMark Icon with fill, stroke and stroke-width
 export default function XMarkIcon(
   { iconHeight, iconWidth, iconFillColor, iconStrokeColor, iconStrokeWidth }:
-    IconProperties,
+    IconPropertiesWithStroke,
 ) {
   return (
     <svg

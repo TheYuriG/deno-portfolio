@@ -1,11 +1,11 @@
 //? Import IconProperties for props typecasting
-import { IconProperties } from "../types/IconProperties.ts";
+import { IconPropertiesWithStroke } from "../types/IconProperties.ts";
 
 //? Renders a spinning animation with fill
 //! Needs to import the loading-animation.css file for @keyframes!
 export default function LoadingAnimation(
   { iconHeight, iconWidth, iconStrokeColor }: Pick<
-    IconProperties,
+    IconPropertiesWithStroke,
     "iconHeight" | "iconWidth" | "iconStrokeColor"
   >,
 ) {
