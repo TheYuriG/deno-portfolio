@@ -1,0 +1,26 @@
+/* Creates a blurred, shades overlay over the background */
+.backdrop-overlay {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100dvw;
+    height: 100dvh;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(0.2em);
+}
+
+/* Styles centered modal within backdrop-overlay */
+.modal {
+    /* Centers the modal in the center of the backdrop */
+    position: fixed;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* Define dimensions and styles */
+    min-width: 50dvw;
+    max-width: 80dvw;
+    background-color: var(--base-color);
+}

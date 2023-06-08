@@ -1,6 +1,6 @@
 // //? To know what is the current route
 import { Handlers } from "$fresh/server.ts";
-//? Fetch a post from source and return it as a CompletePost type
+//? Import the function to fetch expenses from the database
 import fetchExpenses from "../../services/fetchExpenses.ts";
 //? Import the custom error to throw if the database fetch fails
 import FetchExpenseError from "../../types/FetchExpenseError.ts";
@@ -17,8 +17,8 @@ import ExpensesTracker from "../../islands/ExpensesTracker.tsx";
 //? Describe things that were learned with this current project
 import ProjectDiscovery from "../../islands/ProjectDiscovery.tsx";
 
-//? Runs before the render function to fetch the post from the files, then
-//? pushes
+//? Runs before the render function to fetch the expenses from the
+//? database, then pushes the data into the rendered page function
 export const handler: Handlers = {
   async GET(req, ctx) {
     const expenses = await fetchExpenses();

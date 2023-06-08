@@ -1,5 +1,6 @@
 //? Import LinkProperties to type what is required for the
 //? optional "back" and "next" buttons
+import ChevronIcon from "../../assets/ChevronIcon.tsx";
 import { LinkProperties } from "../../types/LinkProperties.ts";
 //? Define optional properties for the buttons
 interface BlogNavigationButtonProperties {
@@ -16,9 +17,7 @@ export default function BlogNavigationButtons(
   const backButton = back
     ? (
       <a class="navigation-button" href={back.link} title={back.title}>
-        <svg viewBox="0 0 32 32" aria-hidden="true" fill="currentColor">
-          <path d="M14.19 16.005l7.869 7.868-2.129 2.129-9.996-9.997L19.937 6.002l2.127 2.129z" />
-        </svg>
+        <ChevronIcon iconHeight="1.8em" iconWidth="1.5em" rotation="0" />
         Back
       </a>
     )
@@ -32,14 +31,7 @@ export default function BlogNavigationButtons(
     ? (
       <a class="navigation-button" href={next.link} title={next.title}>
         Next
-        <svg
-          viewBox="0 0 32 32"
-          class="icon icon-chevron-right"
-          aria-hidden="true"
-          fill="currentColor"
-        >
-          <path d="M18.629 15.997l-7.083-7.081L13.462 7l8.997 8.997L13.457 25l-1.916-1.916z" />
-        </svg>
+        <ChevronIcon iconHeight="1.8em" iconWidth="1.5em" rotation="180" />
       </a>
     )
     : <span style="width: 5rem;"></span>; //? Empty span to center the Home button

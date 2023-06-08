@@ -401,6 +401,13 @@ export default function FormWithValidation() {
                 check: { ...currentFormValues.check },
               };
               editedValues.check[checkName] = !editedValues.check[checkName];
+
+              //? Reset checkbox validation if user clicked any of the options
+              updateValidation((currentValidation) => ({
+                ...currentValidation,
+                check: validationStatus.Unchanged,
+              }));
+
               return editedValues;
             });
           }}

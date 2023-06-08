@@ -24,8 +24,8 @@ export default function Home() {
         <article class="center">
           <h1>List of Projects</h1>
           <p class="space">
-            Below you can find some of the projects I needed to complete while
-            undertaking the{" "}
+            Below you can find the projects I completed while going through the
+            {" "}
             <GradientLink
               content=" React - The Complete Guide"
               link="https://www.udemy.com/course/react-the-complete-guide-incl-redux/"
@@ -62,14 +62,35 @@ export default function Home() {
             to make them look like the way I like them, rather than using the
             default course styling.
           </p>
+          <p class="space">
+            Every project page includes a toggleable summary of what I learned
+            when completing the project. Overall, I don't think it was that
+            useful for me because I had already learned the large bulk of React
+            features previously by building websites for my freelance clients.
+            While it was nice to learn about Fragments, React.createElement(),
+            Portals and Context, almost none of my clients jobs would benefit by
+            any of those, so it was mostly nice-to-know course for me.
+          </p>
           <ol
             start={1}
             style="align-self: start; list-style-type: lower-greek;"
           >
+            {/* Expenses tracker */}
             <li>
               <GradientLink
                 content="Expenses tracker"
                 link="/projects/expenses-tracker"
+                title="Expenses tracker that allow filtering by year and provides simple bar charts for each month's totals"
+                newTab={false}
+              />
+            </li>
+            {/* Food order */}
+            <li>
+              <GradientLink
+                content="Food order"
+                link="/projects/food-order"
+                title="Mock of a food order app. Comes with a built-in cart system that allows the user to manage their items"
+                newTab={false}
               />
             </li>
           </ol>
