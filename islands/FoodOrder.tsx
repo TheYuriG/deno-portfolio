@@ -19,14 +19,71 @@ interface FoodOrderProperties {
   foods: Food[];
 }
 
+//? Instantiate default initial state for the cart
+const startedCartState = { totalItems: 0, items: new Map(), cost: 0 };
+
 //? Renders the card with all food options and the header with the cart
 export default function FoodOrder({ foods }: FoodOrderProperties) {
   //? Manages what items are currently in a cart and the overall cart price
   const [cartContent, updateCartContent] = useState({
-    totalItems: 0,
-    items: new Map(),
-    cost: 0,
+    ...startedCartState,
   });
+  //? Manages the cart content being persisted locally
+  useEffect(() => {
+    //! Logic:
+    //! (1) check if cart was recently emptied -> reset localStorage
+
+    //! (2) check if cart is currently empty -> check if there is localStorage ->
+    //! check if localStorage doesn't have as many items as current cart ->
+    //! replace current cart with localStorage cart
+
+    //! (3) save current cart to localStorage 1 second after the last cart update
+
+    //? Fix calculation bug due to computers being unable to add/subtract decimals
+    if (cartContent.cost < 1 && cartContent.cost !== 0) {
+      //? Reset cart to default values
+      //! Will not trigger another useEffect() cycle since the dependency will be equal
+      updateCartContent({ ...startedCartState });
+      localStorage.setItem(
+        "food-order-cart",
+        JSON.stringify({
+          ...startedCartState,
+          items: [...startedCartState.items],
+        }),
+      );
+      return;
+    }
+
+    //? If the current state is fresh, check if we have a different state on localStorage to replace it
+    if (cartContent.totalItems === 0) {
+      const storedCart = localStorage.getItem("food-order-cart");
+      if (storedCart !== null) {
+        const parsedCart: typeof startedCartState = JSON.parse(storedCart);
+        if (parsedCart?.totalItems !== cartContent.totalItems) {
+          updateCartContent(() => ({
+            ...parsedCart,
+            items: new Map(parsedCart.items),
+          }));
+          return;
+        }
+      }
+    }
+
+    //? Lock saving data to localStorage 1 second after the last cart update
+    const saveLock = setTimeout(() => {
+      //? If the information is different, save it to localStorage
+      localStorage.setItem(
+        "food-order-cart",
+        JSON.stringify({ ...cartContent, items: [...cartContent.items] }),
+      );
+    }, 1000);
+
+    //? Clean up function to avoid spamming hits on localStorage
+    return () => {
+      clearTimeout(saveLock);
+    };
+  }, [cartContent.totalItems]);
+
   //? Manages if the modal should be toggled on or off
   const [displayModal, toggleDisplayModal] = useState(false);
   //? Tracks if the pulsing animation should be triggered
@@ -34,7 +91,7 @@ export default function FoodOrder({ foods }: FoodOrderProperties) {
 
   //? Manages if the expanded image modal should be toggled on or off
   const [expandFoodImage, displayExpandedFoodImage] = useState(false);
-  //todo
+  //? Manages which is the current image link to be displayed on full screen modal
   const [expandedModalImageLink, updateExpandedModalImageLink] = useState("");
 
   //? Tracks if the if pulsing animation is active and remove
