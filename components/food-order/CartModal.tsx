@@ -51,71 +51,80 @@ export default function CartModal({
 
   //? Return the cart items and the total
   return (
-    <div class="food-cart-content">
+    <div class="food-cart-content max-h-[90dvh]">
       {/* Modal header */}
-      <span class="food-cart-content__header">Items in cart</span>
+      <h2 class="food-cart-content__header">Items in cart</h2>
       {/* List of items in cart */}
-      <ol>
+      <ol class="overflow-auto styled-scrollbar">
         {cartItems.map(([foodName, { quantity, cost }]) => (
-          <li>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
+          <li class="flex flex-col">
+            {/* Food item name, remove item from cart */}
+            <div class="flex justify-between items-center pr-1.5">
               {/* Cart item name */}
-              <span>
-                {foodName}: {quantity}x ${cost.toFixed(2)}
+              <h3 class="text-xl">
+                {foodName}
+              </h3>
+              {/* Remove item completely from cart */}
+              <span
+                class="hover:cursor-pointer"
+                onClick={() => {
+                  deleteItemFromCart({
+                    foodName,
+                    foodQuantity: quantity,
+                    foodCost: cost,
+                    updateCartFunction,
+                  });
+                }}
+              >
+                {/* XMark SVG */}
+                <XMarkIcon
+                  iconHeight="1.5em"
+                  iconWidth="1.5em"
+                  iconFillColor="red"
+                  iconStrokeColor="var(--neutral-color)"
+                  iconStrokeWidth="30"
+                />
               </span>
-              {/* Update cart item count */}
-              <div style="display: inline-flex;">
-                {/* Decrease item count. If last item, remove it from the cart */}
-                <span
-                  class="mr-2 hover:cursor-pointer"
-                  onClick={() => {
-                    reduceCartItemByOne({
-                      foodName,
-                      foodCost: cost,
-                      updateCartFunction,
-                    });
-                  }}
-                >
-                  {/* Minus sign SVG */}
-                  <MinusIcon iconHeight="1.5em" iconWidth="1.5em" />
-                </span>
-                {/* Increase item count */}
-                <span
-                  class="hover:cursor-pointer"
-                  onClick={() => {
-                    increaseCartItemByOne({
-                      foodName,
-                      foodCost: cost,
-                      updateCartFunction,
-                    });
-                  }}
-                >
-                  {/* Plus sign SVG */}
-                  <PlusIcon iconHeight="1.5em" iconWidth="1.5em" />
-                </span>
-                {/* Remove item completely from cart */}
-                <span
-                  class="ml-2 hover:cursor-pointer"
-                  onClick={() => {
-                    deleteItemFromCart({
-                      foodName,
-                      foodQuantity: quantity,
-                      foodCost: cost,
-                      updateCartFunction,
-                    });
-                  }}
-                >
-                  {/* XMark SVG */}
-                  <XMarkIcon
-                    iconHeight="1.5em"
-                    iconWidth="1.5em"
-                    iconFillColor="red"
-                    iconStrokeColor="var(--neutral-color)"
-                    iconStrokeWidth="30"
-                  />
-                </span>
-              </div>
             </div>
+            {/* Food item count, update cart item count */}
+            <div class="mt-2 inline-flex items-center self-end pr-1">
+              {/* Decrease item count. If last item, remove it from the cart */}
+              <span
+                class="mr-2 hover:cursor-pointer"
+                onClick={() => {
+                  reduceCartItemByOne({
+                    foodName,
+                    foodCost: cost,
+                    updateCartFunction,
+                  });
+                }}
+              >
+                {/* Minus sign SVG */}
+                <MinusIcon iconHeight="1.5em" iconWidth="1.5em" />
+              </span>
+              <span class="text-center">
+                {quantity}x ${cost.toFixed(2)}
+              </span>
+              {/* Increase item count */}
+              <span
+                class="ml-2 hover:cursor-pointer"
+                onClick={() => {
+                  increaseCartItemByOne({
+                    foodName,
+                    foodCost: cost,
+                    updateCartFunction,
+                  });
+                }}
+              >
+                {/* Plus sign SVG */}
+                <PlusIcon iconHeight="1.5em" iconWidth="1.5em" />
+              </span>
+            </div>
+            {/* Divider */}
+            <hr
+              class="my-2 border-solid border"
+              style="border-color: var(--neutral-color)"
+            />
           </li>
         ))}
       </ol>

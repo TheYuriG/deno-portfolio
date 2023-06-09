@@ -1,5 +1,5 @@
 //? Import from Preact to be able to change state
-import { useEffect, useState } from "preact/hooks";
+import { useEffect, useRef, useState } from "preact/hooks";
 //? Import Food type to typecast the data received
 import type { Food } from "../types/Food.ts";
 //? Renders invidual food items on the page
@@ -24,6 +24,9 @@ const startedCartState = { totalItems: 0, items: new Map(), cost: 0 };
 
 //? Renders the card with all food options and the header with the cart
 export default function FoodOrder({ foods }: FoodOrderProperties) {
+  //? Use a reference to lock saving to localStorage too early and/or avoid an infinite
+  //? loop of forever updating the state and running useEffect again
+  const allowedToSaveLocally = useRef(false);
   //? Manages what items are currently in a cart and the overall cart price
   const [cartContent, updateCartContent] = useState({
     ...startedCartState,
@@ -31,45 +34,53 @@ export default function FoodOrder({ foods }: FoodOrderProperties) {
   //? Manages the cart content being persisted locally
   useEffect(() => {
     //! Logic:
-    //! (1) check if cart was recently emptied -> reset localStorage
+    //! (1) check if cart was recently emptied by the user -> reset localStorage
 
-    //! (2) check if cart is currently empty -> check if there is localStorage ->
-    //! check if localStorage doesn't have as many items as current cart ->
-    //! replace current cart with localStorage cart
+    //! (2) check if cart is currently empty and if we didn't pull localStorage yet ->
+    //! check if there is localStorage ->
+    //! replace current brand new cart with old localStorage cart
 
-    //! (3) save current cart to localStorage 1 second after the last cart update
+    //! (3) remove saving lock so next cycle can update localStorage
+
+    //! (4) save current cart to localStorage 1 second after the last user cart update
 
     //? Fix calculation bug due to computers being unable to add/subtract decimals
-    if (cartContent.cost < 1 && cartContent.cost !== 0) {
+    if (cartContent.cost < 1 && allowedToSaveLocally.current === true) {
       //? Reset cart to default values
       //! Will not trigger another useEffect() cycle since the dependency will be equal
       updateCartContent({ ...startedCartState });
-      localStorage.setItem(
-        "food-order-cart",
-        JSON.stringify({
-          ...startedCartState,
-          items: [...startedCartState.items],
-        }),
-      );
+      //? Delete cart from localStorage
+      localStorage.removeItem("food-order-cart");
+      //? Lock saving to avoid recreating localStorage that was just deleted
+      allowedToSaveLocally.current = false;
       return;
     }
 
     //? If the current state is fresh, check if we have a different state on localStorage to replace it
-    if (cartContent.totalItems === 0) {
+    if (
+      cartContent.totalItems === 0 && allowedToSaveLocally.current === false
+    ) {
       const storedCart = localStorage.getItem("food-order-cart");
+      //? If a cart exists, override the current cart on state with the localStorage cart
+      //! Only carts with valid data are saved on localStorage. Empty carts are deleted (1)!
       if (storedCart !== null) {
         const parsedCart: typeof startedCartState = JSON.parse(storedCart);
-        if (parsedCart?.totalItems !== cartContent.totalItems) {
-          updateCartContent(() => ({
-            ...parsedCart,
-            items: new Map(parsedCart.items),
-          }));
-          return;
-        }
+        updateCartContent(() => ({
+          ...parsedCart,
+          items: new Map(parsedCart.items),
+        }));
+        return;
       }
     }
 
-    //? Lock saving data to localStorage 1 second after the last cart update
+    //? Remove the lock so that the next cycle (modifying the cart)
+    //? can actually save the cart to localStorage
+    if (allowedToSaveLocally.current === false) {
+      allowedToSaveLocally.current = true;
+      return;
+    }
+
+    //? Debounce saving data to localStorage 1 second after the last cart update
     const saveLock = setTimeout(() => {
       //? If the information is different, save it to localStorage
       localStorage.setItem(

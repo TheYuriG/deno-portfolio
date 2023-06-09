@@ -1,11 +1,13 @@
 /* Note: Color scheme variables are set on components/base/CustomHead.tsx script tag */
 
 /* Scrollbar styling */
-body::-webkit-scrollbar {
+body::-webkit-scrollbar,
+.styled-scrollbar::-webkit-scrollbar {
     width: 0.8em;
 }
 
-body::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb,
+.styled-scrollbar::-webkit-scrollbar-thumb {
     background-color: transparent;
     outline: 2px solid var(--accent-color);
     outline-offset: -0.1rem;
