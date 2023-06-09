@@ -67,7 +67,7 @@ export default function CartModal({
               <div style="display: inline-flex;">
                 {/* Decrease item count. If last item, remove it from the cart */}
                 <span
-                  style="margin-right: 0.5em"
+                  class="mr-2 hover:cursor-pointer"
                   onClick={() => {
                     reduceCartItemByOne({
                       foodName,
@@ -81,6 +81,7 @@ export default function CartModal({
                 </span>
                 {/* Increase item count */}
                 <span
+                  class="hover:cursor-pointer"
                   onClick={() => {
                     increaseCartItemByOne({
                       foodName,
@@ -94,7 +95,7 @@ export default function CartModal({
                 </span>
                 {/* Remove item completely from cart */}
                 <span
-                  style="margin-left: 0.5em"
+                  class="ml-2 hover:cursor-pointer"
                   onClick={() => {
                     deleteItemFromCart({
                       foodName,
