@@ -27,7 +27,7 @@ function contentParser(content: ContentPiece[]): JSX.Element[] {
         break;
       //? Bland paragraph with no additional information
       case contentPieceType.Text:
-        parsedContent.push(<p class="space">{contentValue}</p>);
+        parsedContent.push(<p class="my-2">{contentValue}</p>);
         break;
       //? Small image that doesn't fill the entire content width
       case contentPieceType.Image:

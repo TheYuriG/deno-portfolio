@@ -23,7 +23,7 @@ export default function Home() {
         <BlogNavigationButtons />
         <article class="center">
           <h1>List of Projects</h1>
-          <p class="space">
+          <p class="my-2">
             Below you can find the projects I completed while going through the
             {" "}
             <GradientLink
@@ -35,7 +35,7 @@ export default function Home() {
             />{" "}
             course from Academind.
           </p>
-          <p class="space">
+          <p class="my-2">
             While I already had decent experience with React from previous
             projects and usage of Preact (to build this website!), I was forever
             going to have this feeling of{" "}
@@ -50,19 +50,19 @@ export default function Home() {
             </em>{" "}
             if I don't make myself go through a full fledged course.
           </p>
-          <p class="space">
+          <p class="my-2">
             Considering that, instead of creating a new repository for every
             required project, I've just adapted everything to be used here,
             inside Deno, Fresh and Preact.
           </p>
-          <p class="space">
+          <p class="my-2">
             That way, not only I practice what I need to, but I'm also forcing
             myself to go the extra mile and solve problems that this
             unintended/unsuported setup will cause me to have. Plus, I can get
             to make them look like the way I like them, rather than using the
             default course styling.
           </p>
-          <p class="space">
+          <p class="my-2">
             Every project page includes a toggleable summary of what I learned
             when completing the project. Overall, I don't think it was that
             useful for me because I had already learned the large bulk of React

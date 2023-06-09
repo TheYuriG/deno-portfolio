@@ -27,7 +27,7 @@ export default function Home() {
         />
         <article class="center">
           <h1>Spinners</h1>
-          <p class="space" style="margin: 0 auto;">
+          <p class="my-2" style="margin: 0 auto;">
             Experimenting with translate3d (hover for information!)
           </p>
           <section style="flex: 1;">

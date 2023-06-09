@@ -65,7 +65,7 @@ export default function Home() {
             class="large-image"
           />
           {/* Introduction */}
-          <p class="space">
+          <p class="my-2">
             In the{" "}
             <GradientLink
               link="/blog/how-create-theme-switcher-deno-fresh"
@@ -78,7 +78,7 @@ export default function Home() {
             fix both of them now:
           </p>
           {/* Presenting the problem */}
-          <p class="space">
+          <p class="my-2">
             To understand how to fix both of those problems, we first need to
             understand why they happened in the first place.
           </p>
@@ -92,7 +92,7 @@ export default function Home() {
             style="height: 25em;"
           />
           {/* Explaining topic */}
-          <p class="space">
+          <p class="my-2">
             The{" "}
             <GradientLink
               link="https://www.patterns.dev/posts/islands-architecture"
@@ -113,7 +113,7 @@ export default function Home() {
             alt="Remix's logo"
             title="The precursor"
           />
-          <p class="space">
+          <p class="my-2">
             Fresh wasn't the first to come up with this idea, mind you.{" "}
             <GradientLink
               link="https://remix.run/"
@@ -139,7 +139,7 @@ export default function Home() {
             for them.
           </p>
           {/* Further insight into the problem */}
-          <p class="space">
+          <p class="my-2">
             So by now, you might have realized that not shipping Javascript by
             default has its drawbacks. If the page first needs to load before it
             can download the Javascript to change the theme colors, then we
@@ -149,7 +149,7 @@ export default function Home() {
           </p>
           {/* Main content start */}
           <h2 class="subtopic">Opting out of the Islands Architecture</h2>
-          <p class="space">
+          <p class="my-2">
             It's possible that we can ship the required Javascript on every
             page, but in doing so, you need to understand the tradeoffs:
           </p>
@@ -169,7 +169,7 @@ export default function Home() {
               have to mostly figure something out by yourself.
             </li>
           </ol>
-          <p class="space">
+          <p class="my-2">
             At this point, I have to ask you: Is this feature essential for your
             project? Is the design of your website impossible to be done in a
             happy medium between Light and Dark modes? If the answer to both of
@@ -179,7 +179,7 @@ export default function Home() {
           {/* Script tag warning */}
           {/*  */}
           <h2 class="subtopic">Adding a script file to every response</h2>
-          <p class="space">
+          <p class="my-2">
             Be very careful about the <code class="shj-lang-js">script</code>
             {" "}
             tags that you import on your project. Not knowing what you are doing
@@ -194,7 +194,7 @@ export default function Home() {
             code that suggests using these and, if in doubt, don't use them in
             your project!
           </p>
-          <p class="space">
+          <p class="my-2">
             In our case, our implementation is incredibly simple. We just add a
             small script to the response's{" "}
             <code class="shj-lang-js">&lt;head&gt;</code>{" "}
@@ -218,7 +218,7 @@ export default function Home() {
     );
 }`}
           </div>
-          <p class="space">And inside the script file:</p>
+          <p class="my-2">And inside the script file:</p>
           <div class="shj-lang-js">
             {`// /static/themeSwitcher.js
 const selectedTheme = localStorage.getItem("theme");
@@ -239,7 +239,7 @@ if (window.showDarkMode === true) {
     cssRoot.style.setProperty("--accent-color", "rgb(220 38 38)");
 }`}
           </div>
-          <p class="space">In order:</p>
+          <p class="my-2">In order:</p>
           <ol
             start={1}
             style="align-self: start; list-style-type: lower-greek;"
@@ -270,7 +270,7 @@ if (window.showDarkMode === true) {
               .
             </li>
           </ol>
-          <p class="space">
+          <p class="my-2">
             Now all we gotta do is update our component and we are done!
           </p>
           <div class="shj-lang-js">
@@ -290,7 +290,7 @@ useEffect(() => {
 }
 ...`}
           </div>
-          <p class="space">
+          <p class="my-2">
             Because{" "}
             <code class="shj-lang-js">
               window.showDarkMode
@@ -305,7 +305,7 @@ useEffect(() => {
             bit too, leaving the initial check to only validate if it's the
             first run and skip when it is.
           </p>
-          <p class="space">
+          <p class="my-2">
             So there you have it, a Theme Switcher that sets the correct theme,
             acknowledges the user's preferences, and doesn't flicker on the
             initial load.
@@ -314,12 +314,12 @@ useEffect(() => {
           <h2 class="subtopic">
             Alternatives to using script tags
           </h2>
-          <p class="space">
+          <p class="my-2">
             What other ways could you possibly implement a Theme Switcher
             without needing to script files on every request?
           </p>
           {/* Route based */}
-          <p class="space">
+          <p class="my-2">
             One of the options would be to use route-based theming. You could
             create your entire website nested in either a{" "}
             <code class="shj-lang-js">
@@ -341,7 +341,7 @@ useEffect(() => {
             could implement.
           </p>
           {/* App router, but maybe just use NextJS instead? */}
-          <p class="space">
+          <p class="my-2">
             Another option would be to not save the theme to{" "}
             <code class="shj-lang-js">
               localStorage

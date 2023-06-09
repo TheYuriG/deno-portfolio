@@ -32,7 +32,7 @@ export default function Home() {
             class="large-image"
           />
 
-          <p class="space">
+          <p class="my-2">
             I'm Yuri Gabriel, also known online as{" "}
             <GradientLink
               link="https://github.com/TheYuriG"
@@ -49,12 +49,12 @@ export default function Home() {
             , but now obsessed with writing code and creating pretty things to
             look at and fun to use.
           </p>
-          <p class="space">
+          <p class="my-2">
             For some good portion of the most last decade, I was using the
             majority of my free time earning some of the hardest trophies out
             there on PSN, never shying away from the next hard game to complete.
           </p>
-          <p class="space">
+          <p class="my-2">
             Trophy hunting, while fun, often times can feel like another job.
             You often feel like you have to track so many moving parts at once
             to make sure you don't miss anything and you stay efficient,
@@ -63,7 +63,7 @@ export default function Home() {
             your account.
           </p>
           <h2 class="subtopic">Gym</h2>
-          <p class="space">
+          <p class="my-2">
             I'm an absolute gym rat. It's part of my routine to write code and
             {" "}
             <GradientLink
@@ -81,14 +81,14 @@ export default function Home() {
             />{" "}
             than they could be.
           </p>
-          <p class="space">
+          <p class="my-2">
             I track my physical/body progress every week on Instagram and it has
             been inspiring for some of my peers to watch my progress, but I
             honestly have no desire of becoming a celebrity. It's so easy to
             waste so much good useful time on social media and I feel far more
             productive on days where I barely look at my phone.
           </p>
-          <p class="space">
+          <p class="my-2">
             I've had people asking me what is my secret for changing so much and
             the truth is that there is no secret. If you just eat properly,
             sleep enough, and push your limit as often as possible (with proper
@@ -105,12 +105,12 @@ export default function Home() {
           </p>
 
           <h2 class="subtopic">Programming</h2>
-          <p class="space">
+          <p class="my-2">
             In late 2017, I felt like trophy hunting would be greatly improved
             if we could get a way to link and display our trophies on Discord,
             but no bots out there offered this kind of data.
           </p>
-          <p class="space">
+          <p class="my-2">
             After not really getting anywhere with it, in March 2018 I decided
             that if no one was willing to create a Discord bot for trophy
             hunting, then I was going to need to{" "}
@@ -127,20 +127,20 @@ export default function Home() {
             alt="Yura's latest avatar"
             class="small-image"
           />
-          <p class="space">
+          <p class="my-2">
             I've kept maintainining and adding new features to Yura for several
             years, before it ultimately collapsed when its data source killed
             all external access by implementing a stronger DDoS protection
             through Cloudflare.
           </p>
-          <p class="space">
+          <p class="my-2">
             Myself and a few other members had been asking for several new
             features for years, but ultimately all of our feedback fell in deaf
             ears. It couldn't go on like that anymore, something had to be done
             about it.
           </p>
           <h2 class="subtopic">Trophy Place</h2>
-          <p class="space">
+          <p class="my-2">
             Myself and{" "}
             <GradientLink
               link="https://github.com/Makowo"
@@ -153,7 +153,7 @@ export default function Home() {
             After all, who knows better what the trophy hunting community wants,
             if not the community itself?
           </p>
-          <p class="space">
+          <p class="my-2">
             Since I've already had some experience building the backend, I chose
             to manage all of the infrastructure for{" "}
             <GradientLink
@@ -164,7 +164,7 @@ export default function Home() {
             />{" "}
             while Makowo was responsible for the frontend.
           </p>
-          <p class="space">
+          <p class="my-2">
             Our chosen tech stack is{" "}
             <GradientLink
               link="https://vuejs.org/"

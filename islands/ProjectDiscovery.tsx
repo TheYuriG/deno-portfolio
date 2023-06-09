@@ -26,7 +26,7 @@ export default function ProjectDiscovery(
       />
       {/* Displays the discovery text, if that was enabled with the checkbox */}
       {displayDiscovery === true &&
-        innerText.map((text) => <p class="space">{text}</p>)}
+        innerText.map((text) => <p class="my-2">{text}</p>)}
     </section>
   );
 }

@@ -66,14 +66,14 @@ export default function Home() {
             class="large-image"
           />
           {/* Introduction */}
-          <p class="space">
+          <p class="my-2">
             Being able to customize your Theme can be a huge user experience
             upgrade to any website. While some websites use a default Dark
             Theme, the majority of the internet still sticks to creating content
             in Light Mode as default (and sometimes the only option).
           </p>
           {/* Presenting the problem */}
-          <p class="space">
+          <p class="my-2">
             However, if you have tried to do this on your own using Fresh
             before, you might have run into a problem... or many. In this blog
             post, I'll explain how I've created my theme, what issues I've
@@ -88,7 +88,7 @@ export default function Home() {
             class="small-image"
           />
           {/* Explaining what is Fresh */}
-          <p class="space">
+          <p class="my-2">
             <GradientLink
               link="https://fresh.deno.dev/"
               title="It's dripping!"
@@ -122,7 +122,7 @@ export default function Home() {
             post).
           </p>
           {/* Further explanation about Fresh */}
-          <p class="space">
+          <p class="my-2">
             Fresh uses Preact under the hood to compile the JSX/TSX files into
             static HTML that is then sent to the client. If you have experience
             with{" "}
@@ -144,7 +144,7 @@ export default function Home() {
           </p>
           {/* Main content start */}
           <h2 class="subtopic">Creating A Theme Switcher</h2>
-          <p class="space">Let's create a very simple Theme Switcher:</p>
+          <p class="my-2">Let's create a very simple Theme Switcher:</p>
           {/* Code block with initial implementation */}
           <div class="shj-lang-js">
             {`// /islands/ThemeSwitcher.tsx
@@ -237,7 +237,7 @@ useEffect(() => {
 ...`}
           </div>
           {/* Second code block explanation */}
-          <p class="space">
+          <p class="my-2">
             We have added a reference to the{" "}
             <code class="shj-lang-js">
               useEffect()
@@ -333,7 +333,7 @@ useEffect(() => {
             </li>
           </ol>
           {/* Linking to repository version */}
-          <p class="space">
+          <p class="my-2">
             This website uses an improved version of the same Theme Switcher
             created in this post, which you can check the source code for{" "}
             <GradientLink
@@ -345,7 +345,7 @@ useEffect(() => {
           </p>
           {/* Conclusion and link to next post */}
           <h2 class="subtopic">What's next?</h2>
-          <p class="space">
+          <p class="my-2">
             If you have been following along, you might have noticed a few
             issues with it, like flickering on first load or the inability to
             check for user preferences. Let's address those problems on those on

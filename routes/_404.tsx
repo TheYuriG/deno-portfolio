@@ -25,7 +25,7 @@ export default function NotFoundPage({ url }: UnknownPageProps) {
         <BlogNavigationButtons />
         <section class="center">
           <h1 class="navigation-link">Page not found!</h1>
-          <p class="space">
+          <p class="my-2">
             Hi there! Seems like you have reached a page that doesn't exist
             (...yet?). 🤔
           </p>

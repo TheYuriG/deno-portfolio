@@ -24,7 +24,7 @@ export default function Home() {
         <BlogNavigationButtons />
         <article class="center">
           <h1 class="blog-title">Past and Current work</h1>
-          <p class="space">
+          <p class="my-2">
             I am the creator of{" "}
             <GradientLink
               content="Yura"
@@ -41,7 +41,7 @@ export default function Home() {
             />{" "}
             about Discord.JS in the past, it has an amazing API.
           </p>
-          <p class="space">
+          <p class="my-2">
             I've created{" "}
             <GradientLink
               content="RotMG Utility"
@@ -66,7 +66,7 @@ export default function Home() {
             />{" "}
             (2020).
           </p>
-          <p class="space">
+          <p class="my-2">
             In the following year, I started porting Yura's functionality from
             Discord to a{"  "}
             <GradientLink
@@ -79,7 +79,7 @@ export default function Home() {
             it to be, as I didn't like having to rely on another website's data.
             Eventually I shelved that project (2021).
           </p>
-          <p class="space">
+          <p class="my-2">
             After freelancing for design agencies for a while, in 2022 I decided
             to eventually move out of freelancing and try to get a remote job in
             a tech company. Using Wix/SquareSpace/Framer templates to build
@@ -88,7 +88,7 @@ export default function Home() {
             felt like the lack of testing, UX and post-launch care for the
             product wasn't like how WebDev was meant to be.
           </p>
-          <p class="space">
+          <p class="my-2">
             I wasn't feeling like I was making any progress in becoming a
             serious full-stack developer, so I've bought some{" "}
             <GradientLink
@@ -100,7 +100,7 @@ export default function Home() {
             />{" "}
             and actually become a more interesting potential employee.
           </p>
-          <p class="space">
+          <p class="my-2">
             That got me to land some interviews, I even made some{" "}
             <GradientLink
               content="take-home assignments"
@@ -113,7 +113,7 @@ export default function Home() {
             different from Flutter), but didn't really land anything other than
             more freelance work and some temporary contracts.
           </p>
-          <p class="space">
+          <p class="my-2">
             Since I wasn't having much luck getting professionally into tech, in
             2023 I focused on fleshing out older projects I had, eventually
             starting{" "}
@@ -127,7 +127,7 @@ export default function Home() {
             want to eventually rewrite it with Deno and Oak instead. Currently
             Trophy Place, this website and freelancing are my daily routine.
           </p>
-          <p class="space">
+          <p class="my-2">
             This website has been specially useful into getting me to learn how
             to build things from scratch, like these:
           </p>
