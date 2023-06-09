@@ -1,83 +1,3 @@
-/* Base styling applied to most form components */
-.base-form-style {
-    width: 100%;
-    padding: 0.5em;
-    background-color: var(--base-color);
-    border: 2px solid var(--accent-color);
-    border-radius: 1em;
-}
-
-/* Styles applied to the form that holds the inputs and the button */
-.styled-form {
-    width: 100%;
-    margin-bottom: 1em;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Style the div that holds the label+input combo */
-div.label-wrapper {
-    display: flex;
-    flex-grow: 1;
-    align-items: center;
-    justify-items: center;
-    flex-direction: column;
-}
-
-/* Style the label to never shrink */
-.styled-label {
-    /* Needed to make the radio buttons stay in a row */
-    display: flex;
-    flex-direction: row;
-    width: max-content;
-    white-space: nowrap;
-}
-
-/* Extends group of input + information icon together to expand the whole width */
-div.helper {
-    display: flex;
-    align-items: center;
-    width: 100%;
-}
-
-/* Style the input to take the remainder space */
-.styled-input {
-    caret-color: var(--accent-color);
-    margin: 0.25em 0.5em 0.25em 0em;
-    flex-grow: 1;
-    transition: background-color 0.8s ease-in-out, color 0.9s ease-in-out, border-color 0.3s ease-in-out;
-}
-
-/* Style the select */
-.styled-select {
-    position: relative;
-    width: 100%;
-    background-color: transparent;
-    border: 2px solid var(--accent-color);
-    border-radius: 0.5em;
-    padding: 0.25em 0.5em;
-    margin: 0.25em 0em;
-    font-size: 1.25rem;
-    cursor: pointer;
-    color: var(--neutral-color);
-    transition: background-color 0.8s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
-}
-
-/* Updates background color for dropdown options to enable good contrast always */
-.styled-select option {
-    background-color: var(--base-color);
-}
-
-/* Change border color on invalid input value */
-.invalid-input {
-    border-color: red;
-}
-
-/* Change border color on valid input value */
-.valid-input {
-    border-color: green;
-}
-
 /* Tooltip container */
 div.tooltip {
     position: relative;
@@ -109,29 +29,6 @@ div.tooltip:hover span.tooltiptext {
     opacity: 1;
 }
 
-/* Name for group of radio inputs */
-.radio-label-inputs-group {
-    margin: 0.25em 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Label for radio input */
-.radio-label {
-    width: max-content;
-    flex-shrink: 0;
-}
-
-/* Collection of radio inputs and labels */
-.radio-input-group {
-    display: flex;
-    flex-direction: column;
-    width: min-content;
-    flex-wrap: wrap;
-    place-content: center;
-}
-
 /* Styles the radio to use customized balls for toggles */
 input[type="radio"],
 input[type="checkbox"] {
@@ -140,15 +37,14 @@ input[type="checkbox"] {
     appearance: none;
     /* For iOS < 15 to remove gradient background */
     background-color: var(--base-color);
-    /* Not removed via appearance */
     margin: 0;
     font: inherit;
-    color: currentColor;
+    color: var(--neutral-color);
     /* Sizing */
     width: 0.9em;
     height: 0.9em;
     /* Outline for checker */
-    border: 0.15em solid currentColor;
+    border: 0.15em solid var(--neutral-color);
     /* Border radius for checkbox, radio gets overriden below */
     border-radius: 0.2em;
     /* Push right the label text */
@@ -197,12 +93,6 @@ input[type="checkbox"]:focus {
     outline-offset: max(2px, 0.15em);
 }
 
-/* Styles radio inputs */
-.styled-radio,
-.styled-checkbox {
-    margin: 0.5em 0.25em;
-}
-
 /* Styles the date picker icon */
 /* Couldn't figure out how to change the icon's color, without removing it */
 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -212,71 +102,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     border-radius: 0.25em;
 }
 
-/* Style the disabled text-area that holds the submitted dummy data */
-.styled-text-area {
-    min-height: 10em;
-    flex-grow: 1;
-    width: 100%;
-    border: 2px solid var(--accent-color);
-    border-radius: 1em;
-    transition: background-color 0.8s ease-in-out, color 0.9s ease-in-out;
-}
-
 /* Change the color of the placeholder texts */
-.styled-text-area::placeholder,
-.styled-input::placeholder {
+.ph-nc::placeholder {
     color: var(--neutral-color);
-}
-
-/* TextArea scrollbar area size */
-.styled-text-area::-webkit-scrollbar {
-    width: 0.8em;
-}
-
-/* TextArea scrollbar styling */
-.styled-text-area::-webkit-scrollbar-thumb {
-    background-color: var(--base-color);
-    overflow: hidden;
-    outline: 2px solid var(--accent-color);
-    outline-offset: -0.1rem;
-    border-radius: 0.3rem;
-}
-
-/* Use a media query to move the label to the side of the input on larger resolutions */
-@media (min-width: 600px) {
-
-    /* Turns input box labels into rows */
-    div.label-wrapper {
-        flex-direction: row;
-        margin-left: 0em;
-    }
-
-    /* Spaces left and right on the input fields */
-    .styled-input {
-        margin: 0.25em 0.5em;
-    }
-
-    /* Spaces left and right on the select dropdown */
-    .styled-select {
-        margin: 0.25em 0em 0.25em 0.5em;
-        width: calc(100% - 0.5em);
-    }
-
-    /* Turns radio/checkbox and overlaying label into a row */
-    .radio-label-inputs-group,
-    .radio-input-group {
-        flex-direction: row;
-    }
-
-
-    .radio-input-group {
-        margin-left: 1em;
-        width: fit-content;
-    }
-
-    /* Pushes the input+label to the right */
-    .radio-input-group .styled-label {
-        margin-right: 0.5em;
-        margin-left: 0.5em;
-    }
 }

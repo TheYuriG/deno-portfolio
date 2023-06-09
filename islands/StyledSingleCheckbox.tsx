@@ -13,10 +13,9 @@ export default function StyledSingleCheckbox({
 }: SingleCheckboxProperties) {
   return (
     <>
-      <label class="styled-label">
+      <label class="flex w-max text-center whitespace-nowrap ">
         {/* Checkbox */}
         <input
-          class="styled-checkbox"
           type="checkbox"
           checked={shouldBeChecked === true}
           //? Updates state when an option is clicked

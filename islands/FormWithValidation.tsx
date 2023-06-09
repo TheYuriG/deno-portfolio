@@ -262,7 +262,7 @@ export default function FormWithValidation() {
   return (
     <>
       {/* The whole form */}
-      <form class="styled-form">
+      <form class="w-full mb-4 flex flex-col styled-form">
         {/* Name input */}
         <StyledInput
           key={"first_input"}
@@ -420,7 +420,7 @@ export default function FormWithValidation() {
         />
         {validationError === true && (
           <>
-            <p class="space">
+            <p class="my-2">
               Some fields have invalid data being provided (will display a red
               border), please fix them before submitting! Hover/click the
               information icon on the right side for more information.
@@ -430,7 +430,7 @@ export default function FormWithValidation() {
       </form>
       {/* Text Area that will hold all sent information */}
       <textarea
-        class="base-form-style styled-text-area"
+        class="h-[16.5em] w-full p-2 bg-bc bo-ac rounded-l-2xl ph-nc t-bg styled-scrollbar"
         name="formInput"
         id="form"
         placeholder={sumOfAllInputs.length > 0

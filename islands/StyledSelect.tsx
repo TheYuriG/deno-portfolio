@@ -21,19 +21,22 @@ export default function StyledSelect({
   onChangeFunction,
 }: SelectProperties) {
   return (
-    <div class="label-wrapper">
+    <div class="flex flex-col sm:flex-row grow items-center">
       {/* Label for what this is for */}
-      <label class="styled-label" htmlFor={name}>
+      <label
+        class="flex w-max whitespace-nowrap"
+        htmlFor={name}
+      >
         {label}
       </label>
       {/* Select dropdown */}
       <select
-        class={"styled-select" +
-          (validationReference === validationStatus.Valid
-            ? " valid-input"
-            : validationReference === validationStatus.Invalid
-            ? " invalid-input"
-            : "")}
+        class="relative w-full bg-transparent bo-ac rounded-lg p-2 my-2 sm:my-1 sm:ml-2 text-lg cursor-pointer co-nc trs"
+        style={validationReference === validationStatus.Valid
+          ? "border-color: green;"
+          : validationReference === validationStatus.Invalid
+          ? "border-color: red;"
+          : undefined}
         name={name} //? Link to label
         value={value} //? Tracks current value
         //? Updates state when an option is selected
@@ -46,7 +49,9 @@ export default function StyledSelect({
         }}
       >
         {/* Programatically creates options from array of strings provided */}
-        {optionsArray.map((option) => <option value={option}>{option}</option>)}
+        {optionsArray.map((option) => (
+          <option class="bg-bc" value={option}>{option}</option>
+        ))}
       </select>
     </div>
   );

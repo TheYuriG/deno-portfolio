@@ -54,11 +54,11 @@ export default function StyledInput(
 ) {
   return (
     <>
-      <div class="label-wrapper">
-        <label class="styled-label" htmlFor={name}>
+      <div class="flex flex-col sm:flex-row grow items-center">
+        <label class="flex w-max whitespace-nowrap" htmlFor={name}>
           {label}
         </label>
-        <div class="helper">
+        <div class="flex items-center w-full">
           <input
             //? Assigns this input as required
             required
@@ -68,12 +68,12 @@ export default function StyledInput(
             //! Reference: https://www.w3schools.com/tags/tag_input.asp
             type={inputType}
             //? Base class + validation class if needed
-            class={"base-form-style styled-input" +
-              (validationReference === validationStatus.Valid
-                ? " valid-input"
-                : validationReference === validationStatus.Invalid
-                ? " invalid-input"
-                : "")}
+            class="w-full p-2 bg-bc rounded-xl grow caret-current my-1 mr-2 sm:my-1 sm:mx-2 bo-ac trs"
+            style={validationReference === validationStatus.Valid
+              ? "border-color: green;"
+              : validationReference === validationStatus.Invalid
+              ? "border-color: red;"
+              : undefined}
             name={name}
             //? Placeholder value, if provided
             placeholder={placeholder}

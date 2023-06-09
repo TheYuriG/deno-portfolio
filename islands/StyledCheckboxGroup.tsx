@@ -30,17 +30,15 @@ export default function StyledCheckboxGroup({
   onChangeFunction,
 }: CheckboxGroupProperties) {
   return (
-    <div class="radio-label-inputs-group">
-      <span class="radio-label">
+    <div class="my-1 flex flex-col sm:flex-row items-center">
+      <span class="w-max" style="flex-shrink: 0;">
         {label}
       </span>
       <div
-        class={"base-form-style radio-input-group" +
-          (
-            validationReference === validationStatus.Invalid
-              ? " invalid-input"
-              : ""
-          )}
+        class="p-2 bg-bc bo-ac rounded-xl flex flex-col space-x-2 sm:flex-row w-min sm:w-max sm:ml-2 flex-wrap place-content-center trs"
+        style={validationReference === validationStatus.Invalid
+          ? "border-color: red;"
+          : undefined}
       >
         {/* Programatically creates radio inputs from array of strings provided */}
         {optionsArray.map(({ value, name }: CheckboxItem) => (
