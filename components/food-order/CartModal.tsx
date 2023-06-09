@@ -130,11 +130,13 @@ export default function CartModal({
         >
           Add more
         </button>
-        <StyledButton
+        {
+          /* <StyledButton
           style="margin-left: 1em;"
           text="Order"
           onClickFunction={closeModal}
-        />
+        /> */
+        }
       </div>
     </div>
   );
