@@ -28,15 +28,16 @@ import * as $$3 from "./islands/ExpensesYearSelect.tsx";
 import * as $$4 from "./islands/FoodOrder.tsx";
 import * as $$5 from "./islands/FormWithValidation.tsx";
 import * as $$6 from "./islands/InsanitySection.tsx";
-import * as $$7 from "./islands/ModalWithBackdrop.tsx";
-import * as $$8 from "./islands/ProjectDiscovery.tsx";
-import * as $$9 from "./islands/StyledButton.tsx";
-import * as $$10 from "./islands/StyledCheckboxGroup.tsx";
-import * as $$11 from "./islands/StyledInput.tsx";
-import * as $$12 from "./islands/StyledRadio.tsx";
-import * as $$13 from "./islands/StyledSelect.tsx";
-import * as $$14 from "./islands/StyledSingleCheckbox.tsx";
-import * as $$15 from "./islands/ThemeSwitcher.tsx";
+import * as $$7 from "./islands/ModalExtendedImage.tsx";
+import * as $$8 from "./islands/ModalWithBackdrop.tsx";
+import * as $$9 from "./islands/ProjectDiscovery.tsx";
+import * as $$10 from "./islands/StyledButton.tsx";
+import * as $$11 from "./islands/StyledCheckboxGroup.tsx";
+import * as $$12 from "./islands/StyledInput.tsx";
+import * as $$13 from "./islands/StyledRadio.tsx";
+import * as $$14 from "./islands/StyledSelect.tsx";
+import * as $$15 from "./islands/StyledSingleCheckbox.tsx";
+import * as $$16 from "./islands/ThemeSwitcher.tsx";
 
 const manifest = {
   routes: {
@@ -67,15 +68,16 @@ const manifest = {
     "./islands/FoodOrder.tsx": $$4,
     "./islands/FormWithValidation.tsx": $$5,
     "./islands/InsanitySection.tsx": $$6,
-    "./islands/ModalWithBackdrop.tsx": $$7,
-    "./islands/ProjectDiscovery.tsx": $$8,
-    "./islands/StyledButton.tsx": $$9,
-    "./islands/StyledCheckboxGroup.tsx": $$10,
-    "./islands/StyledInput.tsx": $$11,
-    "./islands/StyledRadio.tsx": $$12,
-    "./islands/StyledSelect.tsx": $$13,
-    "./islands/StyledSingleCheckbox.tsx": $$14,
-    "./islands/ThemeSwitcher.tsx": $$15,
+    "./islands/ModalExtendedImage.tsx": $$7,
+    "./islands/ModalWithBackdrop.tsx": $$8,
+    "./islands/ProjectDiscovery.tsx": $$9,
+    "./islands/StyledButton.tsx": $$10,
+    "./islands/StyledCheckboxGroup.tsx": $$11,
+    "./islands/StyledInput.tsx": $$12,
+    "./islands/StyledRadio.tsx": $$13,
+    "./islands/StyledSelect.tsx": $$14,
+    "./islands/StyledSingleCheckbox.tsx": $$15,
+    "./islands/ThemeSwitcher.tsx": $$16,
   },
   baseUrl: import.meta.url,
   config,

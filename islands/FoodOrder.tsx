@@ -12,6 +12,7 @@ import CartButton from "../components/food-order/CartButton.tsx";
 import CartModal from "../components/food-order/CartModal.tsx";
 //? Import accent button to create the Order now! button at the bottom
 import AccentButton from "./AccentButton.tsx";
+import ModalExtendedImage from "./ModalExtendedImage.tsx";
 
 //? Define properties required for this component
 interface FoodOrderProperties {
@@ -30,6 +31,12 @@ export default function FoodOrder({ foods }: FoodOrderProperties) {
   const [displayModal, toggleDisplayModal] = useState(false);
   //? Tracks if the pulsing animation should be triggered
   const [pulseState, togglePulse] = useState(false);
+
+  //? Manages if the expanded image modal should be toggled on or off
+  const [expandFoodImage, displayExpandedFoodImage] = useState(false);
+  //todo
+  const [expandedModalImageLink, updateExpandedModalImageLink] = useState("");
+
   //? Tracks if the if pulsing animation is active and remove
   //? the pulsing style once it ends
   useEffect(() => {
@@ -64,6 +71,11 @@ export default function FoodOrder({ foods }: FoodOrderProperties) {
           closeModal={() => toggleDisplayModal(false)}
         />
       </ModalWithBackdrop>
+      <ModalExtendedImage
+        display={expandFoodImage}
+        imageLink={expandedModalImageLink}
+        closeModalFunction={() => displayExpandedFoodImage(false)}
+      />
       {/* Header with cart */}
       <div class="food-header">
         <h2 class="subtopic">Meals of the day</h2>
@@ -123,6 +135,10 @@ export default function FoodOrder({ foods }: FoodOrderProperties) {
               //? Return the updated cart
               return newCart;
             });
+          }}
+          expandImageFunction={(imageLink) => {
+            updateExpandedModalImageLink(imageLink);
+            displayExpandedFoodImage(true);
           }}
         />
       ))}

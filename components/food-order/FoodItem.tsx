@@ -15,17 +15,22 @@ export function FoodItem(
     feedsHowMany,
     price,
     addToCartFunction,
-  }: Food & { addToCartFunction: () => void },
+    expandImageFunction,
+  }: Food & {
+    addToCartFunction: () => void;
+    expandImageFunction: (imageLink: string) => void;
+  },
 ) {
   return (
     //? Whole card
     <div class="card single-food">
       {/* Food image */}
       <img
-        class="food-image"
+        class="food-image hover:cursor-pointer"
         src={imageLink}
         alt={imageAlt}
         title={imageTitle}
+        onClick={() => expandImageFunction(imageLink)}
       />
       {/* Column with food name + how many it feeds and food description */}
       <div class="food-name-and-description">
