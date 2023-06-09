@@ -51,14 +51,15 @@ export default function CartModal({
 
   //? Return the cart items and the total
   return (
-    <div class="food-cart-content">
+    <div class="food-cart-content max-h-[90dvh]">
       {/* Modal header */}
-      <span class="food-cart-content__header">Items in cart</span>
+      <h2 class="food-cart-content__header">Items in cart</h2>
       {/* List of items in cart */}
-      <ol>
+      <ol class="overflow-auto styled-scrollbar">
         {cartItems.map(([foodName, { quantity, cost }]) => (
           <li class="flex flex-col">
-            <div class="flex justify-between items-center">
+            {/* Food item name, remove item from cart */}
+            <div class="flex justify-between items-center pr-1.5">
               {/* Cart item name */}
               <h3 class="text-xl">
                 {foodName}
@@ -85,8 +86,8 @@ export default function CartModal({
                 />
               </span>
             </div>
-            {/* Update cart item count */}
-            <div class="mt-2 inline-flex items-center self-end">
+            {/* Food item count, update cart item count */}
+            <div class="mt-2 inline-flex items-center self-end pr-1">
               {/* Decrease item count. If last item, remove it from the cart */}
               <span
                 class="mr-2 hover:cursor-pointer"
@@ -101,7 +102,9 @@ export default function CartModal({
                 {/* Minus sign SVG */}
                 <MinusIcon iconHeight="1.5em" iconWidth="1.5em" />
               </span>
-              {quantity}x ${cost.toFixed(2)}
+              <span class="text-center">
+                {quantity}x ${cost.toFixed(2)}
+              </span>
               {/* Increase item count */}
               <span
                 class="ml-2 hover:cursor-pointer"
@@ -117,6 +120,7 @@ export default function CartModal({
                 <PlusIcon iconHeight="1.5em" iconWidth="1.5em" />
               </span>
             </div>
+            {/* Divider */}
             <hr
               class="my-2 border-solid border"
               style="border-color: var(--neutral-color)"
