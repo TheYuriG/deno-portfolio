@@ -31,9 +31,19 @@ html {
     background-color: var(--base-color);
 }
 
+/* Apply accent color to background-color */
+.bg-ac {
+    background-color: var(--accent-color);
+}
+
 /* Create accent color border */
 .bo-ac {
     border: 2px solid var(--accent-color);
+}
+
+/* Create neutral color border */
+.bo-nc {
+    border: 2px solid var(--neutral-color);
 }
 
 /* Set transition for text, background and border color  */
@@ -72,26 +82,6 @@ main {
     transition: border 0.7s ease-in-out 0.3s;
 }
 
-
-/* Organize theme button horizontally and align vertically */
-.theme-switcher {
-    display: flex;
-    align-items: center;
-    width: 4em;
-    height: 1.3em;
-    position: fixed;
-    bottom: 2.5em;
-    rotate: -90deg;
-    translate: -83%;
-    font-size: 1.3rem;
-    animation: fadeThemeSwitcherIn 0.3s;
-}
-
-/* Define theme SVG size, push text away */
-.theme-switcher svg {
-    margin-right: 0.2em;
-}
-
 /* Animate the Theme Switcher to fade in gracefully instead of popping in */
 @keyframes fadeThemeSwitcherIn {
     0% {
@@ -101,26 +91,4 @@ main {
     100% {
         opacity: 1;
     }
-}
-
-/* Positions the footer on the bottom right side of the page, below the frame */
-.page-footer {
-    position: absolute;
-    display: inline-flex;
-    align-items: center;
-    width: max-content;
-    bottom: -1.5rem;
-    right: 0;
-    font-size: 0.875rem;
-    /* 14px */
-    line-height: 1.25rem;
-    white-space: nowrap;
-}
-
-/* Style the images on the footer */
-.page-footer img {
-    margin-left: 0.4rem;
-    margin-right: 0.4rem;
-    height: 18px;
-    width: 18px;
 }

@@ -65,7 +65,11 @@ export default function ThemeSwitcher() {
   if (theme === "Light") {
     return (
       <>
-        <button class="theme-switcher" onClick={() => setTheme(() => "Dark")}>
+        <button
+          class="flex items-center w-[4em] h-[1.3em] fixed bottom-[2.5em] -rotate-90 translate-x-[-83%] text-xl"
+          style="animation: fadeThemeSwitcherIn 0.3s;"
+          onClick={() => setTheme(() => "Dark")}
+        >
           <SunIcon iconHeight="1em" iconWidth="1em" />
           Light
         </button>
@@ -75,7 +79,11 @@ export default function ThemeSwitcher() {
   else if (theme === "Dark") {
     return (
       <>
-        <button class="theme-switcher" onClick={() => setTheme(() => "Light")}>
+        <button
+          class="flex items-center w-[4em] h-[1.3em] fixed bottom-[2.5em] -rotate-90 translate-x-[-83%] text-xl"
+          style="animation: fadeThemeSwitcherIn 0.3s;"
+          onClick={() => setTheme(() => "Light")}
+        >
           <MoonIcon iconHeight="1em" iconWidth="1em" />
           Dark
         </button>
@@ -84,9 +92,6 @@ export default function ThemeSwitcher() {
   } //? While we don't have access to the theme selection, display nothing
   //? so that we can later use a transition animation to fade in the button
   else {
-    return (
-      <>
-      </>
-    );
+    return <></>;
   }
 }
