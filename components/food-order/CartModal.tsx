@@ -57,65 +57,70 @@ export default function CartModal({
       {/* List of items in cart */}
       <ol>
         {cartItems.map(([foodName, { quantity, cost }]) => (
-          <li>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
+          <li class="flex flex-col">
+            <div class="flex justify-between items-center">
               {/* Cart item name */}
-              <span>
-                {foodName}: {quantity}x ${cost.toFixed(2)}
+              <h3 class="text-xl">
+                {foodName}
+              </h3>
+              {/* Remove item completely from cart */}
+              <span
+                class="hover:cursor-pointer"
+                onClick={() => {
+                  deleteItemFromCart({
+                    foodName,
+                    foodQuantity: quantity,
+                    foodCost: cost,
+                    updateCartFunction,
+                  });
+                }}
+              >
+                {/* XMark SVG */}
+                <XMarkIcon
+                  iconHeight="1.5em"
+                  iconWidth="1.5em"
+                  iconFillColor="red"
+                  iconStrokeColor="var(--neutral-color)"
+                  iconStrokeWidth="30"
+                />
               </span>
-              {/* Update cart item count */}
-              <div style="display: inline-flex;">
-                {/* Decrease item count. If last item, remove it from the cart */}
-                <span
-                  class="mr-2 hover:cursor-pointer"
-                  onClick={() => {
-                    reduceCartItemByOne({
-                      foodName,
-                      foodCost: cost,
-                      updateCartFunction,
-                    });
-                  }}
-                >
-                  {/* Minus sign SVG */}
-                  <MinusIcon iconHeight="1.5em" iconWidth="1.5em" />
-                </span>
-                {/* Increase item count */}
-                <span
-                  class="hover:cursor-pointer"
-                  onClick={() => {
-                    increaseCartItemByOne({
-                      foodName,
-                      foodCost: cost,
-                      updateCartFunction,
-                    });
-                  }}
-                >
-                  {/* Plus sign SVG */}
-                  <PlusIcon iconHeight="1.5em" iconWidth="1.5em" />
-                </span>
-                {/* Remove item completely from cart */}
-                <span
-                  class="ml-2 hover:cursor-pointer"
-                  onClick={() => {
-                    deleteItemFromCart({
-                      foodName,
-                      foodQuantity: quantity,
-                      foodCost: cost,
-                      updateCartFunction,
-                    });
-                  }}
-                >
-                  {/* XMark SVG */}
-                  <XMarkIcon
-                    iconHeight="1.5em"
-                    iconWidth="1.5em"
-                    iconFillColor="red"
-                    iconStrokeColor="var(--neutral-color)"
-                    iconStrokeWidth="30"
-                  />
-                </span>
-              </div>
             </div>
+            {/* Update cart item count */}
+            <div class="mt-2 inline-flex items-center self-end">
+              {/* Decrease item count. If last item, remove it from the cart */}
+              <span
+                class="mr-2 hover:cursor-pointer"
+                onClick={() => {
+                  reduceCartItemByOne({
+                    foodName,
+                    foodCost: cost,
+                    updateCartFunction,
+                  });
+                }}
+              >
+                {/* Minus sign SVG */}
+                <MinusIcon iconHeight="1.5em" iconWidth="1.5em" />
+              </span>
+              {quantity}x ${cost.toFixed(2)}
+              {/* Increase item count */}
+              <span
+                class="ml-2 hover:cursor-pointer"
+                onClick={() => {
+                  increaseCartItemByOne({
+                    foodName,
+                    foodCost: cost,
+                    updateCartFunction,
+                  });
+                }}
+              >
+                {/* Plus sign SVG */}
+                <PlusIcon iconHeight="1.5em" iconWidth="1.5em" />
+              </span>
+            </div>
+            <hr
+              class="my-2 border-solid border"
+              style="border-color: var(--neutral-color)"
+            />
           </li>
         ))}
       </ol>
