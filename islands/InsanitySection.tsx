@@ -7,11 +7,11 @@ import StyledButton from "./StyledButton.tsx";
 //? Also ships with basic Insanity text by default
 export default function InsanitySection() {
   //? Simple array to track how many Insanity should be displayed
-  const [insanityArray, setInsanity] = useState([null]);
+  const [insanityArray, setInsanity] = useState([] as Array<null>);
 
   return (
     <>
-      <section>
+      <section class="w-full h-full">
         {
           /* Button that adds another null to the insanityArray, which
                 then renders more Insanity to the page */
@@ -19,7 +19,7 @@ export default function InsanitySection() {
         {/* Insanity section. Can be expanded by clicking the button above */}
         <StyledButton
           text="Dial ⤴️ the Insanity 🤪"
-          style="align-self: end; margin-bottom: 0.5rem;"
+          style="align-self: end; margin-bottom: 1rem;"
           onClickFunction={() => {
             setInsanity((currentInsanity) => [...currentInsanity, null]);
           }}
@@ -27,7 +27,7 @@ export default function InsanitySection() {
         {/* Returns two labels and Radio buttons for Dark and Light themes */}
         {insanityArray.map(() => (
           <>
-            <p>
+            <p class="text-justify">
               Insanity is doing the exact... same fucking thing... 🔁 over and
               🔁 over again expecting... shit to change... ⏭️{" "}
               <em>
@@ -35,7 +35,7 @@ export default function InsanitySection() {
               </em>{" "}
               🤪
             </p>
-            <p>
+            <p class="text-justify">
               The first time somebody told me that, I dunno, I thought they were
               bullshitting me, so 💥, I shot him 🔫. The thing is... He was
               right 🤔. And then I started seeing, everywhere I looked 🔎,
@@ -45,17 +45,19 @@ export default function InsanitySection() {
               no, no, no please... This time is gonna be different, I'm sorry
               🙏, I don't like... The way... you are looking at me... 🧐
             </p>
-            <p>
+            <p class="text-justify">
               Okay, Do you have a fucking problem in your head 🤕, do you think
               I am bullshitting you, do you think I am lying 🤥? Fuck you! Okay?
               Fuck you! 😡
             </p>
-            <p>
+            <p class="text-justify">
               It's okay, man. I'm gonna chill, hermano. I'm gonna chill 🥶...
               The thing is... Alright, the thing is I killed you once already
               🪦... and it's not like I am fucking crazy 🤪. It's okay... It's
-              like water under the bridge 🌉. Did I ever tell you the
-              definition... of insanity?
+              like water under the bridge 🌉.{" "}
+              <strong>
+                Did I ever tell you the definition... of insanity?
+              </strong>
             </p>
           </>
         ))}
