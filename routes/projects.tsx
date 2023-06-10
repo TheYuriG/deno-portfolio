@@ -72,10 +72,10 @@ export default function Home() {
           </p>
           <ol
             start={1}
-            style="align-self: start; list-style-type: lower-greek;"
+            class="self-start list-[lower-greek]"
           >
             {/* Expenses tracker */}
-            <li>
+            <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
               <GradientLink
                 content="Expenses tracker"
                 link="/projects/expenses-tracker"
@@ -84,7 +84,7 @@ export default function Home() {
               />
             </li>
             {/* Food order */}
-            <li>
+            <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
               <GradientLink
                 content="Food order"
                 link="/projects/food-order"

@@ -16,7 +16,6 @@ export default function Home() {
         link="https://www.theyurig.com/me"
       >
         <link rel="stylesheet" href="/content.css" />
-        <link rel="stylesheet" href="/blog.css" />
         <link rel="stylesheet" href="/gradient-underline.css" />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
@@ -28,7 +27,7 @@ export default function Home() {
             src="https://media.discordapp.net/attachments/576538316296421399/1111343977736712232/23112022-IMG_0537.jpg?width=884&height=554"
             alt="A picture of Yuri, in a very sandy vacation."
             title="Inked them ankles"
-            class="large-image"
+            class="my-4 object-cover"
           />
 
           <p class="my-2">
@@ -124,7 +123,7 @@ export default function Home() {
           <img
             src="https://images-ext-2.discordapp.net/external/MrGU7E1Vw1ks2LSlDu4fiYOrT8wgVB4fCfoxRii6SrE/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/555126737038737408/a61db2e4c1f0a92cacee54f7b1aea624.png?width=554&height=554"
             alt="Yura's latest avatar"
-            class="small-image"
+            class="my-4 mx-auto h-40 w-40"
           />
           <p class="my-2">
             I've kept maintainining and adding new features to Yura for several

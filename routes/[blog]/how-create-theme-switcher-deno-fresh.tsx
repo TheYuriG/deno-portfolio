@@ -16,7 +16,6 @@ export default function Home() {
         link="https://www.theyurig.com/blog/how-create-theme-switcher-deno-fresh"
       >
         <link rel="stylesheet" href="/content.css" />
-        <link rel="stylesheet" href="/blog.css" />
         <link rel="stylesheet" href="/gradient-underline.css" />
         <link rel="stylesheet" href="/syntax-highlighting.css" />
         {
@@ -54,7 +53,7 @@ export default function Home() {
             How to Create a Theme Switcher with Fresh
           </h2>
           {/* Post creation date */}
-          <p class="post-date">
+          <p class="text-sm mb-2 w-full text-center">
             {new Date(1684849328672).toLocaleString()}
           </p>
           {/* Blog post opening image */}
@@ -62,7 +61,7 @@ export default function Home() {
             src={"https://web-dev.imgix.net/image/vS06HQ1YTsbMKSFTIPl2iogUQP73/skKcjSv1gMQRYk1AdEp7.png?auto=format&w=1600"}
             alt="Sun and Moon montage with the words Light and Dark accompanying them"
             title="To many people, themes are an important part of the User Experience"
-            class="large-image"
+            class="my-4 object-cover"
           />
           {/* Introduction */}
           <p class="my-2">
@@ -84,7 +83,7 @@ export default function Home() {
             src={"https://fresh.deno.dev/logo.svg?__frsh_c=3171c5e64510907f14fca32f4e0ba9a86bc5247c"}
             alt="Fresh's logo"
             title="Fresh, the official framework to build Web apps on Deno"
-            class="small-image"
+            class="my-4 mx-auto h-40 w-40"
           />
           {/* Explaining what is Fresh */}
           <p class="my-2">
@@ -260,10 +259,10 @@ useEffect(() => {
           </p>
           <ol
             start={1}
-            style="align-self: start; list-style-type: lower-greek; margin: 1em 0;"
+            class="self-start list-[lower-greek]"
           >
             {/* Explanation part 1 */}
-            <li>
+            <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
               Runs on start, checks if there is a theme saved (if not,{" "}
               <code class="shj-lang-js">
                 savedTheme
@@ -288,7 +287,7 @@ useEffect(() => {
               loop!).
             </li>
             {/* Explanation part 2 */}
-            <li>
+            <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
               After setting the{" "}
               <code class="shj-lang-js">
                 theme
@@ -315,7 +314,7 @@ useEffect(() => {
               value and stop.
             </li>
             {/* Explanation part 3 */}
-            <li>
+            <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
               (Optional) If the{" "}
               <code class="shj-lang-js">
                 theme

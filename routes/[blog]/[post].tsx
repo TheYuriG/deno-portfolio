@@ -44,7 +44,6 @@
 //       >
 //         <link rel="stylesheet" href="/home.css" />
 //         <link rel="stylesheet" href="/content.css" />
-//         <link rel="stylesheet" href="/blog.css" />
 //         <link rel="stylesheet" href="/syntax-highlighting.css" />
 //         {
 //           /* Syntax highlight for code. How can we do this better
@@ -74,7 +73,7 @@
 //           {/* Centered heading */}
 //           <h2 class="navigation-link f-as my-4 text-4xl text-center>{savedPost.title}</h2>
 //           {/* Post creation date */}
-//           <p class="post-date">
+//           <p class="text-sm mb-2 text-center">
 //             {new Date(savedPost.date).toLocaleString()}
 //           </p>
 //           {/* Post content, parsed and spread */}

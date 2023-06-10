@@ -5,7 +5,7 @@ import BlogPostSummaryProperties from "../../types/BlogPostSummaryProperties.ts"
 export function BlogPostSummary(summary: BlogPostSummaryProperties) {
   return (
     // What a Post Summary looks like
-    <article style="margin: 1em 0; width: 100%;">
+    <article class="my-4 w-full">
       {/* Post link */}
       <a href={"/blog" + summary.link}>
         {/* Centered heading */}
@@ -14,7 +14,9 @@ export function BlogPostSummary(summary: BlogPostSummaryProperties) {
         </h2>
       </a>
       {/* Post creation date */}
-      <p class="post-date">{new Date(summary.date).toLocaleString()}</p>
+      <p class="text-sm mb-2 text-center">
+        {new Date(summary.date).toLocaleString()}
+      </p>
       {/* Post summary */}
       <p class="justified">{summary.shortSummary}</p>
     </article>

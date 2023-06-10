@@ -16,7 +16,6 @@ export default function Home() {
         link="https://www.theyurig.com/blog/stopping-theme-flickering-deno-fresh"
       >
         <link rel="stylesheet" href="/content.css" />
-        <link rel="stylesheet" href="/blog.css" />
         <link rel="stylesheet" href="/gradient-underline.css" />
         <link rel="stylesheet" href="/syntax-highlighting.css" />
         {
@@ -53,7 +52,7 @@ export default function Home() {
             How to stop Theme flickering in Fresh
           </h2>
           {/* Post creation date */}
-          <p class="post-date">
+          <p class="text-sm mb-2 w-full text-center">
             {new Date(1684951466007).toLocaleString()}
           </p>
           {/* Blog post opening image */}
@@ -61,7 +60,7 @@ export default function Home() {
             src="https://media.giphy.com/media/l0HlKQQ8STZUREvE4/giphy.gif"
             alt="Lights flickering in a Stranger Things scene"
             title="Wouldn't it be better if the lights would just stay on?"
-            class="large-image"
+            class="my-4 object-cover"
           />
           {/* Introduction */}
           <p class="my-2">
@@ -87,8 +86,7 @@ export default function Home() {
             src="https://images.unsplash.com/photo-1602400546471-b8efe700c80a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=958&q=80"
             alt="Picture of Seychelles, by Kamil Rogalinski"
             title="Small bits where the interesting things happens, surrounded by nothingness"
-            class="large-image"
-            style="height: 25em;"
+            class="my-4 object-cover h-[25em]"
           />
           {/* Explaining topic */}
           <p class="my-2">
@@ -154,14 +152,14 @@ export default function Home() {
           </p>
           <ol
             start={1}
-            style="align-self: start; list-style-type: lower-greek;"
+            class="self-start list-[lower-greek]"
           >
-            <li>
+            <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
               You introduce consistent overhead to every page load, which will
               progressively worsen your Lighthouse page performance score, the
               more you do it.
             </li>
-            <li>
+            <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
               You are deviating from the main design choice for the framework,
               which means that you will not find a lot of resources to do things
               this way from this point onwards. If you have questions, you will
@@ -241,9 +239,9 @@ if (window.showDarkMode === true) {
           <p class="my-2">In order:</p>
           <ol
             start={1}
-            style="align-self: start; list-style-type: lower-greek;"
+            class="self-start list-[lower-greek]"
           >
-            <li>
+            <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
               Check if there is a theme already saved on{" "}
               <code class="shj-lang-js">localStorage</code>. If there isn't one,
               check what's the user preferred color scheme, save it, and set
@@ -255,7 +253,7 @@ if (window.showDarkMode === true) {
               <code class="shj-lang-js">window.showDarkMode</code>{" "}
               on/off based on the saved theme.
             </li>
-            <li>
+            <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
               Check window.showDarkMode and apply the colors to the{" "}
               <code class="shj-lang-js">root</code>{"  "}
               element for either mode based on that being{" "}

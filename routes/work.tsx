@@ -132,9 +132,9 @@ export default function Home() {
           </p>
           <ol
             start={1}
-            style="align-self: start; list-style-type: lower-greek;"
+            class="self-start list-[lower-greek]"
           >
-            <li>
+            <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
               <GradientLink
                 content="Form (with validation)"
                 title="A simple form that uses Alert() once you submit it."

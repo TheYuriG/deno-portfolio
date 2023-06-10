@@ -19,7 +19,6 @@ export default function Home() {
       >
         <link rel="stylesheet" href="/home.css" />
         <link rel="stylesheet" href="/content.css" />
-        <link rel="stylesheet" href="/blog.css" />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
