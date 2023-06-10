@@ -13,7 +13,6 @@ export default function Home() {
         description="Tech stack used to create this website."
         link="https://www.theyurig.com/this"
       >
-        <link rel="stylesheet" href="/navigation-buttons.css" />
         <link rel="stylesheet" href="/content.css" />
         <link rel="stylesheet" href="/this.css" />
         <link rel="stylesheet" href="/gradient-underline.css" />
@@ -22,7 +21,7 @@ export default function Home() {
       <Base>
         <BlogNavigationButtons />
         <article class="center">
-          <h1>What is this?</h1>
+          <h1 class="f-as my-4 text-4xl text-center">What is this?</h1>
           <p>
             <span class="inline-code">this</span>{" "}
             is a very common word in the world of Javascript if you are used to
@@ -38,7 +37,7 @@ export default function Home() {
             tech stack used to create it. This is quite a bit technical and if
             you are not a developer, it's okay if it goes over your head.
           </p>
-          <h1>Ok, so what is this?</h1>
+          <h1 class="f-as my-4 text-4xl text-center">Ok, so what is this?</h1>
           <p>
             This website is meant to be an outlet for my{" "}
             <a

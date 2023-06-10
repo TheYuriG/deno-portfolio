@@ -9,7 +9,9 @@ export function BlogPostSummary(summary: BlogPostSummaryProperties) {
       {/* Post link */}
       <a href={"/blog" + summary.link}>
         {/* Centered heading */}
-        <h2 class="navigation-link blog-title">{summary.title}</h2>
+        <h2 class="navigation-link f-as my-4 text-4xl text-center">
+          {summary.title}
+        </h2>
       </a>
       {/* Post creation date */}
       <p class="post-date">{new Date(summary.date).toLocaleString()}</p>

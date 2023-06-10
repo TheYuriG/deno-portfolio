@@ -15,14 +15,13 @@ export default function Home() {
         link="https://www.theyurig.com/projects"
       >
         <link rel="stylesheet" href="/content.css" />
-        <link rel="stylesheet" href="/navigation-buttons.css" />
         <link rel="stylesheet" href="/gradient-underline.css" />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
         <BlogNavigationButtons />
         <article class="center">
-          <h1>List of Projects</h1>
+          <h1 class="f-as my-4 text-4xl text-center">List of Projects</h1>
           <p class="my-2">
             Below you can find the projects I completed while going through the
             {" "}

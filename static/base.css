@@ -23,7 +23,7 @@ html {
 
 /* Secondary font for titles */
 .f-as {
-font-family: 'Alfa Slab One', cursive;
+    font-family: 'Alfa Slab One', cursive;
 }
 
 /* Apply neutral color to background-color */
@@ -54,6 +54,11 @@ font-family: 'Alfa Slab One', cursive;
 /* Set transition for text, background and border color  */
 .trs {
     transition: color 0.9s ease-in-out, background-color 0.8s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+/* Hover styling for navigation menu */
+.nav-l:hover {
+    color: var(--accent-color)
 }
 
 /* Define default card styling to be reused */

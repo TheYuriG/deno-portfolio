@@ -1,10 +1,3 @@
-/* Size the Blog Titles */
-.blog-title {
-    text-align: center;
-    font-size: 2.5rem;
-    font-family: 'Alfa Slab One', cursive;
-}
-
 /* Decrease size for post creation timestamps and add bottom margin */
 .post-date {
     font-size: 0.8rem;
@@ -30,12 +23,6 @@
 li {
     margin-left: 2.5em;
     transition: margin-left ease-in-out 0.5s;
-}
-
-/* Ending note at the end of a blog post */
-.blog-footer {
-    font-size: 0.75rem;
-    align-self: end;
 }
 
 /* Remove margin-left to lists on larger resolutions */

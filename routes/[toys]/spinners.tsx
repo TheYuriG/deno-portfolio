@@ -16,7 +16,6 @@ export default function Home() {
         link="https://www.theyurig.com/toys/spinners"
       >
         <link rel="stylesheet" href="/content.css" />
-        <link rel="stylesheet" href="/navigation-buttons.css" />
         <link rel="stylesheet" href="/spinners.css" />
         <link rel="stylesheet" href="/gradient-underline.css" />
       </CustomHead>
@@ -26,7 +25,7 @@ export default function Home() {
           back={{ title: "Return to all toys", link: "/toys" }}
         />
         <article class="center">
-          <h1>Spinners</h1>
+          <h1 class="f-as my-4 text-4xl text-center">Spinners</h1>
           <p class="my-2" style="margin: 0 auto;">
             Experimenting with translate3d (hover for information!)
           </p>

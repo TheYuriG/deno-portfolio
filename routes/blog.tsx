@@ -18,7 +18,6 @@ export default function Home() {
         link="https://www.theyurig.com/blog"
       >
         <link rel="stylesheet" href="/home.css" />
-        <link rel="stylesheet" href="/navigation-buttons.css" />
         <link rel="stylesheet" href="/content.css" />
         <link rel="stylesheet" href="/blog.css" />
       </CustomHead>

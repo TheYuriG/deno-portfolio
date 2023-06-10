@@ -15,7 +15,6 @@ export default function Home() {
         description="Work that I've done for people in the past."
         link="https://www.theyurig.com/work"
       >
-        <link rel="stylesheet" href="/navigation-buttons.css" />
         <link rel="stylesheet" href="/content.css" />
         <link rel="stylesheet" href="/gradient-underline.css" />
       </CustomHead>
@@ -23,7 +22,7 @@ export default function Home() {
       <Base>
         <BlogNavigationButtons />
         <article class="center">
-          <h1 class="blog-title">Past and Current work</h1>
+          <h1 class="f-as my-4 text-4xl text-center">Past and Current work</h1>
           <p class="my-2">
             I am the creator of{" "}
             <GradientLink

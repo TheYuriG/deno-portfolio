@@ -15,7 +15,6 @@ export default function Home() {
         description="A guide on how to create your own Theme Switcher using Deno and Fresh"
         link="https://www.theyurig.com/blog/how-create-theme-switcher-deno-fresh"
       >
-        <link rel="stylesheet" href="/navigation-buttons.css" />
         <link rel="stylesheet" href="/content.css" />
         <link rel="stylesheet" href="/blog.css" />
         <link rel="stylesheet" href="/gradient-underline.css" />
@@ -51,7 +50,7 @@ export default function Home() {
         />
         <article class="center">
           {/* Centered heading */}
-          <h2 class="navigation-link blog-title">
+          <h2 class="navigation-link f-as my-4 text-4xl text-center">
             How to Create a Theme Switcher with Fresh
           </h2>
           {/* Post creation date */}
@@ -359,7 +358,7 @@ useEffect(() => {
             />.
           </p>
           {/* Post author */}
-          <footer class="blog-footer" style="margin-top: auto;">
+          <footer class="mt-auto w-full text-right text-sm">
             Written with 💞 by TheYuriG
           </footer>
         </article>

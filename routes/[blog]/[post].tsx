@@ -43,7 +43,6 @@
 //         link={"https://www.theyurig.com/blog" + savedPost.link}
 //       >
 //         <link rel="stylesheet" href="/home.css" />
-//         <link rel="stylesheet" href="/navigation-buttons.css" />
 //         <link rel="stylesheet" href="/content.css" />
 //         <link rel="stylesheet" href="/blog.css" />
 //         <link rel="stylesheet" href="/syntax-highlighting.css" />
@@ -73,7 +72,7 @@
 //         {/* Complete Post */}
 //         <article class="center">
 //           {/* Centered heading */}
-//           <h2 class="navigation-link blog-title">{savedPost.title}</h2>
+//           <h2 class="navigation-link f-as my-4 text-4xl text-center>{savedPost.title}</h2>
 //           {/* Post creation date */}
 //           <p class="post-date">
 //             {new Date(savedPost.date).toLocaleString()}
@@ -83,7 +82,7 @@
 //             {...contentParser(savedPost.content)}
 //           </div>
 //           {/* Post author */}
-//           <footer class="blog-footer" style="margin-top: auto;">
+//           <footer class="mt-auto w-full text-right text-sm" style="margin-top: auto;">
 //             {savedPost.author}
 //           </footer>
 //         </article>

@@ -17,7 +17,6 @@ export default function NotFoundPage({ url }: UnknownPageProps) {
         link="https://www.theyurig.com/404"
       >
         <link rel="stylesheet" href="/home.css" />
-        <link rel="stylesheet" href="/navigation-buttons.css" />
         <link rel="stylesheet" href="/content.css" />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}

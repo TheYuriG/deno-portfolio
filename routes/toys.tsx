@@ -17,7 +17,6 @@ export default function Home() {
         link="https://www.theyurig.com/toys"
       >
         <link rel="stylesheet" href="/content.css" />
-        <link rel="stylesheet" href="/navigation-buttons.css" />
         <link rel="stylesheet" href="/toys.css" />
         <link rel="stylesheet" href="/carousel-card.css" />
       </CustomHead>
@@ -25,7 +24,7 @@ export default function Home() {
       <Base>
         <BlogNavigationButtons />
         <article class="center">
-          <h1>Toys</h1>
+          <h1 class="f-as my-4 text-4xl text-center">Toys</h1>
           <details style="width: 100%;">
             <p style="margin-bottom: 1em;">
               This is where I save various curiosity projects I've done from

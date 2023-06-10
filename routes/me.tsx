@@ -15,7 +15,6 @@ export default function Home() {
         description="Some details on who is the person behind TheYuriG."
         link="https://www.theyurig.com/me"
       >
-        <link rel="stylesheet" href="/navigation-buttons.css" />
         <link rel="stylesheet" href="/content.css" />
         <link rel="stylesheet" href="/blog.css" />
         <link rel="stylesheet" href="/gradient-underline.css" />
@@ -24,7 +23,7 @@ export default function Home() {
       <Base>
         <BlogNavigationButtons />
         <article class="center">
-          <h1 class="blog-title">Who is TheYuriG?</h1>
+          <h1 class="f-as my-4 text-4xl text-center">Who is TheYuriG?</h1>
           <img
             src="https://media.discordapp.net/attachments/576538316296421399/1111343977736712232/23112022-IMG_0537.jpg?width=884&height=554"
             alt="A picture of Yuri, in a very sandy vacation."

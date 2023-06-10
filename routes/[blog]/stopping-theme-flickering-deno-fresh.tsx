@@ -15,7 +15,6 @@ export default function Home() {
         description="A guide on how to make your Theme Switcher to no longer flicker when the page loads."
         link="https://www.theyurig.com/blog/stopping-theme-flickering-deno-fresh"
       >
-        <link rel="stylesheet" href="/navigation-buttons.css" />
         <link rel="stylesheet" href="/content.css" />
         <link rel="stylesheet" href="/blog.css" />
         <link rel="stylesheet" href="/gradient-underline.css" />
@@ -50,7 +49,7 @@ export default function Home() {
         />
         <article class="center">
           {/* Centered heading */}
-          <h2 class="navigation-link blog-title">
+          <h2 class="navigation-link f-as my-4 text-4xl text-center">
             How to stop Theme flickering in Fresh
           </h2>
           {/* Post creation date */}
@@ -371,7 +370,7 @@ useEffect(() => {
             instead.
           </p>
           {/* Post author */}
-          <footer class="blog-footer" style="margin-top: auto;">
+          <footer class="mt-auto w-full text-right text-sm">
             Written with 💞 by TheYuriG
           </footer>
         </article>

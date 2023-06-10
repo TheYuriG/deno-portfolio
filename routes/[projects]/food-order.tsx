@@ -44,7 +44,6 @@ export default function Home(
         link="https://www.theyurig.com/projects/food-order"
       >
         <link rel="stylesheet" href="/content.css" />
-        <link rel="stylesheet" href="/navigation-buttons.css" />
         <link rel="stylesheet" href="/form.css" />
         <link rel="stylesheet" href="/styled-button.css" />
         <link rel="stylesheet" href="/accent-button.css" />

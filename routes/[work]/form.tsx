@@ -15,7 +15,6 @@ export default function Home() {
         description="A form to pretend to request Stimulus Check built with Preact."
         link="https://www.theyurig.com/work/form"
       >
-        <link rel="stylesheet" href="/navigation-buttons.css" />
         <link rel="stylesheet" href="/content.css" />
         <link rel="stylesheet" href="/form.css" />
         <link rel="stylesheet" href="/gradient-underline.css" />
@@ -27,7 +26,7 @@ export default function Home() {
           back={{ title: "Return to the works page", link: "/work" }}
         />
         <article class="center">
-          <h1 class="blog-title">
+          <h1 class="f-as my-4 text-4xl text-center">
             Stimulus Checks Eligibility Form
           </h1>
           <FormWithValidation />
