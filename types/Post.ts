@@ -13,7 +13,7 @@
 
 // //? How content pieces are created
 // export type ContentPiece =
-//   // Simple string types: Text (<p>), CodeBlock <div>, Image and LargeImage (both <img>)
+//   // Simple string types: Text (<p class="text-justify">), CodeBlock <div>, Image and LargeImage (both <img>)
 //   | [
 //     (
 //       | contentPieceType.Heading // Secondary heading
@@ -27,7 +27,7 @@
 //     //todo third are the alt attribute and the title attribute
 //     string, // All of the types above are simple strings
 //   ]
-//   // Array of strings type: InlineBlock (<p><span?></p>)
+//   // Array of strings type: InlineBlock (<p class="text-justify"><span?></p>)
 //   | [
 //     contentPieceType.InlineBlock, // Paragraph with nested code spans
 //     string[], // Array of strings. A string surrounded by trailing and

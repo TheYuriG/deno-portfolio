@@ -45,7 +45,7 @@ export default function ExpenseChart(
 
   return (
     <>
-      <h2 class="subtopic">{year}'s Expenses</h2>
+      <h2 class="text-3xl my-2 f-as">{year}'s Expenses</h2>
       <div class="w-full flex flex-wrap">
         {monthExpenses.map((monthData) => (
           <ExpensesChartMonthBar

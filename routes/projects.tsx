@@ -14,15 +14,16 @@ export default function Home() {
         description="Overview of all projects I've created doing various courses."
         link="https://www.theyurig.com/projects"
       >
-        <link rel="stylesheet" href="/content.css" />
         <link rel="stylesheet" href="/gradient-underline.css" />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
         <BlogNavigationButtons />
-        <article class="center">
-          <h1 class="f-as my-4 text-4xl text-center">List of Projects</h1>
-          <p class="my-2">
+        <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
+          <h1 class="f-as my-4 text-2xl lg:text-4xl text-center">
+            List of Projects
+          </h1>
+          <p class="my-2 text-justify">
             Below you can find the projects I completed while going through the
             {" "}
             <GradientLink
@@ -34,7 +35,7 @@ export default function Home() {
             />{" "}
             course from Academind.
           </p>
-          <p class="my-2">
+          <p class="my-2 text-justify">
             While I already had decent experience with React from previous
             projects and usage of Preact (to build this website!), I was forever
             going to have this feeling of{" "}
@@ -49,19 +50,19 @@ export default function Home() {
             </em>{" "}
             if I don't make myself go through a full fledged course.
           </p>
-          <p class="my-2">
+          <p class="my-2 text-justify">
             Considering that, instead of creating a new repository for every
             required project, I've just adapted everything to be used here,
             inside Deno, Fresh and Preact.
           </p>
-          <p class="my-2">
+          <p class="my-2 text-justify">
             That way, not only I practice what I need to, but I'm also forcing
             myself to go the extra mile and solve problems that this
             unintended/unsuported setup will cause me to have. Plus, I can get
             to make them look like the way I like them, rather than using the
             default course styling.
           </p>
-          <p class="my-2">
+          <p class="my-2 text-justify">
             Every project page includes a toggleable summary of what I learned
             when completing the project. Overall, I don't think it was that
             useful for me because I had already learned the large bulk of React

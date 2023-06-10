@@ -11,7 +11,7 @@ export default function InsanitySection() {
 
   return (
     <>
-      <section class="w-full h-full">
+      <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
         {
           /* Button that adds another null to the insanityArray, which
                 then renders more Insanity to the page */

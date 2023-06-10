@@ -146,7 +146,7 @@ export default function FoodOrder({ foods }: FoodOrderProperties) {
       />
       {/* Header with cart */}
       <div class="food-header">
-        <h2 class="subtopic">Meals of the day</h2>
+        <h2 class="text-3xl my-2 f-as">Meals of the day</h2>
         <CartButton
           //? Pulses the cart when a new item is added
           pulseState={pulseState}

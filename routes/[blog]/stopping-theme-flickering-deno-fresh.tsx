@@ -15,7 +15,6 @@ export default function Home() {
         description="A guide on how to make your Theme Switcher to no longer flicker when the page loads."
         link="https://www.theyurig.com/blog/stopping-theme-flickering-deno-fresh"
       >
-        <link rel="stylesheet" href="/content.css" />
         <link rel="stylesheet" href="/gradient-underline.css" />
         <link rel="stylesheet" href="/syntax-highlighting.css" />
         {
@@ -46,11 +45,10 @@ export default function Home() {
             link: "/blog/how-create-theme-switcher-deno-fresh",
           }}
         />
-        <article class="center">
-          {/* Centered heading */}
-          <h2 class="navigation-link f-as my-4 text-4xl text-center">
+        <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
+          <h1 class="f-as my-4 text-2xl lg:text-4xl text-center">
             How to stop Theme flickering in Fresh
-          </h2>
+          </h1>
           {/* Post creation date */}
           <p class="text-sm mb-2 w-full text-center">
             {new Date(1684951466007).toLocaleString()}
@@ -63,7 +61,7 @@ export default function Home() {
             class="my-4 object-cover"
           />
           {/* Introduction */}
-          <p class="my-2">
+          <p class="my-2 text-justify">
             In the{" "}
             <GradientLink
               link="/blog/how-create-theme-switcher-deno-fresh"
@@ -76,12 +74,12 @@ export default function Home() {
             fix both of them now:
           </p>
           {/* Presenting the problem */}
-          <p class="my-2">
+          <p class="my-2 text-justify">
             To understand how to fix both of those problems, we first need to
             understand why they happened in the first place.
           </p>
           {/* Heading and image introducing to next topic */}
-          <h2 class="subtopic">The Island Architecture</h2>
+          <h2 class="text-3xl my-2 f-as">The Island Architecture</h2>
           <img
             src="https://images.unsplash.com/photo-1602400546471-b8efe700c80a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=958&q=80"
             alt="Picture of Seychelles, by Kamil Rogalinski"
@@ -89,7 +87,7 @@ export default function Home() {
             class="my-4 object-cover h-[25em]"
           />
           {/* Explaining topic */}
-          <p class="my-2">
+          <p class="my-2 text-justify">
             The{" "}
             <GradientLink
               link="https://www.patterns.dev/posts/islands-architecture"
@@ -110,7 +108,7 @@ export default function Home() {
             alt="Remix's logo"
             title="The precursor"
           />
-          <p class="my-2">
+          <p class="my-2 text-justify">
             Fresh wasn't the first to come up with this idea, mind you.{" "}
             <GradientLink
               link="https://remix.run/"
@@ -136,7 +134,7 @@ export default function Home() {
             for them.
           </p>
           {/* Further insight into the problem */}
-          <p class="my-2">
+          <p class="my-2 text-justify">
             So by now, you might have realized that not shipping Javascript by
             default has its drawbacks. If the page first needs to load before it
             can download the Javascript to change the theme colors, then we
@@ -145,8 +143,10 @@ export default function Home() {
             not exactly...
           </p>
           {/* Main content start */}
-          <h2 class="subtopic">Opting out of the Islands Architecture</h2>
-          <p class="my-2">
+          <h2 class="text-3xl my-2 f-as">
+            Opting out of the Islands Architecture
+          </h2>
+          <p class="my-2 text-justify">
             It's possible that we can ship the required Javascript on every
             page, but in doing so, you need to understand the tradeoffs:
           </p>
@@ -166,7 +166,7 @@ export default function Home() {
               have to mostly figure something out by yourself.
             </li>
           </ol>
-          <p class="my-2">
+          <p class="my-2 text-justify">
             At this point, I have to ask you: Is this feature essential for your
             project? Is the design of your website impossible to be done in a
             happy medium between Light and Dark modes? If the answer to both of
@@ -175,8 +175,10 @@ export default function Home() {
           </p>
           {/* Script tag warning */}
           {/*  */}
-          <h2 class="subtopic">Adding a script file to every response</h2>
-          <p class="my-2">
+          <h2 class="text-3xl my-2 f-as">
+            Adding a script file to every response
+          </h2>
+          <p class="my-2 text-justify">
             Be very careful about the <code class="shj-lang-js">script</code>
             {" "}
             tags that you import on your project. Not knowing what you are doing
@@ -191,7 +193,7 @@ export default function Home() {
             code that suggests using these and, if in doubt, don't use them in
             your project!
           </p>
-          <p class="my-2">
+          <p class="my-2 text-justify">
             In our case, our implementation is incredibly simple. We just add a
             small script to the response's{" "}
             <code class="shj-lang-js">&lt;head&gt;</code>{" "}
@@ -215,7 +217,7 @@ export default function Home() {
     );
 }`}
           </div>
-          <p class="my-2">And inside the script file:</p>
+          <p class="my-2 text-justify">And inside the script file:</p>
           <div class="shj-lang-js">
             {`// /static/themeSwitcher.js
 const selectedTheme = localStorage.getItem("theme");
@@ -236,7 +238,7 @@ if (window.showDarkMode === true) {
     cssRoot.style.setProperty("--accent-color", "rgb(220 38 38)");
 }`}
           </div>
-          <p class="my-2">In order:</p>
+          <p class="my-2 text-justify">In order:</p>
           <ol
             start={1}
             class="self-start list-[lower-greek]"
@@ -267,7 +269,7 @@ if (window.showDarkMode === true) {
               .
             </li>
           </ol>
-          <p class="my-2">
+          <p class="my-2 text-justify">
             Now all we gotta do is update our component and we are done!
           </p>
           <div class="shj-lang-js">
@@ -287,7 +289,7 @@ useEffect(() => {
 }
 ...`}
           </div>
-          <p class="my-2">
+          <p class="my-2 text-justify">
             Because{" "}
             <code class="shj-lang-js">
               window.showDarkMode
@@ -302,21 +304,21 @@ useEffect(() => {
             bit too, leaving the initial check to only validate if it's the
             first run and skip when it is.
           </p>
-          <p class="my-2">
+          <p class="my-2 text-justify">
             So there you have it, a Theme Switcher that sets the correct theme,
             acknowledges the user's preferences, and doesn't flicker on the
             initial load.
           </p>
           {/* Alternative options to this */}
-          <h2 class="subtopic">
+          <h2 class="text-3xl my-2 f-as">
             Alternatives to using script tags
           </h2>
-          <p class="my-2">
+          <p class="my-2 text-justify">
             What other ways could you possibly implement a Theme Switcher
             without needing to script files on every request?
           </p>
           {/* Route based */}
-          <p class="my-2">
+          <p class="my-2 text-justify">
             One of the options would be to use route-based theming. You could
             create your entire website nested in either a{" "}
             <code class="shj-lang-js">
@@ -338,7 +340,7 @@ useEffect(() => {
             could implement.
           </p>
           {/* App router, but maybe just use NextJS instead? */}
-          <p class="my-2">
+          <p class="my-2 text-justify">
             Another option would be to not save the theme to{" "}
             <code class="shj-lang-js">
               localStorage

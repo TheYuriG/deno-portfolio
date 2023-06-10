@@ -15,7 +15,6 @@ export default function Home() {
         description="Playing with CSS translate3d!"
         link="https://www.theyurig.com/toys/spinners"
       >
-        <link rel="stylesheet" href="/content.css" />
         <link rel="stylesheet" href="/spinners.css" />
         <link rel="stylesheet" href="/gradient-underline.css" />
       </CustomHead>
@@ -24,114 +23,110 @@ export default function Home() {
         <BlogNavigationButtons
           back={{ title: "Return to all toys", link: "/toys" }}
         />
-        <article class="center">
-          <h1 class="f-as my-4 text-4xl text-center">Spinners</h1>
+        <article class="flex flex-col w-full h-full max-w-4xl mx-auto items-center">
+          <h1 class="f-as my-4 text-2xl lg:text-4xl text-center">Spinners</h1>
           <p class="my-2" style="margin: 0 auto;">
             Experimenting with translate3d (hover for information!)
           </p>
-          <section style="flex: 1;">
-            <div id="spacer-top" style="flex: 1;"></div>
-            <div id="cubes-container">
-              {/* Text Cube */}
-              <div
-                id="named-cube"
-                class="cube"
-                style="width: 4em; height: 8em;"
-                title="green+C=close; red+F=far; T=top; B=bottom; L=left; R=right"
-              >
-                <div style="transform: translate3d(-1em, 0em, 2em)">
-                  <div class="anti-spinner close">TL</div>
-                </div>
-                <div style="transform: translate3d(3em, 0em, 2em)">
-                  <div class="anti-spinner close">TR</div>
-                </div>
-                <div style="transform: translate3d(-1em, 4em, 2em)">
-                  <div class="anti-spinner close">BL</div>
-                </div>
-                <div style="transform: translate3d(3em, 4em, 2em)">
-                  <div class="anti-spinner close">BR</div>
-                </div>
-                <div style="transform: translate3d(-1em, 0em, -2em)">
-                  <div class="anti-spinner far">TL</div>
-                </div>
-                <div style="transform: translate3d(3em, 0em, -2em)">
-                  <div class="anti-spinner far">TR</div>
-                </div>
-                <div style="transform: translate3d(-1em, 4em, -2em)">
-                  <div class="anti-spinner far">BL</div>
-                </div>
-                <div style="transform: translate3d(3em, 4em, -2em)">
-                  <div class="anti-spinner far">BR</div>
-                </div>
+          <div class="mb-20 mt-24" id="cubes-container">
+            {/* Text Cube */}
+            <div
+              id="named-cube"
+              class="cube"
+              style="width: 4em; height: 8em;"
+              title="green+C=close; red+F=far; T=top; B=bottom; L=left; R=right"
+            >
+              <div style="transform: translate3d(-1em, 0em, 2em)">
+                <div class="anti-spinner close">TL</div>
               </div>
-              {/* Flower Cube */}
-              <div
-                id="flower-cube"
-                class="cube"
-                style="width: 4em; height: 8em;"
-                title="🌸=close+top; 🌻=close+bottom; 🌺=far+top; 🌹=far+bottom;"
-              >
-                <div style="transform: translate3d(0em, 1.3em, 2em)">
-                  <div class="anti-turner">🌸</div>
-                </div>
-                <div style="transform: translate3d(4em, 1.3em, 2em)">
-                  <div class="anti-turner">🌸</div>
-                </div>
-                <div style="transform: translate3d(0em, 5.3em, 2em)">
-                  <div class="anti-turner">🌻</div>
-                </div>
-                <div style="transform: translate3d(4em, 5.3em, 2em)">
-                  <div class="anti-turner">🌻</div>
-                </div>
-                <div style="transform: translate3d(0em, 1.3em, -2em)">
-                  <div class="anti-turner">🌺</div>
-                </div>
-                <div style="transform: translate3d(4em, 1.3em, -2em)">
-                  <div class="anti-turner">🌺</div>
-                </div>
-                <div style="transform: translate3d(0em, 5.3em, -2em)">
-                  <div class="anti-turner">🌹</div>
-                </div>
-                <div style="transform: translate3d(4em, 5.3em, -2em)">
-                  <div class="anti-turner">🌹</div>
-                </div>
+              <div style="transform: translate3d(3em, 0em, 2em)">
+                <div class="anti-spinner close">TR</div>
               </div>
-              {/* Party Cube */}
-              <div
-                id="party-cube"
-                class="cube"
-                style="width: 4em; height: 8em;"
-                title="🥳=top; 🎈=bottom;"
-              >
-                <div style="transform: translate3d(-0.5em, 1.5em, 2em)">
-                  <div class="anti-flipper">🥳</div>
-                </div>
-                <div style="transform: translate3d(3.5em, 1.5em, 2em)">
-                  <div class="anti-flipper">🥳</div>
-                </div>
-                <div style="transform: translate3d(-0.5em, 5.5em, 2em)">
-                  <div class="anti-flipper">🎈</div>
-                </div>
-                <div style="transform: translate3d(3.5em, 5.5em, 2em)">
-                  <div class="anti-flipper">🎈</div>
-                </div>
-                <div style="transform: translate3d(-0.5em, 1.5em, -2em)">
-                  <div class="anti-flipper">🥳</div>
-                </div>
-                <div style="transform: translate3d(3.5em, 1.5em, -2em)">
-                  <div class="anti-flipper">🥳</div>
-                </div>
-                <div style="transform: translate3d(-0.5em, 5.5em, -2em)">
-                  <div class="anti-flipper">🎈</div>
-                </div>
-                <div style="transform: translate3d(3.5em, 5.5em, -2em)">
-                  <div class="anti-flipper">🎈</div>
-                </div>
+              <div style="transform: translate3d(-1em, 4em, 2em)">
+                <div class="anti-spinner close">BL</div>
+              </div>
+              <div style="transform: translate3d(3em, 4em, 2em)">
+                <div class="anti-spinner close">BR</div>
+              </div>
+              <div style="transform: translate3d(-1em, 0em, -2em)">
+                <div class="anti-spinner far">TL</div>
+              </div>
+              <div style="transform: translate3d(3em, 0em, -2em)">
+                <div class="anti-spinner far">TR</div>
+              </div>
+              <div style="transform: translate3d(-1em, 4em, -2em)">
+                <div class="anti-spinner far">BL</div>
+              </div>
+              <div style="transform: translate3d(3em, 4em, -2em)">
+                <div class="anti-spinner far">BR</div>
               </div>
             </div>
-            <div id="spacer-top" style="flex: 1;"></div>
-          </section>
-          <footer style="margin-top: 1em; align-self: end;">
+            {/* Flower Cube */}
+            <div
+              id="flower-cube"
+              class="cube"
+              style="width: 4em; height: 8em;"
+              title="🌸=close+top; 🌻=close+bottom; 🌺=far+top; 🌹=far+bottom;"
+            >
+              <div style="transform: translate3d(0em, 1.3em, 2em)">
+                <div class="anti-turner">🌸</div>
+              </div>
+              <div style="transform: translate3d(4em, 1.3em, 2em)">
+                <div class="anti-turner">🌸</div>
+              </div>
+              <div style="transform: translate3d(0em, 5.3em, 2em)">
+                <div class="anti-turner">🌻</div>
+              </div>
+              <div style="transform: translate3d(4em, 5.3em, 2em)">
+                <div class="anti-turner">🌻</div>
+              </div>
+              <div style="transform: translate3d(0em, 1.3em, -2em)">
+                <div class="anti-turner">🌺</div>
+              </div>
+              <div style="transform: translate3d(4em, 1.3em, -2em)">
+                <div class="anti-turner">🌺</div>
+              </div>
+              <div style="transform: translate3d(0em, 5.3em, -2em)">
+                <div class="anti-turner">🌹</div>
+              </div>
+              <div style="transform: translate3d(4em, 5.3em, -2em)">
+                <div class="anti-turner">🌹</div>
+              </div>
+            </div>
+            {/* Party Cube */}
+            <div
+              id="party-cube"
+              class="cube"
+              style="width: 4em; height: 8em;"
+              title="🥳=top; 🎈=bottom;"
+            >
+              <div style="transform: translate3d(-0.5em, 1.5em, 2em)">
+                <div class="anti-flipper">🥳</div>
+              </div>
+              <div style="transform: translate3d(3.5em, 1.5em, 2em)">
+                <div class="anti-flipper">🥳</div>
+              </div>
+              <div style="transform: translate3d(-0.5em, 5.5em, 2em)">
+                <div class="anti-flipper">🎈</div>
+              </div>
+              <div style="transform: translate3d(3.5em, 5.5em, 2em)">
+                <div class="anti-flipper">🎈</div>
+              </div>
+              <div style="transform: translate3d(-0.5em, 1.5em, -2em)">
+                <div class="anti-flipper">🥳</div>
+              </div>
+              <div style="transform: translate3d(3.5em, 1.5em, -2em)">
+                <div class="anti-flipper">🥳</div>
+              </div>
+              <div style="transform: translate3d(-0.5em, 5.5em, -2em)">
+                <div class="anti-flipper">🎈</div>
+              </div>
+              <div style="transform: translate3d(3.5em, 5.5em, -2em)">
+                <div class="anti-flipper">🎈</div>
+              </div>
+            </div>
+          </div>
+          <footer class="self-end">
             this experimentation helped me learn{" "}
             <GradientLink
               link="https://codepen.io/TheYuriG/pen/yLRQqmr?editors=1100"

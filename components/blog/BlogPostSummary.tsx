@@ -18,7 +18,7 @@ export function BlogPostSummary(summary: BlogPostSummaryProperties) {
         {new Date(summary.date).toLocaleString()}
       </p>
       {/* Post summary */}
-      <p class="justified">{summary.shortSummary}</p>
+      <p class="text-justify">{summary.shortSummary}</p>
     </article>
   );
 }

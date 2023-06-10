@@ -43,7 +43,6 @@
 //         link={"https://www.theyurig.com/blog" + savedPost.link}
 //       >
 //         <link rel="stylesheet" href="/home.css" />
-//         <link rel="stylesheet" href="/content.css" />
 //         <link rel="stylesheet" href="/syntax-highlighting.css" />
 //         {
 //           /* Syntax highlight for code. How can we do this better
@@ -69,7 +68,7 @@
 //         {/* Back button */}
 //         <BlogNavigationButtons />
 //         {/* Complete Post */}
-//         <article class="center">
+//         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
 //           {/* Centered heading */}
 //           <h2 class="navigation-link f-as my-4 text-4xl text-center>{savedPost.title}</h2>
 //           {/* Post creation date */}
@@ -77,7 +76,7 @@
 //             {new Date(savedPost.date).toLocaleString()}
 //           </p>
 //           {/* Post content, parsed and spread */}
-//           <div class="justified">
+//           <div class="text-justify">
 //             {...contentParser(savedPost.content)}
 //           </div>
 //           {/* Post author */}

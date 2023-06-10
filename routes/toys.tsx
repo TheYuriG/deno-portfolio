@@ -16,15 +16,14 @@ export default function Home() {
         description="Various experimentations over things I've seen online."
         link="https://www.theyurig.com/toys"
       >
-        <link rel="stylesheet" href="/content.css" />
         <link rel="stylesheet" href="/toys.css" />
         <link rel="stylesheet" href="/carousel-card.css" />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
         <BlogNavigationButtons />
-        <article class="center">
-          <h1 class="f-as my-4 text-4xl text-center">Toys</h1>
+        <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
+          <h1 class="f-as my-4 text-2xl lg:text-4xl text-center">Toys</h1>
           <details style="width: 100%;">
             <p style="margin-bottom: 1em;">
               This is where I save various curiosity projects I've done from

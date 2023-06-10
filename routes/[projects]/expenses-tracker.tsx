@@ -43,7 +43,6 @@ export default function Home(
         description="Simple expense tracker that allows filtering by year."
         link="https://www.theyurig.com/projects/expenses-tracker"
       >
-        <link rel="stylesheet" href="/content.css" />
         <link rel="stylesheet" href="/form.css" />
         <link rel="stylesheet" href="/styled-button.css" />
       </CustomHead>
@@ -52,7 +51,7 @@ export default function Home(
         <BlogNavigationButtons
           back={{ title: "Return to projects overview", link: "/projects" }}
         />
-        <section class="center">
+        <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
           <ProjectDiscovery
             innerText={[
               // first paragraph

@@ -23,11 +23,11 @@
 //     switch (contentType) {
 //       //? Create a medium sized heading
 //       case contentPieceType.Heading:
-//         parsedContent.push(<h2 class="subtopic">{contentValue}</h2>);
+//         parsedContent.push(<h2 class="text-3xl my-2 f-as">{contentValue}</h2>);
 //         break;
 //       //? Bland paragraph with no additional information
 //       case contentPieceType.Text:
-//         parsedContent.push(<p class="my-2">{contentValue}</p>);
+//         parsedContent.push(<p class="my-2 text-justify">{contentValue}</p>);
 //         break;
 //       //? Small image that doesn't fill the entire content width
 //       case contentPieceType.Image:
@@ -65,7 +65,7 @@
 //           }
 //         }
 //         parsedContent.push(
-//           <p>
+//           <p class="text-justify">
 //             {inlineCodeBlockContent}
 //           </p>,
 //         );

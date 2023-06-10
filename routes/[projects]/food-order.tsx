@@ -43,7 +43,6 @@ export default function Home(
         description="Order your favorite food in our theorical restaurant and feast upon the delicious pixels!"
         link="https://www.theyurig.com/projects/food-order"
       >
-        <link rel="stylesheet" href="/content.css" />
         <link rel="stylesheet" href="/form.css" />
         <link rel="stylesheet" href="/styled-button.css" />
         <link rel="stylesheet" href="/accent-button.css" />
@@ -55,7 +54,7 @@ export default function Home(
         <BlogNavigationButtons
           back={{ title: "Return to projects overview", link: "/projects" }}
         />
-        <section class="center">
+        <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
           {/* Insights */}
           <ProjectDiscovery
             innerText={[

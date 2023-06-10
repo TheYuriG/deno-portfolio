@@ -420,7 +420,7 @@ export default function FormWithValidation() {
         />
         {validationError === true && (
           <>
-            <p class="my-2">
+            <p class="my-2 text-justify">
               Some fields have invalid data being provided (will display a red
               border), please fix them before submitting! Hover/click the
               information icon on the right side for more information.

@@ -18,13 +18,12 @@ export default function Home() {
         link="https://www.theyurig.com/blog"
       >
         <link rel="stylesheet" href="/home.css" />
-        <link rel="stylesheet" href="/content.css" />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
         {/* Back button */}
         <BlogNavigationButtons />
-        <section class="center">
+        <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
           {...createdPosts.map((post) => (
             <BlogPostSummary {...post}></BlogPostSummary>
           ))}
