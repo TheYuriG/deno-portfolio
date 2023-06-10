@@ -21,6 +21,11 @@ html {
     color: var(--neutral-color);
 }
 
+/* Secondary font for titles */
+.f-as {
+font-family: 'Alfa Slab One', cursive;
+}
+
 /* Apply neutral color to background-color */
 .bg-nc {
     background-color: var(--neutral-color);

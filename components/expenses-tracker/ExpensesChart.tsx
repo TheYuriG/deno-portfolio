@@ -46,7 +46,7 @@ export default function ExpenseChart(
   return (
     <>
       <h2 class="subtopic">{year}'s Expenses</h2>
-      <div class="month-expenses__group">
+      <div class="w-full flex flex-wrap">
         {monthExpenses.map((monthData) => (
           <ExpensesChartMonthBar
             label={monthData.label}

@@ -218,11 +218,11 @@ export default function AddNewExpenseForm(
   //? Create the newExpenseForm to be used if the user clicked "Add New Expense?""
   const newExpenseForm = (
     <>
-      <h2 class="new-expense-title">
+      <h2 class="text-3xl text-center my-1 f-as">
         Add new expense
       </h2>
       {/* The whole form */}
-      <form class="styled-form">
+      <form class="mb-2 flex flex-col">
         {/* Expense description */}
         <StyledInput
           key={"text_input"}

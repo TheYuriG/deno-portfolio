@@ -20,14 +20,15 @@ export default function ExpensesChartMonthBar(
   //? Render the expense bar for the given month
   return (
     <div
-      class="month-expenses"
+      class="flex flex-col items-center p-2 w-1/6 md:w-1/12"
+      //   class="month-expenses"
       title={`Spent in ${label}: $${cost.toLocaleString()} (${percentageOfYearExpenses} of $${maxCost.toLocaleString()})`}
     >
       {/* Content bar */}
-      <div class="month-expenses__bar-container">
+      <div class="h-40 w-8 mb-2 flex flex-col place-content-end bo-ac rounded-2xl overflow-hidden">
         {/* Bar fill */}
         <div
-          class="month-expenses__bar-fill"
+          class="w-full bg-nc"
           //? Limit the fill height according to this month's expenses
           //? percent relative to the year
           style={{
@@ -36,7 +37,7 @@ export default function ExpensesChartMonthBar(
         >
         </div>
       </div>
-      <div class="month-expenses__label">
+      <div class="text-center w-min">
         {label} {percentageOfYearExpenses}
       </div>
     </div>

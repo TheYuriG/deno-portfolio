@@ -262,7 +262,7 @@ export default function FormWithValidation() {
   return (
     <>
       {/* The whole form */}
-      <form class="w-full mb-4 flex flex-col styled-form">
+      <form class="w-full mb-4 flex flex-col">
         {/* Name input */}
         <StyledInput
           key={"first_input"}
