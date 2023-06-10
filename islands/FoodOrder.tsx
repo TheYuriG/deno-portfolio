@@ -126,7 +126,7 @@ export default function FoodOrder({ foods }: FoodOrderProperties) {
   }, [pulseState]);
 
   return (
-    <section class="food-group">
+    <section class="flex flex-col bo-ac rounded-2xl px-1 pb-4">
       {/* Cart modal with currently selected food items, if any */}
       <ModalWithBackdrop
         display={displayModal}
@@ -145,7 +145,7 @@ export default function FoodOrder({ foods }: FoodOrderProperties) {
         closeModalFunction={() => displayExpandedFoodImage(false)}
       />
       {/* Header with cart */}
-      <div class="food-header">
+      <div class="flex flex-col md:flex-row md:justify-between items-center pt-2 px-4">
         <h2 class="text-3xl my-2 f-as">Meals of the day</h2>
         <CartButton
           //? Pulses the cart when a new item is added
@@ -213,15 +213,13 @@ export default function FoodOrder({ foods }: FoodOrderProperties) {
       {cartContent.totalItems > 0
         ? (
           <AccentButton
-            style="align-self: end; margin: 0.5em 1em;"
+            style="align-self: end; margin-top: 1em; margin-right: 1em;"
             onClickFunction={() => toggleDisplayModal(true)}
           >
             View order
           </AccentButton>
         )
         : <></>}
-      {/* //todo Add the loading spinner to the modal when completing the order */}
-      {/* //todo disable clicking out of the modal when submitted */}
     </section>
   );
 }

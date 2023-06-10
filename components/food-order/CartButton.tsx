@@ -19,18 +19,18 @@ export default function CartButton({
   return (
     <AccentButton
       //? Adds the pulsing animation when a food item is added
-      style={pulseState
-        ? "animation: pulseCartOnItemAdd 0.3s ease-in-out;"
-        : ""}
+      style={pulseState ? "animation: animate-pulse 0.3s ease-in-out;" : ""}
       onClickFunction={openModal}
     >
-      <span class="cart-total-items">
+      <span class="flex items-center mr-4 space-x-1">
         {
           /* Islands can't render children directly, they need to be
          rendered as the result of a function instead */
         }
         {CartIcon({ iconHeight: "1em", iconWidth: "1em" })}
-        {totalItems}
+        <span>
+          {totalItems}
+        </span>
       </span>
       <span>${cost.toFixed(2)}</span>
     </AccentButton>

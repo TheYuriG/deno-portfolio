@@ -21,7 +21,6 @@
 
     /* Define dimensions and styles */
     min-width: 50dvw;
-    width: 100%;
     max-width: 80dvw;
     background-color: var(--base-color);
 }
