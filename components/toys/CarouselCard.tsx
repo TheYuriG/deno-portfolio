@@ -5,21 +5,26 @@ import { JSX } from "preact";
 interface CarouselCardProperties {
   link: string;
   title: string;
-  children?: JSX.Element;
+  children: JSX.Element;
 }
 
 //? Exports a Carousel Card with a centered h3 heading,
 //? a link and a centered child
 //! Needs to ship with carousel-card.css for styling!
-export function CarouselCard(properties: CarouselCardProperties) {
+export function CarouselCard(
+  { link, title, children }: CarouselCardProperties,
+) {
   return (
     // Link
-    <a href={properties.link}>
-      <div class="card">
+    <a href={link}>
+      <div
+        class="flex flex-col m-2 h-[25em] w-60 bo-nc rounded-3xl hover:animate-card-pulse"
+        style="border-width: 0.25em;"
+      >
         {/* Centered heading */}
-        <h3>{properties.title}</h3>
+        <h3 class="text-2xl my-4 mx-auto text-bold">{title}</h3>
         {/* Centered child */}
-        <div style="margin: auto;">{properties.children}</div>
+        <div class="m-auto">{children}</div>
       </div>
     </a>
   );

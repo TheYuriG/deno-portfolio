@@ -31,7 +31,7 @@ export default function StyledCheckboxGroup({
 }: CheckboxGroupProperties) {
   return (
     <div class="my-1 flex flex-col sm:flex-row items-center">
-      <span class="w-max" style="flex-shrink: 0;">
+      <span class="w-max flex-shrink-0">
         {label}
       </span>
       <div

@@ -17,26 +17,29 @@ export default function Home() {
         link="https://www.theyurig.com/toys"
       >
         <link rel="stylesheet" href="/toys.css" />
-        <link rel="stylesheet" href="/carousel-card.css" />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
         <BlogNavigationButtons />
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
           <h1 class="f-as my-4 text-2xl lg:text-4xl text-center">Toys</h1>
-          <details style="width: 100%;">
-            <p style="margin-bottom: 1em;">
+          <details class="w-full">
+            <p class="mb-4">
               This is where I save various curiosity projects I've done from
               resources online. Some toys might have links to a blog post I've
               made with information about my learning experience, in case you
               are also curious to know more and want to try your hand.
             </p>
           </details>
-          <div class="carousel">
+          <div class="flex overflow-auto">
             <CarouselCard link="/toys/spinners" title="Spinners">
-              <div class="translate">
+              <div
+                class="relative text-4xl select-none space-y-4"
+                style="transform-style: preserve-3d;"
+              >
                 <div
                   id="x-spin"
+                  class="relative pause"
                   title="Spinning on the X axis"
                   style="transform: translate3d(0em, 0em, 0em)"
                 >
@@ -44,6 +47,7 @@ export default function Home() {
                 </div>
                 <div
                   id="y-spin"
+                  class="relative"
                   title="Spinning on the Y axis"
                   style="transform: translate3d(0em, 0em, 0em)"
                 >
@@ -51,6 +55,7 @@ export default function Home() {
                 </div>
                 <div
                   id="z-spin"
+                  class="relative"
                   title="Spinning on the Z axis"
                   style="transform: translate3d(0em, 0em, 0em)"
                 >
@@ -59,7 +64,7 @@ export default function Home() {
               </div>
             </CarouselCard>
             <CarouselCard link="/toys/insanity" title="Insanity">
-              <div class="insanity">
+              <div class="text-[10rem] hover:animate-grow">
                 🤪
               </div>
             </CarouselCard>

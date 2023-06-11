@@ -17,7 +17,7 @@ export default function StyledRadio({
 }: RadioProperties) {
   return (
     <div class="my-1 flex flex-col sm:flex-row items-center">
-      <span class="w-max" style="flex-shrink: 0;">
+      <span class="w-max flex-shrink-0">
         {label}
       </span>
       <div class="p-2 bg-bc bo-ac rounded-xl flex flex-col sm:flex-row w-min sm:w-max sm:ml-2 flex-wrap place-content-center trs">
