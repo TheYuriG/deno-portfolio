@@ -47,7 +47,7 @@ export default function Home() {
         />
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
           {/* Centered heading */}
-          <h1 class="f-as my-4 text-2xl lg:text-4xl text-center">
+          <h1 class="thick-ac-underline hover:tx-ac f-as my-4 text-2xl lg:text-4xl text-center">
             How to Create a Theme Switcher with Fresh
           </h1>
           {/* Post creation date */}
@@ -76,7 +76,9 @@ export default function Home() {
             faced, and how I've solved them.
           </p>
           {/* Heading and image introducing to next topic: Fresh */}
-          <h2 class="text-3xl my-2 f-as">What is Fresh?</h2>
+          <h2 class="thick-ac-underline hover:tx-ac text-3xl my-2 f-as">
+            What is Fresh?
+          </h2>
           <img
             src={"https://fresh.deno.dev/logo.svg?__frsh_c=3171c5e64510907f14fca32f4e0ba9a86bc5247c"}
             alt="Fresh's logo"
@@ -139,7 +141,9 @@ export default function Home() {
             experience building Full Stack projects.
           </p>
           {/* Main content start */}
-          <h2 class="text-3xl my-2 f-as">Creating A Theme Switcher</h2>
+          <h2 class="thick-ac-underline hover:tx-ac text-3xl my-2 f-as">
+            Creating A Theme Switcher
+          </h2>
           <p class="my-2 text-justify">
             Let's create a very simple Theme Switcher:
           </p>
@@ -342,7 +346,9 @@ useEffect(() => {
             />.
           </p>
           {/* Conclusion and link to next post */}
-          <h2 class="text-3xl my-2 f-as">What's next?</h2>
+          <h2 class="thick-ac-underline hover:tx-ac text-3xl my-2 f-as">
+            What's next?
+          </h2>
           <p class="my-2 text-justify">
             If you have been following along, you might have noticed a few
             issues with it, like flickering on first load or the inability to

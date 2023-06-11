@@ -20,7 +20,7 @@ export default function Home() {
       <Base>
         <BlogNavigationButtons />
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
-          <h1 class="f-as my-4 text-2xl lg:text-4xl text-center">
+          <h1 class="thick-ac-underline hover:tx-ac f-as my-4 text-2xl lg:text-4xl text-center">
             Who is TheYuriG?
           </h1>
           <img
@@ -60,7 +60,7 @@ export default function Home() {
             average completion or end up adding some unobtainable trophies to
             your account.
           </p>
-          <h2 class="text-3xl my-2 f-as">Gym</h2>
+          <h2 class="thick-ac-underline hover:tx-ac text-3xl my-2 f-as">Gym</h2>
           <p class="my-2 text-justify">
             I'm an absolute gym rat. It's part of my routine to write code and
             {" "}
@@ -102,7 +102,9 @@ export default function Home() {
             />!
           </p>
 
-          <h2 class="text-3xl my-2 f-as">Programming</h2>
+          <h2 class="thick-ac-underline hover:tx-ac text-3xl my-2 f-as">
+            Programming
+          </h2>
           <p class="my-2 text-justify">
             In late 2017, I felt like trophy hunting would be greatly improved
             if we could get a way to link and display our trophies on Discord,
@@ -137,7 +139,9 @@ export default function Home() {
             ears. It couldn't go on like that anymore, something had to be done
             about it.
           </p>
-          <h2 class="text-3xl my-2 f-as">Trophy Place</h2>
+          <h2 class="thick-ac-underline hover:tx-ac text-3xl my-2 f-as">
+            Trophy Place
+          </h2>
           <p class="my-2 text-justify">
             Myself and{" "}
             <GradientLink

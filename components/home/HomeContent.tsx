@@ -17,7 +17,7 @@ export function HomeContent() {
       >
         I am{" "}
         <strong>
-          <span class="gradient-underline">TheYuriG</span>
+          <span class="dotted-underline hover:tx-ac">TheYuriG</span>
           <span class="hidden group-hover:inline-block group-hover:animate-waving">
             👋
           </span>

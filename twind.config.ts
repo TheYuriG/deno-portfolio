@@ -265,5 +265,34 @@ export default {
         background: "linear-gradient(111.3deg, #9c27b0 9.6%, #00bcd4 93.6%)",
       },
     },
+    // Create a dotted underline that becomes solid on hover
+    "dotted-underline": {
+      "&": {
+        "text-underline-offset": "0.2em",
+        "text-decoration": "underline dotted var(--neutral-color) 0.1em",
+        transition:
+          "text-underline-offset 600ms, text-decoration 600ms, color 600ms",
+      },
+      "&:hover": {
+        "text-decoration": "underline solid var(--accent-color) 0.1em",
+        "text-underline-offset": "0.3em",
+      },
+    },
+    // Fat neutral underline behind text, good for titles
+    "thick-ac-underline": {
+      "&": {
+        transition: "color 0.5s ease-in-out",
+        "text-decoration-color": "var(--neutral-color)",
+        "margin-bottom": "0.2em",
+        "font-size": "3rem",
+        "line-height": "1",
+      },
+      "&:hover": {
+        "text-decoration-line": "underline",
+        "text-decoration-skip-ink": "none",
+        "text-underline-offset": "-0.2em",
+        "text-decoration-thickness": "0.3em",
+      },
+    },
   },
 } as Options;

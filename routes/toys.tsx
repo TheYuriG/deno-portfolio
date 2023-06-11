@@ -21,7 +21,9 @@ export default function Home() {
       <Base>
         <BlogNavigationButtons />
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
-          <h1 class="f-as my-4 text-2xl lg:text-4xl text-center">Toys</h1>
+          <h1 class="thick-ac-underline hover:tx-ac f-as my-4 text-2xl lg:text-4xl text-center">
+            Toys
+          </h1>
           <details class="w-full">
             <p class="mb-4">
               This is where I save various curiosity projects I've done from

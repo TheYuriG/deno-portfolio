@@ -20,7 +20,7 @@ export default function Home() {
       <Base>
         <BlogNavigationButtons />
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
-          <h1 class="f-as my-4 text-2xl lg:text-4xl text-center">
+          <h1 class="thick-ac-underline hover:tx-ac f-as my-4 text-2xl lg:text-4xl text-center">
             Past and Current work
           </h1>
           <p class="my-2 text-justify">

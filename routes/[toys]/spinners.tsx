@@ -23,7 +23,9 @@ export default function Home() {
           back={{ title: "Return to all toys", link: "/toys" }}
         />
         <article class="flex flex-col w-full h-full max-w-4xl mx-auto items-center">
-          <h1 class="f-as my-4 text-2xl lg:text-4xl text-center">Spinners</h1>
+          <h1 class="thick-ac-underline hover:tx-ac f-as my-4 text-2xl lg:text-4xl text-center">
+            Spinners
+          </h1>
           <p class="mx-auto">
             Experimenting with translate3d (hover for information!)
           </p>

@@ -20,7 +20,7 @@ export default function Home() {
       <Base>
         <BlogNavigationButtons />
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
-          <h1 class="f-as my-4 text-2xl lg:text-4xl text-center">
+          <h1 class="thick-ac-underline hover:tx-ac f-as my-4 text-2xl lg:text-4xl text-center">
             What is this?
           </h1>
           <p class="text-justify">
@@ -38,7 +38,9 @@ export default function Home() {
             tech stack used to create it. This is quite a bit technical and if
             you are not a developer, it's okay if it goes over your head.
           </p>
-          <h1 class="f-as my-4 text-4xl text-center">Ok, so what is this?</h1>
+          <h1 class="thick-ac-underline hover:tx-ac f-as my-4 text-4xl text-center">
+            Ok, so what is this?
+          </h1>
           <p class="text-justify">
             This website is meant to be an outlet for my{" "}
             <GradientLink

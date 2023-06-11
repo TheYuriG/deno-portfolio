@@ -23,7 +23,7 @@ export default function Home() {
           back={{ title: "Return to all toys", link: "/toys" }}
         />
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
-          <h1 class="f-as my-4 text-2xl lg:text-4xl text-center">
+          <h1 class="thick-ac-underline hover:tx-ac f-as my-4 text-2xl lg:text-4xl text-center">
             Did I ever tell you what the definition of insanity is?
           </h1>
           {/* Infinitely expandable Insanity text section */}

@@ -16,7 +16,6 @@ export default function NotFoundPage({ url }: UnknownPageProps) {
         description="404 Page not found"
         link="https://www.theyurig.com/404"
       >
-        <link rel="stylesheet" href="/home.css" />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
