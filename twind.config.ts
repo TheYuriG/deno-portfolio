@@ -15,6 +15,12 @@ export default {
         blinking: "blinking 1.5s step-end infinite",
         // Loading spinner animation
         loading: "loading-spinner 1.8s infinite ease-in-out",
+        // Slide from bottom to top
+        "slide-top":
+          "slide-top 0.6s ease-in-out both; animation-delay: calc(var(--dur)*0.3s)", // little hack to attach animation delay to animation
+        // Slide from left to right
+        "slide-right":
+          "slide-right 0.6s ease-in-out both; animation-delay: calc(var(--dur)*0.2s)", // little hack to attach animation delay to animation
       },
       keyframes: {
         // Toys card pulsing animation
@@ -73,6 +79,30 @@ export default {
           "100%": {
             "stroke-dasharray": "1, 98",
             "stroke-dashoffset": "-300",
+          },
+        },
+        // Slide content from bottom to top
+        "slide-top": {
+          "0%": {
+            opacity: 0,
+            transform: "translateY(5em)",
+          },
+
+          "100%": {
+            opacity: 1,
+            transform: "translateY(0)",
+          },
+        },
+        // Slide content from left to right
+        "slide-right": {
+          "0%": {
+            opacity: 0,
+            transform: "translateX(-3em)",
+          },
+
+          "100%": {
+            opacity: 1,
+            transform: "translateX(0)",
           },
         },
       },
