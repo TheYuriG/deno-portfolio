@@ -9,6 +9,8 @@ export default {
         "card-pulse": "card-pulse 1.2s ease-out infinite",
         // Insanity grow and shrink
         grow: "grow 1.2s ease-out infinite",
+        waving: "waving 0.3s linear infinite alternate;",
+        blinking: "blinking 1.5s step-end infinite",
       },
       keyframes: {
         // Toys card pulsing animation
@@ -31,6 +33,24 @@ export default {
 
           "100%": {
             "transform": "scale(1)",
+          },
+        },
+        // Waving emoji for TheYuriG on home page
+        waving: {
+          "0%": {
+            "transform": "translate(10%, 0%) rotate(60deg)",
+          },
+
+          "100%": {
+            "transform": "translate(-10%, 10%) rotate(0deg)",
+          },
+        },
+        blinking: {
+          "0%, 100%": {
+            opacity: 0,
+          },
+          "50%": {
+            opacity: 1,
           },
         },
       },
