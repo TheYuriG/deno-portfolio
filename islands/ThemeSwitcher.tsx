@@ -66,8 +66,7 @@ export default function ThemeSwitcher() {
     return (
       <>
         <button
-          class="flex items-center w-[4em] h-[1.3em] fixed bottom-[2.5em] -rotate-90 translate-x-[-83%] text-xl"
-          style="animation: fadeThemeSwitcherIn 0.3s;"
+          class="flex items-center w-[4em] h-[1.3em] fixed bottom-[2.5em] -rotate-90 translate-x-[-83%] text-xl animate-fade-in"
           onClick={() => setTheme(() => "Dark")}
         >
           <SunIcon iconHeight="1em" iconWidth="1em" />
@@ -80,8 +79,7 @@ export default function ThemeSwitcher() {
     return (
       <>
         <button
-          class="flex items-center w-[4em] h-[1.3em] fixed bottom-[2.5em] -rotate-90 translate-x-[-83%] text-xl"
-          style="animation: fadeThemeSwitcherIn 0.3s;"
+          class="flex items-center w-[4em] h-[1.3em] fixed bottom-[2.5em] -rotate-90 translate-x-[-83%] text-xl animate-fade-in"
           onClick={() => setTheme(() => "Light")}
         >
           <MoonIcon iconHeight="1em" iconWidth="1em" />

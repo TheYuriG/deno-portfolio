@@ -27,6 +27,8 @@ export default {
         "y-spin": "y-rotation 5s linear infinite;",
         // Rotates on Z axis
         "z-spin": "z-rotation 6s linear infinite;",
+        // Fade in animation from opacity
+        "fade-in": "fade-in 0.5s",
       },
       keyframes: {
         // Toys card pulsing animation
@@ -114,31 +116,40 @@ export default {
         // Rotates on X axis
         "x-rotation": {
           "0%": {
-            "transform": "rotateX(0turn)",
+            transform: "rotateX(0turn)",
           },
 
           "100%": {
-            "transform": "rotateX(1turn)",
+            transform: "rotateX(1turn)",
           },
         },
         // Rotates on Y axis
         "y-rotation": {
           "0%": {
-            "transform": "rotateY(0turn)",
+            transform: "rotateY(0turn)",
           },
 
           "100%": {
-            "transform": "rotateY(1turn)",
+            transform: "rotateY(1turn)",
           },
         },
         // Rotates on Z axis
         "z-rotation": {
           "0%": {
-            "transform": "rotateZ(0turn)",
+            transform: "rotateZ(0turn)",
           },
 
           "100%": {
-            "transform": "rotateZ(1turn)",
+            transform: "rotateZ(1turn)",
+          },
+        },
+        // Fade in animation from opacity
+        "fade-in": {
+          "0%": {
+            opacity: 0,
+          },
+          "100%": {
+            opacity: 1,
           },
         },
       },

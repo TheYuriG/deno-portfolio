@@ -91,14 +91,3 @@ main {
     border-radius: 1.5rem;
     transition: border 0.7s ease-in-out 0.3s;
 }
-
-/* Animate the Theme Switcher to fade in gracefully instead of popping in */
-@keyframes fadeThemeSwitcherIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
