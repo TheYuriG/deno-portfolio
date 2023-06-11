@@ -7,6 +7,7 @@ export default function CartIcon(
 ) {
   return (
     <svg
+      class="tr-fi"
       xmlns="http://www.w3.org/2000/svg"
       height={iconHeight ?? "1em"}
       width={iconWidth ?? "1em"}

@@ -7,6 +7,7 @@ export default function InformationIcon(
 ) {
   return (
     <svg
+      class="tr-fi"
       height={iconHeight}
       width={iconWidth}
       fill={iconFillColor ?? "var(--neutral-color)"}
