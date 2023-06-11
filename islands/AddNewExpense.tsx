@@ -309,7 +309,7 @@ export default function AddNewExpenseForm(
           min="2020-01-01"
           max={timezonelessDate}
         />
-        <div style="display: flex; align-self: end;">
+        <div class="flex self-end">
           <StyledButton
             text="Reset & Cancel"
             style="margin-top: 0.5em; margin-right: 2em;"
@@ -331,7 +331,7 @@ export default function AddNewExpenseForm(
         </div>
         {validationError === true && (
           <>
-            <p style="margin-top: 1em;">
+            <p class="mt-4">
               Some fields have invalid data being provided (will display a red
               border), please fix them before submitting! Hover/click the
               information icon on the right side for more information.
@@ -343,7 +343,7 @@ export default function AddNewExpenseForm(
   );
 
   return (
-    <div class="card card-shadow">
+    <div class="bo-nc rounded-xl py-2 px-4 mb-4 sh-nc">
       {
         /* If the user never clicked to display the form or cancelled the form,
         show the button that prompts to display the form */

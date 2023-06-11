@@ -160,5 +160,16 @@ export default {
     pause: {
       "animation-play-state": "paused",
     },
+    "styled-scrollbar": {
+      "&::-webkit-scrollbar-thumb": {
+        "background-color": "transparent",
+        outline: "2px solid var(--accent-color)",
+        "outline-offset": "-0.1rem",
+        "border-radius": "0.3rem",
+      },
+      "&::-webkit-scrollbar": {
+        width: "0.8em",
+      },
+    },
   },
 } as Options;

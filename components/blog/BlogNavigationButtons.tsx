@@ -29,7 +29,7 @@ export default function BlogNavigationButtons(
       </a>
     )
     : (
-      <span style="width: 5rem;"></span> //? Empty span to center the Home button
+      <span class="w-20"></span> //? Empty span to center the Home button
     );
 
   //? Creates a next button if a link is provided, otherwise
@@ -45,7 +45,7 @@ export default function BlogNavigationButtons(
         <ChevronIcon iconHeight="1.8em" iconWidth="1.5em" rotation="180" />
       </a>
     )
-    : <span style="width: 5rem;"></span>; //? Empty span to center the Home button
+    : <span class="w-20"></span>; //? Empty span to center the Home button
 
   return (
     <>

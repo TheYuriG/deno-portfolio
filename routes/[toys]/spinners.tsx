@@ -25,7 +25,7 @@ export default function Home() {
         />
         <article class="flex flex-col w-full h-full max-w-4xl mx-auto items-center">
           <h1 class="f-as my-4 text-2xl lg:text-4xl text-center">Spinners</h1>
-          <p class="my-2" style="margin: 0 auto;">
+          <p class="mx-auto">
             Experimenting with translate3d (hover for information!)
           </p>
           <div class="mb-20 mt-24" id="cubes-container">

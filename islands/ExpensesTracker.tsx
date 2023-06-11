@@ -27,8 +27,8 @@ export default function ExpensesTracker(
   );
 
   return (
-    <div style="width: 100%;">
-      <div class="card card-shadow py-2 px-4 mb-4 flex flex-col items-center">
+    <div class="w-full">
+      <div class="bo-nc rounded-xl py-2 px-4 sh-nc py-2 px-4 mb-4 flex flex-col items-center">
         {/* Displays bars for  */}
         <ExpenseChart year={expensesYear} expenses={expenses} />
         <ExpensesYearSelect
@@ -49,7 +49,7 @@ export default function ExpensesTracker(
           });
         }}
       />
-      <div class="w-full mb-2">
+      <div class="w-full space-y-4">
         {/* Display all expenses filtered */}
         {expenses.map((expense) => (
           <IndividualExpense

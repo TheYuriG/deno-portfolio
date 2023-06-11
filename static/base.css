@@ -1,19 +1,5 @@
 /* Note: Color scheme variables are set on components/base/CustomHead.tsx script tag */
 
-/* Scrollbar styling */
-body::-webkit-scrollbar,
-.styled-scrollbar::-webkit-scrollbar {
-    width: 0.8em;
-}
-
-body::-webkit-scrollbar-thumb,
-.styled-scrollbar::-webkit-scrollbar-thumb {
-    background-color: transparent;
-    outline: 2px solid var(--accent-color);
-    outline-offset: -0.1rem;
-    border-radius: 0.3rem;
-}
-
 /* Expand page to use full screen and set page default font and color scheme */
 html {
     font-family: 'Fragment Mono', monospace;
@@ -51,31 +37,19 @@ html {
     border: 2px solid var(--neutral-color);
 }
 
+/* Create neutral color shadow */
+.sh-nc {
+    box-shadow: 0.1em 0.1em 0.3em var(--neutral-color);
+}
+
 /* Set transition for text, background and border color  */
 .trs {
-    transition: color 0.9s ease-in-out, background-color 0.8s ease-in-out, border-color 0.3s ease-in-out;
+    transition: color 0.9s ease-in-out, background-color 0.8s ease-in-out;
 }
 
 /* Hover styling for navigation menu */
 .nav-l:hover {
     color: var(--accent-color)
-}
-
-/* Define default card styling to be reused */
-.card {
-    padding: 0.5em 1em;
-    border: 2px solid var(--neutral-color);
-    border-radius: 1rem;
-}
-
-/* Add spacing between consecutive cards */
-.card+.card {
-    margin-top: 1em;
-}
-
-/* Define default card shadow */
-.card-shadow {
-    box-shadow: 0.1em 0.1em 0.3em var(--neutral-color);
 }
 
 /* Positioning for the main frame, border color, transition for theme switch */

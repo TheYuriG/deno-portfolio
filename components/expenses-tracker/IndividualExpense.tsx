@@ -15,7 +15,7 @@ export function IndividualExpense(
   return (
     <>
       {/* The entire Expense */}
-      <div class="card card-shadow flex flex-col sm:flex-row sm:w-full my-2 p-2 items-center text-center sm:text-left">
+      <div class="bo-nc rounded-xl sh-nc flex flex-col sm:flex-row sm:w-full my-2 p-2 items-center text-center sm:text-left">
         {/* Expense Date */}
         <ExpenseDate date={date} />
         {/* Expense Description */}

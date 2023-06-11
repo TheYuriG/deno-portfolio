@@ -80,7 +80,7 @@
 //             {...contentParser(savedPost.content)}
 //           </div>
 //           {/* Post author */}
-//           <footer class="mt-auto w-full text-right text-sm" style="margin-top: auto;">
+//           <footer class="mt-auto w-full text-right text-sm mt-auto">
 //             {savedPost.author}
 //           </footer>
 //         </article>

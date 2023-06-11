@@ -19,7 +19,7 @@ export default function ModalExtendedImage(
   return (
     <>
       <div
-        class="backdrop-overlay"
+        class="backdrop-overlay bg-black/80"
         style="background-color: rgba(0, 0, 0, 0.8);"
         onClick={closeModalFunction}
       >

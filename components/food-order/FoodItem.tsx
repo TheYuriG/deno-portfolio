@@ -24,7 +24,7 @@ export function FoodItem(
 ) {
   return (
     //? Whole card
-    <div class="bo-nc rounded-xl mt-2 flex flex-col sm:flex-row sm:pb-0 sm:pr-2 items-center min-h-32 w-full p-0 pb-4 bg-bc overflow-hidden trs">
+    <div class="bo-nc rounded-xl mt-2 flex flex-col sm:flex-row  items-center min-h-32 w-full pb-4 sm:pb-0 sm:pr-2 bg-bc overflow-hidden trs">
       {/* Food image */}
       <img
         class="max-h-60 sm:h-32 sm:w-40 object-cover flex-shrink-0 hover:cursor-pointer"
