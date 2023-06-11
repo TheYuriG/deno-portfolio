@@ -34,7 +34,7 @@ export default function CartModal({
   if (items.size === 0) {
     return (
       <div class="flex flex-col w-full p-3">
-        <span class="text-bold my-2 text-center text-3xl">
+        <span class="text-bold my-2 text-center text-3xl f-as">
           No items in your cart yet!
         </span>
         <StyledButton
@@ -53,7 +53,7 @@ export default function CartModal({
   return (
     <div class="flex flex-col p-3 w-fit max-w-[90dvw] max-h-[90dvh]">
       {/* Modal header */}
-      <h2 class="text-bold my-2 min-w-max text-center text-3xl">
+      <h2 class="text-bold my-2 min-w-max text-center text-3xl f-as">
         Cart items
       </h2>
       {/* List of items in cart */}
@@ -68,7 +68,7 @@ export default function CartModal({
               </h3>
               {/* Remove item completely from cart */}
               <span
-                class="hover:cursor-pointer"
+                class="hover:cursor-pointer select-none"
                 onClick={() => {
                   deleteItemFromCart({
                     foodName,
@@ -89,7 +89,7 @@ export default function CartModal({
               </span>
             </div>
             {/* Food item count, update cart item count */}
-            <div class="mt-2 inline-flex items-center self-end pr-1">
+            <div class="mt-2 inline-flex items-center self-end pr-1 select-none">
               {/* Decrease item count. If last item, remove it from the cart */}
               <span
                 class="mr-2 hover:cursor-pointer"
