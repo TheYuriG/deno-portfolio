@@ -16,7 +16,6 @@ export default function Home() {
         description="Various experimentations over things I've seen online."
         link="https://www.theyurig.com/toys"
       >
-        <link rel="stylesheet" href="/toys.css" />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
@@ -33,31 +32,22 @@ export default function Home() {
           </details>
           <div class="flex overflow-auto">
             <CarouselCard link="/toys/spinners" title="Spinners">
-              <div
-                class="relative text-4xl select-none space-y-4"
-                style="transform-style: preserve-3d;"
-              >
+              <div class="relative text-4xl select-none space-y-4">
                 <div
-                  id="x-spin"
-                  class="relative pause"
+                  class="animate-x-spin"
                   title="Spinning on the X axis"
-                  style="transform: translate3d(0em, 0em, 0em)"
                 >
                   🌀
                 </div>
                 <div
-                  id="y-spin"
-                  class="relative"
+                  class="animate-y-spin"
                   title="Spinning on the Y axis"
-                  style="transform: translate3d(0em, 0em, 0em)"
                 >
                   🌀
                 </div>
                 <div
-                  id="z-spin"
-                  class="relative"
+                  class="animate-z-spin"
                   title="Spinning on the Z axis"
-                  style="transform: translate3d(0em, 0em, 0em)"
                 >
                   🌀
                 </div>

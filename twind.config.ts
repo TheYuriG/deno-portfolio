@@ -21,6 +21,12 @@ export default {
         // Slide from left to right
         "slide-right":
           "slide-right 0.6s ease-in-out both; animation-delay: calc(var(--dur)*0.2s)", // little hack to attach animation delay to animation
+        // Rotates on X axis
+        "x-spin": "x-rotation 4s linear infinite;",
+        // Rotates on Y axis
+        "y-spin": "y-rotation 5s linear infinite;",
+        // Rotates on Z axis
+        "z-spin": "z-rotation 6s linear infinite;",
       },
       keyframes: {
         // Toys card pulsing animation
@@ -103,6 +109,36 @@ export default {
           "100%": {
             opacity: 1,
             transform: "translateX(0)",
+          },
+        },
+        // Rotates on X axis
+        "x-rotation": {
+          "0%": {
+            "transform": "rotateX(0turn)",
+          },
+
+          "100%": {
+            "transform": "rotateX(1turn)",
+          },
+        },
+        // Rotates on Y axis
+        "y-rotation": {
+          "0%": {
+            "transform": "rotateY(0turn)",
+          },
+
+          "100%": {
+            "transform": "rotateY(1turn)",
+          },
+        },
+        // Rotates on Z axis
+        "z-rotation": {
+          "0%": {
+            "transform": "rotateZ(0turn)",
+          },
+
+          "100%": {
+            "transform": "rotateZ(1turn)",
           },
         },
       },
