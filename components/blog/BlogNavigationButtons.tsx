@@ -9,7 +9,7 @@ interface BlogNavigationButtonProperties {
 }
 
 //? Reused classes for all navigation buttons
-const navigationClasses = "group flex items-center text-xl trs nav-l";
+const navigationClasses = "group flex items-center text-xl hover:tx-ac tr-tx";
 
 //? Exports Navigation Buttons to go to the previous page and next Article
 export default function BlogNavigationButtons(

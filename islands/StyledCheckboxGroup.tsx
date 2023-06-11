@@ -35,7 +35,7 @@ export default function StyledCheckboxGroup({
         {label}
       </span>
       <div
-        class="p-2 bg-bc bo-ac rounded-xl flex flex-col space-x-2 sm:flex-row w-min sm:w-max sm:ml-2 flex-wrap place-content-center trs"
+        class="p-2 bg-bc bo-ac rounded-xl flex flex-col space-x-2 sm:flex-row w-min sm:w-max sm:ml-2 flex-wrap place-content-center tr-txbgbo"
         style={validationReference === validationStatus.Invalid
           ? "border-color: red;"
           : undefined}

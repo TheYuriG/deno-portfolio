@@ -31,7 +31,7 @@ export default function StyledSelect({
       </label>
       {/* Select dropdown */}
       <select
-        class="relative w-full bg-transparent bo-ac rounded-lg p-2 my-2 sm:my-1 sm:ml-2 text-lg cursor-pointer co-nc trs"
+        class="relative w-full bg-transparent bo-ac rounded-lg p-2 my-2 sm:my-1 sm:ml-2 text-lg cursor-pointer co-nc tr-txbgbo"
         style={validationReference === validationStatus.Valid
           ? "border-color: green;"
           : validationReference === validationStatus.Invalid

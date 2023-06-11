@@ -155,11 +155,15 @@ export default {
   },
   // Custom classes
   plugins: {
+    // Animation delay for items sliding to right
     "delay-slide-right": { "animation-delay": "calc(var(--dur)*0.2s)" },
+    // Animation delay for items sliding to top
     "delay-slide-top": { "animation-delay": "calc(var(--dur)*0.3s)" },
+    // Animation pause
     pause: {
       "animation-play-state": "paused",
     },
+    // Style scrollbar width and colors
     "styled-scrollbar": {
       "&::-webkit-scrollbar-thumb": {
         "background-color": "transparent",
@@ -170,6 +174,79 @@ export default {
       "&::-webkit-scrollbar": {
         width: "0.8em",
       },
+    },
+    // Accent border
+    "bo-ac": {
+      border: "2px solid var(--accent-color)",
+    },
+    // Base border
+    "bo-bc": {
+      border: "2px solid var(--base-color)",
+    },
+    // Neutral border
+    "bo-nc": {
+      border: "2px solid var(--neutral-color)",
+    },
+    // Accent box shadow
+    "sh-ac": {
+      "box-shadow": "0.1em 0.1em 0.3em var(--accent-color)",
+    },
+    // Base box shadow
+    "sh-bc": {
+      "box-shadow": "0.1em 0.1em 0.3em var(--base-color)",
+    },
+    // Neutral box shadow
+    "sh-nc": {
+      "box-shadow": "0.1em 0.1em 0.3em var(--neutral-color)",
+    },
+    // Accent text
+    "tx-ac": {
+      color: "var(--accent-color)",
+    },
+    // Base text
+    "tx-bc": {
+      color: "var(--base-color)",
+    },
+    // Neutral text
+    "tx-nc": {
+      color: "var(--neutral-color)",
+    },
+    // Accent background
+    "bg-ac": {
+      "background-color": "var(--accent-color)",
+    },
+    // Base background
+    "bg-bc": {
+      "background-color": "var(--base-color)",
+    },
+    // Neutral background
+    "bg-nc": {
+      "background-color": "var(--neutral-color)",
+    },
+    // Change font to custom Alfa Slab One
+    "f-as": {
+      "font-family": "'Alfa Slab One', cursive",
+    },
+    // Define text color transition
+    "tr-tx": {
+      transition: "color 0.9s ease-in-out",
+    },
+    // Define background color transition
+    "tr-bg": {
+      transition: "background-color 0.8s ease-in-out",
+    },
+    // Define border color transition
+    "tr-bo": {
+      transition: "border 0.6s ease-in-out",
+    },
+    // Define fill color transition
+    "tr-fi": {
+      transition: "fill 0.9s ease-in-out",
+    },
+    // Define text color and background color transition
+    "tr-txbgbo": {
+      transition:
+        "color 0.9s ease-in-out, background-color 0.8s ease-in-out,border 0.6s ease-in-out",
     },
   },
 } as Options;

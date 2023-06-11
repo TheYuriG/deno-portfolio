@@ -7,51 +7,6 @@ html {
     color: var(--neutral-color);
 }
 
-/* Secondary font for titles */
-.f-as {
-    font-family: 'Alfa Slab One', cursive;
-}
-
-/* Apply neutral color to background-color */
-.bg-nc {
-    background-color: var(--neutral-color);
-}
-
-/* Apply base color to background-color */
-.bg-bc {
-    background-color: var(--base-color);
-}
-
-/* Apply accent color to background-color */
-.bg-ac {
-    background-color: var(--accent-color);
-}
-
-/* Create accent color border */
-.bo-ac {
-    border: 2px solid var(--accent-color);
-}
-
-/* Create neutral color border */
-.bo-nc {
-    border: 2px solid var(--neutral-color);
-}
-
-/* Create neutral color shadow */
-.sh-nc {
-    box-shadow: 0.1em 0.1em 0.3em var(--neutral-color);
-}
-
-/* Set transition for text, background and border color  */
-.trs {
-    transition: color 0.9s ease-in-out, background-color 0.8s ease-in-out;
-}
-
-/* Hover styling for navigation menu */
-.nav-l:hover {
-    color: var(--accent-color)
-}
-
 /* Positioning for the main frame, border color, transition for theme switch */
 main {
     --main-padding: 1rem;

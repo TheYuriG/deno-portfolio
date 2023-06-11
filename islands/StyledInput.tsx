@@ -68,7 +68,7 @@ export default function StyledInput(
             //! Reference: https://www.w3schools.com/tags/tag_input.asp
             type={inputType}
             //? Base class + validation class if needed
-            class="w-full p-2 bg-bc rounded-xl grow caret-current my-1 mr-2 sm:my-1 sm:mx-2 bo-ac trs"
+            class="w-full p-2 bg-bc rounded-xl grow caret-current my-1 mr-2 sm:my-1 sm:mx-2 bo-ac tr-txbgbo"
             style={validationReference === validationStatus.Valid
               ? "border-color: green;"
               : validationReference === validationStatus.Invalid

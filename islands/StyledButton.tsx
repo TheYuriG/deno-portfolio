@@ -14,7 +14,7 @@ export default function StyledButton({
 }: ButtonProperties) {
   return (
     <button
-      class="styled-button trs"
+      class="styled-button tr-txbgbo"
       onClick={(event) => {
         event.preventDefault();
         if (onClickFunction) {

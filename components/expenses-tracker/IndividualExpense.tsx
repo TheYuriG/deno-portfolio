@@ -23,7 +23,7 @@ export function IndividualExpense(
           {description}
         </div>
         {/* Expense Price */}
-        <div class="text-2xl py-0.5 px-2 tc-nc bg-ac bo-nc rounded-lg trs">
+        <div class="text-2xl py-0.5 px-2 tc-nc bg-ac bo-nc rounded-lg tr-txbgbo">
           ${cost.toLocaleString()}
         </div>
       </div>

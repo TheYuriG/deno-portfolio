@@ -430,7 +430,7 @@ export default function FormWithValidation() {
       </form>
       {/* Text Area that will hold all sent information */}
       <textarea
-        class="h-[16.5em] w-full p-2 bg-bc bo-ac rounded-l-2xl ph-nc t-bg styled-scrollbar"
+        class="h-[16.5em] w-full p-2 bg-bc bo-ac rounded-l-2xl ph-nc styled-scrollbar tr-txbgbo"
         name="formInput"
         id="form"
         placeholder={sumOfAllInputs.length > 0
