@@ -15,7 +15,6 @@ export default function Home() {
         description="Work that I've done for people in the past."
         link="https://www.theyurig.com/work"
       >
-        <link rel="stylesheet" href="/gradient-underline.css" />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>

@@ -248,5 +248,22 @@ export default {
       transition:
         "color 0.9s ease-in-out, background-color 0.8s ease-in-out,border 0.6s ease-in-out",
     },
+    "gradient-underline": {
+      "&": {
+        display: "inline-block",
+        position: "relative",
+        "text-decoration": "none",
+        transition: "color ease-in-out 0.5s",
+      },
+      "&:hover": { color: "var(--accent-color)" },
+      "&:before": {
+        content: "''",
+        position: "absolute",
+        bottom: "-0.05em",
+        width: "100%",
+        height: "3px",
+        background: "linear-gradient(111.3deg, #9c27b0 9.6%, #00bcd4 93.6%)",
+      },
+    },
   },
 } as Options;

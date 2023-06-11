@@ -15,7 +15,6 @@ export default function Home() {
         description="Some details on who is the person behind TheYuriG."
         link="https://www.theyurig.com/me"
       >
-        <link rel="stylesheet" href="/gradient-underline.css" />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>

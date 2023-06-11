@@ -14,7 +14,6 @@ export default function Home() {
         link="https://www.theyurig.com/this"
       >
         <link rel="stylesheet" href="/this.css" />
-        <link rel="stylesheet" href="/gradient-underline.css" />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
@@ -59,7 +58,7 @@ export default function Home() {
             . It was built using Deno, Fresh, Preact and Typescript.
           </p>
           <img
-            class="blog-image"
+            class="h-40 w-40 m-4"
             src="https://deno-pt.vercel.app/images/deno_logo_4.gif"
             alt="Deno in the rain (pixelated)"
             title="Deno artwork by tanakaworld"
@@ -83,7 +82,7 @@ export default function Home() {
             has built-in support for Typescript right out-of-the-box.
           </p>
           <img
-            class="blog-image"
+            class="h-40 w-40 m-4"
             src="https://fresh.deno.dev/logo.svg?__frsh_c=414f858427046bd41a702d524fadc4215ab7180f"
             alt="Fresh logo"
             title="Fresh, the default no-build, Typescript supported Full-Stack framework"
@@ -105,7 +104,7 @@ export default function Home() {
             architecture.
           </p>
           <img
-            class="blog-image"
+            class="h-40 w-40 m-4"
             src="https://preactjs.com/assets/branding/symbol.png"
             alt="Preact logo"
             title="Preact, the lightweight, drop-in alternative for React"
@@ -116,7 +115,7 @@ export default function Home() {
             (another one!) and can do nearly anything that normal React could.
           </p>
           <img
-            class="blog-image"
+            class="h-40 w-40 m-4"
             src="https://twind.dev/assets/twind-logo-animated.svg"
             alt="Twind logo"
             title="Twind, fastest tailwind-in-js solution in existence"

@@ -15,7 +15,6 @@ export default function Home() {
         description="A guide on how to create your own Theme Switcher using Deno and Fresh"
         link="https://www.theyurig.com/blog/how-create-theme-switcher-deno-fresh"
       >
-        <link rel="stylesheet" href="/gradient-underline.css" />
         <link rel="stylesheet" href="/syntax-highlighting.css" />
         {
           /* Syntax highlight for code. How can we do this better

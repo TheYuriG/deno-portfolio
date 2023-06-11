@@ -15,7 +15,6 @@ export default function Home() {
         description="A guide on how to make your Theme Switcher to no longer flicker when the page loads."
         link="https://www.theyurig.com/blog/stopping-theme-flickering-deno-fresh"
       >
-        <link rel="stylesheet" href="/gradient-underline.css" />
         <link rel="stylesheet" href="/syntax-highlighting.css" />
         {
           /* Syntax highlight for code. How can we do this better

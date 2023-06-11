@@ -15,7 +15,6 @@ export default function Home() {
         description="A small gallery of my feats."
         link="https://www.theyurig.com/certificates"
       >
-        <link rel="stylesheet" href="/gradient-underline.css" />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>

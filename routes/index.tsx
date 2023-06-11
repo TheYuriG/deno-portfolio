@@ -20,7 +20,6 @@ export default function Home() {
         <link rel="stylesheet" href="/home.css" />
         <link rel="stylesheet" href="/starry-night.css" />
         <link rel="stylesheet" href="/animate.css" />
-        <link rel="stylesheet" href="/gradient-underline.css" />
       </CustomHead>
       {/* Starry Night background <3 */}
       <StarryNight />
