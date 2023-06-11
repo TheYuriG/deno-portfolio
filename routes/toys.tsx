@@ -34,19 +34,19 @@ export default function Home() {
             <CarouselCard link="/toys/spinners" title="Spinners">
               <div class="relative text-4xl select-none space-y-4">
                 <div
-                  class="animate-x-spin"
+                  class="animate-x-spin hover:pause"
                   title="Spinning on the X axis"
                 >
                   🌀
                 </div>
                 <div
-                  class="animate-y-spin"
+                  class="animate-y-spin hover:pause"
                   title="Spinning on the Y axis"
                 >
                   🌀
                 </div>
                 <div
-                  class="animate-z-spin"
+                  class="animate-z-spin hover:pause"
                   title="Spinning on the Z axis"
                 >
                   🌀

@@ -16,11 +16,9 @@ export default {
         // Loading spinner animation
         loading: "loading-spinner 1.8s infinite ease-in-out",
         // Slide from bottom to top
-        "slide-top":
-          "slide-top 0.6s ease-in-out both; animation-delay: calc(var(--dur)*0.3s)", // little hack to attach animation delay to animation
+        "slide-top": "slide-top 0.6s ease-in-out both", // little hack to attach animation delay to animation
         // Slide from left to right
-        "slide-right":
-          "slide-right 0.6s ease-in-out both; animation-delay: calc(var(--dur)*0.2s)", // little hack to attach animation delay to animation
+        "slide-right": "slide-right 0.6s ease-in-out both", // little hack to attach animation delay to animation
         // Rotates on X axis
         "x-spin": "x-rotation 4s linear infinite;",
         // Rotates on Y axis
@@ -153,6 +151,14 @@ export default {
           },
         },
       },
+    },
+  },
+  // Custom classes
+  plugins: {
+    "delay-slide-right": { "animation-delay": "calc(var(--dur)*0.2s)" },
+    "delay-slide-top": { "animation-delay": "calc(var(--dur)*0.3s)" },
+    pause: {
+      "animation-play-state": "paused",
     },
   },
 } as Options;

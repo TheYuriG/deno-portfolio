@@ -2,12 +2,15 @@ export function HomeContent() {
   return (
     <>
       {/* Greeting */}
-      <h1 class="inline-block text-4xl animate-slide-top" style="--dur: 0;">
+      <h1
+        class="inline-block text-4xl animate-slide-top delay-slide-top"
+        style="--dur: 0;"
+      >
         Hello!
       </h1>
       {/* Name */}
       <p
-        class="block text-2xl ml-4 animate-slide-top group"
+        class="block text-2xl ml-4 animate-slide-top delay-slide-top group"
         style="--dur: 0.5;"
       >
         I am{" "}
@@ -19,11 +22,17 @@ export function HomeContent() {
         </strong>
       </p>
       {/* Skillset */}
-      <p class="block text-2xl ml-8 animate-slide-top" style="--dur: 1;">
+      <p
+        class="block text-2xl ml-8 animate-slide-top delay-slide-top"
+        style="--dur: 1;"
+      >
         Sky afficionado, gym rat, full stack developer
       </p>
       {/* Role */}
-      <p class="block ml-12 animate-slide-top" style="--dur: 1.5;">
+      <p
+        class="block ml-12 animate-slide-top delay-slide-top"
+        style="--dur: 1.5;"
+      >
         Building the next-gen Trophy Hunting website at{" "}
         <a href="https://trophy.place" target="_blank" class="pretty-link">
           Trophy Place
