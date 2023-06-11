@@ -307,5 +307,18 @@ export default {
         transform: "translateY(-0.15em)",
       },
     },
+    // Styled button
+    "bu-st": {
+      "&": {
+        "box-shadow": "0.1em 0.2em var(--accent-color)",
+        "text-shadow": "0.05em 0.05em 0 var(--accent-color)",
+        "transition":
+          "background-color 0.8s ease-in-out, color 0.9s, box-shadow 0.4s, border 0.8s, text-shadow 0.4s",
+      },
+      "&:focus,&:hover": {
+        "box-shadow": "0.1em 0.2em var(--neutral-color)",
+        "text-shadow": "0.05em 0.05em 0 var(--neutral-color)",
+      },
+    },
   },
 } as Options;

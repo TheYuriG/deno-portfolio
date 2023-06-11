@@ -14,7 +14,7 @@ export default function StyledButton({
 }: ButtonProperties) {
   return (
     <button
-      class="styled-button tr-txbgbo"
+      class="py-1.5 px-2.5 bu-st tx-nc bo-nc hover:(tx-ac bo-ac) bg-bc rounded-xl"
       onClick={(event) => {
         event.preventDefault();
         if (onClickFunction) {
