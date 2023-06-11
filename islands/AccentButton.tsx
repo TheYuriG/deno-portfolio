@@ -19,7 +19,7 @@ export default function AccentButton({
   return (
     <button
       //? Apply default styling
-      class="flex py-1 px-2 items-center bg-ac bo-nc rounded-2xl bu-ac tr-txbgbo"
+      class="flex py-1 px-2 items-center bg-ac bo-nc rounded-2xl bu-ac"
       //? Apply additional styling, if provided
       style={style}
       //? When clicked, run provided function

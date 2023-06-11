@@ -294,5 +294,18 @@ export default {
         "text-decoration-thickness": "0.3em",
       },
     },
+    // Accent button
+    "bu-ac": {
+      "&": {
+        transition:
+          "box-shadow 0.4s ease-in-out,transform 0.4s ease-in-out,color 0.9s ease-in-out,background-color 0.8s ease-in-out,border 0.6s ease-in-out",
+      },
+      "&:focus,&:hover": {
+        /* X-axis, Y-axis (needs to match translateY!), blur, color */
+        "box-shadow": "0em 0.15em 0.1em var(--neutral-color)",
+        /* Elevate button, must match Y-axis shadow above! */
+        transform: "translateY(-0.15em)",
+      },
+    },
   },
 } as Options;
