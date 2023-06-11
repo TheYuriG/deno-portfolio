@@ -1,3 +1,5 @@
+import { GradientLink } from "../base/GradientLink.tsx";
+
 export function HomeContent() {
   return (
     <>
@@ -34,9 +36,11 @@ export function HomeContent() {
         style="--dur: 1.5;"
       >
         Building the next-gen Trophy Hunting website at{" "}
-        <a href="https://trophy.place" target="_blank" class="pretty-link">
-          Trophy Place
-        </a>{" "}
+        <GradientLink
+          content="Trophy Place"
+          link="https://trophy.place"
+          newTab={true}
+        />{" "}
         and blogging
         {/* Blinking caret */}
         <svg

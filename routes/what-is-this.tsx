@@ -2,6 +2,7 @@
 import { Base } from "../components/base/Base.tsx";
 //? Import CustomHead with appropriate metadata
 import { CustomHead } from "../components/base/CustomHead.tsx";
+import { GradientLink } from "../components/base/GradientLink.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
 import BlogNavigationButtons from "../components/blog/BlogNavigationButtons.tsx";
 
@@ -40,21 +41,17 @@ export default function Home() {
           <h1 class="f-as my-4 text-4xl text-center">Ok, so what is this?</h1>
           <p class="text-justify">
             This website is meant to be an outlet for my{" "}
-            <a
-              class="gradient-underline"
-              href="/blog"
-              target="_blank"
-            >
-              thoughts
-            </a>{" "}
+            <GradientLink
+              content="thoughts"
+              link="/blog"
+              newTab={true}
+            />{" "}
             and{" "}
-            <a
-              class="gradient-underline"
-              href="/toys"
-              target="_blank"
-            >
-              creative expression
-            </a>
+            <GradientLink
+              content="creative expression"
+              link="/toys"
+              newTab={true}
+            />
             . It was built using Deno, Fresh, Preact and Typescript.
           </p>
           <img
@@ -70,14 +67,12 @@ export default function Home() {
             chose to use Deno, however, is for enabling me able to write
             Typescript code without needing to transpile it back to Javascript
             before deployment. For reference,{" "}
-            <a
-              class="gradient-underline"
-              href="https://bun.sh/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Bun
-            </a>{" "}
+            <GradientLink
+              content="Bun"
+              link="https://bun.sh/"
+              newTab={true}
+              customRel="noopener noreferrer"
+            />{" "}
             also allows developers to run Typescript natively since that also
             has built-in support for Typescript right out-of-the-box.
           </p>
@@ -93,14 +88,12 @@ export default function Home() {
             out-of-the-box Typescript support (are you seeing a pattern here?),
             zero-configuration, and ships static HTML pages to the client with 0
             JS unless you explicitly want to ship it using the{" "}
-            <a
-              class="gradient-underline"
-              href="https://www.patterns.dev/posts/islands-architecture"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Islands
-            </a>{" "}
+            <GradientLink
+              content="Islands"
+              link="https://www.patterns.dev/posts/islands-architecture"
+              newTab={true}
+              customRel="noopener noreferrer"
+            />{" "}
             architecture.
           </p>
           <img

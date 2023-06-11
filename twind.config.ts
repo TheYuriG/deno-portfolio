@@ -248,6 +248,7 @@ export default {
       transition:
         "color 0.9s ease-in-out, background-color 0.8s ease-in-out,border 0.6s ease-in-out",
     },
+    // Create a gradient underline below a link
     "gradient-underline": {
       "&": {
         display: "inline-block",
@@ -255,7 +256,6 @@ export default {
         "text-decoration": "none",
         transition: "color ease-in-out 0.5s",
       },
-      "&:hover": { color: "var(--accent-color)" },
       "&:before": {
         content: "''",
         position: "absolute",

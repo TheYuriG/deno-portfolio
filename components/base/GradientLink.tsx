@@ -14,7 +14,7 @@ export function GradientLink(
 ) {
   return (
     <a
-      class="gradient-underline"
+      class="gradient-underline hover:tx-ac"
       href={link}
       title={title}
       target={newTab ? "_blank" : "_self"}
