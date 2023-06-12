@@ -27,6 +27,8 @@ export default {
         "z-spin": "z-rotation 6s linear infinite;",
         // Fade in animation from opacity
         "fade-in": "fade-in 0.5s",
+        // Pulsing animation for adding new items to the shopping cart
+        "pulsing-cart": "shopping-cart-pulse 0.3s ease-in-out",
       },
       keyframes: {
         // Toys card pulsing animation
@@ -148,6 +150,20 @@ export default {
           },
           "100%": {
             opacity: 1,
+          },
+        },
+        // Pulse animation, grow 10% then shrink back to original
+        "shopping-cart-pulse": {
+          "0%": {
+            transform: "scale(1)",
+          },
+
+          "70%": {
+            transform: "scale(1.1)",
+          },
+
+          "100%": {
+            transform: "scale(1)",
           },
         },
       },

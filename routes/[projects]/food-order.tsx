@@ -46,7 +46,6 @@ export default function Home(
         <link rel="stylesheet" href="/form.css" />
         <link rel="stylesheet" href="/styled-button.css" />
         <link rel="stylesheet" href="/accent-button.css" />
-        <link rel="stylesheet" href="/animate-pulse.css" />
         <link rel="stylesheet" href="/modal.css" />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
