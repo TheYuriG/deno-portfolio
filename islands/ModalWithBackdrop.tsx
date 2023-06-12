@@ -22,7 +22,7 @@ export default function ModalWithBackdrop(
     <>
       <div class="backdrop-overlay" onClick={closeModalFunction}>
       </div>
-      <div class="bo-nc rounded-xl py-2 px-4 sh-nc modal">
+      <div class="custom-bo-nc rounded-xl py-2 px-4 custom-sh-nc modal">
         {children}
       </div>
     </>

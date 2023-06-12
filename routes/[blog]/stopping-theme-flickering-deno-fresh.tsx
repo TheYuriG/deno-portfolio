@@ -45,7 +45,7 @@ export default function Home() {
           }}
         />
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
-          <h1 class="thick-ac-underline hover:tx-ac f-as my-4 text-2xl lg:text-4xl text-center">
+          <h1 class="custom-underline-thick hover:custom-tx-ac f-as my-4 text-2xl lg:text-4xl text-center">
             How to stop Theme flickering in Fresh
           </h1>
           {/* Post creation date */}
@@ -78,7 +78,7 @@ export default function Home() {
             understand why they happened in the first place.
           </p>
           {/* Heading and image introducing to next topic */}
-          <h2 class="thick-ac-underline hover:tx-ac text-3xl my-2 f-as">
+          <h2 class="custom-underline-thick hover:custom-tx-ac text-3xl my-2 f-as">
             The Island Architecture
           </h2>
           <img
@@ -144,7 +144,7 @@ export default function Home() {
             not exactly...
           </p>
           {/* Main content start */}
-          <h2 class="thick-ac-underline hover:tx-ac text-3xl my-2 f-as">
+          <h2 class="custom-underline-thick hover:custom-tx-ac text-3xl my-2 f-as">
             Opting out of the Islands Architecture
           </h2>
           <p class="my-2 text-justify">
@@ -176,7 +176,7 @@ export default function Home() {
           </p>
           {/* Script tag warning */}
           {/*  */}
-          <h2 class="thick-ac-underline hover:tx-ac text-3xl my-2 f-as">
+          <h2 class="custom-underline-thick hover:custom-tx-ac text-3xl my-2 f-as">
             Adding a script file to every response
           </h2>
           <p class="my-2 text-justify">
@@ -311,7 +311,7 @@ useEffect(() => {
             initial load.
           </p>
           {/* Alternative options to this */}
-          <h2 class="thick-ac-underline hover:tx-ac text-3xl my-2 f-as">
+          <h2 class="custom-underline-thick hover:custom-tx-ac text-3xl my-2 f-as">
             Alternatives to using script tags
           </h2>
           <p class="my-2 text-justify">

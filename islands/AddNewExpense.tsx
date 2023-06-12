@@ -343,7 +343,7 @@ export default function AddNewExpenseForm(
   );
 
   return (
-    <div class="bo-nc rounded-xl py-2 px-4 mb-4 sh-nc">
+    <div class="flex justify-center custom-bo-nc rounded-xl p-4 mb-4 custom-sh-nc">
       {
         /* If the user never clicked to display the form or cancelled the form,
         show the button that prompts to display the form */
@@ -351,7 +351,6 @@ export default function AddNewExpenseForm(
       {!displayForm && (
         <StyledButton
           text="Add new expense?"
-          style="margin: 0.5em auto;"
           onClickFunction={() => {
             showOrHideForm(true);
           }}

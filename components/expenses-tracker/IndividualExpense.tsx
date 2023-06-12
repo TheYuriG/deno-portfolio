@@ -15,7 +15,7 @@ export function IndividualExpense(
   return (
     <>
       {/* The entire Expense */}
-      <div class="bo-nc rounded-xl sh-nc flex flex-col sm:flex-row sm:w-full my-2 p-2 items-center text-center sm:text-left">
+      <div class="custom-bo-nc rounded-xl custom-sh-nc flex flex-col sm:flex-row sm:w-full my-2 p-2 items-center text-center sm:text-left">
         {/* Expense Date */}
         <ExpenseDate date={date} />
         {/* Expense Description */}
@@ -23,7 +23,7 @@ export function IndividualExpense(
           {description}
         </div>
         {/* Expense Price */}
-        <div class="text-2xl py-0.5 px-2 tc-nc bg-ac bo-nc rounded-lg tr-txbgbo">
+        <div class="text-2xl py-0.5 px-2 tc-nc custom-bg-ac custom-bo-nc rounded-lg custom-tr-txbgbo">
           ${cost.toLocaleString()}
         </div>
       </div>

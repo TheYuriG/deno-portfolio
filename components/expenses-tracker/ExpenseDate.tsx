@@ -19,7 +19,7 @@ export function ExpenseDate(
   });
 
   return (
-    <div class="flex flex-col items-center min-w-[7.5em] py-1 px-2 sm:mr-2 bo-nc rounded-lg">
+    <div class="flex flex-col items-center min-w-[7.5em] py-1 px-2 sm:mr-2 custom-bo-nc rounded-lg">
       {/* Month, bolded, big font */}
       <div class="font-bold text-lg">{expenseMonth}</div>
       {/* Day, bolded, bigger font */}

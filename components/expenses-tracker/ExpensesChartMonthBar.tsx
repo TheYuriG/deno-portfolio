@@ -25,10 +25,10 @@ export default function ExpensesChartMonthBar(
       title={`Spent in ${label}: $${cost.toLocaleString()} (${percentageOfYearExpenses} of $${maxCost.toLocaleString()})`}
     >
       {/* Content bar */}
-      <div class="h-40 w-8 mb-2 flex flex-col place-content-end bo-ac rounded-2xl overflow-hidden">
+      <div class="h-40 w-8 mb-2 flex flex-col place-content-end custom-bo-ac rounded-2xl overflow-hidden">
         {/* Bar fill */}
         <div
-          class="w-full bg-nc"
+          class="w-full custom-bg-nc"
           //? Limit the fill height according to this month's expenses
           //? percent relative to the year
           style={{

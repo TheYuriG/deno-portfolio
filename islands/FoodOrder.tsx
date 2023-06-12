@@ -126,7 +126,7 @@ export default function FoodOrder({ foods }: FoodOrderProperties) {
   }, [pulseState]);
 
   return (
-    <section class="flex flex-col bo-ac rounded-2xl px-1 pb-4">
+    <section class="flex flex-col custom-bo-ac rounded-2xl px-1 pb-4">
       {/* Cart modal with currently selected food items, if any */}
       <ModalWithBackdrop
         display={displayModal}

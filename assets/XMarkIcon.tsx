@@ -8,7 +8,7 @@ export default function XMarkIcon(
 ) {
   return (
     <svg
-      class="tr-fi"
+      class="custom-tr-fi"
       xmlns="http://www.w3.org/2000/svg"
       height={iconHeight}
       width={iconWidth}

@@ -18,7 +18,7 @@ export function CarouselCard(
     // Link
     <a href={link}>
       <div
-        class="flex flex-col m-2 h-[25em] w-60 bo-nc rounded-3xl hover:animate-card-pulse"
+        class="flex flex-col m-2 h-[25em] w-60 custom-bo-nc rounded-3xl hover:animate-card-pulse"
         style="border-width: 0.25em;"
       >
         {/* Centered heading */}

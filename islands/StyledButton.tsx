@@ -14,7 +14,7 @@ export default function StyledButton({
 }: ButtonProperties) {
   return (
     <button
-      class="py-1.5 px-2.5 bu-st tx-nc bo-nc hover:(tx-ac bo-ac) bg-bc rounded-xl"
+      class="w-max py-1.5 px-2.5 custom-button-st custom-tx-nc custom-bo-nc hover:(custom-tx-ac custom-bo-ac) custom-bg-bc rounded-xl"
       onClick={(event) => {
         event.preventDefault();
         if (onClickFunction) {

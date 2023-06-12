@@ -7,14 +7,14 @@ interface GradientLinkProperties {
   content: string;
 }
 
-//? Exports an anchor tag with default styling for gradient-underline, while
+//? Exports an anchor tag with default styling for custom-underline-gradient, while
 //? using the other attributes provided
 export function GradientLink(
   { link, title, newTab = true, customRel, content }: GradientLinkProperties,
 ) {
   return (
     <a
-      class="gradient-underline hover:tx-ac"
+      class="custom-underline-gradient hover:custom-tx-ac"
       href={link}
       title={title}
       target={newTab ? "_blank" : "_self"}

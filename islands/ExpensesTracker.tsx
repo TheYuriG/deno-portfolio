@@ -28,7 +28,7 @@ export default function ExpensesTracker(
 
   return (
     <div class="w-full">
-      <div class="bo-nc rounded-xl py-2 px-4 sh-nc py-2 px-4 mb-4 flex flex-col items-center">
+      <div class="custom-bo-nc rounded-xl py-2 px-4 custom-sh-nc py-2 px-4 mb-4 flex flex-col items-center">
         {/* Displays bars for  */}
         <ExpenseChart year={expensesYear} expenses={expenses} />
         <ExpensesYearSelect

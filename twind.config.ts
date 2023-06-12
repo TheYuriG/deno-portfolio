@@ -175,150 +175,205 @@ export default {
         width: "0.8em",
       },
     },
-    // Accent border
-    "bo-ac": {
-      border: "2px solid var(--accent-color)",
-    },
-    // Base border
-    "bo-bc": {
-      border: "2px solid var(--base-color)",
-    },
-    // Neutral border
-    "bo-nc": {
-      border: "2px solid var(--neutral-color)",
-    },
-    // Accent box shadow
-    "sh-ac": {
-      "box-shadow": "0.1em 0.1em 0.3em var(--accent-color)",
-    },
-    // Base box shadow
-    "sh-bc": {
-      "box-shadow": "0.1em 0.1em 0.3em var(--base-color)",
-    },
-    // Neutral box shadow
-    "sh-nc": {
-      "box-shadow": "0.1em 0.1em 0.3em var(--neutral-color)",
-    },
-    // Accent text
-    "tx-ac": {
-      color: "var(--accent-color)",
-    },
-    // Base text
-    "tx-bc": {
-      color: "var(--base-color)",
-    },
-    // Neutral text
-    "tx-nc": {
-      color: "var(--neutral-color)",
-    },
-    // Accent background
-    "bg-ac": {
-      "background-color": "var(--accent-color)",
-    },
-    // Base background
-    "bg-bc": {
-      "background-color": "var(--base-color)",
-    },
-    // Neutral background
-    "bg-nc": {
-      "background-color": "var(--neutral-color)",
-    },
     // Change font to custom Alfa Slab One
     "f-as": {
       "font-family": "'Alfa Slab One', cursive",
     },
-    // Define text color transition
-    "tr-tx": {
-      transition: "color 0.9s ease-in-out",
+    // Borders
+    "custom-bo": ([borderType]: Array<string>) => {
+      switch (borderType) {
+        // Accent border
+        case "ac":
+          return {
+            border: "2px solid var(--accent-color)",
+          };
+        // Base border
+        case "bc":
+          return {
+            border: "2px solid var(--base-color)",
+          };
+        // Neutral border
+        case "nc":
+          return {
+            border: "2px solid var(--neutral-color)",
+          };
+      }
     },
-    // Define background color transition
-    "tr-bg": {
-      transition: "background-color 0.8s ease-in-out",
+    // Box Shadows
+    "custom-sh": ([boxShadowType]: Array<string>) => {
+      switch (boxShadowType) {
+        // Accent box shadow
+        case "ac":
+          return {
+            "box-shadow": "0.1em 0.1em 0.3em var(--accent-color)",
+          };
+        // Base box shadow
+        case "bc":
+          return {
+            "box-shadow": "0.1em 0.1em 0.3em var(--base-color)",
+          };
+        // Neutral box shadow
+        case "nc":
+          return {
+            "box-shadow": "0.1em 0.1em 0.3em var(--neutral-color)",
+          };
+      }
     },
-    // Define border color transition
-    "tr-bo": {
-      transition: "border 0.6s ease-in-out",
+    // Text colors
+    "custom-tx": ([textType]: Array<string>) => {
+      switch (textType) {
+        // Accent text
+        case "ac":
+          return {
+            color: "var(--accent-color)",
+          };
+        // Base text
+        case "bc":
+          return {
+            color: "var(--base-color)",
+          };
+        // Neutral text
+        case "nc":
+          return {
+            color: "var(--neutral-color)",
+          };
+      }
     },
-    // Define fill color transition
-    "tr-fi": {
-      transition: "fill 0.9s ease-in-out",
+    // Background colors
+    "custom-bg": ([backgroundColorType]: Array<string>) => {
+      switch (backgroundColorType) {
+        // Accent background
+        case "ac":
+          return {
+            "background-color": "var(--accent-color)",
+          };
+        // Base background
+        case "bc":
+          return { "background-color": "var(--base-color)" };
+        // Neutral background
+        case "nc":
+          return {
+            "background-color": "var(--neutral-color)",
+          };
+      }
     },
-    // Define text color and background color transition
-    "tr-txbgbo": {
-      transition:
-        "color 0.9s ease-in-out, background-color 0.8s ease-in-out,border 0.6s ease-in-out",
+    // Transitions
+    "custom-tr": (transition: Array<string>) => {
+      const transitions: Array<string> = [];
+      for (const tr of transition) {
+        switch (tr) {
+          // Define text color transition
+          case "tx":
+            transitions.push("color 0.9s ease-in-out");
+            break;
+          // Define background color transition
+          case "bg":
+            transitions.push("background-color 0.8s ease-in-out");
+            break;
+          // Define border color transition
+          case "bo":
+            transitions.push("border 0.6s ease-in-out");
+            break;
+          // Define fill color transition
+          case "fi":
+            transitions.push("fill 0.9s ease-in-out");
+            break;
+          // Define text color and background color transition
+          case "txbgbo":
+            transitions.push(
+              "color 0.9s ease-in-out, background-color 0.8s ease-in-out,border 0.6s ease-in-out",
+            );
+            break;
+        }
+      }
+      return { transition: transitions.join(",") };
     },
-    // Create a gradient underline below a link
-    "gradient-underline": {
-      "&": {
-        display: "inline-block",
-        position: "relative",
-        "text-decoration": "none",
-        transition: "color ease-in-out 0.5s",
-      },
-      "&:before": {
-        content: "''",
-        position: "absolute",
-        bottom: "-0.05em",
-        width: "100%",
-        height: "3px",
-        background: "linear-gradient(111.3deg, #9c27b0 9.6%, #00bcd4 93.6%)",
-      },
+    // Button types
+    "custom-button": ([buttonType]: Array<string>) => {
+      switch (buttonType) {
+        // Accent button
+        case "ac":
+          return {
+            "&": {
+              transition:
+                "box-shadow 0.4s ease-in-out,transform 0.4s ease-in-out,color 0.9s ease-in-out,background-color 0.8s ease-in-out,border 0.6s ease-in-out",
+            },
+            "&:focus,&:hover": {
+              /* X-axis, Y-axis (needs to match translateY!), blur, color */
+              "box-shadow": "0em 0.15em 0.1em var(--neutral-color)",
+              /* Elevate button, must match Y-axis shadow above! */
+              transform: "translateY(-0.15em)",
+            },
+          };
+        // Styled button
+        case "st":
+          return {
+            "&": {
+              "box-shadow": "0.1em 0.2em var(--accent-color)",
+              "text-shadow": "0.05em 0.05em 0 var(--accent-color)",
+              "transition":
+                "background-color 0.8s ease-in-out, color 0.9s, box-shadow 0.4s, border 0.8s, text-shadow 0.4s",
+            },
+            "&:focus,&:hover": {
+              "box-shadow": "0.1em 0.2em var(--neutral-color)",
+              "text-shadow": "0.05em 0.05em 0 var(--neutral-color)",
+            },
+          };
+      }
     },
-    // Create a dotted underline that becomes solid on hover
-    "dotted-underline": {
-      "&": {
-        "text-underline-offset": "0.2em",
-        "text-decoration": "underline dotted var(--neutral-color) 0.1em",
-        transition:
-          "text-underline-offset 600ms, text-decoration 600ms, color 600ms",
-      },
-      "&:hover": {
-        "text-decoration": "underline solid var(--accent-color) 0.1em",
-        "text-underline-offset": "0.3em",
-      },
-    },
-    // Fat neutral underline behind text, good for titles
-    "thick-ac-underline": {
-      "&": {
-        transition: "color 0.5s ease-in-out",
-        "text-decoration-color": "var(--neutral-color)",
-        "margin-bottom": "0.2em",
-        "font-size": "3rem",
-        "line-height": "1",
-      },
-      "&:hover": {
-        "text-decoration-line": "underline",
-        "text-decoration-skip-ink": "none",
-        "text-underline-offset": "-0.2em",
-        "text-decoration-thickness": "0.3em",
-      },
-    },
-    // Accent button
-    "bu-ac": {
-      "&": {
-        transition:
-          "box-shadow 0.4s ease-in-out,transform 0.4s ease-in-out,color 0.9s ease-in-out,background-color 0.8s ease-in-out,border 0.6s ease-in-out",
-      },
-      "&:focus,&:hover": {
-        /* X-axis, Y-axis (needs to match translateY!), blur, color */
-        "box-shadow": "0em 0.15em 0.1em var(--neutral-color)",
-        /* Elevate button, must match Y-axis shadow above! */
-        transform: "translateY(-0.15em)",
-      },
-    },
-    // Styled button
-    "bu-st": {
-      "&": {
-        "box-shadow": "0.1em 0.2em var(--accent-color)",
-        "text-shadow": "0.05em 0.05em 0 var(--accent-color)",
-        "transition":
-          "background-color 0.8s ease-in-out, color 0.9s, box-shadow 0.4s, border 0.8s, text-shadow 0.4s",
-      },
-      "&:focus,&:hover": {
-        "box-shadow": "0.1em 0.2em var(--neutral-color)",
-        "text-shadow": "0.05em 0.05em 0 var(--neutral-color)",
-      },
+    "custom-underline": ([underlineType]: Array<string>) => {
+      switch (underlineType) {
+        // Create a gradient underline below a link
+        case "gradient":
+          return {
+            "&": {
+              display: "inline-block",
+              position: "relative",
+              "text-decoration": "none",
+              transition: "color ease-in-out 0.5s",
+            },
+            "&:before": {
+              content: "''",
+              position: "absolute",
+              bottom: "-0.05em",
+              width: "100%",
+              height: "3px",
+              background:
+                "linear-gradient(111.3deg, #9c27b0 9.6%, #00bcd4 93.6%)",
+            },
+          };
+        // Create a dotted underline that becomes solid on hover
+        case "dotted":
+          return {
+            "&": {
+              "text-underline-offset": "0.2em",
+              "text-decoration": "underline dotted var(--neutral-color) 0.1em",
+              transition:
+                "text-underline-offset 600ms, text-decoration 600ms, color 600ms",
+            },
+            "&:hover": {
+              "text-decoration": "underline solid var(--accent-color) 0.1em",
+              "text-underline-offset": "0.3em",
+            },
+          };
+        // Fat neutral underline behind text, good for titles
+        case "thick":
+          return {
+            "&": {
+              transition: "color 0.5s ease-in-out",
+              "text-decoration-color": "var(--neutral-color)",
+              "margin-bottom": "0.2em",
+              "font-size": "3rem",
+              "line-height": "1",
+            },
+            "&:hover": {
+              "text-decoration-line": "underline",
+              "text-decoration-skip-ink": "none",
+              "text-underline-offset": "-0.2em",
+              "text-decoration-thickness": "0.3em",
+            },
+          };
+      }
     },
   },
 } as Options;

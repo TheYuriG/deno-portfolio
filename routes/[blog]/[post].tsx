@@ -69,7 +69,7 @@
 //         {/* Complete Post */}
 //         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
 //           {/* Centered heading */}
-//           <h2 class="thick-ac-underline hover:tx-ac f-as my-4 text-4xl text-center>{savedPost.title}</h2>
+//           <h2 class="custom-underline-thick hover:custom-tx-ac f-as my-4 text-4xl text-center>{savedPost.title}</h2>
 //           {/* Post creation date */}
 //           <p class="text-sm mb-2 text-center">
 //             {new Date(savedPost.date).toLocaleString()}
