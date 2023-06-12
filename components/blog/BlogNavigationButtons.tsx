@@ -8,6 +8,10 @@ interface BlogNavigationButtonProperties {
   next?: LinkProperties;
 }
 
+//? Reused classes for all navigation buttons
+const navigationClasses =
+  "group flex items-center text-xl hover:custom-tx-ac custom-tr-tx";
+
 //? Exports Navigation Buttons to go to the previous page and next Article
 export default function BlogNavigationButtons(
   { back, next }: BlogNavigationButtonProperties,
@@ -16,33 +20,45 @@ export default function BlogNavigationButtons(
   //? renders an empty span
   const backButton = back
     ? (
-      <a class="navigation-button" href={back.link} title={back.title}>
+      <a
+        class={navigationClasses}
+        href={back.link}
+        title={back.title}
+      >
         <ChevronIcon iconHeight="1.8em" iconWidth="1.5em" rotation="0" />
         Back
       </a>
     )
     : (
-      <span style="width: 5rem;"></span> //? Empty span to center the Home button
+      <span class="w-20"></span> //? Empty span to center the Home button
     );
 
   //? Creates a next button if a link is provided, otherwise
   //? renders an empty span
   const nextButton = next
     ? (
-      <a class="navigation-button" href={next.link} title={next.title}>
+      <a
+        class={navigationClasses}
+        href={next.link}
+        title={next.title}
+      >
         Next
         <ChevronIcon iconHeight="1.8em" iconWidth="1.5em" rotation="180" />
       </a>
     )
-    : <span style="width: 5rem;"></span>; //? Empty span to center the Home button
+    : <span class="w-20"></span>; //? Empty span to center the Home button
 
   return (
     <>
-      <nav style="display: flex; justify-content: space-between; width: 100%;">
+      <nav class="flex justify-between w-full">
         {/* Back button (if link provided) or empty span */}
         {backButton}
         {/* Home link */}
-        <a class="navigation-button" href="/" title="Visit the Home page">
+        <a
+          class={navigationClasses}
+          href="/"
+          title="Visit the Home page"
+        >
           Home
         </a>
         {/* Next button (if link provided) or empty span */}

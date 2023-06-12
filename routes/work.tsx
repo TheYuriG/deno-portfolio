@@ -15,16 +15,15 @@ export default function Home() {
         description="Work that I've done for people in the past."
         link="https://www.theyurig.com/work"
       >
-        <link rel="stylesheet" href="/navigation-buttons.css" />
-        <link rel="stylesheet" href="/content.css" />
-        <link rel="stylesheet" href="/gradient-underline.css" />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
         <BlogNavigationButtons />
-        <article class="center">
-          <h1 class="blog-title">Past and Current work</h1>
-          <p class="space">
+        <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
+          <h1 class="custom-underline-thick hover:custom-tx-ac f-as my-4 text-2xl lg:text-4xl text-center">
+            Past and Current work
+          </h1>
+          <p class="my-2 text-justify">
             I am the creator of{" "}
             <GradientLink
               content="Yura"
@@ -41,7 +40,7 @@ export default function Home() {
             />{" "}
             about Discord.JS in the past, it has an amazing API.
           </p>
-          <p class="space">
+          <p class="my-2 text-justify">
             I've created{" "}
             <GradientLink
               content="RotMG Utility"
@@ -66,7 +65,7 @@ export default function Home() {
             />{" "}
             (2020).
           </p>
-          <p class="space">
+          <p class="my-2 text-justify">
             In the following year, I started porting Yura's functionality from
             Discord to a{"  "}
             <GradientLink
@@ -79,7 +78,7 @@ export default function Home() {
             it to be, as I didn't like having to rely on another website's data.
             Eventually I shelved that project (2021).
           </p>
-          <p class="space">
+          <p class="my-2 text-justify">
             After freelancing for design agencies for a while, in 2022 I decided
             to eventually move out of freelancing and try to get a remote job in
             a tech company. Using Wix/SquareSpace/Framer templates to build
@@ -88,7 +87,7 @@ export default function Home() {
             felt like the lack of testing, UX and post-launch care for the
             product wasn't like how WebDev was meant to be.
           </p>
-          <p class="space">
+          <p class="my-2 text-justify">
             I wasn't feeling like I was making any progress in becoming a
             serious full-stack developer, so I've bought some{" "}
             <GradientLink
@@ -100,7 +99,7 @@ export default function Home() {
             />{" "}
             and actually become a more interesting potential employee.
           </p>
-          <p class="space">
+          <p class="my-2 text-justify">
             That got me to land some interviews, I even made some{" "}
             <GradientLink
               content="take-home assignments"
@@ -113,7 +112,7 @@ export default function Home() {
             different from Flutter), but didn't really land anything other than
             more freelance work and some temporary contracts.
           </p>
-          <p class="space">
+          <p class="my-2 text-justify">
             Since I wasn't having much luck getting professionally into tech, in
             2023 I focused on fleshing out older projects I had, eventually
             starting{" "}
@@ -127,15 +126,15 @@ export default function Home() {
             want to eventually rewrite it with Deno and Oak instead. Currently
             Trophy Place, this website and freelancing are my daily routine.
           </p>
-          <p class="space">
+          <p class="my-2 text-justify">
             This website has been specially useful into getting me to learn how
             to build things from scratch, like these:
           </p>
           <ol
             start={1}
-            style="align-self: start; list-style-type: lower-greek;"
+            class="self-start list-[lower-greek]"
           >
-            <li>
+            <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
               <GradientLink
                 content="Form (with validation)"
                 title="A simple form that uses Alert() once you submit it."

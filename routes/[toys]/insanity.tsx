@@ -15,24 +15,20 @@ export default function Home() {
         description="Testing CLS and various layout changes."
         link="https://www.theyurig.com/toys/insanity"
       >
-        <link rel="stylesheet" href="/content.css" />
-        <link rel="stylesheet" href="/styled-button.css" />
-        <link rel="stylesheet" href="/navigation-buttons.css" />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
         <BlogNavigationButtons
           back={{ title: "Return to all toys", link: "/toys" }}
         />
-        <article>
-          {/* Static Insanity Heading */}
-          <h1>Did I ever tell you what the definition of insanity is?</h1>
+        <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
+          <h1 class="custom-underline-thick hover:custom-tx-ac f-as my-4 text-2xl lg:text-4xl text-center">
+            Did I ever tell you what the definition of insanity is?
+          </h1>
           {/* Infinitely expandable Insanity text section */}
           <InsanitySection />
-          {/* Spacer to push the post footer text to the bottom */}
-          <div class="spacer"></div>
           {/* Small notice about this page */}
-          <footer class="blog-footer">
+          <footer class="mt-auto w-full text-right text-sm">
             This page exists to text the responsiveness of the layout whenever
             changes happens. Sorry if you were expecting some more exciting.
           </footer>

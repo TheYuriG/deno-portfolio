@@ -1,20 +1,20 @@
 /* Docs (outdated): https://deno.land/x/speed_highlight_js@1.1.11 */
 
 /* Applies to all code blocks */
-[class*=shj-lang-] {
+.shj-lang-js {
     white-space: pre-wrap;
-    border-radius: 1em;
-    background: rgb(255, 246, 239);
     /* light orange background */
-    color: #112;
+    background: rgb(255, 246, 239);
     /* black default text color */
+    color: #112;
     line-height: 1.3em;
 }
 
 /* Add large margin and padding only to div elements with the highlight class */
-div[class*=shj-lang-] {
+div.shj-lang-js {
     margin: 1em 0;
     padding: 1em;
+    border-radius: 1em;
     box-shadow: 0 0 1em 0.3em grey;
 }
 
@@ -26,6 +26,7 @@ div[class*=shj-lang-] {
     border-radius: 0.5em
 }
 
+/* Comments */
 .shj-syn-cmnt {
     font-style: italic
 }

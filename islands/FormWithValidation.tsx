@@ -262,7 +262,7 @@ export default function FormWithValidation() {
   return (
     <>
       {/* The whole form */}
-      <form class="styled-form">
+      <form class="w-full mb-4 flex flex-col">
         {/* Name input */}
         <StyledInput
           key={"first_input"}
@@ -412,15 +412,15 @@ export default function FormWithValidation() {
             });
           }}
         />
-        {/* Confirm button (prints to text area) */}
+        {/* Confirm form input (prints to text area) */}
         <StyledButton
+          classes="mt-2 self-center"
           text="Send"
-          style="margin-top: 0.5em;"
           onClickFunction={validateBeforeSend}
         />
         {validationError === true && (
           <>
-            <p class="space">
+            <p class="my-2 text-justify">
               Some fields have invalid data being provided (will display a red
               border), please fix them before submitting! Hover/click the
               information icon on the right side for more information.
@@ -430,7 +430,7 @@ export default function FormWithValidation() {
       </form>
       {/* Text Area that will hold all sent information */}
       <textarea
-        class="base-form-style styled-text-area"
+        class="h-[16.5em] w-full p-2 custom-bg-bc custom-bo-ac rounded-l-2xl ph-nc styled-scrollbar custom-tr-txbgbo"
         name="formInput"
         id="form"
         placeholder={sumOfAllInputs.length > 0

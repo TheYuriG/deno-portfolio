@@ -16,19 +16,18 @@ export default function StyledRadio({
   onChangeFunction,
 }: RadioProperties) {
   return (
-    <div class="radio-label-inputs-group">
-      <span class="radio-label">
+    <div class="my-1 flex flex-col sm:flex-row items-center">
+      <span class="w-max flex-shrink-0">
         {label}
       </span>
-      <div class="base-form-style radio-input-group">
+      <div class="p-2 custom-bg-bc custom-bo-ac rounded-xl flex flex-col sm:flex-row w-min sm:w-max sm:ml-2 flex-wrap place-content-center custom-tr-txbgbo">
         {/* Programatically creates radio inputs from array of strings provided */}
         {optionsArray.map((radio) => (
           <>
             {/* Label for what this is for */}
-            <label class="styled-label">
+            <label class="flex w-max whitespace-nowrap sm:mx-2">
               {/* Radio */}
               <input
-                class="styled-radio"
                 type="radio"
                 name={name} //? Links all radio options together
                 value={radio} //? Tracks current value

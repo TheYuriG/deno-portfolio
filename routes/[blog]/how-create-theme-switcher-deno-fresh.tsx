@@ -15,10 +15,6 @@ export default function Home() {
         description="A guide on how to create your own Theme Switcher using Deno and Fresh"
         link="https://www.theyurig.com/blog/how-create-theme-switcher-deno-fresh"
       >
-        <link rel="stylesheet" href="/navigation-buttons.css" />
-        <link rel="stylesheet" href="/content.css" />
-        <link rel="stylesheet" href="/blog.css" />
-        <link rel="stylesheet" href="/gradient-underline.css" />
         <link rel="stylesheet" href="/syntax-highlighting.css" />
         {
           /* Syntax highlight for code. How can we do this better
@@ -49,13 +45,13 @@ export default function Home() {
             link: "/blog/stopping-theme-flickering-deno-fresh",
           }}
         />
-        <article class="center">
+        <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
           {/* Centered heading */}
-          <h2 class="navigation-link blog-title">
+          <h1 class="custom-underline-thick hover:custom-tx-ac f-as my-4 text-2xl lg:text-4xl text-center">
             How to Create a Theme Switcher with Fresh
-          </h2>
+          </h1>
           {/* Post creation date */}
-          <p class="post-date">
+          <p class="text-sm mb-2 w-full text-center">
             {new Date(1684849328672).toLocaleString()}
           </p>
           {/* Blog post opening image */}
@@ -63,32 +59,34 @@ export default function Home() {
             src={"https://web-dev.imgix.net/image/vS06HQ1YTsbMKSFTIPl2iogUQP73/skKcjSv1gMQRYk1AdEp7.png?auto=format&w=1600"}
             alt="Sun and Moon montage with the words Light and Dark accompanying them"
             title="To many people, themes are an important part of the User Experience"
-            class="large-image"
+            class="my-4 object-cover"
           />
           {/* Introduction */}
-          <p class="space">
+          <p class="my-2 text-justify">
             Being able to customize your Theme can be a huge user experience
             upgrade to any website. While some websites use a default Dark
             Theme, the majority of the internet still sticks to creating content
             in Light Mode as default (and sometimes the only option).
           </p>
           {/* Presenting the problem */}
-          <p class="space">
+          <p class="my-2 text-justify">
             However, if you have tried to do this on your own using Fresh
             before, you might have run into a problem... or many. In this blog
             post, I'll explain how I've created my theme, what issues I've
             faced, and how I've solved them.
           </p>
           {/* Heading and image introducing to next topic: Fresh */}
-          <h2 class="subtopic">What is Fresh?</h2>
+          <h2 class="custom-underline-thick hover:custom-tx-ac text-3xl my-2 f-as">
+            What is Fresh?
+          </h2>
           <img
             src={"https://fresh.deno.dev/logo.svg?__frsh_c=3171c5e64510907f14fca32f4e0ba9a86bc5247c"}
             alt="Fresh's logo"
             title="Fresh, the official framework to build Web apps on Deno"
-            class="small-image"
+            class="my-4 mx-auto h-40 w-40"
           />
           {/* Explaining what is Fresh */}
-          <p class="space">
+          <p class="my-2 text-justify">
             <GradientLink
               link="https://fresh.deno.dev/"
               title="It's dripping!"
@@ -122,7 +120,7 @@ export default function Home() {
             post).
           </p>
           {/* Further explanation about Fresh */}
-          <p class="space">
+          <p class="my-2 text-justify">
             Fresh uses Preact under the hood to compile the JSX/TSX files into
             static HTML that is then sent to the client. If you have experience
             with{" "}
@@ -143,8 +141,12 @@ export default function Home() {
             experience building Full Stack projects.
           </p>
           {/* Main content start */}
-          <h2 class="subtopic">Creating A Theme Switcher</h2>
-          <p class="space">Let's create a very simple Theme Switcher:</p>
+          <h2 class="custom-underline-thick hover:custom-tx-ac text-3xl my-2 f-as">
+            Creating A Theme Switcher
+          </h2>
+          <p class="my-2 text-justify">
+            Let's create a very simple Theme Switcher:
+          </p>
           {/* Code block with initial implementation */}
           <div class="shj-lang-js">
             {`// /islands/ThemeSwitcher.tsx
@@ -191,7 +193,7 @@ export default function ThemeSwitcher() {
 }`}
           </div>
           {/* Initial implementation explanation */}
-          <p>
+          <p class="text-justify">
             This creates a radio input that has{" "}
             <code class="shj-lang-js">
               Dark
@@ -237,7 +239,7 @@ useEffect(() => {
 ...`}
           </div>
           {/* Second code block explanation */}
-          <p class="space">
+          <p class="my-2 text-justify">
             We have added a reference to the{" "}
             <code class="shj-lang-js">
               useEffect()
@@ -252,7 +254,7 @@ useEffect(() => {
             </code>{" "}
             on the first render.
           </p>
-          <p>
+          <p class="text-justify">
             What the{" "}
             <code class="shj-lang-js">
               useEffect()
@@ -261,10 +263,10 @@ useEffect(() => {
           </p>
           <ol
             start={1}
-            style="align-self: start; list-style-type: lower-greek; margin: 1em 0;"
+            class="self-start list-[lower-greek]"
           >
             {/* Explanation part 1 */}
-            <li>
+            <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
               Runs on start, checks if there is a theme saved (if not,{" "}
               <code class="shj-lang-js">
                 savedTheme
@@ -289,7 +291,7 @@ useEffect(() => {
               loop!).
             </li>
             {/* Explanation part 2 */}
-            <li>
+            <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
               After setting the{" "}
               <code class="shj-lang-js">
                 theme
@@ -316,7 +318,7 @@ useEffect(() => {
               value and stop.
             </li>
             {/* Explanation part 3 */}
-            <li>
+            <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
               (Optional) If the{" "}
               <code class="shj-lang-js">
                 theme
@@ -333,7 +335,7 @@ useEffect(() => {
             </li>
           </ol>
           {/* Linking to repository version */}
-          <p class="space">
+          <p class="my-2 text-justify">
             This website uses an improved version of the same Theme Switcher
             created in this post, which you can check the source code for{" "}
             <GradientLink
@@ -344,8 +346,10 @@ useEffect(() => {
             />.
           </p>
           {/* Conclusion and link to next post */}
-          <h2 class="subtopic">What's next?</h2>
-          <p class="space">
+          <h2 class="custom-underline-thick hover:custom-tx-ac text-3xl my-2 f-as">
+            What's next?
+          </h2>
+          <p class="my-2 text-justify">
             If you have been following along, you might have noticed a few
             issues with it, like flickering on first load or the inability to
             check for user preferences. Let's address those problems on those on
@@ -359,7 +363,7 @@ useEffect(() => {
             />.
           </p>
           {/* Post author */}
-          <footer class="blog-footer" style="margin-top: auto;">
+          <footer class="mt-auto w-full text-right text-sm">
             Written with 💞 by TheYuriG
           </footer>
         </article>

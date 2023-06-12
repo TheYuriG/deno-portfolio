@@ -33,12 +33,12 @@ export default function CartModal({
   //? If no items are in the cartContent, return a simple "empty cart" message
   if (items.size === 0) {
     return (
-      <div class="food-cart-content">
-        <span class="food-cart-content__header">
+      <div class="flex flex-col w-full p-3">
+        <span class="text-bold my-2 text-center text-3xl f-as">
           No items in your cart yet!
         </span>
         <StyledButton
-          style="align-self: end;"
+          classes="self-end"
           text="Close"
           onClickFunction={closeModal}
         />
@@ -51,22 +51,24 @@ export default function CartModal({
 
   //? Return the cart items and the total
   return (
-    <div class="food-cart-content max-h-[90dvh]">
+    <div class="flex flex-col p-3 w-fit max-w-[90dvw] max-h-[90dvh]">
       {/* Modal header */}
-      <h2 class="food-cart-content__header">Items in cart</h2>
+      <h2 class="text-bold my-2 min-w-max text-center text-3xl f-as">
+        Cart items
+      </h2>
       {/* List of items in cart */}
       <ol class="overflow-auto styled-scrollbar">
         {cartItems.map(([foodName, { quantity, cost }]) => (
           <li class="flex flex-col">
             {/* Food item name, remove item from cart */}
-            <div class="flex justify-between items-center pr-1.5">
+            <div class="flex justify-between min-w-max items-center pr-1.5">
               {/* Cart item name */}
               <h3 class="text-xl">
                 {foodName}
               </h3>
               {/* Remove item completely from cart */}
               <span
-                class="hover:cursor-pointer"
+                class="hover:cursor-pointer select-none"
                 onClick={() => {
                   deleteItemFromCart({
                     foodName,
@@ -87,7 +89,7 @@ export default function CartModal({
               </span>
             </div>
             {/* Food item count, update cart item count */}
-            <div class="mt-2 inline-flex items-center self-end pr-1">
+            <div class="mt-2 inline-flex items-center self-end pr-1 select-none">
               {/* Decrease item count. If last item, remove it from the cart */}
               <span
                 class="mr-2 hover:cursor-pointer"
@@ -123,25 +125,32 @@ export default function CartModal({
             {/* Divider */}
             <hr
               class="my-2 border-solid border"
+              //? Must style border color invidually instead of using the 'custom-bo-nc' class
+              //? because the base.css will override the twind class and make
+              //? the border thicker
               style="border-color: var(--neutral-color)"
             />
           </li>
         ))}
       </ol>
       {/* Cart total cost */}
-      <span class="food-cart-content__total">Total: ${cost.toFixed(2)}</span>
+      <span class="my-2 text-xl text-bold text-right">
+        Total: ${cost.toFixed(2)}
+      </span>
       {/* Row of buttons to close or complete the order */}
-      <div class="food-cart-content__button-row">
+      <div class="flex self-end">
         <button
+          class="hover:pointer"
           key="modal__add-more"
           onClick={closeModal}
           title="Close the modal"
         >
           Add more
         </button>
+        {/* Removed until when/if we add the order feature */}
         {
           /* <StyledButton
-          style="margin-left: 1em;"
+          classes="ml-4"
           text="Order"
           onClickFunction={closeModal}
         /> */

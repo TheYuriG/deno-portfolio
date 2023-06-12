@@ -27,10 +27,11 @@ export default function ExpensesTracker(
   );
 
   return (
-    <div style="width: 100%;">
-      <div class="card card-shadow year-expenses">
-        {/* Displays bars for  */}
+    <div class="w-full">
+      <div class="custom-bo-nc rounded-xl py-2 px-4 custom-sh-nc py-2 px-4 mb-4 flex flex-col items-center">
+        {/* Displays bars for each month of the year */}
         <ExpenseChart year={expensesYear} expenses={expenses} />
+        {/* Changes what is the current year being displayed */}
         <ExpensesYearSelect
           selectedYear={expensesYear}
           expensesFilter={(year) => {
@@ -41,6 +42,7 @@ export default function ExpensesTracker(
           }}
         />
       </div>
+      {/* Adds a new expense to the list */}
       <AddNewExpense
         //? Add new expense to the database
         addNewExpenseFunction={(newExpense) => {
@@ -49,7 +51,8 @@ export default function ExpensesTracker(
           });
         }}
       />
-      <div class="expenses-group">
+      {/* Displays all expenses */}
+      <div class="w-full space-y-4">
         {/* Display all expenses filtered */}
         {expenses.map((expense) => (
           <IndividualExpense

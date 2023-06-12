@@ -7,6 +7,7 @@ export default function SunIcon(
 ) {
   return (
     <svg
+      class="custom-tr-fi"
       height={iconHeight}
       width={iconWidth}
       fill={iconFillColor ?? "var(--neutral-color)"}

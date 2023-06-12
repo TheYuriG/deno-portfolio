@@ -15,21 +15,19 @@ export default function Home() {
         description="A small gallery of my feats."
         link="https://www.theyurig.com/certificates"
       >
-        <link rel="stylesheet" href="/navigation-buttons.css" />
-        <link rel="stylesheet" href="/content.css" />
-        <link rel="stylesheet" href="/blog.css" />
-        <link rel="stylesheet" href="/gradient-underline.css" />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
         <BlogNavigationButtons />
-        <article class="center">
-          <h1 class="blog-title">Certificates</h1>
+        <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
+          <h1 class="f-as my-4 text-2xl lg:text-4xl text-center">
+            Certificates
+          </h1>
           <img
             src="https://udemy-certificate.s3.amazonaws.com/image/UC-c14620b0-6803-48a3-a7ab-5211825cec51.jpg?v=1685285730000"
             alt="NodeJS Backend Certificate"
             title="NodeJS Backend completion Certificate"
-            class="large-image"
+            class="my-4 object-cover"
           />
           <p class="text-center w-full m-0">
             <GradientLink

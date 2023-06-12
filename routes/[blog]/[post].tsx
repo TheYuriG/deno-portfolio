@@ -42,10 +42,6 @@
 //         description={savedPost.description}
 //         link={"https://www.theyurig.com/blog" + savedPost.link}
 //       >
-//         <link rel="stylesheet" href="/home.css" />
-//         <link rel="stylesheet" href="/navigation-buttons.css" />
-//         <link rel="stylesheet" href="/content.css" />
-//         <link rel="stylesheet" href="/blog.css" />
 //         <link rel="stylesheet" href="/syntax-highlighting.css" />
 //         {
 //           /* Syntax highlight for code. How can we do this better
@@ -71,19 +67,19 @@
 //         {/* Back button */}
 //         <BlogNavigationButtons />
 //         {/* Complete Post */}
-//         <article class="center">
+//         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
 //           {/* Centered heading */}
-//           <h2 class="navigation-link blog-title">{savedPost.title}</h2>
+//           <h2 class="custom-underline-thick hover:custom-tx-ac f-as my-4 text-4xl text-center>{savedPost.title}</h2>
 //           {/* Post creation date */}
-//           <p class="post-date">
+//           <p class="text-sm mb-2 text-center">
 //             {new Date(savedPost.date).toLocaleString()}
 //           </p>
 //           {/* Post content, parsed and spread */}
-//           <div class="justified">
+//           <div class="text-justify">
 //             {...contentParser(savedPost.content)}
 //           </div>
 //           {/* Post author */}
-//           <footer class="blog-footer" style="margin-top: auto;">
+//           <footer class="mt-auto w-full text-right text-sm mt-auto">
 //             {savedPost.author}
 //           </footer>
 //         </article>

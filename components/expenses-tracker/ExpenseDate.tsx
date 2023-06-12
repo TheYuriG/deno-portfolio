@@ -19,13 +19,13 @@ export function ExpenseDate(
   });
 
   return (
-    <div class="expense-date">
+    <div class="flex flex-col items-center min-w-[7.5em] py-1 px-2 sm:mr-2 custom-bo-nc rounded-lg">
       {/* Month, bolded, big font */}
-      <div class="expense-date__month">{expenseMonth}</div>
+      <div class="font-bold text-lg">{expenseMonth}</div>
       {/* Day, bolded, bigger font */}
-      <div class="expense-date__day">{expenseDay}</div>
+      <div class="font-bold text-2xl">{expenseDay}</div>
       {/* Year, small font */}
-      <div class="expense-date__year">{expenseYear}</div>
+      <div class="text-md">{expenseYear}</div>
     </div>
   );
 }

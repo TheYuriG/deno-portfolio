@@ -6,7 +6,7 @@ export function NavigationMenu() {
     >
       <a
         href="/work"
-        class="navigation-link animate-to-right"
+        class="custom-underline-thick hover:custom-tx-ac animate-slide-right delay-slide-right"
         style="--dur: 1"
         title="Things I've done for money"
       >
@@ -14,7 +14,7 @@ export function NavigationMenu() {
       </a>
       <a
         href="/projects"
-        class="navigation-link animate-to-right"
+        class="custom-underline-thick hover:custom-tx-ac animate-slide-right delay-slide-right"
         style="--dur: 1.5;"
         title="Things I've created to learn a tech stack"
       >
@@ -22,7 +22,7 @@ export function NavigationMenu() {
       </a>
       <a
         href="/certificates"
-        class="navigation-link animate-to-right"
+        class="custom-underline-thick hover:custom-tx-ac animate-slide-right delay-slide-right"
         style="--dur: 2;"
         title="Cerfications I've got from completing various courses"
       >
@@ -30,7 +30,7 @@ export function NavigationMenu() {
       </a>
       <a
         href="/toys"
-        class="navigation-link animate-to-right"
+        class="custom-underline-thick hover:custom-tx-ac animate-slide-right delay-slide-right"
         style="--dur: 2;"
         title="Curiosity projects"
       >
@@ -38,7 +38,7 @@ export function NavigationMenu() {
       </a>
       <a
         href="/blog"
-        class="navigation-link animate-to-right"
+        class="custom-underline-thick hover:custom-tx-ac animate-slide-right delay-slide-right"
         style="--dur: 1.5;"
         title="Development findings shared over the years"
       >
@@ -46,7 +46,7 @@ export function NavigationMenu() {
       </a>
       <a
         href="/me"
-        class="navigation-link animate-to-right"
+        class="custom-underline-thick hover:custom-tx-ac animate-slide-right delay-slide-right"
         style="--dur: 1;"
         title="Who is Yuri?"
       >
@@ -54,7 +54,7 @@ export function NavigationMenu() {
       </a>
       <a
         href="/what-is-this"
-        class="text-sm animate-to-right"
+        class="text-sm animate-slide-right delay-slide-right"
         style="color: yellow; margin-top: 2em; --dur: 2;"
         title="information about how this website is built"
       >

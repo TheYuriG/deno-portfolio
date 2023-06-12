@@ -14,15 +14,20 @@ export default function ModalWithBackdrop(
 ) {
   //? If the display is false, return just JSX Fragment
   if (display === false) {
-    return <></>;
+    return false;
   }
 
   //? If the display is true, display the overlay with the content provided
   return (
     <>
-      <div class="backdrop-overlay" onClick={closeModalFunction}>
+      <div
+        key="content-modal"
+        class="fixed z-10 left-0 top-0 w-[100dvw] h-[100dvh] backdrop-blur"
+        style="background-color: rgba(0, 0, 0, 0.4)"
+        onClick={closeModalFunction}
+      >
       </div>
-      <div class="card card-shadow modal">
+      <div class="fixed z-20 top-1/2 left-1/2 min-w-[50dvw] max-w-[80dvw] custom-bo-nc rounded-xl py-2 px-4 custom-sh-nc custom-bg-bc transform-center">
         {children}
       </div>
     </>

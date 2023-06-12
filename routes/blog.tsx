@@ -17,16 +17,12 @@ export default function Home() {
         description="Blog posts and articles about my experience with certain tech stacks or situations I had to untangle myself out of."
         link="https://www.theyurig.com/blog"
       >
-        <link rel="stylesheet" href="/home.css" />
-        <link rel="stylesheet" href="/navigation-buttons.css" />
-        <link rel="stylesheet" href="/content.css" />
-        <link rel="stylesheet" href="/blog.css" />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
         {/* Back button */}
         <BlogNavigationButtons />
-        <section class="center">
+        <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
           {...createdPosts.map((post) => (
             <BlogPostSummary {...post}></BlogPostSummary>
           ))}

@@ -17,10 +17,7 @@ export default function Home() {
         description="Get to know more about Yuri's experience, thoughts and past projects."
         link="https://www.theyurig.com/"
       >
-        <link rel="stylesheet" href="/home.css" />
         <link rel="stylesheet" href="/starry-night.css" />
-        <link rel="stylesheet" href="/animate.css" />
-        <link rel="stylesheet" href="/gradient-underline.css" />
       </CustomHead>
       {/* Starry Night background <3 */}
       <StarryNight />

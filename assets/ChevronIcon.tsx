@@ -9,6 +9,7 @@ export default function ChevronIcon(
 ) {
   return (
     <svg
+      class="duration-[800ms] ease-in-out group-hover:fill-[var(--accent-color)]"
       transform={`rotate(${rotation ?? "0"})`}
       height={iconHeight}
       width={iconWidth}

@@ -1,41 +1,10 @@
 /* Note: Color scheme variables are set on components/base/CustomHead.tsx script tag */
 
-/* Scrollbar styling */
-body::-webkit-scrollbar,
-.styled-scrollbar::-webkit-scrollbar {
-    width: 0.8em;
-}
-
-body::-webkit-scrollbar-thumb,
-.styled-scrollbar::-webkit-scrollbar-thumb {
-    background-color: transparent;
-    outline: 2px solid var(--accent-color);
-    outline-offset: -0.1rem;
-    border-radius: 0.3rem;
-}
-
 /* Expand page to use full screen and set page default font and color scheme */
 html {
     font-family: 'Fragment Mono', monospace;
     background-color: var(--base-color);
     color: var(--neutral-color);
-}
-
-/* Define default card styling to be reused */
-.card {
-    padding: 0.5em 1em;
-    border: 2px solid var(--neutral-color);
-    border-radius: 1rem;
-}
-
-/* Add spacing between consecutive cards */
-.card+.card {
-    margin-top: 1em;
-}
-
-/* Define default card shadow */
-.card-shadow {
-    box-shadow: 0.1em 0.1em 0.3em var(--neutral-color);
 }
 
 /* Positioning for the main frame, border color, transition for theme switch */
@@ -50,57 +19,4 @@ main {
     border: 2px solid var(--accent-color);
     border-radius: 1.5rem;
     transition: border 0.7s ease-in-out 0.3s;
-}
-
-
-/* Organize theme button horizontally and align vertically */
-.theme-switcher {
-    display: flex;
-    align-items: center;
-    width: 4em;
-    height: 1.3em;
-    position: fixed;
-    bottom: 2.5em;
-    rotate: -90deg;
-    translate: -83%;
-    font-size: 1.3rem;
-    animation: fadeThemeSwitcherIn 0.3s;
-}
-
-/* Define theme SVG size, push text away */
-.theme-switcher svg {
-    margin-right: 0.2em;
-}
-
-/* Animate the Theme Switcher to fade in gracefully instead of popping in */
-@keyframes fadeThemeSwitcherIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-/* Positions the footer on the bottom right side of the page, below the frame */
-.page-footer {
-    position: absolute;
-    display: inline-flex;
-    align-items: center;
-    width: max-content;
-    bottom: -1.5rem;
-    right: 0;
-    font-size: 0.875rem;
-    /* 14px */
-    line-height: 1.25rem;
-    white-space: nowrap;
-}
-
-/* Style the images on the footer */
-.page-footer img {
-    margin-left: 0.4rem;
-    margin-right: 0.4rem;
-    height: 18px;
-    width: 18px;
 }

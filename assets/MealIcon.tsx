@@ -7,6 +7,7 @@ export default function MealIcon(
 ) {
   return (
     <svg
+      class="custom-tr-fi"
       xmlns="http://www.w3.org/2000/svg"
       height={iconHeight}
       width={iconWidth}

@@ -15,7 +15,7 @@ export default function ProjectDiscovery(
   const [displayDiscovery, toggleDisplayDiscovery] = useState(false);
 
   return (
-    <section style="display: flex; flex-direction: column; align-items: end; width: 100%; margin: 0.5em 0">
+    <section class="flex flex-col items-end w-full my-2">
       {/* Display a checkbox to enable/disable displaying the discovery text */}
       <StyledSingleCheckbox
         label="What did I learn?"
@@ -26,7 +26,7 @@ export default function ProjectDiscovery(
       />
       {/* Displays the discovery text, if that was enabled with the checkbox */}
       {displayDiscovery === true &&
-        innerText.map((text) => <p class="space">{text}</p>)}
+        innerText.map((text) => <p class="my-2 text-justify">{text}</p>)}
     </section>
   );
 }

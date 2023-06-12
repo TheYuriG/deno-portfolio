@@ -54,11 +54,11 @@ export default function StyledInput(
 ) {
   return (
     <>
-      <div class="label-wrapper">
-        <label class="styled-label" htmlFor={name}>
+      <div class="flex flex-col sm:flex-row grow items-center">
+        <label class="flex w-max whitespace-nowrap" htmlFor={name}>
           {label}
         </label>
-        <div class="helper">
+        <div class="flex items-center w-full">
           <input
             //? Assigns this input as required
             required
@@ -68,12 +68,12 @@ export default function StyledInput(
             //! Reference: https://www.w3schools.com/tags/tag_input.asp
             type={inputType}
             //? Base class + validation class if needed
-            class={"base-form-style styled-input" +
-              (validationReference === validationStatus.Valid
-                ? " valid-input"
-                : validationReference === validationStatus.Invalid
-                ? " invalid-input"
-                : "")}
+            class="w-full p-2 custom-bg-bc rounded-xl grow caret-current my-1 sm:my-1 sm:ml-2 custom-bo-ac custom-tr-txbgbo"
+            style={validationReference === validationStatus.Valid
+              ? "border-color: green;"
+              : validationReference === validationStatus.Invalid
+              ? "border-color: red;"
+              : undefined}
             name={name}
             //? Placeholder value, if provided
             placeholder={placeholder}
@@ -100,7 +100,7 @@ export default function StyledInput(
           />
           {/* Tooltip on the right side, with user information about what data is valid */}
           {helpInformation && (
-            <div class="tooltip">
+            <div class="ml-2 tooltip">
               {/* Information icon */}
               <InformationIcon iconHeight="1.8em" iconWidth="1.8em" />
               <span class="tooltiptext">{helpInformation}</span>

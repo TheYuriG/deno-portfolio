@@ -2,7 +2,6 @@
 import { IconPropertiesWithStroke } from "../types/IconProperties.ts";
 
 //? Renders a spinning animation with fill
-//! Needs to import the loading-animation.css file for @keyframes!
 export default function LoadingAnimation(
   { iconHeight, iconWidth, iconStrokeColor }: Pick<
     IconPropertiesWithStroke,
@@ -16,7 +15,7 @@ export default function LoadingAnimation(
       viewBox="0 0 100 100"
     >
       <circle
-        id="spinner"
+        class="animate-loading"
         style={`fill:transparent;stroke: ${
           iconStrokeColor ?? "var(--neutral-color)"
         };stroke-width: 0.5em;stroke-linecap: round;`}

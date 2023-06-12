@@ -16,16 +16,15 @@ export default function NotFoundPage({ url }: UnknownPageProps) {
         description="404 Page not found"
         link="https://www.theyurig.com/404"
       >
-        <link rel="stylesheet" href="/home.css" />
-        <link rel="stylesheet" href="/navigation-buttons.css" />
-        <link rel="stylesheet" href="/content.css" />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
         <BlogNavigationButtons />
-        <section class="center">
-          <h1 class="navigation-link">Page not found!</h1>
-          <p class="space">
+        <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
+          <h1 class="f-as my-4 text-2xl lg:text-4xl text-center">
+            Page not found!
+          </h1>
+          <p class="my-2 text-justify">
             Hi there! Seems like you have reached a page that doesn't exist
             (...yet?). 🤔
           </p>

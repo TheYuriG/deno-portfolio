@@ -12,7 +12,7 @@ export default function ExpensesYearSelect(
   { expensesFilter, selectedYear }: ExpensesYearSelectProperties,
 ) {
   return (
-    <span style="align-self: end;">
+    <span class="self-end">
       <StyledSelect
         label="Year"
         name="year-filter"

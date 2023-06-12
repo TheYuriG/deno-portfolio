@@ -7,7 +7,7 @@ import { JSX, toChildArray } from "preact";
 
 export function Base(props: { children: Array<JSX.Element> | JSX.Element }) {
   return (
-    <body>
+    <body class="styled-scrollbar">
       {/* Main content: name, role, company */}
       <main>
         {/* Theme switcher */}
