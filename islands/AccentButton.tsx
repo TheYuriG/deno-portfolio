@@ -5,6 +5,7 @@ import { JSX, toChildArray } from "preact";
 interface AccentButtonProperties {
   children: string | JSX.Element | JSX.Element[];
   style?: string;
+  classes?: string;
   onClickFunction: () => void;
 }
 
@@ -14,12 +15,14 @@ interface AccentButtonProperties {
 export default function AccentButton({
   children,
   style,
+  classes = "",
   onClickFunction,
 }: AccentButtonProperties) {
   return (
     <button
       //? Apply default styling
-      class="flex py-1 px-2 items-center custom-bg-ac custom-bo-nc rounded-2xl custom-button-ac"
+      class={"flex py-1 px-2 items-center custom-bg-ac custom-bo-nc rounded-2xl custom-button-ac " +
+        classes}
       //? Apply additional styling, if provided
       style={style}
       //? When clicked, run provided function

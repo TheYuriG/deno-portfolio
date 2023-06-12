@@ -19,7 +19,7 @@ export default function CartButton({
   return (
     <AccentButton
       //? Adds the pulsing animation when a food item is added
-      style={pulseState ? "animation: animate-pulse 0.3s ease-in-out;" : ""}
+      classes={pulseState ? "animate-pulsing-cart" : ""}
       onClickFunction={openModal}
     >
       <span class="flex items-center mr-4 space-x-1">

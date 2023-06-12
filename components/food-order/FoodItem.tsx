@@ -55,7 +55,7 @@ export function FoodItem(
       </div>
       {/* Button to add to cart */}
       <StyledButton
-        style="flex-shrink: 0;"
+        classes="flex-shrink-0"
         text={"Add for $" + price.toFixed(2)}
         onClickFunction={addToCartFunction}
       />

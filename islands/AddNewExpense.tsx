@@ -218,11 +218,11 @@ export default function AddNewExpenseForm(
   //? Create the newExpenseForm to be used if the user clicked "Add New Expense?""
   const newExpenseForm = (
     <>
-      <h2 class="text-3xl text-center my-1 f-as">
+      <h2 class="w-full text-3xl text-center my-1 f-as">
         Add new expense
       </h2>
       {/* The whole form */}
-      <form class="mb-2 flex flex-col">
+      <form class="w-full mb-2 flex flex-col">
         {/* Expense description */}
         <StyledInput
           key={"text_input"}
@@ -309,10 +309,11 @@ export default function AddNewExpenseForm(
           min="2020-01-01"
           max={timezonelessDate}
         />
+        {/* Abort new expense */}
         <div class="flex self-end">
           <StyledButton
+            classes="mt-2 mr-4"
             text="Reset & Cancel"
-            style="margin-top: 0.5em; margin-right: 2em;"
             onClickFunction={() => {
               showOrHideForm(false);
               updateValidation({
@@ -324,8 +325,8 @@ export default function AddNewExpenseForm(
             }}
           />
           <StyledButton
+            classes="mt-2"
             text="Send"
-            style="margin-top: 0.5em;"
             onClickFunction={validateBeforeSend}
           />
         </div>
@@ -343,7 +344,7 @@ export default function AddNewExpenseForm(
   );
 
   return (
-    <div class="flex justify-center custom-bo-nc rounded-xl p-4 mb-4 custom-sh-nc">
+    <div class="flex flex-col items-center custom-bo-nc rounded-xl p-4 mb-4 custom-sh-nc">
       {
         /* If the user never clicked to display the form or cancelled the form,
         show the button that prompts to display the form */

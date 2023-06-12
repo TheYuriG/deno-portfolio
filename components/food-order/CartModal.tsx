@@ -38,7 +38,7 @@ export default function CartModal({
           No items in your cart yet!
         </span>
         <StyledButton
-          style="align-self: end;"
+          classes="self-end"
           text="Close"
           onClickFunction={closeModal}
         />
@@ -150,7 +150,7 @@ export default function CartModal({
         {/* Removed until when/if we add the order feature */}
         {
           /* <StyledButton
-          style="margin-left: 1em;"
+          classes="ml-4"
           text="Order"
           onClickFunction={closeModal}
         /> */

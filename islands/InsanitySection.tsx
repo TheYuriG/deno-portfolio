@@ -18,8 +18,8 @@ export default function InsanitySection() {
         }
         {/* Insanity section. Can be expanded by clicking the button above */}
         <StyledButton
+          classes="self-end mb-4"
           text="Dial ⤴️ the Insanity 🤪"
-          style="align-self: end; margin-bottom: 1rem;"
           onClickFunction={() => {
             setInsanity((currentInsanity) => [...currentInsanity, null]);
           }}

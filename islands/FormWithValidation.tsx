@@ -412,10 +412,10 @@ export default function FormWithValidation() {
             });
           }}
         />
-        {/* Confirm button (prints to text area) */}
+        {/* Confirm form input (prints to text area) */}
         <StyledButton
+          classes="mt-2 self-center"
           text="Send"
-          style="margin-top: 0.5em;"
           onClickFunction={validateBeforeSend}
         />
         {validationError === true && (

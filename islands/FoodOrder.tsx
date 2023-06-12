@@ -213,7 +213,7 @@ export default function FoodOrder({ foods }: FoodOrderProperties) {
       {cartContent.totalItems > 0
         ? (
           <AccentButton
-            style="align-self: end; margin-top: 1em; margin-right: 1em;"
+            classes="self-end mt-4"
             onClickFunction={() => toggleDisplayModal(true)}
           >
             View order
