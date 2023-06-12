@@ -15,7 +15,6 @@ export default function Home() {
         description="Testing CLS and various layout changes."
         link="https://www.theyurig.com/toys/insanity"
       >
-        <link rel="stylesheet" href="/styled-button.css" />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>

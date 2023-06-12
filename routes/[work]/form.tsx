@@ -16,7 +16,6 @@ export default function Home() {
         link="https://www.theyurig.com/work/form"
       >
         <link rel="stylesheet" href="/form.css" />
-        <link rel="stylesheet" href="/styled-button.css" />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>

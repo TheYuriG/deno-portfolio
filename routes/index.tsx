@@ -18,7 +18,6 @@ export default function Home() {
         link="https://www.theyurig.com/"
       >
         <link rel="stylesheet" href="/starry-night.css" />
-        <link rel="stylesheet" href="/animate.css" />
       </CustomHead>
       {/* Starry Night background <3 */}
       <StarryNight />
