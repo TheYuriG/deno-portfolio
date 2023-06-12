@@ -22,7 +22,7 @@ export function CarouselCard(
         style="border-width: 0.25em;"
       >
         {/* Centered heading */}
-        <h3 class="text-2xl my-4 mx-auto text-bold">{title}</h3>
+        <h3 class="text-2xl my-4 mx-auto text-center text-bold">{title}</h3>
         {/* Centered child */}
         <div class="m-auto">{children}</div>
       </div>

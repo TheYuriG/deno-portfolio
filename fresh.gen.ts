@@ -10,17 +10,18 @@ import * as $3 from "./routes/[projects]/expenses-tracker.tsx";
 import * as $4 from "./routes/[projects]/food-order.tsx";
 import * as $5 from "./routes/[toys]/insanity.tsx";
 import * as $6 from "./routes/[toys]/spinners.tsx";
-import * as $7 from "./routes/[work]/form.tsx";
-import * as $8 from "./routes/_404.tsx";
-import * as $9 from "./routes/api/joke.ts";
-import * as $10 from "./routes/blog.tsx";
-import * as $11 from "./routes/certificates.tsx";
-import * as $12 from "./routes/index.tsx";
-import * as $13 from "./routes/me.tsx";
-import * as $14 from "./routes/projects.tsx";
-import * as $15 from "./routes/toys.tsx";
-import * as $16 from "./routes/what-is-this.tsx";
-import * as $17 from "./routes/work.tsx";
+import * as $7 from "./routes/[toys]/syntax-highlight.tsx";
+import * as $8 from "./routes/[work]/form.tsx";
+import * as $9 from "./routes/_404.tsx";
+import * as $10 from "./routes/api/joke.ts";
+import * as $11 from "./routes/blog.tsx";
+import * as $12 from "./routes/certificates.tsx";
+import * as $13 from "./routes/index.tsx";
+import * as $14 from "./routes/me.tsx";
+import * as $15 from "./routes/projects.tsx";
+import * as $16 from "./routes/toys.tsx";
+import * as $17 from "./routes/what-is-this.tsx";
+import * as $18 from "./routes/work.tsx";
 import * as $$0 from "./islands/AccentButton.tsx";
 import * as $$1 from "./islands/AddNewExpense.tsx";
 import * as $$2 from "./islands/ExpensesTracker.tsx";
@@ -37,7 +38,8 @@ import * as $$12 from "./islands/StyledInput.tsx";
 import * as $$13 from "./islands/StyledRadio.tsx";
 import * as $$14 from "./islands/StyledSelect.tsx";
 import * as $$15 from "./islands/StyledSingleCheckbox.tsx";
-import * as $$16 from "./islands/ThemeSwitcher.tsx";
+import * as $$16 from "./islands/SyntaxHighlighter.tsx";
+import * as $$17 from "./islands/ThemeSwitcher.tsx";
 
 const manifest = {
   routes: {
@@ -48,17 +50,18 @@ const manifest = {
     "./routes/[projects]/food-order.tsx": $4,
     "./routes/[toys]/insanity.tsx": $5,
     "./routes/[toys]/spinners.tsx": $6,
-    "./routes/[work]/form.tsx": $7,
-    "./routes/_404.tsx": $8,
-    "./routes/api/joke.ts": $9,
-    "./routes/blog.tsx": $10,
-    "./routes/certificates.tsx": $11,
-    "./routes/index.tsx": $12,
-    "./routes/me.tsx": $13,
-    "./routes/projects.tsx": $14,
-    "./routes/toys.tsx": $15,
-    "./routes/what-is-this.tsx": $16,
-    "./routes/work.tsx": $17,
+    "./routes/[toys]/syntax-highlight.tsx": $7,
+    "./routes/[work]/form.tsx": $8,
+    "./routes/_404.tsx": $9,
+    "./routes/api/joke.ts": $10,
+    "./routes/blog.tsx": $11,
+    "./routes/certificates.tsx": $12,
+    "./routes/index.tsx": $13,
+    "./routes/me.tsx": $14,
+    "./routes/projects.tsx": $15,
+    "./routes/toys.tsx": $16,
+    "./routes/what-is-this.tsx": $17,
+    "./routes/work.tsx": $18,
   },
   islands: {
     "./islands/AccentButton.tsx": $$0,
@@ -77,7 +80,8 @@ const manifest = {
     "./islands/StyledRadio.tsx": $$13,
     "./islands/StyledSelect.tsx": $$14,
     "./islands/StyledSingleCheckbox.tsx": $$15,
-    "./islands/ThemeSwitcher.tsx": $$16,
+    "./islands/SyntaxHighlighter.tsx": $$16,
+    "./islands/ThemeSwitcher.tsx": $$17,
   },
   baseUrl: import.meta.url,
   config,
