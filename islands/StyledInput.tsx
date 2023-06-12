@@ -68,7 +68,7 @@ export default function StyledInput(
             //! Reference: https://www.w3schools.com/tags/tag_input.asp
             type={inputType}
             //? Base class + validation class if needed
-            class="w-full p-2 custom-bg-bc rounded-xl grow caret-current my-1 mr-2 sm:my-1 sm:mx-2 custom-bo-ac custom-tr-txbgbo"
+            class="w-full p-2 custom-bg-bc rounded-xl grow caret-current my-1 sm:my-1 sm:ml-2 custom-bo-ac custom-tr-txbgbo"
             style={validationReference === validationStatus.Valid
               ? "border-color: green;"
               : validationReference === validationStatus.Invalid
@@ -100,7 +100,7 @@ export default function StyledInput(
           />
           {/* Tooltip on the right side, with user information about what data is valid */}
           {helpInformation && (
-            <div class="tooltip">
+            <div class="ml-2 tooltip">
               {/* Information icon */}
               <InformationIcon iconHeight="1.8em" iconWidth="1.8em" />
               <span class="tooltiptext">{helpInformation}</span>
