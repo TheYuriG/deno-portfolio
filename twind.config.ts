@@ -191,6 +191,14 @@ export default {
         width: "0.8em",
       },
     },
+    // Center an element positioned with top50% left50%
+    "transform-center": {
+      transform: "translate(-50%, -50%)",
+    },
+    // Modal backdrop
+    "backdrop-blur": {
+      "backdrop-filter": "blur(0.2em)",
+    },
     // Change font to custom Alfa Slab One
     "f-as": {
       "font-family": "'Alfa Slab One', cursive",
@@ -337,6 +345,7 @@ export default {
           };
       }
     },
+    // Text underline
     "custom-underline": ([underlineType]: Array<string>) => {
       switch (underlineType) {
         // Create a gradient underline below a link
