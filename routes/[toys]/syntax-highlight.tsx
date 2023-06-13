@@ -4,9 +4,18 @@ import { Base } from "../../components/base/Base.tsx";
 import { CustomHead } from "../../components/base/CustomHead.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
 import BlogNavigationButtons from "../../components/blog/BlogNavigationButtons.tsx";
-import SyntaxHighlighter from "../../islands/SyntaxHighlighter.tsx";
+//? Import Syntax Highlight form to handle sending data to the server
+import SyntaxHighlighForm from "../../components/toys/SyntaxHighlighForm.tsx";
+//? Imports middleware responsible for processing GET/POST requests to this route
+import { syntaxHighlightMiddleware } from "../../middleware/toys/__syntax-highlight.tsx";
 
-export default function Home() {
+//? Manages saving text input remotely and redirects
+export const handler = syntaxHighlightMiddleware;
+
+export default function Home(
+  { data: { errors } }: { data: { errors: string } },
+) {
+  console.log(errors);
   return (
     <>
       <CustomHead
@@ -14,13 +23,6 @@ export default function Home() {
         description="Turn a boring code block into syntax highlighted text to use in your blog"
         link="https://www.theyurig.com/toys/syntax-highlight"
       >
-        <script
-          type="module"
-          dangerouslySetInnerHTML={{
-            __html:
-              `import { highlightAll } from 'https://unpkg.com/@speed-highlight/core/dist/index.js'`,
-          }}
-        />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
@@ -39,15 +41,7 @@ export default function Home() {
             can then past in your React/Solid code to have it highlighted.
           </p>
           {/* Syntax highlight input + result */}
-          <SyntaxHighlighter />
-          {/* Warning about CSS */}
-          <p className="my-4">
-            You will need to also use the proper CSS classes to display the
-            highlighting, you can find an example file below. Ideally, those
-            classes will be built into whatever post-processor you use (like
-            PostCSS) so the unused styles can be pruned to save your visitors
-            some bytes of bandwidth.
-          </p>
+          <SyntaxHighlighForm />
         </section>
       </Base>
     </>
