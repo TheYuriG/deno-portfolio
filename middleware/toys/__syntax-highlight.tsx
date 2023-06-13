@@ -1,7 +1,7 @@
 //? Import handlers to manage HTTP methods for GET/POST to /toys/syntax-highlight
 import { Handlers } from "$fresh/server.ts";
 //? Import service that handles saving temporary JSON files to disk and then deleting them later
-import { saveHighlightTextToTemp } from "../../services/syntax-highlight/highlight-saved-text.ts";
+import { saveHighlightTextToDisk } from "../../services/syntax-highlight/save-highlight-text-to-disk.ts";
 
 //? Export a middleware responsible for handling incoming GET/POST requests to /toys/syntax-highlight
 export const syntaxHighlightMiddleware: Handlers = {
@@ -37,7 +37,7 @@ export const syntaxHighlightMiddleware: Handlers = {
 
     try {
       const now = new Date().getTime();
-      await saveHighlightTextToTemp(text, now);
+      await saveHighlightTextToDisk(text, now);
       // Redirect to highlighted text page
       headers.set("location", "/toys/highlighted-text/" + now.toString());
       return new Response(null, {
@@ -45,6 +45,7 @@ export const syntaxHighlightMiddleware: Handlers = {
         headers,
       });
     } catch (error) {
+      headers.set("location", "/toys/highlighted-text/error");
       return new Response(null, {
         status: 500, // Internal Server Error HTTP status code
       });
