@@ -1,5 +1,5 @@
 //? Import the error type for whenever there is a failed attempt to save to disk
-import SaveHighlightTextError from "../../types/error/SaveHighlightTextError.ts";
+import FetchDataError from "../../types/error/FetchDataError.ts";
 
 //? Function to save text to disk so it can be read by another route
 export async function saveHighlightTextToDisk(text: string, now: number) {
@@ -13,7 +13,7 @@ export async function saveHighlightTextToDisk(text: string, now: number) {
     await Deno.writeTextFile(filePath, JSON.stringify(dataToSave));
   } catch (error) {
     //? If the save fails, throw an error to load the error page
-    throw new SaveHighlightTextError("Failed to save file to disk!", error);
+    throw new FetchDataError("Failed to save file to disk!", error);
   }
 
   //? After saving the file to disk, create a timer to automatically delete the file
