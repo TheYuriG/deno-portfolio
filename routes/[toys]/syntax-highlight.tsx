@@ -15,7 +15,6 @@ export const handler = syntaxHighlightMiddleware;
 export default function Home(
   { data: { errors } }: { data: { errors: string } },
 ) {
-  console.log("errors at /toys/syntax-highlight:", errors);
   return (
     <>
       <CustomHead
@@ -32,16 +31,23 @@ export default function Home(
         <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
           {/* Title */}
           <h1 class="custom-underline-thick hover:custom-tx-ac f-as my-4 text-2xl lg:text-4xl text-center">
-            Syntax Highlighter
+            Syntax Highlighting as HTML+CSS
           </h1>
           {/* Introduction */}
           <p class="mb-4">
-            Insert your text on the left side and click the button to highlight
-            the text. Click 'copy' to copy the HTML code to clipboard, which you
-            can then past in your React/Solid code to have it highlighted.
+            Insert your text below and click "Highlight!" the text. After
+            submitting, a page will be created that hosts the highlighted HTML
+            code for the next 60 minutes, before getting deleted from the
+            database.
           </p>
           {/* Syntax highlight input + result */}
           <SyntaxHighlighForm />
+          <p className="mt-4">
+            You can share or revisit the highlighted snippet as many times as
+            you want within those 60 minutes. There is no limit to how many
+            snippets you might create, just make sure you are not submitting any
+            sensitive data (since anyone with the link can view the contents!).
+          </p>
         </section>
       </Base>
     </>
