@@ -5,7 +5,7 @@ import { CustomHead } from "../../../components/base/CustomHead.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
 import BlogNavigationButtons from "../../../components/blog/BlogNavigationButtons.tsx";
 //? Import the component responsible for adding the content that will eventually be highlighted
-import HighlightedCode from "../../../components/toys/HighlightedCode.tsx";
+import HighlightedCode from "../../../islands/HighlightedCode.tsx";
 //? Imports middleware responsible for processing GET/POST requests to this route
 import { highlightTextMiddleware } from "../../../middleware/toys/__highlighted-text.tsx";
 //? Import interface that defines what are the required properties for this content
@@ -53,7 +53,7 @@ export default function Home(
           </h1>
           <HighlightedCode textToHighlight={text} />
           {/* Warning about CSS */}
-          <p className="my-4">
+          <p class="my-4">
             You will need to also use the proper CSS classes to display the
             highlighting, you can find an example file below. Ideally, those
             classes will be built into whatever post-processor you use (like
