@@ -1,5 +1,5 @@
 //? Import the Expense type for casting
-import StyledSelect from "./StyledSelect.tsx";
+import StyledSelect from "../components/UI/StyledSelect.tsx";
 
 //? Define component properties
 interface ExpensesYearSelectProperties {

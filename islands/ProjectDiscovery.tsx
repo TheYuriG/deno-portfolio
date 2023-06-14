@@ -1,6 +1,6 @@
 //? Import from Preact to be able to change state
 import { useState } from "preact/hooks";
-import StyledSingleCheckbox from "./StyledSingleCheckbox.tsx";
+import StyledSingleCheckbox from "../components/UI/StyledSingleCheckbox.tsx";
 
 //? Define optional properties for the buttons
 interface ProjectDiscoveryProperties {

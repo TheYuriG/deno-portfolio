@@ -1,15 +1,15 @@
 //? Import from Preact to be able to change state
 import { useState } from "preact/hooks";
 //? Responsive and styled Label + Input
-import StyledInput from "./StyledInput.tsx";
+import StyledInput from "../components/UI/StyledInput.tsx";
 //? Styled Button to confirm sending the form
-import StyledButton from "./StyledButton.tsx";
+import StyledButton from "../components/UI/StyledButton.tsx";
 //? Styled Select for Employment Status dropdown
-import StyledSelect from "./StyledSelect.tsx";
+import StyledSelect from "../components/UI/StyledSelect.tsx";
 //? Styled radio for Welfare option
-import StyledRadio from "./StyledRadio.tsx";
+import StyledRadio from "../components/UI/StyledRadio.tsx";
 //? Styled checkbox for Stimulus Check option
-import StyledCheckboxGroup from "./StyledCheckboxGroup.tsx";
+import StyledCheckboxGroup from "../components/UI/StyledCheckboxGroup.tsx";
 
 //? Types for typecasting
 import { validationStatus } from "../types/validationStatus.ts";

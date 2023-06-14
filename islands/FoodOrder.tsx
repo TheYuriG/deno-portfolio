@@ -5,14 +5,14 @@ import type { Food } from "../types/Food.ts";
 //? Renders invidual food items on the page
 import { FoodItem } from "../components/food-order/FoodItem.tsx";
 //? Creates a modal with a shaded/blurred backdrop over the content behind it
-import ModalWithBackdrop from "./ModalWithBackdrop.tsx";
+import ModalWithBackdrop from "../components/UI/ModalWithBackdrop.tsx";
 //? Cart Button that opens the current Cart as a Modal
 import CartButton from "../components/food-order/CartButton.tsx";
 //? Content of the current Cart in a modal for the user to view Cart Items
 import CartModal from "../components/food-order/CartModal.tsx";
 //? Import accent button to create the Order now! button at the bottom
-import AccentButton from "./AccentButton.tsx";
-import ModalExtendedImage from "./ModalExtendedImage.tsx";
+import AccentButton from "../components/UI/AccentButton.tsx";
+import ModalExtendedImage from "../components/UI/ModalExtendedImage.tsx";
 
 //? Define properties required for this component
 interface FoodOrderProperties {

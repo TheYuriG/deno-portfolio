@@ -1,7 +1,7 @@
 //? Import useState hook to manage the insanityArray
 import { useState } from "preact/hooks";
 //? Imports the Styled Button template
-import StyledButton from "./StyledButton.tsx";
+import StyledButton from "../components/UI/StyledButton.tsx";
 
 //? Exports a button that will add more Insanity text when clicked.
 //? Also ships with basic Insanity text by default

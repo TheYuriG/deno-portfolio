@@ -14,7 +14,7 @@ export default function ModalWithBackdrop(
 ) {
   //? If the display is false, return just JSX Fragment
   if (display === false) {
-    return false;
+    return <></>;
   }
 
   //? If the display is true, display the overlay with the content provided

@@ -1,6 +1,6 @@
 //? Validation values for typecasting
-import InformationIcon from "../assets/InformationIcon.tsx";
-import { validationStatus } from "../types/validationStatus.ts";
+import InformationIcon from "../../assets/InformationIcon.tsx";
+import { validationStatus } from "../../types/validationStatus.ts";
 
 //? Define optional and required properties for inputs
 interface StyledInputProperties {

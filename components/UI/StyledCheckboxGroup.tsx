@@ -1,7 +1,7 @@
 //? Types for typecasting
-import { stimulusCheckboxOptions } from "../types/stimulusCheckboxOptions.ts";
+import { stimulusCheckboxOptions } from "../../types/stimulusCheckboxOptions.ts";
 //? Validation values for typecasting
-import { validationStatus } from "../types/validationStatus.ts";
+import { validationStatus } from "../../types/validationStatus.ts";
 import StyledSingleCheckbox from "./StyledSingleCheckbox.tsx";
 
 //? Every checkbox item needs to have a name and an associated
