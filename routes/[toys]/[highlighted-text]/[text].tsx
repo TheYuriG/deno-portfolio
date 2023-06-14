@@ -5,7 +5,7 @@ import { CustomHead } from "../../../components/base/CustomHead.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
 import BlogNavigationButtons from "../../../components/blog/BlogNavigationButtons.tsx";
 //? Import the component responsible for adding the content that will eventually be highlighted
-import HighlightedCode from "../../../islands/HighlightedCode.tsx";
+import HighlightedCode from "../../../components/toys/HighlightedCode.tsx";
 //? Imports middleware responsible for processing GET/POST requests to this route
 import { highlightTextMiddleware } from "../../../middleware/toys/__highlighted-text.tsx";
 //? Import interface that defines what are the required properties for this content
