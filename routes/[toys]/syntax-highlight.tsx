@@ -15,7 +15,7 @@ export const handler = syntaxHighlightMiddleware;
 export default function Home(
   { data: { errors } }: { data: { errors: string } },
 ) {
-  console.log(errors);
+  console.log("errors at /toys/syntax-highlight:", errors);
   return (
     <>
       <CustomHead

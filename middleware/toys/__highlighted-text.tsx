@@ -1,18 +1,16 @@
-//? Import handlers to fetch the name of the file that is meant to be loaded from disk
+//? Import handlers to fetch the name of the file that is meant to be loaded from KV
 import { Handlers } from "$fresh/server.ts";
-//? Utility to load file from disk and return parsed as JSON
-import { loadFileFromDisk } from "../../services/loadFileFromDisk.ts";
-//? Error class to handle loading failures
-import FetchDataError from "../../types/error/FetchDataError.ts";
+//? Utility to pull data from KV
+import { readFromKv } from "../../data/readFromKv.ts";
 
-//? Attempts to load file from disk on the path related to the [text] params
+//? Attempts to load data from KV on the path related to the [text] params
 export const highlightTextMiddleware: Handlers = {
   async GET(req, ctx) {
     const filePath = ctx.params.text;
-    const textToHighlight = await loadFileFromDisk(`./temp/${filePath}.json`);
+    const textToHighlight = await readFromKv(["highlight", filePath]);
 
-    //? If there was an error trying to read the file from ./temp, create error message
-    if (textToHighlight instanceof FetchDataError) {
+    //? If no data was found in KV, return message about automatic deletions
+    if (textToHighlight.value === null) {
       return ctx.render({
         text:
           "Unable to find this snippet. Code snippets are automatically deleted in one hour after bring created.",
@@ -22,6 +20,6 @@ export const highlightTextMiddleware: Handlers = {
     }
 
     //? If there were no problems, pass the content to be rendered
-    return ctx.render({ ...JSON.parse(textToHighlight) });
+    return ctx.render(textToHighlight.value);
   },
 };
