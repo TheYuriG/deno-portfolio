@@ -6,6 +6,8 @@ import { CustomHead } from "../../../components/base/CustomHead.tsx";
 import BlogNavigationButtons from "../../../components/blog/BlogNavigationButtons.tsx";
 //? Import the component responsible for adding the content that will eventually be highlighted
 import HighlightedCode from "../../../islands/HighlightedCode.tsx";
+//? Shows timer remaining on hover
+import DigitalTimer from "../../../islands/DigitalTimer.tsx";
 //? Imports middleware responsible for processing GET/POST requests to this route
 import { highlightTextMiddleware } from "../../../middleware/toys/__highlighted-text.tsx";
 //? Import interface that defines what are the required properties for this content
@@ -28,6 +30,7 @@ export default function Home(
       >
         {/* Syntax highlighting CSS */}
         <link rel="stylesheet" href="/syntax-highlighting.css" />
+        <link rel="stylesheet" href="/digital-clock.css" />
         {/* Syntax highlighting function */}
         <script
           type="module"
@@ -38,7 +41,6 @@ export default function Home(
           }}
         />
       </CustomHead>
-      {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
         <BlogNavigationButtons
           back={{
@@ -51,7 +53,16 @@ export default function Home(
           <h1 class="custom-underline-thick hover:custom-tx-ac f-as my-4 text-2xl lg:text-4xl text-center">
             Highlighted Code
           </h1>
+          {/* Text that will be syntax highlighted */}
           <HighlightedCode textToHighlight={text} />
+          {/* Clock to text expiration */}
+          <DigitalTimer
+            expiresAt={expiresAt}
+            expiredText="EXPIRED"
+            preppendedText="Expires in "
+            classes="ml-auto text-lg"
+            styles="color: red;"
+          />
           {/* Warning about CSS */}
           <p class="my-4">
             You will need to also use the proper CSS classes to display the
