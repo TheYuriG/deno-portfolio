@@ -1,6 +1,10 @@
 import { useMemo, useState } from "preact/hooks";
 //? Function to copy content to clipboard
 import { copyToClipboard } from "../services/copyToClipboard.ts";
+//? Import type for typecasting useState
+import type { booleanOrUndefined } from "../types/booleanOrUndefined.ts";
+//? Import status report toggle
+import { CopyStatus } from "../components/misc/CopyStatus.tsx";
 
 //? Define function that will try to copy the edited content to
 //? clipboard and then update the success state
@@ -40,7 +44,7 @@ export default function HighlightedCode(
   { textToHighlight }: { textToHighlight: string },
 ) {
   //? Tracks what is the message to be displayed about the "copy to clipboard" status
-  const [hasCopied, didCopyToClipboard] = useState<boolean | undefined>();
+  const [hasCopied, didCopyToClipboard] = useState<booleanOrUndefined>();
 
   return (
     <>
@@ -56,13 +60,7 @@ export default function HighlightedCode(
         </div>
       ), [])}
       {/* Updates user if code block content was copied */}
-      <p class="inline-block self-start mt-2 md:mb-6">
-        {hasCopied === undefined
-          ? "Copy to clipboard ⤴️"
-          : hasCopied === true
-          ? "Copied to clipboard! ✅"
-          : `Failed to copy to clipboard ❌ This usually happens because the content you provided has nothing to actually highlight.`}
-      </p>
+      <CopyStatus copyStatus={hasCopied} />
     </>
   );
 }
