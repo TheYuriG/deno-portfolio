@@ -40,12 +40,13 @@ export default function HighlightedCode(
         >
           {textToHighlight}
         </div>
-      ), [textToHighlight])}
+      {/* Updates user if code block content was copied */}
       <p class="inline-block self-start mt-2 md:mb-6">
-        Copy to clipboard{" "}
-        <span class="inline-block">
-          {hasCopied ? "✅" : "⤴️"}
-        </span>
+        {hasCopied === undefined
+          ? "Copy to clipboard ⤴️"
+          : hasCopied === true
+          ? "Copied to clipboard! ✅"
+          : `Failed to copy to clipboard ❌ This usually happens because the content you provided has nothing to actually highlight.`}
       </p>
     </>
   );
