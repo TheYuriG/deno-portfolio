@@ -12,6 +12,10 @@ import DigitalTimer from "../../../islands/DigitalTimer.tsx";
 import { highlightTextMiddleware } from "../../../middleware/toys/__highlighted-text.tsx";
 //? Import interface that defines what are the required properties for this content
 import type { HighlightText } from "../../../types/syntax-highlight/HighlightText.ts";
+//? Import component that creates a clickable textarea that copies the inner content to clipboard
+import CopyTextAreaToClipboard from "../../../islands/CopyTextAreaToClipboard.tsx";
+//? Import CSS classes text example
+import { syntaxHighlightClassesStyles } from "../../../types/syntax-highlight/syntaxHighlightClassesStyles.ts";
 
 //? Manages saving text input remotely and redirects
 export const handler = highlightTextMiddleware;
@@ -66,10 +70,20 @@ export default function Home(
           {/* Warning about CSS */}
           <p class="my-4">
             You will need to also use the proper CSS classes to display the
-            highlighting, you can find an example file below. Ideally, those
-            classes will be built into whatever post-processor you use (like
-            PostCSS) so the unused styles can be pruned to save your visitors
-            some bytes of bandwidth.
+            highlighting, you can click the box below to copy all the CSS
+            classes you might need. You should also feel free to tweak the
+            styling as you see fit for your own use case.
+          </p>
+          <CopyTextAreaToClipboard
+            classes="w-full"
+            content={syntaxHighlightClassesStyles}
+          />
+          <p class="my-4">
+            Ideally, those classes will be built into whatever post-processor
+            you use (like PostCSS) so the unused styles can be pruned to save
+            your visitors some bytes of bandwidth. If you use Twind, you can
+            extend the plugins in your twind.config.ts file to have all of that
+            managed for you automatically.
           </p>
         </section>
       </Base>
