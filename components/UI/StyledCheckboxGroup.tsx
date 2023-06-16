@@ -1,8 +1,8 @@
 //? Types for typecasting
-import { stimulusCheckboxOptions } from "../types/stimulusCheckboxOptions.ts";
-//? Validation values for typecasting
-import { validationStatus } from "../types/validationStatus.ts";
-import StyledSingleCheckbox from "./StyledSingleCheckbox.tsx";
+import { stimulusCheckboxOptions } from "../../types/stimulusCheckboxOptions.ts";
+import { validationStatus } from "../../types/validationStatus.ts";
+//? Import checkboxes to compose group
+import { StyledSingleCheckbox } from "./StyledSingleCheckbox.tsx";
 
 //? Every checkbox item needs to have a name and an associated
 //? value to enable changing its state
@@ -22,7 +22,7 @@ interface CheckboxGroupProperties {
 }
 
 //? Exports a styled select with label and options
-export default function StyledCheckboxGroup({
+export function StyledCheckboxGroup({
   label,
   optionsArray,
   validationReference,

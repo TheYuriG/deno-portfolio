@@ -3,7 +3,7 @@ import { CustomHead } from "../../components/base/CustomHead.tsx";
 //? Lateral text with theme switcher
 import { Base } from "../../components/base/Base.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
-import BlogNavigationButtons from "../../components/blog/BlogNavigationButtons.tsx";
+import { BlogNavigationButtons } from "../../components/blog/BlogNavigationButtons.tsx";
 //? A HTML Link component to pre-format links and reduce boiletplate
 import { GradientLink } from "../../components/base/GradientLink.tsx";
 
@@ -15,25 +15,6 @@ export default function Home() {
         description="A guide on how to make your Theme Switcher to no longer flicker when the page loads."
         link="https://www.theyurig.com/blog/stopping-theme-flickering-deno-fresh"
       >
-        <link rel="stylesheet" href="/syntax-highlighting.css" />
-        {
-          /* Syntax highlight for code. How can we do this better
-            so we don't cause Cumulative Layout Shift?
-            There must be a better way... */
-
-          // Checked March 23rd, 2023 and there is currently no better
-          // option for Deno. As for NPM packages, options to consider are
-          // rc-highlight: https://www.npmjs.com/package/rc-highlight
-          // and lowlight: https://github.com/wooorm/lowlight
-        }
-        <script
-          type="module"
-          dangerouslySetInnerHTML={{
-            __html:
-              `import { highlightAll } from 'https://unpkg.com/@speed-highlight/core/dist/index.js';
-            highlightAll();`,
-          }}
-        />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
@@ -180,7 +161,7 @@ export default function Home() {
             Adding a script file to every response
           </h2>
           <p class="my-2 text-justify">
-            Be very careful about the <code class="shj-lang-js">script</code>
+            Be very careful about the <code class="shl-inline">script</code>
             {" "}
             tags that you import on your project. Not knowing what you are doing
             can leave you (and your users) vulnerable to{" "}
@@ -197,47 +178,148 @@ export default function Home() {
           <p class="my-2 text-justify">
             In our case, our implementation is incredibly simple. We just add a
             small script to the response's{" "}
-            <code class="shj-lang-js">&lt;head&gt;</code>{" "}
+            <code class="shl-inline">&lt;head&gt;</code>{" "}
             that checks if the user has a theme saved in{" "}
-            <code class="shj-lang-js">localStorage</code>{" "}
+            <code class="shl-inline">localStorage</code>{" "}
             and if they don't, we try to apply their OS-preferred color scheme.
             Let's have a look:
           </p>
           {/* Code block with initial implementation */}
-          <div class="shj-lang-js">
-            {`// /routes/index.tsx (but can be any page)
-export default function Home() {
-    return (
-        <>
-            <Head>
-                // must not be deferred/module to stop flickering!
-                <script src="/themeSwitcher.js"></script>
-            </Head>
-            // your page response body goes here
-        </>
-    );
-}`}
+          <div class="shl-block">
+            <span class="shl-cmnt">
+              // /routes/index.tsx (but can be any page){`
+`}
+            </span>
+            <span class="shl-kwd">export</span>{" "}
+            <span class="shl-kwd">default</span>{" "}
+            <span class="shl-kwd">function</span>{" "}
+            <span class="shl-class">Home</span>() &#123;{`
+    `}
+            <span class="shl-kwd">return</span> ({`
+        `}
+            <span class="shl-oper">&lt;&gt;</span>
+            {`
+            `}
+            <span class="shl-oper">&lt;</span>
+            <span class="shl-class">Head</span>
+            <span class="shl-oper">&gt;</span>
+            {`
+                `}
+            <span class="shl-cmnt">
+              // must not be deferred/module to stop flickering!
+            </span>
+            {`
+                `}
+            <span class="shl-oper">&lt;</span>script src<span class="shl-oper">
+              =
+            </span>
+            <span class="shl-str">"/themeSwitcher.js"</span>
+            <span class="shl-oper">&gt;&lt;/</span>script<span class="shl-oper">
+              &gt;
+            </span>
+            {`
+            `}
+            <span class="shl-oper">&lt;/</span>
+            <span class="shl-class">Head</span>
+            <span class="shl-oper">&gt;</span>
+            {`
+            `}
+            <span class="shl-cmnt">// your page response body goes here</span>
+            {`
+        `}
+            <span class="shl-oper">&lt;/&gt;</span>
+            {`
+    `});{`
+`}&#125;
           </div>
           <p class="my-2 text-justify">And inside the script file:</p>
-          <div class="shj-lang-js">
-            {`// /static/themeSwitcher.js
-const selectedTheme = localStorage.getItem("theme");
-if (selectedTheme === null) {
-    window.showDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    localStorage.setItem("theme", window.showDarkMode ? "Dark" : "Light");
-} else {
-    window.showDarkMode = selectedTheme === "Dark";
-}
-const cssRoot = document.querySelector(":root");
-if (window.showDarkMode === true) {
-    cssRoot.style.setProperty("--base-color", "rgb(15 23 42)");
-    cssRoot.style.setProperty("--neutral-color", "rgb(203 213 225)");
-    cssRoot.style.setProperty("--accent-color", "rgb(126 34 206)");
-} else {
-    cssRoot.style.setProperty("--base-color", "rgb(203 213 225)");
-    cssRoot.style.setProperty("--neutral-color", "rgb(15 23 42)");
-    cssRoot.style.setProperty("--accent-color", "rgb(220 38 38)");
-}`}
+          <div class="shl-block">
+            <span class="shl-cmnt">
+              // /static/themeSwitcher.js{`
+`}
+            </span>
+            <span class="shl-kwd">const</span> selectedTheme{" "}
+            <span class="shl-oper">=</span>{" "}
+            localStorage<span class="shl-oper">.</span>
+            <span class="shl-func">getItem</span>(<span class="shl-str">
+              "theme"
+            </span>);{`
+`}
+            <span class="shl-kwd">if</span> (selectedTheme{" "}
+            <span class="shl-oper">===</span>{" "}
+            <span class="shl-num">null</span>) &#123;{`
+    `}window<span class="shl-oper">.</span>showDarkMode{" "}
+            <span class="shl-oper">=</span>{" "}
+            window<span class="shl-oper">.</span>
+            <span class="shl-func">matchMedia</span>(<span class="shl-str">
+              "(prefers-color-scheme: dark)"
+            </span>)<span class="shl-oper">.</span>matches;{`
+    `}localStorage<span class="shl-oper">.</span>
+            <span class="shl-func">setItem</span>(<span class="shl-str">
+              "theme"
+            </span>
+            <span class="shl-oper">,</span>{" "}
+            window<span class="shl-oper">.</span>showDarkMode{" "}
+            <span class="shl-oper">?</span> <span class="shl-str">"Dark"</span>
+            {" "}
+            <span class="shl-oper">:</span>{" "}
+            <span class="shl-str">"Light"</span>);{`
+`}&#125; <span class="shl-kwd">else</span> &#123;{`
+    `}window<span class="shl-oper">.</span>showDarkMode{" "}
+            <span class="shl-oper">=</span> selectedTheme{" "}
+            <span class="shl-oper">===</span>{" "}
+            <span class="shl-str">"Dark"</span>;{`
+`}&#125;{`
+`}
+            <span class="shl-kwd">const</span> cssRoot{" "}
+            <span class="shl-oper">=</span>{" "}
+            document<span class="shl-oper">.</span>
+            <span class="shl-func">querySelector</span>(<span class="shl-str">
+              ":root"
+            </span>);{`
+`}
+            <span class="shl-kwd">if</span>{" "}
+            (window<span class="shl-oper">.</span>showDarkMode{" "}
+            <span class="shl-oper">===</span>{" "}
+            <span class="shl-bool">true</span>) &#123;{`
+    `}cssRoot<span class="shl-oper">.</span>style<span class="shl-oper">.</span>
+            <span class="shl-func">setProperty</span>(<span class="shl-str">
+              "--base-color"
+            </span>
+            <span class="shl-oper">,</span>{" "}
+            <span class="shl-str">"rgb(15 23 42)"</span>);{`
+    `}cssRoot<span class="shl-oper">.</span>style<span class="shl-oper">.</span>
+            <span class="shl-func">setProperty</span>(<span class="shl-str">
+              "--neutral-color"
+            </span>
+            <span class="shl-oper">,</span>{" "}
+            <span class="shl-str">"rgb(203 213 225)"</span>);{`
+    `}cssRoot<span class="shl-oper">.</span>style<span class="shl-oper">.</span>
+            <span class="shl-func">setProperty</span>(<span class="shl-str">
+              "--accent-color"
+            </span>
+            <span class="shl-oper">,</span>{" "}
+            <span class="shl-str">"rgb(126 34 206)"</span>);{`
+`}&#125; <span class="shl-kwd">else</span> &#123;{`
+    `}cssRoot<span class="shl-oper">.</span>style<span class="shl-oper">.</span>
+            <span class="shl-func">setProperty</span>(<span class="shl-str">
+              "--base-color"
+            </span>
+            <span class="shl-oper">,</span>{" "}
+            <span class="shl-str">"rgb(203 213 225)"</span>);{`
+    `}cssRoot<span class="shl-oper">.</span>style<span class="shl-oper">.</span>
+            <span class="shl-func">setProperty</span>(<span class="shl-str">
+              "--neutral-color"
+            </span>
+            <span class="shl-oper">,</span>{" "}
+            <span class="shl-str">"rgb(15 23 42)"</span>);{`
+    `}cssRoot<span class="shl-oper">.</span>style<span class="shl-oper">.</span>
+            <span class="shl-func">setProperty</span>(<span class="shl-str">
+              "--accent-color"
+            </span>
+            <span class="shl-oper">,</span>{" "}
+            <span class="shl-str">"rgb(220 38 38)"</span>);{`
+`}&#125;
           </div>
           <p class="my-2 text-justify">In order:</p>
           <ol
@@ -246,25 +328,25 @@ if (window.showDarkMode === true) {
           >
             <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
               Check if there is a theme already saved on{" "}
-              <code class="shj-lang-js">localStorage</code>. If there isn't one,
+              <code class="shl-inline">localStorage</code>. If there isn't one,
               check what's the user preferred color scheme, save it, and set
               {" "}
-              <code class="shj-lang-js">
+              <code class="shl-inline">
                 window.showDarkMode
               </code>
               . If there is, you just set{" "}
-              <code class="shj-lang-js">window.showDarkMode</code>{" "}
+              <code class="shl-inline">window.showDarkMode</code>{" "}
               on/off based on the saved theme.
             </li>
             <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
               Check window.showDarkMode and apply the colors to the{" "}
-              <code class="shj-lang-js">root</code>{"  "}
+              <code class="shl-inline">root</code>{"  "}
               element for either mode based on that being{" "}
-              <code class="shj-lang-js">
+              <code class="shl-inline">
                 true
               </code>{" "}
               or{" "}
-              <code class="shj-lang-js">
+              <code class="shl-inline">
                 false
               </code>
               .
@@ -273,37 +355,67 @@ if (window.showDarkMode === true) {
           <p class="my-2 text-justify">
             Now all we gotta do is update our component and we are done!
           </p>
-          <div class="shj-lang-js">
-            {`// /islands/themeSwitcher.tsx (updated)
-...
-const [theme, setTheme] = useState(
-    // @ts-ignore This property gets set by themeSwitcher.js in <Head>
-    window.showDarkMode === true ? "Dark" : "Light",
-);
+          <div class="shl-block">
+            <span class="shl-cmnt">
+              // /islands/themeSwitcher.tsx (updated){`
+`}
+            </span>
+            <span class="shl-oper">...</span>
+            {`
+`}
+            <span class="shl-kwd">const</span>{" "}
+            [theme<span class="shl-oper">,</span> setTheme]{" "}
+            <span class="shl-oper">=</span>{" "}
+            <span class="shl-func">useState</span>({`
+    `}
+            <span class="shl-cmnt">
+              // @ts-ignore This property gets set by themeSwitcher.js in
+              &lt;Head&gt;
+            </span>
+            {`
+    `}window<span class="shl-oper">.</span>showDarkMode{" "}
+            <span class="shl-oper">===</span> <span class="shl-bool">true</span>
+            {" "}
+            <span class="shl-oper">?</span> <span class="shl-str">"Dark"</span>
+            {" "}
+            <span class="shl-oper">:</span> <span class="shl-str">"Light"</span>
+            <span class="shl-oper">,</span>
+            {`
+`});{`
 
-useEffect(() => {
-    if (isInitialMount.current) {
-        isInitialMount.current = false;
-        return;
-    }
-    ...
-}
-...`}
+`}
+            <span class="shl-func">useEffect</span>((){" "}
+            <span class="shl-kwd">=&gt;</span> &#123;{`
+    `}
+            <span class="shl-kwd">if</span>{" "}
+            (isInitialMount<span class="shl-oper">.</span>current) &#123;{`
+        `}isInitialMount<span class="shl-oper">.</span>current{" "}
+            <span class="shl-oper">=</span>{" "}
+            <span class="shl-bool">false</span>;{`
+        `}
+            <span class="shl-kwd">return</span>;{`
+    `}&#125;{`
+    `}
+            <span class="shl-oper">...</span>
+            {`
+`}&#125;{`
+`}
+            <span class="shl-oper">...</span>
           </div>
           <p class="my-2 text-justify">
             Because{" "}
-            <code class="shj-lang-js">
+            <code class="shl-inline">
               window.showDarkMode
             </code>{" "}
             is set within the response's{" "}
-            <code class="shj-lang-js">&lt;head&gt;</code>
+            <code class="shl-inline">&lt;head&gt;</code>
             , Typescript doesn't know that it exists and will give you a
             warning, hence the suppression above. Since your{" "}
-            <code class="shj-lang-js">useEffect()</code>{" "}
+            <code class="shl-inline">useEffect()</code>{" "}
             no longer needs to set the theme based on what is saved on{" "}
-            <code class="shj-lang-js">localStorage</code>, we can remove that
-            bit too, leaving the initial check to only validate if it's the
-            first run and skip when it is.
+            <code class="shl-inline">localStorage</code>, we can remove that bit
+            too, leaving the initial check to only validate if it's the first
+            run and skip when it is.
           </p>
           <p class="my-2 text-justify">
             So there you have it, a Theme Switcher that sets the correct theme,
@@ -322,15 +434,15 @@ useEffect(() => {
           <p class="my-2 text-justify">
             One of the options would be to use route-based theming. You could
             create your entire website nested in either a{" "}
-            <code class="shj-lang-js">
+            <code class="shl-inline">
               /light
             </code>{" "}
             or{" "}
-            <code class="shj-lang-js">
+            <code class="shl-inline">
               /dark
             </code>{" "}
             route (or better yet, a single{" "}
-            <code class="shj-lang-js">
+            <code class="shl-inline">
               /[theme]
             </code>{" "}
             route!), and have your index redirect to either of those based on
@@ -343,7 +455,7 @@ useEffect(() => {
           {/* App router, but maybe just use NextJS instead? */}
           <p class="my-2 text-justify">
             Another option would be to not save the theme to{" "}
-            <code class="shj-lang-js">
+            <code class="shl-inline">
               localStorage
             </code>{" "}
             and also never redirect, essentially turning your application into a

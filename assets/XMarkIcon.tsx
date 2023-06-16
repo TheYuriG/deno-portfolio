@@ -2,7 +2,7 @@
 import { IconPropertiesWithStroke } from "../types/IconProperties.ts";
 
 //? Renders a XMark Icon with fill, stroke and stroke-width
-export default function XMarkIcon(
+export function XMarkIcon(
   { iconHeight, iconWidth, iconFillColor, iconStrokeColor, iconStrokeWidth }:
     IconPropertiesWithStroke,
 ) {

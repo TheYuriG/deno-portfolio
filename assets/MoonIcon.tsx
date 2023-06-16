@@ -2,7 +2,7 @@
 import { IconProperties } from "../types/IconProperties.ts";
 
 //? Renders a moon Icon with fill
-export default function MoonIcon(
+export function MoonIcon(
   { iconHeight, iconWidth, iconFillColor }: IconProperties,
 ) {
   return (

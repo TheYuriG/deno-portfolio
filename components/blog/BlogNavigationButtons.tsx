@@ -1,6 +1,6 @@
 //? Import LinkProperties to type what is required for the
 //? optional "back" and "next" buttons
-import ChevronIcon from "../../assets/ChevronIcon.tsx";
+import { ChevronIcon } from "../../assets/ChevronIcon.tsx";
 import { LinkProperties } from "../../types/LinkProperties.ts";
 //? Define optional properties for the buttons
 interface BlogNavigationButtonProperties {
@@ -13,7 +13,7 @@ const navigationClasses =
   "group flex items-center text-xl hover:custom-tx-ac custom-tr-tx";
 
 //? Exports Navigation Buttons to go to the previous page and next Article
-export default function BlogNavigationButtons(
+export function BlogNavigationButtons(
   { back, next }: BlogNavigationButtonProperties,
 ) {
   //? Creates a back button if a link is provided, otherwise

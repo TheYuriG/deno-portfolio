@@ -18,14 +18,6 @@ div.shj-lang-js {
     box-shadow: 0 0 1em 0.3em grey;
 }
 
-/* Formatting for inline code blocks <span> */
-.shj-inline {
-    margin: 0;
-    padding: 0 0.5em;
-    display: inline-block;
-    border-radius: 0.5em
-}
-
 /* Comments */
 .shj-syn-cmnt {
     font-style: italic

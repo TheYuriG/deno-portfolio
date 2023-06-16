@@ -1,0 +1,8 @@
+@font-face {
+    font-family: pizza-dude-dot-dk;
+    src: url('./DIGITALDREAM.ttf');
+}
+
+.digital-clock {
+    font-family: pizza-dude-dot-dk;
+}

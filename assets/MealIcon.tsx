@@ -2,7 +2,7 @@
 import { IconProperties } from "../types/IconProperties.ts";
 
 //? Renders a Knife and Fork Icon with fill
-export default function MealIcon(
+export function MealIcon(
   { iconHeight, iconWidth, iconFillColor }: IconProperties,
 ) {
   return (

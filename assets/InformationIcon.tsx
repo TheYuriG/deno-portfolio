@@ -2,7 +2,7 @@
 import { IconProperties } from "../types/IconProperties.ts";
 
 //? Renders an Information Icon with fill
-export default function InformationIcon(
+export function InformationIcon(
   { iconHeight, iconWidth, iconFillColor }: IconProperties,
 ) {
   return (

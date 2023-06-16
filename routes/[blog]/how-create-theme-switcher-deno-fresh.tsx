@@ -3,7 +3,7 @@ import { CustomHead } from "../../components/base/CustomHead.tsx";
 //? Lateral text with theme switcher
 import { Base } from "../../components/base/Base.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
-import BlogNavigationButtons from "../../components/blog/BlogNavigationButtons.tsx";
+import { BlogNavigationButtons } from "../../components/blog/BlogNavigationButtons.tsx";
 //? A HTML Link component to pre-format links and reduce boiletplate
 import { GradientLink } from "../../components/base/GradientLink.tsx";
 
@@ -15,25 +15,6 @@ export default function Home() {
         description="A guide on how to create your own Theme Switcher using Deno and Fresh"
         link="https://www.theyurig.com/blog/how-create-theme-switcher-deno-fresh"
       >
-        <link rel="stylesheet" href="/syntax-highlighting.css" />
-        {
-          /* Syntax highlight for code. How can we do this better
-            so we don't cause Cumulative Layout Shift?
-            There must be a better way... */
-
-          // Checked March 23rd, 2023 and there is currently no better
-          // option for Deno. As for NPM packages, options to consider are
-          // rc-highlight: https://www.npmjs.com/package/rc-highlight
-          // and lowlight: https://github.com/wooorm/lowlight
-        }
-        <script
-          type="module"
-          dangerouslySetInnerHTML={{
-            __html:
-              `import { highlightAll } from 'https://unpkg.com/@speed-highlight/core/dist/index.js';
-            highlightAll();`,
-          }}
-        />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
@@ -148,54 +129,168 @@ export default function Home() {
             Let's create a very simple Theme Switcher:
           </p>
           {/* Code block with initial implementation */}
-          <div class="shj-lang-js">
-            {`// /islands/ThemeSwitcher.tsx
-import { useState, useEffect } from 'preact/hooks';
-export default function ThemeSwitcher() {
-    const [theme, setTheme] = useState('Dark');
+          <div class="shl-block">
+            <span class="shl-cmnt">
+              // /islands/ThemeSwitcher.tsx{`
+`}
+            </span>
+            <span class="shl-kwd">import</span>{" "}
+            &#123; useState<span class="shl-oper">,</span> useEffect &#125;{" "}
+            <span class="shl-kwd">from</span>{" "}
+            <span class="shl-str">'preact/hooks'</span>;{`
+`}
+            <span class="shl-kwd">export</span>{" "}
+            <span class="shl-kwd">default</span>{" "}
+            <span class="shl-kwd">function</span>{" "}
+            <span class="shl-class">ThemeSwitcher</span>() &#123;{`
+    `}
+            <span class="shl-kwd">const</span>{" "}
+            [theme<span class="shl-oper">,</span> setTheme]{" "}
+            <span class="shl-oper">=</span>{" "}
+            <span class="shl-func">useState</span>(<span class="shl-str">
+              'Dark'
+            </span>);{`
 
-    useEffect(() => {
-		const cssRoot: HTMLElement | null = document.querySelector(':root');
-		if (cssRoot !== null) {
-			if (theme === 'Light') {
-				cssRoot.style.setProperty('--base-color', 'rgb(203 213 225)');
-				cssRoot.style.setProperty('--neutral-color', 'rgb(15 23 42)');
-				cssRoot.style.setProperty('--accent-color', 'rgb(220 38 38)');
-			} else {
-				cssRoot.style.setProperty('--base-color', 'rgb(15 23 42)');
-				cssRoot.style.setProperty('--neutral-color', 'rgb(203 213 225)');
-				cssRoot.style.setProperty('--accent-color', 'rgb(126 34 206)');
-			}
-		}
-	}, [theme]);
+    `}
+            <span class="shl-func">useEffect</span>((){" "}
+            <span class="shl-kwd">=&gt;</span> &#123;{`
+		`}
+            <span class="shl-kwd">const</span>{" "}
+            cssRoot<span class="shl-oper">:</span>{" "}
+            <span class="shl-class">HTMLElement</span>{" "}
+            <span class="shl-oper">|</span> <span class="shl-num">null</span>
+            {" "}
+            <span class="shl-oper">=</span>{" "}
+            document<span class="shl-oper">.</span>
+            <span class="shl-func">querySelector</span>(<span class="shl-str">
+              ':root'
+            </span>);{`
+		`}
+            <span class="shl-kwd">if</span> (cssRoot{" "}
+            <span class="shl-oper">!==</span>{" "}
+            <span class="shl-num">null</span>) &#123;{`
+			`}
+            <span class="shl-kwd">if</span> (theme{" "}
+            <span class="shl-oper">===</span>{" "}
+            <span class="shl-str">'Light'</span>) &#123;{`
+				`}cssRoot<span class="shl-oper">.</span>style<span class="shl-oper">
+              .
+            </span>
+            <span class="shl-func">setProperty</span>(<span class="shl-str">
+              '--base-color'
+            </span>
+            <span class="shl-oper">,</span>{" "}
+            <span class="shl-str">'rgb(203 213 225)'</span>);{`
+				`}cssRoot<span class="shl-oper">.</span>style<span class="shl-oper">
+              .
+            </span>
+            <span class="shl-func">setProperty</span>(<span class="shl-str">
+              '--neutral-color'
+            </span>
+            <span class="shl-oper">,</span>{" "}
+            <span class="shl-str">'rgb(15 23 42)'</span>);{`
+				`}cssRoot<span class="shl-oper">.</span>style<span class="shl-oper">
+              .
+            </span>
+            <span class="shl-func">setProperty</span>(<span class="shl-str">
+              '--accent-color'
+            </span>
+            <span class="shl-oper">,</span>{" "}
+            <span class="shl-str">'rgb(220 38 38)'</span>);{`
+			`}&#125; <span class="shl-kwd">else</span> &#123;{`
+				`}cssRoot<span class="shl-oper">.</span>style<span class="shl-oper">
+              .
+            </span>
+            <span class="shl-func">setProperty</span>(<span class="shl-str">
+              '--base-color'
+            </span>
+            <span class="shl-oper">,</span>{" "}
+            <span class="shl-str">'rgb(15 23 42)'</span>);{`
+				`}cssRoot<span class="shl-oper">.</span>style<span class="shl-oper">
+              .
+            </span>
+            <span class="shl-func">setProperty</span>(<span class="shl-str">
+              '--neutral-color'
+            </span>
+            <span class="shl-oper">,</span>{" "}
+            <span class="shl-str">'rgb(203 213 225)'</span>);{`
+				`}cssRoot<span class="shl-oper">.</span>style<span class="shl-oper">
+              .
+            </span>
+            <span class="shl-func">setProperty</span>(<span class="shl-str">
+              '--accent-color'
+            </span>
+            <span class="shl-oper">,</span>{" "}
+            <span class="shl-str">'rgb(126 34 206)'</span>);{`
+			`}&#125;{`
+		`}&#125;{`
+	`}&#125;<span class="shl-oper">,</span> [theme]);{`
 
-    const themes: string[] = ['Dark', 'Light'];
+    `}
+            <span class="shl-kwd">const</span>{" "}
+            themes<span class="shl-oper">:</span> string[]{" "}
+            <span class="shl-oper">=</span> [<span class="shl-str">'Dark'</span>
+            <span class="shl-oper">,</span>{" "}
+            <span class="shl-str">'Light'</span>];{`
 
-    return (
-		<>
-			{themes.map((themeOption) => (
-				<label for={themeOption}>
-					<input
-						class="mr-1"
-						type="radio"
-						id={themeOption}
-						name="theme"
-						checked={theme == themeOption}
-						onClick={() => {
-							setTheme(themeOption);
-						}}
-					></input>
-					{themeOption}
-				</label>
-			))}
-		</>
-	);
-}`}
+    `}
+            <span class="shl-kwd">return</span> ({`
+		`}
+            <span class="shl-oper">&lt;&gt;</span>
+            {`
+			`}&#123;themes<span class="shl-oper">.</span>
+            <span class="shl-func">map</span>((themeOption){" "}
+            <span class="shl-kwd">=&gt;</span> ({`
+				`}
+            <span class="shl-oper">&lt;</span>label{" "}
+            <span class="shl-kwd">for</span>
+            <span class="shl-oper">
+              =
+            </span>&#123;themeOption&#125;<span class="shl-oper">&gt;</span>
+            {`
+					`}
+            <span class="shl-oper">&lt;</span>input{`
+						`}
+            <span class="shl-kwd">class</span>
+            <span class="shl-oper">=</span>
+            <span class="shl-str">"mr-1"</span>
+            {`
+						`}type<span class="shl-oper">=</span>
+            <span class="shl-str">"radio"</span>
+            {`
+						`}id<span class="shl-oper">=</span>&#123;themeOption&#125;{`
+						`}name<span class="shl-oper">=</span>
+            <span class="shl-str">"theme"</span>
+            {`
+						`}checked<span class="shl-oper">=</span>&#123;theme{" "}
+            <span class="shl-oper">==</span> themeOption&#125;{`
+						`}onClick<span class="shl-oper">=</span>&#123;(){" "}
+            <span class="shl-kwd">=&gt;</span> &#123;{`
+							`}
+            <span class="shl-func">setTheme</span>(themeOption);{`
+						`}&#125;&#125;{`
+					`}
+            <span class="shl-oper">&gt;&lt;/</span>input<span class="shl-oper">
+              &gt;
+            </span>
+            {`
+					`}&#123;themeOption&#125;{`
+				`}
+            <span class="shl-oper">&lt;/</span>label<span class="shl-oper">
+              &gt;
+            </span>
+            {`
+			`}))&#125;{`
+		`}
+            <span class="shl-oper">&lt;/&gt;</span>
+            {`
+	`});{`
+`}&#125;
           </div>
           {/* Initial implementation explanation */}
           <p class="text-justify">
             This creates a radio input that has{" "}
-            <code class="shj-lang-js">
+            <code class="shl-inline">
               Dark
             </code>{" "}
             selected by default and allows you to toggle between modes.
@@ -203,60 +298,103 @@ export default function ThemeSwitcher() {
             of the theme for this blog, now let's make sure we can save the
             changes when the user clicks either input. Feel free to replace the
             values of{" "}
-            <code class="shj-lang-js">
+            <code class="shl-inline">
               --base-color
             </code>
             ,{" "}
-            <code class="shj-lang-js">
+            <code class="shl-inline">
               --neutral-color
             </code>
             , and{" "}
-            <code class="shj-lang-js">
+            <code class="shl-inline">
               --accent-color
             </code>{" "}
             with the values for your theme.
           </p>
           {/* Improved implementation with localStorage */}
-          <div class="shj-lang-js">
-            {`// /islands/ThemeSwitcher.tsx (updated)
-import { useEffect, useRef, useState } from "preact/hooks";
-...
-const isInitialMount = useRef(true);
+          <div class="shl-block">
+            <span class="shl-cmnt">
+              // /islands/ThemeSwitcher.tsx (updated){`
+`}
+            </span>
+            <span class="shl-kwd">import</span>{" "}
+            &#123; useEffect<span class="shl-oper">,</span>{" "}
+            useRef<span class="shl-oper">,</span> useState &#125;{" "}
+            <span class="shl-kwd">from</span>{" "}
+            <span class="shl-str">"preact/hooks"</span>;{`
+`}
+            <span class="shl-oper">...</span>
+            {`
+`}
+            <span class="shl-kwd">const</span> isInitialMount{" "}
+            <span class="shl-oper">=</span>{" "}
+            <span class="shl-func">useRef</span>(<span class="shl-bool">
+              true
+            </span>);{`
 
-useEffect(() => {
-    const savedTheme = localStorage.getItem("theme")
+`}
+            <span class="shl-func">useEffect</span>((){" "}
+            <span class="shl-kwd">=&gt;</span> &#123;{`
+    `}
+            <span class="shl-kwd">const</span> savedTheme{" "}
+            <span class="shl-oper">=</span>{" "}
+            localStorage<span class="shl-oper">.</span>
+            <span class="shl-func">getItem</span>(<span class="shl-str">
+              "theme"
+            </span>){`
 
-    if (isInitialMount.current === true) {
-        if (savedTheme !== null && savedTheme !== theme){
-            setTheme(() => savedTheme)
-            return
-        }
+    `}
+            <span class="shl-kwd">if</span>{" "}
+            (isInitialMount<span class="shl-oper">.</span>current{" "}
+            <span class="shl-oper">===</span>{" "}
+            <span class="shl-bool">true</span>) &#123;{`
+        `}
+            <span class="shl-kwd">if</span> (savedTheme{" "}
+            <span class="shl-oper">!==</span> <span class="shl-num">null</span>
+            {" "}
+            <span class="shl-oper">&amp;&amp;</span> savedTheme{" "}
+            <span class="shl-oper">!==</span> theme)&#123;{`
+            `}
+            <span class="shl-func">setTheme</span>((){" "}
+            <span class="shl-kwd">=&gt;</span> savedTheme){`
+            `}
+            <span class="shl-kwd">return</span>
+            {`
+        `}&#125;{`
 
-      isInitialMount.current = false;
-      return;
-    }
-    localStorage.setItem("theme", theme);
-...`}
+      `}isInitialMount<span class="shl-oper">.</span>current{" "}
+            <span class="shl-oper">=</span>{" "}
+            <span class="shl-bool">false</span>;{`
+      `}
+            <span class="shl-kwd">return</span>;{`
+    `}&#125;{`
+    `}localStorage<span class="shl-oper">.</span>
+            <span class="shl-func">setItem</span>(<span class="shl-str">
+              "theme"
+            </span>
+            <span class="shl-oper">,</span> theme);{`
+`}
+            <span class="shl-oper">...</span>
           </div>
           {/* Second code block explanation */}
           <p class="my-2 text-justify">
             We have added a reference to the{" "}
-            <code class="shj-lang-js">
+            <code class="shl-inline">
               useEffect()
             </code>{" "}
             to avoid having it saving the current{" "}
-            <code class="shj-lang-js">
+            <code class="shl-inline">
               theme
             </code>{" "}
             to{" "}
-            <code class="shj-lang-js">
+            <code class="shl-inline">
               localStorage
             </code>{" "}
             on the first render.
           </p>
           <p class="text-justify">
             What the{" "}
-            <code class="shj-lang-js">
+            <code class="shl-inline">
               useEffect()
             </code>{" "}
             does, in order:
@@ -268,23 +406,23 @@ useEffect(() => {
             {/* Explanation part 1 */}
             <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
               Runs on start, checks if there is a theme saved (if not,{" "}
-              <code class="shj-lang-js">
+              <code class="shl-inline">
                 savedTheme
               </code>{" "}
               will be{" "}
-              <code class="shj-lang-js">
+              <code class="shl-inline">
                 null
               </code>
               ), and sets the current theme as the{" "}
-              <code class="shj-lang-js">
+              <code class="shl-inline">
                 savedTheme
               </code>
               , if they are different, then stops (remember that{" "}
-              <code class="shj-lang-js">
+              <code class="shl-inline">
                 useEffect()
               </code>{" "}
               is using the{" "}
-              <code class="shj-lang-js">
+              <code class="shl-inline">
                 theme
               </code>{" "}
               as a dependency so not returning here would cause an infinite
@@ -293,26 +431,26 @@ useEffect(() => {
             {/* Explanation part 2 */}
             <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
               After setting the{" "}
-              <code class="shj-lang-js">
+              <code class="shl-inline">
                 theme
               </code>{" "}
               equal to{" "}
-              <code class="shj-lang-js">
+              <code class="shl-inline">
                 localStorage
               </code>'s{" "}
-              <code class="shj-lang-js">
+              <code class="shl-inline">
                 savedTheme
               </code>{" "}
               is the same as the{" "}
-              <code class="shj-lang-js">
+              <code class="shl-inline">
                 theme
               </code>
               , it will skip the first{" "}
-              <code class="shj-lang-js">
+              <code class="shl-inline">
                 if
               </code>{" "}
               check and negate the{" "}
-              <code class="shj-lang-js">
+              <code class="shl-inline">
                 isInitialMount
               </code>{" "}
               value and stop.
@@ -320,15 +458,15 @@ useEffect(() => {
             {/* Explanation part 3 */}
             <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
               (Optional) If the{" "}
-              <code class="shj-lang-js">
+              <code class="shl-inline">
                 theme
               </code>{" "}
               is updated, it will skip both{" "}
-              <code class="shj-lang-js">
+              <code class="shl-inline">
                 if
               </code>{" "}
               checks, save the theme to{" "}
-              <code class="shj-lang-js">
+              <code class="shl-inline">
                 localStorage
               </code>
               , and applies it.

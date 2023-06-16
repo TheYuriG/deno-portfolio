@@ -6,7 +6,7 @@ import { CarouselCard } from "../components/toys/CarouselCard.tsx";
 //? Import CustomHead with appropriate metadata
 import { CustomHead } from "../components/base/CustomHead.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
-import BlogNavigationButtons from "../components/blog/BlogNavigationButtons.tsx";
+import { BlogNavigationButtons } from "../components/blog/BlogNavigationButtons.tsx";
 
 export default function Home() {
   return (
@@ -21,9 +21,11 @@ export default function Home() {
       <Base>
         <BlogNavigationButtons />
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
+          {/* Title header */}
           <h1 class="custom-underline-thick hover:custom-tx-ac f-as my-4 text-2xl lg:text-4xl text-center">
             Toys
           </h1>
+          {/* Dropdown with explanation about what is this page */}
           <details class="w-full">
             <p class="mb-4">
               This is where I save various curiosity projects I've done from
@@ -32,7 +34,9 @@ export default function Home() {
               are also curious to know more and want to try your hand.
             </p>
           </details>
+          {/* Row of toys */}
           <div class="flex overflow-auto">
+            {/* Spinners */}
             <CarouselCard link="/toys/spinners" title="Spinners">
               <div class="relative text-4xl select-none space-y-4">
                 <div
@@ -55,6 +59,16 @@ export default function Home() {
                 </div>
               </div>
             </CarouselCard>
+            {/* Syntax highlighter */}
+            <CarouselCard
+              link="/toys/syntax-highlight"
+              title="Syntax Highlight"
+            >
+              <span class="f-as text-xl">
+                <span class="shl-func">Highlight</span>()
+              </span>
+            </CarouselCard>
+            {/* Insanity */}
             <CarouselCard link="/toys/insanity" title="Insanity">
               <div class="text-[10rem] hover:animate-grow">
                 🤪

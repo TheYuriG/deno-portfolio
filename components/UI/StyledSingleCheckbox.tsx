@@ -6,7 +6,7 @@ interface SingleCheckboxProperties {
 }
 
 //? Exports a styled checkbox with label and state
-export default function StyledSingleCheckbox({
+export function StyledSingleCheckbox({
   label,
   shouldBeChecked,
   onChangeFunction,

@@ -7,7 +7,7 @@ interface ModalExtendedImageProperties {
 
 //? Creates and exports a modal that expands an image on top of
 //? a tinted blurred overlay that covers the background
-export default function ModalExtendedImage(
+export function ModalExtendedImage(
   { display, imageLink, closeModalFunction }: ModalExtendedImageProperties,
 ) {
   //? If the display is false, return just JSX Fragment

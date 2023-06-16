@@ -1,8 +1,8 @@
 //? Import hooks so a theme can be loaded on pageLoad and
 //? set on a click to the Radio buttons
 import { useEffect, useRef, useState } from "preact/hooks";
-import SunIcon from "../assets/SunIcon.tsx";
-import MoonIcon from "../assets/MoonIcon.tsx";
+import { SunIcon } from "../assets/SunIcon.tsx";
+import { MoonIcon } from "../assets/MoonIcon.tsx";
 
 //? Exports the ThemeSwitcher Island, so users can switch
 //? themes, if so they desire

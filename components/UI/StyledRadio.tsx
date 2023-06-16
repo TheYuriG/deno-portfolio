@@ -8,7 +8,7 @@ interface RadioProperties {
 }
 
 //? Exports a styled select with label and options
-export default function StyledRadio({
+export function StyledRadio({
   label,
   name,
   starterValue,

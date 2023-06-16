@@ -1,6 +1,6 @@
 //? Validation values for typecasting
-import InformationIcon from "../assets/InformationIcon.tsx";
-import { validationStatus } from "../types/validationStatus.ts";
+import { InformationIcon } from "../../assets/InformationIcon.tsx";
+import { validationStatus } from "../../types/validationStatus.ts";
 
 //? Define optional and required properties for inputs
 interface StyledInputProperties {
@@ -35,7 +35,7 @@ interface StyledInputProperties {
 //? Exports a styled combo of label + input
 //! Requires form.css! Will organize in column on smaller
 //! resolutions and as row on larger resolutions
-export default function StyledInput(
+export function StyledInput(
   {
     label,
     key,

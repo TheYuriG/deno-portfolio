@@ -1,19 +1,20 @@
 //? Import from Preact to be able to change state
 import { useState } from "preact/hooks";
 //? Responsive and styled Label + Input
-import StyledInput from "./StyledInput.tsx";
+import { StyledInput } from "../components/UI/StyledInput.tsx";
 //? Styled Button to confirm sending the form
-import StyledButton from "./StyledButton.tsx";
+import { StyledButton } from "../components/UI/StyledButton.tsx";
 //? Styled Select for Employment Status dropdown
-import StyledSelect from "./StyledSelect.tsx";
+import { StyledSelect } from "../components/UI/StyledSelect.tsx";
 //? Styled radio for Welfare option
-import StyledRadio from "./StyledRadio.tsx";
+import { StyledRadio } from "../components/UI/StyledRadio.tsx";
 //? Styled checkbox for Stimulus Check option
-import StyledCheckboxGroup from "./StyledCheckboxGroup.tsx";
+import { StyledCheckboxGroup } from "../components/UI/StyledCheckboxGroup.tsx";
 
 //? Types for typecasting
 import { validationStatus } from "../types/validationStatus.ts";
 import type { stimulusCheckboxOptions } from "../types/stimulusCheckboxOptions.ts";
+import { StyledTextArea } from "../components/UI/StyledTextArea.tsx";
 
 //? Validates the form's name input field
 const validateName = (
@@ -429,16 +430,15 @@ export default function FormWithValidation() {
         )}
       </form>
       {/* Text Area that will hold all sent information */}
-      <textarea
-        class="h-[16.5em] w-full p-2 custom-bg-bc custom-bo-ac rounded-l-2xl ph-nc styled-scrollbar custom-tr-txbgbo"
+      <StyledTextArea
         name="formInput"
         id="form"
         placeholder={sumOfAllInputs.length > 0
           ? sumOfAllInputs.join("\n")
           : textAreaPlaceholder}
-        disabled
-      >
-      </textarea>
+        minHeight="16.5em"
+        disabled={true}
+      />
     </>
   );
 }
