@@ -14,7 +14,6 @@ export default function Home() {
         description="Tech stack used to create this website."
         link="https://www.theyurig.com/this"
       >
-        <link rel="stylesheet" href="/this.css" />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
@@ -24,16 +23,16 @@ export default function Home() {
             What is this?
           </h1>
           <p class="text-justify">
-            <span class="inline-code">this</span>{" "}
+            <span class="shl-inline">this</span>{" "}
             is a very common word in the world of Javascript if you are used to
             Object-Oriented Programming or old-school front-end development. In
             the first case, it refers to the Instance of a class that is
             currently being used. The second, it's about the{" "}
-            <span class="inline-code">window</span> or{" "}
-            <span class="inline-code">document</span> objects.
+            <span class="shl-inline">window</span> or{" "}
+            <span class="shl-inline">document</span> objects.
           </p>
           <p class="text-justify">
-            In the current context, <span class="inline-code">this</span>{" "}
+            In the current context, <span class="shl-inline">this</span>{" "}
             refers to this website and this page will be used to talk about the
             tech stack used to create it. This is quite a bit technical and if
             you are not a developer, it's okay if it goes over your head.
