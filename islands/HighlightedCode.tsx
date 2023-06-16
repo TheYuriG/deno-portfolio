@@ -21,8 +21,24 @@ function copyCodeBlockContentToClipboard(
   //? the proper classes, if anything was highlighted at all
   const correctedCodeBlock = highlightedCodeBlock?.replace(
     "<div>",
-    '<div class="shl-code-block">',
-  )?.replaceAll("shj-syn", "shl");
+    '<div class="shl-block">',
+  )
+    //* Replace class tag
+    ?.replaceAll("shj-syn", "shl")
+    //* Replace opening bracket "{" with HTML symbol
+    ?.replaceAll("{", "&#123;")
+    //* Replace closing bracket "}" with HTML symbol
+    ?.replaceAll("}", "&#125;")
+    //* Fix highlighter bug of putting the span end tag of the comment on the next line
+    //* ↓</span>(spaces) => </span>↓(spaces)
+    //! If this isn't done, every line after a comment line will
+    //! display 2 spaces before the code
+    ?.replace(/\n<\/span>(\s+)/g, "</span>\n$1")
+    //* Preserving spaces and newlines
+    ?.replace(
+      /(\n\s*)/g,
+      "{`$1`}",
+    );
 
   //? Check if nothing was highlighted to be replaced, returns error if so
   if (correctedCodeBlock === undefined) {
