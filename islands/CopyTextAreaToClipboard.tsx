@@ -3,6 +3,7 @@ import { useState } from "preact/hooks";
 import { CopyStatus } from "../components/misc/CopyStatus.tsx";
 //? Function to copy content to clipboard
 import { copyToClipboard } from "../services/copyToClipboard.ts";
+import { StyledTextArea } from "../components/UI/StyledTextArea.tsx";
 
 //?
 export default function CopyTextAreaToClipboard(
@@ -23,9 +24,7 @@ export default function CopyTextAreaToClipboard(
           }, 3000);
         }}
       >
-        <textarea class="w-full min-h-[20em] p-2 custom-bg-bc custom-bo-ac rounded-2xl ph-nc styled-scrollbar custom-tr-txbgbo">
-          {content}
-        </textarea>
+        <StyledTextArea placeholder={content} disabled={true} />
       </div>
       <CopyStatus copyStatus={didCopy} />
     </>

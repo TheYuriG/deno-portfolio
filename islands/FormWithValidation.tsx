@@ -14,6 +14,7 @@ import StyledCheckboxGroup from "../components/UI/StyledCheckboxGroup.tsx";
 //? Types for typecasting
 import { validationStatus } from "../types/validationStatus.ts";
 import type { stimulusCheckboxOptions } from "../types/stimulusCheckboxOptions.ts";
+import { StyledTextArea } from "../components/UI/StyledTextArea.tsx";
 
 //? Validates the form's name input field
 const validateName = (
@@ -429,16 +430,15 @@ export default function FormWithValidation() {
         )}
       </form>
       {/* Text Area that will hold all sent information */}
-      <textarea
-        class="h-[16.5em] w-full p-2 custom-bg-bc custom-bo-ac rounded-l-2xl ph-nc styled-scrollbar custom-tr-txbgbo"
+      <StyledTextArea
         name="formInput"
         id="form"
         placeholder={sumOfAllInputs.length > 0
           ? sumOfAllInputs.join("\n")
           : textAreaPlaceholder}
-        disabled
-      >
-      </textarea>
+        minHeight="16.5em"
+        disabled={true}
+      />
     </>
   );
 }

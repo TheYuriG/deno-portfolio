@@ -263,6 +263,32 @@ export default {
           };
       }
     },
+    // Placeholder text color
+    "custom-placeholder": ([placeholderColor]: Array<string>) => {
+      switch (placeholderColor) {
+        // Accent text
+        case "ac":
+          return {
+            "&::placeholder": {
+              color: "var(--accent-color)",
+            },
+          };
+        // Base text
+        case "bc":
+          return {
+            "&::placeholder": {
+              color: "var(--base-color)",
+            },
+          };
+        // Neutral text
+        case "nc":
+          return {
+            "&::placeholder": {
+              color: "var(--neutral-color)",
+            },
+          };
+      }
+    },
     // Background colors
     "custom-bg": ([backgroundColorType]: Array<string>) => {
       switch (backgroundColorType) {

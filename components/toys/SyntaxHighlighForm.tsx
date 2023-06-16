@@ -1,5 +1,6 @@
 //? Import button to submit the POST request to the same URL
 import StyledButton from "../UI/StyledButton.tsx";
+import { StyledTextArea } from "../UI/StyledTextArea.tsx";
 
 //? Export mini form to save highlighted texts
 export default function SyntaxHighlighForm() {
@@ -20,12 +21,7 @@ export default function SyntaxHighlighForm() {
         </span>
       </label>
       {/* Vertically expansible textarea for user input */}
-      <textarea
-        class="w-full min-h-[20em] p-2 custom-bg-bc custom-bo-ac rounded-2xl ph-nc styled-scrollbar custom-tr-txbgbo"
-        name="text-to-highlight"
-        id="syntax"
-      >
-      </textarea>
+      <StyledTextArea minHeight="20em" name="text-to-highlight" id="syntax" />
       {/* Submit button */}
       <StyledButton
         classes="self-center mt-4"
