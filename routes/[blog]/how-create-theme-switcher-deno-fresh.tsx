@@ -195,7 +195,7 @@ export default function ThemeSwitcher() {
           {/* Initial implementation explanation */}
           <p class="text-justify">
             This creates a radio input that has{" "}
-            <code class="shj-lang-js">
+            <code class="shl-inline">
               Dark
             </code>{" "}
             selected by default and allows you to toggle between modes.
@@ -203,15 +203,15 @@ export default function ThemeSwitcher() {
             of the theme for this blog, now let's make sure we can save the
             changes when the user clicks either input. Feel free to replace the
             values of{" "}
-            <code class="shj-lang-js">
+            <code class="shl-inline">
               --base-color
             </code>
             ,{" "}
-            <code class="shj-lang-js">
+            <code class="shl-inline">
               --neutral-color
             </code>
             , and{" "}
-            <code class="shj-lang-js">
+            <code class="shl-inline">
               --accent-color
             </code>{" "}
             with the values for your theme.
@@ -241,22 +241,22 @@ useEffect(() => {
           {/* Second code block explanation */}
           <p class="my-2 text-justify">
             We have added a reference to the{" "}
-            <code class="shj-lang-js">
+            <code class="shl-inline">
               useEffect()
             </code>{" "}
             to avoid having it saving the current{" "}
-            <code class="shj-lang-js">
+            <code class="shl-inline">
               theme
             </code>{" "}
             to{" "}
-            <code class="shj-lang-js">
+            <code class="shl-inline">
               localStorage
             </code>{" "}
             on the first render.
           </p>
           <p class="text-justify">
             What the{" "}
-            <code class="shj-lang-js">
+            <code class="shl-inline">
               useEffect()
             </code>{" "}
             does, in order:
@@ -268,23 +268,23 @@ useEffect(() => {
             {/* Explanation part 1 */}
             <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
               Runs on start, checks if there is a theme saved (if not,{" "}
-              <code class="shj-lang-js">
+              <code class="shl-inline">
                 savedTheme
               </code>{" "}
               will be{" "}
-              <code class="shj-lang-js">
+              <code class="shl-inline">
                 null
               </code>
               ), and sets the current theme as the{" "}
-              <code class="shj-lang-js">
+              <code class="shl-inline">
                 savedTheme
               </code>
               , if they are different, then stops (remember that{" "}
-              <code class="shj-lang-js">
+              <code class="shl-inline">
                 useEffect()
               </code>{" "}
               is using the{" "}
-              <code class="shj-lang-js">
+              <code class="shl-inline">
                 theme
               </code>{" "}
               as a dependency so not returning here would cause an infinite
@@ -293,26 +293,26 @@ useEffect(() => {
             {/* Explanation part 2 */}
             <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
               After setting the{" "}
-              <code class="shj-lang-js">
+              <code class="shl-inline">
                 theme
               </code>{" "}
               equal to{" "}
-              <code class="shj-lang-js">
+              <code class="shl-inline">
                 localStorage
               </code>'s{" "}
-              <code class="shj-lang-js">
+              <code class="shl-inline">
                 savedTheme
               </code>{" "}
               is the same as the{" "}
-              <code class="shj-lang-js">
+              <code class="shl-inline">
                 theme
               </code>
               , it will skip the first{" "}
-              <code class="shj-lang-js">
+              <code class="shl-inline">
                 if
               </code>{" "}
               check and negate the{" "}
-              <code class="shj-lang-js">
+              <code class="shl-inline">
                 isInitialMount
               </code>{" "}
               value and stop.
@@ -320,15 +320,15 @@ useEffect(() => {
             {/* Explanation part 3 */}
             <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
               (Optional) If the{" "}
-              <code class="shj-lang-js">
+              <code class="shl-inline">
                 theme
               </code>{" "}
               is updated, it will skip both{" "}
-              <code class="shj-lang-js">
+              <code class="shl-inline">
                 if
               </code>{" "}
               checks, save the theme to{" "}
-              <code class="shj-lang-js">
+              <code class="shl-inline">
                 localStorage
               </code>
               , and applies it.

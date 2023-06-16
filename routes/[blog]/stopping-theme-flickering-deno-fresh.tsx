@@ -180,7 +180,7 @@ export default function Home() {
             Adding a script file to every response
           </h2>
           <p class="my-2 text-justify">
-            Be very careful about the <code class="shj-lang-js">script</code>
+            Be very careful about the <code class="shl-inline">script</code>
             {" "}
             tags that you import on your project. Not knowing what you are doing
             can leave you (and your users) vulnerable to{" "}
@@ -197,9 +197,9 @@ export default function Home() {
           <p class="my-2 text-justify">
             In our case, our implementation is incredibly simple. We just add a
             small script to the response's{" "}
-            <code class="shj-lang-js">&lt;head&gt;</code>{" "}
+            <code class="shl-inline">&lt;head&gt;</code>{" "}
             that checks if the user has a theme saved in{" "}
-            <code class="shj-lang-js">localStorage</code>{" "}
+            <code class="shl-inline">localStorage</code>{" "}
             and if they don't, we try to apply their OS-preferred color scheme.
             Let's have a look:
           </p>
@@ -246,25 +246,25 @@ if (window.showDarkMode === true) {
           >
             <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
               Check if there is a theme already saved on{" "}
-              <code class="shj-lang-js">localStorage</code>. If there isn't one,
+              <code class="shl-inline">localStorage</code>. If there isn't one,
               check what's the user preferred color scheme, save it, and set
               {" "}
-              <code class="shj-lang-js">
+              <code class="shl-inline">
                 window.showDarkMode
               </code>
               . If there is, you just set{" "}
-              <code class="shj-lang-js">window.showDarkMode</code>{" "}
+              <code class="shl-inline">window.showDarkMode</code>{" "}
               on/off based on the saved theme.
             </li>
             <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
               Check window.showDarkMode and apply the colors to the{" "}
-              <code class="shj-lang-js">root</code>{"  "}
+              <code class="shl-inline">root</code>{"  "}
               element for either mode based on that being{" "}
-              <code class="shj-lang-js">
+              <code class="shl-inline">
                 true
               </code>{" "}
               or{" "}
-              <code class="shj-lang-js">
+              <code class="shl-inline">
                 false
               </code>
               .
@@ -292,18 +292,18 @@ useEffect(() => {
           </div>
           <p class="my-2 text-justify">
             Because{" "}
-            <code class="shj-lang-js">
+            <code class="shl-inline">
               window.showDarkMode
             </code>{" "}
             is set within the response's{" "}
-            <code class="shj-lang-js">&lt;head&gt;</code>
+            <code class="shl-inline">&lt;head&gt;</code>
             , Typescript doesn't know that it exists and will give you a
             warning, hence the suppression above. Since your{" "}
-            <code class="shj-lang-js">useEffect()</code>{" "}
+            <code class="shl-inline">useEffect()</code>{" "}
             no longer needs to set the theme based on what is saved on{" "}
-            <code class="shj-lang-js">localStorage</code>, we can remove that
-            bit too, leaving the initial check to only validate if it's the
-            first run and skip when it is.
+            <code class="shl-inline">localStorage</code>, we can remove that bit
+            too, leaving the initial check to only validate if it's the first
+            run and skip when it is.
           </p>
           <p class="my-2 text-justify">
             So there you have it, a Theme Switcher that sets the correct theme,
@@ -322,15 +322,15 @@ useEffect(() => {
           <p class="my-2 text-justify">
             One of the options would be to use route-based theming. You could
             create your entire website nested in either a{" "}
-            <code class="shj-lang-js">
+            <code class="shl-inline">
               /light
             </code>{" "}
             or{" "}
-            <code class="shj-lang-js">
+            <code class="shl-inline">
               /dark
             </code>{" "}
             route (or better yet, a single{" "}
-            <code class="shj-lang-js">
+            <code class="shl-inline">
               /[theme]
             </code>{" "}
             route!), and have your index redirect to either of those based on
@@ -343,7 +343,7 @@ useEffect(() => {
           {/* App router, but maybe just use NextJS instead? */}
           <p class="my-2 text-justify">
             Another option would be to not save the theme to{" "}
-            <code class="shj-lang-js">
+            <code class="shl-inline">
               localStorage
             </code>{" "}
             and also never redirect, essentially turning your application into a
