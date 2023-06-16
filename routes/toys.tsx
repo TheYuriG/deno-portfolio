@@ -59,20 +59,20 @@ export default function Home() {
                 </div>
               </div>
             </CarouselCard>
-            {/* Insanity */}
-            <CarouselCard link="/toys/insanity" title="Insanity">
-              <div class="text-[10rem] hover:animate-grow">
-                🤪
-              </div>
-            </CarouselCard>
             {/* Syntax highlighter */}
             <CarouselCard
               link="/toys/syntax-highlight"
               title="Syntax Highlight"
             >
               <span class="f-as text-xl">
-                Text
+                <span class="shl-func">Highlight</span>()
               </span>
+            </CarouselCard>
+            {/* Insanity */}
+            <CarouselCard link="/toys/insanity" title="Insanity">
+              <div class="text-[10rem] hover:animate-grow">
+                🤪
+              </div>
             </CarouselCard>
           </div>
         </article>
