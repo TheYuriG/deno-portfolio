@@ -2,7 +2,7 @@
 import { IconPropertiesWithStroke } from "../types/IconProperties.ts";
 
 //? Renders a spinning animation with fill
-export default function LoadingAnimation(
+export function LoadingAnimation(
   { iconHeight, iconWidth, iconStrokeColor }: Pick<
     IconPropertiesWithStroke,
     "iconHeight" | "iconWidth" | "iconStrokeColor"

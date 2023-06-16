@@ -2,7 +2,7 @@
 import { IconProperties } from "../types/IconProperties.ts";
 
 //? Renders a Minus Icon with fill
-export default function MinusIcon(
+export function MinusIcon(
   { iconHeight, iconWidth, iconFillColor }: IconProperties,
 ) {
   return (

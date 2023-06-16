@@ -1,6 +1,6 @@
 //? Import LinkProperties to type what is required for the
 //? optional "back" and "next" buttons
-import ChevronIcon from "../../assets/ChevronIcon.tsx";
+import { ChevronIcon } from "../../assets/ChevronIcon.tsx";
 import { LinkProperties } from "../../types/LinkProperties.ts";
 //? Define optional properties for the buttons
 interface BlogNavigationButtonProperties {

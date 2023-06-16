@@ -2,7 +2,7 @@
 import { IconProperties } from "../types/IconProperties.ts";
 
 //? Renders a sun Icon with fill
-export default function SunIcon(
+export function SunIcon(
   { iconHeight, iconWidth, iconFillColor }: IconProperties,
 ) {
   return (

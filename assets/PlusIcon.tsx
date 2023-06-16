@@ -2,7 +2,7 @@
 import { IconProperties } from "../types/IconProperties.ts";
 
 //? Renders a XMark Icon with fill color, defaults to 'neutral-color' fill
-export default function PlusIcon(
+export function PlusIcon(
   { iconHeight, iconWidth, iconFillColor }: IconProperties,
 ) {
   return (

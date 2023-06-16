@@ -2,7 +2,7 @@
 import { IconProperties } from "../types/IconProperties.ts";
 
 //? Renders a Cart Icon with fill
-export default function CartIcon(
+export function CartIcon(
   { iconHeight, iconWidth, iconFillColor }: IconProperties,
 ) {
   return (

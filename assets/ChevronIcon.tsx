@@ -2,7 +2,7 @@
 import { IconProperties } from "../types/IconProperties.ts";
 
 //? Renders a chevron Icon with fill, can be rotated using transform
-export default function ChevronIcon(
+export function ChevronIcon(
   { iconHeight, iconWidth, iconFillColor, rotation }: IconProperties & {
     rotation?: string;
   },

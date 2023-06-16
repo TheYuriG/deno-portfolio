@@ -1,8 +1,8 @@
 //? Import the StyledButton to close the modal on empty carts or
 //? confirm orders on a filled cart
-import MinusIcon from "../../assets/MinusIcon.tsx";
-import PlusIcon from "../../assets/PlusIcon.tsx";
-import XMarkIcon from "../../assets/XMarkIcon.tsx";
+import { MinusIcon } from "../../assets/MinusIcon.tsx";
+import { PlusIcon } from "../../assets/PlusIcon.tsx";
+import { XMarkIcon } from "../../assets/XMarkIcon.tsx";
 import { StyledButton } from "../UI/StyledButton.tsx";
 //? Import the functions that will update the Cart state
 import {
