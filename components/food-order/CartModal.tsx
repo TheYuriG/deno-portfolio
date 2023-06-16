@@ -3,7 +3,7 @@
 import MinusIcon from "../../assets/MinusIcon.tsx";
 import PlusIcon from "../../assets/PlusIcon.tsx";
 import XMarkIcon from "../../assets/XMarkIcon.tsx";
-import StyledButton from "../UI/StyledButton.tsx";
+import { StyledButton } from "../UI/StyledButton.tsx";
 //? Import the functions that will update the Cart state
 import {
   deleteItemFromCart,

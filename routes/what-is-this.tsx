@@ -4,7 +4,7 @@ import { Base } from "../components/base/Base.tsx";
 import { CustomHead } from "../components/base/CustomHead.tsx";
 import { GradientLink } from "../components/base/GradientLink.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
-import BlogNavigationButtons from "../components/blog/BlogNavigationButtons.tsx";
+import { BlogNavigationButtons } from "../components/blog/BlogNavigationButtons.tsx";
 
 export default function Home() {
   return (

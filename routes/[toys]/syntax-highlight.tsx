@@ -4,7 +4,7 @@ import { Base } from "../../components/base/Base.tsx";
 //? Head component with all Meta tags pre-set
 import { CustomHead } from "../../components/base/CustomHead.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
-import BlogNavigationButtons from "../../components/blog/BlogNavigationButtons.tsx";
+import { BlogNavigationButtons } from "../../components/blog/BlogNavigationButtons.tsx";
 //? Import Syntax Highlight form to handle sending data to the server
 import SyntaxHighlighForm from "../../components/toys/SyntaxHighlighForm.tsx";
 //? Imports middleware responsible for processing GET/POST requests to this route

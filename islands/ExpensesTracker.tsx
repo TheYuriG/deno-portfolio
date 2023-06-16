@@ -7,7 +7,7 @@ import AddNewExpense from "./AddNewExpense.tsx";
 //? Import the Expense type for casting
 import type { Expense } from "../types/Expense.ts";
 import ExpensesYearSelect from "./ExpensesYearSelect.tsx";
-import ExpenseChart from "../components/expenses-tracker/ExpensesChart.tsx";
+import { ExpenseChart } from "../components/expenses-tracker/ExpensesChart.tsx";
 
 //? Filters expenses by year
 function filterExpensesByYear(year: string, savedExpenses: Expense[]) {

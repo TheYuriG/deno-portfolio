@@ -1,5 +1,5 @@
 import CartIcon from "../../assets/CartIcon.tsx";
-import AccentButton from "../UI/AccentButton.tsx";
+import { AccentButton } from "../UI/AccentButton.tsx";
 
 //? Define Cart Button properties
 interface CartButtonProperties {

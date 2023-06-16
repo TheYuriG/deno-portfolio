@@ -6,7 +6,7 @@ import { CarouselCard } from "../components/toys/CarouselCard.tsx";
 //? Import CustomHead with appropriate metadata
 import { CustomHead } from "../components/base/CustomHead.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
-import BlogNavigationButtons from "../components/blog/BlogNavigationButtons.tsx";
+import { BlogNavigationButtons } from "../components/blog/BlogNavigationButtons.tsx";
 
 export default function Home() {
   return (

@@ -5,7 +5,7 @@ import { CustomHead } from "../../components/base/CustomHead.tsx";
 //? A HTML Link component to pre-format links and reduce boiletplate
 import { GradientLink } from "../../components/base/GradientLink.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
-import BlogNavigationButtons from "../../components/blog/BlogNavigationButtons.tsx";
+import { BlogNavigationButtons } from "../../components/blog/BlogNavigationButtons.tsx";
 
 export default function Home() {
   return (

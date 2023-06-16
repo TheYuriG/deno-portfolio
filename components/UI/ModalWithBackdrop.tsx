@@ -9,7 +9,7 @@ interface ModalWithBackdropProperties {
 }
 
 //? Creates and exports a modal on top of a tinted blurred overlay that covers the background
-export default function ModalWithBackdrop(
+export function ModalWithBackdrop(
   { display, children, closeModalFunction }: ModalWithBackdropProperties,
 ) {
   //? If the display is false, return just JSX Fragment

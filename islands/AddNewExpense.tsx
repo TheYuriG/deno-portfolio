@@ -1,9 +1,9 @@
 //? Import from Preact to be able to change state
 import { useState } from "preact/hooks";
 //? Responsive and styled Label + Input
-import StyledInput from "../components/UI/StyledInput.tsx";
+import { StyledInput } from "../components/UI/StyledInput.tsx";
 //? Styled Button to confirm sending the form
-import StyledButton from "../components/UI/StyledButton.tsx";
+import { StyledButton } from "../components/UI/StyledButton.tsx";
 
 //? Types for typecasting
 import { validationStatus } from "../types/validationStatus.ts";

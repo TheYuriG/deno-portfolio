@@ -1,5 +1,5 @@
 //? Import button to submit the POST request to the same URL
-import StyledButton from "../UI/StyledButton.tsx";
+import { StyledButton } from "../UI/StyledButton.tsx";
 import { StyledTextArea } from "../UI/StyledTextArea.tsx";
 
 //? Export mini form to save highlighted texts

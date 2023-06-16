@@ -1,5 +1,5 @@
 //? Import individual MonthBar components to render all 12 months
-import ExpensesChartMonthBar from "./ExpensesChartMonthBar.tsx";
+import { ExpensesChartMonthBar } from "./ExpensesChartMonthBar.tsx";
 //? Import the Expense type for casting
 import type { Expense } from "../../types/Expense.ts";
 
@@ -11,7 +11,7 @@ interface ExpenseChartProperties {
 
 //? Exports the year of expenses and the row of individual
 //? monthly expenses bar chart
-export default function ExpenseChart(
+export function ExpenseChart(
   { year, expenses }: ExpenseChartProperties,
 ) {
   //? Create an expense object for every month

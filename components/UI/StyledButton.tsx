@@ -9,7 +9,7 @@ interface ButtonProperties {
 
 //? Styled button with animation on hover
 //! Style buttons on-demand by providing a optional style prop!
-export default function StyledButton({
+export function StyledButton({
   text,
   style,
   classes = "",

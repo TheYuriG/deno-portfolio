@@ -13,7 +13,7 @@ interface AccentButtonProperties {
 //? Simple button that uses accent color for fill and neutral neutral for text color and border
 //! Requires importing accent-button.css!
 //* Style buttons on-demand by providing a optional style prop!
-export default function AccentButton({
+export function AccentButton({
   children,
   style,
   classes = "",

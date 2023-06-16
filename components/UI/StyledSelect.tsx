@@ -12,7 +12,7 @@ interface SelectProperties {
 }
 
 //? Exports a styled select with label and options
-export default function StyledSelect({
+export function StyledSelect({
   name,
   label,
   validationReference,

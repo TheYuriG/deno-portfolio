@@ -6,7 +6,7 @@ interface ExpensesChartMonthBarProperties {
 }
 
 //? Creates a single colored bar with a given month in the year displayed
-export default function ExpensesChartMonthBar(
+export function ExpensesChartMonthBar(
   { label, cost, maxCost }: ExpensesChartMonthBarProperties,
 ) {
   //? Using the month's expenses and the year's expenses,

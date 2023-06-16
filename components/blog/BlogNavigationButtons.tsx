@@ -13,7 +13,7 @@ const navigationClasses =
   "group flex items-center text-xl hover:custom-tx-ac custom-tr-tx";
 
 //? Exports Navigation Buttons to go to the previous page and next Article
-export default function BlogNavigationButtons(
+export function BlogNavigationButtons(
   { back, next }: BlogNavigationButtonProperties,
 ) {
   //? Creates a back button if a link is provided, otherwise
