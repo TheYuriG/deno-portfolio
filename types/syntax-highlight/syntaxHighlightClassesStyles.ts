@@ -1,9 +1,6 @@
-export const syntaxHighlightClassesStyles = `/* Applies to all code blocks */
-.shl-code-block {
+export const syntaxHighlightClassesStyles = `.shl-block {
     white-space: pre-wrap;
-    /* light orange background */
     background: rgb(255, 246, 239);
-    /* black default text color */
     color: #112;
     line-height: 1.3em;
     margin: 1em 0;

@@ -416,7 +416,7 @@ export default {
           };
         case "block":
           return {
-            "white-space": "break-spaces",
+            "white-space": "pre-wrap",
             background: "rgb(255, 246, 239)",
             color: "#112",
             "line-height": "1.3em",
