@@ -16,6 +16,8 @@ import type { HighlightText } from "../../../types/syntax-highlight/HighlightTex
 import CopyTextAreaToClipboard from "../../../islands/CopyTextAreaToClipboard.tsx";
 //? Import CSS classes text example
 import { syntaxHighlightClassesStyles } from "../../../types/syntax-highlight/syntaxHighlightClassesStyles.ts";
+//? Import Twind config example
+import { syntaxHighlightTwindConfig } from "../../../types/syntax-highlight/syntaxHighlightTwindConfig.ts";
 
 //? Manages saving text input remotely and redirects
 export const handler = highlightTextMiddleware;
@@ -81,10 +83,15 @@ export default function Home(
           <p class="my-4">
             Ideally, those classes will be built into whatever post-processor
             you use (like PostCSS) so the unused styles can be pruned to save
-            your visitors some bytes of bandwidth. If you use Twind, you can
-            extend the plugins in your twind.config.ts file to have all of that
-            managed for you automatically.
+            your visitors some bytes of bandwidth. If you use{" "}
+            <span class="shl-inline">Twind v0</span>, you can extend the plugins
+            in your <span class="shl-inline">twind.config.ts</span>{" "}
+            file to have all of that managed for you automatically.
           </p>
+          <CopyTextAreaToClipboard
+            classes="w-full"
+            content={syntaxHighlightTwindConfig}
+          />
         </section>
       </Base>
     </>
