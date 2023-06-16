@@ -15,25 +15,6 @@ export default function Home() {
         description="A guide on how to make your Theme Switcher to no longer flicker when the page loads."
         link="https://www.theyurig.com/blog/stopping-theme-flickering-deno-fresh"
       >
-        <link rel="stylesheet" href="/syntax-highlighting.css" />
-        {
-          /* Syntax highlight for code. How can we do this better
-            so we don't cause Cumulative Layout Shift?
-            There must be a better way... */
-
-          // Checked March 23rd, 2023 and there is currently no better
-          // option for Deno. As for NPM packages, options to consider are
-          // rc-highlight: https://www.npmjs.com/package/rc-highlight
-          // and lowlight: https://github.com/wooorm/lowlight
-        }
-        <script
-          type="module"
-          dangerouslySetInnerHTML={{
-            __html:
-              `import { highlightAll } from 'https://unpkg.com/@speed-highlight/core/dist/index.js';
-            highlightAll();`,
-          }}
-        />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
@@ -204,40 +185,141 @@ export default function Home() {
             Let's have a look:
           </p>
           {/* Code block with initial implementation */}
-          <div class="shj-lang-js">
-            {`// /routes/index.tsx (but can be any page)
-export default function Home() {
-    return (
-        <>
-            <Head>
-                // must not be deferred/module to stop flickering!
-                <script src="/themeSwitcher.js"></script>
-            </Head>
-            // your page response body goes here
-        </>
-    );
-}`}
+          <div class="shl-block">
+            <span class="shl-cmnt">
+              // /routes/index.tsx (but can be any page){`
+`}
+            </span>
+            <span class="shl-kwd">export</span>{" "}
+            <span class="shl-kwd">default</span>{" "}
+            <span class="shl-kwd">function</span>{" "}
+            <span class="shl-class">Home</span>() &#123;{`
+    `}
+            <span class="shl-kwd">return</span> ({`
+        `}
+            <span class="shl-oper">&lt;&gt;</span>
+            {`
+            `}
+            <span class="shl-oper">&lt;</span>
+            <span class="shl-class">Head</span>
+            <span class="shl-oper">&gt;</span>
+            {`
+                `}
+            <span class="shl-cmnt">
+              // must not be deferred/module to stop flickering!
+            </span>
+            {`
+                `}
+            <span class="shl-oper">&lt;</span>script src<span class="shl-oper">
+              =
+            </span>
+            <span class="shl-str">"/themeSwitcher.js"</span>
+            <span class="shl-oper">&gt;&lt;/</span>script<span class="shl-oper">
+              &gt;
+            </span>
+            {`
+            `}
+            <span class="shl-oper">&lt;/</span>
+            <span class="shl-class">Head</span>
+            <span class="shl-oper">&gt;</span>
+            {`
+            `}
+            <span class="shl-cmnt">// your page response body goes here</span>
+            {`
+        `}
+            <span class="shl-oper">&lt;/&gt;</span>
+            {`
+    `});{`
+`}&#125;
           </div>
           <p class="my-2 text-justify">And inside the script file:</p>
-          <div class="shj-lang-js">
-            {`// /static/themeSwitcher.js
-const selectedTheme = localStorage.getItem("theme");
-if (selectedTheme === null) {
-    window.showDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    localStorage.setItem("theme", window.showDarkMode ? "Dark" : "Light");
-} else {
-    window.showDarkMode = selectedTheme === "Dark";
-}
-const cssRoot = document.querySelector(":root");
-if (window.showDarkMode === true) {
-    cssRoot.style.setProperty("--base-color", "rgb(15 23 42)");
-    cssRoot.style.setProperty("--neutral-color", "rgb(203 213 225)");
-    cssRoot.style.setProperty("--accent-color", "rgb(126 34 206)");
-} else {
-    cssRoot.style.setProperty("--base-color", "rgb(203 213 225)");
-    cssRoot.style.setProperty("--neutral-color", "rgb(15 23 42)");
-    cssRoot.style.setProperty("--accent-color", "rgb(220 38 38)");
-}`}
+          <div class="shl-block">
+            <span class="shl-cmnt">
+              // /static/themeSwitcher.js{`
+`}
+            </span>
+            <span class="shl-kwd">const</span> selectedTheme{" "}
+            <span class="shl-oper">=</span>{" "}
+            localStorage<span class="shl-oper">.</span>
+            <span class="shl-func">getItem</span>(<span class="shl-str">
+              "theme"
+            </span>);{`
+`}
+            <span class="shl-kwd">if</span> (selectedTheme{" "}
+            <span class="shl-oper">===</span>{" "}
+            <span class="shl-num">null</span>) &#123;{`
+    `}window<span class="shl-oper">.</span>showDarkMode{" "}
+            <span class="shl-oper">=</span>{" "}
+            window<span class="shl-oper">.</span>
+            <span class="shl-func">matchMedia</span>(<span class="shl-str">
+              "(prefers-color-scheme: dark)"
+            </span>)<span class="shl-oper">.</span>matches;{`
+    `}localStorage<span class="shl-oper">.</span>
+            <span class="shl-func">setItem</span>(<span class="shl-str">
+              "theme"
+            </span>
+            <span class="shl-oper">,</span>{" "}
+            window<span class="shl-oper">.</span>showDarkMode{" "}
+            <span class="shl-oper">?</span> <span class="shl-str">"Dark"</span>
+            {" "}
+            <span class="shl-oper">:</span>{" "}
+            <span class="shl-str">"Light"</span>);{`
+`}&#125; <span class="shl-kwd">else</span> &#123;{`
+    `}window<span class="shl-oper">.</span>showDarkMode{" "}
+            <span class="shl-oper">=</span> selectedTheme{" "}
+            <span class="shl-oper">===</span>{" "}
+            <span class="shl-str">"Dark"</span>;{`
+`}&#125;{`
+`}
+            <span class="shl-kwd">const</span> cssRoot{" "}
+            <span class="shl-oper">=</span>{" "}
+            document<span class="shl-oper">.</span>
+            <span class="shl-func">querySelector</span>(<span class="shl-str">
+              ":root"
+            </span>);{`
+`}
+            <span class="shl-kwd">if</span>{" "}
+            (window<span class="shl-oper">.</span>showDarkMode{" "}
+            <span class="shl-oper">===</span>{" "}
+            <span class="shl-bool">true</span>) &#123;{`
+    `}cssRoot<span class="shl-oper">.</span>style<span class="shl-oper">.</span>
+            <span class="shl-func">setProperty</span>(<span class="shl-str">
+              "--base-color"
+            </span>
+            <span class="shl-oper">,</span>{" "}
+            <span class="shl-str">"rgb(15 23 42)"</span>);{`
+    `}cssRoot<span class="shl-oper">.</span>style<span class="shl-oper">.</span>
+            <span class="shl-func">setProperty</span>(<span class="shl-str">
+              "--neutral-color"
+            </span>
+            <span class="shl-oper">,</span>{" "}
+            <span class="shl-str">"rgb(203 213 225)"</span>);{`
+    `}cssRoot<span class="shl-oper">.</span>style<span class="shl-oper">.</span>
+            <span class="shl-func">setProperty</span>(<span class="shl-str">
+              "--accent-color"
+            </span>
+            <span class="shl-oper">,</span>{" "}
+            <span class="shl-str">"rgb(126 34 206)"</span>);{`
+`}&#125; <span class="shl-kwd">else</span> &#123;{`
+    `}cssRoot<span class="shl-oper">.</span>style<span class="shl-oper">.</span>
+            <span class="shl-func">setProperty</span>(<span class="shl-str">
+              "--base-color"
+            </span>
+            <span class="shl-oper">,</span>{" "}
+            <span class="shl-str">"rgb(203 213 225)"</span>);{`
+    `}cssRoot<span class="shl-oper">.</span>style<span class="shl-oper">.</span>
+            <span class="shl-func">setProperty</span>(<span class="shl-str">
+              "--neutral-color"
+            </span>
+            <span class="shl-oper">,</span>{" "}
+            <span class="shl-str">"rgb(15 23 42)"</span>);{`
+    `}cssRoot<span class="shl-oper">.</span>style<span class="shl-oper">.</span>
+            <span class="shl-func">setProperty</span>(<span class="shl-str">
+              "--accent-color"
+            </span>
+            <span class="shl-oper">,</span>{" "}
+            <span class="shl-str">"rgb(220 38 38)"</span>);{`
+`}&#125;
           </div>
           <p class="my-2 text-justify">In order:</p>
           <ol
@@ -273,22 +355,52 @@ if (window.showDarkMode === true) {
           <p class="my-2 text-justify">
             Now all we gotta do is update our component and we are done!
           </p>
-          <div class="shj-lang-js">
-            {`// /islands/themeSwitcher.tsx (updated)
-...
-const [theme, setTheme] = useState(
-    // @ts-ignore This property gets set by themeSwitcher.js in <Head>
-    window.showDarkMode === true ? "Dark" : "Light",
-);
+          <div class="shl-block">
+            <span class="shl-cmnt">
+              // /islands/themeSwitcher.tsx (updated){`
+`}
+            </span>
+            <span class="shl-oper">...</span>
+            {`
+`}
+            <span class="shl-kwd">const</span>{" "}
+            [theme<span class="shl-oper">,</span> setTheme]{" "}
+            <span class="shl-oper">=</span>{" "}
+            <span class="shl-func">useState</span>({`
+    `}
+            <span class="shl-cmnt">
+              // @ts-ignore This property gets set by themeSwitcher.js in
+              &lt;Head&gt;
+            </span>
+            {`
+    `}window<span class="shl-oper">.</span>showDarkMode{" "}
+            <span class="shl-oper">===</span> <span class="shl-bool">true</span>
+            {" "}
+            <span class="shl-oper">?</span> <span class="shl-str">"Dark"</span>
+            {" "}
+            <span class="shl-oper">:</span> <span class="shl-str">"Light"</span>
+            <span class="shl-oper">,</span>
+            {`
+`});{`
 
-useEffect(() => {
-    if (isInitialMount.current) {
-        isInitialMount.current = false;
-        return;
-    }
-    ...
-}
-...`}
+`}
+            <span class="shl-func">useEffect</span>((){" "}
+            <span class="shl-kwd">=&gt;</span> &#123;{`
+    `}
+            <span class="shl-kwd">if</span>{" "}
+            (isInitialMount<span class="shl-oper">.</span>current) &#123;{`
+        `}isInitialMount<span class="shl-oper">.</span>current{" "}
+            <span class="shl-oper">=</span>{" "}
+            <span class="shl-bool">false</span>;{`
+        `}
+            <span class="shl-kwd">return</span>;{`
+    `}&#125;{`
+    `}
+            <span class="shl-oper">...</span>
+            {`
+`}&#125;{`
+`}
+            <span class="shl-oper">...</span>
           </div>
           <p class="my-2 text-justify">
             Because{" "}
