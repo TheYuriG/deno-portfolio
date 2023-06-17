@@ -35,10 +35,10 @@ export default function Home() {
           </p>
           {/* Blog post opening image */}
           <img
+            class="my-4 h-60 w-[25em] object-cover"
             src="https://media.giphy.com/media/l0HlKQQ8STZUREvE4/giphy.gif"
             alt="Lights flickering in a Stranger Things scene"
             title="Wouldn't it be better if the lights would just stay on?"
-            class="my-4 object-cover"
           />
           {/* Introduction */}
           <p class="my-2 text-justify">
@@ -63,10 +63,10 @@ export default function Home() {
             The Island Architecture
           </h2>
           <img
+            class="my-4 object-cover h-[25em] w-[40em]"
             src="https://images.unsplash.com/photo-1602400546471-b8efe700c80a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=958&q=80"
             alt="Picture of Seychelles, by Kamil Rogalinski"
             title="Small bits where the interesting things happens, surrounded by nothingness"
-            class="my-4 object-cover h-[25em]"
           />
           {/* Explaining topic */}
           <p class="my-2 text-justify">
@@ -86,6 +86,7 @@ export default function Home() {
             higher Lighthouse scores.
           </p>
           <img
+            class="my-4 object-cover h-[15em] w-[40em]"
             src="https://remix.run/remix-v1.jpg"
             alt="Remix's logo"
             title="The precursor"
