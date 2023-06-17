@@ -10,7 +10,7 @@ import FoodOrder from "../../islands/FoodOrder.tsx";
 //? Describe things that were learned with this current project
 import ProjectDiscovery from "../../islands/ProjectDiscovery.tsx";
 //? Fetch food options from the database
-import fetchFood from "../../services/fetchFood.ts";
+import fetchFood from "../../services/food-order/fetchFood.ts";
 //? Import Food type to typecast the data received
 import type { Food } from "../../types/Food.ts";
 //? Import database error instance to check for errors
