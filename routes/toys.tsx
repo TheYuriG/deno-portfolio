@@ -35,7 +35,7 @@ export default function Home() {
             </p>
           </details>
           {/* Row of toys */}
-          <div class="flex overflow-auto">
+          <div class="flex max-w-full overflow-auto styled-scrollbar">
             {/* Spinners */}
             <CarouselCard link="/toys/spinners" title="Spinners">
               <div class="relative text-4xl select-none space-y-4">

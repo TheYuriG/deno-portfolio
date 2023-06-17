@@ -7,12 +7,16 @@ import { BlogNavigationButtons } from "../../components/blog/BlogNavigationButto
 //? A HTML Link component to pre-format links and reduce boiletplate
 import { GradientLink } from "../../components/base/GradientLink.tsx";
 
+const googleLightDarkImage =
+  "https://web-dev.imgix.net/image/vS06HQ1YTsbMKSFTIPl2iogUQP73/skKcjSv1gMQRYk1AdEp7.png?auto=format&w=1600";
+
 export default function Home() {
   return (
     <>
       <CustomHead
         title="How to Create a Theme Switcher with Fresh"
         description="A guide on how to create your own Theme Switcher using Deno and Fresh"
+        imageLink={googleLightDarkImage}
         link="https://www.theyurig.com/blog/how-create-theme-switcher-deno-fresh"
       >
       </CustomHead>
@@ -37,10 +41,10 @@ export default function Home() {
           </p>
           {/* Blog post opening image */}
           <img
-            src={"https://web-dev.imgix.net/image/vS06HQ1YTsbMKSFTIPl2iogUQP73/skKcjSv1gMQRYk1AdEp7.png?auto=format&w=1600"}
+            src={googleLightDarkImage}
             alt="Sun and Moon montage with the words Light and Dark accompanying them"
             title="To many people, themes are an important part of the User Experience"
-            class="my-4 object-cover"
+            class="my-4 min-h-40 h-60 w-72 sm:w-max object-cover"
           />
           {/* Introduction */}
           <p class="my-2 text-justify">

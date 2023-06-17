@@ -8,29 +8,33 @@ interface HeadOptions {
   title: string;
   description: string;
   link?: string;
+  imageLink?: string;
   children: JSX.Element | JSX.Element[];
 }
 
 //? Creates and exports the Head to be used on all pages
-export function CustomHead(options: HeadOptions) {
+export function CustomHead(
+  { title, description, imageLink, link, children }: HeadOptions,
+) {
   return (
     <>
       <Head>
-        <title>{options.title} | TheYuriG</title>
-        <meta property="og:title" content={options.title} />
+        <title>{title} | TheYuriG</title>
+        <meta property="og:title" content={title} />
         <meta property="og:site_name" content="TheYuriG" />
-        <meta property="og:description" content={options.description} />
-        <meta property="description" content={options.description} />
+        <meta property="og:description" content={description} />
+        <meta name="description" content={description} />
         <meta property="og:type" content="blog" />
-        {
-          /* Image tag, if I ever put one <meta
-					property="og:image"
-					content="https://rockcontent.com/br/wp-content/uploads/sites/2/2014/09/zuckerberg-620×316.png"
-				/> */
-        }
+        {imageLink &&
+          (
+            <meta
+              property="og:image"
+              content={imageLink}
+            />
+          )}
         <meta
           property="og:url"
-          content={options.link ?? "https://www.theyurig.com/blog"}
+          content={link ?? "https://www.theyurig.com"}
         />
         <script src="/themeSwitcherMinified.js"></script>
         <link
@@ -44,7 +48,7 @@ export function CustomHead(options: HeadOptions) {
         >
         </link>
         <link rel="stylesheet" href="/base.css" />
-        {...toChildArray(options.children)}
+        {...toChildArray(children)}
       </Head>
     </>
   );
