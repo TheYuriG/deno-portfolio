@@ -179,17 +179,124 @@ export default {
     pause: {
       "animation-play-state": "paused",
     },
-    // Style scrollbar width and colors
-    "styled-scrollbar": {
-      "&::-webkit-scrollbar-thumb": {
-        "background-color": "transparent",
-        outline: "2px solid var(--accent-color)",
-        "outline-offset": "-0.1rem",
-        "border-radius": "0.3rem",
-      },
-      "&::-webkit-scrollbar": {
-        width: "0.8em",
-      },
+    // Custom styled components
+    "styled": ([component]: Array<string>) => {
+      switch (component) {
+        // Style scrollbar width and colors
+        case "scrollbar":
+          return {
+            "&::-webkit-scrollbar-thumb": {
+              "background-color": "transparent",
+              outline: "2px solid var(--accent-color)",
+              "outline-offset": "-0.1rem",
+              "border-radius": "0.3rem",
+            },
+            "&::-webkit-scrollbar": {
+              width: "0.8em",
+            },
+          };
+        // Radio input
+        case "radio": {
+          return {
+            "&": {
+              /* Remove default selection circle */
+              "-webkit-appearance": "none",
+              "appearance": "none",
+              /* For iOS < 15 to remove gradient background */
+              "background-color": "var(--base-color)",
+              margin: "0",
+              font: "inherit",
+              color: "var(--neutral-color)",
+              /* Sizing */
+              width: "0.9em",
+              height: "0.9em",
+              /* Outline for checker */
+              border: "0.15em solid var(--neutral-color)",
+              "border-radius": "50%",
+              /* Push right the label text */
+              "margin-right": "0.5em",
+              /* Push down the checker */
+              transform: "translateY(0.3em)",
+              /* Enable the radio check icon to be centered inside the checker */
+              display: "grid",
+              "place-content": "center",
+            },
+            "&::before": {
+              content: '""',
+              width: "0.5em",
+              height: "0.5em",
+              "border-radius": "50%",
+              transform: "scale(0)",
+              transition: "0.2s transform ease-in-out",
+              "box-shadow": "inset 1em 1em var(--accent-color)",
+            },
+            "&:checked::before": {
+              transform: "scale(1)",
+            },
+            "&:focus": {
+              outline: "max(2px, 0.15em) solid var(--accent-color)",
+              "outline-offset": "max(2px, 0.15em)",
+            },
+          };
+        }
+        // Checkbox input
+        case "checkbox": {
+          return {
+            "&": {
+              /* Remove default selection circle */
+              "-webkit-appearance": "none",
+              "appearance": "none",
+              /* For iOS < 15 to remove gradient background */
+              "background-color": "var(--base-color)",
+              margin: "0",
+              font: "inherit",
+              color: "var(--neutral-color)",
+              /* Sizing */
+              width: "0.9em",
+              height: "0.9em",
+              /* Outline for checker */
+              border: "0.15em solid var(--neutral-color)",
+              /* Border radius for checkbox, radio gets overriden below */
+              "border-radius": "0.2em",
+              /* Push right the label text */
+              "margin-right": "0.5em",
+              /* Push down the checker */
+              transform: "translateY(0.3em)",
+              /* Enable the radio check icon to be centered inside the checker */
+              display: "grid",
+              "place-content": "center",
+            },
+            "&::before": {
+              content: '""',
+              width: "0.5em",
+              height: "0.5em",
+              transform: "scale(0)",
+              transition: "0.2s transform ease-in-out",
+              "box-shadow": "inset 1em 1em var(--accent-color)",
+              "transform-origin": "bottom left",
+              "clip-path":
+                "polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%)",
+            },
+            "&:checked::before": {
+              transform: "scale(1)",
+            },
+            "&:focus": {
+              outline: "max(2px, 0.15em) solid var(--accent-color)",
+              "outline-offset": "max(2px, 0.15em)",
+            },
+          };
+        }
+        // Style the date-picker icon for date inputs
+        case "date":
+          return {
+            "&::-webkit-calendar-picker-indicator": {
+              "background-color": "white",
+              padding: "0.3em",
+              cursor: "pointer",
+              "border-radius": "0.25em",
+            },
+          };
+      }
     },
     // Center an element positioned with top50% left50%
     "transform-center": {

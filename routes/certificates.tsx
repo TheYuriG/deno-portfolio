@@ -23,13 +23,14 @@ export default function Home() {
           <h1 class="f-as my-4 text-2xl lg:text-4xl text-center">
             Certificates
           </h1>
+          {/* Udemy backend NodeJS certificate */}
           <img
             src="https://udemy-certificate.s3.amazonaws.com/image/UC-c14620b0-6803-48a3-a7ab-5211825cec51.jpg?v=1685285730000"
             alt="NodeJS Backend Certificate"
             title="NodeJS Backend completion Certificate"
-            class="my-4 object-cover"
+            class="my-4 object-cover h-[20em] w-[27em]"
           />
-          <p class="text-center w-full m-0">
+          <p class="text-center w-full">
             <GradientLink
               link="https://www.udemy.com/certificate/UC-c14620b0-6803-48a3-a7ab-5211825cec51/"
               content="View on Udemy"

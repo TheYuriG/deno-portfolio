@@ -16,7 +16,31 @@
 
    <url>
 
-      <loc>https://www.theyurig.com/this</loc>
+      <loc>https://www.theyurig.com/work</loc>
+
+      <lastmod>2023-05-22</lastmod>
+
+      <changefreq>weekly</changefreq>
+
+      <priority>0.8</priority>
+
+   </url>
+
+   <url>
+
+      <loc>https://www.theyurig.com/work/form</loc>
+
+      <lastmod>2023-05-22</lastmod>
+
+      <changefreq>monthly</changefreq>
+
+      <priority>0.8</priority>
+
+   </url>
+
+   <url>
+
+      <loc>https://www.theyurig.com/certificates</loc>
 
       <lastmod>2023-05-22</lastmod>
 
@@ -40,11 +64,11 @@
 
    <url>
 
-      <loc>https://www.theyurig.com/work</loc>
+      <loc>https://www.theyurig.com/toys/spinners</loc>
 
       <lastmod>2023-05-22</lastmod>
 
-      <changefreq>weekly</changefreq>
+      <changefreq>monthly</changefreq>
 
       <priority>0.8</priority>
 
@@ -52,7 +76,7 @@
 
    <url>
 
-      <loc>https://www.theyurig.com/toys/spinners</loc>
+      <loc>https://www.theyurig.com/toys/syntax-highlight</loc>
 
       <lastmod>2023-05-22</lastmod>
 
@@ -68,7 +92,7 @@
 
       <lastmod>2023-05-22</lastmod>
 
-      <changefreq>weekly</changefreq>
+      <changefreq>monthly</changefreq>
 
       <priority>0.8</priority>
 
@@ -88,11 +112,47 @@
 
    <url>
 
-      <loc>https://www.theyurig.com/me</loc>
+      <loc>https://www.theyurig.com/blog/how-create-theme-switcher-deno-fresh</loc>
 
       <lastmod>2023-05-22</lastmod>
 
       <changefreq>weekly</changefreq>
+
+      <priority>0.8</priority>
+
+   </url>
+
+   <url>
+
+      <loc>https://www.theyurig.com/blog/stopping-theme-flickering-deno-fresh</loc>
+
+      <lastmod>2023-05-22</lastmod>
+
+      <changefreq>weekly</changefreq>
+
+      <priority>0.8</priority>
+
+   </url>
+
+   <url>
+
+      <loc>https://www.theyurig.com/me</loc>
+
+      <lastmod>2023-05-22</lastmod>
+
+      <changefreq>monthly</changefreq>
+
+      <priority>0.8</priority>
+
+   </url>
+
+   <url>
+
+      <loc>https://www.theyurig.com/this</loc>
+
+      <lastmod>2023-05-22</lastmod>
+
+      <changefreq>monthly</changefreq>
 
       <priority>0.8</priority>
 

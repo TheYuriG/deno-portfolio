@@ -47,7 +47,6 @@ export function CustomHead(
           rel="stylesheet"
         >
         </link>
-        <link rel="stylesheet" href="/base.css" />
         {...toChildArray(children)}
       </Head>
     </>
