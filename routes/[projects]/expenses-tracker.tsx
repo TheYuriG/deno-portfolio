@@ -1,9 +1,5 @@
-// //? To know what is the current route
+//? To know what is the current route
 import { Handlers } from "$fresh/server.ts";
-//? Import the function to fetch expenses from the database
-import fetchExpenses from "../../services/fetchExpenses.ts";
-//? Import the custom error to throw if the database fetch fails
-import FetchExpenseError from "../../types/FetchExpenseError.ts";
 //? Import the Expense type to typecast the data we get from fetchExpenses()
 import type { Expense } from "../../types/Expense.ts";
 //? Create blog content inside Base component
@@ -16,18 +12,12 @@ import { BlogNavigationButtons } from "../../components/blog/BlogNavigationButto
 import ExpensesTracker from "../../islands/ExpensesTracker.tsx";
 //? Describe things that were learned with this current project
 import ProjectDiscovery from "../../islands/ProjectDiscovery.tsx";
+//? Import middleware responsible for pulling expenses tracked
+import { expensesTrackerMiddleware } from "../../middleware/projects/__expenses-tracker.ts";
 
 //? Runs before the render function to fetch the expenses from the
 //? database, then pushes the data into the rendered page function
-export const handler: Handlers = {
-  async GET(req, ctx) {
-    const expenses = await fetchExpenses();
-    if (expenses instanceof FetchExpenseError) {
-      return ctx.render([]);
-    }
-    return ctx.render(expenses);
-  },
-};
+export const handler: Handlers = expensesTrackerMiddleware;
 
 export default function Home(
   { data: savedExpenses }: { data: Expense[] },

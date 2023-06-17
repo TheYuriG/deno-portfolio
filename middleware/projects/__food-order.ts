@@ -1,4 +1,4 @@
-//? Import handlers to fetch the name of the file that is meant to be loaded from KV
+//? Import handlers to create a middleware function
 import { Handlers } from "$fresh/server.ts";
 //? Fetch food options from the database
 import fetchFood from "../../services/food-order/fetchFood.ts";
