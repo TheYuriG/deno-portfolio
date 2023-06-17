@@ -28,6 +28,7 @@ export function StyledRadio({
             <label class="flex w-max whitespace-nowrap sm:mx-2">
               {/* Radio */}
               <input
+                class="styled-radio"
                 type="radio"
                 name={name} //? Links all radio options together
                 value={radio} //? Tracks current value

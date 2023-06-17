@@ -68,7 +68,8 @@ export function StyledInput(
             //! Reference: https://www.w3schools.com/tags/tag_input.asp
             type={inputType}
             //? Base class + validation class if needed
-            class="w-full p-2 custom-bg-bc rounded-xl grow caret-current my-1 sm:my-1 sm:ml-2 custom-bo-ac custom-tr-txbgbo"
+            class={"w-full p-2 custom-bg-bc rounded-xl grow caret-current my-1 sm:my-1 sm:ml-2 custom-bo-ac custom-tr-txbgbo" +
+              (inputType === "date" ? ` styled-date` : "")}
             style={validationReference === validationStatus.Valid
               ? "border-color: green;"
               : validationReference === validationStatus.Invalid
@@ -100,10 +101,15 @@ export function StyledInput(
           />
           {/* Tooltip on the right side, with user information about what data is valid */}
           {helpInformation && (
-            <div class="ml-2 tooltip">
+            <div class="ml-2 relative inline-block group">
               {/* Information icon */}
               <InformationIcon iconHeight="1.8em" iconWidth="1.8em" />
-              <span class="tooltiptext">{helpInformation}</span>
+              <span
+                class="absolute invisible opacity-0 w-max custom-bg-ac custom-tx-nc text-center font-bold p-2 rounded-md right-0 top-[2em] z-10 group-hover:(visible opacity-100)"
+                style="transition: opacity 0.4s ease-in-out, color 0.9s ease-in-out;"
+              >
+                {helpInformation}
+              </span>
             </div>
           )}
         </div>
