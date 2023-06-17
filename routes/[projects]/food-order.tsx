@@ -9,24 +9,14 @@ import { BlogNavigationButtons } from "../../components/blog/BlogNavigationButto
 import FoodOrder from "../../islands/FoodOrder.tsx";
 //? Describe things that were learned with this current project
 import ProjectDiscovery from "../../islands/ProjectDiscovery.tsx";
-//? Fetch food options from the database
-import fetchFood from "../../services/fetchFood.ts";
 //? Import Food type to typecast the data received
 import type { Food } from "../../types/Food.ts";
-//? Import database error instance to check for errors
-import DatabaseFetchError from "../../types/error/DatabaseFetchError.ts";
+//? Import middleware responsible for pulling food items
+import { foodOrderMiddleware } from "../../middleware/projects/__food-order.ts";
 
 //? Runs before the render function to fetch the food from the
 //? database, then pushes the data into the rendered page function
-export const handler: Handlers = {
-  async GET(req, ctx) {
-    const foods = await fetchFood();
-    if (foods instanceof DatabaseFetchError) {
-      return ctx.render([]);
-    }
-    return ctx.render(foods);
-  },
-};
+export const handler: Handlers = foodOrderMiddleware;
 
 //? Renders the food-order page, with a list of items and a cart
 export default function Home(
