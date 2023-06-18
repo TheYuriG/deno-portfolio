@@ -1,5 +1,5 @@
 //? Import Food to typecast outbound data
-import type { Food } from "../../types/Food.ts";
+import type { Food } from "../../types/food-order/Food.ts";
 //? Import fetch error
 import DatabaseFetchError from "../../types/error/DatabaseFetchError.ts";
 //? Import mock foods to save to database if not yet saved

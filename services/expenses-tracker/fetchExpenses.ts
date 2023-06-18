@@ -1,5 +1,5 @@
 //? Import Expense type
-import type { Expense } from "../../types/Expense.ts";
+import type { Expense } from "../../types/expenses-tracker/Expense.ts";
 //? Import mock expenses to save to database if not yet saved
 import { mockExpenses } from "../../types/expenses-tracker/mockExpenses.ts";
 //? Import fetch error

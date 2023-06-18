@@ -1,5 +1,5 @@
 //? Import type for typecasting useState
-import { booleanOrUndefined } from "../../types/booleanOrUndefined.ts";
+import type { booleanOrUndefined } from "../../types/misc/booleanOrUndefined.ts";
 
 //? Exports dinamically rendered status indicator for copy status
 export function CopyStatus({ copyStatus }: { copyStatus: booleanOrUndefined }) {

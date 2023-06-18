@@ -1,7 +1,7 @@
 //? Import from Preact to be able to change state
 import { useEffect, useRef, useState } from "preact/hooks";
 //? Import Food type to typecast the data received
-import type { Food } from "../types/Food.ts";
+import type { Food } from "../types/food-order/Food.ts";
 //? Renders invidual food items on the page
 import { FoodItem } from "../components/food-order/FoodItem.tsx";
 //? Creates a modal with a shaded/blurred backdrop over the content behind it
@@ -204,7 +204,7 @@ export default function FoodOrder({ foods }: FoodOrderProperties) {
               return newCart;
             });
           }}
-          expandImageFunction={(imageLink) => {
+          expandImageFunction={(imageLink: string) => {
             updateExpandedModalImageLink(imageLink);
             displayExpandedFoodImage(true);
           }}

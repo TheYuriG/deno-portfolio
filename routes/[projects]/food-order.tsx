@@ -10,7 +10,7 @@ import FoodOrder from "../../islands/FoodOrder.tsx";
 //? Describe things that were learned with this current project
 import ProjectDiscovery from "../../islands/ProjectDiscovery.tsx";
 //? Import Food type to typecast the data received
-import type { Food } from "../../types/Food.ts";
+import type { Food } from "../../types/food-order/Food.ts";
 //? Import middleware responsible for pulling food items
 import { foodOrderMiddleware } from "../../middleware/projects/__food-order.ts";
 

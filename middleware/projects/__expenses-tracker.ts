@@ -4,7 +4,7 @@ import { saveNewExpenseToKV } from "../../data/expenses-tracker/saveNewExpenseTo
 //? Fetch expenses from the database
 import fetchExpenses from "../../services/expenses-tracker/fetchExpenses.ts";
 //? Import the Expense type for casting
-import type { Expense } from "../../types/Expense.ts";
+import type { Expense } from "../../types/expenses-tracker/Expense.ts";
 //? Import database error instance to check for errors
 import DatabaseFetchError from "../../types/error/DatabaseFetchError.ts";
 

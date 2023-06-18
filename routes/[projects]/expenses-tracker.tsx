@@ -1,7 +1,7 @@
 //? To know what is the current route
 import { Handlers } from "$fresh/server.ts";
 //? Import the Expense type to typecast the data we get from fetchExpenses()
-import type { Expense } from "../../types/Expense.ts";
+import type { Expense } from "../../types/expenses-tracker/Expense.ts";
 //? Create blog content inside Base component
 import { Base } from "../../components/base/Base.tsx";
 //? Head component with all Meta tags pre-set

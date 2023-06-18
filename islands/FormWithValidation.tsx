@@ -12,7 +12,7 @@ import { StyledRadio } from "../components/UI/StyledRadio.tsx";
 import { StyledCheckboxGroup } from "../components/UI/StyledCheckboxGroup.tsx";
 
 //? Types for typecasting
-import { validationStatus } from "../types/validationStatus.ts";
+import { validationStatus } from "../types/misc/validationStatus.ts";
 import type { stimulusCheckboxOptions } from "../types/stimulusCheckboxOptions.ts";
 import { StyledTextArea } from "../components/UI/StyledTextArea.tsx";
 

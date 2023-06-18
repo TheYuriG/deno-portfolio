@@ -1,5 +1,5 @@
 //? Import the Expense type for casting
-import type { Expense } from "../../types/Expense.ts";
+import type { Expense } from "../../types/expenses-tracker/Expense.ts";
 
 export async function postNewExpense(expense: Expense) {
   const headers = new Headers({ "content-type": "application/json" });
