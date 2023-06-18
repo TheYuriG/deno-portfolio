@@ -4,14 +4,8 @@ import { useState } from "preact/hooks";
 import { StyledInput } from "../components/UI/StyledInput.tsx";
 //? Styled Button to confirm sending the form
 import { StyledButton } from "../components/UI/StyledButton.tsx";
-
 //? Types for typecasting
 import { validationStatus } from "../types/validationStatus.ts";
-interface ExpenseFormProperties {
-  addNewExpenseFunction: (
-    input: { date: Date; description: string; cost: number },
-  ) => void;
-}
 
 //? Validates the form's description input field
 const descriptionValidation = (
@@ -91,17 +85,28 @@ function validateInput(
     return pattern(value);
   }
 }
+//* Date formatted as YYYY-MM-DD
 const [timezonelessDate, timezoneDateGap] = new Date().toISOString().split("T");
+//? How data is initially instantiated
 const defaultFormValues = {
   description: "",
   cost: 1,
   date: timezonelessDate,
 };
+//? Set base validation as unchanged to set as default border
 const defaultFormValidation = {
   description: validationStatus.Unchanged,
   cost: validationStatus.Unchanged,
   date: validationStatus.Unchanged,
 };
+
+//? Define how data is expected within this island.
+//! 'date' start as a Date object, but gets converted later to number to be saved
+interface ExpenseFormProperties {
+  addNewExpenseFunction: (
+    input: { date: Date; description: string; cost: number },
+  ) => void;
+}
 
 //? Creates a form that uses RegExp validation
 export default function AddNewExpenseForm(

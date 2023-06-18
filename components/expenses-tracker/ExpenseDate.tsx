@@ -1,6 +1,6 @@
 //? Define properties required for this component
 interface ExpenseDateProperties {
-  date: Date;
+  date: number;
 }
 
 //? Make the expense date component available to everything else

@@ -3,7 +3,7 @@ import { ExpenseDate } from "./ExpenseDate.tsx";
 
 //? Define properties required for this component
 interface IndividualExpenseProperties {
-  date: Date;
+  date: number;
   description: string;
   cost: number;
 }
