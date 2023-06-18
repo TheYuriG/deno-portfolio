@@ -47,7 +47,20 @@ export default function ExpensesTracker(
         //? Add new expense to the database
         addNewExpenseFunction={(newExpense) => {
           updateExpenses((currentState) => {
-            return [...currentState, newExpense];
+            const newExpenses = [...currentState, {
+              ...newExpense,
+              date: new Date(newExpense.date).getTime(),
+            }];
+
+            const sortedExpenses = newExpenses
+              .sort((a, b) => {
+                if (a.date < b.date) {
+                  return -1;
+                }
+                return 1;
+              });
+
+            return sortedExpenses;
           });
         }}
       />
