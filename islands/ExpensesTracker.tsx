@@ -8,6 +8,7 @@ import AddNewExpense from "./AddNewExpense.tsx";
 import type { Expense } from "../types/Expense.ts";
 import ExpensesYearSelect from "./ExpensesYearSelect.tsx";
 import { ExpenseChart } from "../components/expenses-tracker/ExpensesChart.tsx";
+import { postNewExpense } from "../services/expenses-tracker/postNewExpense.ts";
 
 //? Filters expenses by year
 function filterExpensesByYear(year: string, savedExpenses: Expense[]) {
@@ -46,22 +47,21 @@ export default function ExpensesTracker(
       <AddNewExpense
         //? Add new expense to the database
         addNewExpenseFunction={(newExpense) => {
-          updateExpenses((currentState) => {
-            const newExpenses = [...currentState, {
-              ...newExpense,
-              date: new Date(newExpense.date).getTime(),
-            }];
+          //? Parse the expense into useful data
+          const newExpenseWithDateAsNumber: Expense = {
+            ...newExpense,
+            date: new Date(newExpense.date).getTime(),
+          };
 
-            const sortedExpenses = newExpenses
-              .sort((a, b) => {
-                if (a.date < b.date) {
-                  return -1;
-                }
-                return 1;
-              });
+          //! Can return 200 for OK or 400 for Bad Request
+          postNewExpense(newExpenseWithDateAsNumber);
 
-            return sortedExpenses;
-          });
+          //? Optimistically add the expense to the list
+          savedExpenses.push(newExpenseWithDateAsNumber);
+
+          //? Display new list of arrays for the given year
+          //! Only matters if the user added an expense to the year that is being currently viewed
+          updateExpenses(filterExpensesByYear(expensesYear, savedExpenses));
         }}
       />
       {/* Displays all expenses */}
