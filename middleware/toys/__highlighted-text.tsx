@@ -1,13 +1,13 @@
 //? Import handlers to fetch the name of the file that is meant to be loaded from KV
 import { Handlers } from "$fresh/server.ts";
 //? Utility to pull data from KV
-import { readFromKv } from "../../data/readFromKv.ts";
+import { readHighlightFromKv } from "../../data/syntax-highlight/readHighlightFromKv.ts";
 
 //? Attempts to load data from KV on the path related to the [text] params
 export const highlightTextMiddleware: Handlers = {
   async GET(req, ctx) {
     const filePath = ctx.params.text;
-    const textToHighlight = await readFromKv(["highlight", filePath]);
+    const textToHighlight = await readHighlightFromKv(["highlight", filePath]);
 
     //? If no data was found in KV, return message about automatic deletions
     if (textToHighlight.value === null) {

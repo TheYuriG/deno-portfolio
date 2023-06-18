@@ -1,8 +1,8 @@
 //? Import the error type for whenever there is a failed attempt to save to KV
-import FetchDataError from "../types/error/FetchDataError.ts";
+import FetchDataError from "../../types/error/FetchDataError.ts";
 
 //? Saves data to KV
-export async function saveToKv(
+export async function saveHighlightToKv(
   path: Array<string>,
   content: Record<string, boolean | string | number>,
 ) {
