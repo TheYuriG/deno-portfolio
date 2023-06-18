@@ -6,13 +6,13 @@ import fetchExpenses from "../../services/expenses-tracker/fetchExpenses.ts";
 //? Import the Expense type for casting
 import type { Expense } from "../../types/expenses-tracker/Expense.ts";
 //? Import database error instance to check for errors
-import DatabaseFetchError from "../../types/error/DatabaseFetchError.ts";
+import FetchDataError from "../../types/error/FetchDataError.ts";
 
 export const expensesTrackerMiddleware: Handlers = {
   //? Attempts to pull expenses from the database, returns mock expense otherwise
   async GET(_req, ctx) {
     const expenses = await fetchExpenses();
-    if (expenses instanceof DatabaseFetchError) {
+    if (expenses instanceof FetchDataError) {
       return ctx.render([]);
     }
     return ctx.render(expenses);
