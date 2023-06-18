@@ -1,7 +1,7 @@
 export function NavigationMenu() {
   return (
     <nav
-      class="flex flex-col p-4 items-end absolute bottom-0 right-0"
+      class="flex flex-col absolute items-end p-4 bottom-0 right-0"
       style="font-family: 'Alfa Slab One', cursive;"
     >
       <a
@@ -56,7 +56,7 @@ export function NavigationMenu() {
         href="/what-is-this"
         class="text-sm animate-slide-right delay-slide-right"
         style="color: yellow; margin-top: 2em; --dur: 2;"
-        title="information about how this website is built"
+        title="Information about how this website is built"
       >
         this
       </a>

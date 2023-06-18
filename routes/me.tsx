@@ -24,7 +24,7 @@ export default function Home() {
       <Base>
         <BlogNavigationButtons />
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
-          <h1 class="custom-underline-thick hover:custom-tx-ac f-as my-4 text-2xl lg:text-4xl text-center">
+          <h1 class="custom-underline-thick hover:custom-tx-ac f-as my-4 text-center">
             Who is TheYuriG?
           </h1>
           <img
@@ -64,7 +64,7 @@ export default function Home() {
             average completion or end up adding some unobtainable trophies to
             your account.
           </p>
-          <h2 class="custom-underline-thick hover:custom-tx-ac text-3xl my-2 f-as">
+          <h2 class="custom-underline-thick hover:custom-tx-ac my-2 f-as">
             Gym
           </h2>
           <p class="my-2 text-justify">
@@ -108,7 +108,7 @@ export default function Home() {
             />!
           </p>
 
-          <h2 class="custom-underline-thick hover:custom-tx-ac text-3xl my-2 f-as">
+          <h2 class="custom-underline-thick hover:custom-tx-ac my-2 f-as">
             Programming
           </h2>
           <p class="my-2 text-justify">
@@ -145,7 +145,7 @@ export default function Home() {
             ears. It couldn't go on like that anymore, something had to be done
             about it.
           </p>
-          <h2 class="custom-underline-thick hover:custom-tx-ac text-3xl my-2 f-as">
+          <h2 class="custom-underline-thick hover:custom-tx-ac my-2 f-as">
             Trophy Place
           </h2>
           <p class="my-2 text-justify">

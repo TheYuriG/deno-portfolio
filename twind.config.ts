@@ -521,7 +521,7 @@ export default {
               transition: "color 0.5s ease-in-out",
               "text-decoration-color": "var(--neutral-color)",
               "margin-bottom": "0.2em",
-              "font-size": "3rem",
+              "font-size": "clamp(2rem, 4dvw, 4rem)",
               "line-height": "1",
             },
             "&:hover": {

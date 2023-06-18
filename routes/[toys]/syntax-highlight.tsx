@@ -33,7 +33,7 @@ export default function Home(
           {/* Error message, if necessary */}
           {errors.length > 0 && <ErrorAlert errorText={errors} />}
           {/* Title */}
-          <h1 class="custom-underline-thick hover:custom-tx-ac f-as my-4 text-2xl lg:text-4xl text-center">
+          <h1 class="custom-underline-thick hover:custom-tx-ac f-as my-4 text-center">
             Syntax Highlighting as HTML+CSS
           </h1>
           {/* Introduction */}
