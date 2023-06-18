@@ -66,9 +66,13 @@ export default function Home() {
             when completing the project. Overall, I don't think it was that
             useful for me because I had already learned the large bulk of React
             features previously by building websites for my freelance clients.
-            While it was nice to learn about Fragments, React.createElement(),
-            Portals and Context, almost none of my clients jobs would benefit by
-            any of those, so it was mostly nice-to-know course for me.
+            While it was nice to learn about why{" "}
+            <span class="shl-inline">Fragments</span> exist, what is{" "}
+            <span class="shl-inline">React.createElement()</span>,{" "}
+            <span class="shl-inline">Portals</span> and{" "}
+            <span class="shl-inline">Context</span>, almost none of my clients
+            jobs would benefit by any of those, so it was mostly nice-to-know
+            course for me.
           </p>
           <ol
             start={1}
