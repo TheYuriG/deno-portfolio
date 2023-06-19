@@ -20,7 +20,7 @@ export function StyledRadio({
       <span class="w-max flex-shrink-0">
         {label}
       </span>
-      <div class="p-2 custom-bg-bc custom-bo-ac rounded-xl flex flex-col sm:flex-row w-min sm:w-max sm:ml-2 flex-wrap place-content-center custom-tr-txbgbo">
+      <div class="p-2 custom-bg-bc custom-bo-ac rounded-xl flex flex-col sm:flex-row w-min sm:w-max sm:ml-2 flex-wrap place-content-center custom-tr-tx-bg-bo">
         {/* Programatically creates radio inputs from array of strings provided */}
         {optionsArray.map((radio) => (
           <>

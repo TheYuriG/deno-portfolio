@@ -441,15 +441,9 @@ export default {
           case "fi":
             transitions.push("fill 0.9s ease-in-out");
             break;
-          // Define text color and background color transition
-          case "txbgbo":
-            transitions.push(
-              "color 0.9s ease-in-out, background-color 0.8s ease-in-out,border 0.6s ease-in-out",
-            );
-            break;
         }
       }
-      return { transition: transitions.join(",") };
+      return { transition: transitions.join(", ") };
     },
     // Button types
     "custom-button": ([buttonType]: Array<string>) => {

@@ -68,7 +68,7 @@ export function StyledInput(
             //! Reference: https://www.w3schools.com/tags/tag_input.asp
             type={inputType}
             //? Base class + validation class if needed
-            class={"w-full p-2 custom-bg-bc rounded-xl grow caret-current my-1 sm:my-1 sm:ml-2 custom-bo-ac custom-tr-txbgbo" +
+            class={"w-full p-2 custom-bg-bc rounded-xl grow caret-current my-1 sm:my-1 sm:ml-2 custom-bo-ac custom-tr-bg-bo" +
               (inputType === "date" ? ` styled-date` : "")}
             style={validationReference === validationStatus.Valid
               ? "border-color: green;"

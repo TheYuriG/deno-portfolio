@@ -36,13 +36,6 @@ export default function ThemeSwitcher() {
     //? Access the root element, where our styles were defined
     const cssRoot: HTMLElement | null = document.querySelector(":root");
     if (cssRoot !== null) {
-      // Transition effect to make the switch to Light theme on load less jarring
-      cssRoot.style.setProperty("transition", "color 0.9s ease-in-out");
-      cssRoot.style.setProperty(
-        "transition",
-        "background-color 0.8s ease-in-out",
-      );
-
       if (theme === "Light") {
         // TW Slate 300 background color
         cssRoot.style.setProperty("--base-color", "rgb(203 213 225)");
