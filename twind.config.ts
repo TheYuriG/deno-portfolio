@@ -419,7 +419,13 @@ export default {
       const transitions: Array<string> = [];
       for (const tr of transition) {
         switch (tr) {
-          // Define text color transition
+          // Define height transition
+          case "h":
+            transitions.push(
+              "height 0.5s ease-in-out",
+            );
+            break;
+            // Define text color transition
           case "tx":
             transitions.push("color 0.9s ease-in-out");
             break;

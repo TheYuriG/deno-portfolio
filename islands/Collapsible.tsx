@@ -27,8 +27,14 @@ export default function Collapsible(
         shouldBeChecked={displayDiscovery}
       />
       {/* Displays the discovery text, if that was enabled with the checkbox */}
-      {displayDiscovery === true &&
-        innerText.map((text) => <p class="my-2 text-justify">{text}</p>)}
+      <div
+        class={"styled-scrollbar custom-tr-h " +
+          (displayDiscovery === true
+            ? "h-60 pr-4 overflow-auto"
+            : "h-0 pr-7 overflow-hidden")}
+      >
+        {innerText.map((text) => <p class="my-2 text-justify">{text}</p>)}
+      </div>
     </section>
   );
 }
