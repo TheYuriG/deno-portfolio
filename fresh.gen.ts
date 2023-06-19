@@ -24,15 +24,15 @@ import * as $17 from "./routes/toys.tsx";
 import * as $18 from "./routes/what-is-this.tsx";
 import * as $19 from "./routes/work.tsx";
 import * as $$0 from "./islands/AddNewExpense.tsx";
-import * as $$1 from "./islands/CopyTextAreaToClipboard.tsx";
-import * as $$2 from "./islands/DigitalTimer.tsx";
-import * as $$3 from "./islands/ExpensesTracker.tsx";
-import * as $$4 from "./islands/ExpensesYearSelect.tsx";
-import * as $$5 from "./islands/FoodOrder.tsx";
-import * as $$6 from "./islands/FormWithValidation.tsx";
-import * as $$7 from "./islands/HighlightedCode.tsx";
-import * as $$8 from "./islands/InsanitySection.tsx";
-import * as $$9 from "./islands/ProjectDiscovery.tsx";
+import * as $$1 from "./islands/Collapsible.tsx";
+import * as $$2 from "./islands/CopyTextAreaToClipboard.tsx";
+import * as $$3 from "./islands/DigitalTimer.tsx";
+import * as $$4 from "./islands/ExpensesTracker.tsx";
+import * as $$5 from "./islands/ExpensesYearSelect.tsx";
+import * as $$6 from "./islands/FoodOrder.tsx";
+import * as $$7 from "./islands/FormWithValidation.tsx";
+import * as $$8 from "./islands/HighlightedCode.tsx";
+import * as $$9 from "./islands/InsanitySection.tsx";
 import * as $$10 from "./islands/ThemeSwitcher.tsx";
 
 const manifest = {
@@ -60,15 +60,15 @@ const manifest = {
   },
   islands: {
     "./islands/AddNewExpense.tsx": $$0,
-    "./islands/CopyTextAreaToClipboard.tsx": $$1,
-    "./islands/DigitalTimer.tsx": $$2,
-    "./islands/ExpensesTracker.tsx": $$3,
-    "./islands/ExpensesYearSelect.tsx": $$4,
-    "./islands/FoodOrder.tsx": $$5,
-    "./islands/FormWithValidation.tsx": $$6,
-    "./islands/HighlightedCode.tsx": $$7,
-    "./islands/InsanitySection.tsx": $$8,
-    "./islands/ProjectDiscovery.tsx": $$9,
+    "./islands/Collapsible.tsx": $$1,
+    "./islands/CopyTextAreaToClipboard.tsx": $$2,
+    "./islands/DigitalTimer.tsx": $$3,
+    "./islands/ExpensesTracker.tsx": $$4,
+    "./islands/ExpensesYearSelect.tsx": $$5,
+    "./islands/FoodOrder.tsx": $$6,
+    "./islands/FormWithValidation.tsx": $$7,
+    "./islands/HighlightedCode.tsx": $$8,
+    "./islands/InsanitySection.tsx": $$9,
     "./islands/ThemeSwitcher.tsx": $$10,
   },
   baseUrl: import.meta.url,

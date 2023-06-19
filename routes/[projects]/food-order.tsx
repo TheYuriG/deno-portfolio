@@ -8,7 +8,7 @@ import { CustomHead } from "../../components/base/CustomHead.tsx";
 import { BlogNavigationButtons } from "../../components/blog/BlogNavigationButtons.tsx";
 import FoodOrder from "../../islands/FoodOrder.tsx";
 //? Describe things that were learned with this current project
-import ProjectDiscovery from "../../islands/ProjectDiscovery.tsx";
+import Collapsible from "../../islands/Collapsible.tsx";
 //? Import Food type to typecast the data received
 import type { Food } from "../../types/food-order/Food.ts";
 //? Import middleware responsible for pulling food items
@@ -42,7 +42,8 @@ export default function Home(
         />
         <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
           {/* Insights */}
-          <ProjectDiscovery
+          <Collapsible
+            checkboxText="What did I learn?"
             innerText={[
               // first paragraph
               "Between the previous project (expenses tracker) and this one, there was an extended section about 'useContext' and 'useRef', that was very interesting and helped solidify what I learned on the Preact tutorial. The things I've learned on that section are used in this project.",

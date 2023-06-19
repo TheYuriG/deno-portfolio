@@ -1,15 +1,17 @@
 //? Import from Preact to be able to change state
 import { useState } from "preact/hooks";
+//? Import single checkbox to toggle content on and off
 import { StyledSingleCheckbox } from "../components/UI/StyledSingleCheckbox.tsx";
 
 //? Define optional properties for the buttons
-interface ProjectDiscoveryProperties {
+interface CollapsibleProperties {
   innerText: string[];
+  checkboxText: string;
 }
 
 //? Exports Navigation Buttons to go to the previous page and next Article
-export default function ProjectDiscovery(
-  { innerText }: ProjectDiscoveryProperties,
+export default function Collapsible(
+  { innerText, checkboxText }: CollapsibleProperties,
 ) {
   //? Manages if the discovery text should be displayed or not
   const [displayDiscovery, toggleDisplayDiscovery] = useState(false);
@@ -18,7 +20,7 @@ export default function ProjectDiscovery(
     <section class="flex flex-col items-end w-full my-2">
       {/* Display a checkbox to enable/disable displaying the discovery text */}
       <StyledSingleCheckbox
-        label="What did I learn?"
+        label={checkboxText}
         onChangeFunction={() => {
           toggleDisplayDiscovery((curr) => !curr);
         }}
