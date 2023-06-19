@@ -1,13 +1,13 @@
 //? Import Expense type
-import type { Expense } from "../../types/Expense.ts";
+import type { Expense } from "../../types/expenses-tracker/Expense.ts";
 //? Import mock expenses to save to database if not yet saved
 import { mockExpenses } from "../../types/expenses-tracker/mockExpenses.ts";
 //? Import fetch error
-import DatabaseFetchError from "../../types/error/DatabaseFetchError.ts";
+import FetchDataError from "../../types/error/FetchDataError.ts";
 
 //? Attempts to pull data from KV, uses mock otherwise
 export default async function fetchExpenses(): Promise<
-  DatabaseFetchError | Expense[]
+  FetchDataError | Expense[]
 > {
   try {
     const kv = await Deno.openKv();
@@ -18,7 +18,7 @@ export default async function fetchExpenses(): Promise<
     }
     return dbExpenses.value as Expense[];
   } catch (error) {
-    return new DatabaseFetchError(
+    return new FetchDataError(
       "Unable to find any Expenses!",
       error.trace,
     );

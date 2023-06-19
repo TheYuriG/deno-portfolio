@@ -8,12 +8,12 @@ import { JSX, toChildArray } from "preact";
 export function Base(props: { children: Array<JSX.Element> | JSX.Element }) {
   return (
     <body
-      class="styled-scrollbar custom-bg-bc custom-tx-nc"
+      class="styled-scrollbar custom-bg-bc custom-tx-nc custom-tr-tx-bg-bo"
       style="font-family: 'Fragment Mono', monospace;"
     >
       {/* Main content: name, role, company */}
       <main
-        class="absolute p-4 m-6 custom-bo-ac rounded-2xl custom-tr-bo"
+        class="absolute p-4 m-6 custom-bo-ac rounded-2xl"
         style="width: calc(100dvw - 2 * 1.5rem); min-height: calc(100dvh - 2 * 1.5rem);"
       >
         {/* Theme switcher */}

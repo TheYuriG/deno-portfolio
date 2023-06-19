@@ -5,7 +5,7 @@ import { IndividualExpense } from "../components/expenses-tracker/IndividualExpe
 //? Import expense creation form
 import AddNewExpense from "./AddNewExpense.tsx";
 //? Import the Expense type for casting
-import type { Expense } from "../types/Expense.ts";
+import type { Expense } from "../types/expenses-tracker/Expense.ts";
 import ExpensesYearSelect from "./ExpensesYearSelect.tsx";
 import { ExpenseChart } from "../components/expenses-tracker/ExpensesChart.tsx";
 import { postNewExpense } from "../services/expenses-tracker/postNewExpense.ts";

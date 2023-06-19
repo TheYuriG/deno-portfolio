@@ -3,74 +3,72 @@
 // This file is automatically updated during development when running `dev.ts`.
 
 import config from "./deno.json" assert { type: "json" };
-import * as $0 from "./routes/[blog]/[post].tsx";
-import * as $1 from "./routes/[blog]/how-create-theme-switcher-deno-fresh.tsx";
-import * as $2 from "./routes/[blog]/stopping-theme-flickering-deno-fresh.tsx";
-import * as $3 from "./routes/[projects]/expenses-tracker.tsx";
-import * as $4 from "./routes/[projects]/food-order.tsx";
-import * as $5 from "./routes/[toys]/[highlighted-text]/[text].tsx";
-import * as $6 from "./routes/[toys]/insanity.tsx";
-import * as $7 from "./routes/[toys]/spinners.tsx";
-import * as $8 from "./routes/[toys]/syntax-highlight.tsx";
-import * as $9 from "./routes/[work]/form.tsx";
-import * as $10 from "./routes/_404.tsx";
-import * as $11 from "./routes/_500.tsx";
-import * as $12 from "./routes/api/joke.ts";
-import * as $13 from "./routes/blog.tsx";
-import * as $14 from "./routes/certificates.tsx";
-import * as $15 from "./routes/index.tsx";
-import * as $16 from "./routes/me.tsx";
-import * as $17 from "./routes/projects.tsx";
-import * as $18 from "./routes/toys.tsx";
-import * as $19 from "./routes/what-is-this.tsx";
-import * as $20 from "./routes/work.tsx";
+import * as $0 from "./routes/[blog]/how-create-theme-switcher-deno-fresh.tsx";
+import * as $1 from "./routes/[blog]/stopping-theme-flickering-deno-fresh.tsx";
+import * as $2 from "./routes/[projects]/expenses-tracker.tsx";
+import * as $3 from "./routes/[projects]/food-order.tsx";
+import * as $4 from "./routes/[toys]/[highlighted-text]/[text].tsx";
+import * as $5 from "./routes/[toys]/insanity.tsx";
+import * as $6 from "./routes/[toys]/spinners.tsx";
+import * as $7 from "./routes/[toys]/syntax-highlight.tsx";
+import * as $8 from "./routes/[work]/form.tsx";
+import * as $9 from "./routes/_404.tsx";
+import * as $10 from "./routes/_500.tsx";
+import * as $11 from "./routes/api/joke.ts";
+import * as $12 from "./routes/blog.tsx";
+import * as $13 from "./routes/certificates.tsx";
+import * as $14 from "./routes/index.tsx";
+import * as $15 from "./routes/me.tsx";
+import * as $16 from "./routes/projects.tsx";
+import * as $17 from "./routes/toys.tsx";
+import * as $18 from "./routes/what-is-this.tsx";
+import * as $19 from "./routes/work.tsx";
 import * as $$0 from "./islands/AddNewExpense.tsx";
-import * as $$1 from "./islands/CopyTextAreaToClipboard.tsx";
-import * as $$2 from "./islands/DigitalTimer.tsx";
-import * as $$3 from "./islands/ExpensesTracker.tsx";
-import * as $$4 from "./islands/ExpensesYearSelect.tsx";
-import * as $$5 from "./islands/FoodOrder.tsx";
-import * as $$6 from "./islands/FormWithValidation.tsx";
-import * as $$7 from "./islands/HighlightedCode.tsx";
-import * as $$8 from "./islands/InsanitySection.tsx";
-import * as $$9 from "./islands/ProjectDiscovery.tsx";
+import * as $$1 from "./islands/Collapsible.tsx";
+import * as $$2 from "./islands/CopyTextAreaToClipboard.tsx";
+import * as $$3 from "./islands/DigitalTimer.tsx";
+import * as $$4 from "./islands/ExpensesTracker.tsx";
+import * as $$5 from "./islands/ExpensesYearSelect.tsx";
+import * as $$6 from "./islands/FoodOrder.tsx";
+import * as $$7 from "./islands/FormWithValidation.tsx";
+import * as $$8 from "./islands/HighlightedCode.tsx";
+import * as $$9 from "./islands/InsanitySection.tsx";
 import * as $$10 from "./islands/ThemeSwitcher.tsx";
 
 const manifest = {
   routes: {
-    "./routes/[blog]/[post].tsx": $0,
-    "./routes/[blog]/how-create-theme-switcher-deno-fresh.tsx": $1,
-    "./routes/[blog]/stopping-theme-flickering-deno-fresh.tsx": $2,
-    "./routes/[projects]/expenses-tracker.tsx": $3,
-    "./routes/[projects]/food-order.tsx": $4,
-    "./routes/[toys]/[highlighted-text]/[text].tsx": $5,
-    "./routes/[toys]/insanity.tsx": $6,
-    "./routes/[toys]/spinners.tsx": $7,
-    "./routes/[toys]/syntax-highlight.tsx": $8,
-    "./routes/[work]/form.tsx": $9,
-    "./routes/_404.tsx": $10,
-    "./routes/_500.tsx": $11,
-    "./routes/api/joke.ts": $12,
-    "./routes/blog.tsx": $13,
-    "./routes/certificates.tsx": $14,
-    "./routes/index.tsx": $15,
-    "./routes/me.tsx": $16,
-    "./routes/projects.tsx": $17,
-    "./routes/toys.tsx": $18,
-    "./routes/what-is-this.tsx": $19,
-    "./routes/work.tsx": $20,
+    "./routes/[blog]/how-create-theme-switcher-deno-fresh.tsx": $0,
+    "./routes/[blog]/stopping-theme-flickering-deno-fresh.tsx": $1,
+    "./routes/[projects]/expenses-tracker.tsx": $2,
+    "./routes/[projects]/food-order.tsx": $3,
+    "./routes/[toys]/[highlighted-text]/[text].tsx": $4,
+    "./routes/[toys]/insanity.tsx": $5,
+    "./routes/[toys]/spinners.tsx": $6,
+    "./routes/[toys]/syntax-highlight.tsx": $7,
+    "./routes/[work]/form.tsx": $8,
+    "./routes/_404.tsx": $9,
+    "./routes/_500.tsx": $10,
+    "./routes/api/joke.ts": $11,
+    "./routes/blog.tsx": $12,
+    "./routes/certificates.tsx": $13,
+    "./routes/index.tsx": $14,
+    "./routes/me.tsx": $15,
+    "./routes/projects.tsx": $16,
+    "./routes/toys.tsx": $17,
+    "./routes/what-is-this.tsx": $18,
+    "./routes/work.tsx": $19,
   },
   islands: {
     "./islands/AddNewExpense.tsx": $$0,
-    "./islands/CopyTextAreaToClipboard.tsx": $$1,
-    "./islands/DigitalTimer.tsx": $$2,
-    "./islands/ExpensesTracker.tsx": $$3,
-    "./islands/ExpensesYearSelect.tsx": $$4,
-    "./islands/FoodOrder.tsx": $$5,
-    "./islands/FormWithValidation.tsx": $$6,
-    "./islands/HighlightedCode.tsx": $$7,
-    "./islands/InsanitySection.tsx": $$8,
-    "./islands/ProjectDiscovery.tsx": $$9,
+    "./islands/Collapsible.tsx": $$1,
+    "./islands/CopyTextAreaToClipboard.tsx": $$2,
+    "./islands/DigitalTimer.tsx": $$3,
+    "./islands/ExpensesTracker.tsx": $$4,
+    "./islands/ExpensesYearSelect.tsx": $$5,
+    "./islands/FoodOrder.tsx": $$6,
+    "./islands/FormWithValidation.tsx": $$7,
+    "./islands/HighlightedCode.tsx": $$8,
+    "./islands/InsanitySection.tsx": $$9,
     "./islands/ThemeSwitcher.tsx": $$10,
   },
   baseUrl: import.meta.url,

@@ -419,7 +419,13 @@ export default {
       const transitions: Array<string> = [];
       for (const tr of transition) {
         switch (tr) {
-          // Define text color transition
+          // Define height transition
+          case "h":
+            transitions.push(
+              "height 0.5s ease-in-out",
+            );
+            break;
+            // Define text color transition
           case "tx":
             transitions.push("color 0.9s ease-in-out");
             break;
@@ -435,15 +441,9 @@ export default {
           case "fi":
             transitions.push("fill 0.9s ease-in-out");
             break;
-          // Define text color and background color transition
-          case "txbgbo":
-            transitions.push(
-              "color 0.9s ease-in-out, background-color 0.8s ease-in-out,border 0.6s ease-in-out",
-            );
-            break;
         }
       }
-      return { transition: transitions.join(",") };
+      return { transition: transitions.join(", ") };
     },
     // Button types
     "custom-button": ([buttonType]: Array<string>) => {
@@ -521,10 +521,11 @@ export default {
               transition: "color 0.5s ease-in-out",
               "text-decoration-color": "var(--neutral-color)",
               "margin-bottom": "0.2em",
-              "font-size": "3rem",
+              "font-size": "clamp(2rem, 4dvw, 4rem)",
               "line-height": "1",
             },
             "&:hover": {
+              color: "var(--accent-color)",
               "text-decoration-line": "underline",
               "text-decoration-skip-ink": "none",
               "text-underline-offset": "-0.2em",

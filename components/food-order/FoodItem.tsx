@@ -3,7 +3,7 @@ import { MealIcon } from "../../assets/MealIcon.tsx";
 //? Import the StyledButton to enable users to add the current FoodItem to the cart
 import { StyledButton } from "../UI/StyledButton.tsx";
 //? Import Food type to typecast the data received
-import type { Food } from "../../types/Food.ts";
+import type { Food } from "../../types/food-order/Food.ts";
 
 //? Renders a single FoodItem with image, name, description and button to add to Cart
 export function FoodItem(
@@ -24,7 +24,7 @@ export function FoodItem(
 ) {
   return (
     //? Whole card
-    <div class="custom-bo-nc rounded-xl mt-2 flex flex-col sm:flex-row  items-center min-h-32 w-full pb-4 sm:pb-0 sm:pr-2 custom-bg-bc overflow-hidden custom-tr-txbgbo">
+    <div class="custom-bo-nc rounded-xl mt-2 flex flex-col sm:flex-row  items-center min-h-32 w-full pb-4 sm:pb-0 sm:pr-2 custom-bg-bc overflow-hidden custom-tr-bg">
       {/* Food image */}
       <img
         class="max-h-60 sm:h-32 sm:w-40 object-cover flex-shrink-0 hover:cursor-pointer"

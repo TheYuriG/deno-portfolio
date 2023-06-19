@@ -1,5 +1,5 @@
 //? Import Food to typecast outbound data
-import type { Food } from "../../types/Food.ts";
+import type { Food } from "../../types/food-order/Food.ts";
 
 //? Mock food
 export const mockFoods: Food[] = [{

@@ -1,12 +1,12 @@
 //? Import Food to typecast outbound data
-import type { Food } from "../../types/Food.ts";
+import type { Food } from "../../types/food-order/Food.ts";
 //? Import fetch error
-import DatabaseFetchError from "../../types/error/DatabaseFetchError.ts";
+import FetchDataError from "../../types/error/FetchDataError.ts";
 //? Import mock foods to save to database if not yet saved
 import { mockFoods } from "../../types/food-order/mockFoods.ts";
 
 export default async function fetchFood(): Promise<
-  DatabaseFetchError | Food[]
+  FetchDataError | Food[]
 > {
   try {
     const kv = await Deno.openKv();
@@ -17,7 +17,7 @@ export default async function fetchFood(): Promise<
     }
     return dbFoods.value as Food[];
   } catch (error) {
-    return new DatabaseFetchError(
+    return new FetchDataError(
       "Unable to find any Food!",
       error.trace,
     );

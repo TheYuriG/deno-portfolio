@@ -28,7 +28,7 @@ export default function Home() {
             src="https://udemy-certificate.s3.amazonaws.com/image/UC-c14620b0-6803-48a3-a7ab-5211825cec51.jpg?v=1685285730000"
             alt="NodeJS Backend Certificate"
             title="NodeJS Backend completion Certificate"
-            class="my-4 object-cover h-[20em] w-[27em]"
+            class="my-4 object-cover max-h-[20em]"
           />
           <p class="text-center w-full">
             <GradientLink

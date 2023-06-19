@@ -15,10 +15,10 @@ export function HomeContent() {
         class="block text-2xl ml-4 animate-slide-top delay-slide-top group"
         style="--dur: 0.5;"
       >
-        I am{" "}
+        My name is{" "}
         <strong>
           <span class="custom-underline-dotted hover:custom-tx-ac">
-            TheYuriG
+            Yuri
           </span>
           <span class="hidden group-hover:inline-block group-hover:animate-waving">
             👋

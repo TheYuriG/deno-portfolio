@@ -5,7 +5,7 @@ import { StyledInput } from "../components/UI/StyledInput.tsx";
 //? Styled Button to confirm sending the form
 import { StyledButton } from "../components/UI/StyledButton.tsx";
 //? Types for typecasting
-import { validationStatus } from "../types/validationStatus.ts";
+import { validationStatus } from "../types/misc/validationStatus.ts";
 
 //? Validates the form's description input field
 const descriptionValidation = (

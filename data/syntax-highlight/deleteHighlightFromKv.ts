@@ -1,8 +1,8 @@
 //? Import the error type for whenever there is a failed attempt to delete from KV
-import FetchDataError from "../types/error/FetchDataError.ts";
+import FetchDataError from "../../types/error/FetchDataError.ts";
 
 //? Deletes data from KV
-export async function deleteFromKv(path: Array<string>) {
+export async function deleteHighlightFromKv(path: Array<string>) {
   //? Attempt to delete data from KV
   try {
     const kv = await Deno.openKv();

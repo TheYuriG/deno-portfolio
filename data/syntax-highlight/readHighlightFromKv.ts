@@ -1,8 +1,8 @@
 //? Import the error type for whenever there is a failed attempt to read from KV
-import FetchDataError from "../types/error/FetchDataError.ts";
+import FetchDataError from "../../types/error/FetchDataError.ts";
 
 //? Reads data from KV
-export async function readFromKv(path: Array<string>) {
+export async function readHighlightFromKv(path: Array<string>) {
   //? Attempt to read data from KV
   try {
     const kv = await Deno.openKv();

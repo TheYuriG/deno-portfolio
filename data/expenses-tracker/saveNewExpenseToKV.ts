@@ -1,5 +1,5 @@
 //? Import the Expense type for casting
-import type { Expense } from "../../types/Expense.ts";
+import type { Expense } from "../../types/expenses-tracker/Expense.ts";
 
 //? Attempts to read database expenses and adds an expense to the list
 export async function saveNewExpenseToKV(newExpense: Expense) {

@@ -2,7 +2,7 @@ import { useMemo, useState } from "preact/hooks";
 //? Function to copy content to clipboard
 import { copyToClipboard } from "../services/copyToClipboard.ts";
 //? Import type for typecasting useState
-import type { booleanOrUndefined } from "../types/booleanOrUndefined.ts";
+import type { booleanOrUndefined } from "../types/misc/booleanOrUndefined.ts";
 //? Import status report toggle
 import { CopyStatus } from "../components/misc/CopyStatus.tsx";
 
