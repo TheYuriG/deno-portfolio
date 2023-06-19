@@ -20,7 +20,7 @@ export default function Home() {
         <BlogNavigationButtons />
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
           {/* Intro */}
-          <h1 class="custom-underline-thick hover:custom-tx-ac f-as my-4 text-center">
+          <h1 class="custom-underline-thick f-as my-4 text-center">
             What is this?
           </h1>
           <p class="text-justify">
@@ -39,7 +39,7 @@ export default function Home() {
             you are not a developer, it's okay if it goes over your head.
           </p>
           {/* Deno */}
-          <h1 class="custom-underline-thick hover:custom-tx-ac f-as my-4 text-center">
+          <h1 class="custom-underline-thick f-as my-4 text-center">
             Ok, so what is this?
           </h1>
           <p class="text-justify">

@@ -9,7 +9,7 @@ export function BlogPostSummary(summary: BlogPostSummaryProperties) {
       {/* Post link */}
       <a href={"/blog" + summary.link}>
         {/* Centered heading */}
-        <h2 class="custom-underline-thick hover:custom-tx-ac f-as my-4 text-center">
+        <h2 class="custom-underline-thick f-as my-4 text-center">
           {summary.title}
         </h2>
       </a>

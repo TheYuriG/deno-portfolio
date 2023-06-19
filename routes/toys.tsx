@@ -22,7 +22,7 @@ export default function Home() {
         <BlogNavigationButtons />
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
           {/* Title header */}
-          <h1 class="custom-underline-thick hover:custom-tx-ac f-as my-4 text-center">
+          <h1 class="custom-underline-thick f-as my-4 text-center">
             Toys
           </h1>
           {/* Dropdown with explanation about what is this page */}

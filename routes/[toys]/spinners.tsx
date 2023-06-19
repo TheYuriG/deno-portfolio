@@ -23,7 +23,7 @@ export default function Home() {
           back={{ title: "Return to all toys", link: "/toys" }}
         />
         <article class="flex flex-col w-full h-full max-w-4xl mx-auto items-center">
-          <h1 class="custom-underline-thick hover:custom-tx-ac f-as my-4 text-center">
+          <h1 class="custom-underline-thick f-as my-4 text-center">
             Spinners
           </h1>
           <p class="mx-auto">

@@ -531,6 +531,7 @@ export default {
               "line-height": "1",
             },
             "&:hover": {
+              color: "var(--accent-color)",
               "text-decoration-line": "underline",
               "text-decoration-skip-ink": "none",
               "text-underline-offset": "-0.2em",

@@ -21,7 +21,7 @@ export default function Home() {
       <Base>
         <BlogNavigationButtons />
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
-          <h1 class="f-as my-4 text-2xl lg:text-4xl text-center">
+          <h1 class="custom-underline-thick f-as my-4 text-center">
             Projects built
           </h1>
           {/* Grid of projects created */}
