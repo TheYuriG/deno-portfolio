@@ -11,7 +11,7 @@ export function ErrorAlert({ errorText }: ErrorAlertProperties) {
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="h-8 w-8"
+        class="h-8 w-8 flex-shrink-0"
         fill="none"
         stroke="rgb(50, 24, 22)"
         viewBox="0 0 24 24"
