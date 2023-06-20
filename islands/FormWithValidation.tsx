@@ -10,11 +10,14 @@ import { StyledSelect } from "../components/UI/StyledSelect.tsx";
 import { StyledRadio } from "../components/UI/StyledRadio.tsx";
 //? Styled checkbox for Stimulus Check option
 import { StyledCheckboxGroup } from "../components/UI/StyledCheckboxGroup.tsx";
+//? Import text area to display the submit results
+import { StyledTextArea } from "../components/UI/StyledTextArea.tsx";
+//? Display error in as an ErrorAlert
+import { ErrorAlert } from "../components/UI/ErrorAlert.tsx";
 
 //? Types for typecasting
 import { validationStatus } from "../types/misc/validationStatus.ts";
 import type { stimulusCheckboxOptions } from "../types/stimulusCheckboxOptions.ts";
-import { StyledTextArea } from "../components/UI/StyledTextArea.tsx";
 
 //? Validates the form's name input field
 const validateName = (
@@ -419,13 +422,10 @@ export default function FormWithValidation() {
           onClickFunction={validateBeforeSend}
         />
         {validationError === true && (
-          <>
-            <p class="my-2 text-justify">
-              Some fields have invalid data being provided (will display a red
-              border), please fix them before submitting! Hover/click the
-              information icon on the right side for more information.
-            </p>
-          </>
+          <ErrorAlert
+            classes="mt-4"
+            errorText="Some fields have invalid data being provided (will display a red border), please fix them before submitting! Hover/click the information icon on the right side for more information."
+          />
         )}
       </form>
       {/* Text Area that will hold all sent information */}
