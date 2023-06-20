@@ -17,8 +17,6 @@ interface StyledInputProperties {
   name: string;
   //? Placeholder text to display on input, if relevant
   placeholder?: string;
-  //? If this field should have automatic focus on page load
-  autoFocus?: boolean;
   //? Initial/current value for this input
   value: string;
   //? Function that updates the input state when typing in the input field
@@ -41,7 +39,6 @@ export function StyledInput(
     validationReference,
     name,
     placeholder,
-    autoFocus,
     value,
     inputFunction,
     validationFunction,
@@ -76,8 +73,6 @@ export function StyledInput(
             name={name}
             //? Placeholder value, if provided
             placeholder={placeholder}
-            //? If this
-            autofocus={autoFocus}
             //? Initial value for the input, mostly used by the number input
             //! Gets updated by onInput()
             value={value}

@@ -269,7 +269,6 @@ export default function FormWithValidation() {
           key={"first_input"}
           inputType="text"
           validationReference={formValidationStatus.name}
-          autoFocus={true}
           label="Name"
           name="name"
           value={formValues.name}

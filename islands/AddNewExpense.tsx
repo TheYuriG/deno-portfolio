@@ -233,7 +233,6 @@ export default function AddNewExpenseForm(
           key={"text_input"}
           inputType="text"
           validationReference={formValidationStatus.description}
-          autoFocus={true}
           label="Description"
           name="description"
           value={formValues.description}
