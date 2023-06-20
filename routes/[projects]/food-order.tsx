@@ -33,7 +33,6 @@ export default function Home(
         description="Order your favorite food in our theorical restaurant and feast upon the delicious pixels!"
         link="https://www.theyurig.com/projects/food-order"
       >
-        <link rel="stylesheet" href="/form.css" />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>

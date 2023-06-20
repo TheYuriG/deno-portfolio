@@ -15,7 +15,6 @@ export default function Home() {
         description="A form to pretend to request Stimulus Check built with Preact."
         link="https://www.theyurig.com/work/form"
       >
-        <link rel="stylesheet" href="/form.css" />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>

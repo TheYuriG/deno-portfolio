@@ -10,7 +10,6 @@ interface CarouselCardProperties {
 
 //? Exports a Carousel Card with a centered h3 heading,
 //? a link and a centered child
-//! Needs to ship with carousel-card.css for styling!
 export function CarouselCard(
   { link, title, children }: CarouselCardProperties,
 ) {

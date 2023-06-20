@@ -33,8 +33,6 @@ interface StyledInputProperties {
 }
 
 //? Exports a styled combo of label + input
-//! Requires form.css! Will organize in column on smaller
-//! resolutions and as row on larger resolutions
 export function StyledInput(
   {
     label,

@@ -33,7 +33,6 @@ export default function Home(
         description="Simple expense tracker that allows filtering by year."
         link="https://www.theyurig.com/projects/expenses-tracker"
       >
-        <link rel="stylesheet" href="/form.css" />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>

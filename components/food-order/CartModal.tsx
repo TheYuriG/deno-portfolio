@@ -123,13 +123,7 @@ export default function CartModal({
               </span>
             </div>
             {/* Divider */}
-            <hr
-              class="my-2 border-solid border"
-              //? Must style border color invidually instead of using the 'custom-bo-nc' class
-              //? because the base.css will override the twind class and make
-              //? the border thicker
-              style="border-color: var(--neutral-color)"
-            />
+            <hr class="my-2 custom-bo-nc border" />
           </li>
         ))}
       </ol>
