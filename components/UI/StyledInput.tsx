@@ -1,5 +1,6 @@
 //? Validation values for typecasting
 import { InformationIcon } from "../../assets/InformationIcon.tsx";
+//? Toggle what validation status this form should display
 import { validationStatus } from "../../types/misc/validationStatus.ts";
 
 //? Define optional and required properties for inputs
@@ -8,9 +9,9 @@ interface StyledInputProperties {
   label: string;
   //? Key that helps Preact to track this input on the DOM
   key: string;
-  //? Whether this input is a file, image, text, number or anything else
+  //? Whether this input's format should be a date, number or other string
   //! Reference: https://www.w3schools.com/tags/tag_input.asp
-  inputType: string;
+  inputType: "text" | "number" | "date";
   //? Tracks the validation reference state for this input
   validationReference: validationStatus;
   //? Input name, helps Screenreaders to connect label+input
@@ -23,7 +24,7 @@ interface StyledInputProperties {
   inputFunction: (input: string) => void;
   //? String to be turned into a RegExp. Don't enclose with forward slashes (/)!
   validationFunction: (input: string | number) => validationStatus;
-  //? Mininum and maximum values for numerical inputs
+  //? Minimum and maximum values for numerical or date (as string) inputs
   min?: number | string;
   max?: number | string;
   //? Optional string to be used on the optional help Information icon
