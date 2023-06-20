@@ -2,11 +2,11 @@
 import FetchDataError from "../../types/error/FetchDataError.ts";
 
 //? Deletes data from KV
-export async function deleteHighlightFromKv(path: Array<string>) {
+export async function deleteHighlightFromKv(path: string) {
   //? Attempt to delete data from KV
   try {
     const kv = await Deno.openKv();
-    await kv.delete(path);
+    await kv.delete(["highlight", path]);
   } catch (error) {
     console.log(error);
     //? If the delete fails, throw an error

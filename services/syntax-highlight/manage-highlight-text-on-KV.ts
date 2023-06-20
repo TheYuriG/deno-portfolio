@@ -23,11 +23,11 @@ export async function manageHighlightTextOnKv(text: string, now: number) {
   //? from disk after 'fileExpiration' passed
   try {
     setTimeout(() => {
-      deleteHighlightFromKv(["highlight", now.toString()]);
+      deleteHighlightFromKv(now.toString());
     }, ONE_HOUR_IN_MS);
   } catch (error) {
     //? If the deletion fails, there is no need to throw an error because it wouldn't
     //? render an error page. The user had already been long redirected to another page
-    console.log("failed to delete file at " + filePath, error);
+    console.log(error);
   }
 }
