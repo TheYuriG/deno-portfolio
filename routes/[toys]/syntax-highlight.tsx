@@ -1,14 +1,16 @@
-//? Create blog content inside Base component
-import { ErrorAlert } from "../../components/UI/ErrorAlert.tsx";
-import { Base } from "../../components/base/Base.tsx";
 //? Head component with all Meta tags pre-set
 import { CustomHead } from "../../components/base/CustomHead.tsx";
+//? Create blog content inside Base component
+import { Base } from "../../components/base/Base.tsx";
+//? Default styled header
+import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
 import { BlogNavigationButtons } from "../../components/blog/BlogNavigationButtons.tsx";
 //? Import Syntax Highlight form to handle sending data to the server
 import SyntaxHighlighForm from "../../components/toys/SyntaxHighlighForm.tsx";
 //? Imports middleware responsible for processing GET/POST requests to this route
 import { syntaxHighlightMiddleware } from "../../middleware/toys/__syntax-highlight.tsx";
+import { ErrorAlert } from "../../components/UI/ErrorAlert.tsx";
 
 //? Manages saving text input remotely and redirects
 export const handler = syntaxHighlightMiddleware;
@@ -32,10 +34,8 @@ export default function Home(
         <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
           {/* Error message, if necessary */}
           {errors.length > 0 && <ErrorAlert errorText={errors} />}
-          {/* Title */}
-          <h1 class="custom-underline-thick f-as my-4 text-center">
-            Syntax Highlighting as HTML+CSS
-          </h1>
+          {/* Title header */}
+          <StyledHeader title="Syntax Highlighting as HTML+CSS" />
           {/* Introduction */}
           <p class="mb-4">
             Insert your text below and click "Highlight!". After submitting, a

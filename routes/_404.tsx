@@ -4,6 +4,8 @@ import { CustomHead } from "../components/base/CustomHead.tsx";
 import { Base } from "../components/base/Base.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
 import { BlogNavigationButtons } from "../components/blog/BlogNavigationButtons.tsx";
+//? Default styled header
+import { StyledHeader } from "../components/UI/StyledHeader.tsx";
 //? Enable fetching the error URL
 import { UnknownPageProps } from "$fresh/server.ts";
 
@@ -21,9 +23,7 @@ export default function NotFoundPage({ url }: UnknownPageProps) {
       <Base>
         <BlogNavigationButtons />
         <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
-          <h1 class="f-as my-4 text-2xl lg:text-4xl text-center">
-            Page not found!
-          </h1>
+          <StyledHeader title="Page not found!" />
           <p class="my-2 text-justify">
             Hi there! Seems like you have reached a page that doesn't exist
             (...yet?). 🤔

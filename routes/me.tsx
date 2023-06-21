@@ -1,7 +1,9 @@
-//? Create blog content inside Base component
-import { Base } from "../components/base/Base.tsx";
 //? Head component with all Meta tags pre-set
 import { CustomHead } from "../components/base/CustomHead.tsx";
+//? Create blog content inside Base component
+import { Base } from "../components/base/Base.tsx";
+//? Default styled header
+import { StyledHeader } from "../components/UI/StyledHeader.tsx";
 //? A HTML Link component to pre-format links and reduce boiletplate
 import { GradientLink } from "../components/base/GradientLink.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
@@ -24,9 +26,7 @@ export default function Home() {
       <Base>
         <BlogNavigationButtons />
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
-          <h1 class="custom-underline-thick f-as my-4 text-center">
-            Who is TheYuriG?
-          </h1>
+          <StyledHeader title="Who is TheYuriG?" />
           <img
             src={pictureYuriLink}
             alt="Yuri on the right, standing sideways, looking left with his arms crossed. The entire ground is sand, the background is a rock all and the sun is at 45 degrees creating large shadows."

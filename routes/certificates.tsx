@@ -1,7 +1,9 @@
-//? Create blog content inside Base component
-import { Base } from "../components/base/Base.tsx";
 //? Head component with all Meta tags pre-set
 import { CustomHead } from "../components/base/CustomHead.tsx";
+//? Create blog content inside Base component
+import { Base } from "../components/base/Base.tsx";
+//? Default styled header
+import { StyledHeader } from "../components/UI/StyledHeader.tsx";
 //? A HTML Link component to pre-format links and reduce boiletplate
 import { GradientLink } from "../components/base/GradientLink.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
@@ -20,9 +22,7 @@ export default function Home() {
       <Base>
         <BlogNavigationButtons />
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
-          <h1 class="f-as my-4 text-2xl lg:text-4xl text-center">
-            Certificates
-          </h1>
+          <StyledHeader title="Certificates" />
           {/* Udemy backend NodeJS certificate */}
           <img
             src="https://udemy-certificate.s3.amazonaws.com/image/UC-c14620b0-6803-48a3-a7ab-5211825cec51.jpg?v=1685285730000"

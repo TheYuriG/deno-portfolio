@@ -1,10 +1,12 @@
-//? Create blog content inside Base component
-import { Base } from "../components/base/Base.tsx";
-//? Import a Card component that automatically creates
-//? redirection link, card title and centers card child
-import { CarouselCard } from "../components/toys/CarouselCard.tsx";
 //? Import CustomHead with appropriate metadata
 import { CustomHead } from "../components/base/CustomHead.tsx";
+//? Create blog content inside Base component
+import { Base } from "../components/base/Base.tsx";
+//? Default styled header
+import { StyledHeader } from "../components/UI/StyledHeader.tsx";
+//? Import a Card component that automatically creates
+//? redirection link, card title and centers card's child
+import { CarouselCard } from "../components/toys/CarouselCard.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
 import { BlogNavigationButtons } from "../components/blog/BlogNavigationButtons.tsx";
 
@@ -22,9 +24,7 @@ export default function Home() {
         <BlogNavigationButtons />
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
           {/* Title header */}
-          <h1 class="custom-underline-thick f-as my-4 text-center">
-            Toys
-          </h1>
+          <StyledHeader title="Toys" />
           {/* Dropdown with explanation about what is this page */}
           <details class="w-full">
             <p class="mb-4">

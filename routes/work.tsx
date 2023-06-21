@@ -1,7 +1,9 @@
-//? Create blog content inside Base component
-import { Base } from "../components/base/Base.tsx";
 //? Head component with all Meta tags pre-set
 import { CustomHead } from "../components/base/CustomHead.tsx";
+//? Create blog content inside Base component
+import { Base } from "../components/base/Base.tsx";
+//? Default styled header
+import { StyledHeader } from "../components/UI/StyledHeader.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
 import { BlogNavigationButtons } from "../components/blog/BlogNavigationButtons.tsx";
 //? A HTML Link component to pre-format links and reduce boiletplate
@@ -20,9 +22,8 @@ export default function Home() {
       <Base>
         <BlogNavigationButtons />
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
-          <h1 class="custom-underline-thick f-as my-4 text-center">
-            Past and Current work
-          </h1>
+          {/* Title header */}
+          <StyledHeader title="Past and Current work" />
           <p class="my-2 text-justify">
             I am the creator of{" "}
             <GradientLink

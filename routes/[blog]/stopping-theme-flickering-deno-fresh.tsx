@@ -2,6 +2,8 @@
 import { CustomHead } from "../../components/base/CustomHead.tsx";
 //? Lateral text with theme switcher
 import { Base } from "../../components/base/Base.tsx";
+//? Default styled header
+import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
 import { BlogNavigationButtons } from "../../components/blog/BlogNavigationButtons.tsx";
 //? A HTML Link component to pre-format links and reduce boiletplate
@@ -26,9 +28,8 @@ export default function Home() {
           }}
         />
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
-          <h1 class="custom-underline-thick f-as my-4 text-center">
-            How to stop Theme flickering in Fresh
-          </h1>
+          {/* Title header */}
+          <StyledHeader title="How to stop Theme flickering in Fresh" />
           {/* Post creation date */}
           <p class="text-sm mb-2 w-full text-center">
             {new Date(1684951466007).toLocaleString()}
