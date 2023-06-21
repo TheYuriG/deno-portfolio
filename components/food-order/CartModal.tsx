@@ -1,3 +1,5 @@
+//? Default styled header
+import { StyledSubHeader } from "../../components/UI/StyledSubHeader.tsx";
 //? Import the StyledButton to close the modal on empty carts or
 //? confirm orders on a filled cart
 import { MinusIcon } from "../../assets/MinusIcon.tsx";
@@ -53,9 +55,7 @@ export default function CartModal({
   return (
     <div class="flex flex-col p-3 w-fit max-w-[90dvw] max-h-[90dvh]">
       {/* Modal header */}
-      <h2 class="text-bold my-2 min-w-max text-center text-3xl f-as">
-        Cart items
-      </h2>
+      <StyledSubHeader title="Cart items" />
       {/* List of items in cart */}
       <ol class="overflow-auto styled-scrollbar">
         {cartItems.map(([foodName, { quantity, cost }]) => (

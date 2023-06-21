@@ -2,8 +2,9 @@
 import { CustomHead } from "../components/base/CustomHead.tsx";
 //? Create blog content inside Base component
 import { Base } from "../components/base/Base.tsx";
-//? Default styled header
+//? Default styled headers
 import { StyledHeader } from "../components/UI/StyledHeader.tsx";
+import { StyledSubHeader } from "../components/UI/StyledSubHeader.tsx";
 //? A HTML Link component to pre-format links and reduce boiletplate
 import { GradientLink } from "../components/base/GradientLink.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
@@ -64,9 +65,7 @@ export default function Home() {
             average completion or end up adding some unobtainable trophies to
             your account.
           </p>
-          <h2 class="custom-underline-thick my-2 f-as">
-            Gym
-          </h2>
+          <StyledSubHeader title="Gym" />
           <p class="my-2 text-justify">
             I'm an absolute gym rat. It's part of my routine to write code and
             {" "}
@@ -108,9 +107,7 @@ export default function Home() {
             />!
           </p>
 
-          <h2 class="custom-underline-thick my-2 f-as">
-            Programming
-          </h2>
+          <StyledSubHeader title="Programming" />
           <p class="my-2 text-justify">
             In late 2017, I felt like trophy hunting would be greatly improved
             if we could get a way to link and display our trophies on Discord,
@@ -145,9 +142,7 @@ export default function Home() {
             ears. It couldn't go on like that anymore, something had to be done
             about it.
           </p>
-          <h2 class="custom-underline-thick my-2 f-as">
-            Trophy Place
-          </h2>
+          <StyledSubHeader title="Trophy Place" />
           <p class="my-2 text-justify">
             Myself and{" "}
             <GradientLink

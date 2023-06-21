@@ -13,6 +13,8 @@ import CartModal from "../components/food-order/CartModal.tsx";
 //? Import accent button to create the Order now! button at the bottom
 import { AccentButton } from "../components/UI/AccentButton.tsx";
 import { ModalExtendedImage } from "../components/UI/ModalExtendedImage.tsx";
+//? Default styled header
+import { StyledSubHeader } from "../components/UI/StyledSubHeader.tsx";
 
 //? Define properties required for this component
 interface FoodOrderProperties {
@@ -146,7 +148,7 @@ export default function FoodOrder({ foods }: FoodOrderProperties) {
       />
       {/* Header with cart */}
       <div class="flex flex-col md:flex-row md:justify-between items-center pt-2 px-4">
-        <h2 class="text-3xl my-2 f-as">Meals of the day</h2>
+        <StyledSubHeader title="Meals of the day" />
         <CartButton
           //? Pulses the cart when a new item is added
           pulseState={pulseState}
