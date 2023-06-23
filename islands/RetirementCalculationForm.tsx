@@ -12,7 +12,7 @@ import { validateRetiringAge } from "../services/form-validation/validateRetirem
 import { validateCompensation } from "../services/form-validation/validateCompensation.ts";
 import { validateYearlyInvestment } from "../services/form-validation/validateInvestment.ts";
 
-//? Base state
+//? Base state data
 import { baseRetirementStats } from "../types/retirement-calculator/baseRetirementStats.ts";
 import { validateReturns } from "../services/form-validation/validateReturns.ts";
 const defaultFormValidation = {
@@ -23,11 +23,15 @@ const defaultFormValidation = {
   returns: validationStatus.Unchanged,
 };
 
+//? Export form with values to be used to calculate the retirement projection
 export default function RetirementCalculatorForm(
-  { formValues, setValues, toggleCalculation }: {
+  { formValues, setValues, updateValuesToCalculate }: {
     formValues: typeof baseRetirementStats;
     setValues: StateUpdater<typeof baseRetirementStats>;
-    toggleCalculation: StateUpdater<boolean>;
+
+    updateValuesToCalculate: StateUpdater<
+      typeof baseRetirementStats | undefined
+    >;
   },
 ) {
   //? Manages the validation of form fields
@@ -37,6 +41,7 @@ export default function RetirementCalculatorForm(
   //? Manages validation state
   const [validationError, updateValidationError] = useState(false);
 
+  //? Validates if the data on the form should be accepted or rejected
   function validateBeforeCalculate() {
     //? Track if any validation failed
     let validInput = true;
@@ -96,7 +101,8 @@ export default function RetirementCalculatorForm(
       console.log("bad input received, validation is", validationError);
       return;
     }
-    toggleCalculation(true);
+    updateValuesToCalculate(formValues);
+    updateValidationError(false);
   }
 
   return (
@@ -198,7 +204,7 @@ export default function RetirementCalculatorForm(
       <StyledInput
         key="yearly-investment"
         inputType="number"
-        label="Compensation's yearly investment (%)"
+        label="Investment (%/year)"
         name="retirement"
         value={formValues.yearlySavings}
         inputFunction={(value) =>
@@ -227,7 +233,7 @@ export default function RetirementCalculatorForm(
       <StyledInput
         key="yearly-return"
         inputType="number"
-        label="Yearly investment return (%)"
+        label="Returns (%/year)"
         name="retirement"
         value={formValues.returns}
         inputFunction={(value) =>
