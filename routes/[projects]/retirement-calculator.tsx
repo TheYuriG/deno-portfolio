@@ -41,7 +41,7 @@ export default function Home() {
             ]}
           />
           {/* Retirement calculator */}
-          <StyledHeader title="Retirement calculator" />
+          <StyledHeader title="Retirement Calculator" />
           {/* Form and results */}
           <RetirementCalculator />
         </section>
