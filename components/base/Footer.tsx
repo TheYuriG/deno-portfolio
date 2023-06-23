@@ -1,5 +1,4 @@
 //? This exports the footer that is located on the bottom right corner
-//? of the Home page. All related CSS is in the file.css file
 export function Footer() {
   const footerImage = "mx-2 w-4 h-4";
   return (

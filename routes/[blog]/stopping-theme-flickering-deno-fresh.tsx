@@ -2,6 +2,9 @@
 import { CustomHead } from "../../components/base/CustomHead.tsx";
 //? Lateral text with theme switcher
 import { Base } from "../../components/base/Base.tsx";
+//? Default styled headers
+import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
+import { StyledSubHeader } from "../../components/UI/StyledSubHeader.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
 import { BlogNavigationButtons } from "../../components/blog/BlogNavigationButtons.tsx";
 //? A HTML Link component to pre-format links and reduce boiletplate
@@ -26,9 +29,8 @@ export default function Home() {
           }}
         />
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
-          <h1 class="custom-underline-thick f-as my-4 text-center">
-            How to stop Theme flickering in Fresh
-          </h1>
+          {/* Title header */}
+          <StyledHeader title="How to stop Theme flickering in Fresh" />
           {/* Post creation date */}
           <p class="text-sm mb-2 w-full text-center">
             {new Date(1684951466007).toLocaleString()}
@@ -59,9 +61,7 @@ export default function Home() {
             understand why they happened in the first place.
           </p>
           {/* Heading and image introducing to next topic */}
-          <h2 class="custom-underline-thick my-2 f-as">
-            The Island Architecture
-          </h2>
+          <StyledSubHeader title="The Island Architecture" />
           <img
             class="my-4 object-cover h-[25em] w-[40em]"
             src="https://images.unsplash.com/photo-1602400546471-b8efe700c80a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=958&q=80"
@@ -126,9 +126,7 @@ export default function Home() {
             not exactly...
           </p>
           {/* Main content start */}
-          <h2 class="custom-underline-thick my-2 f-as">
-            Opting out of the Islands Architecture
-          </h2>
+          <StyledSubHeader title="Opting out of the Islands Architecture" />
           <p class="my-2 text-justify">
             It's possible that we can ship the required Javascript on every
             page, but in doing so, you need to understand the tradeoffs:
@@ -158,9 +156,7 @@ export default function Home() {
           </p>
           {/* Script tag warning */}
           {/*  */}
-          <h2 class="custom-underline-thick my-2 f-as">
-            Adding a script file to every response
-          </h2>
+          <StyledSubHeader title="Adding a script file to every response" />
           <p class="my-2 text-justify">
             Be very careful about the <code class="shl-inline">script</code>
             {" "}
@@ -424,9 +420,7 @@ export default function Home() {
             initial load.
           </p>
           {/* Alternative options to this */}
-          <h2 class="custom-underline-thick my-2 f-as">
-            Alternatives to using script tags
-          </h2>
+          <StyledSubHeader title="Alternatives to using script tags" />
           <p class="my-2 text-justify">
             What other ways could you possibly implement a Theme Switcher
             without needing to script files on every request?

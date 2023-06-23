@@ -1,17 +1,20 @@
+//? Define expected and optional properties for this component
 interface ErrorAlertProperties {
+  classes?: string;
   errorText: string;
 }
 
-//? Exports a component as wide as possible with a custom error message passed with 'errorText'
-export function ErrorAlert({ errorText }: ErrorAlertProperties) {
+//? Exports a component as wide as possible with a custom error message
+export function ErrorAlert({ errorText, classes = "" }: ErrorAlertProperties) {
   return (
     <div
-      class="flex items-center w-full py-2 px-2 shadow-lg space-x-2 rounded-xl"
+      class={"flex items-center w-full py-2 px-2 shadow-lg space-x-2 rounded-xl " +
+        classes}
       style="background-color: rgb(255, 87, 87); color: rgb(50, 24, 22);"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="h-8 w-8"
+        class="h-8 w-8 flex-shrink-0"
         fill="none"
         stroke="rgb(50, 24, 22)"
         viewBox="0 0 24 24"

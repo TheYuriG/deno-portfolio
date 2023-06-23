@@ -1,7 +1,9 @@
-//? Create blog content inside Base component
-import { Base } from "../components/base/Base.tsx";
 //? Head component with all Meta tags pre-set
 import { CustomHead } from "../components/base/CustomHead.tsx";
+//? Create blog content inside Base component
+import { Base } from "../components/base/Base.tsx";
+//? Default styled header
+import { StyledHeader } from "../components/UI/StyledHeader.tsx";
 import { GradientLink } from "../components/base/GradientLink.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
 import { BlogNavigationButtons } from "../components/blog/BlogNavigationButtons.tsx";
@@ -21,9 +23,7 @@ export default function Home() {
       <Base>
         <BlogNavigationButtons />
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
-          <h1 class="custom-underline-thick f-as my-4 text-center">
-            Projects built
-          </h1>
+          <StyledHeader title="Projects built" />
           {/* Grid of projects created */}
           <ProjectsGrid />
           {/* Summary - React course */}

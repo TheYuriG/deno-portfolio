@@ -521,7 +521,6 @@ export default {
               transition: "color 0.5s ease-in-out",
               "text-decoration-color": "var(--neutral-color)",
               "margin-bottom": "0.2em",
-              "font-size": "clamp(2rem, 4dvw, 4rem)",
               "line-height": "1",
             },
             "&:hover": {
@@ -531,6 +530,23 @@ export default {
               "text-underline-offset": "-0.2em",
               "text-decoration-thickness": "0.3em",
             },
+          };
+      }
+    },
+    // Font size scaling
+    "custom-font-scale": ([fontSize]: Array<string>) => {
+      switch (fontSize) {
+        case "largest":
+          return {
+            "font-size": "clamp(2rem, 4dvw, 4rem)",
+          };
+        case "large":
+          return {
+            "font-size": "clamp(1.5rem, 3dvw, 3rem)",
+          };
+        case "big":
+          return {
+            "font-size": "clamp(1.25rem, 2.5dvw, 2.5rem)",
           };
       }
     },

@@ -40,7 +40,11 @@ export const expensesTrackerMiddleware: Handlers = {
     }
 
     //? Attempt to save it to KV
-    const savedToDatabase = await saveNewExpenseToKV(newExpense);
+    const savedToDatabase = await saveNewExpenseToKV({
+      date: newExpense.date,
+      description: newExpense.description,
+      cost: newExpense.cost,
+    });
 
     //! Error if invalid request was made, return BAD REQUEST code
     if (savedToDatabase === false) {

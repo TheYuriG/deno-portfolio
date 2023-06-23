@@ -1,5 +1,6 @@
 //? Validation values for typecasting
 import { InformationIcon } from "../../assets/InformationIcon.tsx";
+//? Toggle what validation status this form should display
 import { validationStatus } from "../../types/misc/validationStatus.ts";
 
 //? Define optional and required properties for inputs
@@ -8,24 +9,22 @@ interface StyledInputProperties {
   label: string;
   //? Key that helps Preact to track this input on the DOM
   key: string;
-  //? Whether this input is a file, image, text, number or anything else
+  //? Whether this input's format should be a date, number or other string
   //! Reference: https://www.w3schools.com/tags/tag_input.asp
-  inputType: string;
+  inputType: "text" | "number" | "date";
   //? Tracks the validation reference state for this input
   validationReference: validationStatus;
   //? Input name, helps Screenreaders to connect label+input
   name: string;
   //? Placeholder text to display on input, if relevant
   placeholder?: string;
-  //? If this field should have automatic focus on page load
-  autoFocus?: boolean;
   //? Initial/current value for this input
   value: string;
   //? Function that updates the input state when typing in the input field
   inputFunction: (input: string) => void;
   //? String to be turned into a RegExp. Don't enclose with forward slashes (/)!
   validationFunction: (input: string | number) => validationStatus;
-  //? Mininum and maximum values for numerical inputs
+  //? Minimum and maximum values for numerical or date (as string) inputs
   min?: number | string;
   max?: number | string;
   //? Optional string to be used on the optional help Information icon
@@ -33,8 +32,6 @@ interface StyledInputProperties {
 }
 
 //? Exports a styled combo of label + input
-//! Requires form.css! Will organize in column on smaller
-//! resolutions and as row on larger resolutions
 export function StyledInput(
   {
     label,
@@ -43,7 +40,6 @@ export function StyledInput(
     validationReference,
     name,
     placeholder,
-    autoFocus,
     value,
     inputFunction,
     validationFunction,
@@ -78,8 +74,6 @@ export function StyledInput(
             name={name}
             //? Placeholder value, if provided
             placeholder={placeholder}
-            //? If this
-            autofocus={autoFocus}
             //? Initial value for the input, mostly used by the number input
             //! Gets updated by onInput()
             value={value}

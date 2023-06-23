@@ -7,7 +7,7 @@ import { readHighlightFromKv } from "../../data/syntax-highlight/readHighlightFr
 export const highlightTextMiddleware: Handlers = {
   async GET(req, ctx) {
     const filePath = ctx.params.text;
-    const textToHighlight = await readHighlightFromKv(["highlight", filePath]);
+    const textToHighlight = await readHighlightFromKv(filePath);
 
     //? If no data was found in KV, return message about automatic deletions
     if (textToHighlight.value === null) {

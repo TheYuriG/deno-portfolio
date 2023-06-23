@@ -1,7 +1,9 @@
-//? Lateral text with theme switcher
-import { Base } from "../components/base/Base.tsx";
 //? Import CustomHead with appropriate metadata
 import { CustomHead } from "../components/base/CustomHead.tsx";
+//? Lateral text with theme switcher
+import { Base } from "../components/base/Base.tsx";
+//? Default styled header
+import { StyledHeader } from "../components/UI/StyledHeader.tsx";
 import { GradientLink } from "../components/base/GradientLink.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
 import { BlogNavigationButtons } from "../components/blog/BlogNavigationButtons.tsx";
@@ -20,9 +22,7 @@ export default function Home() {
         <BlogNavigationButtons />
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
           {/* Intro */}
-          <h1 class="custom-underline-thick f-as my-4 text-center">
-            What is this?
-          </h1>
+          <StyledHeader title="What is this?" />
           <p class="text-justify">
             <span class="shl-inline">this</span>{" "}
             is a very common word in the world of Javascript if you are used to
@@ -39,9 +39,7 @@ export default function Home() {
             you are not a developer, it's okay if it goes over your head.
           </p>
           {/* Deno */}
-          <h1 class="custom-underline-thick f-as my-4 text-center">
-            Ok, so what is this?
-          </h1>
+          <StyledHeader title="Ok, so what is this?" />
           <p class="text-justify">
             This website is meant to be an outlet for my{" "}
             <GradientLink

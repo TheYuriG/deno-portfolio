@@ -2,6 +2,9 @@
 import { CustomHead } from "../../components/base/CustomHead.tsx";
 //? Lateral text with theme switcher
 import { Base } from "../../components/base/Base.tsx";
+//? Default styled headers
+import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
+import { StyledSubHeader } from "../../components/UI/StyledSubHeader.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
 import { BlogNavigationButtons } from "../../components/blog/BlogNavigationButtons.tsx";
 //? A HTML Link component to pre-format links and reduce boiletplate
@@ -31,10 +34,8 @@ export default function Home() {
           }}
         />
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
-          {/* Centered heading */}
-          <h1 class="custom-underline-thick f-as my-4 text-center">
-            How to Create a Theme Switcher with Fresh
-          </h1>
+          {/* Title header */}
+          <StyledHeader title="How to Create a Theme Switcher with Fresh" />
           {/* Post creation date */}
           <p class="text-sm mb-2 w-full text-center">
             {new Date(1684849328672).toLocaleString()}
@@ -61,9 +62,7 @@ export default function Home() {
             faced, and how I've solved them.
           </p>
           {/* Heading and image introducing to next topic: Fresh */}
-          <h2 class="custom-underline-thick my-2 f-as">
-            What is Fresh?
-          </h2>
+          <StyledSubHeader title="What is Fresh?" />
           <img
             src={"https://fresh.deno.dev/logo.svg?__frsh_c=3171c5e64510907f14fca32f4e0ba9a86bc5247c"}
             alt="Fresh's logo"
@@ -126,9 +125,7 @@ export default function Home() {
             experience building Full Stack projects.
           </p>
           {/* Main content start */}
-          <h2 class="custom-underline-thick my-2 f-as">
-            Creating A Theme Switcher
-          </h2>
+          <StyledSubHeader title="Creating A Theme Switcher" />
           <p class="my-2 text-justify">
             Let's create a very simple Theme Switcher:
           </p>
@@ -488,9 +485,7 @@ export default function Home() {
             />.
           </p>
           {/* Conclusion and link to next post */}
-          <h2 class="custom-underline-thick my-2 f-as">
-            What's next?
-          </h2>
+          <StyledSubHeader title="What's next?" />
           <p class="my-2 text-justify">
             If you have been following along, you might have noticed a few
             issues with it, like flickering on first load or the inability to

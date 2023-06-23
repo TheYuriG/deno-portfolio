@@ -1,7 +1,9 @@
-//? Create blog content inside Base component
-import { Base } from "../../components/base/Base.tsx";
 //? Import CustomHead with appropriate metadata
 import { CustomHead } from "../../components/base/CustomHead.tsx";
+//? Create blog content inside Base component
+import { Base } from "../../components/base/Base.tsx";
+//? Default styled header
+import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
 //? A HTML Link component to pre-format links and reduce boiletplate
 import { GradientLink } from "../../components/base/GradientLink.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
@@ -23,9 +25,8 @@ export default function Home() {
           back={{ title: "Return to all toys", link: "/toys" }}
         />
         <article class="flex flex-col w-full h-full max-w-4xl mx-auto items-center">
-          <h1 class="custom-underline-thick f-as my-4 text-center">
-            Spinners
-          </h1>
+          {/* Title header */}
+          <StyledHeader title="Spinners" />
           <p class="mx-auto">
             Experimenting with translate3d (hover for information!)
           </p>

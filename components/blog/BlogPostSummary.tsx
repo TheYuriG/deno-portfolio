@@ -1,5 +1,7 @@
 //? Require the interface to ensure we receive the proper data
 import BlogPostSummaryProperties from "../../types/BlogPostSummaryProperties.ts";
+//? Default styled header
+import { StyledSubHeader } from "../../components/UI/StyledSubHeader.tsx";
 
 //? Exports a single Blog Post Summary
 export function BlogPostSummary(summary: BlogPostSummaryProperties) {
@@ -9,9 +11,7 @@ export function BlogPostSummary(summary: BlogPostSummaryProperties) {
       {/* Post link */}
       <a href={"/blog" + summary.link}>
         {/* Centered heading */}
-        <h2 class="custom-underline-thick f-as my-4 text-center">
-          {summary.title}
-        </h2>
+        <StyledSubHeader title={summary.title} />
       </a>
       {/* Post creation date */}
       <p class="text-sm mb-2 text-center">

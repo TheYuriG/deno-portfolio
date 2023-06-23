@@ -2,6 +2,8 @@
 import { CustomHead } from "../components/base/CustomHead.tsx";
 //? Lateral text with theme switcher
 import { Base } from "../components/base/Base.tsx";
+//? Default styled header
+import { StyledHeader } from "../components/UI/StyledHeader.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
 import { BlogNavigationButtons } from "../components/blog/BlogNavigationButtons.tsx";
 //? Enable fetching the error
@@ -21,9 +23,7 @@ export default function Error500Page({ error }: ErrorPageProps) {
       <Base>
         <BlogNavigationButtons />
         <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
-          <h1 class="f-as my-4 text-2xl lg:text-4xl text-center">
-            An internal server error occurred!
-          </h1>
+          <StyledHeader title="An internal server error occurred!" />
           <p class="my-2 text-justify">
             Something bad happened internally! Sorry about that. 🤒
           </p>

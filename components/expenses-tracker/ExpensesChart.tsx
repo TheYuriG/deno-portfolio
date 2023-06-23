@@ -1,3 +1,5 @@
+//? Default styled header
+import { StyledSubHeader } from "../../components/UI/StyledSubHeader.tsx";
 //? Import individual MonthBar components to render all 12 months
 import { ExpensesChartMonthBar } from "./ExpensesChartMonthBar.tsx";
 //? Import the Expense type for casting
@@ -45,7 +47,7 @@ export function ExpenseChart(
 
   return (
     <>
-      <h2 class="text-3xl my-2 f-as">{year}'s Expenses</h2>
+      <StyledSubHeader title={year + "'s Expenses"} />
       <div class="w-full flex flex-wrap">
         {monthExpenses.map((monthData) => (
           <ExpensesChartMonthBar

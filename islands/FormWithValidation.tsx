@@ -10,79 +10,20 @@ import { StyledSelect } from "../components/UI/StyledSelect.tsx";
 import { StyledRadio } from "../components/UI/StyledRadio.tsx";
 //? Styled checkbox for Stimulus Check option
 import { StyledCheckboxGroup } from "../components/UI/StyledCheckboxGroup.tsx";
+//? Import text area to display the submit results
+import { StyledTextArea } from "../components/UI/StyledTextArea.tsx";
+//? Display error in as an ErrorAlert
+import { ErrorAlert } from "../components/UI/ErrorAlert.tsx";
 
 //? Types for typecasting
 import { validationStatus } from "../types/misc/validationStatus.ts";
 import type { stimulusCheckboxOptions } from "../types/stimulusCheckboxOptions.ts";
-import { StyledTextArea } from "../components/UI/StyledTextArea.tsx";
 
-//? Validates the form's name input field
-const validateName = (
-  name: string,
-): validationStatus.Invalid | validationStatus.Valid => {
-  //? This RegEx looks for a string of 3 to 40 alphabet characters + space
-  //? and dash, but will fail validation if two consecutive spaces/dashes
-  //? are provided
-  const regularExpression = "^(?!.*[ -]{2})[a-zA-Z -]{3,40}$";
-  //? Creates a RegEx with the expression above
-  const validation = new RegExp(regularExpression);
-  //? Validates the input against the RegEx, returning 1 for
-  //? valid and -1 for invalid input
-  if (validation.test(name)) {
-    return validationStatus.Valid;
-  } else {
-    return validationStatus.Invalid;
-  }
-};
-
-//? Validates the form's profession input field
-const validateProfession = (
-  profession: string,
-): validationStatus.Invalid | validationStatus.Valid => {
-  //? This RegEx looks for a string of 6 to 20 alphabet characters + space
-  //? and dash, but will fail validation if two consecutive spaces/dashes
-  //? are provided
-  const regularExpression = "^(?!.*[ -]{2})[a-zA-Z -]{6,20}$";
-  //? Creates a RegEx with the expression above
-  const validation = new RegExp(regularExpression);
-  //? Validates the input against the RegEx, returning
-  //? validationStatus.Valid or validationStatus.Invalid
-  if (validation.test(profession)) {
-    return validationStatus.Valid;
-  } else {
-    return validationStatus.Invalid;
-  }
-};
-
-//? Validates the form's age numeric input field
-const validateAge = (
-  age: string,
-): validationStatus.Invalid | validationStatus.Valid => {
-  if (+age >= 18 && +age <= 100) {
-    return validationStatus.Valid;
-  } else {
-    return validationStatus.Invalid;
-  }
-};
-
-//? Given a current value, initial value and a validation function, return
-//? what is the state of validation of the input once the respective field
-//? loses focus
-function validateInput(
-  value: string,
-  initialState: string,
-  pattern: (
-    valueToValidate: string,
-  ) => validationStatus.Invalid | validationStatus.Valid,
-): validationStatus {
-  //? If the field is at initial state, reset validation
-  if (value === initialState) {
-    return validationStatus.Unchanged;
-  } //? If the field is not empty, check if a validation RegEx pattern was provided
-  else {
-    return pattern(value);
-  }
-}
+//? Validation functions
+import { validateName } from "../services/form-validation/validateName.ts";
+import { validateAge } from "../services/form-validation/validateAge.ts";
+import { validateProfession } from "../services/form-validation/validateProfession.ts";
+import { patternValidation } from "../services/form-validation/patternValidation.ts";
 
 //? Placeholder text to be used on the textArea before any data got sent
 const textAreaPlaceholder = 'Data will be displayed here as you click "Send".' +
@@ -163,7 +104,11 @@ export default function FormWithValidation() {
       }));
       validationErrors++;
     } else if (
-      validateInput(formValues.name, defaultFormValues.name, validateName) ===
+      patternValidation(
+        formValues.name,
+        defaultFormValues.name,
+        validateName,
+      ) ===
         validationStatus.Invalid
     ) {
       validationErrors++;
@@ -181,7 +126,7 @@ export default function FormWithValidation() {
         profession: validationStatus.Invalid,
       }));
     } else if (
-      validateInput(
+      patternValidation(
         formValues.profession,
         defaultFormValues.profession,
         validateProfession,
@@ -195,7 +140,7 @@ export default function FormWithValidation() {
     }
     //? If the age is invalid, increase errors counter
     if (
-      validateInput(
+      patternValidation(
         formValues.age.toString(),
         defaultFormValues.age.toString(),
         validateAge,
@@ -269,7 +214,6 @@ export default function FormWithValidation() {
           key={"first_input"}
           inputType="text"
           validationReference={formValidationStatus.name}
-          autoFocus={true}
           label="Name"
           name="name"
           value={formValues.name}
@@ -281,7 +225,7 @@ export default function FormWithValidation() {
           }}
           helpInformation="Validation: 3 to 40 alphabet characters (a-zA-Z)"
           validationFunction={() => {
-            const result = validateInput(
+            const result = patternValidation(
               formValues.name,
               defaultFormValues.name,
               validateName,
@@ -308,7 +252,7 @@ export default function FormWithValidation() {
             }));
           }}
           validationFunction={() => {
-            const result = validateInput(
+            const result = patternValidation(
               formValues.age.toString(),
               defaultFormValues.age.toString(),
               validateAge,
@@ -339,7 +283,7 @@ export default function FormWithValidation() {
             }));
           }}
           validationFunction={() => {
-            const result = validateInput(
+            const result = patternValidation(
               formValues.profession,
               defaultFormValues.profession,
               validateProfession,
@@ -420,13 +364,10 @@ export default function FormWithValidation() {
           onClickFunction={validateBeforeSend}
         />
         {validationError === true && (
-          <>
-            <p class="my-2 text-justify">
-              Some fields have invalid data being provided (will display a red
-              border), please fix them before submitting! Hover/click the
-              information icon on the right side for more information.
-            </p>
-          </>
+          <ErrorAlert
+            classes="mt-4"
+            errorText="Some fields have invalid data being provided (will display a red border), please fix them before submitting! Hover/click the information icon on the right side for more information."
+          />
         )}
       </form>
       {/* Text Area that will hold all sent information */}

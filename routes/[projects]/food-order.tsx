@@ -1,9 +1,9 @@
 //? To know what is the current route
 import { Handlers } from "$fresh/server.ts";
-//? Create blog content inside Base component
-import { Base } from "../../components/base/Base.tsx";
 //? Head component with all Meta tags pre-set
 import { CustomHead } from "../../components/base/CustomHead.tsx";
+//? Create blog content inside Base component
+import { Base } from "../../components/base/Base.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
 import { BlogNavigationButtons } from "../../components/blog/BlogNavigationButtons.tsx";
 import FoodOrder from "../../islands/FoodOrder.tsx";
@@ -33,7 +33,6 @@ export default function Home(
         description="Order your favorite food in our theorical restaurant and feast upon the delicious pixels!"
         link="https://www.theyurig.com/projects/food-order"
       >
-        <link rel="stylesheet" href="/form.css" />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>

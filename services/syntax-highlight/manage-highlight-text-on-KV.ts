@@ -2,18 +2,22 @@
 import { deleteHighlightFromKv } from "../../data/syntax-highlight/deleteHighlightFromKv.ts";
 import { saveHighlightToKv } from "../../data/syntax-highlight/saveHighlightToKv.ts";
 import FetchDataError from "../../types/error/FetchDataError.ts";
+import type { HighlightText } from "../../types/syntax-highlight/HighlightText.ts";
 
 //? Function to save text to disk so it can be read by another route
 export async function manageHighlightTextOnKv(text: string, now: number) {
   //? Instantiate variables that will be reused
   const ONE_HOUR_IN_MS = 3600000;
   const fileExpiration = now + ONE_HOUR_IN_MS;
-  const dataToSave = { createdAt: now, expiresAt: fileExpiration, text };
-  const filePath = `./temp/${now}.json`;
+  const dataToSave: HighlightText = {
+    createdAt: now,
+    expiresAt: fileExpiration,
+    text,
+  };
 
   //? Attempt to save a file with our data to disk
   try {
-    await saveHighlightToKv(["highlight", now.toString()], dataToSave);
+    await saveHighlightToKv(now.toString(), dataToSave);
   } catch (error) {
     //? If the save fails, throw an error to load the error page
     throw new FetchDataError("Failed to save file to KV!", error);
@@ -23,11 +27,11 @@ export async function manageHighlightTextOnKv(text: string, now: number) {
   //? from disk after 'fileExpiration' passed
   try {
     setTimeout(() => {
-      deleteHighlightFromKv(["highlight", now.toString()]);
+      deleteHighlightFromKv(now.toString());
     }, ONE_HOUR_IN_MS);
   } catch (error) {
     //? If the deletion fails, there is no need to throw an error because it wouldn't
     //? render an error page. The user had already been long redirected to another page
-    console.log("failed to delete file at " + filePath, error);
+    console.log(error);
   }
 }

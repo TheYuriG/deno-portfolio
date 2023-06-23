@@ -1,5 +1,7 @@
 //? Import from Preact to be able to change state
 import { useState } from "preact/hooks";
+//? Default styled header
+import { StyledSubHeader } from "../components/UI/StyledSubHeader.tsx";
 //? Responsive and styled Label + Input
 import { StyledInput } from "../components/UI/StyledInput.tsx";
 //? Styled Button to confirm sending the form
@@ -223,9 +225,7 @@ export default function AddNewExpenseForm(
   //? Create the newExpenseForm to be used if the user clicked "Add New Expense?""
   const newExpenseForm = (
     <>
-      <h2 class="w-full text-3xl text-center my-1 f-as">
-        Add new expense
-      </h2>
+      <StyledSubHeader title="Add new expense" />
       {/* The whole form */}
       <form class="w-full mb-2 flex flex-col">
         {/* Expense description */}
@@ -233,7 +233,6 @@ export default function AddNewExpenseForm(
           key={"text_input"}
           inputType="text"
           validationReference={formValidationStatus.description}
-          autoFocus={true}
           label="Description"
           name="description"
           value={formValues.description}

@@ -18,15 +18,14 @@ export const syntaxHighlightMiddleware: Handlers = {
 
     const headers = new Headers();
 
-    //! throws error, needs better status code?
-    //* user error, confirmed sending empty form
+    //? User error, sent empty form
     if (text === "" || text === undefined) {
       headers.set(
         "location",
         "/toys/syntax-highlight?error=Empty%2Finvalid%20form%20provided!",
       );
       return new Response("Error! You attempted to submit an empty form!", {
-        status: 303, // Bad Request HTTP status code
+        status: 303, // See Also HTTP status code
         headers,
       });
     }

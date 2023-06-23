@@ -1,7 +1,9 @@
-//? Create blog content inside Base component
-import { Base } from "../../../components/base/Base.tsx";
 //? Head component with all Meta tags pre-set
 import { CustomHead } from "../../../components/base/CustomHead.tsx";
+//? Create blog content inside Base component
+import { Base } from "../../../components/base/Base.tsx";
+//? Default styled header
+import { StyledHeader } from "../../../components/UI/StyledHeader.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
 import { BlogNavigationButtons } from "../../../components/blog/BlogNavigationButtons.tsx";
 //? Import the component responsible for adding the content that will eventually be highlighted
@@ -55,10 +57,8 @@ export default function Home(
           }}
         />
         <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
-          {/* Title */}
-          <h1 class="custom-underline-thick f-as my-4 text-center">
-            Highlighted Code
-          </h1>
+          {/* Title header */}
+          <StyledHeader title="Highlighted Code" />
           {/* Text that will be syntax highlighted */}
           <HighlightedCode textToHighlight={text} />
           {/* Clock to text expiration */}
