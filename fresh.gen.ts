@@ -34,8 +34,9 @@ import * as $$6 from "./islands/FoodOrder.tsx";
 import * as $$7 from "./islands/FormWithValidation.tsx";
 import * as $$8 from "./islands/HighlightedCode.tsx";
 import * as $$9 from "./islands/InsanitySection.tsx";
-import * as $$10 from "./islands/RetirementCalculator.tsx";
-import * as $$11 from "./islands/ThemeSwitcher.tsx";
+import * as $$10 from "./islands/RetirementCalculationForm.tsx";
+import * as $$11 from "./islands/RetirementCalculator.tsx";
+import * as $$12 from "./islands/ThemeSwitcher.tsx";
 
 const manifest = {
   routes: {
@@ -72,8 +73,9 @@ const manifest = {
     "./islands/FormWithValidation.tsx": $$7,
     "./islands/HighlightedCode.tsx": $$8,
     "./islands/InsanitySection.tsx": $$9,
-    "./islands/RetirementCalculator.tsx": $$10,
-    "./islands/ThemeSwitcher.tsx": $$11,
+    "./islands/RetirementCalculationForm.tsx": $$10,
+    "./islands/RetirementCalculator.tsx": $$11,
+    "./islands/ThemeSwitcher.tsx": $$12,
   },
   baseUrl: import.meta.url,
   config,
