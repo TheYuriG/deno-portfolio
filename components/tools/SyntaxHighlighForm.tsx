@@ -9,7 +9,7 @@ export default function SyntaxHighlighForm() {
     <form
       class="flex flex-col w-full"
       method="post"
-      action="/toys/syntax-highlight"
+      action="/tools/syntax-highlight"
     >
       {/* Input label */}
       <label
