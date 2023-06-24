@@ -99,7 +99,7 @@ export function StyledInput(
               {/* Information icon */}
               <InformationIcon iconHeight="1.8em" iconWidth="1.8em" />
               <span
-                class="absolute invisible opacity-0 w-max custom-bg-ac custom-tx-nc text-center font-bold p-2 rounded-md right-0 top-[2em] z-10 group-hover:(visible opacity-100)"
+                class="absolute invisible opacity-0 w-max max-w-[80dvw] lg:max-w-[40em] custom-bg-ac custom-tx-nc text-center font-bold p-2 rounded-md right-0 top-[2em] z-10 group-hover:(visible opacity-100)"
                 style="transition: opacity 0.4s ease-in-out, color 0.9s ease-in-out;"
               >
                 {helpInformation}
