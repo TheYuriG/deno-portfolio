@@ -1,9 +1,9 @@
 //? Import meal icon to mark how many people a meal can feed
-import { MealIcon } from "../../assets/MealIcon.tsx";
+import { MealIcon } from "../../../assets/MealIcon.tsx";
 //? Import the StyledButton to enable users to add the current FoodItem to the cart
-import { StyledButton } from "../UI/StyledButton.tsx";
+import { StyledButton } from "../../UI/StyledButton.tsx";
 //? Import Food type to typecast the data received
-import type { Food } from "../../types/food-order/Food.ts";
+import type { Food } from "../../../types/food-order/Food.ts";
 
 //? Renders a single FoodItem with image, name, description and button to add to Cart
 export function FoodItem(

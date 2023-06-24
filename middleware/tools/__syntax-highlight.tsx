@@ -1,9 +1,9 @@
-//? Import handlers to manage HTTP methods for GET/POST to /toys/syntax-highlight
+//? Import handlers to manage HTTP methods for GET/POST to /tools/syntax-highlight
 import { Handlers } from "$fresh/server.ts";
 //? Import service that handles saving data to KV and then deleting them later
 import { manageHighlightTextOnKv } from "../../services/syntax-highlight/manage-highlight-text-on-KV.ts";
 
-//? Export a middleware responsible for handling incoming GET/POST requests to /toys/syntax-highlight
+//? Export a middleware responsible for handling incoming GET/POST requests to /tools/syntax-highlight
 export const syntaxHighlightMiddleware: Handlers = {
   //? If the user is trying to load the page, display it
   GET(req, ctx) {
@@ -22,7 +22,7 @@ export const syntaxHighlightMiddleware: Handlers = {
     if (text === "" || text === undefined) {
       headers.set(
         "location",
-        "/toys/syntax-highlight?error=Empty%2Finvalid%20form%20provided!",
+        "/tools/syntax-highlight?error=Empty%2Finvalid%20form%20provided!",
       );
       return new Response("Error! You attempted to submit an empty form!", {
         status: 303, // See Also HTTP status code
@@ -34,13 +34,13 @@ export const syntaxHighlightMiddleware: Handlers = {
       const now = new Date().getTime();
       await manageHighlightTextOnKv(text, now);
 
-      headers.set("location", "/toys/highlighted-text/" + now.toString());
+      headers.set("location", "/tools/highlighted-text/" + now.toString());
       return new Response(null, {
         status: 303, // See Other HTTP status code
         headers,
       });
     } catch (error) {
-      headers.set("location", "/toys/highlighted-text/error");
+      headers.set("location", "/tools/highlighted-text/error");
       return new Response(null, {
         status: 500, // Internal Server Error HTTP status code
       });

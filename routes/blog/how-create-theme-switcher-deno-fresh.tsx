@@ -8,7 +8,7 @@ import { StyledSubHeader } from "../../components/UI/StyledSubHeader.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
 import { BlogNavigationButtons } from "../../components/blog/BlogNavigationButtons.tsx";
 //? A HTML Link component to pre-format links and reduce boiletplate
-import { GradientLink } from "../../components/base/GradientLink.tsx";
+import { GradientLink } from "../../components/UI/GradientLink.tsx";
 
 const googleLightDarkImage =
   "https://web-dev.imgix.net/image/vS06HQ1YTsbMKSFTIPl2iogUQP73/skKcjSv1gMQRYk1AdEp7.png?auto=format&w=1600";

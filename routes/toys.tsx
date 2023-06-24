@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       <CustomHead
-        title="Playground"
+        title="Toys"
         description="Various experimentations over things I've seen online."
         link="https://www.theyurig.com/toys"
       >
@@ -58,15 +58,6 @@ export default function Home() {
                   🌀
                 </div>
               </div>
-            </CarouselCard>
-            {/* Syntax highlighter */}
-            <CarouselCard
-              link="/toys/syntax-highlight"
-              title="Syntax Highlight"
-            >
-              <span class="f-as text-xl">
-                <span class="shl-func">Highlight</span>()
-              </span>
             </CarouselCard>
             {/* Insanity */}
             <CarouselCard link="/toys/insanity" title="Insanity">

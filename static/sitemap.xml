@@ -6,7 +6,7 @@
 
       <loc>https://www.theyurig.com/</loc>
 
-      <lastmod>2023-05-22</lastmod>
+      <lastmod>2023-06-24</lastmod>
 
       <changefreq>weekly</changefreq>
 
@@ -52,9 +52,33 @@
 
    <url>
 
+      <loc>https://www.theyurig.com/tools</loc>
+
+      <lastmod>2023-06-24</lastmod>
+
+      <changefreq>weekly</changefreq>
+
+      <priority>0.8</priority>
+
+   </url>
+
+   <url>
+
+      <loc>https://www.theyurig.com/tools/syntax-highlight</loc>
+
+      <lastmod>2023-06-24</lastmod>
+
+      <changefreq>weekly</changefreq>
+
+      <priority>0.8</priority>
+
+   </url>
+
+   <url>
+
       <loc>https://www.theyurig.com/toys</loc>
 
-      <lastmod>2023-05-22</lastmod>
+      <lastmod>2023-06-24</lastmod>
 
       <changefreq>weekly</changefreq>
 
@@ -69,18 +93,6 @@
       <lastmod>2023-05-22</lastmod>
 
       <changefreq>monthly</changefreq>
-
-      <priority>0.8</priority>
-
-   </url>
-
-   <url>
-
-      <loc>https://www.theyurig.com/toys/syntax-highlight</loc>
-
-      <lastmod>2023-05-22</lastmod>
-
-      <changefreq>weekly</changefreq>
 
       <priority>0.8</priority>
 

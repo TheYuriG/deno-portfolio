@@ -5,7 +5,7 @@ import { Base } from "../../components/base/Base.tsx";
 //? Default styled header
 import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
 //? A HTML Link component to pre-format links and reduce boiletplate
-import { GradientLink } from "../../components/base/GradientLink.tsx";
+import { GradientLink } from "../../components/UI/GradientLink.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
 import { BlogNavigationButtons } from "../../components/blog/BlogNavigationButtons.tsx";
 

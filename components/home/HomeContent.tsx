@@ -1,4 +1,4 @@
-import { GradientLink } from "../base/GradientLink.tsx";
+import { GradientLink } from "../UI/GradientLink.tsx";
 
 export function HomeContent() {
   return (
