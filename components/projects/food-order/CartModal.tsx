@@ -1,20 +1,20 @@
 //? Default styled header
-import { StyledSubHeader } from "../../components/UI/StyledSubHeader.tsx";
+import { StyledSubHeader } from "../../../components/UI/StyledSubHeader.tsx";
 //? Import the StyledButton to close the modal on empty carts or
 //? confirm orders on a filled cart
-import { MinusIcon } from "../../assets/MinusIcon.tsx";
-import { PlusIcon } from "../../assets/PlusIcon.tsx";
-import { XMarkIcon } from "../../assets/XMarkIcon.tsx";
-import { StyledButton } from "../UI/StyledButton.tsx";
+import { MinusIcon } from "../../../assets/MinusIcon.tsx";
+import { PlusIcon } from "../../../assets/PlusIcon.tsx";
+import { XMarkIcon } from "../../../assets/XMarkIcon.tsx";
+import { StyledButton } from "../../UI/StyledButton.tsx";
 //? Import the functions that will update the Cart state
 import {
   deleteItemFromCart,
   increaseCartItemByOne,
   reduceCartItemByOne,
-} from "../../services/food-order/updateFoodOrder.ts";
+} from "../../../services/food-order/updateFoodOrder.ts";
 //? Import types for typecasting
-import type { foodCartItemsMap } from "../../types/food-order/foodCartItemsMap.ts";
-import type { updateCartFunction } from "../../types/food-order/updateCartFunction.ts";
+import type { foodCartItemsMap } from "../../../types/food-order/foodCartItemsMap.ts";
+import type { updateCartFunction } from "../../../types/food-order/updateCartFunction.ts";
 
 //? Define Cart Modal properties
 interface CartModalProperties {
