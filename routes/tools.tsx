@@ -4,9 +4,6 @@ import { CustomHead } from "../components/base/CustomHead.tsx";
 import { Base } from "../components/base/Base.tsx";
 //? Default styled header
 import { StyledHeader } from "../components/UI/StyledHeader.tsx";
-//? Import a Card component that automatically creates
-//? redirection link, card title and centers card's child
-import { CarouselCard } from "../components/toys/CarouselCard.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
 import { BlogNavigationButtons } from "../components/blog/BlogNavigationButtons.tsx";
 import { GradientLink } from "../components/UI/GradientLink.tsx";

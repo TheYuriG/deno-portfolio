@@ -46,9 +46,9 @@ export default function Home(
           <SyntaxHighlighForm />
           <p class="mt-4">
             You can share or revisit the highlighted snippet as many times as
-            you want within those 60 minutes. There is no limit to how many
-            snippets you might create, just make sure you are not submitting any
-            sensitive data (since anyone with the link can view the contents!).
+            you want within that time. There is no limit to how many snippets
+            you can create, just make sure you are not submitting any sensitive
+            data (all links are public!).
           </p>
         </section>
       </Base>
