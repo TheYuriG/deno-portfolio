@@ -98,10 +98,10 @@ export function RetirementCalculationTable(
         ))}
       </table>
       {/* Colors explanation: red = unable to retire / green = enough money to retire */}
-      <p>
-        Red: you reached your target retiring age without being able to retire
+      <p class="text-center">
+        Red: you are at/past your target retiring age unable to retire
       </p>
-      <p>
+      <p class="text-center">
         Green: you make enough from your investments returns to retire
       </p>
     </>
