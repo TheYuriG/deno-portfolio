@@ -75,6 +75,16 @@ export default function RetirementCalculatorForm(
         baseRetirementStats.returns,
         validateReturns,
       ),
+      patternValidation(
+        formValues.starterSavings,
+        baseRetirementStats.starterSavings,
+        validateZeroOrGreater,
+      ),
+      patternValidation(
+        formValues.additionalIncome,
+        baseRetirementStats.additionalIncome,
+        validateZeroOrGreater,
+      ),
     ];
 
     //? Check if 'validationsArray' has any invalid validations
