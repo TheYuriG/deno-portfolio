@@ -203,6 +203,7 @@ export default function RetirementCalculatorForm(
           return result;
         }}
         min={20000}
+        step={100}
         helpInformation="Validation: Number must be higher than 20K/year. You should include here any income from side hustles as well."
       />
       {/* Yearly Investment */}
@@ -288,6 +289,7 @@ export default function RetirementCalculatorForm(
           return result;
         }}
         min={0}
+        step={100}
         helpInformation="Validation: Number must not be negative."
       />
       {/* Extra income */}
@@ -316,6 +318,7 @@ export default function RetirementCalculatorForm(
           return result;
         }}
         min={0}
+        step={100}
         helpInformation="Validation: Number must not be negative. Only add here income that you would make use of after retiring."
       />
       {/* Confirm input */}

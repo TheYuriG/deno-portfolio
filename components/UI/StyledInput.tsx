@@ -27,6 +27,8 @@ interface StyledInputProperties {
   //? Minimum and maximum values for numerical or date (as string) inputs
   min?: number | string;
   max?: number | string;
+  //todo
+  step?: number;
   //? Optional string to be used on the optional help Information icon
   helpInformation?: string;
 }
@@ -45,6 +47,7 @@ export function StyledInput(
     validationFunction,
     min,
     max,
+    step,
     helpInformation,
   }: StyledInputProperties,
 ) {
@@ -92,6 +95,7 @@ export function StyledInput(
             //? Mininum and maximum thresholds for numerical values
             min={min}
             max={max}
+            step={step}
           />
           {/* Tooltip on the right side, with user information about what data is valid */}
           {helpInformation && (
