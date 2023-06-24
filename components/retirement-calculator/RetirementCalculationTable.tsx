@@ -38,6 +38,14 @@ export function RetirementCalculationTable(
     const lastYearCoumpound = recentEntry.totalSaved *
       (+values.returns / 100);
 
+    //? Add a new year to the calculation array
+    retirementCalculation.push({
+      age: recentEntry.age + 1,
+      totalSaved: recentEntry.totalSaved + lastYearCoumpound +
+        yearlyInvestment,
+      lastYearCompound: lastYearCoumpound,
+    });
+
     //? If last year's returns are above what you make on an average year and
     //? you are past the retiring age, end the calculation
     if (
@@ -46,14 +54,6 @@ export function RetirementCalculationTable(
     ) {
       break;
     }
-
-    //? Add a new year to the calculation array
-    retirementCalculation.push({
-      age: recentEntry.age + 1,
-      totalSaved: recentEntry.totalSaved + lastYearCoumpound +
-        yearlyInvestment,
-      lastYearCompound: lastYearCoumpound,
-    });
   }
 
   //? Remove the first/current year from the calculation
