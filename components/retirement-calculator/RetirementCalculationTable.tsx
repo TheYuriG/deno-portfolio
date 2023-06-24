@@ -21,7 +21,7 @@ export function RetirementCalculationTable(
   //! Starts with only starting year data
   const retirementCalculation = [{
     age: +values.currentAge,
-    totalSaved: 0,
+    totalSaved: +values.starterSavings,
     lastYearCompound: 0,
   }];
   const yearlyInvestment = (+values.yearlySavings * +values.compensation) / 100;
@@ -38,12 +38,18 @@ export function RetirementCalculationTable(
     const lastYearCoumpound = recentEntry.totalSaved *
       (+values.returns / 100);
 
+    //? Calculate if the person can retire adding lastYearCoumpound+values.additionalIncome
+    const cantRetire =
+      lastYearCoumpound + +values.additionalIncome < +values.compensation;
+
     //? Add a new year to the calculation array
     retirementCalculation.push({
       age: recentEntry.age + 1,
       totalSaved: recentEntry.totalSaved + lastYearCoumpound +
         yearlyInvestment,
-      lastYearCompound: lastYearCoumpound,
+      lastYearCompound: cantRetire
+        ? lastYearCoumpound
+        : lastYearCoumpound + +values.additionalIncome,
     });
 
     //? If last year's returns are above what you make on an average year and
@@ -92,7 +98,11 @@ export function RetirementCalculationTable(
             </td>
             {/* Interest returns from last year */}
             <td class="custom-bo-ac">
-              ${Math.floor(yearCalculation.lastYearCompound).toLocaleString()}
+              ${Math.floor(yearCalculation.lastYearCompound).toLocaleString() +
+                (+values.additionalIncome > 0 &&
+                    yearCalculation.lastYearCompound >= +values.compensation
+                  ? ` (+$${values.additionalIncome.toLocaleString()})`
+                  : "")}
             </td>
           </tr>
         ))}

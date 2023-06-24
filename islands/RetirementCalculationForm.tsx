@@ -11,16 +11,19 @@ import { validateAge as validateCurrentAge } from "../services/form-validation/v
 import { validateRetiringAge } from "../services/form-validation/validateRetirementAge.ts";
 import { validateCompensation } from "../services/form-validation/validateCompensation.ts";
 import { validateYearlyInvestment } from "../services/form-validation/validateInvestment.ts";
+import { validateReturns } from "../services/form-validation/validateReturns.ts";
+import { validateZeroOrGreater } from "../services/form-validation/validateZeroOrGreater.ts";
 
 //? Base state data
 import { baseRetirementStats } from "../types/retirement-calculator/baseRetirementStats.ts";
-import { validateReturns } from "../services/form-validation/validateReturns.ts";
 const defaultFormValidation = {
   currentAge: validationStatus.Unchanged,
   plannedRetiringAge: validationStatus.Unchanged,
   compensation: validationStatus.Unchanged,
   yearlySavings: validationStatus.Unchanged,
   returns: validationStatus.Unchanged,
+  starterSavings: validationStatus.Unchanged,
+  additionalIncome: validationStatus.Unchanged,
 };
 
 //? Export form with values to be used to calculate the retirement projection
@@ -82,6 +85,8 @@ export default function RetirementCalculatorForm(
         compensation: validationsArray[2],
         yearlySavings: validationsArray[3],
         returns: validationsArray[4],
+        starterSavings: validationsArray[5],
+        additionalIncome: validationsArray[6],
       });
       updateValidationError(true);
       validInput = false;
@@ -134,7 +139,7 @@ export default function RetirementCalculatorForm(
         }}
         min={18}
         max={100}
-        helpInformation="Validation: Number between 18 and 100 years (18 < age < 100)"
+        helpInformation="Validation: Number between 18 and 100 years (18 < age < 100)."
       />
       {/* Retiring Age */}
       <StyledInput
@@ -198,7 +203,7 @@ export default function RetirementCalculatorForm(
           return result;
         }}
         min={20000}
-        helpInformation="Validation: Number must be higher than 20K/year."
+        helpInformation="Validation: Number must be higher than 20K/year. You should include here any income from side hustles as well."
       />
       {/* Yearly Investment */}
       <StyledInput
@@ -257,7 +262,63 @@ export default function RetirementCalculatorForm(
         min={1}
         helpInformation="Validation: Number greater than 1%."
       />
-      {/* Confirm form input (prints to text area) */}
+      {/* Current savings */}
+      <StyledInput
+        key="current-savings"
+        inputType="number"
+        label="Current savings"
+        name="retirement"
+        value={formValues.starterSavings}
+        inputFunction={(value) =>
+          setValues((currentData) => ({
+            ...currentData,
+            starterSavings: value,
+          }))}
+        validationReference={formValidationStatus.starterSavings}
+        validationFunction={() => {
+          const result = patternValidation(
+            formValues.starterSavings,
+            baseRetirementStats.starterSavings,
+            validateZeroOrGreater,
+          );
+          updateValidation((currentValidation) => ({
+            ...currentValidation,
+            starterSavings: result,
+          }));
+          return result;
+        }}
+        min={0}
+        helpInformation="Validation: Number must not be negative."
+      />
+      {/* Extra income */}
+      <StyledInput
+        key="other-income"
+        inputType="number"
+        label="Pension/other ($/year)"
+        name="retirement"
+        value={formValues.additionalIncome}
+        inputFunction={(value) =>
+          setValues((currentData) => ({
+            ...currentData,
+            additionalIncome: value,
+          }))}
+        validationReference={formValidationStatus.additionalIncome}
+        validationFunction={() => {
+          const result = patternValidation(
+            formValues.additionalIncome,
+            baseRetirementStats.additionalIncome,
+            validateZeroOrGreater,
+          );
+          updateValidation((currentValidation) => ({
+            ...currentValidation,
+            additionalIncome: result,
+          }));
+          return result;
+        }}
+        min={0}
+        helpInformation="Validation: Number must not be negative. Only add here income that you would make use of after retiring."
+      />
+      {/* Confirm input */}
       <StyledButton
         classes="mt-2 self-center"
         text="Calculate"
