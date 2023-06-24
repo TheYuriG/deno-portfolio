@@ -11,7 +11,7 @@ import HighlightedCode from "../../../islands/HighlightedCode.tsx";
 //? Shows timer remaining on hover
 import DigitalTimer from "../../../islands/DigitalTimer.tsx";
 //? Imports middleware responsible for processing GET/POST requests to this route
-import { highlightTextMiddleware } from "../../../middleware/toys/__highlighted-text.tsx";
+import { highlightTextMiddleware } from "../../../middleware/tools/__highlighted-text.tsx";
 //? Import interface that defines what are the required properties for this content
 import type { HighlightText } from "../../../types/syntax-highlight/HighlightText.ts";
 //? Import component that creates a clickable textarea that copies the inner content to clipboard
@@ -34,7 +34,7 @@ export default function Home(
       <CustomHead
         title="Highlighted code"
         description="Turn a boring code block into syntax highlighted text to use in your blog"
-        link="https://www.theyurig.com/toys/syntax-highlight"
+        link="https://www.theyurig.com/tools/syntax-highlight"
       >
         {/* Syntax highlighting CSS */}
         <link rel="stylesheet" href="/syntax-highlighting.css" />
@@ -53,7 +53,7 @@ export default function Home(
         <BlogNavigationButtons
           back={{
             title: "Create another highlighted text",
-            link: "/toys/syntax-highlight",
+            link: "/tools/syntax-highlight",
           }}
         />
         <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">

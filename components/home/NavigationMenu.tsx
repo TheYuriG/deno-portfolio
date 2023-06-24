@@ -13,6 +13,14 @@ export function NavigationMenu() {
         Work
       </a>
       <a
+        href="/tools"
+        class="custom-underline-thick custom-font-scale-largest animate-slide-right delay-slide-right"
+        style="--dur: 1.5;"
+        title="Things I've created because I needed something to exist and I couldn't find anyone else that built it exactly how I needed it."
+      >
+        Tools
+      </a>
+      <a
         href="/projects"
         class="custom-underline-thick custom-font-scale-largest animate-slide-right delay-slide-right"
         style="--dur: 1.5;"

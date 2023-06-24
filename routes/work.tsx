@@ -138,7 +138,7 @@ export default function Home() {
             <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
               <GradientLink
                 content="Form (with validation)"
-                title="A simple form that uses Alert() once you submit it."
+                title="A simple mock data form."
                 link="/work/form"
                 newTab={false}
               />
