@@ -1,4 +1,4 @@
-import { useMemo, useState } from "preact/hooks";
+import { useMemo, useRef, useState } from "preact/hooks";
 //? Function to copy content to clipboard
 import { copyToClipboard } from "../services/copyToClipboard.ts";
 //? Import type for typecasting useState
@@ -10,12 +10,11 @@ import { CopyStatus } from "../components/misc/CopyStatus.tsx";
 //? clipboard and then update the success state
 function copyCodeBlockContentToClipboard(
   didCopyToClipboard: (toggleCopy: boolean | undefined) => void,
+  codeBlockDivElement: HTMLDivElement | null,
 ) {
   //? Attempts to find the element that was highlighted
-  const highlightedCodeBlock = document.getElementsByClassName(
-    "shj-numbers",
-  )[0]
-    ?.nextElementSibling?.outerHTML;
+  const highlightedCodeBlock = (codeBlockDivElement?.firstChild?.firstChild
+    ?.nextSibling as HTMLDivElement)?.outerHTML;
 
   //? Check if nothing was highlighted to be replaced, returns error if so
   if (highlightedCodeBlock === undefined) {
@@ -59,6 +58,8 @@ function copyCodeBlockContentToClipboard(
 export default function HighlightedCode(
   { textToHighlight }: { textToHighlight: string },
 ) {
+  //? Store the HTML element reference to the code block
+  const codeBlock = useRef<HTMLDivElement>(null);
   //? Tracks what is the message to be displayed about the "copy to clipboard" status
   const [hasCopied, didCopyToClipboard] = useState<booleanOrUndefined>();
 
@@ -66,10 +67,14 @@ export default function HighlightedCode(
     <>
       {useMemo(() => (
         <div
+          ref={codeBlock}
           key="highlighted-code-block"
           class="shj-lang-js self-start select-none max-w-full"
           onClick={() => {
-            copyCodeBlockContentToClipboard(didCopyToClipboard);
+            copyCodeBlockContentToClipboard(
+              didCopyToClipboard,
+              codeBlock.current,
+            );
           }}
         >
           {textToHighlight}
