@@ -17,6 +17,12 @@ function copyCodeBlockContentToClipboard(
   )[0]
     ?.nextElementSibling?.outerHTML;
 
+  //? Check if nothing was highlighted to be replaced, returns error if so
+  if (highlightedCodeBlock === undefined) {
+    didCopyToClipboard(false);
+    return;
+  }
+
   //? Attempt to update the content of 'highlightedCodeBlock' with
   //? the proper classes, if anything was highlighted at all
   const correctedCodeBlock = highlightedCodeBlock?.replace(
@@ -39,12 +45,6 @@ function copyCodeBlockContentToClipboard(
       /(\n\s*)/g,
       "{`$1`}",
     );
-
-  //? Check if nothing was highlighted to be replaced, returns error if so
-  if (correctedCodeBlock === undefined) {
-    didCopyToClipboard(false);
-    return;
-  }
 
   //? If everything worked fine, copy to clipboard
   copyToClipboard(correctedCodeBlock);
