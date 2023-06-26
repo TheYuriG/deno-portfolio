@@ -3,7 +3,7 @@ import { CustomHead } from "../../../components/base/CustomHead.tsx";
 //? Create blog content inside Base component
 import { Base } from "../../../components/base/Base.tsx";
 //? Navigation Buttons to go back to the previous page
-import { BlogNavigationButtons } from "../../../components/blog/BlogNavigationButtons.tsx";
+import { NavigationButtons } from "../../../components/misc/NavigationButtons.tsx";
 //? Header to display page name
 import { StyledHeader } from "../../../components/UI/StyledHeader.tsx";
 import FoodOrderCheckout from "../../../islands/FoodOrderCheckout.tsx";
@@ -21,7 +21,7 @@ export default function Home() {
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
-        <BlogNavigationButtons
+        <NavigationButtons
           back={{
             title: "Add more items to your cart",
             link: "/projects/food-order",

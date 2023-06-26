@@ -3,7 +3,7 @@ import { CustomHead } from "../../components/base/CustomHead.tsx";
 //? Lateral text with theme switcher
 import { Base } from "../../components/base/Base.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
-import { BlogNavigationButtons } from "../../components/blog/BlogNavigationButtons.tsx";
+import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 //? Import the template for Blog Post summaries
 import { BlogPostSummary } from "../../components/blog/BlogPostSummary.tsx";
 //? Import the types so that it doesn't need to be interfaced twice
@@ -36,7 +36,7 @@ export default function Home() {
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
         {/* Back button */}
-        <BlogNavigationButtons />
+        <NavigationButtons />
         <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
           {...createdPosts.map((post) => (
             <BlogPostSummary {...post}></BlogPostSummary>

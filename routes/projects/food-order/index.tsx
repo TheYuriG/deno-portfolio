@@ -5,7 +5,7 @@ import { CustomHead } from "../../../components/base/CustomHead.tsx";
 //? Create blog content inside Base component
 import { Base } from "../../../components/base/Base.tsx";
 //? Navigation Buttons to go back to the previous page
-import { BlogNavigationButtons } from "../../../components/blog/BlogNavigationButtons.tsx";
+import { NavigationButtons } from "../../../components/misc/NavigationButtons.tsx";
 //? Component responsible for rendering the food list and modals
 import FoodOrder from "../../../islands/FoodOrder.tsx";
 //? Describe things that were learned with this current project
@@ -37,7 +37,7 @@ export default function Home(
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
-        <BlogNavigationButtons
+        <NavigationButtons
           back={{ title: "Return to projects overview", link: "/projects" }}
         />
         <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">

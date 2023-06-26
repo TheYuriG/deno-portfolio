@@ -5,7 +5,7 @@ import { Base } from "../../components/base/Base.tsx";
 //? Default styled header
 import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
-import { BlogNavigationButtons } from "../../components/blog/BlogNavigationButtons.tsx";
+import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 //? Infinitely expandable insanity section
 import InsanitySection from "../../islands/InsanitySection.tsx";
 
@@ -20,7 +20,7 @@ export default function Home() {
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
-        <BlogNavigationButtons
+        <NavigationButtons
           back={{ title: "Return to all toys", link: "/toys" }}
         />
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">

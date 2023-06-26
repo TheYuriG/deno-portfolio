@@ -6,7 +6,7 @@ import { Base } from "../../components/base/Base.tsx";
 import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
 import { GradientLink } from "../../components/UI/GradientLink.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
-import { BlogNavigationButtons } from "../../components/blog/BlogNavigationButtons.tsx";
+import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 //? Component to create a column grid of projects created
 import { ProjectsGrid } from "../../components/projects/ProjectsGrid.tsx";
 
@@ -21,7 +21,7 @@ export default function Home() {
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
-        <BlogNavigationButtons />
+        <NavigationButtons />
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
           <StyledHeader title="Projects built" />
           {/* Grid of projects created */}

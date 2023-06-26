@@ -6,7 +6,7 @@ import { Base } from "../../components/base/Base.tsx";
 import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
 import { StyledSubHeader } from "../../components/UI/StyledSubHeader.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
-import { BlogNavigationButtons } from "../../components/blog/BlogNavigationButtons.tsx";
+import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 //? A HTML Link component to pre-format links and reduce boiletplate
 import { GradientLink } from "../../components/UI/GradientLink.tsx";
 
@@ -26,7 +26,7 @@ export default function Home() {
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
         {/* Back button */}
-        <BlogNavigationButtons
+        <NavigationButtons
           back={{ title: "Browse more blog posts", link: "/blog" }}
           next={{
             title: "Read next: Stop theme flickering",

@@ -3,7 +3,7 @@ import { CustomHead } from "../components/base/CustomHead.tsx";
 //? Lateral text with theme switcher
 import { Base } from "../components/base/Base.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
-import { BlogNavigationButtons } from "../components/blog/BlogNavigationButtons.tsx";
+import { NavigationButtons } from "../components/misc/NavigationButtons.tsx";
 //? Default styled header
 import { StyledHeader } from "../components/UI/StyledHeader.tsx";
 //? Enable fetching the error URL
@@ -21,7 +21,7 @@ export default function NotFoundPage({ url }: UnknownPageProps) {
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
-        <BlogNavigationButtons />
+        <NavigationButtons />
         <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
           <StyledHeader title="Page not found!" />
           <p class="my-2 text-justify">
