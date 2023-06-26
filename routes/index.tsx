@@ -5,7 +5,7 @@ import { Base } from "../components/base/Base.tsx";
 //? Content displayed on the Home page, including header and navigation menu
 import { HomeContent } from "../components/home/HomeContent.tsx";
 //? Navigation Menu with redirects to different pages
-import { NavigationMenu } from "../components/home/NavigationMenu.tsx";
+import { HomeNavigationMenu } from "../components/home/HomeNavigationMenu.tsx";
 //? Create a Starry Night background
 import { StarryNight } from "../components/home/StarryNight.tsx";
 
@@ -26,7 +26,7 @@ export default function Home() {
         {/* Content with greeting, name, workplace */}
         <HomeContent />
         {/* Navigation menu to other routes */}
-        <NavigationMenu />
+        <HomeNavigationMenu />
       </Base>
     </>
   );
