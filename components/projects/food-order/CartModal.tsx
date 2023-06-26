@@ -141,14 +141,12 @@ export default function CartModal({
         >
           Close
         </GhostButton>
-        {/* Removed until when/if we add the order feature */}
-        {
-          /* <StyledButton
+        <StyledButton
           classes="ml-4"
           text="Order"
-          onClickFunction={closeModal}
-        /> */
-        }
+          onClickFunction={() =>
+            window.location.href = "/projects/food-order/checkout"}
+        />
       </div>
     </div>
   );
