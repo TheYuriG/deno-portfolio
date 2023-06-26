@@ -13,6 +13,7 @@ import * as $6 from "./routes/certificates.tsx";
 import * as $7 from "./routes/index.tsx";
 import * as $8 from "./routes/me.tsx";
 import * as $9 from "./routes/projects/expenses-tracker.tsx";
+import * as $10 from "./routes/projects/food-order/checkout.tsx";
 import * as $11 from "./routes/projects/food-order/index.tsx";
 import * as $12 from "./routes/projects/index.tsx";
 import * as $13 from "./routes/tools/highlighted-text/[text].tsx";
@@ -32,12 +33,13 @@ import * as $$3 from "./islands/DigitalTimer.tsx";
 import * as $$4 from "./islands/ExpensesTracker.tsx";
 import * as $$5 from "./islands/ExpensesYearSelect.tsx";
 import * as $$6 from "./islands/FoodOrder.tsx";
-import * as $$7 from "./islands/FormWithValidation.tsx";
-import * as $$8 from "./islands/HighlightedCode.tsx";
-import * as $$9 from "./islands/InsanitySection.tsx";
-import * as $$10 from "./islands/RetirementCalculationForm.tsx";
-import * as $$11 from "./islands/RetirementCalculator.tsx";
-import * as $$12 from "./islands/ThemeSwitcher.tsx";
+import * as $$7 from "./islands/FoodOrderCheckout.tsx";
+import * as $$8 from "./islands/FormWithValidation.tsx";
+import * as $$9 from "./islands/HighlightedCode.tsx";
+import * as $$10 from "./islands/InsanitySection.tsx";
+import * as $$11 from "./islands/RetirementCalculationForm.tsx";
+import * as $$12 from "./islands/RetirementCalculator.tsx";
+import * as $$13 from "./islands/ThemeSwitcher.tsx";
 
 const manifest = {
   routes: {
@@ -51,6 +53,7 @@ const manifest = {
     "./routes/index.tsx": $7,
     "./routes/me.tsx": $8,
     "./routes/projects/expenses-tracker.tsx": $9,
+    "./routes/projects/food-order/checkout.tsx": $10,
     "./routes/projects/food-order/index.tsx": $11,
     "./routes/projects/index.tsx": $12,
     "./routes/tools/highlighted-text/[text].tsx": $13,
@@ -72,12 +75,13 @@ const manifest = {
     "./islands/ExpensesTracker.tsx": $$4,
     "./islands/ExpensesYearSelect.tsx": $$5,
     "./islands/FoodOrder.tsx": $$6,
-    "./islands/FormWithValidation.tsx": $$7,
-    "./islands/HighlightedCode.tsx": $$8,
-    "./islands/InsanitySection.tsx": $$9,
-    "./islands/RetirementCalculationForm.tsx": $$10,
-    "./islands/RetirementCalculator.tsx": $$11,
-    "./islands/ThemeSwitcher.tsx": $$12,
+    "./islands/FoodOrderCheckout.tsx": $$7,
+    "./islands/FormWithValidation.tsx": $$8,
+    "./islands/HighlightedCode.tsx": $$9,
+    "./islands/InsanitySection.tsx": $$10,
+    "./islands/RetirementCalculationForm.tsx": $$11,
+    "./islands/RetirementCalculator.tsx": $$12,
+    "./islands/ThemeSwitcher.tsx": $$13,
   },
   baseUrl: import.meta.url,
   config,
