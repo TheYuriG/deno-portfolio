@@ -1,13 +1,13 @@
 //? Head component with all Meta tags pre-set
-import { CustomHead } from "../components/base/CustomHead.tsx";
+import { CustomHead } from "../../components/base/CustomHead.tsx";
 //? Create blog content inside Base component
-import { Base } from "../components/base/Base.tsx";
+import { Base } from "../../components/base/Base.tsx";
 //? Default styled header
-import { StyledHeader } from "../components/UI/StyledHeader.tsx";
+import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
-import { BlogNavigationButtons } from "../components/blog/BlogNavigationButtons.tsx";
+import { BlogNavigationButtons } from "../../components/blog/BlogNavigationButtons.tsx";
 //? A HTML Link component to pre-format links and reduce boiletplate
-import { GradientLink } from "../components/UI/GradientLink.tsx";
+import { GradientLink } from "../../components/UI/GradientLink.tsx";
 
 export default function Home() {
   return (

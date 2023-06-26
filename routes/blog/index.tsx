@@ -1,13 +1,13 @@
 //? Head component with all Meta tags pre-set
-import { CustomHead } from "../components/base/CustomHead.tsx";
+import { CustomHead } from "../../components/base/CustomHead.tsx";
 //? Lateral text with theme switcher
-import { Base } from "../components/base/Base.tsx";
+import { Base } from "../../components/base/Base.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
-import { BlogNavigationButtons } from "../components/blog/BlogNavigationButtons.tsx";
+import { BlogNavigationButtons } from "../../components/blog/BlogNavigationButtons.tsx";
 //? Import the template for Blog Post summaries
-import { BlogPostSummary } from "../components/blog/BlogPostSummary.tsx";
+import { BlogPostSummary } from "../../components/blog/BlogPostSummary.tsx";
 //? Import the types so that it doesn't need to be interfaced twice
-import BlogPostSummaryProperties from "../types/BlogPostSummaryProperties.ts";
+import BlogPostSummaryProperties from "../../types/BlogPostSummaryProperties.ts";
 
 //? All posts so far
 const createdPosts: Array<BlogPostSummaryProperties> = [{
