@@ -82,12 +82,10 @@ export function FoodOrderCheckoutPaymentForm(
         text="Confirm payment"
         onClickFunction={() => {
           updateCartContent(undefined);
-          console.log("cart:", cart);
-          console.log("payment:", paymentSelected);
-          console.log("delivery:", deliveryLocation);
           //todo create and download PDF?
           setTimeout(() => {
-            window.location.href = "/projects/food-order/success"; //todo create this page?
+            window.location.href = "/projects/food-order/success?delivery=" +
+              (new Date().getTime() + 20 * 60 * 1000);
           }, 3000);
         }}
       />
