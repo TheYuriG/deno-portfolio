@@ -3,6 +3,8 @@ import { StyledRadio } from "../../../components/UI/StyledRadio.tsx";
 //? Payment Icons
 import { PaypalIcon } from "../../../assets/PaypalIcon.tsx";
 import { CreditCardIcon } from "../../../assets/CreditCardIcon.tsx";
+//? Delivery Icon
+import { DeliveryIcon } from "../../../assets/DeliveryIcon.tsx";
 //? Confirmation button
 import { StyledButton } from "../../../components/UI/StyledButton.tsx";
 
@@ -61,13 +63,19 @@ export function FoodOrderCheckoutPaymentForm(
         />
       </div>
       {/* Delivery location options */}
-      <StyledRadio
-        label="Send to"
-        name="delivery"
-        optionsArray={["Home", "Work"]}
-        starterValue={deliveryLocation}
-        onChangeFunction={(option) => setDeliveryLocation(option)}
-      />
+      <div class="flex flex-row space-x-2 items-center">
+        <StyledRadio
+          label="Send to"
+          name="delivery"
+          optionsArray={["Home", "Work"]}
+          starterValue={deliveryLocation}
+          onChangeFunction={(option) => setDeliveryLocation(option)}
+        />
+        <DeliveryIcon
+          iconHeight="1.5em"
+          iconWidth="1.5em"
+        />
+      </div>
       {/* Confirm order */}
       <StyledButton
         classes="self-end"
