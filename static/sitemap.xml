@@ -76,6 +76,54 @@
 
    <url>
 
+      <loc>https://www.theyurig.com/tools/retirement-calculator</loc>
+
+      <lastmod>2023-06-24</lastmod>
+
+      <changefreq>weekly</changefreq>
+
+      <priority>0.8</priority>
+
+   </url>
+
+   <url>
+
+      <loc>https://www.theyurig.com/projects</loc>
+
+      <lastmod>2023-06-24</lastmod>
+
+      <changefreq>weekly</changefreq>
+
+      <priority>0.8</priority>
+
+   </url>
+
+   <url>
+
+      <loc>https://www.theyurig.com/projects/expenses-tracker</loc>
+
+      <lastmod>2023-06-24</lastmod>
+
+      <changefreq>weekly</changefreq>
+
+      <priority>0.8</priority>
+
+   </url>
+
+   <url>
+
+      <loc>https://www.theyurig.com/projects/food-order</loc>
+
+      <lastmod>2023-06-24</lastmod>
+
+      <changefreq>weekly</changefreq>
+
+      <priority>0.8</priority>
+
+   </url>
+
+   <url>
+
       <loc>https://www.theyurig.com/toys</loc>
 
       <lastmod>2023-06-24</lastmod>
@@ -160,7 +208,7 @@
 
    <url>
 
-      <loc>https://www.theyurig.com/this</loc>
+      <loc>https://www.theyurig.com/what-is-this</loc>
 
       <lastmod>2023-05-22</lastmod>
 
