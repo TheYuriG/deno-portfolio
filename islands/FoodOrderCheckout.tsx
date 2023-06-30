@@ -23,21 +23,24 @@ export default function FoodOrderCheckout() {
 
   //? Manages the cart content being persisted locally
   useEffect(() => {
-    //   localStorage.removeItem("food-order-cart");
-
+    //? Pull the cart, if saved
     const storedCart = localStorage.getItem("food-order-cart");
 
-    //? If a cart exists, override the current cart on state with the localStorage cart
-    if (storedCart !== null) {
-      const parsedCart: typeof starterCartState = JSON.parse(storedCart);
-      setTimeout(() => {
-        updateCartContent(() => ({
-          ...parsedCart,
-          items: new Map(parsedCart.items),
-        }));
-      }, 1500);
+    //? If there is no cart, move back to food order page
+    if (storedCart === null) {
+      history.back();
       return;
     }
+
+    //? If a cart exists, override the current cart on state with the localStorage cart
+    const parsedCart: typeof starterCartState = JSON.parse(storedCart);
+    setTimeout(() => {
+      updateCartContent(() => ({
+        ...parsedCart,
+        items: new Map(parsedCart.items),
+      }));
+    }, 1500);
+    return;
   }, []);
 
   const isThereACart = typeof cartContent === "undefined";
