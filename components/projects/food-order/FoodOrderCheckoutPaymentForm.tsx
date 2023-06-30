@@ -82,7 +82,7 @@ export function FoodOrderCheckoutPaymentForm(
         text="Confirm payment"
         onClickFunction={() => {
           updateCartContent(undefined);
-          //todo create and download PDF?
+          localStorage.removeItem("food-order-cart");
           setTimeout(() => {
             window.location.href = "/projects/food-order/success?delivery=" +
               (new Date().getTime() + 20 * 60 * 1000);
