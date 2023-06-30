@@ -1,18 +1,19 @@
 //? To know what is the current route
 import { Handlers } from "$fresh/server.ts";
 //? Head component with all Meta tags pre-set
-import { CustomHead } from "../../components/base/CustomHead.tsx";
+import { CustomHead } from "../../../components/base/CustomHead.tsx";
 //? Create blog content inside Base component
-import { Base } from "../../components/base/Base.tsx";
-//? Navigation Buttons to go back to the previous page or to the next article
-import { BlogNavigationButtons } from "../../components/blog/BlogNavigationButtons.tsx";
-import FoodOrder from "../../islands/FoodOrder.tsx";
+import { Base } from "../../../components/base/Base.tsx";
+//? Navigation Buttons to go back to the previous page
+import { NavigationButtons } from "../../../components/misc/NavigationButtons.tsx";
+//? Component responsible for rendering the food list and modals
+import FoodOrder from "../../../islands/FoodOrder.tsx";
 //? Describe things that were learned with this current project
-import Collapsible from "../../islands/Collapsible.tsx";
+import Collapsible from "../../../islands/Collapsible.tsx";
 //? Import Food type to typecast the data received
-import type { Food } from "../../types/food-order/Food.ts";
+import type { Food } from "../../../types/food-order/Food.ts";
 //? Import middleware responsible for pulling food items
-import { foodOrderMiddleware } from "../../middleware/projects/__food-order.ts";
+import { foodOrderMiddleware } from "../../../middleware/projects/__food-order.ts";
 
 //? Runs before the render function to fetch the food from the
 //? database, then pushes the data into the rendered page function
@@ -36,7 +37,7 @@ export default function Home(
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
-        <BlogNavigationButtons
+        <NavigationButtons
           back={{ title: "Return to projects overview", link: "/projects" }}
         />
         <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">

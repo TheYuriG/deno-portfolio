@@ -5,7 +5,7 @@ import { Base } from "../../../components/base/Base.tsx";
 //? Default styled header
 import { StyledHeader } from "../../../components/UI/StyledHeader.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
-import { BlogNavigationButtons } from "../../../components/blog/BlogNavigationButtons.tsx";
+import { NavigationButtons } from "../../../components/misc/NavigationButtons.tsx";
 //? Import the component responsible for adding the content that will eventually be highlighted
 import HighlightedCode from "../../../islands/HighlightedCode.tsx";
 //? Shows timer remaining on hover
@@ -50,7 +50,7 @@ export default function Home(
         />
       </CustomHead>
       <Base>
-        <BlogNavigationButtons
+        <NavigationButtons
           back={{
             title: "Create another highlighted text",
             link: "/tools/syntax-highlight",

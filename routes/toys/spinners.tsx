@@ -7,7 +7,7 @@ import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
 //? A HTML Link component to pre-format links and reduce boiletplate
 import { GradientLink } from "../../components/UI/GradientLink.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
-import { BlogNavigationButtons } from "../../components/blog/BlogNavigationButtons.tsx";
+import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 
 export default function Home() {
   return (
@@ -21,7 +21,7 @@ export default function Home() {
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
-        <BlogNavigationButtons
+        <NavigationButtons
           back={{ title: "Return to all toys", link: "/toys" }}
         />
         <article class="flex flex-col w-full h-full max-w-4xl mx-auto items-center">

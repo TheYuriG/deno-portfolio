@@ -5,7 +5,7 @@ import { Base } from "../components/base/Base.tsx";
 //? Default styled header
 import { StyledHeader } from "../components/UI/StyledHeader.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
-import { BlogNavigationButtons } from "../components/blog/BlogNavigationButtons.tsx";
+import { NavigationButtons } from "../components/misc/NavigationButtons.tsx";
 //? Enable fetching the error
 import { ErrorPageProps } from "$fresh/server.ts";
 
@@ -21,7 +21,7 @@ export default function Error500Page({ error }: ErrorPageProps) {
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
-        <BlogNavigationButtons />
+        <NavigationButtons />
         <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
           <StyledHeader title="An internal server error occurred!" />
           <p class="my-2 text-justify">

@@ -1,5 +1,7 @@
 //? Default styled header
 import { StyledSubHeader } from "../../../components/UI/StyledSubHeader.tsx";
+//? Import GhostButton to close modal
+import { GhostButton } from "../../UI/GhostButton.tsx";
 //? Import the StyledButton to close the modal on empty carts or
 //? confirm orders on a filled cart
 import { MinusIcon } from "../../../assets/MinusIcon.tsx";
@@ -133,22 +135,18 @@ export default function CartModal({
       </span>
       {/* Row of buttons to close or complete the order */}
       <div class="flex self-end">
-        <button
-          class="hover:pointer"
-          key="modal__add-more"
-          onClick={closeModal}
-          title="Close the modal"
+        <GhostButton
+          key="close-modal"
+          onClickFunction={closeModal}
         >
-          Add more
-        </button>
-        {/* Removed until when/if we add the order feature */}
-        {
-          /* <StyledButton
+          Close
+        </GhostButton>
+        <StyledButton
           classes="ml-4"
           text="Order"
-          onClickFunction={closeModal}
-        /> */
-        }
+          onClickFunction={() =>
+            window.location.href = "/projects/food-order/checkout"}
+        />
       </div>
     </div>
   );

@@ -23,15 +23,6 @@ const projects: ProjectDisplayProperties[] = [
       "https://media.discordapp.net/attachments/576538316296421399/1120279085952794634/image.png",
     projectName: "Food order",
   },
-  //* Retirement calculator
-  {
-    projectLink: "/projects/retirement-calculator",
-    projectTitle:
-      "Calculate how much more time/money you need to invest until you are able to FIRE retire and live from your returns forever",
-    projectImageLink:
-      "https://media.discordapp.net/attachments/576538316296421399/1121945060561387542/image.png",
-    projectName: "Retirement calculator",
-  },
 ];
 
 //

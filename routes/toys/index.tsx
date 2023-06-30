@@ -1,14 +1,14 @@
 //? Import CustomHead with appropriate metadata
-import { CustomHead } from "../components/base/CustomHead.tsx";
+import { CustomHead } from "../../components/base/CustomHead.tsx";
 //? Create blog content inside Base component
-import { Base } from "../components/base/Base.tsx";
+import { Base } from "../../components/base/Base.tsx";
 //? Default styled header
-import { StyledHeader } from "../components/UI/StyledHeader.tsx";
+import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
 //? Import a Card component that automatically creates
 //? redirection link, card title and centers card's child
-import { CarouselCard } from "../components/toys/CarouselCard.tsx";
+import { CarouselCard } from "../../components/toys/CarouselCard.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
-import { BlogNavigationButtons } from "../components/blog/BlogNavigationButtons.tsx";
+import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 
 export default function Home() {
   return (
@@ -21,7 +21,7 @@ export default function Home() {
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
-        <BlogNavigationButtons />
+        <NavigationButtons />
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
           {/* Title header */}
           <StyledHeader title="Toys" />

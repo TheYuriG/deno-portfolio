@@ -1,4 +1,4 @@
-export function NavigationMenu() {
+export function HomeNavigationMenu() {
   return (
     <nav
       class="flex flex-col absolute items-end p-4 bottom-0 right-0"
