@@ -1,14 +1,15 @@
 //? Head component with all Meta tags pre-set
 import { CustomHead } from "../../components/base/CustomHead.tsx";
-//? Create blog content inside Base component
+//? Create retirement content inside Base component
 import { Base } from "../../components/base/Base.tsx";
 //? Default styled header
 import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
-//? Navigation Buttons to go back to the previous page or to the next article
+//? Navigation Buttons to go back to the tools page
 import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
+//? Retirement calculator form and table
 import RetirementCalculator from "../../islands/RetirementCalculator.tsx";
 
-//? Renders the food-order page, with a list of items and a cart
+//? Renders the retirement calculator page, with a form to calculate your retirement plan
 export default function Home() {
   return (
     <>
