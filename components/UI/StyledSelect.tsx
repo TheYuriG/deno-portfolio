@@ -31,13 +31,14 @@ export function StyledSelect({
       </label>
       {/* Select dropdown */}
       <select
-        class="relative w-full bg-transparent custom-bo-ac rounded-lg p-2 my-2 sm:my-1 sm:ml-2 text-lg cursor-pointer co-nc custom-tr-tx-bg-bo"
+        class="relative w-full bg-transparent custom-bo-ac rounded-lg p-2 my-2 sm:my-1 sm:ml-2 text-lg cursor-pointer custom-tr-tx-bg-bo"
         style={validationReference === validationStatus.Valid
           ? "border-color: green;"
           : validationReference === validationStatus.Invalid
           ? "border-color: red;"
           : undefined}
-        name={name} //? Link to label
+        name={name} //? Link to form
+        id={name} //? Link to label
         value={value} //? Tracks current value
         //? Updates state when an option is selected
         onChange={(e) => {

@@ -1,15 +1,14 @@
 //? Head component with all Meta tags pre-set
 import { CustomHead } from "../../components/base/CustomHead.tsx";
-//? Create retirement content inside Base component
+//? Create tools content inside Base component
 import { Base } from "../../components/base/Base.tsx";
 //? Default styled header
 import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
 //? Navigation Buttons to go back to the tools page
 import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
-//? Retirement calculator form and table
-import RetirementCalculator from "../../islands/RetirementCalculator.tsx";
+import WhatsappLinkGenerator from "../../islands/WhatsappLinkGenerator.tsx";
 
-//? Renders the retirement calculator page, with a form to calculate your retirement plan
+//? Renders the food-order page, with a list of items and a cart
 export default function Home() {
   return (
     <>
@@ -18,9 +17,9 @@ export default function Home() {
         meta-tags and imports required for this specific route */
       }
       <CustomHead
-        title="Retirement Calculator"
-        description="Calculate how much you need to save monthly, and for how many months, to build permanent retirement funds, regardless of how many years you live after stop working."
-        link="https://www.theyurig.com/projects/retirement-calculator"
+        title="Whatsapp Message Link Generator"
+        description="Create a link to message someone on whatsapp. Set a default message, batch create dozens of links and more."
+        link="https://www.theyurig.com/projects/whatsapp-message-link-generator"
       >
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
@@ -29,10 +28,9 @@ export default function Home() {
           back={{ title: "Return to tools", link: "/tools" }}
         />
         <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
-          {/* Retirement calculator */}
-          <StyledHeader title="Retirement Calculator" />
-          {/* Form and results */}
-          <RetirementCalculator />
+          {/* Link generator */}
+          <StyledHeader title="Whatsapp Message Link Generator" />
+          <WhatsappLinkGenerator />
         </section>
       </Base>
     </>

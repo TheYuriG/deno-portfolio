@@ -51,6 +51,15 @@ export default function Home() {
                 newTab={false}
               />
             </li>
+            {/* Whatsapp messaging link generator */}
+            <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
+              <GradientLink
+                content="Whatsapp Message link generator"
+                title="When I used to work with marketing, I could not find a good resouce to generate a link to message someone in WhatsApp. This tool does what I needed done back then. This tool helps manual messaging, but if this is something you are doing constantly, I suggest automating this process in another way instead or hiring someone to create a chatbot for you."
+                link="/tools/whatsapp-message-link-generator"
+                newTab={false}
+              />
+            </li>
           </ol>
         </article>
       </Base>

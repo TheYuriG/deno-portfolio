@@ -211,10 +211,12 @@ export default function FormWithValidation() {
       <form class="w-full mb-4 flex flex-col">
         {/* Name input */}
         <StyledInput
+          autoCompleteSuggestion="name"
           key={"first_input"}
           inputType="text"
           validationReference={formValidationStatus.name}
           label="Name"
+          labelLink="form-name"
           name="name"
           value={formValues.name}
           inputFunction={(inputName) => {
@@ -243,6 +245,7 @@ export default function FormWithValidation() {
           inputType="number"
           validationReference={formValidationStatus.age as validationStatus}
           label="Age"
+          labelLink="form-age"
           name="age"
           value={formValues.age.toString()}
           inputFunction={(inputAge) => {
@@ -274,6 +277,7 @@ export default function FormWithValidation() {
           validationReference={formValidationStatus
             .profession as validationStatus}
           label="Profession"
+          labelLink="form-profession"
           name="profession"
           value={formValues.profession}
           inputFunction={(inputProfession) => {
@@ -373,11 +377,11 @@ export default function FormWithValidation() {
       {/* Text Area that will hold all sent information */}
       <StyledTextArea
         name="formInput"
-        id="form"
         placeholder={sumOfAllInputs.length > 0
           ? sumOfAllInputs.join("\n")
           : textAreaPlaceholder}
         minHeight="16.5em"
+        labelLink="submit-results"
         disabled={true}
       />
     </>

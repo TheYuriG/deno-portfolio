@@ -5,8 +5,12 @@ import { validationStatus } from "../../types/misc/validationStatus.ts";
 
 //? Define optional and required properties for inputs
 interface StyledInputProperties {
+  //? What this label can auto complete to
+  autoCompleteSuggestion?: string;
   //? Text for the label related to this input
   label: string;
+  //? Link a label and its input together
+  labelLink: string;
   //? Key that helps Preact to track this input on the DOM
   key: string;
   //? Whether this input's format should be a date, number or other string
@@ -36,7 +40,9 @@ interface StyledInputProperties {
 //? Exports a styled combo of label + input
 export function StyledInput(
   {
+    autoCompleteSuggestion,
     label,
+    labelLink,
     key,
     inputType,
     validationReference,
@@ -54,7 +60,7 @@ export function StyledInput(
   return (
     <>
       <div class="flex flex-col sm:flex-row grow items-center">
-        <label class="flex w-max whitespace-nowrap" htmlFor={name}>
+        <label class="flex w-max whitespace-nowrap" htmlFor={labelLink}>
           {label}
         </label>
         <div class="flex items-center w-full">
@@ -74,7 +80,7 @@ export function StyledInput(
               : validationReference === validationStatus.Invalid
               ? "border-color: red;"
               : undefined}
-            name={name}
+            id={labelLink}
             //? Placeholder value, if provided
             placeholder={placeholder}
             //? Initial value for the input, mostly used by the number input
@@ -96,6 +102,7 @@ export function StyledInput(
             min={min}
             max={max}
             step={step}
+            autocomplete={autoCompleteSuggestion}
           />
           {/* Tooltip on the right side, with user information about what data is valid */}
           {helpInformation && (

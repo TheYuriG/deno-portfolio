@@ -20,12 +20,13 @@ import * as $13 from "./routes/tools/highlighted-text/[text].tsx";
 import * as $14 from "./routes/tools/index.tsx";
 import * as $15 from "./routes/tools/retirement-calculator.tsx";
 import * as $16 from "./routes/tools/syntax-highlight.tsx";
-import * as $17 from "./routes/toys/index.tsx";
-import * as $18 from "./routes/toys/insanity.tsx";
-import * as $19 from "./routes/toys/spinners.tsx";
-import * as $20 from "./routes/what-is-this.tsx";
-import * as $21 from "./routes/work/form.tsx";
-import * as $22 from "./routes/work/index.tsx";
+import * as $17 from "./routes/tools/whatsapp-message-link-generator.tsx";
+import * as $18 from "./routes/toys/index.tsx";
+import * as $19 from "./routes/toys/insanity.tsx";
+import * as $20 from "./routes/toys/spinners.tsx";
+import * as $21 from "./routes/what-is-this.tsx";
+import * as $22 from "./routes/work/form.tsx";
+import * as $23 from "./routes/work/index.tsx";
 import * as $$0 from "./islands/AddNewExpense.tsx";
 import * as $$1 from "./islands/Collapsible.tsx";
 import * as $$2 from "./islands/CopyTextAreaToClipboard.tsx";
@@ -40,6 +41,7 @@ import * as $$10 from "./islands/InsanitySection.tsx";
 import * as $$11 from "./islands/RetirementCalculationForm.tsx";
 import * as $$12 from "./islands/RetirementCalculator.tsx";
 import * as $$13 from "./islands/ThemeSwitcher.tsx";
+import * as $$14 from "./islands/WhatsappLinkGenerator.tsx";
 
 const manifest = {
   routes: {
@@ -60,12 +62,13 @@ const manifest = {
     "./routes/tools/index.tsx": $14,
     "./routes/tools/retirement-calculator.tsx": $15,
     "./routes/tools/syntax-highlight.tsx": $16,
-    "./routes/toys/index.tsx": $17,
-    "./routes/toys/insanity.tsx": $18,
-    "./routes/toys/spinners.tsx": $19,
-    "./routes/what-is-this.tsx": $20,
-    "./routes/work/form.tsx": $21,
-    "./routes/work/index.tsx": $22,
+    "./routes/tools/whatsapp-message-link-generator.tsx": $17,
+    "./routes/toys/index.tsx": $18,
+    "./routes/toys/insanity.tsx": $19,
+    "./routes/toys/spinners.tsx": $20,
+    "./routes/what-is-this.tsx": $21,
+    "./routes/work/form.tsx": $22,
+    "./routes/work/index.tsx": $23,
   },
   islands: {
     "./islands/AddNewExpense.tsx": $$0,
@@ -82,6 +85,7 @@ const manifest = {
     "./islands/RetirementCalculationForm.tsx": $$11,
     "./islands/RetirementCalculator.tsx": $$12,
     "./islands/ThemeSwitcher.tsx": $$13,
+    "./islands/WhatsappLinkGenerator.tsx": $$14,
   },
   baseUrl: import.meta.url,
   config,
