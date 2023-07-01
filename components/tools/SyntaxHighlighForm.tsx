@@ -16,7 +16,7 @@ export default function SyntaxHighlighForm() {
       <StyledTextArea
         minHeight="20em"
         name="text-to-highlight"
-        id="syntax"
+        labelLink="syntax"
         label="Code to highlight"
         labelClasses="mb-2"
       />

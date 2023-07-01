@@ -18,7 +18,8 @@ export function CountryPhoneCodeSelect(
       {/* Select dropdown */}
       <select
         class="relative bg-transparent custom-bo-ac w-full rounded-lg p-2 my-2 sm:my-1 sm:ml-2 cursor-pointer custom-tr-tx-bg-bo"
-        name="country-codes" //? Link to label
+        name="whatsapp-message-link-generator" //? Link to form
+        id="country-codes" //? Link to label
         value={countryCode} //? Tracks current value
         //? Updates state when an option is selected
         onChange={(e) => {

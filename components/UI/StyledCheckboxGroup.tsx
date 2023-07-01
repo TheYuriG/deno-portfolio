@@ -45,6 +45,7 @@ export function StyledCheckboxGroup({
           <>
             <StyledSingleCheckbox
               label={name}
+              labelName={name}
               shouldBeChecked={stateForCheckedReference[value] === true}
               onChangeFunction={() => {
                 onChangeFunction(value as stimulusCheckboxOptions);

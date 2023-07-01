@@ -24,7 +24,11 @@ export default function CopyTextAreaToClipboard(
           }, 3000);
         }}
       >
-        <StyledTextArea placeholder={content} disabled={true} />
+        <StyledTextArea
+          placeholder={content}
+          disabled={true}
+          labelLink="copy-to-clipboard"
+        />
       </div>
       <CopyStatus copyStatus={didCopy} />
     </>

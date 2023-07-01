@@ -37,7 +37,8 @@ export function StyledSelect({
           : validationReference === validationStatus.Invalid
           ? "border-color: red;"
           : undefined}
-        name={name} //? Link to label
+        name={name} //? Link to form
+        id={name} //? Link to label
         value={value} //? Tracks current value
         //? Updates state when an option is selected
         onChange={(e) => {
