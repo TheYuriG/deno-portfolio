@@ -127,7 +127,7 @@ export default function AddNewExpenseForm(
 
   //? Runs when the user clicks the "Send" button. Validates if the data
   //? should be accepted and wiped or kept and have errors informed.
-  function validateBeforeSend(): void {
+  function validateBeforeAcceptInput(): void {
     //? Initialize the number of errors variable
     let validationErrors = 0;
 
@@ -230,10 +230,11 @@ export default function AddNewExpenseForm(
       <form class="w-full mb-2 flex flex-col">
         {/* Expense description */}
         <StyledInput
-          key={"text_input"}
+          key="expense-description"
           inputType="text"
           validationReference={formValidationStatus.description}
           label="Description"
+          labelLink="expense-description"
           name="description"
           value={formValues.description}
           inputFunction={(inputName) => {
@@ -257,10 +258,11 @@ export default function AddNewExpenseForm(
         />
         {/* Expense Cost */}
         <StyledInput
-          key={"number_input"}
+          key="expense-cost"
           inputType="number"
           validationReference={formValidationStatus.cost as validationStatus}
           label="Cost ($)"
+          labelLink="expense-cost"
           name="cost"
           value={formValues.cost.toString()}
           inputFunction={(inputAge) => {
@@ -285,11 +287,12 @@ export default function AddNewExpenseForm(
         />
         {/* Expense Date */}
         <StyledInput
-          key={"date_input"}
+          key="expense-date"
           inputType="date"
           validationReference={formValidationStatus
             .date as validationStatus}
           label="Date"
+          labelLink="expense-date"
           name="date"
           value={formValues.date}
           inputFunction={(inputDate) => {
@@ -331,7 +334,7 @@ export default function AddNewExpenseForm(
           <StyledButton
             classes="mt-2"
             text="Send"
-            onClickFunction={validateBeforeSend}
+            onClickFunction={validateBeforeAcceptInput}
           />
         </div>
         {validationError === true && (
