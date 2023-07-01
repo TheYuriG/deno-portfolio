@@ -36,6 +36,63 @@ export default function WhatsappLinkGenerator() {
   const [generatedLinks, setGeneratedLinks] = useState<WhatsappLinkData[]>(
     [],
   );
+
+  //? Validates if the data on the form should be accepted or rejected
+  function validateBeforeAcceptInput() {
+    //? Track if any validation failed
+    let validInput = true;
+
+    //? Validate if area code is empty or invalid
+    if (
+      linkData.areaCode === "" ||
+      patternValidation(
+          linkData.areaCode,
+          baseLinkData.areaCode,
+          validateAreaCode,
+        ) === validationStatus.Invalid
+    ) {
+      validInput = false;
+      updateValidation((currentValidation) => ({
+        ...currentValidation,
+        areaCode: validationStatus.Invalid,
+      }));
+    }
+    //? Validate if phone number is empty or invalid
+    if (
+      linkData.phoneNumber === "" ||
+      patternValidation(
+          linkData.phoneNumber,
+          baseLinkData.phoneNumber,
+          validatePhoneNumber,
+        ) ===
+        validationStatus.Invalid
+    ) {
+      validInput = false;
+      updateValidation((currentValidation) => ({
+        ...currentValidation,
+        phoneNumber: validationStatus.Invalid,
+      }));
+    }
+
+    //? If either input is invalid, don't push this data to the array
+    if (validInput === false) {
+      return;
+    }
+
+    //? If the inputs are valid, add the data to the list of valid links
+    setGeneratedLinks(
+      (currentLinks) => [
+        ...currentLinks,
+        {
+          areaCode: linkData.areaCode,
+          countryCode: linkData.countryCode,
+          messageText: linkData.messageText,
+          phoneNumber: linkData.phoneNumber,
+        },
+      ],
+    );
+  }
+
   return (
     <>
       <form
@@ -129,19 +186,7 @@ export default function WhatsappLinkGenerator() {
         <StyledButton
           classes="m-4 self-center"
           text="Generate link"
-          onClickFunction={() => {
-            setGeneratedLinks(
-              (currentLinks) => [
-                ...currentLinks,
-                {
-                  areaCode: linkData.areaCode,
-                  countryCode: linkData.countryCode,
-                  messageText: linkData.messageText,
-                  phoneNumber: linkData.phoneNumber,
-                },
-              ],
-            );
-          }}
+          onClickFunction={validateBeforeAcceptInput}
         />
       </form>
       {/* Display list of links to start a conversation with provided numbers on Whatsapp */}
