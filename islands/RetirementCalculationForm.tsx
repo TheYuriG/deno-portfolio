@@ -11,7 +11,7 @@ import { validateAge as validateCurrentAge } from "../services/form-validation/v
 import { validateRetiringAge } from "../services/form-validation/validateRetirementAge.ts";
 import { validateCompensation } from "../services/form-validation/validateCompensation.ts";
 import { validateYearlyInvestment } from "../services/form-validation/validateInvestment.ts";
-import { validateReturns } from "../services/form-validation/validateReturns.ts";
+import { validateOneOrGreater } from "../services/form-validation/validateOneOrGreater.ts";
 import { validateZeroOrGreater } from "../services/form-validation/validateZeroOrGreater.ts";
 
 //? Base state data
@@ -73,7 +73,7 @@ export default function RetirementCalculatorForm(
       patternValidation(
         formValues.returns,
         baseRetirementStats.returns,
-        validateReturns,
+        validateOneOrGreater,
       ),
       patternValidation(
         formValues.starterSavings,
@@ -266,7 +266,7 @@ export default function RetirementCalculatorForm(
           const result = patternValidation(
             formValues.returns,
             baseRetirementStats.returns,
-            validateReturns,
+            validateOneOrGreater,
           );
           updateValidation((currentValidation) => ({
             ...currentValidation,

@@ -8,85 +8,12 @@ import { StyledInput } from "../components/UI/StyledInput.tsx";
 import { StyledButton } from "../components/UI/StyledButton.tsx";
 //? Types for typecasting
 import { validationStatus } from "../types/misc/validationStatus.ts";
+//? Validation functions
+import { validateExpenseDescription } from "../services/form-validation/validateExpenseDescription.ts";
+import { validateExpenseDate } from "../services/form-validation/validateExpenseDate.ts";
+import { validateOneOrGreater } from "../services/form-validation/validateOneOrGreater.ts";
+import { patternValidation } from "../services/form-validation/patternValidation.ts";
 
-//? Validates the form's description input field
-const descriptionValidation = (
-  description: string,
-): validationStatus.Invalid | validationStatus.Valid => {
-  //? This RegEx looks for a string of 3 to 40 alphabet characters + space
-  //? and dash, but will fail validation if two consecutive spaces/dashes
-  //? are provided
-  const regularExpression = "^(?!.*[ -]{2}).{3,}$";
-  //? Creates a RegEx with the expression above
-  const validation = new RegExp(regularExpression);
-  //? Validates the input against the RegEx, returning 1 for
-  //? valid and -1 for invalid input
-  if (validation.test(description)) {
-    return validationStatus.Valid;
-  } else {
-    return validationStatus.Invalid;
-  }
-};
-
-//? Validates the form's date input field
-const dateValidation = (
-  date: string,
-): validationStatus.Invalid | validationStatus.Valid => {
-  //? This RegEx looks for a string of 6 to 20 alphabet characters + space
-  //? and dash, but will fail validation if two consecutive spaces/dashes
-  //? are provided
-  const regularExpression = "^\\d{4}-\\d{2}-\\d{2}$";
-  //? Creates a RegEx with the expression above
-  const validation = new RegExp(regularExpression);
-  //? Validates the input against the RegEx, returning
-  //? validationStatus.Invalid if not in the proper format
-  if (validation.test(date)) {
-    //! Should we limit expenses to past expenses,
-    //! rather than allowing to calculate future needs?
-    const today = new Date().getTime();
-    const jan1st2020 = new Date(2020, 1, 1).getTime();
-    const inputDate = new Date(date).getTime();
-    //? If the format is correct, check if the date is within
-    //? the limit of Jan 1st 2020 and today
-    if (jan1st2020 < inputDate && inputDate < today) {
-      return validationStatus.Valid;
-    } else {
-      return validationStatus.Invalid;
-    }
-  } else {
-    return validationStatus.Invalid;
-  }
-};
-
-//? Validates the form's cost numeric input field
-const costValidation = (
-  cost: string,
-): validationStatus.Invalid | validationStatus.Valid => {
-  if (+cost >= 1) {
-    return validationStatus.Valid;
-  } else {
-    return validationStatus.Invalid;
-  }
-};
-
-//? Given a current value, initial value and a validation function, return
-//? what is the state of validation of the input once the respective field
-//? loses focus
-function validateInput(
-  value: string,
-  initialState: string,
-  pattern: (
-    valueToValidate: string,
-  ) => validationStatus.Invalid | validationStatus.Valid,
-): validationStatus {
-  //? If the field is at initial state, reset validation
-  if (value === initialState) {
-    return validationStatus.Unchanged;
-  } //? If the field is not empty, check if a validation RegEx pattern was provided
-  else {
-    return pattern(value);
-  }
-}
 //* Date formatted as YYYY-MM-DD
 const [timezonelessDate, timezoneDateGap] = new Date().toISOString().split("T");
 //? How data is initially instantiated
@@ -148,10 +75,10 @@ export default function AddNewExpenseForm(
       }));
       validationErrors++;
     } else if (
-      validateInput(
+      patternValidation(
         formValues.description,
         defaultFormValues.description,
-        descriptionValidation,
+        validateExpenseDescription,
       ) ===
         validationStatus.Invalid
     ) {
@@ -163,10 +90,10 @@ export default function AddNewExpenseForm(
     }
     //? If the cost is invalid, increase errors counter
     if (
-      validateInput(
+      patternValidation(
         formValues.cost.toString(),
         defaultFormValues.cost.toString(),
-        costValidation,
+        validateOneOrGreater,
       ) === validationStatus.Invalid
     ) {
       validationErrors++;
@@ -187,10 +114,10 @@ export default function AddNewExpenseForm(
         date: validationStatus.Invalid,
       }));
     } else if (
-      validateInput(
+      patternValidation(
         formValues.date,
         defaultFormValues.date,
-        dateValidation,
+        validateExpenseDate,
       ) === validationStatus.Invalid
     ) {
       validationErrors++;
@@ -244,10 +171,10 @@ export default function AddNewExpenseForm(
             }));
           }}
           validationFunction={() => {
-            const result = validateInput(
+            const result = patternValidation(
               formValues.description,
               defaultFormValues.description,
-              descriptionValidation,
+              validateExpenseDescription,
             );
             updateValidation((currentValidation) => ({
               ...currentValidation,
@@ -272,10 +199,10 @@ export default function AddNewExpenseForm(
             }));
           }}
           validationFunction={() => {
-            const result = validateInput(
+            const result = patternValidation(
               formValues.cost.toString(),
               defaultFormValues.cost.toString(),
-              costValidation,
+              validateOneOrGreater,
             );
             updateValidation((currentValidation) => ({
               ...currentValidation,
@@ -302,10 +229,10 @@ export default function AddNewExpenseForm(
             }));
           }}
           validationFunction={() => {
-            const result = validateInput(
+            const result = patternValidation(
               formValues.date,
               defaultFormValues.date,
-              dateValidation,
+              validateExpenseDate,
             );
             updateValidation((currentValidation) => ({
               ...currentValidation,
