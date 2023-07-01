@@ -10,6 +10,7 @@ import { StyledButton } from "../components/UI/StyledButton.tsx";
 import { patternValidation } from "../services/form-validation/patternValidation.ts";
 import { validateAreaCode } from "../services/form-validation/validateAreaCode.ts";
 import { validatePhoneNumber } from "../services/form-validation/validatePhoneNumber.ts";
+import { WhatsappLinksList } from "../components/tools/WhatsappLinksList.tsx";
 
 //? Default form values and validation
 const defaultPhoneNumber = {
@@ -28,10 +29,8 @@ export default function WhatsappLinkGenerator() {
   const [formValidationStatus, updateValidation] = useState(
     defaultFormValidation,
   );
-  console.log(
-    "whole number:",
-    `+${phoneNumber.countryCode}${phoneNumber.areaCode}${phoneNumber.phoneNumber}`,
-  );
+  //? Array of links to message a contact on Whatsapp
+  const [generatedLinks, setGeneratedLinks] = useState<string[]>([]);
   return (
     <>
       <form
@@ -104,8 +103,22 @@ export default function WhatsappLinkGenerator() {
           }}
           helpInformation="Must only contain numerical digits and between 5 to 10 characters long"
         />
-        <StyledButton classes="m-4 self-center" text="Generate link" />
+        {/* Generate link to messaging on whatsapp with provided information */}
+        <StyledButton
+          classes="m-4 self-center"
+          text="Generate link"
+          onClickFunction={() => {
+            setGeneratedLinks(
+              (currentLinks) => [
+                ...currentLinks,
+                `https://wa.me/${phoneNumber.countryCode}${phoneNumber.areaCode}${phoneNumber.phoneNumber}`,
+              ],
+            );
+          }}
+        />
       </form>
+      {/* Display list of links to start a conversation with provided numbers on Whatsapp */}
+      <WhatsappLinksList links={generatedLinks} />
     </>
   );
 }
