@@ -45,7 +45,7 @@ export default function RetirementCalculatorForm(
   const [validationError, updateValidationError] = useState(false);
 
   //? Validates if the data on the form should be accepted or rejected
-  function validateBeforeCalculate() {
+  function validateBeforeAcceptInput() {
     //? Track if any validation failed
     let validInput = true;
     //? Track if all fields meet minimum requirements
@@ -113,7 +113,6 @@ export default function RetirementCalculatorForm(
     }
     //? Check if any validation failed
     if (validInput === false) {
-      console.log("bad input received, validation is", validationError);
       return;
     }
     updateValuesToCalculate(formValues);
@@ -127,6 +126,7 @@ export default function RetirementCalculatorForm(
         key="current-age"
         inputType="number"
         label="Current age"
+        labelLink="current-age"
         name="retirement"
         value={formValues.currentAge}
         inputFunction={(value) =>
@@ -156,6 +156,7 @@ export default function RetirementCalculatorForm(
         key="retiring-age"
         inputType="number"
         label="Retiring age"
+        labelLink="retiring-age"
         name="retirement"
         value={formValues.plannedRetiringAge}
         inputFunction={(value) =>
@@ -192,6 +193,7 @@ export default function RetirementCalculatorForm(
         key="yearly-compensation"
         inputType="number"
         label="Compensation ($/year)"
+        labelLink="compensation"
         name="retirement"
         value={formValues.compensation}
         inputFunction={(value) =>
@@ -221,6 +223,7 @@ export default function RetirementCalculatorForm(
         key="yearly-investment"
         inputType="number"
         label="Investment (%/year)"
+        labelLink="yearly-investment"
         name="retirement"
         value={formValues.yearlySavings}
         inputFunction={(value) =>
@@ -250,6 +253,7 @@ export default function RetirementCalculatorForm(
         key="yearly-return"
         inputType="number"
         label="Returns (%/year)"
+        labelLink="yearly-returns"
         name="retirement"
         value={formValues.returns}
         inputFunction={(value) =>
@@ -278,6 +282,7 @@ export default function RetirementCalculatorForm(
         key="current-savings"
         inputType="number"
         label="Current savings"
+        labelLink="current-savings"
         name="retirement"
         value={formValues.starterSavings}
         inputFunction={(value) =>
@@ -307,6 +312,7 @@ export default function RetirementCalculatorForm(
         key="other-income"
         inputType="number"
         label="Pension/other ($/year)"
+        labelLink="other-income"
         name="retirement"
         value={formValues.additionalIncome}
         inputFunction={(value) =>
@@ -335,7 +341,7 @@ export default function RetirementCalculatorForm(
       <StyledButton
         classes="mt-2 self-center"
         text="Calculate"
-        onClickFunction={validateBeforeCalculate}
+        onClickFunction={validateBeforeAcceptInput}
       />
       {validationError === true && (
         <ErrorAlert
