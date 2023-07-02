@@ -40,19 +40,41 @@ export default function Home(
           back={{ title: "Return to projects overview", link: "/projects" }}
         />
         <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
-          <Collapsible
-            checkboxText="What did I learn?"
-            innerText={[
-              // first paragraph
-              "Sadly I didn't learn anything practical from doing this project, as all that was taught were things I've already known about from building stuff before.",
-              // second paragraph
-              "I learned some theorical things which might be useful when dealing with legacy codebases, like how React (the course's focus) can render components by nesting React.createElement(component, properties, child1, child2, child3, ..., childN) and this is the way that it was done before JSX.",
-              // third paragraph
-              "It makes sense why everything is a component, otherwise it would get really easy to enter a component hell with that style. JSX isn't much different, but written as HTML instead of nesting functions.",
-              // fourth paragraph
-              "I felt like this specific project didn't go deep enough. It didn't make me 'CRUD' the expenses, which I just ended up having to figure out and do by myself (that was the fun part!). I also went the extra mile with a few things, deviating from the project structure and styling to challenge myself a bit more.",
-            ]}
-          />
+          {/* <p class="my-2 text-justify"> */}
+          <Collapsible checkboxText="What did I learn?">
+            {/* // first paragraph */}
+            <p class="my-2 text-justify">
+              Sadly I didn't learn anything practical from doing this project,
+              as all that was taught were things I've already known about from
+              building stuff before.
+            </p>
+
+            {/* // second paragraph */}
+            <p class="my-2 text-justify">
+              I learned some theorical things which might be useful when dealing
+              with legacy codebases, like how React (the course's focus) can
+              render components by nesting React.createElement(component,
+              properties, child1, child2, child3, ..., childN) and this is the
+              way that it was done before JSX.
+            </p>
+
+            {/* // third paragraph */}
+            <p class="my-2 text-justify">
+              It makes sense why everything is a component, otherwise it would
+              get really easy to enter a component hell with that style. JSX
+              isn't much different, but written as HTML instead of nesting
+              functions.
+            </p>
+
+            {/* // fourth paragraph */}
+            <p class="my-2 text-justify">
+              I felt like this specific project didn't go deep enough. It didn't
+              make me 'CRUD' the expenses, which I just ended up having to
+              figure out and do by myself (that was the fun part!). I also went
+              the extra mile with a few things, deviating from the project
+              structure and styling to challenge myself a bit more.
+            </p>
+          </Collapsible>
           <ExpensesTracker key={"all-expenses"} expenses={savedExpenses} />
         </section>
       </Base>
