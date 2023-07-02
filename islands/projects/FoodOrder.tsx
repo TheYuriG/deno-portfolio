@@ -4,17 +4,16 @@ import { useEffect, useRef, useState } from "preact/hooks";
 import type { Food } from "../../types/food-order/Food.ts";
 //? Renders invidual food items on the page
 import { FoodItem } from "../../components/projects/food-order/FoodItem.tsx";
-//? Creates a modal with a shaded/blurred backdrop over the content behind it
-import { ModalWithBackdrop } from "../../components/UI/ModalWithBackdrop.tsx";
 //? Cart Button that opens the current Cart as a Modal
 import CartButton from "../../components/projects/food-order/CartButton.tsx";
 //? Content of the current Cart in a modal for the user to view Cart Items
 import CartModal from "../../components/projects/food-order/CartModal.tsx";
 //? Import accent button to create the Order now! button at the bottom
 import { AccentButton } from "../../components/UI/AccentButton.tsx";
-import { ModalExtendedImage } from "../../components/UI/ModalExtendedImage.tsx";
 //? Default styled header
 import { StyledSubHeader } from "../../components/UI/StyledSubHeader.tsx";
+//? Creates a modal with a shaded/blurred backdrop over the content behind it
+import Modal from "../UI/Modal.tsx";
 
 //? Define properties required for this component
 interface FoodOrderProperties {
@@ -130,7 +129,7 @@ export default function FoodOrder({ foods }: FoodOrderProperties) {
   return (
     <section class="flex flex-col custom-bo-ac rounded-2xl px-1 pb-4">
       {/* Cart modal with currently selected food items, if any */}
-      <ModalWithBackdrop
+      <Modal
         display={displayModal}
         closeModalFunction={() => toggleDisplayModal(false)}
       >
@@ -140,12 +139,20 @@ export default function FoodOrder({ foods }: FoodOrderProperties) {
           updateCartFunction={updateCartContent}
           closeModal={() => toggleDisplayModal(false)}
         />
-      </ModalWithBackdrop>
-      <ModalExtendedImage
+      </Modal>
+      <Modal
         display={expandFoodImage}
-        imageLink={expandedModalImageLink}
+        hideOnAnyClick={true}
         closeModalFunction={() => displayExpandedFoodImage(false)}
-      />
+      >
+        <img
+          role="dialog"
+          aria-modal="true"
+          class="fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
+          src={expandedModalImageLink}
+          alt="Delicious food"
+        />
+      </Modal>
       {/* Header with cart */}
       <div class="flex flex-col md:flex-row md:justify-between items-center pt-2 px-4">
         <StyledSubHeader title="Meals of the day" />

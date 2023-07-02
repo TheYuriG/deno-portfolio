@@ -2,16 +2,17 @@
 import { useState } from "preact/hooks";
 //? Import single checkbox to toggle content on and off
 import { StyledSingleCheckbox } from "../../components/UI/StyledSingleCheckbox.tsx";
+import { JSX } from "preact";
 
 //? Define optional properties for the buttons
 interface CollapsibleProperties {
-  innerText: string[];
   checkboxText: string;
+  children: JSX.Element[];
 }
 
 //? Exports Navigation Buttons to go to the previous page and next Article
 export default function Collapsible(
-  { innerText, checkboxText }: CollapsibleProperties,
+  { checkboxText, children }: CollapsibleProperties,
 ) {
   //? Manages if the discovery text should be displayed or not
   const [displayDiscovery, toggleDisplayDiscovery] = useState(false);
@@ -34,7 +35,7 @@ export default function Collapsible(
             ? "h-60 pr-4 overflow-auto"
             : "h-0 pr-7 overflow-hidden")}
       >
-        {innerText.map((text) => <p class="my-2 text-justify">{text}</p>)}
+        {children}
       </div>
     </section>
   );

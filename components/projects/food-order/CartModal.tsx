@@ -37,15 +37,21 @@ export default function CartModal({
   //? If no items are in the cartContent, return a simple "empty cart" message
   if (items.size === 0) {
     return (
-      <div class="flex flex-col w-full p-3">
-        <span class="text-bold my-2 text-center text-3xl f-as">
-          No items in your cart yet!
-        </span>
-        <StyledButton
-          classes="self-end"
-          text="Close"
-          onClickFunction={closeModal}
-        />
+      <div
+        role="dialog"
+        aria-modal="true"
+        class="fixed z-20 top-1/2 left-1/2 min-w-[50dvw] max-w-[80dvw] custom-bo-nc rounded-xl py-2 px-4 custom-sh-nc custom-bg-bc transform-center"
+      >
+        <div class="flex flex-col w-full p-3">
+          <span class="text-bold my-2 text-center text-3xl f-as">
+            No items in your cart yet!
+          </span>
+          <StyledButton
+            classes="self-end"
+            text="Close"
+            onClickFunction={closeModal}
+          />
+        </div>
       </div>
     );
   }
@@ -55,98 +61,104 @@ export default function CartModal({
 
   //? Return the cart items and the total
   return (
-    <div class="flex flex-col p-3 w-fit max-w-[90dvw] max-h-[90dvh]">
-      {/* Modal header */}
-      <StyledSubHeader title="Cart items" />
-      {/* List of items in cart */}
-      <ol class="overflow-auto styled-scrollbar">
-        {cartItems.map(([foodName, { quantity, cost }]) => (
-          <li class="flex flex-col">
-            {/* Food item name, remove item from cart */}
-            <div class="flex justify-between min-w-max items-center pr-1.5">
-              {/* Cart item name */}
-              <h3 class="text-xl">
-                {foodName}
-              </h3>
-              {/* Remove item completely from cart */}
-              <span
-                class="hover:cursor-pointer select-none"
-                onClick={() => {
-                  deleteItemFromCart({
-                    foodName,
-                    foodQuantity: quantity,
-                    foodCost: cost,
-                    updateCartFunction,
-                  });
-                }}
-              >
-                {/* XMark SVG */}
-                <XMarkIcon
-                  iconHeight="1.5em"
-                  iconWidth="1.5em"
-                  iconFillColor="red"
-                  iconStrokeColor="var(--neutral-color)"
-                  iconStrokeWidth="30"
-                />
-              </span>
-            </div>
-            {/* Food item count, update cart item count */}
-            <div class="mt-2 inline-flex items-center self-end pr-1 select-none">
-              {/* Decrease item count. If last item, remove it from the cart */}
-              <span
-                class="mr-2 hover:cursor-pointer"
-                onClick={() => {
-                  reduceCartItemByOne({
-                    foodName,
-                    foodCost: cost,
-                    updateCartFunction,
-                  });
-                }}
-              >
-                {/* Minus sign SVG */}
-                <MinusIcon iconHeight="1.5em" iconWidth="1.5em" />
-              </span>
-              <span class="text-center">
-                {quantity}x ${cost.toFixed(2)}
-              </span>
-              {/* Increase item count */}
-              <span
-                class="ml-2 hover:cursor-pointer"
-                onClick={() => {
-                  increaseCartItemByOne({
-                    foodName,
-                    foodCost: cost,
-                    updateCartFunction,
-                  });
-                }}
-              >
-                {/* Plus sign SVG */}
-                <PlusIcon iconHeight="1.5em" iconWidth="1.5em" />
-              </span>
-            </div>
-            {/* Divider */}
-            <hr class="my-2 custom-bo-nc border" />
-          </li>
-        ))}
-      </ol>
-      {/* Cart total cost */}
-      <span class="my-2 text-xl text-bold text-right">
-        Total: ${cost.toFixed(2)}
-      </span>
-      {/* Row of buttons to close or complete the order */}
-      <div class="flex self-end">
-        <GhostButton
-          key="close-modal"
-          onClickFunction={closeModal}
-        >
-          Close
-        </GhostButton>
-        <StyledButton
-          classes="ml-4"
-          text="Order"
-          onClickFunction={() =>
-            window.location.href = "/projects/food-order/checkout"}
-        />
+    <div
+      role="dialog"
+      aria-modal="true"
+      class="fixed z-20 top-1/2 left-1/2 min-w-[50dvw] max-w-[80dvw] custom-bo-nc rounded-xl py-2 px-4 custom-sh-nc custom-bg-bc transform-center"
+    >
+      <div class="flex flex-col p-3 w-fit max-w-[90dvw] max-h-[90dvh]">
+        {/* Modal header */}
+        <StyledSubHeader title="Cart items" />
+        {/* List of items in cart */}
+        <ol class="overflow-auto styled-scrollbar">
+          {cartItems.map(([foodName, { quantity, cost }]) => (
+            <li class="flex flex-col">
+              {/* Food item name, remove item from cart */}
+              <div class="flex justify-between min-w-max items-center pr-1.5">
+                {/* Cart item name */}
+                <h3 class="text-xl">
+                  {foodName}
+                </h3>
+                {/* Remove item completely from cart */}
+                <span
+                  class="hover:cursor-pointer select-none"
+                  onClick={() => {
+                    deleteItemFromCart({
+                      foodName,
+                      foodQuantity: quantity,
+                      foodCost: cost,
+                      updateCartFunction,
+                    });
+                  }}
+                >
+                  {/* XMark SVG */}
+                  <XMarkIcon
+                    iconHeight="1.5em"
+                    iconWidth="1.5em"
+                    iconFillColor="red"
+                    iconStrokeColor="var(--neutral-color)"
+                    iconStrokeWidth="30"
+                  />
+                </span>
+              </div>
+              {/* Food item count, update cart item count */}
+              <div class="mt-2 inline-flex items-center self-end pr-1 select-none">
+                {/* Decrease item count. If last item, remove it from the cart */}
+                <span
+                  class="mr-2 hover:cursor-pointer"
+                  onClick={() => {
+                    reduceCartItemByOne({
+                      foodName,
+                      foodCost: cost,
+                      updateCartFunction,
+                    });
+                  }}
+                >
+                  {/* Minus sign SVG */}
+                  <MinusIcon iconHeight="1.5em" iconWidth="1.5em" />
+                </span>
+                <span class="text-center">
+                  {quantity}x ${cost.toFixed(2)}
+                </span>
+                {/* Increase item count */}
+                <span
+                  class="ml-2 hover:cursor-pointer"
+                  onClick={() => {
+                    increaseCartItemByOne({
+                      foodName,
+                      foodCost: cost,
+                      updateCartFunction,
+                    });
+                  }}
+                >
+                  {/* Plus sign SVG */}
+                  <PlusIcon iconHeight="1.5em" iconWidth="1.5em" />
+                </span>
+              </div>
+              {/* Divider */}
+              <hr class="my-2 custom-bo-nc border" />
+            </li>
+          ))}
+        </ol>
+        {/* Cart total cost */}
+        <span class="my-2 text-xl text-bold text-right">
+          Total: ${cost.toFixed(2)}
+        </span>
+        {/* Row of buttons to close or complete the order */}
+        <div class="flex self-end">
+          <GhostButton
+            key="close-modal"
+            onClickFunction={closeModal}
+          >
+            Close
+          </GhostButton>
+          <StyledButton
+            classes="ml-4"
+            text="Order"
+            onClickFunction={() =>
+              window.location.href = "/projects/food-order/checkout"}
+          />
+        </div>
       </div>
     </div>
   );
