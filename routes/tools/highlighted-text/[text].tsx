@@ -7,15 +7,15 @@ import { StyledHeader } from "../../../components/UI/StyledHeader.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
 import { NavigationButtons } from "../../../components/misc/NavigationButtons.tsx";
 //? Import the component responsible for adding the content that will eventually be highlighted
-import HighlightedCode from "../../../islands/HighlightedCode.tsx";
+import HighlightedCode from "../../../islands/tools/HighlightedCode.tsx";
 //? Shows timer remaining on hover
-import DigitalTimer from "../../../islands/DigitalTimer.tsx";
+import DigitalTimer from "../../../islands/UI/DigitalTimer.tsx";
 //? Imports middleware responsible for processing GET/POST requests to this route
 import { highlightTextMiddleware } from "../../../middleware/tools/__highlighted-text.tsx";
 //? Import interface that defines what are the required properties for this content
 import type { HighlightText } from "../../../types/syntax-highlight/HighlightText.ts";
 //? Import component that creates a clickable textarea that copies the inner content to clipboard
-import CopyTextAreaToClipboard from "../../../islands/CopyTextAreaToClipboard.tsx";
+import CopyTextAreaToClipboard from "../../../islands/misc/CopyTextAreaToClipboard.tsx";
 //? Import CSS classes text example
 import { syntaxHighlightClassesStyles } from "../../../types/syntax-highlight/syntaxHighlightClassesStyles.ts";
 //? Import Twind config example
@@ -25,7 +25,7 @@ import { syntaxHighlightTwindConfig } from "../../../types/syntax-highlight/synt
 export const handler = highlightTextMiddleware;
 
 export default function Home(
-  { data: { text, expiresAt, createdAt } }: {
+  { data: { text, expiresAt } }: {
     data: HighlightText;
   },
 ) {

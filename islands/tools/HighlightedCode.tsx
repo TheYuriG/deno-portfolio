@@ -1,10 +1,10 @@
 import { useMemo, useRef, useState } from "preact/hooks";
 //? Function to copy content to clipboard
-import { copyToClipboard } from "../services/copyToClipboard.ts";
+import { copyToClipboard } from "../../services/copyToClipboard.ts";
 //? Import type for typecasting useState
-import type { booleanOrUndefined } from "../types/misc/booleanOrUndefined.ts";
+import type { booleanOrUndefined } from "../../types/misc/booleanOrUndefined.ts";
 //? Import status report toggle
-import { CopyStatus } from "../components/misc/CopyStatus.tsx";
+import { CopyStatus } from "../../components/misc/CopyStatus.tsx";
 
 //? Define function that will try to copy the edited content to
 //? clipboard and then update the success state

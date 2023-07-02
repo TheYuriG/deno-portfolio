@@ -7,7 +7,7 @@ import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
 import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 //? Infinitely expandable insanity section
-import InsanitySection from "../../islands/InsanitySection.tsx";
+import InsanitySection from "../../islands/toys/InsanitySection.tsx";
 
 export default function Home() {
   return (

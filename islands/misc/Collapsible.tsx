@@ -1,7 +1,7 @@
 //? Import from Preact to be able to change state
 import { useState } from "preact/hooks";
 //? Import single checkbox to toggle content on and off
-import { StyledSingleCheckbox } from "../components/UI/StyledSingleCheckbox.tsx";
+import { StyledSingleCheckbox } from "../../components/UI/StyledSingleCheckbox.tsx";
 
 //? Define optional properties for the buttons
 interface CollapsibleProperties {
@@ -21,6 +21,7 @@ export default function Collapsible(
       {/* Display a checkbox to enable/disable displaying the discovery text */}
       <StyledSingleCheckbox
         label={checkboxText}
+        labelName="toggle-content"
         onChangeFunction={() => {
           toggleDisplayDiscovery((curr) => !curr);
         }}

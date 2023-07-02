@@ -1,29 +1,29 @@
 //? Import from Preact to be able to change state
 import { useState } from "preact/hooks";
 //? Responsive and styled Label + Input
-import { StyledInput } from "../components/UI/StyledInput.tsx";
+import { StyledInput } from "../../components/UI/StyledInput.tsx";
 //? Styled Button to confirm sending the form
-import { StyledButton } from "../components/UI/StyledButton.tsx";
+import { StyledButton } from "../../components/UI/StyledButton.tsx";
 //? Styled Select for Employment Status dropdown
-import { StyledSelect } from "../components/UI/StyledSelect.tsx";
+import { StyledSelect } from "../../components/UI/StyledSelect.tsx";
 //? Styled radio for Welfare option
-import { StyledRadio } from "../components/UI/StyledRadio.tsx";
+import { StyledRadio } from "../../components/UI/StyledRadio.tsx";
 //? Styled checkbox for Stimulus Check option
-import { StyledCheckboxGroup } from "../components/UI/StyledCheckboxGroup.tsx";
+import { StyledCheckboxGroup } from "../../components/UI/StyledCheckboxGroup.tsx";
 //? Import text area to display the submit results
-import { StyledTextArea } from "../components/UI/StyledTextArea.tsx";
+import { StyledTextArea } from "../../components/UI/StyledTextArea.tsx";
 //? Display error in as an ErrorAlert
-import { ErrorAlert } from "../components/UI/ErrorAlert.tsx";
+import { ErrorAlert } from "../../components/UI/ErrorAlert.tsx";
 
 //? Types for typecasting
-import { validationStatus } from "../types/misc/validationStatus.ts";
-import type { stimulusCheckboxOptions } from "../types/stimulusCheckboxOptions.ts";
+import { validationStatus } from "../../types/misc/validationStatus.ts";
+import type { stimulusCheckboxOptions } from "../../types/stimulusCheckboxOptions.ts";
 
 //? Validation functions
-import { validateName } from "../services/form-validation/validateName.ts";
-import { validateAge } from "../services/form-validation/validateAge.ts";
-import { validateProfession } from "../services/form-validation/validateProfession.ts";
-import { patternValidation } from "../services/form-validation/patternValidation.ts";
+import { validateName } from "../../services/form-validation/validateName.ts";
+import { validateAge } from "../../services/form-validation/validateAge.ts";
+import { validateProfession } from "../../services/form-validation/validateProfession.ts";
+import { patternValidation } from "../../services/form-validation/patternValidation.ts";
 
 //? Placeholder text to be used on the textArea before any data got sent
 const textAreaPlaceholder = 'Data will be displayed here as you click "Send".' +

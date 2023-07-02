@@ -1,18 +1,18 @@
 //? Manage form state
 import { useState } from "preact/hooks";
 //? Styled components
-import { StyledInput } from "../components/UI/StyledInput.tsx";
-import { CountryPhoneCodeSelect } from "../components/tools/CountryPhoneCodeSelect.tsx";
+import { StyledInput } from "../../components/UI/StyledInput.tsx";
+import { CountryPhoneCodeSelect } from "../../components/tools/CountryPhoneCodeSelect.tsx";
 //? Types for typecasting
-import { validationStatus } from "../types/misc/validationStatus.ts";
-import { WhatsappLinkData } from "../types/whatsapp-link-generator/whatsapp-link-data.ts";
-import { StyledButton } from "../components/UI/StyledButton.tsx";
+import { validationStatus } from "../../types/misc/validationStatus.ts";
+import { WhatsappLinkData } from "../../types/whatsapp-link-generator/whatsapp-link-data.ts";
+import { StyledButton } from "../../components/UI/StyledButton.tsx";
 //? Validation functions
-import { patternValidation } from "../services/form-validation/patternValidation.ts";
-import { validateAreaCode } from "../services/form-validation/validateAreaCode.ts";
-import { validatePhoneNumber } from "../services/form-validation/validatePhoneNumber.ts";
-import { WhatsappLinksList } from "../components/tools/WhatsappLinksList.tsx";
-import { StyledTextArea } from "../components/UI/StyledTextArea.tsx";
+import { patternValidation } from "../../services/form-validation/patternValidation.ts";
+import { validateAreaCode } from "../../services/form-validation/validateAreaCode.ts";
+import { validatePhoneNumber } from "../../services/form-validation/validatePhoneNumber.ts";
+import { WhatsappLinksList } from "../../components/tools/WhatsappLinksList.tsx";
+import { StyledTextArea } from "../../components/UI/StyledTextArea.tsx";
 
 //? Default form values and validation
 const baseLinkData = {

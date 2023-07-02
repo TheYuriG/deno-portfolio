@@ -6,7 +6,7 @@ import { Base } from "../../../components/base/Base.tsx";
 import { NavigationButtons } from "../../../components/misc/NavigationButtons.tsx";
 //? Header to display page name
 import { StyledHeader } from "../../../components/UI/StyledHeader.tsx";
-import FoodOrderCheckout from "../../../islands/FoodOrderCheckout.tsx";
+import FoodOrderCheckout from "../../../islands/projects/FoodOrderCheckout.tsx";
 
 //? Renders the food-order checkout page
 export default function Home() {

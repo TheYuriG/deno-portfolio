@@ -1,18 +1,18 @@
 //? Import from Preact to be able to change state
 import { useState } from "preact/hooks";
 //? Default styled header
-import { StyledSubHeader } from "../components/UI/StyledSubHeader.tsx";
+import { StyledSubHeader } from "../../components/UI/StyledSubHeader.tsx";
 //? Responsive and styled Label + Input
-import { StyledInput } from "../components/UI/StyledInput.tsx";
+import { StyledInput } from "../../components/UI/StyledInput.tsx";
 //? Styled Button to confirm sending the form
-import { StyledButton } from "../components/UI/StyledButton.tsx";
+import { StyledButton } from "../../components/UI/StyledButton.tsx";
 //? Types for typecasting
-import { validationStatus } from "../types/misc/validationStatus.ts";
+import { validationStatus } from "../../types/misc/validationStatus.ts";
 //? Validation functions
-import { validateExpenseDescription } from "../services/form-validation/validateExpenseDescription.ts";
-import { validateExpenseDate } from "../services/form-validation/validateExpenseDate.ts";
-import { validateOneOrGreater } from "../services/form-validation/validateOneOrGreater.ts";
-import { patternValidation } from "../services/form-validation/patternValidation.ts";
+import { validateExpenseDescription } from "../../services/form-validation/validateExpenseDescription.ts";
+import { validateExpenseDate } from "../../services/form-validation/validateExpenseDate.ts";
+import { validateOneOrGreater } from "../../services/form-validation/validateOneOrGreater.ts";
+import { patternValidation } from "../../services/form-validation/patternValidation.ts";
 
 //* Date formatted as YYYY-MM-DD
 const [timezonelessDate, timezoneDateGap] = new Date().toISOString().split("T");

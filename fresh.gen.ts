@@ -26,21 +26,21 @@ import * as $20 from "./routes/toys/spinners.tsx";
 import * as $21 from "./routes/what-is-this.tsx";
 import * as $22 from "./routes/work/form.tsx";
 import * as $23 from "./routes/work/index.tsx";
-import * as $$0 from "./islands/AddNewExpense.tsx";
-import * as $$1 from "./islands/Collapsible.tsx";
-import * as $$2 from "./islands/CopyTextAreaToClipboard.tsx";
-import * as $$3 from "./islands/DigitalTimer.tsx";
-import * as $$4 from "./islands/ExpensesTracker.tsx";
-import * as $$5 from "./islands/ExpensesYearSelect.tsx";
-import * as $$6 from "./islands/FoodOrder.tsx";
-import * as $$7 from "./islands/FoodOrderCheckout.tsx";
-import * as $$8 from "./islands/FormWithValidation.tsx";
-import * as $$9 from "./islands/HighlightedCode.tsx";
-import * as $$10 from "./islands/InsanitySection.tsx";
-import * as $$11 from "./islands/RetirementCalculationForm.tsx";
-import * as $$12 from "./islands/RetirementCalculator.tsx";
-import * as $$13 from "./islands/ThemeSwitcher.tsx";
-import * as $$14 from "./islands/WhatsappLinkGenerator.tsx";
+import * as $$0 from "./islands/UI/DigitalTimer.tsx";
+import * as $$1 from "./islands/misc/Collapsible.tsx";
+import * as $$2 from "./islands/misc/CopyTextAreaToClipboard.tsx";
+import * as $$3 from "./islands/misc/FormWithValidation.tsx";
+import * as $$4 from "./islands/misc/ThemeSwitcher.tsx";
+import * as $$5 from "./islands/projects/AddNewExpense.tsx";
+import * as $$6 from "./islands/projects/ExpensesTracker.tsx";
+import * as $$7 from "./islands/projects/ExpensesYearSelect.tsx";
+import * as $$8 from "./islands/projects/FoodOrder.tsx";
+import * as $$9 from "./islands/projects/FoodOrderCheckout.tsx";
+import * as $$10 from "./islands/tools/HighlightedCode.tsx";
+import * as $$11 from "./islands/tools/RetirementCalculationForm.tsx";
+import * as $$12 from "./islands/tools/RetirementCalculator.tsx";
+import * as $$13 from "./islands/tools/WhatsappLinkGenerator.tsx";
+import * as $$14 from "./islands/toys/InsanitySection.tsx";
 
 const manifest = {
   routes: {
@@ -70,21 +70,21 @@ const manifest = {
     "./routes/work/index.tsx": $23,
   },
   islands: {
-    "./islands/AddNewExpense.tsx": $$0,
-    "./islands/Collapsible.tsx": $$1,
-    "./islands/CopyTextAreaToClipboard.tsx": $$2,
-    "./islands/DigitalTimer.tsx": $$3,
-    "./islands/ExpensesTracker.tsx": $$4,
-    "./islands/ExpensesYearSelect.tsx": $$5,
-    "./islands/FoodOrder.tsx": $$6,
-    "./islands/FoodOrderCheckout.tsx": $$7,
-    "./islands/FormWithValidation.tsx": $$8,
-    "./islands/HighlightedCode.tsx": $$9,
-    "./islands/InsanitySection.tsx": $$10,
-    "./islands/RetirementCalculationForm.tsx": $$11,
-    "./islands/RetirementCalculator.tsx": $$12,
-    "./islands/ThemeSwitcher.tsx": $$13,
-    "./islands/WhatsappLinkGenerator.tsx": $$14,
+    "./islands/UI/DigitalTimer.tsx": $$0,
+    "./islands/misc/Collapsible.tsx": $$1,
+    "./islands/misc/CopyTextAreaToClipboard.tsx": $$2,
+    "./islands/misc/FormWithValidation.tsx": $$3,
+    "./islands/misc/ThemeSwitcher.tsx": $$4,
+    "./islands/projects/AddNewExpense.tsx": $$5,
+    "./islands/projects/ExpensesTracker.tsx": $$6,
+    "./islands/projects/ExpensesYearSelect.tsx": $$7,
+    "./islands/projects/FoodOrder.tsx": $$8,
+    "./islands/projects/FoodOrderCheckout.tsx": $$9,
+    "./islands/tools/HighlightedCode.tsx": $$10,
+    "./islands/tools/RetirementCalculationForm.tsx": $$11,
+    "./islands/tools/RetirementCalculator.tsx": $$12,
+    "./islands/tools/WhatsappLinkGenerator.tsx": $$13,
+    "./islands/toys/InsanitySection.tsx": $$14,
   },
   baseUrl: import.meta.url,
 };

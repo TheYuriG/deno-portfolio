@@ -7,7 +7,7 @@ import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
 import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 //? Stylized and functional Form Island
-import FormWithValidation from "../../islands/FormWithValidation.tsx";
+import FormWithValidation from "../../islands/misc/FormWithValidation.tsx";
 
 export default function Home() {
   return (
