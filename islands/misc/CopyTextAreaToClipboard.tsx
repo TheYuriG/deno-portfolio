@@ -1,9 +1,9 @@
 import { useState } from "preact/hooks";
 //? Display wether the content was successfully copied to clipboard
-import { CopyStatus } from "../components/misc/CopyStatus.tsx";
+import { CopyStatus } from "../../components/misc/CopyStatus.tsx";
 //? Function to copy content to clipboard
-import { copyToClipboard } from "../services/copyToClipboard.ts";
-import { StyledTextArea } from "../components/UI/StyledTextArea.tsx";
+import { copyToClipboard } from "../../services/copyToClipboard.ts";
+import { StyledTextArea } from "../../components/UI/StyledTextArea.tsx";
 
 //?
 export default function CopyTextAreaToClipboard(

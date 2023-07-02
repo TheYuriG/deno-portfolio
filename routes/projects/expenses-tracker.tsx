@@ -9,9 +9,9 @@ import { Base } from "../../components/base/Base.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
 import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 //? Import the component responsible for tracking all expenses
-import ExpensesTracker from "../../islands/ExpensesTracker.tsx";
+import ExpensesTracker from "../../islands/projects/ExpensesTracker.tsx";
 //? Describe things that were learned with this current project
-import Collapsible from "../../islands/Collapsible.tsx";
+import Collapsible from "../../islands/misc/Collapsible.tsx";
 //? Import middleware responsible for pulling expenses tracked
 import { expensesTrackerMiddleware } from "../../middleware/projects/__expenses-tracker.ts";
 

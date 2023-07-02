@@ -1,9 +1,9 @@
 //? Import from Preact to manage state
 import { useEffect, useState } from "preact/hooks";
 //? Loading animation while cart is being loaded or request is being processed
-import { LoadingAnimation } from "../assets/LoadingAnimation.tsx";
-import { FoodOrderCheckoutItemsList } from "../components/projects/food-order/FoodOrderCheckoutItemsList.tsx";
-import { FoodOrderCheckoutPaymentForm } from "../components/projects/food-order/FoodOrderCheckoutPaymentForm.tsx";
+import { LoadingAnimation } from "../../assets/LoadingAnimation.tsx";
+import { FoodOrderCheckoutItemsList } from "../../components/projects/food-order/FoodOrderCheckoutItemsList.tsx";
+import { FoodOrderCheckoutPaymentForm } from "../../components/projects/food-order/FoodOrderCheckoutPaymentForm.tsx";
 
 //? Instantiate default initial state for the cart
 const starterCartState = {

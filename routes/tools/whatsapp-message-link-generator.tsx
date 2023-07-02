@@ -6,7 +6,7 @@ import { Base } from "../../components/base/Base.tsx";
 import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
 //? Navigation Buttons to go back to the tools page
 import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
-import WhatsappLinkGenerator from "../../islands/WhatsappLinkGenerator.tsx";
+import WhatsappLinkGenerator from "../../islands/tools/WhatsappLinkGenerator.tsx";
 
 //? Renders the food-order page, with a list of items and a cart
 export default function Home() {

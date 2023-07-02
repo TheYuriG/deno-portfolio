@@ -7,9 +7,9 @@ import { Base } from "../../../components/base/Base.tsx";
 //? Navigation Buttons to go back to the previous page
 import { NavigationButtons } from "../../../components/misc/NavigationButtons.tsx";
 //? Component responsible for rendering the food list and modals
-import FoodOrder from "../../../islands/FoodOrder.tsx";
+import FoodOrder from "../../../islands/projects/FoodOrder.tsx";
 //? Describe things that were learned with this current project
-import Collapsible from "../../../islands/Collapsible.tsx";
+import Collapsible from "../../../islands/misc/Collapsible.tsx";
 //? Import Food type to typecast the data received
 import type { Food } from "../../../types/food-order/Food.ts";
 //? Import middleware responsible for pulling food items

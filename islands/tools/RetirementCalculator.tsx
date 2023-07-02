@@ -1,11 +1,11 @@
 //? State management
 import { useMemo, useState } from "preact/hooks";
 //? Components/Islands
-import RetirementCalculatorForm from "../islands/RetirementCalculationForm.tsx";
-import { RetirementCalculationTable } from "../components/retirement-calculator/RetirementCalculationTable.tsx";
-import { StyledSubHeader } from "../components/UI/StyledSubHeader.tsx";
+import RetirementCalculatorForm from "./RetirementCalculationForm.tsx";
+import { RetirementCalculationTable } from "../../components/retirement-calculator/RetirementCalculationTable.tsx";
+import { StyledSubHeader } from "../../components/UI/StyledSubHeader.tsx";
 //? Data
-import { baseRetirementStats } from "../types/retirement-calculator/baseRetirementStats.ts";
+import { baseRetirementStats } from "../../types/retirement-calculator/baseRetirementStats.ts";
 
 export default function RetirementCalculator() {
   //? Manages current state for form data
