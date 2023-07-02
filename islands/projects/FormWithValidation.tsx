@@ -30,12 +30,9 @@ const textAreaPlaceholder = 'Data will be displayed here as you click "Send".' +
   "\n\nSome key insights for when building this:" +
   "\n- When using other websites, it's very annoying when you tap into a " +
   "field and tap out (without typing anything) and the field gives you a " +
-  "validation error. This form doesn't have that problem, it only " +
-  "attempts to validate the value if a value was actually provided and " +
-  "will reset if the value gets removed." +
-  "\n- Regexes are very powerful. I use them to validate login/signup" +
-  " on Trophy Place, the form above and probably too many places that" +
-  " could probably just use a simple deep equality check.";
+  "validation error. This form doesn't have that problem." +
+  "\n- Regexes are amazing! I use them to validate login/signup" +
+  " on Trophy Place, this form and everywhere else I can sneak them into.";
 
 //? Assign default form values and validation to avoid duplicating them everywhere
 const selectDropdownOptions = [

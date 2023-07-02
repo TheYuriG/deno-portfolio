@@ -7,7 +7,7 @@ import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
 import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 //? Stylized and functional Form Island
-import FormWithValidation from "../../islands/misc/FormWithValidation.tsx";
+import FormWithValidation from "../../islands/projects/FormWithValidation.tsx";
 
 export default function Home() {
   return (
@@ -21,7 +21,7 @@ export default function Home() {
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
         <NavigationButtons
-          back={{ title: "Return to the works page", link: "/work" }}
+          back={{ title: "Return to projects", link: "/projects" }}
         />
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
           {/* Title header */}
