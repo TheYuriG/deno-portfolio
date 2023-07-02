@@ -28,15 +28,17 @@ export default function Home() {
           <ProjectsGrid />
           {/* Summary - React course */}
           <p class="my-2 text-justify">
-            These are the projects I completed while going through the{" "}
+            These are the projects I built inspired by the{" "}
             <GradientLink
-              content=" React - The Complete Guide"
+              content="React - The Complete Guide"
               link="https://www.udemy.com/course/react-the-complete-guide-incl-redux/"
               newTab={true}
               title="React couse, by Academind"
               customRel="noopener noreferrer"
             />{" "}
-            course from Academind.
+            course from Academind. It uses the features taught, but not a single
+            resource file. Everything was adapted to feel like it belong to my
+            website.
           </p>
           {/* Was already experienced with React */}
           <p class="my-2 text-justify">
@@ -54,12 +56,6 @@ export default function Home() {
             </em>{" "}
             if I don't make myself go through a full fledged course.
           </p>
-          {/* Adapted projects to my layout */}
-          <p class="my-2 text-justify">
-            Considering that, instead of creating a new repository for every
-            required project, I've just adapted everything to be used here,
-            inside Deno, Fresh and Preact.
-          </p>
           {/* I wanted problems */}
           <p class="my-2 text-justify">
             That way, not only I practice what I need to, but I'm also forcing
@@ -70,17 +66,20 @@ export default function Home() {
           </p>
           {/* Setting expectations */}
           <p class="my-2 text-justify">
-            Every project page includes a toggleable summary of what I learned
-            when completing the project. Overall, I don't think it was that
-            useful for me because I had already learned the large bulk of React
-            features previously by building websites for my freelance clients.
-            While it was nice to learn about why{" "}
+            Most projects includes a toggleable summary of what I learned when
+            completing the project. While it was nice to learn about why{" "}
             <span class="shl-inline">Fragments</span> exist, what is{" "}
             <span class="shl-inline">React.createElement()</span>,{" "}
             <span class="shl-inline">Portals</span> and{" "}
-            <span class="shl-inline">Context</span>, almost none of my clients
-            jobs would benefit by any of those, so it was mostly nice-to-know
-            course for me.
+            <span class="shl-inline">Context</span>, it was mostly nice-to-know
+            course for me. Check{" "}
+            <GradientLink
+              content="tools"
+              link="/tools"
+              title="The things I've built alone"
+            />{" "}
+            if you are curious to know about the things I've built zero
+            guidance.
           </p>
         </article>
       </Base>
