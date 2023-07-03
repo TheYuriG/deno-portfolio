@@ -9,6 +9,8 @@ import { StyledSubHeader } from "../../components/UI/StyledSubHeader.tsx";
 import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 //? A HTML Link component to pre-format links and reduce boiletplate
 import { GradientLink } from "../../components/UI/GradientLink.tsx";
+//? Create a greek list of contents
+import { GreekList } from "../../components/UI/GreekList.tsx";
 
 const googleLightDarkImage =
   "https://web-dev.imgix.net/image/vS06HQ1YTsbMKSFTIPl2iogUQP73/skKcjSv1gMQRYk1AdEp7.png?auto=format&w=1600";
@@ -400,79 +402,75 @@ export default function Home() {
             </code>{" "}
             does, in order:
           </p>
-          <ol
-            start={1}
-            class="self-start list-[lower-greek]"
-          >
-            {/* Explanation part 1 */}
-            <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
-              Runs on start, checks if there is a theme saved (if not,{" "}
-              <code class="shl-inline">
-                savedTheme
-              </code>{" "}
-              will be{" "}
-              <code class="shl-inline">
-                null
-              </code>
-              ), and sets the current theme as the{" "}
-              <code class="shl-inline">
-                savedTheme
-              </code>
-              , if they are different, then stops (remember that{" "}
-              <code class="shl-inline">
-                useEffect()
-              </code>{" "}
-              is using the{" "}
-              <code class="shl-inline">
-                theme
-              </code>{" "}
-              as a dependency so not returning here would cause an infinite
-              loop!).
-            </li>
-            {/* Explanation part 2 */}
-            <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
-              After setting the{" "}
-              <code class="shl-inline">
-                theme
-              </code>{" "}
-              equal to{" "}
-              <code class="shl-inline">
-                localStorage
-              </code>'s{" "}
-              <code class="shl-inline">
-                savedTheme
-              </code>{" "}
-              is the same as the{" "}
-              <code class="shl-inline">
-                theme
-              </code>
-              , it will skip the first{" "}
-              <code class="shl-inline">
-                if
-              </code>{" "}
-              check and negate the{" "}
-              <code class="shl-inline">
-                isInitialMount
-              </code>{" "}
-              value and stop.
-            </li>
-            {/* Explanation part 3 */}
-            <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
-              (Optional) If the{" "}
-              <code class="shl-inline">
-                theme
-              </code>{" "}
-              is updated, it will skip both{" "}
-              <code class="shl-inline">
-                if
-              </code>{" "}
-              checks, save the theme to{" "}
-              <code class="shl-inline">
-                localStorage
-              </code>
-              , and applies it.
-            </li>
-          </ol>
+          <GreekList
+            items={[
+              <p>
+                Runs on start, checks if there is a theme saved (if not,{" "}
+                <code class="shl-inline">
+                  savedTheme
+                </code>{" "}
+                will be{" "}
+                <code class="shl-inline">
+                  null
+                </code>
+                ), and sets the current theme as the{" "}
+                <code class="shl-inline">
+                  savedTheme
+                </code>
+                , if they are different, then stops (remember that{" "}
+                <code class="shl-inline">
+                  useEffect()
+                </code>{" "}
+                is using the{" "}
+                <code class="shl-inline">
+                  theme
+                </code>{" "}
+                as a dependency so not returning here would cause an infinite
+                loop!).
+              </p>,
+              <p>
+                After setting the{" "}
+                <code class="shl-inline">
+                  theme
+                </code>{" "}
+                equal to{" "}
+                <code class="shl-inline">
+                  localStorage
+                </code>'s{" "}
+                <code class="shl-inline">
+                  savedTheme
+                </code>{" "}
+                is the same as the{" "}
+                <code class="shl-inline">
+                  theme
+                </code>
+                , it will skip the first{" "}
+                <code class="shl-inline">
+                  if
+                </code>{" "}
+                check and negate the{" "}
+                <code class="shl-inline">
+                  isInitialMount
+                </code>{" "}
+                value and stop.
+              </p>,
+              <p>
+                (Optional) If the{" "}
+                <code class="shl-inline">
+                  theme
+                </code>{" "}
+                is updated, it will skip both{" "}
+                <code class="shl-inline">
+                  if
+                </code>{" "}
+                checks, save the theme to{" "}
+                <code class="shl-inline">
+                  localStorage
+                </code>
+                , and applies it.
+              </p>,
+            ]}
+          />
           {/* Linking to repository version */}
           <p class="my-2 text-justify">
             This website uses an improved version of the same Theme Switcher

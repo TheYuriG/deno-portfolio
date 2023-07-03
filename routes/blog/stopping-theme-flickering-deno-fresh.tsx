@@ -9,6 +9,8 @@ import { StyledSubHeader } from "../../components/UI/StyledSubHeader.tsx";
 import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 //? A HTML Link component to pre-format links and reduce boiletplate
 import { GradientLink } from "../../components/UI/GradientLink.tsx";
+//? Create a greek list of contents
+import { GreekList } from "../../components/UI/GreekList.tsx";
 
 export default function Home() {
   return (
@@ -131,31 +133,18 @@ export default function Home() {
             It's possible that we can ship the required Javascript on every
             page, but in doing so, you need to understand the tradeoffs:
           </p>
-          <ol
-            start={1}
-            class="self-start list-[lower-greek]"
-          >
-            <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
-              You introduce consistent overhead to every page load, which will
-              progressively worsen your Lighthouse page performance score, the
-              more you do it.
-            </li>
-            <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
-              You are deviating from the main design choice for the framework,
-              which means that you will not find a lot of resources to do things
-              this way from this point onwards. If you have questions, you will
-              have to mostly figure something out by yourself.
-            </li>
-          </ol>
-          <p class="my-2 text-justify">
-            At this point, I have to ask you: Is this feature essential for your
-            project? Is the design of your website impossible to be done in a
-            happy medium between Light and Dark modes? If the answer to both of
-            these questions is "yes", we can now start looking into how to break
-            the rules.
-          </p>
+          <GreekList
+            items={[
+              "You introduce consistent overhead to every page load, which will progressively worsen your Lighthouse page performance score, the more you do it.",
+              "You are deviating from the main design choice for the framework, which means that you will not find a lot of resources to do things this way from this point onwards. If you have questions, you will have to mostly figure something out by yourself.",
+            ]}
+          />
+          At this point, I have to ask you: Is this feature essential for your
+          project? Is the design of your website impossible to be done in a
+          happy medium between Light and Dark modes? If the answer to both of
+          these questions is "yes", we can now start looking into how to break
+          the rules.
           {/* Script tag warning */}
-          {/*  */}
           <StyledSubHeader title="Adding a script file to every response" />
           <p class="my-2 text-justify">
             Be very careful about the <code class="shl-inline">script</code>
@@ -229,7 +218,9 @@ export default function Home() {
     `});{`
 `}&#125;
           </div>
-          <p class="my-2 text-justify">And inside the script file:</p>
+          <p class="my-2 text-justify self-start">
+            And inside the script file:
+          </p>
           <div class="shl-block">
             <span class="shl-cmnt">
               // /static/themeSwitcher.js{`
@@ -318,38 +309,40 @@ export default function Home() {
             <span class="shl-str">"rgb(220 38 38)"</span>);{`
 `}&#125;
           </div>
-          <p class="my-2 text-justify">In order:</p>
-          <ol
-            start={1}
-            class="self-start list-[lower-greek]"
-          >
-            <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
-              Check if there is a theme already saved on{" "}
-              <code class="shl-inline">localStorage</code>. If there isn't one,
-              check what's the user preferred color scheme, save it, and set
-              {" "}
-              <code class="shl-inline">
-                window.showDarkMode
-              </code>
-              . If there is, you just set{" "}
-              <code class="shl-inline">window.showDarkMode</code>{" "}
-              on/off based on the saved theme.
-            </li>
-            <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
-              Check window.showDarkMode and apply the colors to the{" "}
-              <code class="shl-inline">root</code>{"  "}
-              element for either mode based on that being{" "}
-              <code class="shl-inline">
-                true
-              </code>{" "}
-              or{" "}
-              <code class="shl-inline">
-                false
-              </code>
-              .
-            </li>
-          </ol>
-          <p class="my-2 text-justify">
+          <p class="my-2 text-justify self-start">In order:</p>
+          <GreekList
+            items={[
+              <p>
+                Check if there is a theme already saved on{" "}
+                <code class="shl-inline">localStorage</code>. If there isn't
+                one, check what's the user preferred color scheme, save it, and
+                set{" "}
+                <code class="shl-inline">
+                  window.showDarkMode
+                </code>
+                . If there is, you just set{" "}
+                <code class="shl-inline">window.showDarkMode</code>{" "}
+                on/off based on the saved theme.
+              </p>,
+              <p>
+                Check{" "}
+                <code class="shl-inline">
+                  window.showDarkMode
+                </code>{" "}
+                and apply the colors to the <code class="shl-inline">root</code>
+                {"  "}element for either mode based on that being{" "}
+                <code class="shl-inline">
+                  true
+                </code>{" "}
+                or{" "}
+                <code class="shl-inline">
+                  false
+                </code>
+                .
+              </p>,
+            ]}
+          />
+          <p class="my-2 text-justify self-start">
             Now all we gotta do is update our component and we are done!
           </p>
           <div class="shl-block">

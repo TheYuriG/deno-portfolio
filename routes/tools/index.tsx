@@ -6,7 +6,10 @@ import { Base } from "../../components/base/Base.tsx";
 import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
 import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
+//? A HTML Link component to pre-format links and reduce boiletplate
 import { GradientLink } from "../../components/UI/GradientLink.tsx";
+//? Create a greek list of contents
+import { GreekList } from "../../components/UI/GreekList.tsx";
 
 export default function Home() {
   return (
@@ -29,38 +32,31 @@ export default function Home() {
             one that exactly fit my needs, so I've built those things myself.
           </p>
           {/* Row of tools */}
-          <ol
-            start={1}
-            class="self-start list-[lower-greek]"
-          >
-            {/* Syntax highlighter */}
-            <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
+          <GreekList
+            items={[
+              //? Syntax highlighter
               <GradientLink
                 content="Syntax Highlight"
                 title="Create a HTML+CSS version of syntax highlight that you can paste into your React/Preact files."
                 link="/tools/syntax-highlight"
                 newTab={false}
-              />
-            </li>
-            {/* Retirement calculator */}
-            <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
+              />,
+              //? Retirement calculator
               <GradientLink
                 content="Retirement Calculator"
                 title="I love planning how to save/invest money and I love watching interest compound, so I've built a tool that helps me visualise that over time."
                 link="/tools/retirement-calculator"
                 newTab={false}
-              />
-            </li>
-            {/* Whatsapp messaging link generator */}
-            <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
+              />,
+              //? Whatsapp messaging Link Generator
               <GradientLink
-                content="Whatsapp Message link generator"
+                content="Whatsapp Message Link Generator"
                 title="When I used to work with marketing, I could not find a good resouce to generate a link to message someone in WhatsApp. This tool does what I needed done back then. This tool helps manual messaging, but if this is something you are doing constantly, I suggest automating this process in another way instead or hiring someone to create a chatbot for you."
                 link="/tools/whatsapp-message-link-generator"
                 newTab={false}
-              />
-            </li>
-          </ol>
+              />,
+            ]}
+          />
         </article>
       </Base>
     </>
