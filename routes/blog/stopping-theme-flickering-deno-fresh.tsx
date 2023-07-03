@@ -172,14 +172,14 @@ export default function Home() {
           </p>
           {/* Code block with initial implementation */}
           <div class="shl-block self-start">
-            <span class="shl-kwd">import</span> &#123;{" "}
-            <span class="shl-class">Head</span> &#125;{" "}
-            <span class="shl-kwd">from</span>{" "}
-            <span class="shl-str">"$fresh/runtime.ts"</span>;{`
-            
-`}
             <span class="shl-cmnt">
               // /routes/index.tsx (but can be any page){`
+`}
+              <span class="shl-kwd">import</span> &#123;{" "}
+              <span class="shl-class">Head</span> &#125;{" "}
+              <span class="shl-kwd">from</span>{" "}
+              <span class="shl-str">"$fresh/runtime.ts"</span>;{`
+            
 `}
             </span>
             <span class="shl-kwd">export</span>{" "}
@@ -224,6 +224,14 @@ export default function Home() {
     `});{`
 `}&#125;
           </div>
+          <p class="self-start mb-4">
+            <GradientLink
+              link="https://github.com/TheYuriG/blog_lessons/blob/master/deno_how_to_stop_theme_flickering/routes/index.tsx"
+              title="Link to this file on GitHub"
+              content="View/Download file"
+              customRel="noopener noreferrer"
+            />
+          </p>
           <p class="my-2 text-justify self-start">
             And inside the script file:
           </p>
@@ -315,6 +323,14 @@ export default function Home() {
             <span class="shl-str">"rgb(220 38 38)"</span>);{`
 `}&#125;
           </div>
+          <p class="self-start mb-4">
+            <GradientLink
+              link="https://github.com/TheYuriG/blog_lessons/blob/master/deno_how_to_stop_theme_flickering/static/themeSwitcher.js"
+              title="Link to this file on GitHub"
+              content="View/Download file"
+              customRel="noopener noreferrer"
+            />
+          </p>
           <p class="my-2 text-justify self-start">In order:</p>
           <GreekList
             items={[
@@ -398,6 +414,14 @@ export default function Home() {
 `}
             <span class="shl-oper">...</span>
           </div>
+          <p class="self-start mb-4">
+            <GradientLink
+              link="https://github.com/TheYuriG/blog_lessons/blob/master/deno_how_to_stop_theme_flickering/islands/finalThemeSwitcher.tsx"
+              title="Link to this file on GitHub"
+              content="View/Download file"
+              customRel="noopener noreferrer"
+            />
+          </p>
           <p class="my-2 text-justify">
             Because{" "}
             <code class="shl-inline">

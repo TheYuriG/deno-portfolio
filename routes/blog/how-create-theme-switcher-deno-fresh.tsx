@@ -290,6 +290,14 @@ export default function Home() {
 	`});{`
 `}&#125;
           </div>
+          <p class="self-start mb-4">
+            <GradientLink
+              link="https://github.com/TheYuriG/blog_lessons/blob/master/deno_create_theme_switcher/islands/basicThemeSwitcher.tsx"
+              title="Link to this file on GitHub"
+              content="View/Download file"
+              customRel="noopener noreferrer"
+            />
+          </p>
           {/* Initial implementation explanation */}
           <p class="text-justify">
             This creates a radio input that has{" "}
@@ -379,6 +387,14 @@ export default function Home() {
 `}
             <span class="shl-oper">...</span>
           </div>
+          <p class="self-start mb-4">
+            <GradientLink
+              link="https://github.com/TheYuriG/blog_lessons/blob/master/deno_create_theme_switcher/islands/updatedThemeSwitcher.tsx"
+              title="Link to this file on GitHub"
+              content="View/Download file"
+              customRel="noopener noreferrer"
+            />
+          </p>
           {/* Second code block explanation */}
           <p class="my-2 text-justify">
             We have added a reference to the{" "}
