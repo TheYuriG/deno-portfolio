@@ -128,11 +128,11 @@ export default function Home() {
           </p>
           {/* Main content start */}
           <StyledSubHeader title="Creating A Theme Switcher" />
-          <p class="my-2 text-justify">
+          <p class="my-2 text-justify self-start">
             Let's create a very simple Theme Switcher:
           </p>
           {/* Code block with initial implementation */}
-          <div class="shl-block">
+          <div class="shl-block self-start">
             <span class="shl-cmnt">
               // /islands/ThemeSwitcher.tsx{`
 `}
@@ -315,7 +315,7 @@ export default function Home() {
             with the values for your theme.
           </p>
           {/* Improved implementation with localStorage */}
-          <div class="shl-block">
+          <div class="shl-block self-start">
             <span class="shl-cmnt">
               // /islands/ThemeSwitcher.tsx (updated){`
 `}
@@ -395,7 +395,7 @@ export default function Home() {
             </code>{" "}
             on the first render.
           </p>
-          <p class="text-justify">
+          <p class="text-justify self-start">
             What the{" "}
             <code class="shl-inline">
               useEffect()

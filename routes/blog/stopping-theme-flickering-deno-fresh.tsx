@@ -171,7 +171,13 @@ export default function Home() {
             Let's have a look:
           </p>
           {/* Code block with initial implementation */}
-          <div class="shl-block">
+          <div class="shl-block self-start">
+            <span class="shl-kwd">import</span> &#123;{" "}
+            <span class="shl-class">Head</span> &#125;{" "}
+            <span class="shl-kwd">from</span>{" "}
+            <span class="shl-str">"$fresh/runtime.ts"</span>;{`
+            
+`}
             <span class="shl-cmnt">
               // /routes/index.tsx (but can be any page){`
 `}
@@ -221,7 +227,7 @@ export default function Home() {
           <p class="my-2 text-justify self-start">
             And inside the script file:
           </p>
-          <div class="shl-block">
+          <div class="shl-block self-start">
             <span class="shl-cmnt">
               // /static/themeSwitcher.js{`
 `}
@@ -345,7 +351,7 @@ export default function Home() {
           <p class="my-2 text-justify self-start">
             Now all we gotta do is update our component and we are done!
           </p>
-          <div class="shl-block">
+          <div class="shl-block self-start">
             <span class="shl-cmnt">
               // /islands/themeSwitcher.tsx (updated){`
 `}
