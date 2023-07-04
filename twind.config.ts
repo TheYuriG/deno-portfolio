@@ -445,6 +445,17 @@ export default {
       }
       return { transition: transitions.join(", ") };
     },
+    // Custom quote styling (should be applied on <q> HTML element)
+    "custom-quote": {
+      "&": {
+        quotes: "none",
+        "margin-left": "1em",
+      },
+      "&::before": {
+        "margin-right": "1em",
+        "border-left": "0.25em solid var(--accent-color)",
+      },
+    },
     // Button types
     "custom-button": ([buttonType]: Array<string>) => {
       switch (buttonType) {
