@@ -11,14 +11,17 @@ import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 import { GradientLink } from "../../components/UI/GradientLink.tsx";
 //? Create a greek list of contents
 import { GreekList } from "../../components/UI/GreekList.tsx";
+//? Import posts
+import { stopThemeFlickering as postSummary } from "../../data/blog/stopping-theme-flickering-deno-fresh.ts";
+import { createFreshThemeSwitcher as previousPost } from "../../data/blog/how-create-theme-switcher-deno-fresh.ts";
 
 export default function Home() {
   return (
     <>
       <CustomHead
-        title="How to stop Theme flickering in Fresh"
-        description="A guide on how to make your Theme Switcher to no longer flicker when the page loads."
-        link="https://www.theyurig.com/blog/stopping-theme-flickering-deno-fresh"
+        title={postSummary.title}
+        description={postSummary.shortSummary}
+        link={"https://www.theyurig.com" + postSummary.link}
       >
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
@@ -26,16 +29,16 @@ export default function Home() {
         {/* Back button */}
         <NavigationButtons
           back={{
-            title: "Read again: Part 1 - Creating a Theme Switcher",
-            link: "/blog/how-create-theme-switcher-deno-fresh",
+            title: previousPost.title,
+            link: previousPost.link,
           }}
         />
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
           {/* Title header */}
-          <StyledHeader title="How to stop Theme flickering in Fresh" />
+          <StyledHeader title={postSummary.title} />
           {/* Post creation date */}
           <p class="text-sm mb-2 w-full text-center">
-            {new Date(1684951466007).toLocaleString()}
+            {new Date(postSummary.date).toLocaleString()}
           </p>
           {/* Blog post opening image */}
           <img
@@ -48,8 +51,8 @@ export default function Home() {
           <p class="my-2 text-justify">
             In the{" "}
             <GradientLink
-              link="/blog/how-create-theme-switcher-deno-fresh"
-              title="Part 1 of this blog post. You read that before, right...?"
+              link={previousPost.link}
+              title={previousPost.title}
               content="previous post"
               customRel="prev"
             />

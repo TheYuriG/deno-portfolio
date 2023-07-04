@@ -11,6 +11,9 @@ import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 import { GradientLink } from "../../components/UI/GradientLink.tsx";
 //? Create a greek list of contents
 import { GreekList } from "../../components/UI/GreekList.tsx";
+//? Import posts
+import { createFreshThemeSwitcher as postSummary } from "../../data/blog/how-create-theme-switcher-deno-fresh.ts";
+import { stopThemeFlickering as nextPost } from "../../data/blog/stopping-theme-flickering-deno-fresh.ts";
 
 const googleLightDarkImage =
   "https://web-dev.imgix.net/image/vS06HQ1YTsbMKSFTIPl2iogUQP73/skKcjSv1gMQRYk1AdEp7.png?auto=format&w=1600";
@@ -19,10 +22,10 @@ export default function Home() {
   return (
     <>
       <CustomHead
-        title="How to Create a Theme Switcher with Fresh"
-        description="A guide on how to create your own Theme Switcher using Deno and Fresh"
+        title={postSummary.title}
+        description={postSummary.shortSummary}
         imageLink={googleLightDarkImage}
-        link="https://www.theyurig.com/blog/how-create-theme-switcher-deno-fresh"
+        link={"https://www.theyurig.com" + postSummary.link}
       >
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
@@ -31,16 +34,16 @@ export default function Home() {
         <NavigationButtons
           back={{ title: "Browse more blog posts", link: "/blog" }}
           next={{
-            title: "Read next: Stop theme flickering",
-            link: "/blog/stopping-theme-flickering-deno-fresh",
+            title: nextPost.title,
+            link: nextPost.link,
           }}
         />
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
           {/* Title header */}
-          <StyledHeader title="How to Create a Theme Switcher with Fresh" />
+          <StyledHeader title={postSummary.title} />
           {/* Post creation date */}
           <p class="text-sm mb-2 w-full text-center">
-            {new Date(1684849328672).toLocaleString()}
+            {new Date(postSummary.date).toLocaleString()}
           </p>
           {/* Blog post opening image */}
           <img
@@ -506,8 +509,8 @@ export default function Home() {
             check for user preferences. Let's address those problems on those on
             the{" "}
             <GradientLink
-              link="/blog/stopping-theme-flickering-deno-fresh"
-              title="Part 2 of this blog post. Please click, it has really good information!"
+              link={nextPost.link}
+              title={nextPost.title}
               content="next blog post"
               newTab={false}
               customRel="next"
