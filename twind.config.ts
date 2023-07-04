@@ -447,14 +447,10 @@ export default {
     },
     // Custom quote styling (should be applied on <q> HTML element)
     "custom-quote": {
-      "&": {
-        quotes: "none",
-        "margin-left": "1em",
-      },
-      "&::before": {
-        "margin-right": "1em",
-        "border-left": "0.25em solid var(--accent-color)",
-      },
+      quotes: "none",
+      "margin-left": "1em",
+      "border-left": "0.25em solid var(--accent-color)",
+      "padding-left": "1em",
     },
     // Button types
     "custom-button": ([buttonType]: Array<string>) => {
