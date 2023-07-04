@@ -12,7 +12,8 @@ import { GradientLink } from "../../components/UI/GradientLink.tsx";
 //? Create a greek list of contents
 import { GreekList } from "../../components/UI/GreekList.tsx";
 //? Import post summary
-import { createChannelPost as postSummary } from "../../data/blog/how-create-text-channels-discord-v14.ts";
+import { createTextChannelPost as postSummary } from "../../data/blog/how-create-text-channels-discord-v14.ts";
+import { createVoiceChannelPost as nextPost } from "../../data/blog/how-create-voice-channels-discord-v14.ts";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
         {/* Back button */}
         <NavigationButtons
           back={{ title: "Browse more blog posts", link: "/blog" }}
+          next={{ title: nextPost.title, link: nextPost.link }}
         />
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
           {/* Title header */}
@@ -37,8 +39,10 @@ export default function Home() {
             {new Date(postSummary.date).toLocaleString()}
           </p>
           {/* Medium alternative */}
-          <p class="mb-4 self-start text-sm">
-            You can also read the full version of this tutorial on{" "}
+          <p class="mb-4 self-start text-xs">
+            This is the first (of four) parts of the Discord.JS V14 tutorial
+            that I've published. You can also read the full version of this
+            tutorial on{" "}
             <GradientLink
               link="https://medium.com/@yuri03042/how-to-create-categories-text-channels-threads-voice-channels-and-roles-in-discord-js-v14-1f2664546433"
               title="Medium version alternative"
@@ -1737,7 +1741,13 @@ export default function Home() {
 
           {/* Next post: voice channels */}
           <p class="mt-4 text-justify self-start">
-            Next post: Creating Voice Channels in Discord.JS V14
+            Next post:{" "}
+            <GradientLink
+              content={nextPost.title}
+              link={nextPost.link}
+              customRel="next"
+              newTab={false}
+            />.
           </p>
           {/* Post author */}
           <footer class="mt-auto w-full text-right text-sm">

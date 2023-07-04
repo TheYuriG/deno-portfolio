@@ -11,14 +11,16 @@ import BlogPostSummaryProperties from "../../types/BlogPostSummaryProperties.ts"
 //? Import posts
 import { createFreshThemeSwitcher } from "../../data/blog/how-create-theme-switcher-deno-fresh.ts";
 import { stopThemeFlickering } from "../../data/blog/stopping-theme-flickering-deno-fresh.ts";
-import { createChannelPost } from "../../data/blog/how-create-text-channels-discord-v14.ts";
-createChannelPost;
+import { createTextChannelPost } from "../../data/blog/how-create-text-channels-discord-v14.ts";
+createTextChannelPost;
+import { createVoiceChannelPost } from "../../data/blog/how-create-voice-channels-discord-v14.ts";
 
 //? All posts so far
 const createdPosts: Array<BlogPostSummaryProperties> = [
   stopThemeFlickering,
   createFreshThemeSwitcher,
-  createChannelPost,
+  createVoiceChannelPost,
+  createTextChannelPost,
 ];
 
 export default function Home() {
