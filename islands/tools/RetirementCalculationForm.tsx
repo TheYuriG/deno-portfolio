@@ -15,7 +15,7 @@ import { validateOneOrGreater } from "../../services/form-validation/validateOne
 import { validateZeroOrGreater } from "../../services/form-validation/validateZeroOrGreater.ts";
 
 //? Base state data
-import { baseRetirementStats } from "../../types/retirement-calculator/baseRetirementStats.ts";
+import { baseRetirementStats } from "../../data/retirement-calculator/baseRetirementStats.ts";
 const defaultFormValidation = {
   currentAge: validationStatus.Unchanged,
   plannedRetiringAge: validationStatus.Unchanged,
