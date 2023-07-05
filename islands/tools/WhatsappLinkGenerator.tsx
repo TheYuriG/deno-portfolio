@@ -1,5 +1,5 @@
 //? Manage form state
-import { useState } from "preact/hooks";
+import { useEffect, useRef, useState } from "preact/hooks";
 //? Styled components
 import { StyledInput } from "../../components/UI/StyledInput.tsx";
 import { StyledButton } from "../../components/UI/StyledButton.tsx";
@@ -28,6 +28,10 @@ const defaultFormValidation = {
 };
 
 export default function WhatsappLinkGenerator() {
+  //? Use a reference to lock saving to localStorage too early and/or avoid an infinite
+  //? loop of forever updating the state and running useEffect again
+  const allowedToLoadFromLocalStorage = useRef(true);
+  //? Manages state of the link currently being created
   const [linkData, updateLinkData] = useState(baseLinkData);
   //? Manages the validation of form fields
   const [formValidationStatus, updateValidation] = useState(
@@ -37,6 +41,35 @@ export default function WhatsappLinkGenerator() {
   const [generatedLinks, setGeneratedLinks] = useState<WhatsappLinkData[]>(
     [],
   );
+  //? This needs to be !toggled to trigger a rerun of the useEffect that
+  //? saves the current state to localStorage
+  //! This will be toggled on a successful input submission. See validateBeforeAcceptInput()
+  const [savesToLocalStorageWhenToggled, toggleSaveToLocalStorage] = useState(
+    false,
+  );
+
+  //? Load from localStorage on mount, save to localStorage on validated submit
+  useEffect(() => {
+    //? Attempt to load data from localStorage on mount
+    if (allowedToLoadFromLocalStorage.current === true) {
+      const storedMessageData = localStorage.getItem("whatsapp-link-data");
+      //? If whatsapp link data exists, override the current data on state with the localStorage data
+      if (storedMessageData !== null) {
+        const parsedMessageData: typeof baseLinkData = JSON.parse(
+          storedMessageData,
+        );
+        updateLinkData(parsedMessageData);
+      }
+      allowedToLoadFromLocalStorage.current = false;
+      return;
+    }
+
+    //? On subsequent runs of this useEffect, save the current data to localStorage
+    localStorage.setItem(
+      "whatsapp-link-data",
+      JSON.stringify(linkData),
+    );
+  }, [savesToLocalStorageWhenToggled]);
 
   //? Validates if the data on the form should be accepted or rejected
   function validateBeforeAcceptInput() {
@@ -80,6 +113,8 @@ export default function WhatsappLinkGenerator() {
       return;
     }
 
+    //? Trigger the useEffect to save the validated data to localStorage
+    toggleSaveToLocalStorage((curr) => !curr);
     //? If the inputs are valid, add the data to the list of valid links
     setGeneratedLinks(
       (currentLinks) => [
