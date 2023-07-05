@@ -1,5 +1,5 @@
 //? Import required properties for a blog post
-import BlogPostSummaryProperties from "../../types/BlogPostSummaryProperties.ts";
+import type { BlogPostSummaryProperties } from "../../types/blog/BlogPostSummaryProperties.ts";
 
 //? Export object with blog post summary data
 export const createRolesPost: BlogPostSummaryProperties = {

@@ -1,6 +1,6 @@
 //? Import the error type for whenever there is a failed attempt to save to KV
-import FetchDataError from "../../types/error/FetchDataError.ts";
-import type { HighlightText } from "../../types/syntax-highlight/HighlightText.ts";
+import FetchDataError from "../../../types/error/FetchDataError.ts";
+import type { HighlightText } from "../../../types/syntax-highlight/HighlightText.ts";
 
 //? Saves data to KV
 export async function saveHighlightToKv(

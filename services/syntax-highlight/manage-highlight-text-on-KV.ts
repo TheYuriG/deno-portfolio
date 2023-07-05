@@ -1,6 +1,6 @@
 //? Import the error type for whenever there is a failed attempt to save to disk
-import { deleteHighlightFromKv } from "../../data/syntax-highlight/deleteHighlightFromKv.ts";
-import { saveHighlightToKv } from "../../data/syntax-highlight/saveHighlightToKv.ts";
+import { deleteHighlightFromKv } from "../../data/tools/syntax-highlight/deleteHighlightFromKv.ts";
+import { saveHighlightToKv } from "../../data/tools/syntax-highlight/saveHighlightToKv.ts";
 import FetchDataError from "../../types/error/FetchDataError.ts";
 import type { HighlightText } from "../../types/syntax-highlight/HighlightText.ts";
 

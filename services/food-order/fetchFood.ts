@@ -3,7 +3,7 @@ import type { Food } from "../../types/food-order/Food.ts";
 //? Import fetch error
 import FetchDataError from "../../types/error/FetchDataError.ts";
 //? Import mock foods to save to database if not yet saved
-import { mockFoods } from "../../data/mockFoods.ts";
+import { mockFoods } from "../../data/projects/food-order/mockFoods.ts";
 
 export default async function fetchFood(): Promise<
   FetchDataError | Food[]

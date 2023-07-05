@@ -1,7 +1,7 @@
 //? Validation values for typecasting
-import { InformationIcon } from "../../assets/InformationIcon.tsx";
+import type { InformationIcon } from "../../assets/InformationIcon.tsx";
 //? Toggle what validation status this form should display
-import { validationStatus } from "../../types/misc/validationStatus.ts";
+import { validationStatus } from "../../types/forms/validationStatus.ts";
 
 //? Define optional and required properties for inputs
 interface StyledInputProperties {

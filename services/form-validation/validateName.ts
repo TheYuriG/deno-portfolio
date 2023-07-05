@@ -1,5 +1,5 @@
 //? Types for typecasting
-import { validationStatus } from "../../types/misc/validationStatus.ts";
+import { validationStatus } from "../../types/forms/validationStatus.ts";
 
 //? Validates the form's name input field
 export function validateName(

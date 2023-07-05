@@ -1,5 +1,5 @@
 //? Validation values for typecasting
-import { validationStatus } from "../../types/misc/validationStatus.ts";
+import { validationStatus } from "../../types/forms/validationStatus.ts";
 
 //? Properties required to build a Select dropdown
 interface SelectProperties {

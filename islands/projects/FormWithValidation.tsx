@@ -16,8 +16,8 @@ import { StyledTextArea } from "../../components/UI/StyledTextArea.tsx";
 import { ErrorAlert } from "../../components/UI/ErrorAlert.tsx";
 
 //? Types for typecasting
-import { validationStatus } from "../../types/misc/validationStatus.ts";
-import type { stimulusCheckboxOptions } from "../../types/stimulusCheckboxOptions.ts";
+import { validationStatus } from "../../types/forms/validationStatus.ts";
+import type { stimulusCheckboxOptions } from "../../types/forms/stimulusCheckboxOptions.ts";
 
 //? Validation functions
 import { validateName } from "../../services/form-validation/validateName.ts";

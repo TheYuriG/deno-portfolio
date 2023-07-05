@@ -1,5 +1,5 @@
 //? Import IconProperties for props typecasting
-import { IconPropertiesWithStroke } from "../types/misc/IconProperties.ts";
+import { IconPropertiesWithStroke } from "../types/asset-properties/IconProperties.ts";
 
 //? Renders a spinning animation with fill
 export function LoadingAnimation(
