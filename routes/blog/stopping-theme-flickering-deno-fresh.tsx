@@ -11,6 +11,8 @@ import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 import { GradientLink } from "../../components/UI/GradientLink.tsx";
 //? Create a greek list of contents
 import { GreekList } from "../../components/UI/GreekList.tsx";
+//? Display a link to view the source code on GitHub
+import { ViewOnGitHub } from "../../components/misc/ViewOnGithub.tsx";
 //? Import posts
 import { stopThemeFlickering as postSummary } from "../../data/blog/stopping-theme-flickering-deno-fresh.ts";
 import { createFreshThemeSwitcher as previousPost } from "../../data/blog/how-create-theme-switcher-deno-fresh.ts";
@@ -227,14 +229,7 @@ export default function Home() {
     `});{`
 `}&#125;
           </div>
-          <p class="self-start mb-4">
-            <GradientLink
-              link="https://github.com/TheYuriG/blog_lessons/blob/master/deno_how_to_stop_theme_flickering/routes/index.tsx"
-              title="Link to this file on GitHub"
-              content="View/Download file"
-              customRel="noopener noreferrer"
-            />
-          </p>
+          <ViewOnGitHub githubLink="https://github.com/TheYuriG/blog_lessons/blob/master/deno_how_to_stop_theme_flickering/routes/index.tsx" />
           <p class="my-2 text-justify self-start">
             And inside the script file:
           </p>
@@ -326,14 +321,7 @@ export default function Home() {
             <span class="shl-str">"rgb(220 38 38)"</span>);{`
 `}&#125;
           </div>
-          <p class="self-start mb-4">
-            <GradientLink
-              link="https://github.com/TheYuriG/blog_lessons/blob/master/deno_how_to_stop_theme_flickering/static/themeSwitcher.js"
-              title="Link to this file on GitHub"
-              content="View/Download file"
-              customRel="noopener noreferrer"
-            />
-          </p>
+          <ViewOnGitHub githubLink="https://github.com/TheYuriG/blog_lessons/blob/master/deno_how_to_stop_theme_flickering/static/themeSwitcher.js" />
           <p class="my-2 text-justify self-start">In order:</p>
           <GreekList
             items={[
@@ -417,14 +405,7 @@ export default function Home() {
 `}
             <span class="shl-oper">...</span>
           </div>
-          <p class="self-start mb-4">
-            <GradientLink
-              link="https://github.com/TheYuriG/blog_lessons/blob/master/deno_how_to_stop_theme_flickering/islands/finalThemeSwitcher.tsx"
-              title="Link to this file on GitHub"
-              content="View/Download file"
-              customRel="noopener noreferrer"
-            />
-          </p>
+          <ViewOnGitHub githubLink="https://github.com/TheYuriG/blog_lessons/blob/master/deno_how_to_stop_theme_flickering/islands/finalThemeSwitcher.tsx" />
           <p class="my-2 text-justify">
             Because{" "}
             <code class="shl-inline">

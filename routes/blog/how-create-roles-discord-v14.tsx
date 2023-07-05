@@ -9,6 +9,8 @@ import { StyledSubHeader } from "../../components/UI/StyledSubHeader.tsx";
 import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 //? A HTML Link component to pre-format links and reduce boiletplate
 import { GradientLink } from "../../components/UI/GradientLink.tsx";
+//? Display a link to view the source code on GitHub
+import { ViewOnGitHub } from "../../components/misc/ViewOnGithub.tsx";
 //? Import post summary
 import { createCategoryPost as previousPost } from "../../data/blog/how-create-categories-discord-v14.ts";
 import { createRolesPost as postSummary } from "../../data/blog/how-create-roles-discord-v14.ts";
@@ -375,14 +377,7 @@ export default function Home() {
 `}
           </div>
           {/* Code link */}
-          <p class="self-start mb-4">
-            <GradientLink
-              link="https://github.com/TheYuriG/blog_lessons/blob/master/discord_create_channels/commands/createrole.js"
-              title="Link to this file on GitHub"
-              content="View/Download file"
-              customRel="noopener noreferrer"
-            />
-          </p>
+          <ViewOnGitHub githubLink="https://github.com/TheYuriG/blog_lessons/blob/master/discord_create_channels/commands/createrole.js" />
           {/* line 65 quote */}
           <q class="custom-quote italic self-start">
             await interaction.guild.roles.create(&#123;
@@ -797,15 +792,7 @@ export default function Home() {
             <span class="shl-cmnt">// ...</span>
           </div>
           {/* Code link */}
-          <p class="self-start mb-4">
-            <GradientLink
-              link="https://github.com/TheYuriG/blog_lessons/blob/master/discord_create_channels/commands/createcoloredrole.js"
-              title="Link to this file on GitHub"
-              content="View/Download file"
-              customRel="noopener noreferrer"
-            />
-          </p>
-
+          <ViewOnGitHub githubLink="https://github.com/TheYuriG/blog_lessons/blob/master/discord_create_channels/commands/createcoloredrole.js" />
           <p class="my-2 text-justify self-start">
             Once again, let's go through each bit of code individually.
           </p>
@@ -1349,14 +1336,7 @@ export default function Home() {
             </span>
           </div>
           {/* Code link */}
-          <p class="self-start mb-4">
-            <GradientLink
-              link="https://github.com/TheYuriG/blog_lessons/blob/master/discord_create_channels/commands/createandgrantrole.js"
-              title="Link to this file on GitHub"
-              content="View/Download file"
-              customRel="noopener noreferrer"
-            />
-          </p>
+          <ViewOnGitHub githubLink="https://github.com/TheYuriG/blog_lessons/blob/master/discord_create_channels/commands/createandgrantrole.js" />
 
           <p class="my-2 text-justify self-start">
             Let's break down this code into smaller chunks again.

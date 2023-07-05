@@ -9,6 +9,8 @@ import { StyledSubHeader } from "../../components/UI/StyledSubHeader.tsx";
 import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 //? A HTML Link component to pre-format links and reduce boiletplate
 import { GradientLink } from "../../components/UI/GradientLink.tsx";
+//? Display a link to view the source code on GitHub
+import { ViewOnGitHub } from "../../components/misc/ViewOnGithub.tsx";
 //? Import post summary
 import { createTextChannelPost as previousPost } from "../../data/blog/how-create-text-channels-discord-v14.ts";
 import { createVoiceChannelPost as postSummary } from "../../data/blog/how-create-voice-channels-discord-v14.ts";
@@ -519,14 +521,7 @@ export default function Home() {
 `}
           </div>
           {/* Code link */}
-          <p class="self-start mb-4">
-            <GradientLink
-              link="https://github.com/TheYuriG/blog_lessons/blob/master/discord_create_channels/commands/createvoicechannel.js"
-              title="Link to this file on GitHub"
-              content="View/Download file"
-              customRel="noopener noreferrer"
-            />
-          </p>
+          <ViewOnGitHub githubLink="https://github.com/TheYuriG/blog_lessons/blob/master/discord_create_channels/commands/createvoicechannel.js" />
           <p class="my-2 text-justify">
             A few tweaks were made, variables were renamed, comments were
             updated, and error messages were updated, but the process isn't much
@@ -734,14 +729,7 @@ export default function Home() {
             <span class="shl-cmnt">// ...</span>
           </div>
           {/* Code link */}
-          <p class="self-start mb-4">
-            <GradientLink
-              link="https://github.com/TheYuriG/blog_lessons/blob/master/discord_create_channels/commands/createvoicewithuserlimit.js"
-              title="Link to this file on GitHub"
-              content="View/Download file"
-              customRel="noopener noreferrer"
-            />
-          </p>
+          <ViewOnGitHub githubLink="https://github.com/TheYuriG/blog_lessons/blob/master/discord_create_channels/commands/createvoicewithuserlimit.js" />
           {/* line 30 quote */}
           <p class="my-2 text-justify">
             There are a few key points that need to be talked about. The first

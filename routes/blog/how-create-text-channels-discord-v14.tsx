@@ -11,6 +11,8 @@ import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 import { GradientLink } from "../../components/UI/GradientLink.tsx";
 //? Create a greek list of contents
 import { GreekList } from "../../components/UI/GreekList.tsx";
+//? Display a link to view the source code on GitHub
+import { ViewOnGitHub } from "../../components/misc/ViewOnGithub.tsx";
 //? Import post summary
 import { createTextChannelPost as postSummary } from "../../data/blog/how-create-text-channels-discord-v14.ts";
 import { createVoiceChannelPost as nextPost } from "../../data/blog/how-create-voice-channels-discord-v14.ts";
@@ -466,14 +468,7 @@ export default function Home() {
 `}&#125;;
           </div>
           {/* Code link */}
-          <p class="self-start mb-4">
-            <GradientLink
-              link="https://github.com/TheYuriG/blog_lessons/blob/master/discord_create_channels/commands/createnewchannel.js"
-              title="Link to this file on GitHub"
-              content="View/Download file"
-              customRel="noopener noreferrer"
-            />
-          </p>
+          <ViewOnGitHub githubLink="https://github.com/TheYuriG/blog_lessons/blob/master/discord_create_channels/commands/createnewchannel.js" />
           {/* Deploying and refreshing */}
           <p class="my-2 text-justify">
             <GradientLink
@@ -653,14 +648,7 @@ export default function Home() {
             </span>
             <span class="shl-cmnt">// ...</span>
           </div>
-          <p class="self-start mb-4">
-            <GradientLink
-              link="https://github.com/TheYuriG/blog_lessons/blob/master/discord_create_channels/commands/createchannel.js"
-              title="Link to this file on GitHub"
-              content="View/Download file"
-              customRel="noopener noreferrer"
-            />
-          </p>
+          <ViewOnGitHub githubLink="https://github.com/TheYuriG/blog_lessons/blob/master/discord_create_channels/commands/createchannel.js" />
           <p class="my-2 text-justify">
             A small note here:{" "}
             <GradientLink
@@ -988,14 +976,7 @@ export default function Home() {
             </span>
             <span class="shl-cmnt">// ...</span>
           </div>
-          <p class="self-start mb-4">
-            <GradientLink
-              link="https://github.com/TheYuriG/blog_lessons/blob/master/discord_create_channels/commands/createchannelincategory.js"
-              title="Link to this file on GitHub"
-              content="View/Download file"
-              customRel="noopener noreferrer"
-            />
-          </p>
+          <ViewOnGitHub githubLink="https://github.com/TheYuriG/blog_lessons/blob/master/discord_create_channels/commands/createchannelincategory.js" />
           <p class="my-2 text-justify self-start">
             Let's go through this bit by bit.
           </p>
@@ -1670,14 +1651,7 @@ export default function Home() {
 `}&#125;;{`
 `}
           </div>
-          <p class="self-start mb-4">
-            <GradientLink
-              link="https://github.com/TheYuriG/blog_lessons/blob/master/discord_create_channels/commands/createthread.js"
-              title="Link to this file on GitHub"
-              content="View/Download file"
-              customRel="noopener noreferrer"
-            />
-          </p>
+          <ViewOnGitHub githubLink="https://github.com/TheYuriG/blog_lessons/blob/master/discord_create_channels/commands/createthread.js" />
           <p class="my-2 text-justify self-start">
             Alright, few key points with this code:
           </p>

@@ -11,6 +11,8 @@ import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 import { GradientLink } from "../../components/UI/GradientLink.tsx";
 //? Create a greek list of contents
 import { GreekList } from "../../components/UI/GreekList.tsx";
+//? Display a link to view the source code on GitHub
+import { ViewOnGitHub } from "../../components/misc/ViewOnGithub.tsx";
 //? Import posts
 import { createFreshThemeSwitcher as postSummary } from "../../data/blog/how-create-theme-switcher-deno-fresh.ts";
 import { stopThemeFlickering as nextPost } from "../../data/blog/stopping-theme-flickering-deno-fresh.ts";
@@ -293,14 +295,7 @@ export default function Home() {
 	`});{`
 `}&#125;
           </div>
-          <p class="self-start mb-4">
-            <GradientLink
-              link="https://github.com/TheYuriG/blog_lessons/blob/master/deno_create_theme_switcher/islands/basicThemeSwitcher.tsx"
-              title="Link to this file on GitHub"
-              content="View/Download file"
-              customRel="noopener noreferrer"
-            />
-          </p>
+          <ViewOnGitHub githubLink="https://github.com/TheYuriG/blog_lessons/blob/master/deno_create_theme_switcher/islands/basicThemeSwitcher.tsx" />
           {/* Initial implementation explanation */}
           <p class="text-justify">
             This creates a radio input that has{" "}
@@ -390,14 +385,7 @@ export default function Home() {
 `}
             <span class="shl-oper">...</span>
           </div>
-          <p class="self-start mb-4">
-            <GradientLink
-              link="https://github.com/TheYuriG/blog_lessons/blob/master/deno_create_theme_switcher/islands/updatedThemeSwitcher.tsx"
-              title="Link to this file on GitHub"
-              content="View/Download file"
-              customRel="noopener noreferrer"
-            />
-          </p>
+          <ViewOnGitHub githubLink="https://github.com/TheYuriG/blog_lessons/blob/master/deno_create_theme_switcher/islands/updatedThemeSwitcher.tsx" />
           {/* Second code block explanation */}
           <p class="my-2 text-justify">
             We have added a reference to the{" "}

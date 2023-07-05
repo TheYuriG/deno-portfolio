@@ -9,6 +9,8 @@ import { StyledSubHeader } from "../../components/UI/StyledSubHeader.tsx";
 import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 //? A HTML Link component to pre-format links and reduce boiletplate
 import { GradientLink } from "../../components/UI/GradientLink.tsx";
+//? Display a link to view the source code on GitHub
+import { ViewOnGitHub } from "../../components/misc/ViewOnGithub.tsx";
 //? Import post summary
 import { createVoiceChannelPost as previousPost } from "../../data/blog/how-create-voice-channels-discord-v14.ts";
 import { createCategoryPost as postSummary } from "../../data/blog/how-create-categories-discord-v14.ts";
@@ -279,24 +281,18 @@ export default function Home() {
             </span>
           </div>
           {/* Code link */}
-          <p class="self-start mb-4">
-            <GradientLink
-              link="https://github.com/TheYuriG/blog_lessons/blob/master/discord_create_channels/commands/createcategory.js"
-              title="Link to this file on GitHub"
-              content="View/Download file"
-              customRel="noopener noreferrer"
-            />
-          </p>
+          <ViewOnGitHub githubLink="https://github.com/TheYuriG/blog_lessons/blob/master/discord_create_channels/commands/createcategory.js" />
           <p class="my-2 text-justify">
-            As you probably noticed if you paid attention to the{" "}
+            You might have noticed if you went through the{" "}
             <GradientLink
               link={createTextChannelPost.link}
               title={createTextChannelPost.title}
               content="Create a Text Channel with Dynamic Names"
               newTab={false}
             />{" "}
-            lesson, not much was changed. We have renamed our variable, updated
-            the command and the option name, and changed the type of{" "}
+            lesson that very little was changed. We have renamed our variable,
+            updated the command and the option name, and changed the type of
+            {" "}
             <GradientLink
               link="https://discord.js.org/#/docs/discord.js/main/class/GuildChannel"
               title="GuildChannel (D.JS Docs)"
@@ -645,14 +641,7 @@ export default function Home() {
             </span>
           </div>
           {/* Code link */}
-          <p class="self-start mb-4">
-            <GradientLink
-              link="https://github.com/TheYuriG/blog_lessons/blob/master/discord_create_channels/commands/createcategorywithnestedchannels.js"
-              title="Link to this file on GitHub"
-              content="View/Download file"
-              customRel="noopener noreferrer"
-            />
-          </p>
+          <ViewOnGitHub githubLink="https://github.com/TheYuriG/blog_lessons/blob/master/discord_create_channels/commands/createcategorywithnestedchannels.js" />
           <p class="my-2 text-justify">
             You should be fairly familiar with what's happening here by this
             point if you have been following along. We are requiring the user to
