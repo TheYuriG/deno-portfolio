@@ -9,7 +9,7 @@ export function BlogPostSummary(summary: BlogPostSummaryProperties) {
     // What a Post Summary looks like
     <article class="my-4 w-full">
       {/* Post link */}
-      <a href={"/blog" + summary.link}>
+      <a href={summary.link}>
         {/* Centered heading */}
         <StyledSubHeader title={summary.title} />
       </a>

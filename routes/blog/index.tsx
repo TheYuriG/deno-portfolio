@@ -8,21 +8,23 @@ import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 import { BlogPostSummary } from "../../components/blog/BlogPostSummary.tsx";
 //? Import the types so that it doesn't need to be interfaced twice
 import BlogPostSummaryProperties from "../../types/BlogPostSummaryProperties.ts";
+//? Import posts
+import { createFreshThemeSwitcher } from "../../data/blog/how-create-theme-switcher-deno-fresh.ts";
+import { stopThemeFlickering } from "../../data/blog/stopping-theme-flickering-deno-fresh.ts";
+import { createTextChannelPost } from "../../data/blog/how-create-text-channels-discord-v14.ts";
+import { createVoiceChannelPost } from "../../data/blog/how-create-voice-channels-discord-v14.ts";
+import { createCategoryPost } from "../../data/blog/how-create-categories-discord-v14.ts";
+import { createRolesPost } from "../../data/blog/how-create-roles-discord-v14.ts";
 
 //? All posts so far
-const createdPosts: Array<BlogPostSummaryProperties> = [{
-  link: "/how-create-theme-switcher-deno-fresh",
-  title: "How to Create a Theme Switcher with Fresh",
-  shortSummary:
-    "A guide on how to create your own Theme Switcher using Deno and Fresh",
-  date: 1684849328672,
-}, {
-  link: "/stopping-theme-flickering-deno-fresh",
-  title: "How to stop Theme flickering in Fresh",
-  shortSummary:
-    "A guide on how to make your Theme Switcher stop flickering when the page loads",
-  date: 1684951466007,
-}];
+const createdPosts: Array<BlogPostSummaryProperties> = [
+  stopThemeFlickering,
+  createFreshThemeSwitcher,
+  createRolesPost,
+  createCategoryPost,
+  createVoiceChannelPost,
+  createTextChannelPost,
+];
 
 export default function Home() {
   return (
