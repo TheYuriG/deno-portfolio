@@ -681,7 +681,7 @@ export default function Home() {
             go through in more detail:
           </p>
           {/* line 65 quote */}
-          <q className="custom-quote italic self-start">
+          <q class="custom-quote italic self-start">
             const newlyCreatedCategory = await
             interaction.guild.channels.create(&#123; (<GradientLink
               link="https://github.com/TheYuriG/blog_lessons/blob/4fc83cf7d08c20fc43cc0018d24db2eb9ff33ae1/discord_create_channels/commands/createcategorywithnestedchannels.js#L65"
@@ -715,7 +715,7 @@ export default function Home() {
             />.
           </p>
           {/* lines 74 and 81 quote */}
-          <q className="custom-quote italic self-start">
+          <q class="custom-quote italic self-start">
             await newlyCreatedCategory.children.create(&#123; (lines{" "}
             <GradientLink
               link="https://github.com/TheYuriG/blog_lessons/blob/4fc83cf7d08c20fc43cc0018d24db2eb9ff33ae1/discord_create_channels/commands/createcategorywithnestedchannels.js#L74"

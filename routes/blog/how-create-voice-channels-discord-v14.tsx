@@ -761,7 +761,7 @@ export default function Home() {
             />{" "}
             to be unlimited if they don't.
           </p>
-          <q className="custom-quote italic self-start">
+          <q class="custom-quote italic self-start">
             const voiceChannelUserLimit =
             interaction.options.getInteger('voiceuserlimit') ?? undefined;
           </q>
@@ -800,7 +800,7 @@ export default function Home() {
             </span>
             .
           </p>
-          <q className="custom-quote italic self-start">
+          <q class="custom-quote italic self-start">
             userLimit: voiceChannelUserLimit
           </q>
           <p class="my-2 text-justify">

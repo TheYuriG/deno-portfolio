@@ -446,11 +446,16 @@ export default {
       return { transition: transitions.join(", ") };
     },
     // Custom quote styling (should be applied on <q> HTML element)
+    //! Same 'background-color', 'color' and 'box-shadow' as syntax highlight block
     "custom-quote": {
       quotes: "none",
       "margin-left": "1em",
+      "padding": "0.5em 1em 0.5em 1em",
+      "background-color": "rgb(255, 246, 239)",
+      color: "#112",
+      "box-shadow": "0 0 1em 0.3em grey",
       "border-left": "0.25em solid var(--accent-color)",
-      "padding-left": "1em",
+      "border-radius": "0.25em",
     },
     // Button types
     "custom-button": ([buttonType]: Array<string>) => {
@@ -572,9 +577,10 @@ export default {
             "border-radius": "0.5em",
           };
         case "block":
+          //! Same 'background-color', 'color' and 'box-shadow' as custom quote
           return {
             "white-space": "pre-wrap",
-            background: "rgb(255, 246, 239)",
+            "background-color": "rgb(255, 246, 239)",
             color: "#112",
             "line-height": "1.3em",
             margin: "1em 0",
