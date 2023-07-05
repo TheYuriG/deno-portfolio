@@ -14,11 +14,13 @@ import { stopThemeFlickering } from "../../data/blog/stopping-theme-flickering-d
 import { createTextChannelPost } from "../../data/blog/how-create-text-channels-discord-v14.ts";
 createTextChannelPost;
 import { createVoiceChannelPost } from "../../data/blog/how-create-voice-channels-discord-v14.ts";
+import { createCategoryPost } from "../../data/blog/how-create-categories-discord-v14.ts";
 
 //? All posts so far
 const createdPosts: Array<BlogPostSummaryProperties> = [
   stopThemeFlickering,
   createFreshThemeSwitcher,
+  createCategoryPost,
   createVoiceChannelPost,
   createTextChannelPost,
 ];

@@ -10,8 +10,9 @@ import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 //? A HTML Link component to pre-format links and reduce boiletplate
 import { GradientLink } from "../../components/UI/GradientLink.tsx";
 //? Import post summary
-import { createVoiceChannelPost as postSummary } from "../../data/blog/how-create-voice-channels-discord-v14.ts";
 import { createTextChannelPost as previousPost } from "../../data/blog/how-create-text-channels-discord-v14.ts";
+import { createVoiceChannelPost as postSummary } from "../../data/blog/how-create-voice-channels-discord-v14.ts";
+import { createCategoryPost as nextPost } from "../../data/blog/how-create-categories-discord-v14.ts";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
         {/* Back button */}
         <NavigationButtons
           back={{ title: previousPost.title, link: previousPost.link }}
+          next={{ title: nextPost.title, link: nextPost.link }}
         />
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
           {/* Title header */}
@@ -826,7 +828,13 @@ export default function Home() {
 
           {/* Next post: Categories */}
           <p class="mt-4 text-justify self-start">
-            Next post: Creating Categories in Discord.JS V14
+            Next post:{" "}
+            <GradientLink
+              link={nextPost.link}
+              title={nextPost.title}
+              content={nextPost.title}
+              newTab={false}
+            />
           </p>
           {/* Post author */}
           <footer class="mt-auto w-full text-right text-sm">
