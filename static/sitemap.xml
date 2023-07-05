@@ -115,4 +115,28 @@
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
+    <url>
+        <loc>https://www.theyurig.com/blog/how-create-text-channels-discord-v14</loc>
+        <lastmod>2023-07-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.theyurig.com/blog/how-create-voice-channels-discord-v14</loc>
+        <lastmod>2023-07-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.theyurig.com/blog/how-create-categories-discord-v14</loc>
+        <lastmod>2023-07-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.theyurig.com/blog/how-create-roles-discord-v14</loc>
+        <lastmod>2023-07-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>
