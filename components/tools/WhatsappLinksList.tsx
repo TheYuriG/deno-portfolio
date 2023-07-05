@@ -1,5 +1,5 @@
 //? Types for typecasting
-import { WhatsappLinkData } from "../../types/whatsapp-link-generator/whatsapp-link-data.ts";
+import type { WhatsappLinkData } from "../../types/component-properties/tools/whatsapp-link-generator/whatsapp-link-data.ts";
 //? Create gradient links to all numbers provided
 import { GradientLink } from "../UI/GradientLink.tsx";
 //? Create a greek list of contents

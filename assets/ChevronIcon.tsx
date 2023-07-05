@@ -1,5 +1,5 @@
 //? Import IconProperties for props typecasting
-import { IconProperties } from "../types/misc/IconProperties.ts";
+import { IconProperties } from "../types/asset-properties/IconProperties.ts";
 
 //? Renders a chevron Icon with fill, can be rotated using transform
 export function ChevronIcon(

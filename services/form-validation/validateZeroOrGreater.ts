@@ -1,5 +1,5 @@
 //? Types for typecasting
-import { validationStatus } from "../../types/misc/validationStatus.ts";
+import { validationStatus } from "../../types/forms/validationStatus.ts";
 
 //? Validates the form's numeric input field for a value equal to 0 or greater
 export function validateZeroOrGreater(

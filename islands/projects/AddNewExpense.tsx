@@ -7,7 +7,7 @@ import { StyledInput } from "../../components/UI/StyledInput.tsx";
 //? Styled Button to confirm sending the form
 import { StyledButton } from "../../components/UI/StyledButton.tsx";
 //? Types for typecasting
-import { validationStatus } from "../../types/misc/validationStatus.ts";
+import { validationStatus } from "../../types/forms/validationStatus.ts";
 //? Validation functions
 import { validateExpenseDescription } from "../../services/form-validation/validateExpenseDescription.ts";
 import { validateExpenseDate } from "../../services/form-validation/validateExpenseDate.ts";

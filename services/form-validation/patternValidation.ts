@@ -1,5 +1,5 @@
 //? Types for typecasting
-import { validationStatus } from "../../types/misc/validationStatus.ts";
+import { validationStatus } from "../../types/forms/validationStatus.ts";
 
 //? Given a current value, initial value and a validation function, return
 //? what is the state of validation of the input once the respective field

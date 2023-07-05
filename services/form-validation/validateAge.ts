@@ -1,5 +1,5 @@
 //? Types for typecasting
-import { validationStatus } from "../../types/misc/validationStatus.ts";
+import { validationStatus } from "../../types/forms/validationStatus.ts";
 
 //? Validates the form's age numeric input field
 export function validateAge(

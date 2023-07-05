@@ -17,9 +17,9 @@ import type { HighlightText } from "../../../types/syntax-highlight/HighlightTex
 //? Import component that creates a clickable textarea that copies the inner content to clipboard
 import CopyTextAreaToClipboard from "../../../islands/misc/CopyTextAreaToClipboard.tsx";
 //? Import CSS classes text example
-import { syntaxHighlightClassesStyles } from "../../../types/syntax-highlight/syntaxHighlightClassesStyles.ts";
+import { syntaxHighlightClassesStyles } from "../../../data/tools/syntax-highlight/syntaxHighlightClassesStyles.ts";
 //? Import Twind config example
-import { syntaxHighlightTwindConfig } from "../../../types/syntax-highlight/syntaxHighlightTwindConfig.ts";
+import { syntaxHighlightTwindConfig } from "../../../data/tools/syntax-highlight/syntaxHighlightTwindConfig.ts";
 
 //? Manages saving text input remotely and redirects
 export const handler = highlightTextMiddleware;

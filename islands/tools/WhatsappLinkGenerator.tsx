@@ -2,11 +2,12 @@
 import { useState } from "preact/hooks";
 //? Styled components
 import { StyledInput } from "../../components/UI/StyledInput.tsx";
+import { StyledButton } from "../../components/UI/StyledButton.tsx";
 import { CountryPhoneCodeSelect } from "../../components/tools/CountryPhoneCodeSelect.tsx";
 //? Types for typecasting
-import { validationStatus } from "../../types/misc/validationStatus.ts";
-import { WhatsappLinkData } from "../../types/whatsapp-link-generator/whatsapp-link-data.ts";
-import { StyledButton } from "../../components/UI/StyledButton.tsx";
+import { validationStatus } from "../../types/forms/validationStatus.ts";
+import type { WhatsappLinkData } from "../../types/component-properties/tools/whatsapp-link-generator/whatsapp-link-data.ts";
+
 //? Validation functions
 import { patternValidation } from "../../services/form-validation/patternValidation.ts";
 import { validateAreaCode } from "../../services/form-validation/validateAreaCode.ts";

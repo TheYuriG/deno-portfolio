@@ -1,4 +1,4 @@
-import { countryPhoneCodes } from "../../types/CountryPhoneCodes.ts";
+import { countryPhoneCodes } from "../../data/misc/CountryPhoneCodes.ts";
 
 export function CountryPhoneCodeSelect(
   { countryCode, updateCountryCode }: {

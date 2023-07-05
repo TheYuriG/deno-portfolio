@@ -1,6 +1,6 @@
 //? Import handlers to create a middleware function
 import { Handlers } from "$fresh/server.ts";
-import { saveNewExpenseToKV } from "../../data/expenses-tracker/saveNewExpenseToKV.ts";
+import { saveNewExpenseToKV } from "../../data/projects/expenses-tracker/saveNewExpenseToKV.ts";
 //? Fetch expenses from the database
 import fetchExpenses from "../../services/expenses-tracker/fetchExpenses.ts";
 //? Import the Expense type for casting

@@ -1,5 +1,5 @@
 //? Import the error type for whenever there is a failed attempt to read from KV
-import FetchDataError from "../../types/error/FetchDataError.ts";
+import FetchDataError from "../../../types/error/FetchDataError.ts";
 
 //? Reads data from KV
 export async function readHighlightFromKv(path: string) {

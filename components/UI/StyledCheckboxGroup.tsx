@@ -1,6 +1,6 @@
 //? Types for typecasting
-import { stimulusCheckboxOptions } from "../../types/stimulusCheckboxOptions.ts";
-import { validationStatus } from "../../types/misc/validationStatus.ts";
+import { stimulusCheckboxOptions } from "../../types/forms/stimulusCheckboxOptions.ts";
+import { validationStatus } from "../../types/forms/validationStatus.ts";
 //? Import checkboxes to compose group
 import { StyledSingleCheckbox } from "./StyledSingleCheckbox.tsx";
 

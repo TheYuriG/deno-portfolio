@@ -1,5 +1,5 @@
 //? Import IconProperties for props typecasting
-import { IconProperties } from "../types/misc/IconProperties.ts";
+import { IconProperties } from "../types/asset-properties/IconProperties.ts";
 
 //? Renders an Information Icon with fill
 export function InformationIcon(
