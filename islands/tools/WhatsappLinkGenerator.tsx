@@ -7,6 +7,7 @@ import { CountryPhoneCodeSelect } from "../../components/tools/CountryPhoneCodeS
 //? Types for typecasting
 import { validationStatus } from "../../types/forms/validationStatus.ts";
 import type { WhatsappLinkData } from "../../types/component-properties/tools/whatsapp-link-generator/whatsapp-link-data.ts";
+import { WhatsappMessagePreview } from "../../components/tools/WhatsappMessagePreview.tsx";
 
 //? Validation functions
 import { patternValidation } from "../../services/form-validation/patternValidation.ts";
@@ -15,11 +16,15 @@ import { validatePhoneNumber } from "../../services/form-validation/validatePhon
 import { WhatsappLinksList } from "../../components/tools/WhatsappLinksList.tsx";
 import { StyledTextArea } from "../../components/UI/StyledTextArea.tsx";
 
+//? Defined variable to replace in message body
+import { WHATSAPP_MESSAGE_VARIABLE } from "../../data/tools/whatsapp-link-generator/whatsapp-message-variable.ts";
+
 //? Default form values and validation
-const baseLinkData = {
+const baseLinkData: WhatsappLinkData = {
   countryCode: "93", //? Afghanistan, the first country in the select list
   areaCode: "",
   phoneNumber: "",
+  messageVariables: "",
   messageText: "",
 };
 const defaultFormValidation = {
@@ -55,7 +60,7 @@ export default function WhatsappLinkGenerator() {
       const storedMessageData = localStorage.getItem("whatsapp-link-data");
       //? If whatsapp link data exists, override the current data on state with the localStorage data
       if (storedMessageData !== null) {
-        const parsedMessageData: typeof baseLinkData = JSON.parse(
+        const parsedMessageData: WhatsappLinkData = JSON.parse(
           storedMessageData,
         );
         updateLinkData(parsedMessageData);
@@ -124,6 +129,7 @@ export default function WhatsappLinkGenerator() {
           countryCode: linkData.countryCode,
           messageText: linkData.messageText,
           phoneNumber: linkData.phoneNumber,
+          messageVariables: linkData.messageVariables,
         },
       ],
     );
@@ -182,10 +188,10 @@ export default function WhatsappLinkGenerator() {
           labelLink="whatsapp-phone-number"
           name="whatsapp-message-link-generator"
           value={linkData.phoneNumber}
-          inputFunction={(newCountryCode) => {
+          inputFunction={(newPhoneNumber) => {
             updateLinkData((currentPhoneNumber) => ({
               ...currentPhoneNumber,
-              phoneNumber: newCountryCode.trim(),
+              phoneNumber: newPhoneNumber.trim(),
             }));
           }}
           validationReference={formValidationStatus.phoneNumber}
@@ -202,6 +208,24 @@ export default function WhatsappLinkGenerator() {
             return result;
           }}
           helpInformation="Must only contain numerical digits and between 5 to 10 characters long"
+        />
+        {/* Message variables input */}
+        <StyledInput
+          key="message-variables"
+          inputType="text"
+          label="Message variables"
+          labelLink="whatsapp-message-variables"
+          name="whatsapp-message-link-generator"
+          value={linkData.messageVariables}
+          inputFunction={(newVariables) => {
+            updateLinkData((currentVariables) => ({
+              ...currentVariables,
+              messageVariables: newVariables,
+            }));
+          }}
+          validationReference={validationStatus.Unchanged}
+          validationFunction={() => validationStatus.Unchanged}
+          helpInformation={`Variables need to be separated by commas (,) and are trimmed by default. "${WHATSAPP_MESSAGE_VARIABLE}" are used to create variables that will be replaced in the message to send.`}
         />
         {/* Custom message to sent to all users */}
         <StyledTextArea
