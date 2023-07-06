@@ -20,7 +20,7 @@ export default function Home() {
       <CustomHead
         title="Retirement Calculator"
         description="Calculate how much you need to save monthly, and for how many months, to build permanent retirement funds, regardless of how many years you live after stop working."
-        link="https://www.theyurig.com/projects/retirement-calculator"
+        link="https://www.theyurig.com/tools/retirement-calculator"
       >
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
