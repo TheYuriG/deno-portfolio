@@ -1,5 +1,5 @@
 //? Validation values for typecasting
-import type { InformationIcon } from "../../assets/InformationIcon.tsx";
+import { InformationIcon } from "../../assets/InformationIcon.tsx";
 //? Toggle what validation status this form should display
 import { validationStatus } from "../../types/forms/validationStatus.ts";
 

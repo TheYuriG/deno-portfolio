@@ -1,7 +1,7 @@
 //? Import from Preact to be able to change state
 import { useEffect, useRef, useState } from "preact/hooks";
 //? Import Food type to typecast the data received
-import type { Food } from "../../types/food-order/Food.ts";
+import type { Food } from "../../types/component-properties/projects/food-order/Food.ts";
 //? Renders invidual food items on the page
 import { FoodItem } from "../../components/projects/food-order/FoodItem.tsx";
 //? Cart Button that opens the current Cart as a Modal
