@@ -4,4 +4,5 @@ export interface WhatsappLinkData {
   areaCode: string;
   phoneNumber: string;
   messageText: string;
+  messageVariables: string;
 }
