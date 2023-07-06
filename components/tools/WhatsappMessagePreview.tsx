@@ -3,6 +3,7 @@ import { JSX } from "preact";
 import type { WhatsappLinkData } from "../../types/component-properties/tools/whatsapp-link-generator/whatsapp-link-data.ts";
 //? Whatsapp message Variable slots
 import { WHATSAPP_MESSAGE_VARIABLE_PLACEHOLDER } from "../../data/tools/whatsapp-link-generator/whatsapp-message-variable-placeholder.ts";
+import { WHATSAPP_MESSAGE_MISSING_VARIABLE_MESSAGE } from "../../data/tools/whatsapp-link-generator/whatsapp-message-missing-variable.ts";
 
 //? Displays a preview of the out message, if a valid, non-empty after trimmed
 //? message and valid set of variables were provided
@@ -33,8 +34,10 @@ export function WhatsappMessagePreview(
       return renderHighlightedPreviewSpan(trimmedVariable);
     }
 
-    //? Return the variable placeholder if an empty string is the trim result
-    return renderHighlightedPreviewSpan(WHATSAPP_MESSAGE_VARIABLE);
+    //? Return the missing variable text if an empty string is the trim result
+    return renderHighlightedPreviewSpan(
+      WHATSAPP_MESSAGE_MISSING_VARIABLE_MESSAGE,
+    );
   });
   //? Return the message text splits so that it can be joined with the variables
   const unmodifiedText = messageText.split(
@@ -60,7 +63,7 @@ export function WhatsappMessagePreview(
     //? If we ran out of variables, render placeholder
     if (arrayOfVariables.length <= variableIndex) {
       previewJSX.push(
-        renderHighlightedPreviewSpan(WHATSAPP_MESSAGE_VARIABLE),
+        renderHighlightedPreviewSpan(WHATSAPP_MESSAGE_MISSING_VARIABLE_MESSAGE),
       );
     } //? If there is a variable to be used, render it
     else {
