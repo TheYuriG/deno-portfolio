@@ -17,7 +17,7 @@ import { WhatsappLinksList } from "../../components/tools/WhatsappLinksList.tsx"
 import { StyledTextArea } from "../../components/UI/StyledTextArea.tsx";
 
 //? Defined variable to replace in message body
-import { WHATSAPP_MESSAGE_VARIABLE } from "../../data/tools/whatsapp-link-generator/whatsapp-message-variable.ts";
+import { WHATSAPP_MESSAGE_VARIABLE_PLACEHOLDER } from "../../data/tools/whatsapp-link-generator/whatsapp-message-variable-placeholder.ts";
 
 //? Default form values and validation
 const baseLinkData: WhatsappLinkData = {
@@ -225,7 +225,7 @@ export default function WhatsappLinkGenerator() {
           }}
           validationReference={validationStatus.Unchanged}
           validationFunction={() => validationStatus.Unchanged}
-          helpInformation={`Variables need to be separated by commas (,) and are trimmed by default. "${WHATSAPP_MESSAGE_VARIABLE}" are used to create variables that will be replaced in the message to send.`}
+          helpInformation={`Variables need to be separated by commas (,) and are trimmed by default. "${WHATSAPP_MESSAGE_VARIABLE_PLACEHOLDER}" are used to create variables that will be replaced in the message to send.`}
         />
         {/* Custom message to sent to all users */}
         <StyledTextArea
@@ -241,6 +241,13 @@ export default function WhatsappLinkGenerator() {
               messageText: textInput,
             }))}
           name="whatsapp-message-link-generator"
+        />
+        {/* Message preview */}
+        <WhatsappMessagePreview
+          whatsappMessagePreview={{
+            messageText: linkData.messageText,
+            messageVariables: linkData.messageVariables,
+          }}
         />
         {/* Generate link to messaging on whatsapp with provided information */}
         <StyledButton
