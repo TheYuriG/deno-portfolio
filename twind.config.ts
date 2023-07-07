@@ -441,6 +441,14 @@ export default {
           case "fi":
             transitions.push("fill 0.9s ease-in-out");
             break;
+          // Define width fade-in (grow) transition
+          case "wfi":
+            transitions.push("width 0.7s ease-in-out");
+            break;
+          // Define width fade-out (shrink) transition
+          case "wfo":
+            transitions.push("width 0.7s ease-in-out");
+            break;
         }
       }
       return { transition: transitions.join(", ") };
