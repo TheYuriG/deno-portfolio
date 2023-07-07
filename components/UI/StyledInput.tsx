@@ -18,7 +18,7 @@ interface StyledInputProperties {
   inputType: "text" | "number" | "date";
   //? Tracks the validation reference state for this input
   validationReference: validationStatus;
-  //? Input name, helps Screenreaders to connect label+input
+  //? Input name, labels the inner data when/if the form is submitted
   name: string;
   //? Placeholder text to display on input, if relevant
   placeholder?: string;
@@ -31,7 +31,7 @@ interface StyledInputProperties {
   //? Minimum and maximum values for numerical or date (as string) inputs
   min?: number | string;
   max?: number | string;
-  //todo
+  //? Define by how much a numerical input should move up or down
   step?: number;
   //? Optional string to be used on the optional help Information icon
   helpInformation?: string;
@@ -69,6 +69,8 @@ export function StyledInput(
             required
             //? Unique key to allow Preact to know which node gets removed
             key={key}
+            //? Connects to the parent form, if provided
+            name={name}
             //? The type of this input (file, number, text, date, etc)
             //! Reference: https://www.w3schools.com/tags/tag_input.asp
             type={inputType}
