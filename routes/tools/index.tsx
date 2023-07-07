@@ -55,6 +55,13 @@ export default function Home() {
                 link="/tools/whatsapp-message-link-generator"
                 newTab={false}
               />,
+              //? Mathematical expression visualizer
+              <GradientLink
+                content="Expression Visualizer"
+                title="This is something that the teacher of the Automating the Boring Stuff used at some point in his classes. Thought it was really interesting, so I'm spinning up my own version of it for anyone to use."
+                link="/tools/expression-visualizer"
+                newTab={false}
+              />,
             ]}
           />
         </article>
