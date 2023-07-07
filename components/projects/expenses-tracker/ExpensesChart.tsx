@@ -3,7 +3,7 @@ import { StyledSubHeader } from "../../../components/UI/StyledSubHeader.tsx";
 //? Import individual MonthBar components to render all 12 months
 import { ExpensesChartMonthBar } from "./ExpensesChartMonthBar.tsx";
 //? Import the Expense type for casting
-import type { Expense } from "../../../types/expenses-tracker/Expense.ts";
+import type { Expense } from "../../../types/component-properties/projects/expenses-tracker/Expense.ts";
 
 //? Define properties for this component
 interface ExpenseChartProperties {
