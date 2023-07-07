@@ -42,12 +42,13 @@ import * as $$7 from "./islands/projects/ExpensesYearSelect.tsx";
 import * as $$8 from "./islands/projects/FoodOrder.tsx";
 import * as $$9 from "./islands/projects/FoodOrderCheckout.tsx";
 import * as $$10 from "./islands/projects/FormWithValidation.tsx";
-import * as $$11 from "./islands/tools/ExpressionVisualizer.tsx";
-import * as $$12 from "./islands/tools/HighlightedCode.tsx";
-import * as $$13 from "./islands/tools/RetirementCalculationForm.tsx";
-import * as $$14 from "./islands/tools/RetirementCalculator.tsx";
-import * as $$15 from "./islands/tools/WhatsappLinkGenerator.tsx";
-import * as $$16 from "./islands/toys/InsanitySection.tsx";
+import * as $$11 from "./islands/tools/ExpressionVisualizationList.tsx";
+import * as $$12 from "./islands/tools/ExpressionVisualizer.tsx";
+import * as $$13 from "./islands/tools/HighlightedCode.tsx";
+import * as $$14 from "./islands/tools/RetirementCalculationForm.tsx";
+import * as $$15 from "./islands/tools/RetirementCalculator.tsx";
+import * as $$16 from "./islands/tools/WhatsappLinkGenerator.tsx";
+import * as $$17 from "./islands/toys/InsanitySection.tsx";
 
 const manifest = {
   routes: {
@@ -93,12 +94,13 @@ const manifest = {
     "./islands/projects/FoodOrder.tsx": $$8,
     "./islands/projects/FoodOrderCheckout.tsx": $$9,
     "./islands/projects/FormWithValidation.tsx": $$10,
-    "./islands/tools/ExpressionVisualizer.tsx": $$11,
-    "./islands/tools/HighlightedCode.tsx": $$12,
-    "./islands/tools/RetirementCalculationForm.tsx": $$13,
-    "./islands/tools/RetirementCalculator.tsx": $$14,
-    "./islands/tools/WhatsappLinkGenerator.tsx": $$15,
-    "./islands/toys/InsanitySection.tsx": $$16,
+    "./islands/tools/ExpressionVisualizationList.tsx": $$11,
+    "./islands/tools/ExpressionVisualizer.tsx": $$12,
+    "./islands/tools/HighlightedCode.tsx": $$13,
+    "./islands/tools/RetirementCalculationForm.tsx": $$14,
+    "./islands/tools/RetirementCalculator.tsx": $$15,
+    "./islands/tools/WhatsappLinkGenerator.tsx": $$16,
+    "./islands/toys/InsanitySection.tsx": $$17,
   },
   baseUrl: import.meta.url,
 };

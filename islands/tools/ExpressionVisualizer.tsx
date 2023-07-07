@@ -3,26 +3,29 @@ import { useState } from "preact/hooks";
 //? Components
 import { StyledButton } from "../../components/UI/StyledButton.tsx";
 import { StyledInput } from "../../components/UI/StyledInput.tsx";
+import ExpressionVisualizationList from "./ExpressionVisualizationList.tsx";
 //? Validation
 import { validationStatus } from "../../types/forms/validationStatus.ts";
 import { validateNonEmptyText } from "../../services/form-validation/validateNonEmptyText.ts";
-
-//? Define all data that a visualization step must contain
-interface visualizer {
-  leadingText: string;
-  expressionText: string;
-  evaluatedText: string;
-  trailingText: string;
-}
+//? Type
+import type { visualizer } from "../../types/component-properties/tools/expression-visualizer/Visualizer.ts";
+type ValidationStatuses<K extends keyof visualizer> = Record<
+  K,
+  validationStatus
+>;
 
 //? Set base state values
 const baseState: visualizer = {
-  leadingText: "",
-  expressionText: "",
-  evaluatedText: "",
-  trailingText: "",
+  //   leadingText: "",
+  leadingText: "const b = ",
+  //   expressionText: "",
+  expressionText: "5 * 5",
+  //   evaluatedText: "",
+  evaluatedText: "25",
+  //   trailingText: "",
+  trailingText: ";",
 };
-const baseValidation = {
+const baseValidation: ValidationStatuses<"expressionText" | "evaluatedText"> = {
   expressionText: validationStatus.Unchanged,
   evaluatedText: validationStatus.Unchanged,
 };
@@ -69,6 +72,10 @@ export default function ExpressionVisualizer() {
               ...currentState,
               expressionText: input,
             }));
+            setValidation((current) => ({
+              ...current,
+              expressionText: validateNonEmptyText(input),
+            }));
           }}
           validationReference={formValidation.expressionText}
           validationFunction={(input) => validateNonEmptyText(input.toString())}
@@ -86,9 +93,13 @@ export default function ExpressionVisualizer() {
               ...currentState,
               evaluatedText: input,
             }));
+            setValidation((current) => ({
+              ...current,
+              evaluatedText: validateNonEmptyText(input),
+            }));
           }}
           validationReference={formValidation.evaluatedText}
-          validationFunction={(input) => validateNonEmptyText(input.toString())}
+          validationFunction={() => validationStatus.Unchanged}
         />
         {/* Trailing text. Displays after the expression */}
         <StyledInput
@@ -108,8 +119,17 @@ export default function ExpressionVisualizer() {
           validationFunction={() => validationStatus.Unchanged}
         />
         {/* Add validation step button */}
-        <StyledButton text="Add step" classes="self-center m-4" />
+        <StyledButton
+          text="Add step"
+          classes="self-center m-4"
+          onClickFunction={() => {
+            console.log("current form:", formValues);
+            setVisualization((current) => [...current, formValues]);
+          }}
+        />
       </form>
+      {/* Display steps */}
+      <ExpressionVisualizationList visualizationList={visualization} />
     </>
   );
 }
