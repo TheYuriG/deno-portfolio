@@ -25,9 +25,8 @@ export function ExpressionVisualizationListItem(
 
   //? Render the div with relevant data
   return (
-    <div
-      class="w-full text-center"
-      tabIndex={0}
+    <button
+      class="w-full text-center cursor-help"
       onClick={updateFunction} //? Toggles the state for this item between true/false
     >
       {/* Text prior to Expression */}
@@ -54,6 +53,6 @@ export function ExpressionVisualizationListItem(
       </span>
       {/* Text after the expression */}
       <span>{trailingText}</span>
-    </div>
+    </button>
   );
 }
