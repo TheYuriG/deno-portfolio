@@ -14,7 +14,6 @@ export default function ExpressionVisualizationList(
   //? Instantiate array that will hold all the animation states
   const playStateArray: boolean[] = [];
   visualizationList.forEach(() => {
-    console.log("New state created");
     playStateArray.push(false);
   });
   const [shouldAnimationPlay, toggleAnimationPlayStatus] = useState(

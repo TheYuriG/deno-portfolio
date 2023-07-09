@@ -123,8 +123,14 @@ export default function ExpressionVisualizer() {
           text="Add step"
           classes="self-center m-4"
           onClickFunction={() => {
-            console.log("current form:", formValues);
             setVisualization((current) => [...current, formValues]);
+            setValues((current) => ({
+              leadingText: current.leadingText +
+                current.evaluatedText + current.trailingText,
+              expressionText: "",
+              evaluatedText: "",
+              trailingText: "",
+            }));
           }}
         />
       </form>
