@@ -1,4 +1,4 @@
-import type { Expense } from "../expenses-tracker/Expense.ts";
+import type { Expense } from "../../../types/component-properties/projects/expenses-tracker/Expense.ts";
 
 //? Mock expenses
 export const mockExpenses: Expense[] = [

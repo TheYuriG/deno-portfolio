@@ -52,6 +52,18 @@
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
+    <url>
+        <loc>https://www.theyurig.com/tools/whatsapp-message-link-generator</loc>
+        <lastmod>2023-07-06</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.theyurig.com/tools/expression-visualizer</loc>
+        <lastmod>2023-07-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
     <!-- Projects -->
     <url>
         <loc>https://www.theyurig.com/projects</loc>
