@@ -41,7 +41,6 @@ export function HomeContent() {
         <GradientLink
           content="Trophy Place"
           link="https://trophy.place"
-          newTab={true}
         />{" "}
         and blogging
         {/* Blinking caret */}

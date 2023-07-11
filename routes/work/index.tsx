@@ -33,7 +33,6 @@ export default function Home() {
             I am the creator of{" "}
             <GradientLink
               content="Yura"
-              newTab={true}
               link="https://discordapp.com/invite/j55v7pD"
               title="My Discord bot's support server."
             />, a PSN-related Discord bot, based on PSNProfiles.com data
@@ -53,21 +52,18 @@ export default function Home() {
             I've created{" "}
             <GradientLink
               content="RotMG Utility"
-              newTab={true}
               link="https://github.com/TheYuriG/RotMG-Utility/releases"
               customRel="noopener noreferrer"
               title="Release repository for the RotMG app"
             />, a helper to managing trades from{" "}
             <GradientLink
               content="RealmEye.com"
-              newTab={true}
               link="https://www.realmeye.com/current-offers"
               customRel="noopener noreferrer"
               title="RealmEye.com, the website that has everything related to Realm Of The Mad God game."
             />, the community website around{" "}
             <GradientLink
               content="Realm of the Mad God"
-              newTab={true}
               link="https://www.realmofthemadgod.com/"
               customRel="noopener noreferrer"
               title="Realm of the Mad God, the game I made the app for."
@@ -84,7 +80,6 @@ export default function Home() {
             Discord to a{" "}
             <GradientLink
               content="mobile/desktop app"
-              newTab={true}
               link="https://github.com/TheYuriG/yura_app_repository"
               customRel="noopener noreferrer"
               title="Release repository for the Yura, as an app"
@@ -109,7 +104,6 @@ export default function Home() {
             starting{" "}
             <GradientLink
               content="Trophy Place"
-              newTab={true}
               link="https://my.trophy.place/"
               title="More than just a passion project, Trophy Place will eventually become the defacto website for trophy hunting on PSN."
             />. My partner took over the frontend and I take care of the
@@ -121,7 +115,6 @@ export default function Home() {
             studying and my agency contract jobs are my daily{" "}
             <GradientLink
               content="coding routine"
-              newTab={true}
               link="https://github.com/TheYuriG"
               title="My GitHub profile page."
             />.

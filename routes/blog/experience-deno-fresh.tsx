@@ -64,7 +64,6 @@ export default function Home() {
               content="two types of languages"
               title="Quote by Bjarne Stroustrup"
               customRel="noopener noreferrer"
-              newTab={true}
             />.
           </p>
 
@@ -143,7 +142,6 @@ export default function Home() {
               content="happens in other languages"
               title="It's not a race to the bottom"
               customRel="noopener noreferrer"
-              newTab={true}
             />/runtimes, it sucks when it happens and it does happen a lot here.
           </p>
           {/* Why do these packages get abandoned? */}
@@ -161,7 +159,6 @@ export default function Home() {
               content="Ryan Dahl"
               title="Original creator of Node.JS"
               customRel="noopener noreferrer"
-              newTab={true}
             />, the original creator of Node. If someone out there understands
             about writing Javascript runtimes, it is the guy who made
             three<sup class="hover:custom-tx-ac custom-tr-tx underline">
@@ -420,7 +417,6 @@ export default function Home() {
               content="Deno Deploy"
               title="A runtime to deploy web applications at scale, on the edge."
               customRel="noopener noreferrer"
-              newTab={true}
             />{" "}
             is the third runtime, if you are wondering.
           </p>

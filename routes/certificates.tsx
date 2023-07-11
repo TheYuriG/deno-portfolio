@@ -45,7 +45,6 @@ export default function Home() {
             <GradientLink
               content="Trophy Place"
               link="https://trophy.place"
-              newTab={true}
             />.
           </p>
           <StyledSubHeader title="React (+NextJS)" />

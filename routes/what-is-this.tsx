@@ -47,13 +47,11 @@ export default function Home() {
             <DottedLink
               content="thoughts"
               link="/blog"
-              newTab={true}
             />{" "}
             and{" "}
             <DottedLink
               content="creative expression"
               link="/toys"
-              newTab={true}
             />
             . It was built using Deno, Fresh, Preact and Typescript.
           </p>
@@ -73,7 +71,6 @@ export default function Home() {
             <GradientLink
               content="Bun"
               link="https://bun.sh/"
-              newTab={true}
               customRel="noopener noreferrer"
             />{" "}
             also allows developers to run Typescript natively since that also
@@ -95,7 +92,6 @@ export default function Home() {
             <GradientLink
               content="Islands"
               link="https://www.patterns.dev/posts/islands-architecture"
-              newTab={true}
               customRel="noopener noreferrer"
             />{" "}
             architecture.

@@ -34,7 +34,6 @@ export default function Home() {
             <GradientLink
               content="React - The Complete Guide"
               link="https://www.udemy.com/course/react-the-complete-guide-incl-redux/"
-              newTab={true}
               title="React couse, by Academind"
               customRel="noopener noreferrer"
             />{" "}
@@ -51,7 +50,6 @@ export default function Home() {
               <GradientLink
                 content="not knowing what I don't know"
                 link="https://hbr.org/2012/05/discover-what-you-need-to-know"
-                newTab={true}
                 customRel="noopener noreferrer"
                 title="It's not about impostor syndrome, but about being aware that you will always not know more about things than you actually know about them"
               />
