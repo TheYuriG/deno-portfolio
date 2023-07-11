@@ -4,7 +4,9 @@ import { CustomHead } from "../../components/base/CustomHead.tsx";
 import { Base } from "../../components/base/Base.tsx";
 //? Default styled header
 import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
+//? Link component to pre-format links and reduce boiletplate
 import { GradientLink } from "../../components/UI/GradientLink.tsx";
+import { DottedLink } from "../../components/UI/DottedLink.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
 import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 //? Component to create a column grid of projects created
@@ -73,7 +75,7 @@ export default function Home() {
             <span class="shl-inline">Portals</span> and{" "}
             <span class="shl-inline">Context</span>, it was mostly nice-to-know
             course for me. Check{" "}
-            <GradientLink
+            <DottedLink
               content="tools"
               link="/tools"
               title="The things I've built alone"

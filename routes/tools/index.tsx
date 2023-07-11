@@ -6,8 +6,8 @@ import { Base } from "../../components/base/Base.tsx";
 import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
 import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
-//? A HTML Link component to pre-format links and reduce boiletplate
-import { GradientLink } from "../../components/UI/GradientLink.tsx";
+//? Link component to pre-format links and reduce boiletplate
+import { DottedLink } from "../../components/UI/DottedLink.tsx";
 //? Create a greek list of contents
 import { GreekList } from "../../components/UI/GreekList.tsx";
 
@@ -35,32 +35,28 @@ export default function Home() {
           <GreekList
             items={[
               //? Syntax highlighter
-              <GradientLink
+              <DottedLink
                 content="Syntax Highlight"
                 title="Create a HTML+CSS version of syntax highlight that you can paste into your React/Preact files."
                 link="/tools/syntax-highlight"
-                newTab={false}
               />,
               //? Retirement calculator
-              <GradientLink
+              <DottedLink
                 content="Retirement Calculator"
                 title="I love planning how to save/invest money and I love watching interest compound, so I've built a tool that helps me visualise that over time."
                 link="/tools/retirement-calculator"
-                newTab={false}
               />,
               //? Whatsapp messaging Link Generator
-              <GradientLink
+              <DottedLink
                 content="Whatsapp Message Link Generator"
                 title="When I used to work with marketing, I could not find a good resouce to generate a link to message someone in WhatsApp. This tool does what I needed done back then. This tool helps manual messaging, but if this is something you are doing constantly, I suggest automating this process in another way instead or hiring someone to create a chatbot for you."
                 link="/tools/whatsapp-message-link-generator"
-                newTab={false}
               />,
               //? Mathematical expression visualizer
-              <GradientLink
+              <DottedLink
                 content="Expression Visualizer"
                 title="This is something that the teacher of the Automating the Boring Stuff used at some point in his classes. Thought it was really interesting, so I'm spinning up my own version of it for anyone to use."
                 link="/tools/expression-visualizer"
-                newTab={false}
               />,
             ]}
           />
