@@ -1,5 +1,5 @@
 //? Require the interface to ensure we receive the proper data
-import BlogPostSummaryProperties from "../../types/blog/BlogPostSummaryProperties.ts";
+import type { BlogPostSummaryProperties } from "../../types/blog/BlogPostSummaryProperties.ts";
 //? Default styled header
 import { StyledSubHeader } from "../../components/UI/StyledSubHeader.tsx";
 
