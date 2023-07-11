@@ -7,7 +7,7 @@ import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 //? Import the template for Blog Post summaries
 import { BlogPostSummary } from "../../components/blog/BlogPostSummary.tsx";
 //? Import the types so that it doesn't need to be interfaced twice
-import BlogPostSummaryProperties from "../../types/blog/BlogPostSummaryProperties.ts";
+import { BlogPostSummaryProperties } from "../../types/blog/BlogPostSummaryProperties.ts";
 //? Import posts
 import { createFreshThemeSwitcher } from "../../data/blog/how-create-theme-switcher-deno-fresh.ts";
 import { stopThemeFlickering } from "../../data/blog/stopping-theme-flickering-deno-fresh.ts";
@@ -15,9 +15,11 @@ import { createTextChannelPost } from "../../data/blog/how-create-text-channels-
 import { createVoiceChannelPost } from "../../data/blog/how-create-voice-channels-discord-v14.ts";
 import { createCategoryPost } from "../../data/blog/how-create-categories-discord-v14.ts";
 import { createRolesPost } from "../../data/blog/how-create-roles-discord-v14.ts";
+import { experienceDenoFreshPost } from "../../data/blog/experience-deno-fresh.ts";
 
 //? All posts so far
 const createdPosts: Array<BlogPostSummaryProperties> = [
+  experienceDenoFreshPost,
   stopThemeFlickering,
   createFreshThemeSwitcher,
   createRolesPost,
