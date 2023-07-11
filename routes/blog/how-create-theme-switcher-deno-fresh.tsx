@@ -13,6 +13,8 @@ import { GradientLink } from "../../components/UI/GradientLink.tsx";
 import { GreekList } from "../../components/UI/GreekList.tsx";
 //? Display a link to view the source code on GitHub
 import { ViewOnGitHub } from "../../components/misc/ViewOnGithub.tsx";
+//? Import the default post footer
+import { BlogPostFooter } from "../../components/blog/BlogPostFooter.tsx";
 //? Import posts
 import { createFreshThemeSwitcher as postSummary } from "../../data/blog/how-create-theme-switcher-deno-fresh.ts";
 import { stopThemeFlickering as nextPost } from "../../data/blog/stopping-theme-flickering-deno-fresh.ts";
@@ -505,9 +507,7 @@ export default function Home() {
             />.
           </p>
           {/* Post author */}
-          <footer class="mt-auto w-full text-right text-sm">
-            Written with 💞 by TheYuriG
-          </footer>
+          <BlogPostFooter />
         </article>
       </Base>
     </>

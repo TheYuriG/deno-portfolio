@@ -11,6 +11,8 @@ import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 import { GradientLink } from "../../components/UI/GradientLink.tsx";
 //? Create a greek list of contents
 import { GreekList } from "../../components/UI/GreekList.tsx";
+//? Import the default post footer
+import { BlogPostFooter } from "../../components/blog/BlogPostFooter.tsx";
 //? Import post summary
 import { experienceDenoFreshPost as postSummary } from "../../data/blog/experience-deno-fresh.ts";
 
@@ -43,9 +45,21 @@ export default function Home() {
               LOVE
             </strong>{" "}
             the developer experience of working with Deno and I have no
-            intention to going back to Node. While the "good parts" section
-            might be smaller than the "bad parts" section, I'm 100% aware that
-            there are only{" "}
+            intention to going back to Node. While the{" "}
+            <GradientLink
+              link="#good-parts"
+              content="good parts"
+              title="Scroll page to the good parts"
+              newTab={false}
+            />{" "}
+            section might be smaller than the{" "}
+            <GradientLink
+              link="#bad-parts"
+              content="bad parts"
+              title="Scroll page to the bad parts"
+              newTab={false}
+            />{" "}
+            section, I'm 100% aware that there are only{" "}
             <GradientLink
               link="https://www.stroustrup.com/quotes.html#:~:text=%22There%20are%20only%20two%20kinds,and%20the%20ones%20nobody%20uses%22"
               content="two types of languages"
@@ -56,7 +70,7 @@ export default function Home() {
           </p>
 
           {/* The Good */}
-          <StyledSubHeader title="The good parts" />
+          <StyledSubHeader title="The good parts" id="good-parts" />
           <p class="my-2 text-justify">
             You might read this post and think that I hate Deno, but it's
             actually quite the opposite, I <strong>LOVE</strong>{" "}
@@ -100,7 +114,7 @@ export default function Home() {
           </p>
 
           {/* The Bad */}
-          <StyledSubHeader title="The bad parts" />
+          <StyledSubHeader title="The bad parts" id="bad-parts" />
           <p class="my-2 text-justify">
             I've had a ton of issues when I started out building this website
             and I would like to go over them now to better align people
@@ -413,9 +427,7 @@ export default function Home() {
           </p>
 
           {/* Post author */}
-          <footer class="mt-auto w-full text-right text-sm">
-            Written with 💞 by TheYuriG
-          </footer>
+          <BlogPostFooter />
         </article>
       </Base>
     </>

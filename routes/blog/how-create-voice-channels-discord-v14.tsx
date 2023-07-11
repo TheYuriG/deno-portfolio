@@ -11,6 +11,8 @@ import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 import { GradientLink } from "../../components/UI/GradientLink.tsx";
 //? Display a link to view the source code on GitHub
 import { ViewOnGitHub } from "../../components/misc/ViewOnGithub.tsx";
+//? Import the default post footer
+import { BlogPostFooter } from "../../components/blog/BlogPostFooter.tsx";
 //? Import post summary
 import { createTextChannelPost as previousPost } from "../../data/blog/how-create-text-channels-discord-v14.ts";
 import { createVoiceChannelPost as postSummary } from "../../data/blog/how-create-voice-channels-discord-v14.ts";
@@ -825,9 +827,7 @@ export default function Home() {
             />
           </p>
           {/* Post author */}
-          <footer class="mt-auto w-full text-right text-sm">
-            Written with 💞 by TheYuriG
-          </footer>
+          <BlogPostFooter />
         </article>
       </Base>
     </>
