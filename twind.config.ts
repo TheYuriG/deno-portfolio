@@ -310,6 +310,12 @@ export default {
     "f-as": {
       "font-family": "'Alfa Slab One', cursive",
     },
+    // Greek ordered lists
+    "greek-list": {
+      "&": { "list-style-type": "lower-greek", "align-self": "flex-start" },
+      "& > li::marker": { "transition": "color 0.5s" },
+      "& > li:hover::marker": { "color": "var(--base-color)" },
+    },
     // Borders
     "custom-bo": ([borderType]: Array<string>) => {
       switch (borderType) {
@@ -425,7 +431,13 @@ export default {
               "height 0.5s ease-in-out",
             );
             break;
-            // Define text color transition
+          // Define margin-left transition
+          case "ml":
+            transitions.push(
+              "margin-left 0.5s ease-in-out",
+            );
+            break;
+          // Define text color transition
           case "tx":
             transitions.push("color 0.9s ease-in-out");
             break;

@@ -7,10 +7,10 @@ export function GreekList({ items }: { items: Array<string | JSX.Element> }) {
     //? Ordered list using greek alphabet characters for counting
     <ol
       start={1}
-      class="self-start list-[lower-greek] my-4"
+      class="greek-list my-4"
     >
       {items.map((item) => (
-        <li class="ml-10 lg:ml-0 transition-[margin-left] ease-in-out duration-500">
+        <li class="ml-10 lg:ml-0 custom-tr-ml-tx hover:custom-tx-ac">
           {item}
         </li>
       ))}
