@@ -12,11 +12,11 @@ export function HomeContent() {
       </h1>
       {/* Name */}
       <p
-        class="block text-2xl ml-4 animate-slide-top delay-slide-top group"
+        class="block text-2xl ml-4 animate-slide-top delay-slide-top"
         style="--dur: 0.5;"
       >
         My name is{" "}
-        <strong>
+        <strong class="group">
           <span class="custom-underline-dotted hover:custom-tx-ac">
             Yuri
           </span>
