@@ -11,6 +11,8 @@ import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 import { GradientLink } from "../../components/UI/GradientLink.tsx";
 //? Create a greek list of contents
 import { GreekList } from "../../components/UI/GreekList.tsx";
+//? Import the default post footer
+import { BlogPostFooter } from "../../components/blog/BlogPostFooter.tsx";
 //? Import post summary
 import { experienceDenoFreshPost as postSummary } from "../../data/blog/experience-deno-fresh.ts";
 
@@ -413,9 +415,7 @@ export default function Home() {
           </p>
 
           {/* Post author */}
-          <footer class="mt-auto w-full text-right text-sm">
-            Written with 💞 by TheYuriG
-          </footer>
+          <BlogPostFooter />
         </article>
       </Base>
     </>
