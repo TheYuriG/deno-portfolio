@@ -1,3 +1,6 @@
+//? Import ExternalLinkIcon to add the GradientLink
+import { ExternalLinkIcon } from "../../assets/ExternalLinkIcon.tsx";
+
 //? Define the required and optional properties of a Gradient Link
 interface GradientLinkProperties {
   link: string;
@@ -14,13 +17,14 @@ export function GradientLink(
 ) {
   return (
     <a
-      class="custom-underline-gradient hover:custom-tx-ac"
+      class="inline-flex items-center custom-underline-gradient hover:custom-tx-ac"
       href={link}
       title={title}
       target={newTab ? "_blank" : "_self"}
       rel={customRel}
     >
       {content}
+      <ExternalLinkIcon iconHeight="1em" iconWidth="1em" classes="ml-1" />
     </a>
   );
 }
