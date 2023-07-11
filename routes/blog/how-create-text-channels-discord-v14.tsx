@@ -7,8 +7,9 @@ import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
 import { StyledSubHeader } from "../../components/UI/StyledSubHeader.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
 import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
-//? A HTML Link component to pre-format links and reduce boiletplate
+//? Link components to pre-format links and reduce boiletplate
 import { GradientLink } from "../../components/UI/GradientLink.tsx";
+import { DottedLink } from "../../components/UI/DottedLink.tsx";
 //? Create a greek list of contents
 import { GreekList } from "../../components/UI/GreekList.tsx";
 //? Display a link to view the source code on GitHub
@@ -1718,11 +1719,10 @@ export default function Home() {
           {/* Next post: voice channels */}
           <p class="mt-4 text-justify self-start">
             Next post:{" "}
-            <GradientLink
+            <DottedLink
               content={nextPost.title}
               link={nextPost.link}
               customRel="next"
-              newTab={false}
             />.
           </p>
           {/* Post author */}

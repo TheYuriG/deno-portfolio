@@ -7,8 +7,9 @@ import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
 import { StyledSubHeader } from "../../components/UI/StyledSubHeader.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
 import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
-//? A HTML Link component to pre-format links and reduce boiletplate
+//? Link components to pre-format links and reduce boiletplate
 import { GradientLink } from "../../components/UI/GradientLink.tsx";
+import { DottedLink } from "../../components/UI/DottedLink.tsx";
 //? Create a greek list of contents
 import { GreekList } from "../../components/UI/GreekList.tsx";
 //? Display a link to view the source code on GitHub
@@ -498,11 +499,10 @@ export default function Home() {
             issues with it, like flickering on first load or the inability to
             check for user preferences. Let's address those problems on those on
             the{" "}
-            <GradientLink
+            <DottedLink
               link={nextPost.link}
               title={nextPost.title}
               content="next blog post"
-              newTab={false}
               customRel="next"
             />.
           </p>

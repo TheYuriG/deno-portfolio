@@ -7,8 +7,9 @@ import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
 import { StyledSubHeader } from "../../components/UI/StyledSubHeader.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
 import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
-//? A HTML Link component to pre-format links and reduce boiletplate
+//? Link components to pre-format links and reduce boiletplate
 import { GradientLink } from "../../components/UI/GradientLink.tsx";
+import { DottedLink } from "../../components/UI/DottedLink.tsx";
 //? Display a link to view the source code on GitHub
 import { ViewOnGitHub } from "../../components/misc/ViewOnGithub.tsx";
 //? Import the default post footer
@@ -43,12 +44,11 @@ export default function Home() {
           <p class="mb-4 self-start text-xs">
             This is the fourth and last part of the Discord.JS V14 tutorial that
             I've published. You can read the{" "}
-            <GradientLink
+            <DottedLink
               link={previousPost.link}
               title={previousPost.title}
               content="third part"
               customRel="prev"
-              newTab={false}
             />{" "}
             here. You can also read the full version of this tutorial on{" "}
             <GradientLink
