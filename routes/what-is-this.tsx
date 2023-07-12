@@ -4,7 +4,9 @@ import { CustomHead } from "../components/base/CustomHead.tsx";
 import { Base } from "../components/base/Base.tsx";
 //? Default styled header
 import { StyledHeader } from "../components/UI/StyledHeader.tsx";
+//? Link component to pre-format links and reduce boiletplate
 import { GradientLink } from "../components/UI/GradientLink.tsx";
+import { DottedLink } from "../components/UI/DottedLink.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
 import { NavigationButtons } from "../components/misc/NavigationButtons.tsx";
 
@@ -42,16 +44,14 @@ export default function Home() {
           <StyledHeader title="Ok, so what is this?" />
           <p class="text-justify">
             This website is meant to be an outlet for my{" "}
-            <GradientLink
+            <DottedLink
               content="thoughts"
               link="/blog"
-              newTab={true}
             />{" "}
             and{" "}
-            <GradientLink
+            <DottedLink
               content="creative expression"
               link="/toys"
-              newTab={true}
             />
             . It was built using Deno, Fresh, Preact and Typescript.
           </p>
@@ -71,7 +71,6 @@ export default function Home() {
             <GradientLink
               content="Bun"
               link="https://bun.sh/"
-              newTab={true}
               customRel="noopener noreferrer"
             />{" "}
             also allows developers to run Typescript natively since that also
@@ -93,7 +92,6 @@ export default function Home() {
             <GradientLink
               content="Islands"
               link="https://www.patterns.dev/posts/islands-architecture"
-              newTab={true}
               customRel="noopener noreferrer"
             />{" "}
             architecture.

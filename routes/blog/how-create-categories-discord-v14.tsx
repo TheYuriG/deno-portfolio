@@ -7,8 +7,9 @@ import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
 import { StyledSubHeader } from "../../components/UI/StyledSubHeader.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
 import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
-//? A HTML Link component to pre-format links and reduce boiletplate
+//? Link components to pre-format links and reduce boiletplate
 import { GradientLink } from "../../components/UI/GradientLink.tsx";
+import { DottedLink } from "../../components/UI/DottedLink.tsx";
 //? Display a link to view the source code on GitHub
 import { ViewOnGitHub } from "../../components/misc/ViewOnGithub.tsx";
 //? Import the default post footer
@@ -46,12 +47,11 @@ export default function Home() {
           <p class="mb-4 self-start text-xs">
             This is the third (of four) parts of the Discord.JS V14 tutorial
             that I've published. You can read the{" "}
-            <GradientLink
+            <DottedLink
               link={previousPost.link}
               title={previousPost.title}
               content="second part"
               customRel="prev"
-              newTab={false}
             />{" "}
             here. You can also read the full version of this tutorial on{" "}
             <GradientLink
@@ -286,11 +286,10 @@ export default function Home() {
           <ViewOnGitHub githubLink="https://github.com/TheYuriG/blog_lessons/blob/master/discord_create_channels/commands/createcategory.js" />
           <p class="my-2 text-justify">
             You might have noticed if you went through the{" "}
-            <GradientLink
+            <DottedLink
               link={createTextChannelPost.link}
               title={createTextChannelPost.title}
               content="Create a Text Channel with Dynamic Names"
-              newTab={false}
             />{" "}
             lesson that very little was changed. We have renamed our variable,
             updated the command and the option name, and changed the type of
@@ -780,12 +779,11 @@ export default function Home() {
           {/* Next post: Roles */}
           <p class="mt-4 text-justify self-start">
             Next post:{" "}
-            <GradientLink
+            <DottedLink
               link={nextPost.link}
               title={nextPost.title}
               content={nextPost.title}
               customRel="next"
-              newTab={false}
             />.
           </p>
           {/* Post author */}

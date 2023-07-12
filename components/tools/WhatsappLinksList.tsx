@@ -53,7 +53,6 @@ export function WhatsappLinksList(
 
       return (
         <GradientLink
-          newTab={true}
           content={`+${countryCode} (${areaCode}) ${phoneNumber}`}
           link={`https://wa.me/${countryCode}${areaCode}${phoneNumber}${
             messageText !== ""

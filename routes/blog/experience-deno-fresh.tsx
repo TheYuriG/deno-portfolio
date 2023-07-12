@@ -7,8 +7,9 @@ import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
 import { StyledSubHeader } from "../../components/UI/StyledSubHeader.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
 import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
-//? A HTML Link component to pre-format links and reduce boiletplate
+//? Link components to pre-format links and reduce boiletplate
 import { GradientLink } from "../../components/UI/GradientLink.tsx";
+import { DottedLink } from "../../components/UI/DottedLink.tsx";
 //? Create a greek list of contents
 import { GreekList } from "../../components/UI/GreekList.tsx";
 //? Import the default post footer
@@ -46,18 +47,16 @@ export default function Home() {
             </strong>{" "}
             the developer experience of working with Deno and I have no
             intention to going back to Node. While the{" "}
-            <GradientLink
+            <DottedLink
               link="#good-parts"
               content="good parts"
               title="Scroll page to the good parts"
-              newTab={false}
             />{" "}
             section might be smaller than the{" "}
-            <GradientLink
+            <DottedLink
               link="#bad-parts"
               content="bad parts"
               title="Scroll page to the bad parts"
-              newTab={false}
             />{" "}
             section, I'm 100% aware that there are only{" "}
             <GradientLink
@@ -65,7 +64,6 @@ export default function Home() {
               content="two types of languages"
               title="Quote by Bjarne Stroustrup"
               customRel="noopener noreferrer"
-              newTab={true}
             />.
           </p>
 
@@ -144,7 +142,6 @@ export default function Home() {
               content="happens in other languages"
               title="It's not a race to the bottom"
               customRel="noopener noreferrer"
-              newTab={true}
             />/runtimes, it sucks when it happens and it does happen a lot here.
           </p>
           {/* Why do these packages get abandoned? */}
@@ -162,7 +159,6 @@ export default function Home() {
               content="Ryan Dahl"
               title="Original creator of Node.JS"
               customRel="noopener noreferrer"
-              newTab={true}
             />, the original creator of Node. If someone out there understands
             about writing Javascript runtimes, it is the guy who made
             three<sup class="hover:custom-tx-ac custom-tr-tx underline">
@@ -306,9 +302,9 @@ export default function Home() {
           {/* I've made a tool for this */}
           <p class="my-2 text-justify">
             If you have already visited my{" "}
-            <GradientLink
+            <DottedLink
               link="/tools"
-              content="/tools"
+              content="tools"
               title="My creations"
             />{" "}
             page, you might be wondering why I've created that. Well, this is
@@ -347,7 +343,7 @@ export default function Home() {
           {/* So I've created Syntax Highlighter */}
           <p class="my-2 text-justify">
             So that's why Ive created{" "}
-            <GradientLink
+            <DottedLink
               link="/tools/syntax-highlight"
               content="Syntax Highlight"
               title="The solution to my problem"
@@ -421,7 +417,6 @@ export default function Home() {
               content="Deno Deploy"
               title="A runtime to deploy web applications at scale, on the edge."
               customRel="noopener noreferrer"
-              newTab={true}
             />{" "}
             is the third runtime, if you are wondering.
           </p>
