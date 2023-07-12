@@ -1,5 +1,5 @@
 //? Import base stats as Type
-import type { baseRetirementStats } from "../../types/retirement-calculator/baseRetirementStats.ts";
+import type { baseRetirementStats } from "../../../data/tools/retirement-calculator/baseRetirementStats.ts";
 
 //? Creates the table with the yearly distribution of time to retire
 export function RetirementCalculationTable(

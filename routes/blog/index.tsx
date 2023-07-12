@@ -16,9 +16,11 @@ import { createVoiceChannelPost } from "../../data/blog/how-create-voice-channel
 import { createCategoryPost } from "../../data/blog/how-create-categories-discord-v14.ts";
 import { createRolesPost } from "../../data/blog/how-create-roles-discord-v14.ts";
 import { experienceDenoFreshPost } from "../../data/blog/experience-deno-fresh.ts";
+import { javascriptPythonSyntaxPost } from "../../data/blog/javascript-python-syntax.ts";
 
 //? All posts so far
 const createdPosts: Array<BlogPostSummaryProperties> = [
+  javascriptPythonSyntaxPost,
   experienceDenoFreshPost,
   stopThemeFlickering,
   createFreshThemeSwitcher,

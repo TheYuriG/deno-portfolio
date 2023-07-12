@@ -3,7 +3,7 @@ import type { JSX } from "preact";
 //? State management
 import { useState } from "preact/hooks";
 //? Component
-import { ExpressionVisualizationListItem } from "../../components/tools/ExpressionVisualizationListItem.tsx";
+import { ExpressionVisualizationListItem } from "../../components/tools/expression-visualizer/ExpressionVisualizationListItem.tsx";
 //? Type
 import type { visualizer } from "../../types/component-properties/tools/expression-visualizer/Visualizer.ts";
 

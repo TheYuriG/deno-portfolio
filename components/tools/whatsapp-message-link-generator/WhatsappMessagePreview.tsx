@@ -1,9 +1,9 @@
 //? Types for typecasting
 import { JSX } from "preact";
-import type { WhatsappLinkData } from "../../types/component-properties/tools/whatsapp-link-generator/whatsapp-link-data.ts";
+import type { WhatsappLinkData } from "../../../types/component-properties/tools/whatsapp-link-generator/whatsapp-link-data.ts";
 //? Whatsapp message Variable slots
-import { WHATSAPP_MESSAGE_VARIABLE_PLACEHOLDER } from "../../data/tools/whatsapp-link-generator/whatsapp-message-variable-placeholder.ts";
-import { WHATSAPP_MESSAGE_MISSING_VARIABLE_MESSAGE } from "../../data/tools/whatsapp-link-generator/whatsapp-message-missing-variable.ts";
+import { WHATSAPP_MESSAGE_VARIABLE_PLACEHOLDER } from "../../../data/tools/whatsapp-link-generator/whatsapp-message-variable-placeholder.ts";
+import { WHATSAPP_MESSAGE_MISSING_VARIABLE_MESSAGE } from "../../../data/tools/whatsapp-link-generator/whatsapp-message-missing-variable.ts";
 
 //? Displays a preview of the out message, if a valid, non-empty after trimmed
 //? message and valid set of variables were provided

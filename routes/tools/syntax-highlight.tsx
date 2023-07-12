@@ -7,7 +7,7 @@ import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
 import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 //? Import Syntax Highlight form to handle sending data to the server
-import SyntaxHighlighForm from "../../components/tools/SyntaxHighlighForm.tsx";
+import SyntaxHighlighForm from "../../components/tools/syntax-highlight/SyntaxHighlighForm.tsx";
 //? Imports middleware responsible for processing GET/POST requests to this route
 import { syntaxHighlightMiddleware } from "../../middleware/tools/__syntax-highlight.tsx";
 import { ErrorAlert } from "../../components/UI/ErrorAlert.tsx";
