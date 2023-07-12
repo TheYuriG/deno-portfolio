@@ -1,3 +1,5 @@
+//? Link components to pre-format links and reduce boiletplate
+import { DottedLink } from "../UI/DottedLink.tsx";
 import { GradientLink } from "../UI/GradientLink.tsx";
 
 export function HomeContent() {
@@ -17,9 +19,7 @@ export function HomeContent() {
       >
         My name is{" "}
         <strong class="group">
-          <span class="custom-underline-dotted hover:custom-tx-ac">
-            Yuri
-          </span>
+          <DottedLink content="Yuri" link="/me" />
           <span class="hidden group-hover:inline-block group-hover:animate-waving">
             👋
           </span>
