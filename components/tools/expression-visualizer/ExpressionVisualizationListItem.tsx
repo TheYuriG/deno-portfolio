@@ -1,5 +1,5 @@
 //? Visualizer type to define props
-import type { visualizer } from "../../types/component-properties/tools/expression-visualizer/Visualizer.ts";
+import type { visualizer } from "../../../types/component-properties/tools/expression-visualizer/Visualizer.ts";
 
 //? State related properties
 interface StateManagement {

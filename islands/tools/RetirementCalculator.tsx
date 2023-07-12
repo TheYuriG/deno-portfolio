@@ -2,7 +2,7 @@
 import { useMemo, useState } from "preact/hooks";
 //? Components/Islands
 import RetirementCalculatorForm from "./RetirementCalculationForm.tsx";
-import { RetirementCalculationTable } from "../../components/retirement-calculator/RetirementCalculationTable.tsx";
+import { RetirementCalculationTable } from "../../components/tools/retirement-calculator/RetirementCalculationTable.tsx";
 import { StyledSubHeader } from "../../components/UI/StyledSubHeader.tsx";
 //? Data
 import { baseRetirementStats } from "../../data/tools/retirement-calculator/baseRetirementStats.ts";

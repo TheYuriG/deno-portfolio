@@ -1,7 +1,7 @@
 //? Text area to provide code to be highlighted
-import { StyledTextArea } from "../UI/StyledTextArea.tsx";
+import { StyledTextArea } from "../../UI/StyledTextArea.tsx";
 //? Import button to submit the POST request to the same URL
-import { StyledButton } from "../UI/StyledButton.tsx";
+import { StyledButton } from "../../UI/StyledButton.tsx";
 
 //? Export mini form to save highlighted texts
 export default function SyntaxHighlighForm() {
