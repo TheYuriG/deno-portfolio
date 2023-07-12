@@ -1,7 +1,7 @@
-//? Validation values for typecasting
-import { InformationIcon } from "../../assets/InformationIcon.tsx";
 //? Toggle what validation status this form should display
 import { validationStatus } from "../../types/forms/validationStatus.ts";
+//? Render a tooltip icon if helpinformation is provided
+import { Tooltip } from "./Tooltip.tsx";
 
 //? Define optional and required properties for inputs
 interface StyledInputProperties {
@@ -107,18 +107,7 @@ export function StyledInput(
             autocomplete={autoCompleteSuggestion}
           />
           {/* Tooltip on the right side, with user information about what data is valid */}
-          {helpInformation && (
-            <div class="ml-2 relative inline-block group">
-              {/* Information icon */}
-              <InformationIcon iconHeight="1.8em" iconWidth="1.8em" />
-              <span
-                class="absolute invisible opacity-0 w-max max-w-[80dvw] lg:max-w-[40em] custom-bg-ac custom-tx-nc text-center font-bold p-2 rounded-md right-0 top-[2em] z-10 group-hover:(visible opacity-100)"
-                style="transition: opacity 0.4s ease-in-out, color 0.9s ease-in-out;"
-              >
-                {helpInformation}
-              </span>
-            </div>
-          )}
+          {helpInformation && <Tooltip tooltipText={helpInformation} />}
         </div>
       </div>
     </>
