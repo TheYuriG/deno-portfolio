@@ -13,9 +13,9 @@ export default function Home() {
   return (
     <>
       <CustomHead
-        title="Form"
+        title="Stimulus Checks Eligibility Form"
         description="A form to pretend to request Stimulus Check built with Preact."
-        link="https://www.theyurig.com/work/form"
+        link="https://www.theyurig.com/projects/stimulus-check"
       >
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
