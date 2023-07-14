@@ -1,7 +1,7 @@
 //? Component that renders a single project on the grid
 import { ProjectDisplay } from "./ProjectDisplay.tsx";
 //? Properties requires to create a ProjectDisplay
-import type { ProjectDisplayProperties } from "../../types/ProjectDisplayProperties.ts";
+import type { ProjectDisplayProperties } from "../../types/component-properties/projects/ProjectDisplayProperties.ts";
 
 //? Array of projects to be rendered and displayed
 const projects: ProjectDisplayProperties[] = [
@@ -31,6 +31,15 @@ const projects: ProjectDisplayProperties[] = [
     projectImageLink:
       "https://cdn.discordapp.com/attachments/576538316296421399/1125175916729995335/image.png",
     projectName: "Stimulus Check request",
+  },
+  //* Tic Tac Toe
+  {
+    projectLink: "/projects/tictactoe",
+    projectTitle:
+      "An offline version of the multiplayer version at tictactoe.deno.dev.",
+    projectImageLink:
+      "https://media.discordapp.net/attachments/576538316296421399/1129367010451656704/image.png?width=769&height=669",
+    projectName: "Tic Tac Toe (offline)",
   },
 ];
 
