@@ -6,7 +6,10 @@ import { Base } from "../../components/base/Base.tsx";
 import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
 import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
+//? Linkns to tictactoe.deno.dev
 import { GradientLink } from "../../components/UI/GradientLink.tsx";
+//? Renders the game board with play tiles, current player
+//? turn and game completion status
 import TicTacToeBoard from "../../islands/projects/TicTacToeBoard.tsx";
 
 export default function Home() {
@@ -26,6 +29,7 @@ export default function Home() {
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
           {/* Title header */}
           <StyledHeader title="Play Tic Tac Toe (offline)" />
+          {/* Introduction to tictactoe.deno.dev */}
           <p class="mb-4 text-justify">
             This is the local/offline version of the multiplayer app I'm
             building for{" "}
@@ -35,6 +39,7 @@ export default function Home() {
               title="Play Tic Tac Toe online against other human players. Create a room and share with your friends."
             />.
           </p>
+          {/* The game board with play tiles, current player turn and game completion status */}
           <TicTacToeBoard />
         </article>
       </Base>

@@ -1,134 +1,67 @@
+//? Manage the current board status
 import { useState } from "preact/hooks";
+//? Render an individual tile on the board
 import { TicTacToeTile } from "../../components/projects/tictactoe/TicTacToeTile.tsx";
+//? Tracker of who won the game or if the game tied
 import { TicTacToeGameStatus } from "../../components/projects/tictactoe/TicTacToeGameStatus.tsx";
+//? Render the button to reset the game once it ends with a tie or win
 import { StyledButton } from "../../components/UI/StyledButton.tsx";
+//? Import maximum number of tiles in a board
+import { MAX_TICTACTOE_TILES } from "../../data/projects/tictactoe/maxTiles.ts";
+//? Import interface for typecasting
+import type { BoardTile } from "../../types/component-properties/projects/tictactoe/BoardTile.ts";
+//? Utility function to reset a board array to 0 indices, then
+//? populate it with 9 tiles
+import { resetBoardFunction } from "../../services/tictactoe/resetBoardFunction.ts";
+//? Calculates if the board met a winning condition
+import { shouldGameEnd } from "../../services/tictactoe/shouldGameEnd.ts";
+//? Toggles player turn
+import { changePlayers } from "../../services/tictactoe/changePlayers.ts";
 
-interface boardTile {
-  marked: boolean;
-  symbol: string;
-  position: number;
-}
+//? Initialize an empty board that gets filled by 'resetBoard()'
+const baseBoardMarks: BoardTile[] = [];
 
-const baseBoardMarks: boardTile[] = [];
-function resetBoard(board: boardTile[]) {
-  board.length = 0;
-  for (let index = 0; index < 9; index++) {
-    board.push(
-      { marked: false, symbol: "", position: index },
-    );
-  }
-}
-resetBoard(baseBoardMarks);
-
-function shouldGameEnd(boardMarks: typeof baseBoardMarks) {
-  //? Pull positions with identifiable names
-  const [
-    topLeft,
-    topMid,
-    topRight,
-    centerLeft,
-    centerMid,
-    centerRight,
-    bottomLeft,
-    bottomMid,
-    bottomRight,
-  ] = boardMarks;
-  //? Wins on all top is same symbol
-  if (
-    topLeft.symbol === topMid.symbol && topMid.symbol === topRight.symbol &&
-    topRight.marked === true
-  ) {
-    return true;
-  }
-  //? Wins on all center is same symbol
-  if (
-    centerLeft.symbol === centerMid.symbol &&
-    centerMid.symbol === centerRight.symbol &&
-    centerRight.marked === true
-  ) {
-    return true;
-  }
-  //? Wins on all bottom is same symbol
-  if (
-    bottomLeft.symbol === bottomMid.symbol &&
-    bottomMid.symbol === bottomRight.symbol &&
-    bottomRight.marked === true
-  ) {
-    return true;
-  }
-  //? Wins on all right is same symbol
-  if (
-    topRight.symbol === centerRight.symbol &&
-    centerRight.symbol === bottomRight.symbol &&
-    bottomRight.marked === true
-  ) {
-    return true;
-  }
-  //? Wins on all mid is same symbol
-  if (
-    topMid.symbol === centerMid.symbol &&
-    centerMid.symbol === bottomMid.symbol &&
-    bottomMid.marked === true
-  ) {
-    return true;
-  }
-  //? Wins on all left is same symbol
-  if (
-    topLeft.symbol === centerLeft.symbol &&
-    centerLeft.symbol === bottomLeft.symbol &&
-    bottomLeft.marked === true
-  ) {
-    return true;
-  }
-  //? Wins on all top left + center mid + bottom right is same symbol
-  if (
-    topLeft.symbol === centerMid.symbol &&
-    centerMid.symbol === bottomRight.symbol &&
-    bottomRight.marked === true
-  ) {
-    return true;
-  }
-  //? Wins on all top right + center mid + bottom left is same symbol
-  if (
-    topRight.symbol === centerMid.symbol &&
-    centerMid.symbol === bottomLeft.symbol &&
-    bottomLeft.marked === true
-  ) {
-    return true;
-  }
-  return false;
-}
+//? Render the initial empty board
+resetBoardFunction(baseBoardMarks);
 
 //? Tracks how many rounds were played on the current game
 let roundsPlayed = 0;
+
+//? Renders the tictacboard, player turn and game status
 export default function TicTacToeBoard() {
+  //? Tracks board current status
   const [boardMarks, updateBoardMarks] = useState([...baseBoardMarks]);
+  //? Tracks who is currently allowed to play, X or O
   const [currentPlayer, toggleCurrentPlayer] = useState<"X" | "O">("X");
+  //? Tracks if the game ended in a draw after 9 moves
   const [draw, declareDraw] = useState(false);
+  //? Tracks if the players are allowed to make additional moves and
+  //? if the game over status should be displayed
   const [gameOver, toggleGameOver] = useState(false);
 
-  function changePlayers() {
-    toggleCurrentPlayer((current) => {
-      if (current === "X") {
-        return "O";
-      }
-      return "X";
-    });
-  }
-
+  //? Update mark function provided to all tiles
   function updateMarkFunction(marked: boolean, position: number) {
+    //? If the tile is already marked or if the game is over, do nothing
     if (marked === true || gameOver === true) {
       return;
     }
+
+    //? Progress a round
     roundsPlayed++;
-    changePlayers();
+    //? Swap players
+    toggleCurrentPlayer(changePlayers);
+    //? Mark the current tile
     updateBoardMarks((current) => {
       current[position].marked = true;
       current[position].symbol = currentPlayer;
+
       if (shouldGameEnd(current)) {
+        //? If the game meets a win condition, end it
         toggleGameOver(true);
       } else {
-        if (roundsPlayed === 9) {
+        //? If the game didn't meet a win condition and the last
+        //? tile was marked, end the game with a draw
+        if (roundsPlayed === MAX_TICTACTOE_TILES) {
           toggleGameOver(true);
           declareDraw(true);
         }
@@ -136,10 +69,10 @@ export default function TicTacToeBoard() {
       return current;
     });
   }
-  console.log(baseBoardMarks);
 
   return (
     <>
+      {/* Create a 3x3 grid with the tiles */}
       <div class="grid grid-rows-3 grid-cols-3 custom-bo-ac">
         {boardMarks.map(({ position, marked, symbol }) => (
           <TicTacToeTile
@@ -164,12 +97,12 @@ export default function TicTacToeBoard() {
           text="Play again?"
           classes="mt-2"
           onClickFunction={() => {
-            resetBoard(baseBoardMarks);
+            resetBoardFunction(baseBoardMarks);
             updateBoardMarks(baseBoardMarks);
             toggleGameOver(false);
-            updateRoundsPlayed(0);
             declareDraw(false);
-            changePlayers();
+            toggleCurrentPlayer(changePlayers);
+            roundsPlayed = 0;
           }}
         />
       )}

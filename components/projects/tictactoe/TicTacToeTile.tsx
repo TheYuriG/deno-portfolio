@@ -1,15 +1,21 @@
+//? Icons to display inside the tile
 import { CircleIcon } from "../../../assets/CircleIcon.tsx";
 import { XMarkIcon } from "../../../assets/XMarkIcon.tsx";
 
+//? Required properties for this component
+interface TicTacToeTileProperties {
+  mark: boolean;
+  played: string;
+  updateMarkFunction: () => void;
+  currentPlayer: string;
+  position: number;
+  gameStatus: boolean;
+}
+
+//? Renders a single TicTacToe tile within the 3x3 board
 export function TicTacToeTile(
-  { mark, played, updateMarkFunction, currentPlayer, position, gameStatus }: {
-    mark: boolean;
-    played: string;
-    updateMarkFunction: () => void;
-    currentPlayer: string;
-    position: number;
-    gameStatus: boolean;
-  },
+  { mark, played, updateMarkFunction, currentPlayer, position, gameStatus }:
+    TicTacToeTileProperties,
 ) {
   return (
     <button
@@ -25,15 +31,14 @@ export function TicTacToeTile(
       }`}
       onClick={updateMarkFunction}
     >
-      {/* If the tile wasn't marked yet, display the player icon on hover */}
+      {/* Renders the icon inside the tile when appropriate */}
       <div
         class={`absolute ${
+          //? If the tile is marked, display the symbol
           mark
-            //? If the tile is marked, display the symbol
             ? ""
             //! Otherwise, hide the symbol until hovered
-            : "hidden group-hover:block "
-        }top-1/2 left-1/2 -translate-1/2`}
+            : "hidden group-hover:block "}top-1/2 left-1/2 -translate-1/2`}
       >
         {
           // Render the X icon if either the tile was played as X OR
