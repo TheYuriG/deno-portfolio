@@ -8,10 +8,8 @@ import { Base } from "../../../components/base/Base.tsx";
 import { NavigationButtons } from "../../../components/misc/NavigationButtons.tsx";
 //? Component responsible for rendering the food list and modals
 import FoodOrder from "../../../islands/projects/FoodOrder.tsx";
-//? Describe things that were learned with this current project
-import Collapsible from "../../../islands/misc/Collapsible.tsx";
 //? Import Food type to typecast the data received
-import type { Food } from "../../../types/food-order/Food.ts";
+import { Food } from "../../../types/component-properties/projects/food-order/Food.ts";
 //? Import middleware responsible for pulling food items
 import { foodOrderMiddleware } from "../../../middleware/projects/__food-order.ts";
 
@@ -41,36 +39,6 @@ export default function Home(
           back={{ title: "Return to projects overview", link: "/projects" }}
         />
         <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
-          {/* Insights */}
-          <Collapsible checkboxText="What did I learn?">
-            <p class="my-2 text-justify">
-              Between the previous project (expenses tracker) and this one,
-              there was an extended section about 'useContext' and 'useRef',
-              that was very interesting and helped solidify what I learned on
-              the Preact tutorial. The things I've learned on that section are
-              used in this project.
-            </p>
-            <p class="my-2 text-justify">
-              I've also realized that this design looks very similar to the
-              previous project, which just reminded me about how little
-              creativity I have to design things and that designers are
-              important. I could have just copied and pasted the styling from
-              the course, but then this project would not fit in the overall
-              theme for my website.
-            </p>
-            <p class="my-2 text-justify">
-              However, since this project could become an actual freelance gig
-              (there are plenty of business owners needing a website), I might
-              just make a mockup website and put it on my Work page. I'll check
-              with my designer if she can come up with something pretty.
-            </p>
-            <p class="my-2 text-justify">
-              This section also made me look up how to create a modal in React
-              (I've previously only made them with pure JS or in Vue), so that
-              was a fun component to build and that will be reused quite a few
-              times.
-            </p>
-          </Collapsible>
           {/* Page content */}
           <FoodOrder foods={foods} />
         </section>
