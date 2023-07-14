@@ -99,12 +99,13 @@ function shouldGameEnd(boardMarks: typeof baseBoardMarks) {
   return false;
 }
 
+//? Tracks how many rounds were played on the current game
+let roundsPlayed = 0;
 export default function TicTacToeBoard() {
   const [boardMarks, updateBoardMarks] = useState([...baseBoardMarks]);
   const [currentPlayer, toggleCurrentPlayer] = useState<"X" | "O">("X");
   const [draw, declareDraw] = useState(false);
   const [gameOver, toggleGameOver] = useState(false);
-  const [roundsPlayed, updateRoundsPlayed] = useState(0);
 
   function changePlayers() {
     toggleCurrentPlayer((current) => {
@@ -119,22 +120,18 @@ export default function TicTacToeBoard() {
     if (marked === true || gameOver === true) {
       return;
     }
+    roundsPlayed++;
     changePlayers();
-
     updateBoardMarks((current) => {
       current[position].marked = true;
       current[position].symbol = currentPlayer;
       if (shouldGameEnd(current)) {
         toggleGameOver(true);
-        updateRoundsPlayed((curr) => curr + 1);
       } else {
-        updateRoundsPlayed((curr) => {
-          if (curr === 8) {
-            toggleGameOver(true);
-            declareDraw(true);
-          }
-          return curr + 1;
-        });
+        if (roundsPlayed === 9) {
+          toggleGameOver(true);
+          declareDraw(true);
+        }
       }
       return current;
     });
