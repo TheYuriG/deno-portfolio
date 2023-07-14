@@ -66,8 +66,8 @@ export default function Home() {
             languages.
           </p>
           <p class="my-2 text-justify">
-            I don't really Python, so this list is not as compreheensive as I
-            would like it to be. If you think that you could contribute to it,
+            I don't use Python at all, so this list is not as compreheensive as
+            I would like it to be. If you think that you could contribute to it,
             please make a comment on the{" "}
             <GradientLink
               content="related issue"
@@ -78,18 +78,49 @@ export default function Home() {
             can't be 1:1 matched like <span class="shl-inline">range()</span>
             {" "}
             or slices. How can I display those in a way that a Javascript
-            developer would understand?
+            developer would understand? It's quite honestly a whole different
+            world.
           </p>
           <StyledSubHeader title="Table of Contents" />
           <GreekList
             items={[
+              <DottedLink content="Naming Conventions" link="#naming" />,
               <DottedLink content="Declaring variables" link="#variables" />,
               <DottedLink content="Expressions" link="#expressions" />,
+              <DottedLink content="Mathematical Operators" link="#mathops" />,
+              <DottedLink content="Bitwise Operators" link="#bitops" />,
               <DottedLink content="Utilities" link="#utilities" />,
               <DottedLink content="Strings" link="#strings" />,
               <DottedLink content="Arrays/Lists" link="#arrays" />,
-              //   <DottedLink content="Objects/Dictionaries" link="#objects" />,
+              <DottedLink content="Objects/Dictionaries" link="#objects" />,
               //   <DottedLink content="Converting types" link="#type-conversion" />,
+            ]}
+          />
+
+          {/* Naming conventions */}
+          <ComparisonTable
+            languageOneName="Javascript"
+            languageTwoName="Python"
+            tableName="Naming Conventions"
+            tableId="naming"
+            differenceList={[
+              {
+                label: "Variables/Functions",
+                itemOne: "camelCase",
+                itemTwo: "snake_case",
+              },
+              {
+                label: "Classes",
+                itemOne: "PascalCase",
+                itemTwo: "PascalCase",
+              },
+              {
+                label: "Constants",
+                itemOne: "SCREAMING_SNAKE_CASE",
+                itemTwo: "SCREAMING_SNAKE_CASE",
+                note:
+                  "Python uses this as a convention for constants that shouldn't be reassigned. Because Javascript has 'const' assignments, this is usually reserved for naming variables that would be otherwise magic values, like PI.",
+              },
             ]}
           />
 
@@ -118,6 +149,12 @@ export default function Home() {
                 itemTwo: "",
                 note:
                   "Python doesn't have const, all values are mutable and reassignable.",
+              },
+              {
+                label: "Multiple assignment",
+                itemOne: "",
+                itemTwo: "a = b = c = 5",
+                note: "Javascript doesn't have multiple assignment.",
               },
               {
                 label: "True boolean",
@@ -176,19 +213,43 @@ export default function Home() {
             ]}
           />
 
-          {/* Utilities */}
+          {/* Mathematical Operators */}
           <ComparisonTable
             languageOneName="Javascript"
             languageTwoName="Python"
-            tableName="Utilities"
-            tableId="utilities"
+            tableName="Mathematical Operators"
+            tableId="mathops"
             differenceList={[
+              // Addition
+              {
+                label: "Addition",
+                itemOne: "5 + 8",
+                itemTwo: "5 + 8",
+              },
+              // Shorthand addition
+              {
+                label: "Shorthand addition",
+                itemOne: "num += 5",
+                itemTwo: "num += 5",
+              },
               // Increment
               {
                 label: "Increment",
                 itemOne: "i++",
                 itemTwo: "",
                 note: "Python doesn't have pre/post increment operators.",
+              },
+              // Subtraction
+              {
+                label: "Subtraction",
+                itemOne: "13 - 5",
+                itemTwo: "13 - 5",
+              },
+              // Shorthand subtraction
+              {
+                label: "Shorthand subtraction",
+                itemOne: "num -= 5",
+                itemTwo: "num -= 5",
               },
               // Decrement
               {
@@ -197,6 +258,110 @@ export default function Home() {
                 itemTwo: "",
                 note: "Python doesn't have pre/post decrement operators.",
               },
+              // Multiply
+              {
+                label: "Multiply",
+                itemOne: "3 * 5",
+                itemTwo: "3 * 5",
+              },
+              // Shorthand multiplication
+              {
+                label: "Shorthand multiplication",
+                itemOne: "num *= 5",
+                itemTwo: "num *= 5",
+              },
+              // Exponent
+              {
+                label: "Exponent",
+                itemOne: "num ** 2",
+                itemTwo: "num ** 2",
+              },
+            ]}
+          />
+
+          {/* Bitwise Operators */}
+          <ComparisonTable
+            languageOneName="Javascript"
+            languageTwoName="Python"
+            tableName="Bitwise Operators (a.k.a. Binary Black Magic)"
+            tableId="bitops"
+            differenceList={[
+              // Bitwise AND
+              {
+                label: "AND",
+                itemOne: "&",
+                itemTwo: "&",
+              },
+              // &=
+              {
+                label: "",
+                itemOne: "&=",
+                itemTwo: "&=",
+              },
+              // Bitwise OR
+              {
+                label: "OR",
+                itemOne: "|",
+                itemTwo: "|",
+              },
+              // |=
+              {
+                label: "",
+                itemOne: "|=",
+                itemTwo: "|=",
+              },
+              // Bitwise XOR
+              {
+                label: "XOR",
+                itemOne: "^",
+                itemTwo: "^",
+              },
+              // ^=
+              {
+                label: "",
+                itemOne: "^=",
+                itemTwo: "^=",
+              },
+              // Bitwise NOT
+              {
+                label: "NOT",
+                itemOne: "~",
+                itemTwo: "~",
+              },
+              // Bitwise Right Shift
+              {
+                label: "Right shift",
+                itemOne: ">>",
+                itemTwo: ">>",
+              },
+              // >>=
+              {
+                label: "",
+                itemOne: ">>=",
+                itemTwo: ">>=",
+              },
+              // Bitwise Left Shift
+              {
+                label: "Left shift",
+                itemOne: "<<",
+                itemTwo: "<<",
+              },
+              // <<=
+              {
+                label: "",
+                itemOne: "<<=",
+                itemTwo: "<<=",
+              },
+            ]}
+          />
+
+          {/* Utilities */}
+          <ComparisonTable
+            languageOneName="Javascript"
+            languageTwoName="Python"
+            tableName="Utilities"
+            tableId="utilities"
+            differenceList={[
               // Console
               {
                 label: "Write to console",
@@ -214,11 +379,35 @@ export default function Home() {
                 note:
                   "Python defines scope through indentation, Javascript usually does it through the use of curly braces",
               },
+              // Inline functions
+              {
+                label: "Fat Arrow Functions/Lambdas",
+                itemOne: "const add = (a, b) => a + b",
+                itemTwo: "add = lambda a, b: a + b",
+              },
+              // If
+              {
+                label: "If",
+                itemOne: `if (condition === true) {`,
+                itemTwo: `if condition == True:`,
+              },
               // Else if
               {
                 label: "Else if/Elif",
                 itemOne: `} else if (condition === true) {`,
                 itemTwo: `elif condition == True:`,
+              },
+              // Else
+              {
+                label: "Else",
+                itemOne: `} else {`,
+                itemTwo: `else:`,
+              },
+              // Ternary operator
+              {
+                label: "Ternary operator",
+                itemOne: 'happy === true ? "smile" : "frown"',
+                itemTwo: '"smile" if happy == True else "frown"',
               },
               // Single line comment
               {
@@ -286,23 +475,23 @@ This is a multiline comment
               // Multiline string
               {
                 label: "Multiline strings",
-                itemOne: `"""
-multiline
-text
-here
-"""`,
-                itemTwo: `\`
+                itemOne: `\`
 multiline
 text
 here
 \``,
+                itemTwo: `"""
+multiline
+text
+here
+"""`,
                 note:
                   "Python can use double or single quotes for multilines, as long as what you use at the start, you also use at the end. Javascript exclusively uses backticks.",
               },
               // String interpolation (1)
               {
                 label: "String interpolation (1)",
-                itemOne: "`My name is ${name}.`",
+                itemOne: "",
                 itemTwo: "'My name is %s.' % (name)",
               },
               // String interpolation (1)
@@ -325,8 +514,8 @@ here
               // New Array/List
               {
                 label: "New array/list",
-                itemOne: "new Array()",
-                itemTwo: "list()",
+                itemOne: "const a = new Array()",
+                itemTwo: "a = list()",
               },
               // Length
               {
@@ -340,6 +529,129 @@ here
                 itemOne: "",
                 itemTwo: "x = (1, 2, 3)",
                 note: "Javascript doesn't support Tuples.",
+              },
+            ]}
+          />
+
+          {/* Objects/Dictionaries */}
+          <ComparisonTable
+            languageOneName="Javascript"
+            languageTwoName="Python"
+            tableName="Objects/Dictionaries"
+            tableId="objects"
+            differenceList={[
+              // New Object/Dict (1)
+              {
+                label: "New object/dict (1)",
+                itemOne: "const o = {}",
+                itemTwo: "o = {}",
+              },
+              // New Object/Dict (2)
+              {
+                label: "New object/dict (2)",
+                itemOne: "const o = new Object()",
+                itemTwo: "o = dict()",
+              },
+              // New Object/Dict (3)
+              {
+                label: "New object/dict (3)",
+                itemOne: "const o = Object.create(null)",
+                itemTwo: "",
+                note: "No Python equivalent.",
+              },
+              // Adding property value (1)
+              {
+                label: "Adding property (1)",
+                itemOne: "obj['keyName'] = 'value",
+                itemTwo: "dict['key_name'] = 'value'",
+              },
+              // Adding property value (2)
+              {
+                label: "Adding property (2)",
+                itemOne: "obj.keyName = 'value'",
+                itemTwo: "",
+                note: "No Python equivalent.",
+              },
+              // Accessing property value (1)
+              {
+                label: "Accessing property value (1)",
+                itemOne: "obj['keyName']",
+                itemTwo: "dict['key_name']",
+              },
+              // Accessing property value (2)
+              {
+                label: "Accessing property value (2)",
+                itemOne: "obj.keyName",
+                itemTwo: "",
+                note: "No Python equivalent.",
+              },
+              // Length
+              {
+                label: "Length",
+                itemOne: "",
+                itemTwo: "len(dict)",
+                note:
+                  "Can't use obj.length in Javascript, but you can convert the Object to an Array using Object.entries(obj)/Object.keys(obj)/Object.values(obj) and then get the length of that.",
+              },
+              // Check if key exists
+              {
+                label: "Check if key exists",
+                itemOne: "'key_name' in dict",
+                itemTwo: "'keyName' in obj",
+              },
+              // Comparing two objects/dictionaries
+              {
+                label: "Comparing two objects/dictionaries",
+                itemOne: `const a = {name: 'yuri'}
+const b = {name: 'yuri'}
+a == b // false`,
+                itemTwo: `a = {name: 'yuri'}
+b = {name: 'yuri'}
+a == b // True`,
+                note:
+                  "Python makes a deep equality check by default, Javascript instead compares if the reference in memory is the same.",
+              },
+              // Looping (keys)
+              {
+                label: "Looping through keys",
+                itemOne: `for (const key of obj) {
+    console.log(key)
+}`,
+                itemTwo: `for key in dict.keys():
+    print(key)`,
+              },
+              // Looping (values)
+              {
+                label: "Looping through values",
+                itemOne: `for (const value of Object.values(obj)) {
+    console.log(value)
+}`,
+                itemTwo: `for value in dict.values():
+    print(value)`,
+              },
+              // Looping (keys and values)
+              {
+                label: "Looping through keys + values",
+                itemOne: `for (const [k, v] of Object.entries(obj)) {
+    console.log(k, ':', v)
+}`,
+                itemTwo: `for k, v in dict.items():
+    print(k, ':', v)`,
+              },
+              // Looping (keys)
+              {
+                label: "Looping through keys",
+                itemOne: `for (const key of obj) {
+    console.log(key)
+}`,
+                itemTwo: `for k in dict.keys():
+    print(k)`,
+              },
+              // Deleting
+              {
+                label: "Deleting a key",
+                itemOne: "delete obj['key']",
+                itemTwo: "del obj['key']",
               },
             ]}
           />
