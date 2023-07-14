@@ -41,12 +41,13 @@ export default function Home() {
           <p class="text-sm mb-2 w-full text-center">
             {new Date(postSummary.date).toLocaleString()}
           </p>
-          {/* Introduction */}
+          {/* Who am I */}
           <p class="my-2 text-justify">
             I'm a Typescript developer, but I enjoy watching tutorials on other
             languages for exposure, before going to bed (unlike what I was doing
             a year ago: doomscrolling Instagram Reels until 1am).
           </p>
+          {/* Motivation for this */}
           <p class="my-2 text-justify">
             One of the things that I've spent my recent nights watching was{" "}
             <GradientLink
@@ -65,22 +66,7 @@ export default function Home() {
             easy-to-reference cheatsheet of the syntax differences between both
             languages.
           </p>
-          <p class="my-2 text-justify">
-            I don't use Python at all, so this list is not as compreheensive as
-            I would like it to be. If you think that you could contribute to it,
-            please make a comment on the{" "}
-            <GradientLink
-              content="related issue"
-              link="https://github.com/TheYuriG/deno-portfolio/issues/104"
-              customRel="noopener noreferrer"
-            />{" "}
-            and I'll add it. My main problem is how to represent stuff that
-            can't be 1:1 matched like <span class="shl-inline">range()</span>
-            {" "}
-            or slices. How can I display those in a way that a Javascript
-            developer would understand? It's quite honestly a whole different
-            world.
-          </p>
+
           <StyledSubHeader title="Table of Contents" />
           <GreekList
             items={[
@@ -93,7 +79,7 @@ export default function Home() {
               <DottedLink content="Strings" link="#strings" />,
               <DottedLink content="Arrays/Lists" link="#arrays" />,
               <DottedLink content="Objects/Dictionaries" link="#objects" />,
-              //   <DottedLink content="Converting types" link="#type-conversion" />,
+              //todo check what is missing and add here
             ]}
           />
 
@@ -178,37 +164,62 @@ export default function Home() {
             tableName="Expressions"
             tableId="expressions"
             differenceList={[
+              // Weak equality
               {
                 label: "Weak equality",
                 itemOne: "'1' == 1",
                 itemTwo: "",
                 note: "Python doesn't have weak equality checks.",
               },
+              // Strict equality
               {
                 label: "Strict equality",
                 itemOne: "10 === 10",
                 itemTwo: "10 == 0",
               },
+              // Weak inequality
               {
                 label: "Weak inequality",
                 itemOne: "true != false",
                 itemTwo: "",
                 note: "Python doesn't have weak inequality checks.",
               },
+              // Strict inequality
               {
                 label: "Strict inequality",
                 itemOne: "true !== false",
                 itemTwo: "True != False",
               },
+              // Expression AND
+              {
+                label: "Both sides of expression must be true",
+                itemOne: "10 > 5 && isTrue === true",
+                itemTwo: "10 > 5 and isTrue == True",
+              },
+              // Expression OR
+              {
+                label: "Either side of expression must be true",
+                itemOne: "20 > 30 || isFalse === false",
+                itemTwo: "20 > 30 or isFalse == False",
+              },
+              // Includes (array)
               {
                 label: "Item present in Array/List",
                 itemOne: "[1, 2, 3].includes(1)",
                 itemTwo: "1 in [1, 2, 3]",
               },
+              // Includes (string)
+              {
+                label: "text present in String",
+                itemOne: '"Hello world!".includes("Hello")',
+                itemTwo: '"Hello" in "Hello World!"',
+              },
+              // Doesn't include (array)
               {
                 label: "Item missing from Array/List",
                 itemOne: "![1, 2, 3].includes(1)",
                 itemTwo: "1 not in [1, 2, 3]",
+                note: "Same for strings in both languages.",
               },
             ]}
           />
@@ -276,6 +287,8 @@ export default function Home() {
                 itemOne: "num ** 2",
                 itemTwo: "num ** 2",
               },
+              //todo divisions
+              //todo modulo
             ]}
           />
 
@@ -425,6 +438,21 @@ This is a multiline comment
                 note:
                   "Python doesn't exactly have multi line comments, but you can use a multi line string to do basically the same thing.",
               },
+              // Destructuring/Unpacking
+              {
+                label: "Destructuring/Unpacking",
+                itemOne: "const [a, b, ...rest] = [1, 2, 3, 4]",
+                itemTwo: "a, b, *rest = [1, 2, 3, 4]",
+                note:
+                  "In Javascript, the '...rest' argument must be the last one. Python doesn't have this restriction.",
+              },
+              // Spread
+              {
+                label: "Spread",
+                itemOne: "oneFunction(...args)",
+                itemTwo: "oneFunction(**args)",
+              },
+              //todo typeof
             ]}
           />
 
@@ -488,6 +516,26 @@ here
                 note:
                   "Python can use double or single quotes for multilines, as long as what you use at the start, you also use at the end. Javascript exclusively uses backticks.",
               },
+              // Slicing with set range
+              {
+                label: "Slicing (set range)",
+                itemOne: "word.substring(1, 4)",
+                itemTwo: "word[1:4]",
+              },
+              // Slicing with set end
+              {
+                label: "Slicing (start until set end)",
+                itemOne: "word.substring(0, 3)",
+                itemTwo: "word.[:3]",
+              },
+              // Slicing with set start
+              {
+                label: "Slicing (set start until end)",
+                itemOne: "word.substring(word.length - 1 - 3)",
+                itemTwo: "word[-3:]",
+                note:
+                  "Unlike 'array.splice()', you can't pass a negative parameter to substring to give it a set start relative to the end of the string.",
+              },
               // String interpolation (1)
               {
                 label: "String interpolation (1)",
@@ -511,11 +559,94 @@ here
             tableName="Arrays/Lists"
             tableId="arrays"
             differenceList={[
-              // New Array/List
+              // New Array/List (1)
               {
-                label: "New array/list",
+                label: "New array/list (1)",
                 itemOne: "const a = new Array()",
                 itemTwo: "a = list()",
+              },
+              // New Array/List (2)
+              {
+                label: "New array/list (2)",
+                itemOne: "const a = [1, 2]",
+                itemTwo: "a = [1, 2]",
+              },
+              // Accessing an item
+              {
+                label: "Accessing element by index",
+                itemOne: "a[0]",
+                itemTwo: "a[0]",
+              },
+              // Updating an item
+              {
+                label: "Modifying element at index",
+                itemOne: "a[0] = 4",
+                itemTwo: "a[0] = 4",
+              },
+              // Adding at last position
+              {
+                label: "Adding element at final position",
+                itemOne: "a.push(8)",
+                itemTwo: "a.append(8)",
+                note:
+                  "Python can use 'append' to place an item anywhere in the List, but Javascript's 'push' will only add the element after the final element.",
+              },
+              // Inserting at index
+              {
+                label: "Inserting at index",
+                itemOne: "a.splice(1, 0, 'item added')",
+                itemTwo: "a.insert(1, 'item added')",
+                note:
+                  "The second argument for Javascript's '.splice()' is for how many elements you want to remove starting on the position of the first argument.",
+              },
+              // Removing at last position
+              {
+                label: "Removing last element",
+                itemOne: "a.pop()",
+                itemTwo: "a.pop()",
+              },
+              // Removing element with specific value
+              {
+                label: "Removing first element with value",
+                itemOne: "",
+                itemTwo: "a.remove(4)",
+                note:
+                  "Javascript doesn't offer an easy way to do remove the first match and stop. You can do a 'for loop' to remove one and break after the first match or use '.findIndex()' and then '.splice()' on that element.",
+              },
+              // Slicing with set range
+              {
+                label: "Slicing (set range)",
+                itemOne: "a.slice(1, 4)",
+                itemTwo: "a[1:4]",
+              },
+              // Slicing with set end
+              {
+                label: "Slicing (start until set end)",
+                itemOne: "a.slice(3)",
+                itemTwo: "a.[:3]",
+                note:
+                  "In Javascript, providing only one POSITIVE argument implies that is the end point.",
+              },
+              // Slicing with set start
+              {
+                label: "Slicing (set start until end)",
+                itemOne: "a.slice(-3)",
+                itemTwo: "a[-3:]",
+                note:
+                  "In Javascript, providing only one NEGATIVE argument implies that is the start point.",
+              },
+              // Sorting descending
+              {
+                label: "Sorting descending",
+                itemOne: "a.sort((a, b) => b - a)",
+                itemTwo: "a.sort(reverse=True)",
+              },
+              // Counting occurrences of element
+              {
+                label: "Counting occurrences of element",
+                itemOne: "",
+                itemTwo: "a.count(4)",
+                note: "No Javascript equivalent.",
               },
               // Length
               {
@@ -528,7 +659,8 @@ here
                 label: "Tuples",
                 itemOne: "",
                 itemTwo: "x = (1, 2, 3)",
-                note: "Javascript doesn't support Tuples.",
+                note:
+                  "Javascript doesn't support Tuples. Python's Tuples are also not modified. Once set, forever defined.",
               },
             ]}
           />
@@ -652,6 +784,60 @@ a == b // True`,
                 label: "Deleting a key",
                 itemOne: "delete obj['key']",
                 itemTwo: "del obj['key']",
+              },
+            ]}
+          />
+
+          {/* Conversions */}
+          <ComparisonTable
+            languageOneName="Javascript"
+            languageTwoName="Python"
+            tableName="Converting data types"
+            tableId="conversion"
+            differenceList={[
+              {
+                label: "String (1)",
+                itemOne: "String(10)",
+                itemTwo: "str(10)",
+              },
+              {
+                label: "String (2)",
+                itemOne: "10.toString()",
+                itemTwo: "",
+              },
+              {
+                label: "Number (1)",
+                itemOne: "Number('10')",
+                itemTwo: "int('10')",
+              },
+              {
+                label: "Number (2)",
+                itemOne: "parseInt('10')",
+                itemTwo: "",
+              },
+              {
+                label: "Number (3)",
+                itemOne: "+'10'",
+                itemTwo: "",
+                note:
+                  "For this to work in Javascript, there must be no spaces between the plus symbol (Unary Operator) and the value/variable.",
+              },
+              {
+                label: "Number (4)",
+                itemOne: "parseFloat('10')",
+                itemTwo: "",
+              },
+              {
+                label: "Number (5)",
+                itemOne: "'10' * 1",
+                itemTwo: "",
+                note:
+                  "Javascript will attempt convert a string to when it interacts with any mathematical operator other than the plus symbol (+).",
+              },
+              {
+                label: "Number (6)",
+                itemOne: "~~'10'",
+                itemTwo: "",
               },
             ]}
           />
