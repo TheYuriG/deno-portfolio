@@ -72,6 +72,11 @@ export default function Home() {
             items={[
               <DottedLink content="Naming Conventions" link="#naming" />,
               <DottedLink content="Declaring variables" link="#variables" />,
+              <DottedLink content="Data types" link="#data" />,
+              <DottedLink
+                content="Data Type Conversions"
+                link="#conversions"
+              />,
               <DottedLink content="Expressions" link="#expressions" />,
               <DottedLink content="Mathematical Operators" link="#mathops" />,
               <DottedLink content="Bitwise Operators" link="#bitops" />,
@@ -79,7 +84,8 @@ export default function Home() {
               <DottedLink content="Strings" link="#strings" />,
               <DottedLink content="Arrays/Lists" link="#arrays" />,
               <DottedLink content="Objects/Dictionaries" link="#objects" />,
-              //todo check what is missing and add here
+              <DottedLink content="Classes" link="#classes" />,
+              <DottedLink content="Loops" link="#loops" />,
             ]}
           />
 
@@ -117,42 +123,252 @@ export default function Home() {
             tableName="Declaring Variables"
             tableId="variables"
             differenceList={[
+              // Global variable
               {
                 label: "Global variable",
                 itemOne: "var count = 0",
-                itemTwo: "",
-                note:
-                  "Python doesn't have var, your variables don't bleed out of the scope they are defined at.",
+                itemTwo: "global count = 0",
               },
+              // Scoped variable
               {
                 label: "Scoped variable",
                 itemOne: "let count = 0",
                 itemTwo: "count = 0",
               },
+              // Constant
               {
                 label: "Immutable variable",
                 itemOne: "const count = 0",
                 itemTwo: "",
                 note:
-                  "Python doesn't have const, all values are mutable and reassignable.",
+                  "Python doesn't have const, all variables are mutable and reassignable. Python offers some data types that have immutable values, like Tuples and Frozensets.",
               },
+              // Multiple assignment
               {
                 label: "Multiple assignment",
-                itemOne: "",
+                itemOne: "let a = 5, b = a, c = b",
                 itemTwo: "a = b = c = 5",
-                note: "Javascript doesn't have multiple assignment.",
               },
+            ]}
+          />
+
+          {/* Data types */}
+          <ComparisonTable
+            languageOneName="Javascript"
+            languageTwoName="Python"
+            tableName="Data Types"
+            tableId="data"
+            differenceList={[
+              // Boolean
               {
-                label: "True boolean",
-                itemOne: "let x = true",
-                itemTwo: "x = True",
+                label: "Boolean",
+                itemOne: "true / false",
+                itemTwo: "True / False",
                 note: "Python capitalizes both boolean values.",
               },
+              // String
               {
-                label: "False boolean",
-                itemOne: "let x = false",
-                itemTwo: "x = False",
-                note: "Python capitalizes both boolean values.",
+                label: "Strings",
+                itemOne: "'' / \"\" / ``",
+                itemTwo: `'' / "" / r'' / f''`,
+                note:
+                  "Python can also use triple single-quotes or triple double-quotes to create a multiline string.",
+              },
+              // Integers
+              {
+                label: "Integers",
+                itemOne: "",
+                itemTwo: "13",
+              },
+              // Floats
+              {
+                label: "Floats",
+                itemOne: "",
+                itemTwo: "12.4",
+              },
+              // Complex
+              {
+                label: "Complex",
+                itemOne: "",
+                itemTwo: "complex(1j)",
+              },
+              // Numbers
+              {
+                label: "Numbers",
+                itemOne: "13 / 12.4",
+                itemTwo: "",
+                note:
+                  "Javascript doesn't have separate type for integers or floats, they are all just Number.",
+              },
+              // BigInt
+              {
+                label: "BigInt",
+                itemOne: 'BigInt("123456789012345678901234567890")',
+                itemTwo: "",
+              },
+              // Array/List
+              {
+                label: "Array/List",
+                itemOne: "[]",
+                itemTwo: "[]",
+                note:
+                  "In Javascript, Arrays are technically, a subtype of Object.",
+              },
+              // Set
+              {
+                label: "Set",
+                itemOne: "new Set(['a'])",
+                itemTwo: "set(['a'])",
+                note: "Like Arrays/Lists, but cannot contain duplicate values.",
+              },
+              // Frozenset
+              {
+                label: "Frozenset",
+                itemOne: "",
+                itemTwo: "frozenset(('a'))",
+                note: "Immutable version of set().",
+              },
+              // Range
+              {
+                label: "Range",
+                itemOne: "",
+                itemTwo: "range(6)",
+              },
+              // Object/Dictionary
+              {
+                label: "Object/Dictionary",
+                itemOne: "{key: 'value'}",
+                itemTwo: "{key: 'value'}",
+                note:
+                  "In Python, putting values inside curly braces without providing a key will create a set() instead.",
+              },
+              // Date
+              {
+                label: "Date",
+                itemOne: "new Date()",
+                itemTwo: "",
+                note: "Technically, a subtype of Object.",
+              },
+              // Null/None
+              {
+                label: "Null/None",
+                itemOne: "null",
+                itemTwo: "None",
+              },
+              // Undefined
+              {
+                label: "Undefined",
+                itemOne: "undefined",
+                itemTwo: "",
+                note:
+                  "The closest equivalent in Python would be a Nonetype for whenever you assign a variable to the result of a function that doesn't return any value.",
+              },
+              // Symbol
+              {
+                label: "Symbol",
+                itemOne: "Symbol('a')",
+                itemTwo: "",
+              },
+              // Bytes
+              {
+                label: "Bytes",
+                itemOne: "",
+                itemTwo: "b'hi'",
+              },
+              // Bytearray
+              {
+                label: "Bytearray",
+                itemOne: "",
+                itemTwo: "bytearray(4)",
+              },
+              // Memoryview
+              {
+                label: "Memoryview",
+                itemOne: "",
+                itemTwo: "memoryview(bytes('a'))",
+              },
+            ]}
+          />
+
+          {/* Conversions */}
+          <ComparisonTable
+            languageOneName="Javascript"
+            languageTwoName="Python"
+            tableName="Converting Data Types"
+            tableId="conversions"
+            differenceList={[
+              // Boolean
+              {
+                label: "Boolean",
+                itemOne: "!!'word'",
+                itemTwo: "bool('word')",
+              },
+              // String (1)
+              {
+                label: "String (1)",
+                itemOne: "String(10)",
+                itemTwo: "str(10)",
+              },
+              // String (2)
+              {
+                label: "String (2)",
+                itemOne: "10.toString()",
+                itemTwo: "",
+              },
+              // Integer (1)
+              {
+                label: "Number (1)",
+                itemOne: "Number('10')",
+                itemTwo: "int('10')",
+              },
+              // Integer (2)
+              {
+                label: "Number (2)",
+                itemOne: "parseInt('10')",
+                itemTwo: "",
+              },
+              // Integer (3)
+              {
+                label: "Number (3)",
+                itemOne: "+'10'",
+                itemTwo: "",
+                note:
+                  "For this to work in Javascript, there must be no spaces between the plus symbol (Unary Operator) and the value/variable.",
+              },
+              // Integer (4)
+              {
+                label: "Number (4)",
+                itemOne: "parseFloat('10')",
+                itemTwo: "",
+              },
+              // Integer (5)
+              {
+                label: "Number (5)",
+                itemOne: "'10' * 1",
+                itemTwo: "",
+                note:
+                  "Javascript will attempt convert a String to a Number when it interacts with any mathematical operator other than the plus symbol (+).",
+              },
+              // Integer (6)
+              {
+                label: "Number (6)",
+                itemOne: "~~'10'",
+                itemTwo: "",
+              },
+              // Float
+              {
+                label: "Float",
+                itemOne: "parseFloat('1.5')",
+                itemTwo: "float('1.5')",
+                note:
+                  "Javascript doesn't have floats or ints, it's all just Number.",
+              },
+              // Range
+              {
+                label: "Range",
+                itemOne: "",
+                itemTwo: "range(8)",
+                note: "Javascript doesn't have Range data types.",
               },
             ]}
           />
@@ -190,6 +406,30 @@ export default function Home() {
                 itemOne: "true !== false",
                 itemTwo: "True != False",
               },
+              // Less than
+              {
+                label: "Less than",
+                itemOne: "10 < 20",
+                itemTwo: "10 < 20",
+              },
+              // Less than or equal to
+              {
+                label: "Less than or equal to",
+                itemOne: "15 <= 20",
+                itemTwo: "15 <= 20",
+              },
+              // Greater than
+              {
+                label: "Greater than",
+                itemOne: "30 > 15",
+                itemTwo: "30 > 15",
+              },
+              // Greater than or equal to
+              {
+                label: "Greater than or equal to",
+                itemOne: "50 >= 25",
+                itemTwo: "50 >= 25",
+              },
               // Expression AND
               {
                 label: "Both sides of expression must be true",
@@ -210,7 +450,7 @@ export default function Home() {
               },
               // Includes (string)
               {
-                label: "text present in String",
+                label: "Text present in String",
                 itemOne: '"Hello world!".includes("Hello")',
                 itemTwo: '"Hello" in "Hello World!"',
               },
@@ -220,6 +460,14 @@ export default function Home() {
                 itemOne: "![1, 2, 3].includes(1)",
                 itemTwo: "1 not in [1, 2, 3]",
                 note: "Same for strings in both languages.",
+              },
+              // Unassigned
+              {
+                label: "Checking for unassigned variable",
+                itemOne: "typeof a === 'undefined'",
+                itemTwo: "",
+                note:
+                  "Python throws an error if you try to access a variable that wasn't previously created. If a Python variable is assigned to the result of a function that didn't return anything, it will be 'NoneType'd.",
               },
             ]}
           />
@@ -233,7 +481,7 @@ export default function Home() {
             differenceList={[
               // Addition
               {
-                label: "Addition",
+                label: "Add",
                 itemOne: "5 + 8",
                 itemTwo: "5 + 8",
               },
@@ -252,7 +500,7 @@ export default function Home() {
               },
               // Subtraction
               {
-                label: "Subtraction",
+                label: "Subtract",
                 itemOne: "13 - 5",
                 itemTwo: "13 - 5",
               },
@@ -287,8 +535,68 @@ export default function Home() {
                 itemOne: "num ** 2",
                 itemTwo: "num ** 2",
               },
-              //todo divisions
-              //todo modulo
+              // Matrix multiplication
+              {
+                label: "Matrix multiplication",
+                itemOne: "",
+                itemTwo: "num @ 2",
+                note: "No Javascript equivalent",
+              },
+              // Matrix multiplication shorthand
+              {
+                label: "Matrix shorthand",
+                itemOne: "",
+                itemTwo: "num @= 2",
+                note: "No Javascript equivalent",
+              },
+              // Divide
+              {
+                label: "Divide",
+                itemOne: "3 / 5",
+                itemTwo: "3 / 5",
+                note:
+                  "After a division, all numbers in Python are converted to floats, even if the result is an integer.",
+              },
+              // Shorthand division
+              {
+                label: "Shorthand division",
+                itemOne: "num /= 5",
+                itemTwo: "num /= 5",
+              },
+              // Floored divide
+              {
+                label: "Floored divide",
+                itemOne: "",
+                itemTwo: "3 // 5",
+                note:
+                  "Floored division will return the closest integer rounded down. No 1:1 Javascript equivalent, but you can wrap the expression within a 'Math.floor()' function to achieve essentially the same.",
+              },
+              // Shorthand floored division
+              {
+                label: "Shorthand division",
+                itemOne: "",
+                itemTwo: "num //= 5",
+                note: "No Javascript equivalent.",
+              },
+              // Modulo
+              {
+                label: "Modulo",
+                itemOne: "num % 2",
+                itemTwo: "num % 2",
+              },
+              // Shorthand modulo
+              {
+                label: "Shorthand modulo",
+                itemOne: "num %= 2",
+                itemTwo: "num %= 2",
+              },
+              // Divmod
+              {
+                label: "Divmod",
+                itemOne: "",
+                itemTwo: "a, b = divmod(23, 5)",
+                note: "No Javascript equivalent.",
+              },
             ]}
           />
 
@@ -368,6 +676,56 @@ export default function Home() {
             ]}
           />
 
+          {/* Functions */}
+          <ComparisonTable
+            languageOneName="Javascript"
+            languageTwoName="Python"
+            tableName="Functions"
+            tableId="functions"
+            differenceList={[
+              // Functions
+              {
+                label: "Functions",
+                itemOne: `function multiplyByTwo(x) {
+  return x * 2
+}`,
+                itemTwo: `def multiplyByTwo(x):
+  return x * 2`,
+                note:
+                  "Python defines scope through indentation, Javascript usually does it through the use of curly braces",
+              },
+              // Default arguments
+              {
+                label: "Default arguments",
+                itemOne: `function logX(x = 'hi') {
+    console.log(x)
+}`,
+                itemTwo: `def printX(x='hi'):
+    print(x)`,
+              },
+              // Inline functions
+              {
+                label: "Fat Arrow Functions/Lambdas",
+                itemOne: "const add = (a, b) => a + b",
+                itemTwo: "add = lambda a, b: a + b",
+              },
+              // Generators
+              {
+                label: "Generators",
+                itemOne: `function* timer(counter) {
+    while (counter > 0) {
+        yield counter;
+        counter--;
+    }
+}`,
+                itemTwo: `def timer(counter):
+    while counter > 0:
+        yield counter
+        counter -= 1`,
+              },
+            ]}
+          />
+
           {/* Utilities */}
           <ComparisonTable
             languageOneName="Javascript"
@@ -380,23 +738,6 @@ export default function Home() {
                 label: "Write to console",
                 itemOne: "console.log('hi')",
                 itemTwo: "print('hi')",
-              },
-              // Functions
-              {
-                label: "Functions",
-                itemOne: `function multiplyByTwo(x) {
-  return x * 2
-}`,
-                itemTwo: `def multiplyByTwo(x):
-  return x * 2`,
-                note:
-                  "Python defines scope through indentation, Javascript usually does it through the use of curly braces",
-              },
-              // Inline functions
-              {
-                label: "Fat Arrow Functions/Lambdas",
-                itemOne: "const add = (a, b) => a + b",
-                itemTwo: "add = lambda a, b: a + b",
               },
               // If
               {
@@ -416,11 +757,47 @@ export default function Home() {
                 itemOne: `} else {`,
                 itemTwo: `else:`,
               },
+              // Switch/Match
+              {
+                label: "Switch/Match",
+                itemOne: `switch (arg){
+    case 'word':
+        doThing();
+        break;
+    default:
+        doOtherThing();
+}`,
+                itemTwo: `match arg:
+    case 'word':
+        doThing()
+    case _:
+        doOtherThing()`,
+                note: "Python doesn't have break statements.",
+              },
               // Ternary operator
               {
                 label: "Ternary operator",
                 itemOne: 'happy === true ? "smile" : "frown"',
                 itemTwo: '"smile" if happy == True else "frown"',
+              },
+              // Try + Catch/Except + Finally
+              {
+                label: "Try + Catch/Except + Finally",
+                itemOne: `try {
+    badFunction();
+} catch (error) {
+    if (error instanceof ThrownException) {
+    console.log('Sorry! ' + error.message);
+    }
+} finally {
+    console.log('Finishing');
+}`,
+                itemTwo: `try:
+    badFunction()
+except ThrownException as error:
+    print('Sorry! {}'.format(error))
+finally:
+    print('Finishing')`,
               },
               // Single line comment
               {
@@ -452,7 +829,48 @@ This is a multiline comment
                 itemOne: "oneFunction(...args)",
                 itemTwo: "oneFunction(**args)",
               },
-              //todo typeof
+              // Type checking (1)
+              {
+                label: "Type checking (1)",
+                itemOne: "typeof 10 === 'number'",
+                itemTwo: "type(10) is int",
+              },
+              // Type checking (2)
+              {
+                label: "Type checking (2)",
+                itemOne: "",
+                itemTwo: "isinstance(10, int)",
+              },
+              // Parse JSON
+              {
+                label: "Parse JSON",
+                itemOne: "JSON.parse(jasonToParse)",
+                itemTwo: `import json
+json.loads(jason_to_parse)`,
+                note:
+                  "Built in for Javascript, requires a library import for Python.",
+              },
+              // Convert to JSON
+              {
+                label: "Convert to JSON",
+                itemOne: "JSON.stringify(objToJason)",
+                itemTwo: `import json
+json.dumps(dict_to_jason)`,
+                note:
+                  "Built in for Javascript, requires a library import for Python.",
+              },
+              // Replace match with Regex
+              {
+                label: "Replace match with Regex",
+                itemOne:
+                  `const phonePattern = /(\\(?\\d{3}\\)?[- ]?\\d{3}-?\\d{4})/;
+"Please call me at (555) 444-9876".replace(phonePattern, "REDACTED PHONE NUMBER");`,
+                itemTwo: `import re
+phonePattern = re.compile(r'(\\(?\\d{3}\\)?[- ]?\\d{3}-?\\d{4})')
+phonePattern.sub(phonePattern, "REDACTED PHONE NUMBER", "Please call me at (555) 444-9876")`,
+                note:
+                  "Built in for Javascript, requires a library import for Python.",
+              },
             ]}
           />
 
@@ -526,15 +944,13 @@ here
               {
                 label: "Slicing (start until set end)",
                 itemOne: "word.substring(0, 3)",
-                itemTwo: "word.[:3]",
+                itemTwo: "word[:3]",
               },
               // Slicing with set start
               {
                 label: "Slicing (set start until end)",
-                itemOne: "word.substring(word.length - 1 - 3)",
+                itemOne: "word.slice(-3)",
                 itemTwo: "word[-3:]",
-                note:
-                  "Unlike 'array.splice()', you can't pass a negative parameter to substring to give it a set start relative to the end of the string.",
               },
               // String interpolation (1)
               {
@@ -542,12 +958,81 @@ here
                 itemOne: "",
                 itemTwo: "'My name is %s.' % (name)",
               },
-              // String interpolation (1)
+              // String interpolation (2)
               {
                 label: "String interpolation (2)",
                 itemOne: "`My name is ${name}.`",
                 itemTwo: "f'My name is {name}.'",
                 note: "Python's f-strings require Python 3.6 or higher.",
+              },
+              // Includes (string)
+              {
+                label: "Text present in String",
+                itemOne: '"Hello world!".includes("Hello")',
+                itemTwo: '"Hello" in "Hello World!"',
+                note: "Same for Arrays/Lists in both languages.",
+              },
+              // Join an Array/List into a string
+              {
+                label: "Join Array/List elements as single string",
+                itemOne: "['Hello', 'world!'].join(' ')",
+                itemTwo: `hello = ['Hello', 'world!']
+' '.join(hello)`,
+              },
+              // Split a string into an Array/List
+              {
+                label: "Split a string into an Array/List",
+                itemOne: "'Hello world!'.split(' ')",
+                itemTwo: `'Hello world!'.split()`,
+                note:
+                  "Python will split on whitespace by default, if a separator is not provided. With Javascript, not providing a separator will cause every single character to become an Array element.",
+              },
+              // Trim all
+              {
+                label: "Trim",
+                itemOne: "' word '.trim()",
+                itemTwo: "' word '.strip()",
+                note:
+                  "Python also allows you to pass parameters to strip in order to remove something else other than spaces. Javascript doesn't have that flexibility.",
+              },
+              // Trim left (leading)
+              {
+                label: "Trim leading spaces only",
+                itemOne: "'   word'.trimStart()",
+                itemTwo: "'   word '.lstrip()",
+              },
+              // Trim right (trailing)
+              {
+                label: "Trim trailing spaces only",
+                itemOne: "'word  '.trimEnd()",
+                itemTwo: "'word  '.rstrip()",
+              },
+              // Uppercase
+              {
+                label: "Uppercase entire string",
+                itemOne: "'word'.toUpperCase()",
+                itemTwo: "'word'.upper()",
+              },
+              // Lowercase
+              {
+                label: "Lowercase entire string",
+                itemOne: "'SCREAMING'.toLowerCase()",
+                itemTwo: "'SCREAMING'.lower()",
+              },
+              // Sentence
+              {
+                label:
+                  "Uppercase first letter of first word, lowercase everything else",
+                itemOne: "",
+                itemTwo: "'two WORDS'.capitalize()",
+                note: "No Javascript equivalent.",
+              },
+              // Title
+              {
+                label: "Uppercase first letter of every word",
+                itemOne: "",
+                itemTwo: "'breaking news'.title()",
+                note: "No Javascript equivalent.",
               },
             ]}
           />
@@ -564,6 +1049,8 @@ here
                 label: "New array/list (1)",
                 itemOne: "const a = new Array()",
                 itemTwo: "a = list()",
+                note:
+                  "In Javascript, it's bad practice to initialize arrays like this.",
               },
               // New Array/List (2)
               {
@@ -613,6 +1100,13 @@ here
                 note:
                   "Javascript doesn't offer an easy way to do remove the first match and stop. You can do a 'for loop' to remove one and break after the first match or use '.findIndex()' and then '.splice()' on that element.",
               },
+              // Join an Array/List into a string
+              {
+                label: "Join Array/List elements as single string",
+                itemOne: "['Hello', 'world!'].join(' ')",
+                itemTwo: `hello = ['Hello', 'world!']
+' '.join(hello)`,
+              },
               // Slicing with set range
               {
                 label: "Slicing (set range)",
@@ -637,6 +1131,12 @@ here
               },
               // Sorting descending
               {
+                label: "Sorting",
+                itemOne: "a.sort()",
+                itemTwo: "a.sort()",
+              },
+              // Sorting descending
+              {
                 label: "Sorting descending",
                 itemOne: "a.sort((a, b) => b - a)",
                 itemTwo: "a.sort(reverse=True)",
@@ -654,13 +1154,43 @@ here
                 itemOne: "[1, 2, 3].length",
                 itemTwo: "len([1, 2, 3])",
               },
+              // Creating Sets (1)
+              {
+                label: "New Set (1)",
+                itemOne: "const uniqueSet = new Set([1, 2, 3])",
+                itemTwo: "uniqueSet = set((1, 2, 3))",
+              },
+              // Creating Sets (2)
+              {
+                label: "New Set (2)",
+                itemOne: "",
+                itemTwo: "uniqueSet = {1, 2, 3}",
+              },
+              // [MAP] Modifying every element in an Array/List
+              {
+                label: "Modifying (map) every element in an Array/List",
+                itemOne: "[1, 2, 3].map(n => n * 2)",
+                itemTwo: "list(map(lambda n: n * 2, [1, 2, 3]))",
+              },
+              // Reduce an Array/List to single result
+              {
+                label: "Reduce an Array/List to single result",
+                itemOne: "[1, 2, 3].reduce((total, curr) => total + curr)",
+                itemTwo: "reduce(lambda total, curr: total + curr, [1, 2, 3])",
+              },
+              // Set length
+              {
+                label: "Count Set items",
+                itemOne: "uniqueSet.size",
+                itemTwo: "len(uniqueSet)",
+              },
               // Tuple
               {
                 label: "Tuples",
                 itemOne: "",
                 itemTwo: "x = (1, 2, 3)",
                 note:
-                  "Javascript doesn't support Tuples. Python's Tuples are also not modified. Once set, forever defined.",
+                  "Javascript doesn't support Tuples yet, but there is a TC39 proposal to add them. Python's Tuples are also not modifiable. Once set, forever defined.",
               },
             ]}
           />
@@ -701,8 +1231,7 @@ here
               {
                 label: "Adding property (2)",
                 itemOne: "obj.keyName = 'value'",
-                itemTwo: "",
-                note: "No Python equivalent.",
+                itemTwo: "setattr(dict, key_name, value)",
               },
               // Accessing property value (1)
               {
@@ -714,8 +1243,7 @@ here
               {
                 label: "Accessing property value (2)",
                 itemOne: "obj.keyName",
-                itemTwo: "",
-                note: "No Python equivalent.",
+                itemTwo: "getattr(dict, key_name)",
               },
               // Length
               {
@@ -741,43 +1269,7 @@ a == b // false`,
 b = {name: 'yuri'}
 a == b // True`,
                 note:
-                  "Python makes a deep equality check by default, Javascript instead compares if the reference in memory is the same.",
-              },
-              // Looping (keys)
-              {
-                label: "Looping through keys",
-                itemOne: `for (const key of obj) {
-    console.log(key)
-}`,
-                itemTwo: `for key in dict.keys():
-    print(key)`,
-              },
-              // Looping (values)
-              {
-                label: "Looping through values",
-                itemOne: `for (const value of Object.values(obj)) {
-    console.log(value)
-}`,
-                itemTwo: `for value in dict.values():
-    print(value)`,
-              },
-              // Looping (keys and values)
-              {
-                label: "Looping through keys + values",
-                itemOne: `for (const [k, v] of Object.entries(obj)) {
-    console.log(k, ':', v)
-}`,
-                itemTwo: `for k, v in dict.items():
-    print(k, ':', v)`,
-              },
-              // Looping (keys)
-              {
-                label: "Looping through keys",
-                itemOne: `for (const key of obj) {
-    console.log(key)
-}`,
-                itemTwo: `for k in dict.keys():
-    print(k)`,
+                  "Python makes a deep equality check by default, Javascript instead compares if the reference in memory are the same.",
               },
               // Deleting
               {
@@ -785,59 +1277,162 @@ a == b // True`,
                 itemOne: "delete obj['key']",
                 itemTwo: "del obj['key']",
               },
+              // Merging
+              {
+                label: "Merging objects/dictionaries",
+                itemOne: "{...objA, ...objB}",
+                itemTwo: "{**dictA,  **dictB}",
+              },
             ]}
           />
 
-          {/* Conversions */}
+          {/* Classes */}
           <ComparisonTable
             languageOneName="Javascript"
             languageTwoName="Python"
-            tableName="Converting data types"
-            tableId="conversion"
+            tableName="Classes"
+            tableId="classes"
             differenceList={[
+              // New class
               {
-                label: "String (1)",
-                itemOne: "String(10)",
-                itemTwo: "str(10)",
+                label: "New Class",
+                itemOne: `class Person {
+  constructor(name) {
+    this.name = name;
+  }
+}
+`,
+                itemTwo: `class Person:
+  def __init__(self, name):
+    self.name = name`,
               },
+              // Inheritance
               {
-                label: "String (2)",
-                itemOne: "10.toString()",
-                itemTwo: "",
-              },
-              {
-                label: "Number (1)",
-                itemOne: "Number('10')",
-                itemTwo: "int('10')",
-              },
-              {
-                label: "Number (2)",
-                itemOne: "parseInt('10')",
-                itemTwo: "",
-              },
-              {
-                label: "Number (3)",
-                itemOne: "+'10'",
-                itemTwo: "",
+                label: "Inheritance",
+                itemOne: `class Student extends Person {
+    constructor(name, age) {
+        super(name);
+        this.age = age
+    }
+}`,
+                itemTwo: `class Student(Person):
+    def __init__(self, name, age):
+        super().__init__(name)
+        self.age = age`,
                 note:
-                  "For this to work in Javascript, there must be no spaces between the plus symbol (Unary Operator) and the value/variable.",
+                  "Python has 'pass' for whenever you want to create/inherit a class, but not initialize properties.",
               },
+              // Printing a class to console
               {
-                label: "Number (4)",
-                itemOne: "parseFloat('10')",
-                itemTwo: "",
-              },
-              {
-                label: "Number (5)",
-                itemOne: "'10' * 1",
-                itemTwo: "",
+                label: "Printing a class to console",
+                itemOne: "",
+                itemTwo: `class Person:
+  def __str__(self):
+    return f"Person {self.name} printed."`,
                 note:
-                  "Javascript will attempt convert a string to when it interacts with any mathematical operator other than the plus symbol (+).",
+                  "Javascript logs the object version of a class to the console, while Python outputs human-unreadable code if '__str__()' is not provided.",
               },
+            ]}
+          />
+
+          {/* Loops */}
+          <ComparisonTable
+            languageOneName="Javascript"
+            languageTwoName="Python"
+            tableName="Loops"
+            tableId="loops"
+            differenceList={[
+              // Looping (keys)
               {
-                label: "Number (6)",
-                itemOne: "~~'10'",
+                label: "Looping through obj/dict keys",
+                itemOne: `for (const key of Object.keys(obj)) {
+    console.log(key)
+}`,
+                itemTwo: `for key in dict.keys():
+    print(key)`,
+              },
+              // Looping (values)
+              {
+                label: "Looping through obj/dict values",
+                itemOne: `for (const value of Object.values(obj)) {
+    console.log(value)
+}`,
+                itemTwo: `for value in dict.values():
+    print(value)`,
+              },
+              // Looping (values)
+              {
+                label: "Looping through obj/dict values",
+                itemOne: `for (const val in obj) {
+    console.log(val)
+}`,
+                itemTwo: `for val in dict:
+    print(val)`,
+              },
+              // Looping (keys and values)
+              {
+                label: "Looping through obj/dict keys + values",
+                itemOne: `for (const [k, v] of Object.entries(obj)) {
+    console.log(k, ':', v)
+}`,
+                itemTwo: `for k, v in dict.items():
+    print(k, ':', v)`,
+              },
+              // For loop
+              {
+                label: "Looping a set number of times",
+                itemOne: `for (let i = 0; i < 10; i++) {
+    console.log(i)
+}`,
+                itemTwo: `for i in range(10):
+    print(i)`,
+              },
+              // Looping Array/List (1)
+              {
+                label: "Looping Array/List (1)",
+                itemOne: `for (let item of loopingArray) {
+    console.log(item)
+}`,
+                itemTwo: `for item in loopingList:
+    print(item)`,
+              },
+              // Looping Array/List (2)
+              {
+                label: "Looping Array/List (2)",
+                itemOne: `for (let i = 0; i < loopingArray.length; i++) {
+    console.log(loopingArray[i]);
+}`,
                 itemTwo: "",
+              },
+              // Looping Array/List (3)
+              {
+                label: "Looping Array/List (3)",
+                itemOne: `loopingArray.forEach(function (item) {
+        console.log(item);
+    })
+}`,
+                itemTwo: "",
+              },
+              // While
+              {
+                label: "While loop",
+                itemOne: `while (condition) {
+    console.log('condition is true')
+}`,
+                itemTwo: `while condition:
+    print('condition is true')`,
+                note:
+                  "You can break out of the loop for both using a 'break' statement or making the condition false.",
+              },
+              // Do While
+              {
+                label: "Do While loop",
+                itemOne: `do {
+    i++;
+    console.log(i);
+} while (i < 5);`,
+                itemTwo: "",
+                note: "No Python equivalent.",
               },
             ]}
           />
