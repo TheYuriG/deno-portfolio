@@ -38,21 +38,22 @@ import * as $$0 from "./islands/UI/DigitalTimer.tsx";
 import * as $$1 from "./islands/UI/Modal.tsx";
 import * as $$2 from "./islands/misc/Collapsible.tsx";
 import * as $$3 from "./islands/misc/CopyTextAreaToClipboard.tsx";
-import * as $$4 from "./islands/misc/ThemeSwitcher.tsx";
-import * as $$5 from "./islands/projects/AddNewExpense.tsx";
-import * as $$6 from "./islands/projects/ExpensesTracker.tsx";
-import * as $$7 from "./islands/projects/ExpensesYearSelect.tsx";
-import * as $$8 from "./islands/projects/FoodOrder.tsx";
-import * as $$9 from "./islands/projects/FoodOrderCheckout.tsx";
-import * as $$10 from "./islands/projects/FormWithValidation.tsx";
-import * as $$11 from "./islands/projects/TicTacToeBoard.tsx";
-import * as $$12 from "./islands/tools/ExpressionVisualizationList.tsx";
-import * as $$13 from "./islands/tools/ExpressionVisualizer.tsx";
-import * as $$14 from "./islands/tools/HighlightedCode.tsx";
-import * as $$15 from "./islands/tools/RetirementCalculationForm.tsx";
-import * as $$16 from "./islands/tools/RetirementCalculator.tsx";
-import * as $$17 from "./islands/tools/WhatsappLinkGenerator.tsx";
-import * as $$18 from "./islands/toys/InsanitySection.tsx";
+import * as $$4 from "./islands/misc/ScrollToTop.tsx";
+import * as $$5 from "./islands/misc/ThemeSwitcher.tsx";
+import * as $$6 from "./islands/projects/AddNewExpense.tsx";
+import * as $$7 from "./islands/projects/ExpensesTracker.tsx";
+import * as $$8 from "./islands/projects/ExpensesYearSelect.tsx";
+import * as $$9 from "./islands/projects/FoodOrder.tsx";
+import * as $$10 from "./islands/projects/FoodOrderCheckout.tsx";
+import * as $$11 from "./islands/projects/FormWithValidation.tsx";
+import * as $$12 from "./islands/projects/TicTacToeBoard.tsx";
+import * as $$13 from "./islands/tools/ExpressionVisualizationList.tsx";
+import * as $$14 from "./islands/tools/ExpressionVisualizer.tsx";
+import * as $$15 from "./islands/tools/HighlightedCode.tsx";
+import * as $$16 from "./islands/tools/RetirementCalculationForm.tsx";
+import * as $$17 from "./islands/tools/RetirementCalculator.tsx";
+import * as $$18 from "./islands/tools/WhatsappLinkGenerator.tsx";
+import * as $$19 from "./islands/toys/InsanitySection.tsx";
 
 const manifest = {
   routes: {
@@ -94,21 +95,22 @@ const manifest = {
     "./islands/UI/Modal.tsx": $$1,
     "./islands/misc/Collapsible.tsx": $$2,
     "./islands/misc/CopyTextAreaToClipboard.tsx": $$3,
-    "./islands/misc/ThemeSwitcher.tsx": $$4,
-    "./islands/projects/AddNewExpense.tsx": $$5,
-    "./islands/projects/ExpensesTracker.tsx": $$6,
-    "./islands/projects/ExpensesYearSelect.tsx": $$7,
-    "./islands/projects/FoodOrder.tsx": $$8,
-    "./islands/projects/FoodOrderCheckout.tsx": $$9,
-    "./islands/projects/FormWithValidation.tsx": $$10,
-    "./islands/projects/TicTacToeBoard.tsx": $$11,
-    "./islands/tools/ExpressionVisualizationList.tsx": $$12,
-    "./islands/tools/ExpressionVisualizer.tsx": $$13,
-    "./islands/tools/HighlightedCode.tsx": $$14,
-    "./islands/tools/RetirementCalculationForm.tsx": $$15,
-    "./islands/tools/RetirementCalculator.tsx": $$16,
-    "./islands/tools/WhatsappLinkGenerator.tsx": $$17,
-    "./islands/toys/InsanitySection.tsx": $$18,
+    "./islands/misc/ScrollToTop.tsx": $$4,
+    "./islands/misc/ThemeSwitcher.tsx": $$5,
+    "./islands/projects/AddNewExpense.tsx": $$6,
+    "./islands/projects/ExpensesTracker.tsx": $$7,
+    "./islands/projects/ExpensesYearSelect.tsx": $$8,
+    "./islands/projects/FoodOrder.tsx": $$9,
+    "./islands/projects/FoodOrderCheckout.tsx": $$10,
+    "./islands/projects/FormWithValidation.tsx": $$11,
+    "./islands/projects/TicTacToeBoard.tsx": $$12,
+    "./islands/tools/ExpressionVisualizationList.tsx": $$13,
+    "./islands/tools/ExpressionVisualizer.tsx": $$14,
+    "./islands/tools/HighlightedCode.tsx": $$15,
+    "./islands/tools/RetirementCalculationForm.tsx": $$16,
+    "./islands/tools/RetirementCalculator.tsx": $$17,
+    "./islands/tools/WhatsappLinkGenerator.tsx": $$18,
+    "./islands/toys/InsanitySection.tsx": $$19,
   },
   baseUrl: import.meta.url,
 };
