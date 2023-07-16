@@ -34,7 +34,7 @@ export function ComparisonTable(
     <>
       {/* Table name */}
       <StyledSubHeader title={tableName} id={tableId} />
-      <table class="text-center custom-bo-ac custom-tr-bo border-collapse mb-4 text-xs whitespace-pre-wrap sm:text-sm md:text-base">
+      <table class="text-center custom-bo-ac custom-tr-bo border-collapse mb-4 text-xs sm:text-sm md:text-base">
         {/* Table head: lang1, lang2, notes */}
         <tr>
           <th scope="col" class="custom-bo-ac hidden md:table-cell"></th>
@@ -54,9 +54,11 @@ export function ComparisonTable(
             {/* Label */}
             <td class="custom-bo-ac hidden md:table-cell py-1 px-2">{label}</td>
             {/* Item 1 */}
-            <td class="custom-bo-ac py-1 px-2">{itemOne}</td>
+            <td class="custom-bo-ac py-1 px-2 text-left whitespace-pre-wrap">
+              {itemOne}
+            </td>
             {/* Item 2 */}
-            <td class="custom-bo-ac py-1 px-2">
+            <td class="custom-bo-ac py-1 px-2 text-left whitespace-pre-wrap">
               {itemTwo}
             </td>
             {/* Note about the difference, if provided */}

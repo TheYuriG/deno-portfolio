@@ -1,7 +1,7 @@
 //? Import IconProperties for props typecasting
 import { IconProperties } from "../types/asset-properties/IconProperties.ts";
 
-//? Renders a Paypal Icon
+//? Renders a Paypal Icon with fill
 export function PaypalIcon(
   { iconHeight, iconWidth, iconFillColor }: IconProperties,
 ) {

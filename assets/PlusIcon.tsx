@@ -1,7 +1,7 @@
 //? Import IconProperties for props typecasting
 import { IconProperties } from "../types/asset-properties/IconProperties.ts";
 
-//? Renders a XMark Icon with fill color, defaults to 'neutral-color' fill
+//? Renders a Plus Icon with fill color
 export function PlusIcon(
   { iconHeight, iconWidth, iconFillColor }: IconProperties,
 ) {

@@ -16,6 +16,8 @@ import { GreekList } from "../../components/UI/GreekList.tsx";
 import { ViewOnGitHub } from "../../components/misc/ViewOnGithub.tsx";
 //? Import the default post footer
 import { BlogPostFooter } from "../../components/blog/BlogPostFooter.tsx";
+//? Add a button to scroll to the top on the bottom right corner of the page
+import ScrollToTop from "../../islands/misc/ScrollToTop.tsx";
 //? Import posts
 import { createFreshThemeSwitcher as postSummary } from "../../data/blog/how-create-theme-switcher-deno-fresh.ts";
 import { stopThemeFlickering as nextPost } from "../../data/blog/stopping-theme-flickering-deno-fresh.ts";
@@ -508,6 +510,9 @@ export default function Home() {
           </p>
           {/* Post author */}
           <BlogPostFooter />
+
+          {/* Scroll up button */}
+          <ScrollToTop />
         </article>
       </Base>
     </>

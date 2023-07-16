@@ -14,6 +14,8 @@ import { DottedLink } from "../../components/UI/DottedLink.tsx";
 import { ViewOnGitHub } from "../../components/misc/ViewOnGithub.tsx";
 //? Import the default post footer
 import { BlogPostFooter } from "../../components/blog/BlogPostFooter.tsx";
+//? Add a button to scroll to the top on the bottom right corner of the page
+import ScrollToTop from "../../islands/misc/ScrollToTop.tsx";
 //? Import post summary
 import { createVoiceChannelPost as previousPost } from "../../data/blog/how-create-voice-channels-discord-v14.ts";
 import { createCategoryPost as postSummary } from "../../data/blog/how-create-categories-discord-v14.ts";
@@ -789,6 +791,9 @@ export default function Home() {
           {/* Post author */}
           <BlogPostFooter />
         </article>
+
+        {/* Scroll up button */}
+        <ScrollToTop />
       </Base>
     </>
   );

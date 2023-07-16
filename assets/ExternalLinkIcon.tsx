@@ -1,7 +1,7 @@
 //? Import IconProperties for props typecasting
 import { IconProperties } from "../types/asset-properties/IconProperties.ts";
 
-//? Renders an External Link Icon with fill
+//? Renders an External Link Icon with fill and can take extra classes
 export function ExternalLinkIcon(
   { iconHeight, iconWidth, iconFillColor, classes }: IconProperties & {
     classes?: string;

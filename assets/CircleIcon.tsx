@@ -1,7 +1,7 @@
 //? Import IconPropertiesWithStroke for props typecasting
 import { IconPropertiesWithStroke } from "../types/asset-properties/IconProperties.ts";
 
-//? Renders a Circle Icon
+//? Renders a Circle Icon with fill, stroke and stroke-width
 export function CircleIcon(
   { iconHeight, iconWidth, iconFillColor, iconStrokeColor, iconStrokeWidth }:
     IconPropertiesWithStroke,

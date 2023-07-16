@@ -7,8 +7,6 @@ export default {
       animation: {
         // Toys card pulsing animation
         "card-pulse": "card-pulse 1.2s ease-out infinite",
-        // Insanity grow and shrink
-        grow: "grow 1.2s ease-out infinite",
         // Waving animation for hello emoji in the home page
         waving: "waving 0.3s linear infinite alternate;",
         // blinking animation
@@ -41,16 +39,6 @@ export default {
           "100%": {
             "box-shadow":
               "0 0 0 0 var(--neutral-color) inset, 0 0 0 0 var(--neutral-color)",
-          },
-        },
-        // Insanity grow and shrink
-        grow: {
-          "50%": {
-            "transform": "scale(1.1)",
-          },
-
-          "100%": {
-            "transform": "scale(1)",
           },
         },
         // Waving emoji for TheYuriG on home page

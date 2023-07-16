@@ -1,7 +1,7 @@
 //? Import IconProperties for props typecasting
 import { IconProperties } from "../types/asset-properties/IconProperties.ts";
 
-//? Renders a moon Icon with fill
+//? Renders a Moon Icon with fill
 export function MoonIcon(
   { iconHeight, iconWidth, iconFillColor }: IconProperties,
 ) {
