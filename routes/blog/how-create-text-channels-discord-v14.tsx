@@ -16,6 +16,8 @@ import { GreekList } from "../../components/UI/GreekList.tsx";
 import { ViewOnGitHub } from "../../components/misc/ViewOnGithub.tsx";
 //? Import the default post footer
 import { BlogPostFooter } from "../../components/blog/BlogPostFooter.tsx";
+//? Add a button to scroll to the top on the bottom right corner of the page
+import ScrollToTop from "../../islands/misc/ScrollToTop.tsx";
 //? Import post summary
 import { createTextChannelPost as postSummary } from "../../data/blog/how-create-text-channels-discord-v14.ts";
 import { createVoiceChannelPost as nextPost } from "../../data/blog/how-create-voice-channels-discord-v14.ts";
@@ -1727,6 +1729,9 @@ export default function Home() {
           </p>
           {/* Post author */}
           <BlogPostFooter />
+
+          {/* Scroll up button */}
+          <ScrollToTop />
         </article>
       </Base>
     </>

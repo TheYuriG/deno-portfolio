@@ -8,6 +8,8 @@ import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
 import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 //? Infinitely expandable insanity section
 import InsanitySection from "../../islands/toys/InsanitySection.tsx";
+//? Add a button to scroll to the top on the bottom right corner of the page
+import ScrollToTop from "../../islands/misc/ScrollToTop.tsx";
 
 export default function Home() {
   return (
@@ -33,6 +35,9 @@ export default function Home() {
             This page exists to text the responsiveness of the layout whenever
             changes happens. Sorry if you were expecting some more exciting.
           </footer>
+
+          {/* Scroll up button */}
+          <ScrollToTop />
         </article>
       </Base>
     </>

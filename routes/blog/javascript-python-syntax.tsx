@@ -16,6 +16,8 @@ import { GreekList } from "../../components/UI/GreekList.tsx";
 import { ComparisonTable } from "../../components/blog/ComparisonTable.tsx";
 //? Import post summary
 import { javascriptPythonSyntaxPost as postSummary } from "../../data/blog/javascript-python-syntax.ts";
+//? Add a button to scroll to the top on the bottom right corner of the page
+import ScrollToTop from "../../islands/misc/ScrollToTop.tsx";
 
 export default function Home() {
   return (
@@ -32,6 +34,7 @@ export default function Home() {
         <NavigationButtons
           back={{ title: "Browse more blog posts", link: "/blog" }}
         />
+        {/* The whole thing */}
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
           {/* Title header */}
           <StyledHeader title={postSummary.title} />
@@ -198,7 +201,7 @@ export default function Home() {
               // BigInt
               {
                 label: "BigInt",
-                itemOne: 'BigInt("123456789012345678901234567890")',
+                itemOne: "BigInt(bigNumberString)",
                 itemTwo: "",
               },
               // Array/List
@@ -1455,6 +1458,9 @@ a == b // True`,
             if you wish to contribute and get added to this list.
           </footer>
         </article>
+
+        {/* Scroll up button */}
+        <ScrollToTop />
       </Base>
     </>
   );

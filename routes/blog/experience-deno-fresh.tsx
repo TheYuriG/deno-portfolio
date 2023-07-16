@@ -16,6 +16,8 @@ import { GreekList } from "../../components/UI/GreekList.tsx";
 import { BlogPostFooter } from "../../components/blog/BlogPostFooter.tsx";
 //? Import post summary
 import { experienceDenoFreshPost as postSummary } from "../../data/blog/experience-deno-fresh.ts";
+//? Add a button to scroll to the top on the bottom right corner of the page
+import ScrollToTop from "../../islands/misc/ScrollToTop.tsx";
 
 export default function Home() {
   return (
@@ -424,6 +426,9 @@ export default function Home() {
           {/* Post author */}
           <BlogPostFooter />
         </article>
+
+        {/* Scroll up button */}
+        <ScrollToTop />
       </Base>
     </>
   );
