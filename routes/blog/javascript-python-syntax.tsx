@@ -14,8 +14,6 @@ import { DottedLink } from "../../components/UI/DottedLink.tsx";
 import { GreekList } from "../../components/UI/GreekList.tsx";
 //? Render multiple comparison tables of the language differences
 import { ComparisonTable } from "../../components/blog/ComparisonTable.tsx";
-//? Import the default post footer
-import { BlogPostFooter } from "../../components/blog/BlogPostFooter.tsx";
 //? Import post summary
 import { javascriptPythonSyntaxPost as postSummary } from "../../data/blog/javascript-python-syntax.ts";
 
@@ -41,15 +39,12 @@ export default function Home() {
           <p class="text-sm mb-2 w-full text-center">
             {new Date(postSummary.date).toLocaleString()}
           </p>
-          {/* Who am I */}
-          <p class="my-2 text-justify">
-            I'm a Typescript developer, but I enjoy watching tutorials on other
-            languages for exposure, before going to bed (unlike what I was doing
-            a year ago: doomscrolling Instagram Reels until 1am).
-          </p>
+
           {/* Motivation for this */}
           <p class="my-2 text-justify">
-            One of the things that I've spent my recent nights watching was{" "}
+            I enjoy watching tutorials on other languages before going to bed,
+            for exposure. One of the things that I've spent my recent nights
+            watching was{" "}
             <GradientLink
               content="Al Sweigart"
               link="https://github.com/asweigart"
@@ -64,7 +59,7 @@ export default function Home() {
             . While I don't see myself switching my working language to Python
             in the near future, I thought it would be interesting to keep an
             easy-to-reference cheatsheet of the syntax differences between both
-            languages.
+            languages, in case me or other people need one.
           </p>
 
           <StyledSubHeader title="Table of Contents" />
@@ -895,7 +890,7 @@ phonePattern.sub(phonePattern, "REDACTED PHONE NUMBER", "Please call me at (555)
               },
               // Length
               {
-                label: "String length",
+                label: "Length",
                 itemOne: '"text".length',
                 itemTwo: 'len("text")',
               },
@@ -1421,8 +1416,6 @@ a == b // True`,
 }`,
                 itemTwo: `while condition:
     print('condition is true')`,
-                note:
-                  "You can break out of the loop for both using a 'break' statement or making the condition false.",
               },
               // Do While
               {
@@ -1438,7 +1431,29 @@ a == b // True`,
           />
 
           {/* Post author */}
-          <BlogPostFooter />
+          <footer class="mt-auto w-full text-right text-sm">
+            Written with 💞 by TheYuriG, with contributions by{" "}
+            <GradientLink
+              content="@lino-levan"
+              link="https://github.com/lino-levan"
+              customRel="nofollow noreferrer"
+              title="Thank you for the error checking!"
+            />{" "}
+            and{" "}
+            <GradientLink
+              content="u/nekokattt"
+              link="https://www.reddit.com/r/learnpython/comments/14yf19y/comment/jrshjh0/?utm_source=reddit&utm_medium=web2x&context=3"
+              customRel="nofollow noreferrer"
+              title="Thank you for the suggestions!"
+            />. You can check this{" "}
+            <GradientLink
+              content="issue"
+              link="https://github.com/TheYuriG/deno-portfolio/issues/104#issuecomment-1636989897"
+              customRel="nofollow noreferrer"
+              title="Make the life of other developers a little bit easier."
+            />{" "}
+            if you wish to contribute and get added to this list.
+          </footer>
         </article>
       </Base>
     </>
