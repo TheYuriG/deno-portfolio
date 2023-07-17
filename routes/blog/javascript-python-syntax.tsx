@@ -1441,13 +1441,18 @@ a == b // True`,
               link="https://github.com/lino-levan"
               customRel="nofollow noreferrer"
               title="Thank you for the error checking!"
-            />{" "}
-            and{" "}
+            />{", "}
             <GradientLink
               content="u/nekokattt"
               link="https://www.reddit.com/r/learnpython/comments/14yf19y/comment/jrshjh0/?utm_source=reddit&utm_medium=web2x&context=3"
               customRel="nofollow noreferrer"
               title="Thank you for the suggestions!"
+            />
+            {" "} and {" "}
+            <GradientLink
+              content="@spidersouris"
+              link="https://github.com/spidersouris"
+              customRel="nofollow noreferrer"
             />. You can check this{" "}
             <GradientLink
               content="issue"
