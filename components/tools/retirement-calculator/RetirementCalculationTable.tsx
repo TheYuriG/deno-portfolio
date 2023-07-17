@@ -93,11 +93,11 @@ export function RetirementCalculationTable(
             {/* Age */}
             <td class="custom-bo-ac">{yearCalculation.age}</td>
             {/* Total saved */}
-            <td class="custom-bo-ac">
+            <td class="custom-bo-ac break-words max-w-[20vw]">
               ${Math.floor(yearCalculation.totalSaved).toLocaleString()}
             </td>
             {/* Interest returns from last year */}
-            <td class="custom-bo-ac">
+            <td class="custom-bo-ac break-words max-w-[20vw]">
               ${Math.floor(yearCalculation.lastYearCompound).toLocaleString() +
                 (+values.additionalIncome > 0 &&
                     yearCalculation.lastYearCompound >= +values.compensation
