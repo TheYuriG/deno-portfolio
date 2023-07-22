@@ -9,6 +9,7 @@ import { GradientLink } from "../components/UI/GradientLink.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
 import { NavigationButtons } from "../components/misc/NavigationButtons.tsx";
 import { StyledSubHeader } from "../components/UI/StyledSubHeader.tsx";
+import { DottedLink } from "../components/UI/DottedLink.tsx";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <NavigationButtons />
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
           <StyledHeader title="Certificates" />
+
           {/* NodeJS backend certificate */}
           <StyledSubHeader title="NodeJS (Backend focused)" />
           <img
@@ -47,8 +49,9 @@ export default function Home() {
               link="https://trophy.place"
             />.
           </p>
-          <StyledSubHeader title="React (+NextJS)" />
+
           {/* React and NextJS certificate */}
+          <StyledSubHeader title="React (+NextJS)" />
           <img
             src="https://udemy-certificate.s3.amazonaws.com/image/UC-7246cba0-de77-4a6f-81a4-2be5aaeaad67.jpg?v=1688062528000"
             alt="React18 Certificate"
@@ -76,6 +79,46 @@ export default function Home() {
               title="GitHub link to the related commit"
               customRel="noopener noreferrer"
             />.
+          </p>
+
+          {/* Python Automation */}
+          <StyledSubHeader title="Automate the Boring Stuff with Python" />
+          <img
+            src="https://udemy-certificate.s3.amazonaws.com/image/UC-a67fad8f-f55a-4af2-adb9-95b023517496.jpg?v=1690032992000"
+            alt="Python Automation Certificate"
+            title="Automate the Boring Stuff with Python course completion certificate"
+            class="object-cover max-h-[30em] max-w-full"
+            style="aspect-ratio: 43/32;"
+          />
+          <GradientLink
+            link="https://www.udemy.com/certificate/UC-a67fad8f-f55a-4af2-adb9-95b023517496/"
+            content="View on Udemy"
+            title="Certificate of the Python Automation course completion on Udemy."
+            customRel="noopener noreferrer"
+          />
+          <p class="mt-2 mb-4 text-center text-justify w-full">
+            This course was a 2021 gift from{" "}
+            <GradientLink
+              content="Makowo"
+              link="https://github.com/Makowo"
+            />{" "}
+            that I had no plans to get around to. Eventually I saw myself
+            doomscrolling through social media every night before sleeping and I
+            decided that I had to replace that with a better habit and ended up
+            deciding to spend my time watching this every night until conclusion
+            instead. Time well spent, because this course exposed me to lower
+            level GUI automation and it inspired me to create some similar
+            teaching tools to this page, like{" "}
+            <DottedLink
+              content="Expression Visualizer"
+              link="/tools/expression-visualizer"
+            />{" "}
+            and the{" "}
+            <DottedLink
+              content="Javascript/Python Syntax"
+              link="/blog/javascript-python-syntax"
+            />{" "}
+            cheatsheet blog post.
           </p>
         </article>
       </Base>
