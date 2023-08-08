@@ -6,6 +6,7 @@ import { Base } from "../../components/base/Base.tsx";
 import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
 //? Navigation Buttons to go back to the tools page
 import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
+//? Expression Visualizer component
 import ExpressionVisualizer from "../../islands/tools/ExpressionVisualizer.tsx";
 
 export default function Home() {
@@ -25,6 +26,10 @@ export default function Home() {
       <Base>
         <NavigationButtons
           back={{ title: "Return to tools", link: "/tools" }}
+          next={{
+            title: "Expression Visualizer Plus (Advanced mode)",
+            link: "/tools/expression-visualizer-advanced",
+          }}
         />
         <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
           <StyledHeader title="Expression Visualizer" />
