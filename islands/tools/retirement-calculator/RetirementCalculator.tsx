@@ -2,10 +2,10 @@
 import { useMemo, useState } from "preact/hooks";
 //? Components/Islands
 import RetirementCalculatorForm from "./RetirementCalculationForm.tsx";
-import { RetirementCalculationTable } from "../../components/tools/retirement-calculator/RetirementCalculationTable.tsx";
-import { StyledSubHeader } from "../../components/UI/StyledSubHeader.tsx";
+import { RetirementCalculationTable } from "../../../components/tools/retirement-calculator/RetirementCalculationTable.tsx";
+import { StyledSubHeader } from "../../../components/UI/StyledSubHeader.tsx";
 //? Data
-import { baseRetirementStats } from "../../data/tools/retirement-calculator/baseRetirementStats.ts";
+import { baseRetirementStats } from "../../../data/tools/retirement-calculator/baseRetirementStats.ts";
 
 export default function RetirementCalculator() {
   //? Manages current state for form data

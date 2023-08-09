@@ -6,7 +6,7 @@ import { Base } from "../../components/base/Base.tsx";
 import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
 //? Navigation Buttons to go back to the tools page
 import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
-import ExpressionVisualizerAdvanced from "../../islands/tools/ExpressionVisualizerAdvanced.tsx";
+import ExpressionVisualizerAdvanced from "../../islands/tools/expression-visualizer/ExpressionVisualizerAdvanced.tsx";
 
 export default function Home() {
   return (

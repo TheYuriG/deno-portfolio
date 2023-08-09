@@ -7,7 +7,7 @@ import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
 //? Navigation Buttons to go back to the tools page
 import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 //? Expression Visualizer component
-import ExpressionVisualizer from "../../islands/tools/ExpressionVisualizer.tsx";
+import ExpressionVisualizer from "../../islands/tools/expression-visualizer/ExpressionVisualizer.tsx";
 
 export default function Home() {
   return (

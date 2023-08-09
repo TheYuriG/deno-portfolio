@@ -1,19 +1,19 @@
 //? Import from Preact to be able to change state
 import { useEffect, useRef, useState } from "preact/hooks";
 //? Import Food type to typecast the data received
-import type { Food } from "../../types/component-properties/projects/food-order/Food.ts";
+import type { Food } from "../../../types/component-properties/projects/food-order/Food.ts";
 //? Renders invidual food items on the page
-import { FoodItem } from "../../components/projects/food-order/FoodItem.tsx";
+import { FoodItem } from "../../../components/projects/food-order/FoodItem.tsx";
 //? Cart Button that opens the current Cart as a Modal
-import CartButton from "../../components/projects/food-order/CartButton.tsx";
+import CartButton from "../../../components/projects/food-order/CartButton.tsx";
 //? Content of the current Cart in a modal for the user to view Cart Items
-import CartModal from "../../components/projects/food-order/CartModal.tsx";
+import CartModal from "../../../components/projects/food-order/CartModal.tsx";
 //? Import accent button to create the Order now! button at the bottom
-import { AccentButton } from "../../components/UI/AccentButton.tsx";
+import { AccentButton } from "../../../components/UI/AccentButton.tsx";
 //? Default styled header
-import { StyledSubHeader } from "../../components/UI/StyledSubHeader.tsx";
+import { StyledSubHeader } from "../../../components/UI/StyledSubHeader.tsx";
 //? Creates a modal with a shaded/blurred backdrop over the content behind it
-import Modal from "../UI/Modal.tsx";
+import Modal from "../../UI/Modal.tsx";
 
 //? Define properties required for this component
 interface FoodOrderProperties {

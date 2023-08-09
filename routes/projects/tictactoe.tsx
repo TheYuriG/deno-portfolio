@@ -10,7 +10,7 @@ import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 import { GradientLink } from "../../components/UI/GradientLink.tsx";
 //? Renders the game board with play tiles, current player
 //? turn and game completion status
-import TicTacToeBoard from "../../islands/projects/TicTacToeBoard.tsx";
+import TicTacToeBoard from "../../islands/projects/tic-tac-toe/TicTacToeBoard.tsx";
 
 export default function Home() {
   return (

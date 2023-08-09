@@ -1,17 +1,17 @@
 //? State management
 import { useState } from "preact/hooks";
 //? Components
-import { StyledButton } from "../../components/UI/StyledButton.tsx";
-import { StyledInput } from "../../components/UI/StyledInput.tsx";
+import { StyledButton } from "../../../components/UI/StyledButton.tsx";
+import { StyledInput } from "../../../components/UI/StyledInput.tsx";
 import ExpressionVisualizationList from "./ExpressionVisualizationList.tsx";
 //? Validation
-import { validationStatus } from "../../types/forms/validationStatus.ts";
-import { validateNonEmptyText } from "../../services/form-validation/validateNonEmptyText.ts";
+import { validationStatus } from "../../../types/forms/validationStatus.ts";
+import { validateNonEmptyText } from "../../../services/form-validation/validateNonEmptyText.ts";
 //? Diff function
-import { differenceBetweenStrings } from "../../services/expression-visualizer/differenceBetweenStrings.ts";
+import { differenceBetweenStrings } from "../../../services/expression-visualizer/differenceBetweenStrings.ts";
 
 //? Types
-import type { visualizer } from "../../types/component-properties/tools/expression-visualizer/Visualizer.ts";
+import type { visualizer } from "../../../types/component-properties/tools/expression-visualizer/Visualizer.ts";
 type partialVisualizer = Pick<visualizer, "expressionText" | "evaluatedText">;
 type ValidationStatuses<K extends keyof partialVisualizer> = Record<
   K,

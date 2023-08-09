@@ -7,7 +7,7 @@ import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
 import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 //? Stylized and functional Form Island
-import FormWithValidation from "../../islands/projects/FormWithValidation.tsx";
+import StimulusCheckForm from "../../islands/projects/stimulus-check/StimulusCheckForm.tsx";
 
 export default function Home() {
   return (
@@ -26,7 +26,7 @@ export default function Home() {
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
           {/* Title header */}
           <StyledHeader title="Stimulus Checks Eligibility Form" />
-          <FormWithValidation />
+          <StimulusCheckForm />
         </article>
       </Base>
     </>

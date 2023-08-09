@@ -7,7 +7,7 @@ import { StyledHeader } from "../../../components/UI/StyledHeader.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
 import { NavigationButtons } from "../../../components/misc/NavigationButtons.tsx";
 //? Import the component responsible for adding the content that will eventually be highlighted
-import HighlightedCode from "../../../islands/tools/HighlightedCode.tsx";
+import HighlightedCode from "../../../islands/tools/syntax-highlight/HighlightedCode.tsx";
 //? Shows timer remaining on hover
 import DigitalTimer from "../../../islands/UI/DigitalTimer.tsx";
 //? Imports middleware responsible for processing GET/POST requests to this route
