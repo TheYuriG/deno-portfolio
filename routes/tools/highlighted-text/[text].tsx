@@ -13,7 +13,7 @@ import DigitalTimer from "../../../islands/UI/DigitalTimer.tsx";
 //? Imports middleware responsible for processing GET/POST requests to this route
 import { highlightTextMiddleware } from "../../../middleware/tools/__highlighted-text.tsx";
 //? Import interface that defines what are the required properties for this content
-import type { HighlightText } from "../../../types/syntax-highlight/HighlightText.ts";
+import type { HighlightText } from "../../../types/component-properties/tools/syntax-highlight/HighlightText.ts";
 //? Import component that creates a clickable textarea that copies the inner content to clipboard
 import CopyTextAreaToClipboard from "../../../islands/misc/CopyTextAreaToClipboard.tsx";
 //? Import CSS classes text example

@@ -1,5 +1,5 @@
 //? Import IconProperties for props typecasting
-import { IconProperties } from "../types/asset-properties/IconProperties.ts";
+import type { IconProperties } from "../types/asset-properties/IconProperties.ts";
 
 //? Renders a Credit Card Icon with fill
 export function CreditCardIcon(

@@ -15,8 +15,8 @@ import {
   reduceCartItemByOne,
 } from "../../../services/food-order/updateFoodOrder.ts";
 //? Import types for typecasting
-import type { foodCartItemsMap } from "../../../types/food-order/foodCartItemsMap.ts";
-import type { updateCartFunction } from "../../../types/food-order/updateCartFunction.ts";
+import type { foodCartItemsMap } from "../../../types/component-properties/projects/food-order/foodCartItemsMap.ts";
+import type { updateCartFunction } from "../../../types/component-properties/projects/food-order/updateCartFunction.ts";
 
 //? Define Cart Modal properties
 interface CartModalProperties {

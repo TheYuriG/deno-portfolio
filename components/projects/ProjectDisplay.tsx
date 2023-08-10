@@ -1,5 +1,5 @@
 //? Properties requires to create a ProjectDisplay
-import type { ProjectDisplayProperties } from "../../types/ProjectDisplayProperties.ts";
+import type { ProjectDisplayProperties } from "../../types/component-properties/projects/ProjectDisplayProperties.ts";
 
 //? Creates a project to be displayed on ProjectsGrid
 export function ProjectDisplay(

@@ -4,10 +4,11 @@ import { useEffect, useRef, useState } from "preact/hooks";
 import { StyledInput } from "../../../components/UI/StyledInput.tsx";
 import { StyledButton } from "../../../components/UI/StyledButton.tsx";
 import { CountryPhoneCodeSelect } from "../../../components/UI/CountryPhoneCodeSelect.tsx";
+//? Preview component
+import { WhatsappMessagePreview } from "../../../components/tools/whatsapp-message-link-generator/WhatsappMessagePreview.tsx";
 //? Types for typecasting
 import { validationStatus } from "../../../types/forms/validationStatus.ts";
 import type { WhatsappLinkData } from "../../../types/component-properties/tools/whatsapp-link-generator/whatsapp-link-data.ts";
-import { WhatsappMessagePreview } from "../../../components/tools/whatsapp-message-link-generator/WhatsappMessagePreview.tsx";
 
 //? Validation functions
 import { patternValidation } from "../../../services/form-validation/patternValidation.ts";

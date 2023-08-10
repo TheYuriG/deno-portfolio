@@ -9,7 +9,7 @@ import { NavigationButtons } from "../../../components/misc/NavigationButtons.ts
 //? Component responsible for rendering the food list and modals
 import FoodOrder from "../../../islands/projects/food-order/FoodOrder.tsx";
 //? Import Food type to typecast the data received
-import { Food } from "../../../types/component-properties/projects/food-order/Food.ts";
+import type { Food } from "../../../types/component-properties/projects/food-order/Food.ts";
 //? Import middleware responsible for pulling food items
 import { foodOrderMiddleware } from "../../../middleware/projects/__food-order.ts";
 

@@ -1,5 +1,5 @@
 //? Define the required and optional properties of a decorated Link
-import { DecoratedLinkProperties } from "../../types/component-properties/DecoratedLinkProperties.ts";
+import type { DecoratedLinkProperties } from "../../types/component-properties/DecoratedLinkProperties.ts";
 
 //? Exports an anchor tag with default styling for custom-underline-dotted, while
 //? using the other attributes provided

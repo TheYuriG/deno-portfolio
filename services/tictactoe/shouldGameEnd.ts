@@ -1,5 +1,5 @@
 //? Import interface for typecasting
-import { BoardTile } from "../../types/component-properties/projects/tictactoe/BoardTile.ts";
+import type { BoardTile } from "../../types/component-properties/projects/tictactoe/BoardTile.ts";
 
 //? Checks if the current board meets any condition to complete with a victory
 export function shouldGameEnd(boardMarks: BoardTile[]) {
