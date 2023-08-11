@@ -16,14 +16,11 @@ type ValidationStatuses<K extends keyof visualizer> = Record<
 
 //? Set base state values
 const baseState: visualizer = {
-  //   leadingText: "",
   leadingText: "const b = ",
-  //   expressionText: "",
   expressionText: "5 * 5",
-  //   evaluatedText: "",
   evaluatedText: "25",
-  //   trailingText: "",
   trailingText: ";",
+  id: crypto.randomUUID(),
 };
 const baseValidation: ValidationStatuses<"expressionText" | "evaluatedText"> = {
   expressionText: validationStatus.Unchanged,
@@ -38,7 +35,6 @@ export default function ExpressionVisualizerAdvanced() {
   //? Manages visualization data
   const [visualization, setVisualization] = useState<visualizer[]>([]);
 
-  //   console.log(formValues);
   return (
     <>
       <form class="w-full mb-4 flex flex-col" htmlFor="visualization">
@@ -130,6 +126,7 @@ export default function ExpressionVisualizerAdvanced() {
               expressionText: "",
               evaluatedText: "",
               trailingText: "",
+              id: crypto.randomUUID(),
             }));
           }}
         />

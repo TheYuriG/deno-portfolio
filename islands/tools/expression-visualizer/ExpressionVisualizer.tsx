@@ -106,6 +106,7 @@ export default function ExpressionVisualizerPlus() {
               expressionText,
               evaluatedText,
               trailingText,
+              id: crypto.randomUUID(),
             }]);
             //? Update form values to both have the result text
             setValues((current) => ({

@@ -4,4 +4,5 @@ export interface visualizer {
   expressionText: string;
   evaluatedText: string;
   trailingText: string;
+  id: string;
 }
