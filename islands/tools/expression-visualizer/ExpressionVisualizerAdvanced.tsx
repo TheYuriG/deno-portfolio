@@ -121,11 +121,10 @@ export default function ExpressionVisualizerAdvanced() {
           onClickFunction={() => {
             setVisualization((current) => [...current, formValues]);
             setValues((current) => ({
-              leadingText: current.leadingText +
-                current.evaluatedText + current.trailingText,
-              expressionText: "",
+              leadingText: current.leadingText,
+              expressionText: current.evaluatedText,
               evaluatedText: "",
-              trailingText: "",
+              trailingText: current.trailingText,
               id: crypto.randomUUID(),
             }));
           }}
