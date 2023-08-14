@@ -309,10 +309,10 @@ export default function Home() {
               content="tools"
               title="My creations"
             />{" "}
-            page, you might be wondering why I've created that. Well, this is
-            the reason: There is no easy way to easily create highlighted JSX
-            for Preact/React components. Deno offers some form of conversion
-            from <span class="shl-inline">.md</span> files to{" "}
+            page, you might be wondering why I've created a syntax highlighter.
+            Well, this is the reason: There is no easy way to easily create
+            highlighted JSX for Preact/React components. Deno offers some form
+            of conversion from <span class="shl-inline">.md</span> files to{" "}
             <span class="shl-inline">HTML</span>, but that's not exactly helpful
             for this Fresh-based website. Not only I didn't need the HTML files,
             but I also needed that only a portion of the content was
@@ -344,7 +344,7 @@ export default function Home() {
           </p>
           {/* So I've created Syntax Highlighter */}
           <p class="my-2 text-justify">
-            So that's why Ive created{" "}
+            So that's why I've created{" "}
             <DottedLink
               link="/tools/syntax-highlight"
               content="Syntax Highlight"
@@ -376,6 +376,15 @@ export default function Home() {
             and a lot others are completely mismatched and will make you
             question how much you really know of Tailwind.
           </p>
+          <p class="my-2 text-justify">
+            It's a very gaslighting experience to type out some class, have it
+            not work and then wonder if you wrote it correctly or not. You
+            inspect the element and see that the class wasn't attached, then you
+            check tailwind documentation and see that the class exists as you
+            tried to use it, then you eventually realize that the issue is that
+            it exists in Tailwind v3, but not in v2. It's an experience that I
+            don't wish upon anyone, really.
+          </p>
 
           <StyledSubHeader title="Conclusion" />
           {/* I really love using Deno */}
@@ -405,12 +414,6 @@ export default function Home() {
             10th birthday! 🚀
           </p>
 
-          {/* Notes about Twind */}
-          {/* - Twind doesn't work like Tailwind. You can't apply color-[red]/bg-[red]/border-[red] because that converts to attribute-position instead of attribute-color, which is useless. 'text-[]' turns into 'font-size'????. You can't use CSS data types (https://tailwindcss.com/docs/adding-custom-styles#resolving-ambiguities) to coerce to the correct attribute either */}
-          {/* - Tailwind doesn't require wrapping variables with 'var()', but twind does, when it rarely works like 'fill'. */}
-          {/* - Twind fails to apply some classes (example: shrink-0 doesn't apply flex-shrink: 0), also forcing to use inline styles to compensate or figuring out randomly what is the twind equivalent (grow in Tailwind is flex-grow in Twind, shrink-0 in Tailwind is flex-shrink-0 in Twind). None of the 'backdrop-blur' classes work either. Why??? */}
-          {/* - Some Twind properties are applied in the wrong order than applied in the class list, you have to use as inline styles instead for CSS specificity */}
-          {/* - Some Twind classes are not matching the Tailwind counterparts ('grow' on tailwind is 'flex-grow' on twind) */}
           {/* Foot notes */}
           <p id="first-note" class="my-2 text-xs text-justify self-start">
             1{" "}
