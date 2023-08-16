@@ -16,6 +16,7 @@ import { GreekList } from "../../components/UI/GreekList.tsx";
 import { BlogPostFooter } from "../../components/blog/BlogPostFooter.tsx";
 //? Import post summary
 import { experienceDenoFreshPost as postSummary } from "../../data/blog/experience-deno-fresh.ts";
+import { freshTwindV0 as nextPost } from "../../data/blog/fresh-twind-v0.ts";
 //? Add a button to scroll to the top on the bottom right corner of the page
 import ScrollToTop from "../../islands/misc/ScrollToTop.tsx";
 
@@ -33,6 +34,7 @@ export default function Home() {
         {/* Back button */}
         <NavigationButtons
           back={{ title: "Browse more blog posts", link: "/blog" }}
+          next={{ title: nextPost.title, link: nextPost.link }}
         />
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
           {/* Title header */}
@@ -74,8 +76,8 @@ export default function Home() {
           <p class="my-2 text-justify">
             You might read this post and think that I hate Deno, but it's
             actually quite the opposite, I <strong>LOVE</strong>{" "}
-            using Deno and I have no intention of going back to Node for any of
-            my side projects. These are the best parts of using Deno daily:
+            using Deno since I've first start using it. These are the best parts
+            of using Deno daily:
           </p>
           <GreekList
             items={[
@@ -365,6 +367,15 @@ export default function Home() {
             it's probably better that I write an entire piece about it alone
             instead of shoving it here, which would honestly be as rich in words
             as this very post.
+          </p>
+          <p class="my-2 text-justify">
+            <strong class="underline">
+              UPDATED August 1st, 2023
+            </strong>: I've created said post, you can read it{" "}
+            <DottedLink content="here" link={nextPost.link} /> or by clicking
+            {" "}
+            <DottedLink content="Next" link="#top" />{" "}
+            on the Navigation header at the top of the page.
           </p>
           {/* A preview of my Twind blog post */}
           <p class="my-2 text-justify">

@@ -17,6 +17,7 @@ import { BlogPostFooter } from "../../components/blog/BlogPostFooter.tsx";
 //? Import post summary
 import { experienceDenoFreshPost as previousPost } from "../../data/blog/experience-deno-fresh.ts";
 import { freshTwindV0 as postSummary } from "../../data/blog/fresh-twind-v0.ts";
+import { customizingTwindConfig as nextPost } from "../../data/blog/customizing-fresh-twind.ts";
 //? Add a button to scroll to the top on the bottom right corner of the page
 import ScrollToTop from "../../islands/misc/ScrollToTop.tsx";
 
@@ -34,6 +35,7 @@ export default function Home() {
         {/* Back button */}
         <NavigationButtons
           back={{ title: previousPost.title, link: previousPost.link }}
+          next={{ title: nextPost.title, link: nextPost.link }}
         />
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
           {/* Title header */}
@@ -209,9 +211,10 @@ export default function Home() {
           </p>
           <p class="my-2 text-justify">
             If you want to customize your{" "}
-            <span className="shl-inline">twind.config.js</span>{" "}
+            <span class="shl-inline">twind.config.js</span>{" "}
             file, I have a separate blog post about how to do so{" "}
-            <DottedLink content="here" link="/404" /> or by clicking{" "}
+            <DottedLink content="here" link={nextPost.link} /> or by clicking
+            {" "}
             <DottedLink content="Next" link="#top" /> on the navigation bar.
           </p>
 

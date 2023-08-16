@@ -19,9 +19,11 @@ import { createRolesPost } from "../../data/blog/how-create-roles-discord-v14.ts
 import { experienceDenoFreshPost } from "../../data/blog/experience-deno-fresh.ts";
 import { javascriptPythonSyntaxPost } from "../../data/blog/javascript-python-syntax.ts";
 import { freshTwindV0 } from "../../data/blog/fresh-twind-v0.ts";
+import { customizingTwindConfig } from "../../data/blog/customizing-fresh-twind.ts";
 
 //? All posts so far
 const createdPosts: Array<BlogPostSummaryProperties> = [
+  customizingTwindConfig,
   freshTwindV0,
   javascriptPythonSyntaxPost,
   experienceDenoFreshPost,
