@@ -1,14 +1,14 @@
 //? State management
 import { useState } from "preact/hooks";
 //? Components
-import { StyledButton } from "../../components/UI/StyledButton.tsx";
-import { StyledInput } from "../../components/UI/StyledInput.tsx";
+import { StyledButton } from "../../../components/UI/StyledButton.tsx";
+import { StyledInput } from "../../../components/UI/StyledInput.tsx";
 import ExpressionVisualizationList from "./ExpressionVisualizationList.tsx";
 //? Validation
-import { validationStatus } from "../../types/forms/validationStatus.ts";
-import { validateNonEmptyText } from "../../services/form-validation/validateNonEmptyText.ts";
+import { validationStatus } from "../../../types/forms/validationStatus.ts";
+import { validateNonEmptyText } from "../../../services/form-validation/validateNonEmptyText.ts";
 //? Type
-import type { visualizer } from "../../types/component-properties/tools/expression-visualizer/Visualizer.ts";
+import type { visualizer } from "../../../types/component-properties/tools/expression-visualizer/Visualizer.ts";
 type ValidationStatuses<K extends keyof visualizer> = Record<
   K,
   validationStatus
@@ -30,7 +30,7 @@ const baseValidation: ValidationStatuses<"expressionText" | "evaluatedText"> = {
   evaluatedText: validationStatus.Unchanged,
 };
 
-export default function ExpressionVisualizer() {
+export default function ExpressionVisualizerAdvanced() {
   //? Manages current state for form data
   const [formValues, setValues] = useState<visualizer>(baseState);
   //? Manages the form validation state

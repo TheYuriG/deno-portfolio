@@ -1,5 +1,5 @@
 //? Import IconProperties for props typecasting
-import { IconPropertiesWithStroke } from "../types/asset-properties/IconProperties.ts";
+import type { IconPropertiesWithStroke } from "../types/asset-properties/IconProperties.ts";
 
 //? Renders a XMark Icon with fill, stroke and stroke-width
 export function XMarkIcon(

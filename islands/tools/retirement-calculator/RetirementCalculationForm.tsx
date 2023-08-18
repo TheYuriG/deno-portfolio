@@ -1,21 +1,21 @@
 //? State management
 import { StateUpdater, useState } from "preact/hooks";
 //? Components
-import { StyledInput } from "../../components/UI/StyledInput.tsx";
-import { StyledButton } from "../../components/UI/StyledButton.tsx";
-import { ErrorAlert } from "../../components/UI/ErrorAlert.tsx";
+import { StyledInput } from "../../../components/UI/StyledInput.tsx";
+import { StyledButton } from "../../../components/UI/StyledButton.tsx";
+import { ErrorAlert } from "../../../components/UI/ErrorAlert.tsx";
 //? Validation
-import { validationStatus } from "../../types/forms/validationStatus.ts";
-import { patternValidation } from "../../services/form-validation/patternValidation.ts";
-import { validateAge as validateCurrentAge } from "../../services/form-validation/validateAge.ts";
-import { validateRetiringAge } from "../../services/form-validation/validateRetirementAge.ts";
-import { validateCompensation } from "../../services/form-validation/validateCompensation.ts";
-import { validateYearlyInvestment } from "../../services/form-validation/validateInvestment.ts";
-import { validateOneOrGreater } from "../../services/form-validation/validateOneOrGreater.ts";
-import { validateZeroOrGreater } from "../../services/form-validation/validateZeroOrGreater.ts";
+import { validationStatus } from "../../../types/forms/validationStatus.ts";
+import { patternValidation } from "../../../services/form-validation/patternValidation.ts";
+import { validateAge as validateCurrentAge } from "../../../services/form-validation/validateAge.ts";
+import { validateRetiringAge } from "../../../services/form-validation/validateRetirementAge.ts";
+import { validateCompensation } from "../../../services/form-validation/validateCompensation.ts";
+import { validateYearlyInvestment } from "../../../services/form-validation/validateInvestment.ts";
+import { validateOneOrGreater } from "../../../services/form-validation/validateOneOrGreater.ts";
+import { validateZeroOrGreater } from "../../../services/form-validation/validateZeroOrGreater.ts";
 
 //? Base state data
-import { baseRetirementStats } from "../../data/tools/retirement-calculator/baseRetirementStats.ts";
+import { baseRetirementStats } from "../../../data/tools/retirement-calculator/baseRetirementStats.ts";
 const defaultFormValidation = {
   currentAge: validationStatus.Unchanged,
   plannedRetiringAge: validationStatus.Unchanged,

@@ -1,22 +1,22 @@
 //? Manage the current board status
 import { useState } from "preact/hooks";
 //? Render an individual tile on the board
-import { TicTacToeTile } from "../../components/projects/tictactoe/TicTacToeTile.tsx";
+import { TicTacToeTile } from "../../../components/projects/tictactoe/TicTacToeTile.tsx";
 //? Tracker of who won the game or if the game tied
-import { TicTacToeGameStatus } from "../../components/projects/tictactoe/TicTacToeGameStatus.tsx";
+import { TicTacToeGameStatus } from "../../../components/projects/tictactoe/TicTacToeGameStatus.tsx";
 //? Render the button to reset the game once it ends with a tie or win
-import { StyledButton } from "../../components/UI/StyledButton.tsx";
+import { StyledButton } from "../../../components/UI/StyledButton.tsx";
 //? Import maximum number of tiles in a board
-import { MAX_TICTACTOE_TILES } from "../../data/projects/tictactoe/maxTiles.ts";
+import { MAX_TICTACTOE_TILES } from "../../../data/projects/tictactoe/maxTiles.ts";
 //? Import interface for typecasting
-import type { BoardTile } from "../../types/component-properties/projects/tictactoe/BoardTile.ts";
+import type { BoardTile } from "../../../types/component-properties/projects/tictactoe/BoardTile.ts";
 //? Utility function to reset a board array to 0 indices, then
 //? populate it with 9 tiles
-import { resetBoardFunction } from "../../services/tictactoe/resetBoardFunction.ts";
+import { resetBoardFunction } from "../../../services/tictactoe/resetBoardFunction.ts";
 //? Calculates if the board met a winning condition
-import { shouldGameEnd } from "../../services/tictactoe/shouldGameEnd.ts";
+import { shouldGameEnd } from "../../../services/tictactoe/shouldGameEnd.ts";
 //? Toggles player turn
-import { changePlayers } from "../../services/tictactoe/changePlayers.ts";
+import { changePlayers } from "../../../services/tictactoe/changePlayers.ts";
 
 //? Initialize an empty board that gets filled by 'resetBoard()'
 const baseBoardMarks: BoardTile[] = [];

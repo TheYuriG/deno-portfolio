@@ -25,35 +25,37 @@ import * as $19 from "./routes/projects/food-order/success.tsx";
 import * as $20 from "./routes/projects/index.tsx";
 import * as $21 from "./routes/projects/stimulus-check.tsx";
 import * as $22 from "./routes/projects/tictactoe.tsx";
-import * as $23 from "./routes/tools/expression-visualizer.tsx";
-import * as $24 from "./routes/tools/highlighted-text/[text].tsx";
-import * as $25 from "./routes/tools/index.tsx";
-import * as $26 from "./routes/tools/retirement-calculator.tsx";
-import * as $27 from "./routes/tools/syntax-highlight.tsx";
-import * as $28 from "./routes/tools/whatsapp-message-link-generator.tsx";
-import * as $29 from "./routes/toys/index.tsx";
-import * as $30 from "./routes/toys/spinners.tsx";
-import * as $31 from "./routes/what-is-this.tsx";
-import * as $32 from "./routes/work/index.tsx";
+import * as $23 from "./routes/tools/expression-visualizer-advanced.tsx";
+import * as $24 from "./routes/tools/expression-visualizer.tsx";
+import * as $25 from "./routes/tools/highlighted-text/[text].tsx";
+import * as $26 from "./routes/tools/index.tsx";
+import * as $27 from "./routes/tools/retirement-calculator.tsx";
+import * as $28 from "./routes/tools/syntax-highlight.tsx";
+import * as $29 from "./routes/tools/whatsapp-message-link-generator.tsx";
+import * as $30 from "./routes/toys/index.tsx";
+import * as $31 from "./routes/toys/spinners.tsx";
+import * as $32 from "./routes/what-is-this.tsx";
+import * as $33 from "./routes/work/index.tsx";
 import * as $$0 from "./islands/UI/DigitalTimer.tsx";
 import * as $$1 from "./islands/UI/Modal.tsx";
 import * as $$2 from "./islands/misc/Collapsible.tsx";
 import * as $$3 from "./islands/misc/CopyTextAreaToClipboard.tsx";
 import * as $$4 from "./islands/misc/ScrollToTop.tsx";
 import * as $$5 from "./islands/misc/ThemeSwitcher.tsx";
-import * as $$6 from "./islands/projects/AddNewExpense.tsx";
-import * as $$7 from "./islands/projects/ExpensesTracker.tsx";
-import * as $$8 from "./islands/projects/ExpensesYearSelect.tsx";
-import * as $$9 from "./islands/projects/FoodOrder.tsx";
-import * as $$10 from "./islands/projects/FoodOrderCheckout.tsx";
-import * as $$11 from "./islands/projects/FormWithValidation.tsx";
-import * as $$12 from "./islands/projects/TicTacToeBoard.tsx";
-import * as $$13 from "./islands/tools/ExpressionVisualizationList.tsx";
-import * as $$14 from "./islands/tools/ExpressionVisualizer.tsx";
-import * as $$15 from "./islands/tools/HighlightedCode.tsx";
-import * as $$16 from "./islands/tools/RetirementCalculationForm.tsx";
-import * as $$17 from "./islands/tools/RetirementCalculator.tsx";
-import * as $$18 from "./islands/tools/WhatsappLinkGenerator.tsx";
+import * as $$6 from "./islands/projects/expenses-tracker/AddNewExpense.tsx";
+import * as $$7 from "./islands/projects/expenses-tracker/ExpensesTracker.tsx";
+import * as $$8 from "./islands/projects/expenses-tracker/ExpensesYearSelect.tsx";
+import * as $$9 from "./islands/projects/food-order/FoodOrder.tsx";
+import * as $$10 from "./islands/projects/food-order/FoodOrderCheckout.tsx";
+import * as $$11 from "./islands/projects/stimulus-check/StimulusCheckForm.tsx";
+import * as $$12 from "./islands/projects/tic-tac-toe/TicTacToeBoard.tsx";
+import * as $$13 from "./islands/tools/expression-visualizer/ExpressionVisualizationList.tsx";
+import * as $$14 from "./islands/tools/expression-visualizer/ExpressionVisualizer.tsx";
+import * as $$15 from "./islands/tools/expression-visualizer/ExpressionVisualizerAdvanced.tsx";
+import * as $$16 from "./islands/tools/retirement-calculator/RetirementCalculationForm.tsx";
+import * as $$17 from "./islands/tools/retirement-calculator/RetirementCalculator.tsx";
+import * as $$18 from "./islands/tools/syntax-highlight/HighlightedCode.tsx";
+import * as $$19 from "./islands/tools/whatsapp-message-link-generator/WhatsappLinkGenerator.tsx";
 
 const manifest = {
   routes: {
@@ -80,16 +82,17 @@ const manifest = {
     "./routes/projects/index.tsx": $20,
     "./routes/projects/stimulus-check.tsx": $21,
     "./routes/projects/tictactoe.tsx": $22,
-    "./routes/tools/expression-visualizer.tsx": $23,
-    "./routes/tools/highlighted-text/[text].tsx": $24,
-    "./routes/tools/index.tsx": $25,
-    "./routes/tools/retirement-calculator.tsx": $26,
-    "./routes/tools/syntax-highlight.tsx": $27,
-    "./routes/tools/whatsapp-message-link-generator.tsx": $28,
-    "./routes/toys/index.tsx": $29,
-    "./routes/toys/spinners.tsx": $30,
-    "./routes/what-is-this.tsx": $31,
-    "./routes/work/index.tsx": $32,
+    "./routes/tools/expression-visualizer-advanced.tsx": $23,
+    "./routes/tools/expression-visualizer.tsx": $24,
+    "./routes/tools/highlighted-text/[text].tsx": $25,
+    "./routes/tools/index.tsx": $26,
+    "./routes/tools/retirement-calculator.tsx": $27,
+    "./routes/tools/syntax-highlight.tsx": $28,
+    "./routes/tools/whatsapp-message-link-generator.tsx": $29,
+    "./routes/toys/index.tsx": $30,
+    "./routes/toys/spinners.tsx": $31,
+    "./routes/what-is-this.tsx": $32,
+    "./routes/work/index.tsx": $33,
   },
   islands: {
     "./islands/UI/DigitalTimer.tsx": $$0,
@@ -98,19 +101,23 @@ const manifest = {
     "./islands/misc/CopyTextAreaToClipboard.tsx": $$3,
     "./islands/misc/ScrollToTop.tsx": $$4,
     "./islands/misc/ThemeSwitcher.tsx": $$5,
-    "./islands/projects/AddNewExpense.tsx": $$6,
-    "./islands/projects/ExpensesTracker.tsx": $$7,
-    "./islands/projects/ExpensesYearSelect.tsx": $$8,
-    "./islands/projects/FoodOrder.tsx": $$9,
-    "./islands/projects/FoodOrderCheckout.tsx": $$10,
-    "./islands/projects/FormWithValidation.tsx": $$11,
-    "./islands/projects/TicTacToeBoard.tsx": $$12,
-    "./islands/tools/ExpressionVisualizationList.tsx": $$13,
-    "./islands/tools/ExpressionVisualizer.tsx": $$14,
-    "./islands/tools/HighlightedCode.tsx": $$15,
-    "./islands/tools/RetirementCalculationForm.tsx": $$16,
-    "./islands/tools/RetirementCalculator.tsx": $$17,
-    "./islands/tools/WhatsappLinkGenerator.tsx": $$18,
+    "./islands/projects/expenses-tracker/AddNewExpense.tsx": $$6,
+    "./islands/projects/expenses-tracker/ExpensesTracker.tsx": $$7,
+    "./islands/projects/expenses-tracker/ExpensesYearSelect.tsx": $$8,
+    "./islands/projects/food-order/FoodOrder.tsx": $$9,
+    "./islands/projects/food-order/FoodOrderCheckout.tsx": $$10,
+    "./islands/projects/stimulus-check/StimulusCheckForm.tsx": $$11,
+    "./islands/projects/tic-tac-toe/TicTacToeBoard.tsx": $$12,
+    "./islands/tools/expression-visualizer/ExpressionVisualizationList.tsx":
+      $$13,
+    "./islands/tools/expression-visualizer/ExpressionVisualizer.tsx": $$14,
+    "./islands/tools/expression-visualizer/ExpressionVisualizerAdvanced.tsx":
+      $$15,
+    "./islands/tools/retirement-calculator/RetirementCalculationForm.tsx": $$16,
+    "./islands/tools/retirement-calculator/RetirementCalculator.tsx": $$17,
+    "./islands/tools/syntax-highlight/HighlightedCode.tsx": $$18,
+    "./islands/tools/whatsapp-message-link-generator/WhatsappLinkGenerator.tsx":
+      $$19,
   },
   baseUrl: import.meta.url,
 };

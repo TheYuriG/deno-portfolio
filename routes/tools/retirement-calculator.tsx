@@ -7,7 +7,7 @@ import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
 //? Navigation Buttons to go back to the tools page
 import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 //? Retirement calculator form and table
-import RetirementCalculator from "../../islands/tools/RetirementCalculator.tsx";
+import RetirementCalculator from "../../islands/tools/retirement-calculator/RetirementCalculator.tsx";
 
 //? Renders the retirement calculator page, with a form to calculate your retirement plan
 export default function Home() {

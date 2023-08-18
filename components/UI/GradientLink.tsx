@@ -2,7 +2,7 @@
 import { ExternalLinkIcon } from "../../assets/ExternalLinkIcon.tsx";
 
 //? Define the required and optional properties of a Decorated Link
-import { DecoratedLinkProperties } from "../../types/component-properties/DecoratedLinkProperties.ts";
+import type { DecoratedLinkProperties } from "../../types/component-properties/DecoratedLinkProperties.ts";
 
 //? Exports an anchor tag with default styling for custom-underline-gradient, while
 //? using the other attributes provided

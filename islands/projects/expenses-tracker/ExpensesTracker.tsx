@@ -1,14 +1,14 @@
 //? Import from Preact to be able to change state
 import { useState } from "preact/hooks";
 //? Import IndividualExpenses component to display expenses
-import { IndividualExpense } from "../../components/projects/expenses-tracker/IndividualExpense.tsx";
+import { IndividualExpense } from "../../../components/projects/expenses-tracker/IndividualExpense.tsx";
 //? Import expense creation form
 import AddNewExpense from "./AddNewExpense.tsx";
 //? Import the Expense type for casting
-import type { Expense } from "../../types/component-properties/projects/expenses-tracker/Expense.ts";
+import type { Expense } from "../../../types/component-properties/projects/expenses-tracker/Expense.ts";
 import ExpensesYearSelect from "./ExpensesYearSelect.tsx";
-import { ExpenseChart } from "../../components/projects/expenses-tracker/ExpensesChart.tsx";
-import { postNewExpense } from "../../services/expenses-tracker/postNewExpense.ts";
+import { ExpenseChart } from "../../../components/projects/expenses-tracker/ExpensesChart.tsx";
+import { postNewExpense } from "../../../services/expenses-tracker/postNewExpense.ts";
 
 //? Filters expenses by year
 function filterExpensesByYear(year: string, savedExpenses: Expense[]) {
