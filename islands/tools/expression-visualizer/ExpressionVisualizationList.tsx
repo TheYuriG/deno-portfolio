@@ -6,10 +6,14 @@ import { useState } from "preact/hooks";
 import { ExpressionVisualizationListItem } from "../../../components/tools/expression-visualizer/ExpressionVisualizationListItem.tsx";
 //? Type
 import type { visualizer } from "../../../types/component-properties/tools/expression-visualizer/Visualizer.ts";
+import { XMarkIcon } from "../../../assets/XMarkIcon.tsx";
 
 //? Renders an Expression list
 export default function ExpressionVisualizationList(
-  { visualizationList }: { visualizationList: visualizer[] },
+  { visualizationList, deleteItem }: {
+    visualizationList: visualizer[];
+    deleteItem?: (item: string) => void;
+  },
 ) {
   //? Instantiate array that will hold all the animation states
   const playStateArray: boolean[] = [];
@@ -47,11 +51,28 @@ export default function ExpressionVisualizationList(
 
       //? Create an Expression item for this object
       return (
-        <ExpressionVisualizationListItem
-          {...listItem}
-          playState={animationStatus}
-          updateFunction={updateFunction}
-        />
+        <div class="flex w-full">
+          <ExpressionVisualizationListItem
+            {...listItem}
+            playState={animationStatus}
+            updateFunction={updateFunction}
+          />
+          {/* If a delete item function is provided, add a button to delete this item */}
+          {deleteItem &&
+            (
+              <button
+                onClick={() => {
+                  deleteItem(listItem.id);
+                }}
+              >
+                <XMarkIcon
+                  iconHeight="1.5em"
+                  iconWidth="1.5em"
+                  iconFillColor="red"
+                />
+              </button>
+            )}
+        </div>
       );
     },
   );

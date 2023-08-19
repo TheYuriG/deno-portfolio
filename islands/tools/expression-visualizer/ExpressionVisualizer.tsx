@@ -117,7 +117,14 @@ export default function ExpressionVisualizerPlus() {
         />
       </form>
       {/* Display steps */}
-      <ExpressionVisualizationList visualizationList={visualization} />
+      <ExpressionVisualizationList
+        visualizationList={visualization}
+        deleteItem={(deletedItemId) => {
+          setVisualization((current) =>
+            current.filter((item) => item.id !== deletedItemId)
+          );
+        }}
+      />
     </>
   );
 }
