@@ -26,7 +26,7 @@ export default function Home() {
         <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
           <StyledHeader title="Certificates" />
 
-          {/* NodeJS backend certificate */}
+          {/* //! NodeJS backend certificate */}
           <StyledSubHeader title="NodeJS (Backend focused)" />
           <img
             src="https://udemy-certificate.s3.amazonaws.com/image/UC-c14620b0-6803-48a3-a7ab-5211825cec51.jpg?v=1685285730000"
@@ -50,7 +50,7 @@ export default function Home() {
             />.
           </p>
 
-          {/* React and NextJS certificate */}
+          {/* //! React and NextJS certificate */}
           <StyledSubHeader title="React (+NextJS)" />
           <img
             src="https://udemy-certificate.s3.amazonaws.com/image/UC-7246cba0-de77-4a6f-81a4-2be5aaeaad67.jpg?v=1688062528000"
@@ -81,7 +81,28 @@ export default function Home() {
             />.
           </p>
 
-          {/* Python Automation */}
+          {/* //! Clean Code */}
+          <StyledSubHeader title="Clean Code" />
+          <img
+            src="https://udemy-certificate.s3.amazonaws.com/image/UC-f452de2c-2173-4d8c-80f3-c546c00e831c.jpg?v=1692018292000"
+            alt="Clean Code Certificate"
+            title="Clean Code course completion certificate"
+            class="object-cover max-h-[30em] max-w-full"
+            style="aspect-ratio: 43/32;"
+          />
+          <GradientLink
+            link="https://www.udemy.com/certificate/UC-f452de2c-2173-4d8c-80f3-c546c00e831c/"
+            content="View on Udemy"
+            title="Certificate of the Clean Code course completion on Udemy."
+            customRel="noopener noreferrer"
+          />
+          <p class="mt-2 mb-4 text-center text-justify w-full">
+            Another great course by Academind. Helped me SOLIDify my Clean Code
+            concepts. Was also the first time I've seen polymorphism being used
+            in a way that made sense.
+          </p>
+
+          {/* //!Python Automation */}
           <StyledSubHeader title="Automate the Boring Stuff with Python" />
           <img
             src="https://udemy-certificate.s3.amazonaws.com/image/UC-a67fad8f-f55a-4af2-adb9-95b023517496.jpg?v=1690032992000"
