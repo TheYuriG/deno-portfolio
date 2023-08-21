@@ -1,5 +1,5 @@
 //? Define all data that a visualization step must contain
-export interface visualizer {
+export interface visualizationStep {
   leadingText: string;
   expressionText: string;
   evaluatedText: string;

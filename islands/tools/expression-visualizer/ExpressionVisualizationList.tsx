@@ -5,13 +5,13 @@ import { useState } from "preact/hooks";
 //? Component
 import { ExpressionVisualizationListItem } from "../../../components/tools/expression-visualizer/ExpressionVisualizationListItem.tsx";
 //? Type
-import type { visualizer } from "../../../types/component-properties/tools/expression-visualizer/Visualizer.ts";
+import type { visualizationStep } from "../../../types/component-properties/tools/expression-visualizer/VisualizationStep.ts";
 import { XMarkIcon } from "../../../assets/XMarkIcon.tsx";
 
 //? Renders an Expression list
 export default function ExpressionVisualizationList(
   { visualizationList, deleteItem }: {
-    visualizationList: visualizer[];
+    visualizationList: visualizationStep[];
     deleteItem?: (item: string) => void;
   },
 ) {

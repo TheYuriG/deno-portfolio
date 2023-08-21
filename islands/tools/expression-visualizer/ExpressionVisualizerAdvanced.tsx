@@ -8,14 +8,14 @@ import ExpressionVisualizationList from "./ExpressionVisualizationList.tsx";
 import { validationStatus } from "../../../types/forms/validationStatus.ts";
 import { validateNonEmptyText } from "../../../services/form-validation/validateNonEmptyText.ts";
 //? Type
-import type { visualizer } from "../../../types/component-properties/tools/expression-visualizer/Visualizer.ts";
-type ValidationStatuses<K extends keyof visualizer> = Record<
+import type { visualizationStep } from "../../../types/component-properties/tools/expression-visualizer/VisualizationStep.ts";
+type ValidationStatuses<K extends keyof visualizationStep> = Record<
   K,
   validationStatus
 >;
 
 //? Set base state values
-const baseState: visualizer = {
+const baseState: visualizationStep = {
   leadingText: "const b = ",
   expressionText: "5 * 5",
   evaluatedText: "25",
@@ -29,11 +29,11 @@ const baseValidation: ValidationStatuses<"expressionText" | "evaluatedText"> = {
 
 export default function ExpressionVisualizerAdvanced() {
   //? Manages current state for form data
-  const [formValues, setValues] = useState<visualizer>(baseState);
+  const [formValues, setValues] = useState<visualizationStep>(baseState);
   //? Manages the form validation state
   const [formValidation, setValidation] = useState(baseValidation);
   //? Manages visualization data
-  const [visualization, setVisualization] = useState<visualizer[]>([]);
+  const [visualization, setVisualization] = useState<visualizationStep[]>([]);
 
   return (
     <>
