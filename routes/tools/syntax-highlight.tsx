@@ -9,7 +9,8 @@ import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 //? Import Syntax Highlight form to handle sending data to the server
 import SyntaxHighlighForm from "../../components/tools/syntax-highlight/SyntaxHighlighForm.tsx";
 //? Imports middleware responsible for processing GET/POST requests to this route
-import { syntaxHighlightMiddleware } from "../../middleware/tools/__syntax-highlight.tsx";
+import { syntaxHighlightMiddleware } from "../../middleware/tools/__syntax-highlight.ts";
+//? Error component
 import { ErrorAlert } from "../../components/UI/ErrorAlert.tsx";
 
 //? Manages saving text input remotely and redirects
