@@ -19,7 +19,7 @@ import type { savedVisualization } from "../../types/component-properties/tools/
 export const viewExpressionMiddleware: Handlers = {
   //? If the user is trying to load the page, display it
   async GET(_req, ctx) {
-    const slug = ctx.params.expression;
+    const slug = ctx.params.expression.toLowerCase();
 
     try {
       //? Attempt to fetch an expression at the provided slug path
@@ -68,7 +68,7 @@ export const viewExpressionMiddleware: Handlers = {
       }
 
       //? Create the slug
-      const slug = slugify(sluglessExpression.title);
+      const slug = slugify(sluglessExpression.title.toLowerCase());
       //? Recreate expression object with the created slug
       const expressionWithSlug: savedVisualization = {
         ...sluglessExpression,
