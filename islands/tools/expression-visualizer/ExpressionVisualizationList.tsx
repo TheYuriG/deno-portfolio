@@ -2,11 +2,14 @@
 import type { JSX } from "preact";
 //? State management
 import { useState } from "preact/hooks";
-//? Component
+//? Component for individual visualizations in the list
 import { ExpressionVisualizationListItem } from "../../../components/tools/expression-visualizer/ExpressionVisualizationListItem.tsx";
+//? Icon asset
+import { XMarkIcon } from "../../../assets/XMarkIcon.tsx";
 //? Type
 import type { visualizationStep } from "../../../types/component-properties/tools/expression-visualizer/VisualizationStep.ts";
-import { XMarkIcon } from "../../../assets/XMarkIcon.tsx";
+import { ExpressionVisualizerSaveForm } from "./ExpressionVisualizerSaveForm.tsx";
+import { StyledButton } from "../../../components/UI/StyledButton.tsx";
 
 //? Renders an Expression list
 export default function ExpressionVisualizationList(
@@ -23,6 +26,7 @@ export default function ExpressionVisualizationList(
   const [shouldAnimationPlay, toggleAnimationPlayStatus] = useState(
     playStateArray,
   );
+  const [displaySubmitForm, toggleDisplaySubmitForm] = useState(false);
 
   //? Instantiate current loop index
   let listIndex = 0;
@@ -58,7 +62,7 @@ export default function ExpressionVisualizationList(
             updateFunction={updateFunction}
           />
           {/* If a delete item function is provided, add a button to delete this item */}
-          {deleteItem &&
+          {deleteItem !== undefined &&
             (
               <button
                 onClick={() => {
@@ -79,9 +83,20 @@ export default function ExpressionVisualizationList(
 
   //? Render a list with all Expressions to be displayed
   return (
-    <div class="flex flex-col w-full items-center">
-      {/* Generate steps dynamically */}
-      {...visualizationListElements}
-    </div>
+    <>
+      <div class="flex flex-col w-full items-center">
+        {/* Generate steps dynamically */}
+        {...visualizationListElements}
+      </div>
+      {visualizationList.length > 0 && displaySubmitForm === false && (
+        <StyledButton
+          text="Save expression?"
+          onClickFunction={() => {
+            toggleDisplaySubmitForm(true);
+          }}
+        />
+      )}
+      {displaySubmitForm === true && <ExpressionVisualizerSaveForm />}
+    </>
   );
 }
