@@ -57,7 +57,7 @@ export const viewExpressionMiddleware: Handlers = {
       if (validationErrors.length > 0) {
         return new Response(
           JSON.stringify({
-            message: "Invalid payload!",
+            message: "Invalid form submission!",
             errors: validationErrors,
           }),
           {
@@ -81,7 +81,8 @@ export const viewExpressionMiddleware: Handlers = {
       if (kvExpression !== null) {
         return new Response(
           JSON.stringify({
-            message: "Expression already saved in the database with this name!",
+            message:
+              "An expression has already been saved in the database with this name! Please pick another.",
           }),
           {
             status: HttpStatusCodes.CONFLICT_409,
