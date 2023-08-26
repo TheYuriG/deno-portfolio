@@ -1,16 +1,17 @@
-//? Import the error type for whenever there is a failed attempt to save to KV
+//? Import the error type for whenever there is a failed attempt to write to KV
 import FetchDataError from "../../../types/error/FetchDataError.ts";
-import type { HighlightText } from "../../../types/component-properties/tools/syntax-highlight/HighlightText.ts";
+//? Types
+import type { savedVisualization } from "../../../types/component-properties/tools/expression-visualizer/SavedVisualization.ts";
 
 //? Saves data to KV
-export async function saveHighlightToKv(
+export async function saveExpressionToKv(
   path: string,
-  content: HighlightText,
+  content: savedVisualization,
 ) {
   //? Attempt to save a file with our data to KV
   try {
     const kv = await Deno.openKv();
-    await kv.set(["highlight", path], content);
+    await kv.set(["expression", path], content);
   } catch (error) {
     console.log(error);
     //? If the save fails, throw an error

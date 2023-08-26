@@ -1,5 +1,7 @@
 //? Import handlers to manage HTTP methods for GET/POST to /tools/syntax-highlight
 import { Handlers } from "$fresh/server.ts";
+//? HTTP response status codes
+import { HttpStatusCodes } from "../../data/misc/HttpStatusCodes.ts";
 //? Import service that handles saving data to KV and then deleting them later
 import { manageHighlightTextOnKv } from "../../services/syntax-highlight/manage-highlight-text-on-KV.ts";
 
@@ -12,7 +14,7 @@ export const syntaxHighlightMiddleware: Handlers = {
   },
   //? When the user attempts to submit the highlighted text, save it to
   //? Deno KV, which later gets loaded on the next route
-  async POST(req, ctx) {
+  async POST(req, _ctx) {
     const form = await req.formData();
     const text = form.get("text-to-highlight")?.toString();
 
@@ -25,7 +27,7 @@ export const syntaxHighlightMiddleware: Handlers = {
         "/tools/syntax-highlight?error=Empty%2Finvalid%20form%20provided!",
       );
       return new Response("Error! You attempted to submit an empty form!", {
-        status: 303, // See Also HTTP status code
+        status: HttpStatusCodes.SEE_OTHER_303,
         headers,
       });
     }
@@ -36,13 +38,13 @@ export const syntaxHighlightMiddleware: Handlers = {
 
       headers.set("location", "/tools/highlighted-text/" + now.toString());
       return new Response(null, {
-        status: 303, // See Other HTTP status code
+        status: HttpStatusCodes.SEE_OTHER_303,
         headers,
       });
-    } catch (error) {
+    } catch (_error) {
       headers.set("location", "/tools/highlighted-text/error");
       return new Response(null, {
-        status: 500, // Internal Server Error HTTP status code
+        status: HttpStatusCodes.INTERNAL_SERVER_ERROR_500,
       });
     }
   },

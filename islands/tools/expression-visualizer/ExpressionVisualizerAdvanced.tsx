@@ -8,22 +8,19 @@ import ExpressionVisualizationList from "./ExpressionVisualizationList.tsx";
 import { validationStatus } from "../../../types/forms/validationStatus.ts";
 import { validateNonEmptyText } from "../../../services/form-validation/validateNonEmptyText.ts";
 //? Type
-import type { visualizer } from "../../../types/component-properties/tools/expression-visualizer/Visualizer.ts";
-type ValidationStatuses<K extends keyof visualizer> = Record<
+import type { visualizationStep } from "../../../types/component-properties/tools/expression-visualizer/VisualizationStep.ts";
+type ValidationStatuses<K extends keyof visualizationStep> = Record<
   K,
   validationStatus
 >;
 
 //? Set base state values
-const baseState: visualizer = {
-  //   leadingText: "",
+const baseState: visualizationStep = {
   leadingText: "const b = ",
-  //   expressionText: "",
   expressionText: "5 * 5",
-  //   evaluatedText: "",
   evaluatedText: "25",
-  //   trailingText: "",
   trailingText: ";",
+  id: crypto.randomUUID(),
 };
 const baseValidation: ValidationStatuses<"expressionText" | "evaluatedText"> = {
   expressionText: validationStatus.Unchanged,
@@ -32,13 +29,12 @@ const baseValidation: ValidationStatuses<"expressionText" | "evaluatedText"> = {
 
 export default function ExpressionVisualizerAdvanced() {
   //? Manages current state for form data
-  const [formValues, setValues] = useState<visualizer>(baseState);
+  const [formValues, setValues] = useState<visualizationStep>(baseState);
   //? Manages the form validation state
   const [formValidation, setValidation] = useState(baseValidation);
   //? Manages visualization data
-  const [visualization, setVisualization] = useState<visualizer[]>([]);
+  const [visualization, setVisualization] = useState<visualizationStep[]>([]);
 
-  //   console.log(formValues);
   return (
     <>
       <form class="w-full mb-4 flex flex-col" htmlFor="visualization">
@@ -125,17 +121,24 @@ export default function ExpressionVisualizerAdvanced() {
           onClickFunction={() => {
             setVisualization((current) => [...current, formValues]);
             setValues((current) => ({
-              leadingText: current.leadingText +
-                current.evaluatedText + current.trailingText,
-              expressionText: "",
+              leadingText: current.leadingText,
+              expressionText: current.evaluatedText,
               evaluatedText: "",
-              trailingText: "",
+              trailingText: current.trailingText,
+              id: crypto.randomUUID(),
             }));
           }}
         />
       </form>
       {/* Display steps */}
-      <ExpressionVisualizationList visualizationList={visualization} />
+      <ExpressionVisualizationList
+        visualizationList={visualization}
+        deleteItem={(deletedItemId) => {
+          setVisualization((current) =>
+            current.filter((item) => item.id !== deletedItemId)
+          );
+        }}
+      />
     </>
   );
 }

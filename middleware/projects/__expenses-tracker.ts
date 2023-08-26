@@ -1,5 +1,8 @@
 //? Import handlers to create a middleware function
 import { Handlers } from "$fresh/server.ts";
+//? HTTP response status codes
+import { HttpStatusCodes } from "../../data/misc/HttpStatusCodes.ts";
+//? Database
 import { saveNewExpenseToKV } from "../../data/projects/expenses-tracker/saveNewExpenseToKV.ts";
 //? Fetch expenses from the database
 import fetchExpenses from "../../services/expenses-tracker/fetchExpenses.ts";
@@ -24,7 +27,7 @@ export const expensesTrackerMiddleware: Handlers = {
     //! Error if invalid request was made
     if (typeof newExpense !== "object") {
       return new Response(null, {
-        status: 400, // Bad Request HTTP status code
+        status: HttpStatusCodes.BAD_REQUEST_400,
       });
     }
 
@@ -35,7 +38,7 @@ export const expensesTrackerMiddleware: Handlers = {
       typeof newExpense.cost !== "number"
     ) {
       return new Response(null, {
-        status: 400, // Bad Request HTTP status code
+        status: HttpStatusCodes.BAD_REQUEST_400,
       });
     }
 
@@ -51,14 +54,14 @@ export const expensesTrackerMiddleware: Handlers = {
       const responseBody = new FormData();
       responseBody.append("message", "failed to save your data!");
       return new Response(responseBody, {
-        status: 400, // Bad Request HTTP status code
+        status: HttpStatusCodes.BAD_REQUEST_400,
       });
     }
 
     const responseBody = new FormData();
     responseBody.append("message", "saved successfully!");
     return new Response(responseBody, {
-      status: 200, // OK HTTP status code
+      status: HttpStatusCodes.OK_200,
     });
   },
 };

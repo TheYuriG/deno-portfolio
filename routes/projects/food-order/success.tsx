@@ -11,7 +11,7 @@ import { DeliveryIcon } from "../../../assets/DeliveryIcon.tsx";
 //? Delivery timer countdown
 import DigitalTimer from "../../../islands/UI/DigitalTimer.tsx";
 //? Middleware responsible for taking the query from the URL
-import { foodOrderSuccessMiddleware } from "../../../middleware/projects/__food-order-success.tsx";
+import { foodOrderSuccessMiddleware } from "../../../middleware/projects/__food-order-success.ts";
 
 export const handler = foodOrderSuccessMiddleware;
 

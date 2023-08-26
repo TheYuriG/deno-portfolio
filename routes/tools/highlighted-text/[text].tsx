@@ -11,7 +11,7 @@ import HighlightedCode from "../../../islands/tools/syntax-highlight/Highlighted
 //? Shows timer remaining on hover
 import DigitalTimer from "../../../islands/UI/DigitalTimer.tsx";
 //? Imports middleware responsible for processing GET/POST requests to this route
-import { highlightTextMiddleware } from "../../../middleware/tools/__highlighted-text.tsx";
+import { highlightTextMiddleware } from "../../../middleware/tools/__highlighted-text.ts";
 //? Import interface that defines what are the required properties for this content
 import type { HighlightText } from "../../../types/component-properties/tools/syntax-highlight/HighlightText.ts";
 //? Import component that creates a clickable textarea that copies the inner content to clipboard

@@ -11,8 +11,11 @@ import { validateNonEmptyText } from "../../../services/form-validation/validate
 import { differenceBetweenStrings } from "../../../services/expression-visualizer/differenceBetweenStrings.ts";
 
 //? Types
-import type { visualizer } from "../../../types/component-properties/tools/expression-visualizer/Visualizer.ts";
-type partialVisualizer = Pick<visualizer, "expressionText" | "evaluatedText">;
+import type { visualizationStep } from "../../../types/component-properties/tools/expression-visualizer/VisualizationStep.ts";
+type partialVisualizer = Pick<
+  visualizationStep,
+  "expressionText" | "evaluatedText"
+>;
 type ValidationStatuses<K extends keyof partialVisualizer> = Record<
   K,
   validationStatus
@@ -33,7 +36,7 @@ export default function ExpressionVisualizerPlus() {
   //? Manages the form validation state
   const [formValidation, setValidation] = useState(baseValidation);
   //? Manages visualization data
-  const [visualization, setVisualization] = useState<visualizer[]>([]);
+  const [visualization, setVisualization] = useState<visualizationStep[]>([]);
 
   return (
     <>
@@ -106,6 +109,7 @@ export default function ExpressionVisualizerPlus() {
               expressionText,
               evaluatedText,
               trailingText,
+              id: crypto.randomUUID(),
             }]);
             //? Update form values to both have the result text
             setValues((current) => ({
@@ -116,7 +120,14 @@ export default function ExpressionVisualizerPlus() {
         />
       </form>
       {/* Display steps */}
-      <ExpressionVisualizationList visualizationList={visualization} />
+      <ExpressionVisualizationList
+        visualizationList={visualization}
+        deleteItem={(deletedItemId) => {
+          setVisualization((current) =>
+            current.filter((item) => item.id !== deletedItemId)
+          );
+        }}
+      />
     </>
   );
 }
