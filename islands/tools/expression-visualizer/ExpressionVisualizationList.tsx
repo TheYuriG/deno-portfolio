@@ -88,15 +88,29 @@ export default function ExpressionVisualizationList(
         {/* Generate steps dynamically */}
         {...visualizationListElements}
       </div>
-      {visualizationList.length > 0 && displaySubmitForm === false && (
+      {
+        /*//? Display the button to save to database if there are visualization steps (no point in saving nothing),
+        //? a deletion item function was provided (won't be provided on view mode) and
+        //? the form isn't currently being displayed (why display the button to display
+        //? the form when the form is already being displayed?) */
+      }
+      {visualizationList.length > 0 && deleteItem !== undefined &&
+        displaySubmitForm === false && (
         <StyledButton
           text="Save expression?"
+          classes="my-2"
           onClickFunction={() => {
             toggleDisplaySubmitForm(true);
           }}
         />
       )}
-      {displaySubmitForm === true && <ExpressionVisualizerSaveForm />}
+      {
+        /*//? Display the form if the button to display the form was clicked and
+        //? the user didn't remove the steps after clicking it */
+      }
+      {visualizationList.length > 0 && displaySubmitForm === true && (
+        <ExpressionVisualizerSaveForm expressions={visualizationList} />
+      )}
     </>
   );
 }
