@@ -53,10 +53,11 @@ import * as $$12 from "./islands/projects/tic-tac-toe/TicTacToeBoard.tsx";
 import * as $$13 from "./islands/tools/expression-visualizer/ExpressionVisualizationList.tsx";
 import * as $$14 from "./islands/tools/expression-visualizer/ExpressionVisualizer.tsx";
 import * as $$15 from "./islands/tools/expression-visualizer/ExpressionVisualizerAdvanced.tsx";
-import * as $$16 from "./islands/tools/retirement-calculator/RetirementCalculationForm.tsx";
-import * as $$17 from "./islands/tools/retirement-calculator/RetirementCalculator.tsx";
-import * as $$18 from "./islands/tools/syntax-highlight/HighlightedCode.tsx";
-import * as $$19 from "./islands/tools/whatsapp-message-link-generator/WhatsappLinkGenerator.tsx";
+import * as $$16 from "./islands/tools/expression-visualizer/ExpressionVisualizerSaveForm.tsx";
+import * as $$17 from "./islands/tools/retirement-calculator/RetirementCalculationForm.tsx";
+import * as $$18 from "./islands/tools/retirement-calculator/RetirementCalculator.tsx";
+import * as $$19 from "./islands/tools/syntax-highlight/HighlightedCode.tsx";
+import * as $$20 from "./islands/tools/whatsapp-message-link-generator/WhatsappLinkGenerator.tsx";
 
 const manifest = {
   routes: {
@@ -115,11 +116,13 @@ const manifest = {
     "./islands/tools/expression-visualizer/ExpressionVisualizer.tsx": $$14,
     "./islands/tools/expression-visualizer/ExpressionVisualizerAdvanced.tsx":
       $$15,
-    "./islands/tools/retirement-calculator/RetirementCalculationForm.tsx": $$16,
-    "./islands/tools/retirement-calculator/RetirementCalculator.tsx": $$17,
-    "./islands/tools/syntax-highlight/HighlightedCode.tsx": $$18,
+    "./islands/tools/expression-visualizer/ExpressionVisualizerSaveForm.tsx":
+      $$16,
+    "./islands/tools/retirement-calculator/RetirementCalculationForm.tsx": $$17,
+    "./islands/tools/retirement-calculator/RetirementCalculator.tsx": $$18,
+    "./islands/tools/syntax-highlight/HighlightedCode.tsx": $$19,
     "./islands/tools/whatsapp-message-link-generator/WhatsappLinkGenerator.tsx":
-      $$19,
+      $$20,
   },
   baseUrl: import.meta.url,
 };
