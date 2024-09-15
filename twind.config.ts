@@ -274,6 +274,43 @@ export default {
             },
           };
         }
+        // Slider
+        case "slider": {
+          return {
+            "&": {
+              "-webkit-appearance": "none",
+              "appearance": "none",
+              "background": "var(--accent-color)",
+              width: "100%",
+              height: "0.75rem",
+              margin: "1rem 0 1rem 0",
+              outline: "none",
+              "border-radius": "1.5em",
+              opacity: "0.7",
+              "-webkit-transition": "0.2s",
+              transition: "opacity 0.2s",
+            },
+            "&:hover": {
+              opacity: "1",
+            },
+            "&::-webkit-slider-thumb": {
+              "-webkit-appearance": "none",
+              appearance: "none",
+              width: "0.75rem", 
+              height: "2rem",
+              'border-radius': '1.5rem',
+              background: "var(--neutral-color)",
+              cursor: "pointer",
+            },
+            "&::-moz-slider-thumb": {
+              width: "0.75rem", 
+              height: "2rem",
+              'border-radius': '1.5rem',
+              background: "var(--neutral-color)",
+              cursor: "pointer",
+            },
+          };
+        }
         // Style the date-picker icon for date inputs
         case "date":
           return {
