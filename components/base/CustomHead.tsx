@@ -9,12 +9,12 @@ interface HeadOptions {
   description: string;
   link?: string;
   imageLink?: string;
-  children: JSX.Element | JSX.Element[];
+  children?: JSX.Element | JSX.Element[];
 }
 
 //? Creates and exports the Head to be used on all pages
 export function CustomHead(
-  { title, description, imageLink, link, children }: HeadOptions,
+  { title, description, imageLink, link, children = [<></>] }: HeadOptions,
 ) {
   return (
     <>
