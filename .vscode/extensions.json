@@ -2,5 +2,5 @@
   "recommendations": [
     "denoland.vscode-deno",
     "aaron-bond.better-comments"
-]
+  ]
 }

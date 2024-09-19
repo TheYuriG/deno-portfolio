@@ -24,7 +24,8 @@ export function RetirementCalculationTable(
     totalSaved: +values.starterSavings,
     lastYearCompound: 0,
   }];
-  const yearlyInvestment = (+values.yearlySavings * +values.compensation) / 100;
+  const yearlyInvestment = (+values.yearlySavings * +values.compensation) /
+    100;
 
   //? Calculate retirement saving for every year until:
   //* A- the target retirement age OR
@@ -76,7 +77,9 @@ export function RetirementCalculationTable(
         {/* Table head */}
         <tr>
           <th scope="col" class="py-2 px-4 custom-bo-ac">Age</th>
-          <th scope="col" class="py-2 px-4 w-60 custom-bo-ac">Total saved</th>
+          <th scope="col" class="py-2 px-4 w-60 custom-bo-ac">
+            Total saved
+          </th>
           <th scope="col" class="py-2 px-4 custom-bo-ac">
             Last compound return
           </th>
@@ -84,7 +87,8 @@ export function RetirementCalculationTable(
         {/* Table body */}
         {retirementCalculation.map((yearCalculation) => (
           <tr
-            style={yearCalculation.lastYearCompound > +values.compensation
+            style={yearCalculation.lastYearCompound >
+                +values.compensation
               ? "background-color: rgba(141, 255, 205, 0.5)" //! Green if eligible to retire
               : yearCalculation.age >= +values.plannedRetiringAge
               ? "background-color: rgba(232, 116, 97, 0.7)" //! Red if past retiring age and not able to retire yet
@@ -94,13 +98,16 @@ export function RetirementCalculationTable(
             <td class="custom-bo-ac">{yearCalculation.age}</td>
             {/* Total saved */}
             <td class="custom-bo-ac">
-              ${Math.floor(yearCalculation.totalSaved).toLocaleString()}
+              ${Math.floor(yearCalculation.totalSaved)
+                .toLocaleString()}
             </td>
             {/* Interest returns from last year */}
             <td class="custom-bo-ac">
-              ${Math.floor(yearCalculation.lastYearCompound).toLocaleString() +
+              ${Math.floor(yearCalculation.lastYearCompound)
+                .toLocaleString() +
                 (+values.additionalIncome > 0 &&
-                    yearCalculation.lastYearCompound >= +values.compensation
+                    yearCalculation.lastYearCompound >=
+                      +values.compensation
                   ? ` (+$${values.additionalIncome.toLocaleString()})`
                   : "")}
             </td>

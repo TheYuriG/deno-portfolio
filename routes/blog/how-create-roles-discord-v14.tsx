@@ -1674,10 +1674,10 @@ export default function Home() {
           {/* Post author */}
           <BlogPostFooter />
         </article>
-      
-                {/* Scroll up button */}
+
+        {/* Scroll up button */}
         <ScrollToTop />
-        </Base>
+      </Base>
     </>
   );
 }
