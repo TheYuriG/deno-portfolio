@@ -30,8 +30,9 @@ export function RetirementCalculationTable(
   //? Calculate retirement saving for every year until:
   //* A- the target retirement age OR
   //* B- age when you are able to retire OR
-  //* C- 60 years have passed since you started planning to retire
-  while (retirementCalculation.length < 60) {
+  //* C- 50 years have passed since you started planning to retire
+  const MAX_YEARS_WORKING = 50;
+  while (retirementCalculation.length < MAX_YEARS_WORKING) {
     //? Instantiate the previous year calculated
     const recentEntry = retirementCalculation[retirementCalculation.length - 1];
 
