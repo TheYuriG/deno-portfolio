@@ -7,7 +7,7 @@ Here you will find the code that powers the website
 
 📝 All of the code is written in Typescript and CSS, powered by Deno, Fresh,
 Preact and Twind and served as static HTML files using the Islands architecture
-(you can see a more broad overview [here](https://www.theyurig.com/this)).
+(you can see a more broad overview [here](https://www.theyurig.com/what-is-this)).
 
 ☀️🌒 The website hosts all of my projects and some of my history. Feel free to
 visit the site and poke around. All related code is well commented, so if you

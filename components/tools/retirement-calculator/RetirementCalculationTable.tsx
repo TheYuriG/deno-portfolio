@@ -60,7 +60,7 @@ export function RetirementCalculationTable(
 
         currentYearData = recentEntry
     }
-
+  
     return (
         <>
             {/* Entire table */}

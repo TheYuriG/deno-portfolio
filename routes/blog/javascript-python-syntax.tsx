@@ -1222,7 +1222,7 @@ here
               // Adding property value (1)
               {
                 label: "Adding property (1)",
-                itemOne: "obj['keyName'] = 'value",
+                itemOne: "obj['keyName'] = 'value'",
                 itemTwo: "dict['key_name'] = 'value'",
               },
               // Adding property value (2)
@@ -1265,7 +1265,7 @@ const b = {name: 'yuri'}
 a == b // false`,
                 itemTwo: `a = {name: 'yuri'}
 b = {name: 'yuri'}
-a == b // True`,
+a == b # True`,
                 note:
                   "Python makes a deep equality check by default, Javascript instead compares if the reference in memory are the same.",
               },
@@ -1441,13 +1441,23 @@ a == b // True`,
               link="https://github.com/lino-levan"
               customRel="nofollow noreferrer"
               title="Thank you for the error checking!"
-            />{" "}
-            and{" "}
+            />{", "}
             <GradientLink
               content="u/nekokattt"
               link="https://www.reddit.com/r/learnpython/comments/14yf19y/comment/jrshjh0/?utm_source=reddit&utm_medium=web2x&context=3"
               customRel="nofollow noreferrer"
               title="Thank you for the suggestions!"
+            />{", "}
+            <GradientLink
+              content="@spidersouris"
+              link="https://github.com/spidersouris"
+              customRel="nofollow noreferrer"
+            />
+            {" "} and {" "}
+            <GradientLink
+              content="@tthn0"
+              link="https://github.com/tthn0"
+              customRel="nofollow noreferrer"
             />. You can check this{" "}
             <GradientLink
               content="issue"

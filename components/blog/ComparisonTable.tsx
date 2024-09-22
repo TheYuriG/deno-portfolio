@@ -54,11 +54,11 @@ export function ComparisonTable(
             {/* Label */}
             <td class="custom-bo-ac hidden md:table-cell py-1 px-2">{label}</td>
             {/* Item 1 */}
-            <td class="custom-bo-ac py-1 px-2 text-left whitespace-pre-wrap">
+            <td class="custom-bo-ac py-1 px-2 text-left whitespace-pre-wrap break-words max-w-[35vw]">
               {itemOne}
             </td>
             {/* Item 2 */}
-            <td class="custom-bo-ac py-1 px-2 text-left whitespace-pre-wrap">
+            <td class="custom-bo-ac py-1 px-2 text-left whitespace-pre-wrap break-words max-w-[35vw]">
               {itemTwo}
             </td>
             {/* Note about the difference, if provided */}
