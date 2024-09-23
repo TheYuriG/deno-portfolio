@@ -31,12 +31,13 @@ import * as $25 from "./routes/tools/highlighted-text/[text].tsx";
 import * as $26 from "./routes/tools/index.tsx";
 import * as $27 from "./routes/tools/retirement-calculator.tsx";
 import * as $28 from "./routes/tools/syntax-highlight.tsx";
-import * as $29 from "./routes/tools/view-expression/[expression].tsx";
-import * as $30 from "./routes/tools/whatsapp-message-link-generator.tsx";
-import * as $31 from "./routes/toys/index.tsx";
-import * as $32 from "./routes/toys/spinners.tsx";
-import * as $33 from "./routes/what-is-this.tsx";
-import * as $34 from "./routes/work/index.tsx";
+import * as $29 from "./routes/tools/think-binary-search.tsx";
+import * as $30 from "./routes/tools/view-expression/[expression].tsx";
+import * as $31 from "./routes/tools/whatsapp-message-link-generator.tsx";
+import * as $32 from "./routes/toys/index.tsx";
+import * as $33 from "./routes/toys/spinners.tsx";
+import * as $34 from "./routes/what-is-this.tsx";
+import * as $35 from "./routes/work/index.tsx";
 import * as $$0 from "./islands/UI/DigitalTimer.tsx";
 import * as $$1 from "./islands/UI/Modal.tsx";
 import * as $$2 from "./islands/misc/Collapsible.tsx";
@@ -90,12 +91,13 @@ const manifest = {
     "./routes/tools/index.tsx": $26,
     "./routes/tools/retirement-calculator.tsx": $27,
     "./routes/tools/syntax-highlight.tsx": $28,
-    "./routes/tools/view-expression/[expression].tsx": $29,
-    "./routes/tools/whatsapp-message-link-generator.tsx": $30,
-    "./routes/toys/index.tsx": $31,
-    "./routes/toys/spinners.tsx": $32,
-    "./routes/what-is-this.tsx": $33,
-    "./routes/work/index.tsx": $34,
+    "./routes/tools/think-binary-search.tsx": $29,
+    "./routes/tools/view-expression/[expression].tsx": $30,
+    "./routes/tools/whatsapp-message-link-generator.tsx": $31,
+    "./routes/toys/index.tsx": $32,
+    "./routes/toys/spinners.tsx": $33,
+    "./routes/what-is-this.tsx": $34,
+    "./routes/work/index.tsx": $35,
   },
   islands: {
     "./islands/UI/DigitalTimer.tsx": $$0,
