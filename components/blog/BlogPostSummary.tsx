@@ -14,8 +14,8 @@ export function BlogPostSummary(summary: BlogPostSummaryProperties) {
         <StyledSubHeader title={summary.title} />
       </a>
       {/* Post creation date */}
-      <p class="text-sm mb-2 text-center">
-        {new Date(summary.date).toLocaleString()}
+      <p class="text-sm mb-2 text-center date-timestamp">
+        {new Date(summary.date).valueOf()}
       </p>
       {/* Post summary */}
       <p class="text-justify">{summary.shortSummary}</p>

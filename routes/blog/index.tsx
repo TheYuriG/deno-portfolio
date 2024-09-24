@@ -43,6 +43,7 @@ export default function Home() {
         description="Blog posts and articles about my experience with certain tech stacks or situations I had to untangle myself out of."
         link="https://www.theyurig.com/blog"
       >
+        <script defer src={"./i18nBlogTimestamps.js"} />
       </CustomHead>
       {/* Base page layout with theme switching and footer outside of accent box */}
       <Base>
