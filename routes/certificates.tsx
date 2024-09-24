@@ -24,7 +24,8 @@ const certificatesArray = [
       style="aspect-ratio: 43/32;"
     />
     <p>
-      <span class="date-timestamp">1685286000000</span>{" - "}
+      <span class="date-timestamp">1685286000000</span>
+      {" - "}
       <GradientLink
         link="https://www.udemy.com/certificate/UC-c14620b0-6803-48a3-a7ab-5211825cec51/"
         content="View on Udemy"
@@ -52,7 +53,8 @@ const certificatesArray = [
       style="aspect-ratio: 43/32;"
     />
     <p>
-      <span class="date-timestamp">1688050800000</span>{" - "}
+      <span class="date-timestamp">1688050800000</span>
+      {" - "}
       <GradientLink
         link="https://www.udemy.com/certificate/UC-7246cba0-de77-4a6f-81a4-2be5aaeaad67/"
         content="View on Udemy"
@@ -87,7 +89,8 @@ const certificatesArray = [
       style="aspect-ratio: 43/32;"
     />
     <p>
-      <span class="date-timestamp">1690038000000</span>{" - "}
+      <span class="date-timestamp">1690038000000</span>
+      {" - "}
       <GradientLink
         link="https://www.udemy.com/certificate/UC-a67fad8f-f55a-4af2-adb9-95b023517496/"
         content="View on Udemy"
@@ -131,7 +134,8 @@ const certificatesArray = [
       style="aspect-ratio: 43/32;"
     />
     <p>
-      <span class="date-timestamp">1692025200000</span>{" - "}
+      <span class="date-timestamp">1692025200000</span>
+      {" - "}
       <GradientLink
         link="https://www.udemy.com/certificate/UC-f452de2c-2173-4d8c-80f3-c546c00e831c/"
         content="View on Udemy"

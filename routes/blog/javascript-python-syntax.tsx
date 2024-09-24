@@ -1441,19 +1441,21 @@ a == b # True`,
               link="https://github.com/lino-levan"
               customRel="nofollow noreferrer"
               title="Thank you for the error checking!"
-            />{", "}
+            />
+            {", "}
             <GradientLink
               content="u/nekokattt"
               link="https://www.reddit.com/r/learnpython/comments/14yf19y/comment/jrshjh0/?utm_source=reddit&utm_medium=web2x&context=3"
               customRel="nofollow noreferrer"
               title="Thank you for the suggestions!"
-            />{", "}
+            />
+            {", "}
             <GradientLink
               content="@spidersouris"
               link="https://github.com/spidersouris"
               customRel="nofollow noreferrer"
-            />
-            {" "} and {" "}
+            />{"  "}
+            and{"  "}
             <GradientLink
               content="@tthn0"
               link="https://github.com/tthn0"
