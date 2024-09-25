@@ -1,6 +1,5 @@
-//? Link components to pre-format links and reduce boiletplate
+//? Link component to prettify links
 import { DottedLink } from "../UI/DottedLink.tsx";
-import { GradientLink } from "../UI/GradientLink.tsx";
 
 export function HomeContent() {
   return (
@@ -30,19 +29,16 @@ export function HomeContent() {
         class="block text-2xl ml-8 animate-slide-top delay-slide-top"
         style="--dur: 1;"
       >
-        Sky afficionado, gym rat, full stack developer
+        Sky Afficionado, Gym Rat, Full Stack Developer
       </p>
       {/* Role */}
       <p
         class="block ml-12 animate-slide-top delay-slide-top"
         style="--dur: 1.5;"
       >
-        Building the next-gen Trophy Hunting website at{" "}
-        <GradientLink
-          content="Trophy Place"
-          link="https://trophy.place"
-        />{" "}
-        and blogging
+        Working as a Senior Marketing Media Analyst,{" "}
+        <DottedLink content="coding" link="./tools" />/
+        <DottedLink content="blogging" link="./blog" /> on the side
         {/* Blinking caret */}
         <svg
           viewBox="0 0 4 8"
