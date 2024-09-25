@@ -44,7 +44,7 @@ export default function Home() {
               customRel="noopener noreferrer"
             />. I used to be a{" "}
             <GradientLink
-              link="https://trophy.place/user/TheYuriG"
+              link="https://psnprofiles.com/TheYuriG"
               content="hardcore gamer"
               title="My 'retired' gaming profile"
               customRel="external"
@@ -60,51 +60,7 @@ export default function Home() {
           <p class="my-2 text-justify">
             Trophy hunting, while fun, often times can feel like another job.
             You often feel like you have to track so many moving parts at once
-            to make sure you don't miss anything and you stay efficient,
-            otherwise you either never complete your backlog, or tank your
-            average completion or end up adding some unobtainable trophies to
-            your account.
-          </p>
-          <StyledSubHeader title="Gym" />
-          <p class="my-2 text-justify">
-            I'm an absolute gym rat. It's part of my routine to write code and
-            {" "}
-            <GradientLink
-              link="https://youtu.be/4UlgXIL0-3g?t=10"
-              content="lift heavy ass circles"
-              title="Ronnie Coleman, the Greatest Of All Time"
-              customRel="noopener noreferrer"
-            />
-            , almost every single day. Rest days are really important... for
-            people settling to{" "}
-            <GradientLink
-              link="https://youtu.be/PNO2yxuzm04?t=76"
-              content="be smaller"
-              customRel="noopener noreferrer"
-            />{" "}
-            than they could be.
-          </p>
-          <p class="my-2 text-justify">
-            I track my physical/body progress every week on Instagram and it has
-            been inspiring for some of my peers to watch my progress, but I
-            honestly have no desire of becoming a celebrity. It's so easy to
-            waste so much good useful time on social media and I feel far more
-            productive on days where I barely look at my phone.
-          </p>
-          <p class="my-2 text-justify">
-            I've had people asking me what is my secret for changing so much and
-            the truth is that there is no secret. If you just eat properly,
-            sleep enough, and push your limit as often as possible (with proper
-            form), you will grow bigger. Your muscles simply don't know that
-            they are being forced so hard because you are a masochist, they just
-            assume you are going through extreme survival scenarios and more
-            muscle is needed for increased odds at your survival. It's just that
-            simple. When in doubt, simply{" "}
-            <GradientLink
-              link="https://www.youtube.com/watch?v=bGhBbpObA7s"
-              content="we go jim"
-              customRel="noopener noreferrer"
-            />!
+            to make sure you don't miss anything and you stay efficient.
           </p>
 
           <StyledSubHeader title="Programming" />
@@ -114,9 +70,9 @@ export default function Home() {
             but no bots out there offered this kind of data.
           </p>
           <p class="my-2 text-justify">
-            After not really getting anywhere with it, in March 2018 I decided
-            that if no one was willing to create a Discord bot for trophy
-            hunting, then I was going to need to{" "}
+            After searching far and wide and not really getting anywhere with
+            it, in March 2018 I decided that if no one was willing to create a
+            Discord bot for trophy hunting, then I was going to need to{" "}
             <GradientLink
               link="https://www.youtube.com/watch?v=EzWNBmjyv7Y"
               content="do it myself"
@@ -161,8 +117,8 @@ export default function Home() {
             to manage all of the infrastructure for{" "}
             <GradientLink
               link="https://trophy.place/"
-              content="Trophy Place"
-              title="Where we build greatness 😊"
+              content="Trophy Place (inactive)"
+              title="Where we built greatness 😊"
               customRel="external"
             />{" "}
             while Makowo was responsible for the frontend.
@@ -188,15 +144,13 @@ export default function Home() {
               title="Express is basically the backbone of NodeJS development."
               customRel="noopener noreferrer"
             />{" "}
-            for the backend for our MVP. Once we go into actual production, I'll
-            rewrite the backend using{" "}
-            <GradientLink
-              link="https://github.com/oakserver/oak"
-              content="Oak"
-              title="It's like Koa, but for Deno"
-              customRel="noopener noreferrer"
-            />{" "}
-            so that I can write exclusively Typescript code.
+            for the backend for our MVP.
+          </p>
+          <p class="my-2 text-justify">
+            It has been a gargantuan task to build everything with just the two
+            of us, but we made good progress and hosted a few open betas, which
+            got us good feedback. We are currently tinkering away just the two
+            of us before we do the full launch.
           </p>
         </article>
       </Base>
