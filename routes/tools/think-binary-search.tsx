@@ -20,11 +20,11 @@ export default function Home() {
       <Base>
         <NavigationButtons />
         <StyledHeader title="Think Binary Search" />
-        <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
+        <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-start">
           <p class="my-2">
             Use binary search to find a number within an array of numbers. The
             correct number will always be the last number in the array. This
-            game will try to waste your time as much as possible. Efficient
+            game will try to waste as much of your time as possible. Efficient
             usage of the binary tree search will be the optimal way to find the
             number within the least number of attempts. Good luck!
           </p>
