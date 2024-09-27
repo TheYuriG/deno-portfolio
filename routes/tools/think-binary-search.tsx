@@ -6,8 +6,17 @@ import { Base } from "../../components/base/Base.tsx";
 import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
 import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
+//? Middleware to handle the GET HTTP requests to this route
+import { thinkBinarySearchMiddleware } from "../../middleware/tools/__think-binary-search.ts";
+//? Type checking for route parameters 
+import { DifficultyOptionsType } from "../../types/component-properties/tools/think-binary-search/DifficultyOptions.ts";
 
-export default function Home() {
+//? Route handler for GET requests
+export const handler = thinkBinarySearchMiddleware;
+
+export default function Home(
+  { data: { arraySize, arrayOrder, arrayAssists  } }: { data: DifficultyOptionsType },
+) {
   return (
     <>
       <CustomHead
