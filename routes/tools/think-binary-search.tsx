@@ -4,7 +4,9 @@ import { CustomHead } from "../../components/base/CustomHead.tsx";
 import { Base } from "../../components/base/Base.tsx";
 //? Default styled header
 import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
-//? Navigation Buttons to go back to the previous page or to the next page (optional)
+//? Separate sections in the prototype page
+import { StyledDivider } from "../../components/UI/StyledDivider.tsx";
+//? Navigation Buttons to go back to /tools
 import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 //? Middleware to handle the GET HTTP requests to this route
 import { thinkBinarySearchMiddleware } from "../../middleware/tools/__think-binary-search.ts";
@@ -50,7 +52,7 @@ export default function Home(
             Mock: Input box to select which number you want to divide the array
             in.
           </p>
-          <hr />
+          <StyledDivider />
           <p class="my-2">
             Mock animation: Once a number has been selected, the unchosen side
             of numbers get greyed out.
@@ -67,7 +69,7 @@ export default function Home(
             the number of attempts is 1 or 2 higher than best, red for any other
             number above that.
           </p>
-          <hr />
+          <StyledDivider />
           <p class="my-2">
             Mock difficulty option: Array size: 31 - 63 - 127
           </p>
