@@ -8,16 +8,20 @@ import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
 import { StyledDivider } from "../../components/UI/StyledDivider.tsx";
 //? Navigation Buttons to go back to /tools
 import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
+//? Island to render the binary tree visually dynamically
+import { BinaryTreeArray } from "../../islands/tools/think-binary-search/BinaryTreeArray.tsx";
 //? Middleware to handle the GET HTTP requests to this route
 import { thinkBinarySearchMiddleware } from "../../middleware/tools/__think-binary-search.ts";
-//? Type checking for route parameters 
+//? Type checking for route parameters
 import { DifficultyOptionsType } from "../../types/component-properties/tools/think-binary-search/DifficultyOptions.ts";
 
 //? Route handler for GET requests
 export const handler = thinkBinarySearchMiddleware;
 
 export default function Home(
-  { data: { arraySize, arrayOrder, arrayAssists  } }: { data: DifficultyOptionsType },
+  { data }: {
+    data: DifficultyOptionsType;
+  },
 ) {
   return (
     <>
@@ -39,15 +43,7 @@ export default function Home(
             usage of the binary tree search will be the optimal way to find the
             number within the least number of attempts. Good luck!
           </p>
-          <hr />
-          <p class="my-2">
-            Mock: Purple brackets on both sides, large numbers populate the
-            array with commas separating them.
-          </p>
-          <p class="my-2">
-            Mock: Slider below the array, starts at left-most position, moves
-            accordingly to the number in the input box below.
-          </p>
+          <BinaryTreeArray {...data} />
           <p class="my-2">
             Mock: Input box to select which number you want to divide the array
             in.
