@@ -2,6 +2,8 @@
 import { StyledButton } from "../../../components/UI/StyledButton.tsx";
 import { StyledSlider } from "../../../components/UI/StyledSlider.tsx";
 import { StyledInput } from "../../../components/UI/StyledInput.tsx";
+//? Page specific components
+import { BinaryTreeArray } from "../../../components/tools/think-binary-tree/BinaryTreeArray.tsx";
 
 //? Validation enum for input
 import { validationStatus } from "../../../types/forms/validationStatus.ts";
@@ -44,20 +46,7 @@ export function BinaryTreeParent(
 
   return (
     <>
-      <div class="flex flex-1 place-items-center w-full -px-2">
-        <span class="custom-tx-ac text-[7rem]">[</span>
-        <div class="flex flex-wrap place-content-between gap-1 -mx-4">
-          {...arrayOfNumbers.map((index) => (
-            <span
-              class={"text-2xl custom-tx-nc mx-2" +
-                (index.disabled ? " opacity-60" : "")}
-            >
-              {index.number}
-            </span>
-          ))}
-        </div>
-        <span class="custom-tx-ac text-[7rem]">]</span>
-      </div>
+      <BinaryTreeArray numbersWithDisabledStatusArray={arrayOfNumbers} />
       <StyledSlider
         min={minTreeValue.toString()}
         max={maxTreeValue.toString()}

@@ -9,7 +9,7 @@ import { StyledDivider } from "../../components/UI/StyledDivider.tsx";
 //? Navigation Buttons to go back to /tools
 import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 //? Island to render the binary tree visually dynamically
-import { BinaryTreeParent } from "../../islands/tools/think-binary-search/BinaryTreeParent.tsx"; 
+import { BinaryTreeParent } from "../../islands/tools/think-binary-search/BinaryTreeParent.tsx";
 //? Middleware to handle the GET HTTP requests to this route
 import { thinkBinarySearchMiddleware } from "../../middleware/tools/__think-binary-search.ts";
 //? Type checking for route parameters
