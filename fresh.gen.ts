@@ -58,7 +58,7 @@ import * as $$16 from "./islands/tools/expression-visualizer/ExpressionVisualize
 import * as $$17 from "./islands/tools/retirement-calculator/RetirementCalculationForm.tsx";
 import * as $$18 from "./islands/tools/retirement-calculator/RetirementCalculator.tsx";
 import * as $$19 from "./islands/tools/syntax-highlight/HighlightedCode.tsx";
-import * as $$20 from "./islands/tools/think-binary-search/BinaryTreeArray.tsx";
+import * as $$20 from "./islands/tools/think-binary-search/BinaryTreeParent.tsx";
 import * as $$21 from "./islands/tools/whatsapp-message-link-generator/WhatsappLinkGenerator.tsx";
 
 const manifest = {
@@ -124,7 +124,7 @@ const manifest = {
     "./islands/tools/retirement-calculator/RetirementCalculationForm.tsx": $$17,
     "./islands/tools/retirement-calculator/RetirementCalculator.tsx": $$18,
     "./islands/tools/syntax-highlight/HighlightedCode.tsx": $$19,
-    "./islands/tools/think-binary-search/BinaryTreeArray.tsx": $$20,
+    "./islands/tools/think-binary-search/BinaryTreeParent.tsx": $$20,
     "./islands/tools/whatsapp-message-link-generator/WhatsappLinkGenerator.tsx":
       $$21,
   },

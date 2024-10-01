@@ -24,7 +24,7 @@ function validateTreeNodeNumber(input: number, min: number, max: number) {
   }
 }
 
-export function BinaryTreeArray(
+export function BinaryTreeParent(
   { arraySize, arrayOrder, arrayAssists }: DifficultyOptionsType,
 ) {
   const [attempts, setAttempts] = useState<number>(0);
@@ -58,20 +58,12 @@ export function BinaryTreeArray(
         </div>
         <span class="custom-tx-ac text-[7rem]">]</span>
       </div>
-      <p class="my-2">
-        Mock: Purple brackets on both sides, large numbers populate the array
-        with commas separating them.
-      </p>
       <StyledSlider
         min={minTreeValue.toString()}
         max={maxTreeValue.toString()}
         value={treeNode.toString()}
         disabled={true}
       />
-      <p class="my-2">
-        Mock: Slider below the array, starts at left-most position, moves
-        accordingly to the number in the input box below.
-      </p>
       <div class="flex flex-col md:flex-row place-items-center mx-auto w-72">
         <StyledInput
           key="binary-branch"

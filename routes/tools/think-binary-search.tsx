@@ -9,7 +9,7 @@ import { StyledDivider } from "../../components/UI/StyledDivider.tsx";
 //? Navigation Buttons to go back to /tools
 import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 //? Island to render the binary tree visually dynamically
-import { BinaryTreeArray } from "../../islands/tools/think-binary-search/BinaryTreeArray.tsx";
+import { BinaryTreeParent } from "../../islands/tools/think-binary-search/BinaryTreeParent.tsx"; 
 //? Middleware to handle the GET HTTP requests to this route
 import { thinkBinarySearchMiddleware } from "../../middleware/tools/__think-binary-search.ts";
 //? Type checking for route parameters
@@ -43,11 +43,7 @@ export default function Home(
             usage of the binary tree search will be the optimal way to find the
             number within the least number of attempts. Good luck!
           </p>
-          <BinaryTreeArray {...data} />
-          <p class="my-2">
-            Mock: Input box to select which number you want to divide the array
-            in.
-          </p>
+          <BinaryTreeParent {...data} />
           <StyledDivider />
           <p class="my-2">
             Mock animation: Once a number has been selected, the unchosen side
