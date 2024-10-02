@@ -71,7 +71,7 @@ export default function Home() {
             (2020).
           </p>
           <img
-            src="https://media.discordapp.net/attachments/576538316296421399/1125169376157519963/image.png?width=832&height=671"
+            src="https://iili.io/dppsj0Q.md.png"
             alt="Yura's port to mobile/desktop"
             class="my-4 mx-auto w-full"
           />
@@ -95,7 +95,7 @@ export default function Home() {
             all over again. It just doesn't feel like WebDev is meant to be.
           </p>
           <img
-            src="https://media.discordapp.net/attachments/576538316296421399/1125171715916443678/image.png?width=920&height=670"
+            src="https://iili.io/dppsOdB.png"
             alt="Trophy Place games page"
             class="my-4 mx-auto w-full"
           />
