@@ -11,7 +11,7 @@ import { GradientLink } from "../components/UI/GradientLink.tsx";
 import { NavigationButtons } from "../components/misc/NavigationButtons.tsx";
 
 const pictureYuriLink =
-  "https://media.discordapp.net/attachments/576538316296421399/1111343977736712232/23112022-IMG_0537.jpg?width=884&height=554";
+  "https://iili.io/29Dfzhb.jpg";
 
 export default function Home() {
   return (
