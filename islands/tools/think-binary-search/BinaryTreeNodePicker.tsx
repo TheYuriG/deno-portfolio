@@ -79,10 +79,11 @@ export function BinaryTreeNodePicker(
                 numbersWithDisabledStatus,
               ),
             );
-            setAttempts((cur) => cur++);
+            setAttempts((currentNumber) => currentNumber + 1);
           }}
         />
       </div>
+      <div class='mx-auto mt-4 mb-2 text-xl'>Attempts: {attempts}</div>
     </>
   );
 }
