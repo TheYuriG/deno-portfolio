@@ -16,6 +16,23 @@ function filterDisabledIndices(
 }
 
 /**
+ * Returns if the position is in the first or second half of an array.
+ * @param position Which index in the array the number is located.
+ * @param arraySize How many indices the array has.
+ * @returns a string that indicates in which half the number is located.
+ */
+function isSearchNumberIsGreaterOrLowerThanMidwayPoint(
+  position: number,
+  arraySize: number,
+) {
+  if (position >= arraySize / 2) {
+    return "greater";
+  } else {
+    return "lower";
+  }
+}
+
+/**
  * Given an `Array<NumberWithStatus>` and a `searchNumber`, scan the array and return if there are more indices lower than or greater than the `searchNumber`.
  * @param searchNumber The `number` to be used to search the array for the midway point.
  * @param arrayWithNumberAndDisabledProperties An `Array<NumberWithStatus>` to be searched through.
@@ -25,16 +42,6 @@ function findIfThereAreMoreIndicesGreaterOrLowerThanSearchNumber(
   searchNumber: number,
   arrayWithNumberAndDisabledProperties: Array<NumbersWithStatus>,
 ): "lower" | "greater" {
-  function isSearchNumberIsGreaterOrLowerThanMidwayPoint(
-    position: number,
-    arraySize: number,
-  ) {
-    if (position >= arraySize / 2) {
-      return "greater";
-    } else {
-      return "lower";
-    }
-  }
   const numbersOnlyArray: Array<number> = arrayWithNumberAndDisabledProperties
     .map((item) => item.number);
 
