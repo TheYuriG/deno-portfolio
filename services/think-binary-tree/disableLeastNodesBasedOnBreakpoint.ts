@@ -49,11 +49,12 @@ function findIfThereAreMoreIndicesGreaterOrLowerThanSearchNumber(
 
   let indicesLowerThanSearchNumber = 0;
   for (let i = 0; i < arraySize; i++) {
-    if (searchNumber > numbersOnlyArray[i]) {
+    if (searchNumber < numbersOnlyArray[i]) {
       break;
     }
     indicesLowerThanSearchNumber++;
   }
+
   return isSearchNumberIsGreaterOrLowerThanMidwayPoint(
     indicesLowerThanSearchNumber,
     arraySize,
@@ -73,6 +74,7 @@ function disableNodesGreaterThanOrLowerThanSearchNumber(
   arrayToDisable: Array<NumbersWithStatus>,
 ) {
   const updatedArrayToDisable = [...arrayToDisable];
+
   if (greaterOrLower === "lower") {
     for (let i = 0; i < updatedArrayToDisable.length; i++) {
       if (searchNumber < updatedArrayToDisable[i].number) {
