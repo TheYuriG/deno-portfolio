@@ -28,22 +28,17 @@ export function BinaryTreeNodePicker(
   const [treeNodeValidationStatus, setTreeNodeValidationStatus] = useState<
     validationStatus
   >(validationStatus.Unchanged);
-  const [[minTreeValue, maxTreeValue], setTreeMinMax] = useState<
-    [number, number]
-  >([
-    numbersWithDisabledStatus[0].number,
+  const firstTreeNode = numbersWithDisabledStatus[0].number;
+  const lastTreeNode =
     numbersWithDisabledStatus[numbersWithDisabledStatus.length - 1]
-      .number,
-  ]);
-  const [treeNode, setTreeNode] = useState(
-    numbersWithDisabledStatus[0].number,
-  );
+      .number;
+  const [treeNode, setTreeNode] = useState(firstTreeNode);
 
   return (
     <>
       <StyledSlider
-        min={minTreeValue.toString()}
-        max={maxTreeValue.toString()}
+        min={firstTreeNode.toString()}
+        max={lastTreeNode.toString()}
         value={treeNode.toString()}
         disabled={true}
       />
@@ -54,15 +49,15 @@ export function BinaryTreeNodePicker(
           inputType="number"
           label="Pick node"
           name="Tree Branch"
-          min={minTreeValue.toString()}
-          max={maxTreeValue.toString()}
+          min={firstTreeNode.toString()}
+          max={lastTreeNode.toString()}
           value={treeNode.toString()}
           inputFunction={(value) => setTreeNode(Number(value))}
           validationFunction={() => {
             const status = validateTreeNodeNumber(
               treeNode,
-              minTreeValue,
-              maxTreeValue,
+              firstTreeNode,
+              lastTreeNode,
             );
             setTreeNodeValidationStatus(status);
             return status;
@@ -83,7 +78,7 @@ export function BinaryTreeNodePicker(
           }}
         />
       </div>
-      <div class='mx-auto mt-4 mb-2 text-xl'>Attempts: {attempts}</div>
+      <div class="mx-auto mt-4 mb-2 text-xl">Attempts: {attempts}</div>
     </>
   );
 }
