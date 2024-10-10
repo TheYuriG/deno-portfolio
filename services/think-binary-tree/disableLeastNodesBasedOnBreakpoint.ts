@@ -72,7 +72,7 @@ function disableNodesGreaterThanOrLowerThanSearchNumber(
   greaterOrLower: "greater" | "lower",
   searchNumber: number,
   arrayToDisable: Array<NumbersWithStatus>,
-) {
+): [Array<NumbersWithStatus>, "greater" | "lower"] {
   const updatedArrayToDisable = [...arrayToDisable];
 
   if (greaterOrLower === "lower") {
@@ -90,7 +90,7 @@ function disableNodesGreaterThanOrLowerThanSearchNumber(
       updatedArrayToDisable[i].disabled = true;
     }
   }
-  return updatedArrayToDisable;
+  return [updatedArrayToDisable, greaterOrLower];
 }
 
 /**
@@ -102,7 +102,7 @@ function disableNodesGreaterThanOrLowerThanSearchNumber(
 export function disableLeastNodesBasedOnBreakpoint(
   searchNumber: number,
   arrayOfUniqueNumbers: Array<NumbersWithStatus>,
-): Array<NumbersWithStatus> {
+): [Array<NumbersWithStatus>, "lower" | "greater"] {
   const filteredArrayWithoutDisabledNumbers: Array<NumbersWithStatus> =
     filterDisabledIndices(arrayOfUniqueNumbers);
 
