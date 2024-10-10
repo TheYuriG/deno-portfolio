@@ -20,9 +20,17 @@ function validateTreeNodeNumber(input: number, min: number, max: number) {
 }
 
 export function BinaryTreeNodePicker(
-  { numbersWithDisabledStatus, setNumbersWithDisabledStatus }: {
-    numbersWithDisabledStatus: Array<NumbersWithStatus>; setNumbersWithDisabledStatus: (numbersWithDisabledStatus: Array<NumbersWithStatus>) => void
-  }
+  {
+    numbersWithDisabledStatus,
+    setNumbersWithDisabledStatus,
+    updateBinaryTreeDrawing,
+  }: {
+    numbersWithDisabledStatus: Array<NumbersWithStatus>;
+    setNumbersWithDisabledStatus: (
+      numbersWithDisabledStatus: Array<NumbersWithStatus>,
+    ) => void;
+    updateBinaryTreeDrawing: (addedNode: Array<"greater" | "lower">) => void;
+  },
 ) {
   const [attempts, setAttempts] = useState<number>(0);
   const [treeNodeValidationStatus, setTreeNodeValidationStatus] = useState<
@@ -68,12 +76,13 @@ export function BinaryTreeNodePicker(
           text="Select"
           classes="mt-2 md:mt-0 md:ml-2"
           onClickFunction={() => {
-            setNumbersWithDisabledStatus(
+            const [updatedArray, greaterOrLower] =
               disableLeastNodesBasedOnBreakpoint(
                 treeNode,
                 numbersWithDisabledStatus,
-              ),
-            );
+              );
+            setNumbersWithDisabledStatus(updatedArray);
+
             setAttempts((currentNumber) => currentNumber + 1);
           }}
         />

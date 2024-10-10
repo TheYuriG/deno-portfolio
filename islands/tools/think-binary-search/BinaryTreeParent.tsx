@@ -17,6 +17,9 @@ export function BinaryTreeParent(
   const [numbersWithDisabledStatus, setNumbersWithDisabledStatus] = useState(
     generateArrayOfUniqueNumbers(arraySize),
   );
+  const [binaryTreeDraw, setBinaryTreeDraw] = useState<
+    Array<"greater" | "lower">
+  >([]);
 
   return (
     <>
@@ -24,6 +27,7 @@ export function BinaryTreeParent(
       <BinaryTreeNodePicker
         numbersWithDisabledStatus={numbersWithDisabledStatus}
         setNumbersWithDisabledStatus={setNumbersWithDisabledStatus}
+        updateBinaryTreeDrawing={setBinaryTreeDraw}
       />
     </>
   );
