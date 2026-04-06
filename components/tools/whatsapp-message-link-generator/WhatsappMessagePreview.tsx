@@ -82,9 +82,7 @@ export function WhatsappMessagePreview(
       <div
         id="message-preview"
         class="w-full mt-2 mb-4 py-2 px-4 whitespace-pre-wrap custom-bo-ac rounded-xl"
-      >
-        {...previewJSX}
-      </div>
+        children={previewJSX} />
     </div>
   );
 }

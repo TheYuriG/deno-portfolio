@@ -84,10 +84,7 @@ export default function ExpressionVisualizationList(
   //? Render a list with all Expressions to be displayed
   return (
     <>
-      <div class="flex flex-col w-full items-center">
-        {/* Generate steps dynamically */}
-        {...visualizationListElements}
-      </div>
+      <div class="flex flex-col w-full items-center" children={visualizationListElements} />
       {
         /*//? Display the button to save to database if there are visualization steps (no point in saving nothing),
         //? a deletion item function was provided (won't be provided on view mode) and

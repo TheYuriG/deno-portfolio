@@ -6,19 +6,19 @@ export function BinaryTreeArray(
     numbersWithDisabledStatus: Array<NumbersWithStatus>;
   },
 ) {
+  const numbersWithDisabledStatusElements = numbersWithDisabledStatus.map((index) => (
+    <span
+      class={"text-2xl custom-tx-nc mx-2" +
+        (index.disabled ? " opacity-60" : "")}
+    >
+      {index.number}
+    </span>
+  ))
+
   return (
     <div class="flex flex-1 place-items-center w-full -px-2">
       <span class="custom-tx-ac text-[7rem]">[</span>
-      <div class="flex flex-wrap place-content-between gap-1 -mx-4">
-        {...numbersWithDisabledStatus.map((index) => (
-          <span
-            class={"text-2xl custom-tx-nc mx-2" +
-              (index.disabled ? " opacity-60" : "")}
-          >
-            {index.number}
-          </span>
-        ))}
-      </div>
+      <div class="flex flex-wrap place-content-between gap-1 -mx-4" children={numbersWithDisabledStatusElements} />
       <span class="custom-tx-ac text-[7rem]">]</span>
     </div>
   );
