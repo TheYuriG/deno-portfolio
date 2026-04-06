@@ -2,8 +2,7 @@
 export function StarryNight() {
   return (
     <div
-      class="-ml-4 -mt-4 rounded-2xl stars-wrapper custom-tr-bg"
-      style="width: calc(100dvw - 2 * 1.65rem); max-height: calc(100dvh - 2 * 1.65rem);"
+      class="relative -z-1 -ml-10.5 -mt-10.5 stars-wrapper custom-tr-bg max-w-screen max-h-screen overflow-hidden"
     >
       {/* Group 1 of stars */}
       <svg class="stars" width="100%" height="100%" preserveAspectRatio="none">
