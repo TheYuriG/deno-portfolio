@@ -1,5 +1,4 @@
 //? To know what is the current route
-import { Handlers } from "$fresh/server.ts";
 //? Import the Expense type to typecast the data we get from fetchExpenses()
 import type { Expense } from "../../types/component-properties/projects/expenses-tracker/Expense.ts";
 //? Head component with all Meta tags pre-set
@@ -12,6 +11,7 @@ import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 import ExpensesTracker from "../../islands/projects/expenses-tracker/ExpensesTracker.tsx";
 //? Import middleware responsible for pulling expenses tracked
 import { expensesTrackerMiddleware } from "../../middleware/projects/__expenses-tracker.ts";
+import { Handlers } from "fresh/compat";
 
 //? Runs before the render function to fetch the expenses from the
 //? database, then pushes the data into the rendered page function

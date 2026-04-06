@@ -1,6 +1,6 @@
-//? Import handlers to pull the delivery timestamp from the URL
-import { Handlers } from "$fresh/server.ts";
+import { Handlers } from "fresh/compat";
 
+//? Import handlers to pull the delivery timestamp from the URL
 //? Renders a Not Found page if no timestamp is present on the URL,
 //? renders success page otherwise
 export const foodOrderSuccessMiddleware: Handlers = {

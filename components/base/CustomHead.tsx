@@ -1,5 +1,5 @@
 //? HTML Head to import CSS and fonts
-import { Head } from "$fresh/runtime.ts";
+import { Head } from "fresh/runtime";
 import { toChildArray } from "preact";
 import { JSX } from "preact/jsx-runtime";
 

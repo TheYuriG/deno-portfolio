@@ -1,5 +1,5 @@
 //? To know what is the current route
-import { Handlers } from "$fresh/server.ts";
+import { Handlers } from "fresh/compat";
 //? Head component with all Meta tags pre-set
 import { CustomHead } from "../../../components/base/CustomHead.tsx";
 //? Create blog content inside Base component

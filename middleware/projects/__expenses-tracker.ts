@@ -1,5 +1,4 @@
 //? Import handlers to create a middleware function
-import { Handlers } from "$fresh/server.ts";
 //? HTTP response status codes
 import { HttpStatusCodes } from "../../data/misc/HttpStatusCodes.ts";
 //? Database
@@ -10,6 +9,7 @@ import fetchExpenses from "../../services/expenses-tracker/fetchExpenses.ts";
 import type { Expense } from "../../types/component-properties/projects/expenses-tracker/Expense.ts";
 //? Import database error instance to check for errors
 import FetchDataError from "../../types/error/FetchDataError.ts";
+import { Handlers } from "fresh/compat";
 
 export const expensesTrackerMiddleware: Handlers = {
   //? Attempts to pull expenses from the database, returns mock expense otherwise

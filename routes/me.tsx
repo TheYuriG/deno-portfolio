@@ -10,8 +10,7 @@ import { GradientLink } from "../components/UI/GradientLink.tsx";
 //? Navigation Buttons to go back to the previous page or to the next article
 import { NavigationButtons } from "../components/misc/NavigationButtons.tsx";
 
-const pictureYuriLink =
-  "https://iili.io/29Dfzhb.jpg";
+const pictureYuriLink = "https://iili.io/29Dfzhb.jpg";
 
 export default function Home() {
   return (

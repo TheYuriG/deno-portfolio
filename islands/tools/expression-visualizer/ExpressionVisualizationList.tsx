@@ -96,14 +96,14 @@ export default function ExpressionVisualizationList(
       }
       {visualizationList.length > 0 && deleteItem !== undefined &&
         displaySubmitForm === false && (
-        <StyledButton
-          text="Save expression?"
-          classes="my-2"
-          onClickFunction={() => {
-            toggleDisplaySubmitForm(true);
-          }}
-        />
-      )}
+          <StyledButton
+            text="Save expression?"
+            classes="my-2"
+            onClickFunction={() => {
+              toggleDisplaySubmitForm(true);
+            }}
+          />
+        )}
       {
         /*//? Display the form if the button to display the form was clicked and
         //? the user didn't remove the steps after clicking it */

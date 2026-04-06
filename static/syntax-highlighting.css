@@ -2,71 +2,71 @@
 
 /* Applies to all code blocks */
 .shj-lang-js {
-    white-space: pre-wrap;
-    /* light orange background */
-    background: rgb(255, 246, 239);
-    /* black default text color */
-    color: #112;
-    line-height: 1.3em;
+  white-space: pre-wrap;
+  /* light orange background */
+  background: rgb(255, 246, 239);
+  /* black default text color */
+  color: #112;
+  line-height: 1.3em;
 }
 
 /* Add large margin and padding only to div elements with the highlight class */
 div.shj-lang-js {
-    margin: 1em 0;
-    padding: 1em;
-    border-radius: 1em;
-    box-shadow: 0 0 1em 0.3em grey;
+  margin: 1em 0;
+  padding: 1em;
+  border-radius: 1em;
+  box-shadow: 0 0 1em 0.3em grey;
 }
 
 /* Comments */
 .shj-syn-cmnt {
-    font-style: italic
+  font-style: italic;
 }
 
 /* Keywords syntax highlighting */
 .shj-syn-err,
 /* error, keyword */
 .shj-syn-kwd {
-    color: #e16
+  color: #e16;
 }
 
 .shj-syn-num,
 /* syntax number, class */
 .shj-syn-class {
-    color: #f60
+  color: #f60;
 }
 
 .shj-numbers,
 /* number, comment */
 .shj-syn-cmnt {
-    color: #999
+  color: #999;
 }
 
 .shj-syn-insert,
 /* strings */
 .shj-syn-str {
-    color: #7d8
+  color: #7d8;
 }
 
 .shj-syn-bool {
-    /* boolean */
-    color: #3bf
+  /* boolean */
+  color: #3bf;
 }
 
 .shj-syn-type,
 /* types, mathematical operators */
 .shj-syn-oper {
-    color: #5af
+  color: #5af;
 }
 
 .shj-syn-section,
 /* functions */
 .shj-syn-func {
-    color: #84f
+  color: #84f;
 }
 
 .shj-syn-deleted,
 /* variables */
 .shj-syn-var {
-    color: #f44
+  color: #f44;
 }

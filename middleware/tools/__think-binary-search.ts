@@ -1,12 +1,21 @@
-//? Handlers to manage HTTP requests
-import { Handlers } from "$fresh/server.ts";
 //? Type checking
 import { DifficultyOptionsType } from "../../types/component-properties/tools/think-binary-search/DifficultyOptions.ts";
 
 //? Export a middleware responsible for handling incoming GET requests
-export const thinkBinarySearchMiddleware: Handlers = {
+export const thinkBinarySearchMiddleware = {
   //? If the user is trying to load the page, pull the parameters and display it
-  GET(req, ctx) {
+  GET(
+    req: { url: string | URL },
+    ctx: {
+      render: (
+        arg0: {
+          arraySize: 31 | 63 | 127;
+          arrayOrder: "ordered" | "uneven" | "random";
+          arrayAssists: "both" | "single" | "none";
+        },
+      ) => any;
+    },
+  ) {
     //? Pull the difficulty level from the URL parameters
     let difficulty = Number(new URL(req.url).searchParams.get("difficulty"));
 

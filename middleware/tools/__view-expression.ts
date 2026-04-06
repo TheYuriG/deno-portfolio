@@ -1,6 +1,4 @@
 //? Import handlers to manage HTTP methods for GET/POST to /tools/view-expression/[parameter]
-import { Handlers } from "$fresh/server.ts";
-
 //? Slugify string
 import { slugify } from "../../services/slugifyString.ts";
 //? Payload validation function
@@ -14,6 +12,7 @@ import { saveExpressionToKv } from "../../data/tools/expression-visualizer/saveE
 
 //? Types
 import type { savedVisualization } from "../../types/component-properties/tools/expression-visualizer/SavedVisualization.ts";
+import { Handlers } from "fresh/compat";
 
 //? Export a middleware responsible for handling incoming GET/POST requests to /tools/view-expression
 export const viewExpressionMiddleware: Handlers = {

@@ -1,9 +1,9 @@
 //? Import handlers to manage HTTP methods for GET/POST to /tools/syntax-highlight
-import { Handlers } from "$fresh/server.ts";
 //? HTTP response status codes
 import { HttpStatusCodes } from "../../data/misc/HttpStatusCodes.ts";
 //? Import service that handles saving data to KV and then deleting them later
 import { manageHighlightTextOnKv } from "../../services/syntax-highlight/manage-highlight-text-on-KV.ts";
+import { Handlers } from "fresh/compat";
 
 //? Export a middleware responsible for handling incoming GET/POST requests to /tools/syntax-highlight
 export const syntaxHighlightMiddleware: Handlers = {
