@@ -21,13 +21,10 @@ export default function Home() {
       </CustomHead>
       {/* Starry Night background <3 */}
       <StarryNight />
-      {/* Base page layout with theme switching and footer outside of accent box */}
-      <Base>
-        {/* Content with greeting, name, workplace */}
-        <HomeContent />
-        {/* Navigation menu to other routes */}
-        <HomeNavigationMenu />
-      </Base>
+      {/* Content with greeting, name, workplace */}
+      <HomeContent />
+      {/* Navigation menu to other routes */}
+      <HomeNavigationMenu />
     </>
   );
 }

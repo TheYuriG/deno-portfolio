@@ -49,51 +49,49 @@ export default function Home(
           }}
         />
       </CustomHead>
-      <Base>
-        <NavigationButtons
-          back={{
-            title: "Create another highlighted text",
-            link: "/tools/syntax-highlight",
-          }}
+      <NavigationButtons
+        back={{
+          title: "Create another highlighted text",
+          link: "/tools/syntax-highlight",
+        }}
+      />
+      <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
+        {/* Title header */}
+        <StyledHeader title="Highlighted Code" />
+        {/* Text that will be syntax highlighted */}
+        <HighlightedCode textToHighlight={text} />
+        {/* Clock to text expiration */}
+        <DigitalTimer
+          expiresAt={expiresAt}
+          expiredText="EXPIRED"
+          preppendedText="Expires in "
+          classes="ml-auto text-lg"
+          styles="color: red;"
         />
-        <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
-          {/* Title header */}
-          <StyledHeader title="Highlighted Code" />
-          {/* Text that will be syntax highlighted */}
-          <HighlightedCode textToHighlight={text} />
-          {/* Clock to text expiration */}
-          <DigitalTimer
-            expiresAt={expiresAt}
-            expiredText="EXPIRED"
-            preppendedText="Expires in "
-            classes="ml-auto text-lg"
-            styles="color: red;"
-          />
-          {/* Warning about CSS */}
-          <p class="my-4">
-            You will need to also use the proper CSS classes to display the
-            highlighting, you can click the box below to copy all the CSS
-            classes you might need. You should also feel free to tweak the
-            styling as you see fit for your own use case.
-          </p>
-          <CopyTextAreaToClipboard
-            classes="w-full"
-            content={syntaxHighlightClassesStyles}
-          />
-          <p class="my-4">
-            Ideally, those classes will be built into whatever post-processor
-            you use (like PostCSS) so the unused styles can be pruned to save
-            your visitors some bytes of bandwidth. If you use{" "}
-            <span class="shl-inline">Twind v0</span>, you can extend the plugins
-            in your <span class="shl-inline">twind.config.ts</span>{" "}
-            file to have all of that managed for you automatically.
-          </p>
-          <CopyTextAreaToClipboard
-            classes="w-full"
-            content={syntaxHighlightTwindConfig}
-          />
-        </section>
-      </Base>
+        {/* Warning about CSS */}
+        <p class="my-4">
+          You will need to also use the proper CSS classes to display the
+          highlighting, you can click the box below to copy all the CSS
+          classes you might need. You should also feel free to tweak the
+          styling as you see fit for your own use case.
+        </p>
+        <CopyTextAreaToClipboard
+          classes="w-full"
+          content={syntaxHighlightClassesStyles}
+        />
+        <p class="my-4">
+          Ideally, those classes will be built into whatever post-processor
+          you use (like PostCSS) so the unused styles can be pruned to save
+          your visitors some bytes of bandwidth. If you use{" "}
+          <span class="shl-inline">Twind v0</span>, you can extend the plugins
+          in your <span class="shl-inline">twind.config.ts</span>{" "}
+          file to have all of that managed for you automatically.
+        </p>
+        <CopyTextAreaToClipboard
+          classes="w-full"
+          content={syntaxHighlightTwindConfig}
+        />
+      </section>
     </>
   );
 }

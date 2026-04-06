@@ -1,7 +1,5 @@
 //? Import CustomHead with appropriate metadata
 import { CustomHead } from "../../components/base/CustomHead.tsx";
-//? Create blog content inside Base component
-import { Base } from "../../components/base/Base.tsx";
 //? Default styled header
 import { StyledHeader } from "../../components/UI/StyledHeader.tsx";
 //? Import a Card component that automatically creates
@@ -19,49 +17,46 @@ export default function Home() {
         link="https://www.theyurig.com/toys"
       >
       </CustomHead>
-      {/* Base page layout with theme switching and footer outside of accent box */}
-      <Base>
-        <NavigationButtons />
-        <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
-          {/* Title header */}
-          <StyledHeader title="Toys" />
-          {/* Dropdown with explanation about what is this page */}
-          <details class="w-full">
-            <p class="mb-4">
-              This is where I save various curiosity projects I've done from
-              resources online. Some toys might have links to a blog post I've
-              made with information about my learning experience, in case you
-              are also curious to know more and want to try your hand.
-            </p>
-          </details>
-          {/* Row of toys */}
-          <div class="flex max-w-full overflow-auto styled-scrollbar">
-            {/* Spinners */}
-            <CarouselCard link="/toys/spinners" title="Spinners">
-              <div class="relative text-4xl select-none space-y-4">
-                <div
-                  class="animate-x-spin hover:pause"
-                  title="Spinning on the X axis"
-                >
-                  🌀
-                </div>
-                <div
-                  class="animate-y-spin hover:pause"
-                  title="Spinning on the Y axis"
-                >
-                  🌀
-                </div>
-                <div
-                  class="animate-z-spin hover:pause"
-                  title="Spinning on the Z axis"
-                >
-                  🌀
-                </div>
+      <NavigationButtons />
+      <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
+        {/* Title header */}
+        <StyledHeader title="Toys" />
+        {/* Dropdown with explanation about what is this page */}
+        <details class="w-full">
+          <p class="mb-4">
+            This is where I save various curiosity projects I've done from
+            resources online. Some toys might have links to a blog post I've
+            made with information about my learning experience, in case you
+            are also curious to know more and want to try your hand.
+          </p>
+        </details>
+        {/* Row of toys */}
+        <div class="flex max-w-full overflow-auto styled-scrollbar">
+          {/* Spinners */}
+          <CarouselCard link="/toys/spinners" title="Spinners">
+            <div class="relative text-4xl select-none space-y-4">
+              <div
+                class="animate-x-spin hover:pause"
+                title="Spinning on the X axis"
+              >
+                🌀
               </div>
-            </CarouselCard>
-          </div>
-        </article>
-      </Base>
+              <div
+                class="animate-y-spin hover:pause"
+                title="Spinning on the Y axis"
+              >
+                🌀
+              </div>
+              <div
+                class="animate-z-spin hover:pause"
+                title="Spinning on the Z axis"
+              >
+                🌀
+              </div>
+            </div>
+          </CarouselCard>
+        </div>
+      </article>
     </>
   );
 }

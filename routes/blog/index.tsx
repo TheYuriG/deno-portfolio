@@ -1,7 +1,5 @@
 //? Head component with all Meta tags pre-set
 import { CustomHead } from "../../components/base/CustomHead.tsx";
-//? Lateral text with theme switcher
-import { Base } from "../../components/base/Base.tsx";
 //? Navigation Buttons to go back to the previous page or to the next page (optional)
 import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 //? Import the template for Blog Post summaries
@@ -34,6 +32,22 @@ const createdPosts: Array<BlogPostSummaryProperties> = [
   createVoiceChannelPost,
   createTextChannelPost,
 ];
+
+const createdPostsList = <section
+  class="flex flex-col h-full w-full max-w-4xl mx-auto items-center"
+>
+  {
+    createdPosts.map((post) => (
+      <BlogPostSummary
+        shortSummary={post.shortSummary}
+        date={post.date}
+        link={post.link}
+        title={post.title}
+        key={post.link}
+      />
+    ))
+  }
+</section>
 
 export default function Home() {
   return (

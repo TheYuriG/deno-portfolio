@@ -29,24 +29,22 @@ export default function Home(
         link={"https://www.theyurig.com/tools/view-expression/" + slug}
       >
       </CustomHead>
-      <Base>
-        <NavigationButtons
-          back={{
-            title: "Create your own expression visualizer",
-            link: "/tools/expression-visualizer",
-          }}
-        />
-        <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
-          {/* Expression name */}
-          <StyledHeader title={title} />
-          <p class="text-justify my-4 self-start">{description}</p>
+      <NavigationButtons
+        back={{
+          title: "Create your own expression visualizer",
+          link: "/tools/expression-visualizer",
+        }}
+      />
+      <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
+        {/* Expression name */}
+        <StyledHeader title={title} />
+        <p class="text-justify my-4 self-start">{description}</p>
 
-          {/* Text that will be syntax highlighted */}
-          <ExpressionVisualizationList
-            visualizationList={expressions}
-          />
-        </section>
-      </Base>
+        {/* Text that will be syntax highlighted */}
+        <ExpressionVisualizationList
+          visualizationList={expressions}
+        />
+      </section>
     </>
   );
 }

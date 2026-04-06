@@ -19,19 +19,16 @@ export default function Home() {
         link="https://www.theyurig.com/projects/food-order/checkout"
       >
       </CustomHead>
-      {/* Base page layout with theme switching and footer outside of accent box */}
-      <Base>
-        <NavigationButtons
-          back={{
-            title: "Add more items to your cart",
-            link: "/projects/food-order",
-          }}
-        />
-        <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
-          <StyledHeader title="Checkout" />
-          <FoodOrderCheckout />
-        </section>
-      </Base>
+      <NavigationButtons
+        back={{
+          title: "Add more items to your cart",
+          link: "/projects/food-order",
+        }}
+      />
+      <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
+        <StyledHeader title="Checkout" />
+        <FoodOrderCheckout />
+      </section>
     </>
   );
 }

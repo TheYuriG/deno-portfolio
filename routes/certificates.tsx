@@ -161,14 +161,11 @@ export default function Home() {
       >
         <script defer src={"./i18nCertificateTimestamps.js"} />
       </CustomHead>
-      {/* Base page layout with theme switching and footer outside of accent box */}
-      <Base>
-        <NavigationButtons />
-        <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
-          <StyledHeader title="Certificates" />
-          {...certificatesArray.reverse()}
-        </article>
-      </Base>
+      <NavigationButtons />
+      <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
+        <StyledHeader title="Certificates" />
+        {...certificatesArray.reverse()}
+      </article>
     </>
   );
 }

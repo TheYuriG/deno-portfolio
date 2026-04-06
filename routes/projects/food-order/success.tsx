@@ -27,31 +27,28 @@ export default function Home({ data: deliveryTimestamp }: { data: string }) {
       >
         <link rel="stylesheet" href="/digital-clock.css" />
       </CustomHead>
-      {/* Base page layout with theme switching and footer outside of accent box */}
-      <Base>
-        <NavigationButtons
-          back={{
-            title: "Order again?",
-            link: "/projects/food-order",
-          }}
+      <NavigationButtons
+        back={{
+          title: "Order again?",
+          link: "/projects/food-order",
+        }}
+      />
+      <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
+        {/* Order delivery notice */}
+        <StyledHeader title="Your order is on the way!" />
+        {/* Delivery truck icon */}
+        <DeliveryIcon
+          iconHeight="10em"
+          iconWidth="10em"
+          iconFillColor="var(--accent-color)"
         />
-        <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
-          {/* Order delivery notice */}
-          <StyledHeader title="Your order is on the way!" />
-          {/* Delivery truck icon */}
-          <DeliveryIcon
-            iconHeight="10em"
-            iconWidth="10em"
-            iconFillColor="var(--accent-color)"
-          />
-          {/* Estimated time until delivery */}
-          <DigitalTimer
-            preppendedText="Time until estimated arrival: "
-            expiresAt={Number(deliveryTimestamp)}
-            expiredText="Did you receive your meal?"
-          />
-        </section>
-      </Base>
+        {/* Estimated time until delivery */}
+        <DigitalTimer
+          preppendedText="Time until estimated arrival: "
+          expiresAt={Number(deliveryTimestamp)}
+          expiredText="Did you receive your meal?"
+        />
+      </section>
     </>
   );
 }

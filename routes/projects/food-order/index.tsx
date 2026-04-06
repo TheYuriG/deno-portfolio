@@ -33,16 +33,13 @@ export default function Home(
         link="https://www.theyurig.com/projects/food-order"
       >
       </CustomHead>
-      {/* Base page layout with theme switching and footer outside of accent box */}
-      <Base>
-        <NavigationButtons
-          back={{ title: "Return to projects overview", link: "/projects" }}
-        />
-        <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
-          {/* Page content */}
-          <FoodOrder foods={foods} />
-        </section>
-      </Base>
+      <NavigationButtons
+        back={{ title: "Return to projects overview", link: "/projects" }}
+      />
+      <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
+        {/* Page content */}
+        <FoodOrder foods={foods} />
+      </section>
     </>
   );
 }

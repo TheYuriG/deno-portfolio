@@ -1,7 +1,10 @@
 //? Exports the Starry Night background exclusive to the Home Page
 export function StarryNight() {
   return (
-    <div class="stars-wrapper custom-tr-bg">
+    <div
+      class="-ml-4 -mt-4 rounded-2xl stars-wrapper custom-tr-bg"
+      style="width: calc(100dvw - 2 * 1.65rem); max-height: calc(100dvh - 2 * 1.65rem);"
+    >
       {/* Group 1 of stars */}
       <svg class="stars" width="100%" height="100%" preserveAspectRatio="none">
         <circle class="star" cx="30.62%" cy="54.5%" r="1"></circle>

@@ -20,17 +20,14 @@ export default function ErrorPage(props: PageProps) {
             link="https://www.theyurig.com/404"
           >
           </CustomHead>
-          {/* Base page layout with theme switching and footer outside of accent box */}
-          <Base>
-            <NavigationButtons />
-            <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
-              <StyledHeader title="Page not found!" />
-              <p class="my-2 text-justify">
-                Hi there! Seems like you have reached a page that doesn't exist
-                (...yet?). 🤔
-              </p>
-            </section>
-          </Base>
+          <NavigationButtons />
+          <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
+            <StyledHeader title="Page not found!" />
+            <p class="my-2 text-justify">
+              Hi there! Seems like you have reached a page that doesn't exist
+              (...yet?). 🤔
+            </p>
+          </section>
         </>
       );
     }
@@ -43,16 +40,13 @@ export default function ErrorPage(props: PageProps) {
           link="https://www.theyurig.com/"
         >
         </CustomHead>
-        {/* Base page layout with theme switching and footer outside of accent box */}
-        <Base>
-          <NavigationButtons />
-          <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
-            <StyledHeader title="An internal server error occurred!" />
-            <p class="my-2 text-justify">
-              Something bad happened internally! Sorry about that. 🤒
-            </p>
-          </section>
-        </Base>
+        <NavigationButtons />
+        <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
+          <StyledHeader title="An internal server error occurred!" />
+          <p class="my-2 text-justify">
+            Something bad happened internally! Sorry about that. 🤒
+          </p>
+        </section>
       </>
     );
   }
