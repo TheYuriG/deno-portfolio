@@ -1,1 +1,404 @@
 @import "tailwindcss";
+@import "../static/digital-clock.css";
+@import "../static/spinners.css";
+@import "../static/starry-night.css";
+@import "../static/syntax-highlighting.css";
+@import "../static/animations.css";
+
+/* Generated CSS classes from Twind plugins */
+
+.styled-scrollbar::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    outline: 2px solid var(--accent-color);
+    outline-offset: -0.1rem;
+    border-radius: 0.3rem;
+}
+
+.styled-scrollbar::-webkit-scrollbar {
+    width: 0.8em;
+}
+
+.styled-radio {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--base-color);
+    margin: 0;
+    font: inherit;
+    color: var(--neutral-color);
+    width: 0.9em;
+    height: 0.9em;
+    border: 0.15em solid var(--neutral-color);
+    border-radius: 50%;
+    margin-right: 0.5em;
+    transform: translateY(0.3em);
+    display: grid;
+    place-content: center;
+}
+
+.styled-radio::before {
+    content: "";
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 0.2s transform ease-in-out;
+    box-shadow: inset 1em 1em var(--accent-color);
+}
+
+.styled-radio:checked::before {
+    transform: scale(1);
+}
+
+.styled-radio:focus {
+    outline: max(2px, 0.15em) solid var(--accent-color);
+    outline-offset: max(2px, 0.15em);
+}
+
+.styled-checkbox {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--base-color);
+    margin: 0;
+    font: inherit;
+    color: var(--neutral-color);
+    width: 0.9em;
+    height: 0.9em;
+    border: 0.15em solid var(--neutral-color);
+    border-radius: 0.2em;
+    margin-right: 0.5em;
+    transform: translateY(0.3em);
+    display: grid;
+    place-content: center;
+}
+
+.styled-checkbox::before {
+    content: "";
+    width: 0.5em;
+    height: 0.5em;
+    transform: scale(0);
+    transition: 0.2s transform ease-in-out;
+    box-shadow: inset 1em 1em var(--accent-color);
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.styled-checkbox:checked::before {
+    transform: scale(1);
+}
+
+.styled-checkbox:focus {
+    outline: max(2px, 0.15em) solid var(--accent-color);
+    outline-offset: max(2px, 0.15em);
+}
+
+.styled-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--accent-color);
+    width: 100%;
+    height: 0.75rem;
+    margin: 1rem 0 1rem 0;
+    outline: none;
+    border-radius: 1.5em;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+}
+
+.styled-slider:hover {
+    opacity: 1;
+}
+
+.styled-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0.75rem;
+    height: 2rem;
+    border-radius: 1.5rem;
+    background: var(--neutral-color);
+    cursor: pointer;
+}
+
+.styled-slider::-moz-slider-thumb {
+    width: 0.75rem;
+    height: 2rem;
+    border-radius: 1.5rem;
+    background: var(--neutral-color);
+    cursor: pointer;
+}
+
+.styled-date::-webkit-calendar-picker-indicator {
+    background-color: white;
+    padding: 0.3em;
+    cursor: pointer;
+    border-radius: 0.25em;
+}
+
+.transform-center {
+    transform: translate(-50%, -50%);
+}
+
+.backdrop-blur {
+    backdrop-filter: blur(0.2em);
+}
+
+.f-as {
+    font-family: 'Alfa Slab One', cursive;
+}
+
+.greek-list {
+    list-style-type: lower-greek;
+    align-self: flex-start;
+}
+
+.greek-list>li::marker {
+    transition: color 0.5s;
+}
+
+.greek-list>li:hover::marker {
+    color: var(--base-color);
+}
+
+.custom-bo-ac {
+    border: 2px solid var(--accent-color);
+}
+
+.custom-bo-bc {
+    border: 2px solid var(--base-color);
+}
+
+.custom-bo-nc {
+    border: 2px solid var(--neutral-color);
+}
+
+.custom-sh-ac {
+    box-shadow: 0.1em 0.1em 0.3em var(--accent-color);
+}
+
+.custom-sh-bc {
+    box-shadow: 0.1em 0.1em 0.3em var(--base-color);
+}
+
+.custom-sh-nc {
+    box-shadow: 0.1em 0.1em 0.3em var(--neutral-color);
+}
+
+.custom-tx-ac {
+    color: var(--accent-color);
+}
+
+.custom-tx-bc {
+    color: var(--base-color);
+}
+
+.custom-tx-nc {
+    color: var(--neutral-color);
+}
+
+.custom-placeholder-ac::placeholder {
+    color: var(--accent-color);
+}
+
+.custom-placeholder-bc::placeholder {
+    color: var(--base-color);
+}
+
+.custom-placeholder-nc::placeholder {
+    color: var(--neutral-color);
+}
+
+.custom-bg-ac {
+    background-color: var(--accent-color);
+}
+
+.custom-bg-bc {
+    background-color: var(--base-color);
+}
+
+.custom-bg-nc {
+    background-color: var(--neutral-color);
+}
+
+.custom-tr-h {
+    transition: height 0.5s ease-in-out;
+}
+
+.custom-tr-ml {
+    transition: margin-left 0.5s ease-in-out;
+}
+
+.custom-tr-tx {
+    transition: color 0.9s ease-in-out;
+}
+
+.custom-tr-bg {
+    transition: background-color 0.8s ease-in-out;
+}
+
+.custom-tr-bo {
+    transition: border 0.6s ease-in-out;
+}
+
+.custom-tr-fi {
+    transition: fill 0.9s ease-in-out;
+}
+
+.custom-tr-wfi {
+    transition: width 0.7s ease-in-out;
+}
+
+.custom-tr-wfo {
+    transition: width 0.7s ease-in-out;
+}
+
+.custom-quote {
+    quotes: none;
+    margin-left: 1em;
+    padding: 0.5em 1em 0.5em 1em;
+    background-color: rgb(255, 246, 239);
+    color: #112;
+    box-shadow: 0 0 1em 0.3em grey;
+    border-left: 0.25em solid var(--accent-color);
+    border-radius: 0.25em;
+}
+
+.custom-button-ac {
+    transition: box-shadow 0.4s ease-in-out, transform 0.4s ease-in-out, color 0.9s ease-in-out, background-color 0.8s ease-in-out, border 0.6s ease-in-out;
+}
+
+.custom-button-ac:focus,
+.custom-button-ac:hover {
+    box-shadow: 0em 0.15em 0.1em var(--neutral-color);
+    transform: translateY(-0.15em);
+}
+
+.custom-button-st {
+    box-shadow: 0.1em 0.2em var(--accent-color);
+    text-shadow: 0.05em 0.05em 0 var(--accent-color);
+    transition: background-color 0.8s ease-in-out, color 0.9s, box-shadow 0.4s, border 0.8s, text-shadow 0.4s;
+}
+
+.custom-button-st:focus,
+.custom-button-st:hover {
+    box-shadow: 0.1em 0.2em var(--neutral-color);
+    text-shadow: 0.05em 0.05em 0 var(--neutral-color);
+}
+
+.custom-underline-gradient {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    transition: color ease-in-out 0.5s;
+}
+
+.custom-underline-gradient:before {
+    content: '';
+    position: absolute;
+    bottom: -0.05em;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(111.3deg, #9c27b0 9.6%, #00bcd4 93.6%);
+}
+
+.custom-underline-dotted {
+    text-underline-offset: 0.2em;
+    text-decoration: underline dotted var(--neutral-color) 0.1em;
+    transition: text-underline-offset 600ms, text-decoration 600ms, color 600ms;
+}
+
+.custom-underline-dotted:hover {
+    text-decoration: underline solid var(--accent-color) 0.1em;
+    text-underline-offset: 0.3em;
+}
+
+.custom-underline-thick {
+    transition: color 0.5s ease-in-out;
+    text-decoration-color: var(--neutral-color);
+    margin-bottom: 0.2em;
+    line-height: 1;
+}
+
+.custom-underline-thick:hover {
+    color: var(--accent-color);
+    text-decoration-line: underline;
+    text-decoration-skip-ink: none;
+    text-underline-offset: -0.2em;
+    text-decoration-thickness: 0.3em;
+}
+
+.custom-font-scale-largest {
+    font-size: clamp(2rem, 4dvw, 4rem);
+}
+
+.custom-font-scale-large {
+    font-size: clamp(1.5rem, 3dvw, 3rem);
+}
+
+.custom-font-scale-big {
+    font-size: clamp(1.25rem, 2.5dvw, 2.5rem);
+}
+
+.shl-inline {
+    white-space: pre-wrap;
+    background: rgb(255, 246, 239);
+    color: #112;
+    line-height: 1.3em;
+    margin: 0;
+    padding: 0 0.5em;
+    display: inline-block;
+    border-radius: 0.5em;
+}
+
+.shl-block {
+    white-space: pre-wrap;
+    background-color: rgb(255, 246, 239);
+    color: #112;
+    line-height: 1.3em;
+    margin: 1em 0;
+    padding: 1em;
+    border-radius: 1em;
+    box-shadow: 0 0 1em 0.3em grey;
+}
+
+.shl-cmnt {
+    font-style: italic;
+    color: #999;
+}
+
+.shl-err,
+.shl-kwd {
+    color: #e16;
+}
+
+.shl-num,
+.shl-class {
+    color: #f60;
+}
+
+.shl-numbers {
+    color: #999;
+}
+
+.shl-insert,
+.shl-str {
+    color: #7d8;
+}
+
+.shl-bool {
+    color: #3bf;
+}
+
+.shl-type,
+.shl-oper {
+    color: #5af;
+}
+
+.shl-section,
+.shl-func {
+    color: #84f;
+}
+
+.shl-deleted,
+.shl-var {
+    color: #f44;
+}

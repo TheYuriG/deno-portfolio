@@ -1,0 +1,172 @@
+/* Animations and Keyframes recreated from twind.config.ts */
+
+/* Keyframes */
+
+/* Waving animation for hello emoji */
+@keyframes waving {
+  0% {
+    transform: translate(10%, 0%) rotate(60deg);
+  }
+
+  100% {
+    transform: translate(-10%, 10%) rotate(0deg);
+  }
+}
+
+/* Blinking animation */
+@keyframes blinking {
+
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Loading spinner animation */
+@keyframes loading-spinner {
+  0% {
+    stroke-dasharray: 1, 98;
+    stroke-dashoffset: -105;
+  }
+
+  50% {
+    stroke-dasharray: 80, 15;
+    stroke-dashoffset: -160;
+  }
+
+  100% {
+    stroke-dasharray: 1, 98;
+    stroke-dashoffset: -300;
+  }
+}
+
+/* Slide from bottom to top */
+@keyframes slide-top {
+  0% {
+    opacity: 0;
+    transform: translateY(5em);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide from left to right */
+@keyframes slide-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-3em);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Rotates on X axis */
+@keyframes x-rotation {
+  0% {
+    transform: rotateX(0turn);
+  }
+
+  100% {
+    transform: rotateX(1turn);
+  }
+}
+
+/* Rotates on Y axis */
+@keyframes y-rotation {
+  0% {
+    transform: rotateY(0turn);
+  }
+
+  100% {
+    transform: rotateY(1turn);
+  }
+}
+
+/* Rotates on Z axis */
+@keyframes z-rotation {
+  0% {
+    transform: rotateZ(0turn);
+  }
+
+  100% {
+    transform: rotateZ(1turn);
+  }
+}
+
+/* Fade in animation from opacity */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Pulsing animation for adding new items to the shopping cart */
+@keyframes shopping-cart-pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  70% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Animation Classes */
+
+.animate-waving {
+  animation: waving 0.3s linear infinite alternate;
+}
+
+.animate-blinking {
+  animation: blinking 1.5s step-end infinite;
+}
+
+.animate-loading {
+  animation: loading-spinner 1.8s infinite ease-in-out;
+}
+
+.animate-slide-top {
+  animation: slide-top 0.6s ease-in-out both;
+}
+
+.animate-slide-right {
+  animation: slide-right 0.6s ease-in-out both;
+}
+
+.animate-x-spin {
+  animation: x-rotation 4s linear infinite;
+}
+
+.animate-y-spin {
+  animation: y-rotation 5s linear infinite;
+}
+
+.animate-z-spin {
+  animation: z-rotation 6s linear infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s;
+}
+
+.animate-pulsing-cart {
+  animation: shopping-cart-pulse 0.3s ease-in-out;
+}
