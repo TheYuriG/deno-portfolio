@@ -59,16 +59,9 @@ export default function Home() {
       >
         <script defer src={"./i18nBlogTimestamps.js"} />
       </CustomHead>
-      {/* Base page layout with theme switching and footer outside of accent box */}
-      <Base>
-        {/* Back button */}
-        <NavigationButtons />
-        <section class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
-          {...createdPosts.map((post) => (
-            <BlogPostSummary {...post}></BlogPostSummary>
-          ))}
-        </section>
-      </Base>
+      {/* Home button */}
+      <NavigationButtons />
+      {createdPostsList}
     </>
   );
 }
