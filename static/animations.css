@@ -147,8 +147,16 @@
   animation: slide-top 0.6s ease-in-out both;
 }
 
+.delay-slide-top {
+  animation-delay: calc(var(--dur)*0.3s)
+}
+
 .animate-slide-right {
   animation: slide-right 0.6s ease-in-out both;
+}
+
+.delay-slide-right {
+  animation-delay: calc(var(--dur)*0.2s)
 }
 
 .animate-x-spin {
