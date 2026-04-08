@@ -2,6 +2,9 @@
 import type { BlogPostSummaryProperties } from "../../types/blog/BlogPostSummaryProperties.ts";
 //? Default styled header
 import { StyledSubHeader } from "../../components/UI/StyledSubHeader.tsx";
+//? Creates default timestamps for the blog posts
+//! These get converted by the injected i18n script in the blog layout to the user's local time
+import { BlogPostTimestamp } from "@/components/blog/BlogPostTimestamp.tsx";
 
 //? Exports a single Blog Post Summary
 export function BlogPostSummary(summary: BlogPostSummaryProperties) {
@@ -14,9 +17,7 @@ export function BlogPostSummary(summary: BlogPostSummaryProperties) {
         <StyledSubHeader title={summary.title} />
       </a>
       {/* Post creation date */}
-      <p class="text-sm mb-2 text-center date-timestamp">
-        {new Date(summary.date).valueOf()}
-      </p>
+      <BlogPostTimestamp date={summary.date} />
       {/* Post summary */}
       <p class="text-justify">{summary.shortSummary}</p>
     </article>

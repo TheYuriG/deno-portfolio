@@ -12,12 +12,16 @@ import { DottedLink } from "../../components/UI/DottedLink.tsx";
 import { GreekList } from "../../components/UI/GreekList.tsx";
 //? Import the default post footer
 import { BlogPostFooter } from "../../components/blog/BlogPostFooter.tsx";
+//? Creates default timestamps for the blog posts
+//! These get converted by the injected i18n script in the blog layout to the user's local time
+import { BlogPostTimestamp } from "@/components/blog/BlogPostTimestamp.tsx";
+//? Add a button to scroll to the top on the bottom right corner of the page
+import ScrollToTop from "../../islands/misc/ScrollToTop.tsx";
 //? Import post summary
 import { experienceDenoFreshPost as previousPost } from "../../data/blog/experience-deno-fresh.ts";
 import { freshTwindV0 as postSummary } from "../../data/blog/fresh-twind-v0.ts";
 import { customizingTwindConfig as nextPost } from "../../data/blog/customizing-fresh-twind.ts";
-//? Add a button to scroll to the top on the bottom right corner of the page
-import ScrollToTop from "../../islands/misc/ScrollToTop.tsx";
+
 
 export default function Home() {
   return (
@@ -37,9 +41,7 @@ export default function Home() {
         {/* Title header */}
         <StyledHeader title={postSummary.title} />
         {/* Post creation date */}
-        <p class="text-sm mb-2 w-full text-center">
-          {new Date(postSummary.date).toLocaleString()}
-        </p>
+        <BlogPostTimestamp date={postSummary.date} />
         {/* Introduction */}
         <p class="my-2 text-justify">
           This is a follow-up of a previous post about{" "}

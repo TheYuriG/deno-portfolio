@@ -12,10 +12,13 @@ import { DottedLink } from "../../components/UI/DottedLink.tsx";
 import { GreekList } from "../../components/UI/GreekList.tsx";
 //? Render multiple comparison tables of the language differences
 import { ComparisonTable } from "../../components/blog/ComparisonTable.tsx";
-//? Import post summary
-import { javascriptPythonSyntaxPost as postSummary } from "../../data/blog/javascript-python-syntax.ts";
+//? Creates default timestamps for the blog posts
+//! These get converted by the injected i18n script in the blog layout to the user's local time
+import { BlogPostTimestamp } from "@/components/blog/BlogPostTimestamp.tsx";
 //? Add a button to scroll to the top on the bottom right corner of the page
 import ScrollToTop from "../../islands/misc/ScrollToTop.tsx";
+//? Import post summary
+import { javascriptPythonSyntaxPost as postSummary } from "../../data/blog/javascript-python-syntax.ts";
 
 export default function Home() {
   return (
@@ -35,10 +38,7 @@ export default function Home() {
         {/* Title header */}
         <StyledHeader title={postSummary.title} />
         {/* Post creation date */}
-        <p class="text-sm mb-2 w-full text-center">
-          {new Date(postSummary.date).toLocaleString()}
-        </p>
-
+        <BlogPostTimestamp date={postSummary.date} />
         {/* Motivation for this */}
         <p class="my-2 text-justify">
           I enjoy watching tutorials on other languages before going to bed,
