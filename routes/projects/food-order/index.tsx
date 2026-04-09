@@ -2,8 +2,6 @@
 import { Handlers } from "fresh/compat";
 //? Head component with all Meta tags pre-set
 import { CustomHead } from "../../../components/base/CustomHead.tsx";
-//? Create blog content inside Base component
-import { Base } from "../../../components/base/Base.tsx";
 //? Navigation Buttons to go back to the previous page
 import { NavigationButtons } from "../../../components/misc/NavigationButtons.tsx";
 //? Component responsible for rendering the food list and modals

@@ -1,7 +1,5 @@
 //? Import CustomHead with appropriate metadata
 import { CustomHead } from "../components/base/CustomHead.tsx";
-//? Lateral text with theme switcher
-import { Base } from "../components/base/Base.tsx";
 //? Default styled header
 import { StyledHeader } from "../components/UI/StyledHeader.tsx";
 //? Link component to pre-format links and reduce boiletplate

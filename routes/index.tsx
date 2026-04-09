@@ -1,7 +1,5 @@
 //? Head component with all Meta tags pre-set
 import { CustomHead } from "../components/base/CustomHead.tsx";
-//? Lateral text with theme switcher
-import { Base } from "../components/base/Base.tsx";
 //? Content displayed on the Home page, including header and navigation menu
 import { HomeContent } from "../components/home/HomeContent.tsx";
 //? Navigation Menu with redirects to different pages

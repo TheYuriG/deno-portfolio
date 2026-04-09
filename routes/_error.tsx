@@ -1,7 +1,6 @@
 import { HttpError } from "fresh";
 import { PageProps } from "fresh";
 import { CustomHead } from "../components/base/CustomHead.tsx";
-import { Base } from "../components/base/Base.tsx";
 import { StyledHeader } from "../components/UI/StyledHeader.tsx";
 import { NavigationButtons } from "../components/misc/NavigationButtons.tsx";
 

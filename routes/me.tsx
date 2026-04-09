@@ -1,7 +1,5 @@
 //? Head component with all Meta tags pre-set
 import { CustomHead } from "../components/base/CustomHead.tsx";
-//? Create blog content inside Base component
-import { Base } from "../components/base/Base.tsx";
 //? Default styled headers
 import { StyledHeader } from "../components/UI/StyledHeader.tsx";
 import { StyledSubHeader } from "../components/UI/StyledSubHeader.tsx";
@@ -153,3 +151,4 @@ export default function Home() {
     </>
   );
 }
+
