@@ -49,7 +49,7 @@ const cleanCodeCertificate = <section class="flex flex-col items-center">
     src="https://udemy-certificate.s3.amazonaws.com/image/UC-f452de2c-2173-4d8c-80f3-c546c00e831c.jpg?v=1692018292000"
     alt="Clean Code Certificate"
     title="Clean Code course completion certificate"
-    class="mx-auto object-cover max-h-[30em] max-w-full"
+    class="mx-auto object-cover h-80 md:h-120 max-w-full"
     style="aspect-ratio: 43/32;"
   />
   <p>
@@ -75,7 +75,7 @@ const pythonAutomationCertificate = <section class="flex flex-col items-center">
     src="https://udemy-certificate.s3.amazonaws.com/image/UC-a67fad8f-f55a-4af2-adb9-95b023517496.jpg?v=1690032992000"
     alt="Python Automation Certificate"
     title="Automate the Boring Stuff with Python course completion certificate"
-    class="object-cover max-h-[30em] max-w-full"
+    class="object-cover h-80 md:h-120 max-w-full"
     style="aspect-ratio: 43/32;"
   />
   <p>
@@ -120,7 +120,7 @@ const reactNextCertificate = <section class="flex flex-col items-center">
     src="https://udemy-certificate.s3.amazonaws.com/image/UC-7246cba0-de77-4a6f-81a4-2be5aaeaad67.jpg?v=1688062528000"
     alt="React18 Certificate"
     title="React and NextJS completion Certificate"
-    class="object-cover max-h-[30em] max-w-full"
+    class="object-cover h-80 md:h-120 max-w-full"
     style="aspect-ratio: 43/32;"
   />
   <p>
@@ -156,7 +156,7 @@ const nodeBackendCertificate = <section class="flex flex-col items-center">
     src="https://udemy-certificate.s3.amazonaws.com/image/UC-c14620b0-6803-48a3-a7ab-5211825cec51.jpg?v=1685285730000"
     alt="NodeJS Backend Certificate"
     title="NodeJS Backend completion Certificate"
-    class="object-cover max-h-[30em] max-w-full"
+    class="object-cover h-80 md:h-120 max-w-full"
     style="aspect-ratio: 43/32;"
   />
   <p>
