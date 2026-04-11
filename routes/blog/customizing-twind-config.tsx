@@ -9,8 +9,6 @@ import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 //? Link components to pre-format links and reduce boiletplate
 import { GradientLink } from "../../components/UI/GradientLink.tsx";
 import { DottedLink } from "../../components/UI/DottedLink.tsx";
-//? Import the default post footer
-import { BlogPostFooter } from "../../components/blog/BlogPostFooter.tsx";
 //? Creates default timestamps for the blog posts
 //! These get converted by the injected i18n script in the blog layout to the user's local time
 import { BlogPostTimestamp } from "@/components/blog/BlogPostTimestamp.tsx";
@@ -1336,9 +1334,6 @@ export default function Home() {
           question about something else not listed here, it's most likely that
           I also don't know the answer, else I would have added here.
         </p>
-
-        {/* Post author */}
-        <BlogPostFooter />
       </article>
 
       {/* Scroll up button */}

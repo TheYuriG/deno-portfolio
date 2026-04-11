@@ -1430,8 +1430,8 @@ a == b # True`,
         />
 
         {/* Post author */}
-        <footer class="mt-auto w-full text-right text-sm">
-          Written with 💞 by TheYuriG, with contributions by{" "}
+        <footer class="mt-auto w-full text-justify text-sm">
+          This post would not be possible without the contributions of{" "}
           <GradientLink
             content="@lino-levan"
             link="https://github.com/lino-levan"

@@ -10,8 +10,6 @@ import { GradientLink } from "../../components/UI/GradientLink.tsx";
 import { DottedLink } from "../../components/UI/DottedLink.tsx";
 //? Display a link to view the source code on GitHub
 import { ViewOnGitHub } from "../../components/misc/ViewOnGithub.tsx";
-//? Import the default post footer
-import { BlogPostFooter } from "../../components/blog/BlogPostFooter.tsx";
 //? Creates default timestamps for the blog posts
 //! These get converted by the injected i18n script in the blog layout to the user's local time
 import { BlogPostTimestamp } from "@/components/blog/BlogPostTimestamp.tsx";
@@ -1701,9 +1699,6 @@ export default function Home() {
           with them, like setting up additional permissions and updating them
           post-creation, but that's a lesson for another day.
         </p>
-
-        {/* Post author */}
-        <BlogPostFooter />
       </article>
 
       {/* Scroll up button */}

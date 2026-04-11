@@ -10,8 +10,6 @@ import { GradientLink } from "../../components/UI/GradientLink.tsx";
 import { DottedLink } from "../../components/UI/DottedLink.tsx";
 //? Create a greek list of contents
 import { GreekList } from "../../components/UI/GreekList.tsx";
-//? Import the default post footer
-import { BlogPostFooter } from "../../components/blog/BlogPostFooter.tsx";
 //? Creates default timestamps for the blog posts
 //! These get converted by the injected i18n script in the blog layout to the user's local time
 import { BlogPostTimestamp } from "@/components/blog/BlogPostTimestamp.tsx";
@@ -435,11 +433,7 @@ export default function Home() {
           />{" "}
           is the third runtime, if you are wondering.
         </p>
-
-        {/* Post author */}
-        <BlogPostFooter />
       </article>
-
       {/* Scroll up button */}
       <ScrollToTop />
     </>

@@ -12,8 +12,6 @@ import { DottedLink } from "../../components/UI/DottedLink.tsx";
 import { GreekList } from "../../components/UI/GreekList.tsx";
 //? Display a link to view the source code on GitHub
 import { ViewOnGitHub } from "../../components/misc/ViewOnGithub.tsx";
-//? Import the default post footer
-import { BlogPostFooter } from "../../components/blog/BlogPostFooter.tsx";
 //? Creates default timestamps for the blog posts
 //! These get converted by the injected i18n script in the blog layout to the user's local time
 import { BlogPostTimestamp } from "@/components/blog/BlogPostTimestamp.tsx";
@@ -509,12 +507,9 @@ export default function Home() {
             customRel="next"
           />.
         </p>
-        {/* Post author */}
-        <BlogPostFooter />
-
-        {/* Scroll up button */}
-        <ScrollToTop />
       </article>
+      {/* Scroll up button */}
+      <ScrollToTop />
     </>
   );
 }
