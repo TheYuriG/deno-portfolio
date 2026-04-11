@@ -20,7 +20,8 @@ import { BlogPostTimestamp } from "@/components/blog/BlogPostTimestamp.tsx";
 import ScrollToTop from "../../islands/misc/ScrollToTop.tsx";
 //? Import posts
 import { stopThemeFlickering as postSummary } from "../../data/blog/stopping-theme-flickering-deno-fresh.ts";
-import { createFreshThemeSwitcher as previousPost } from "../../data/blog/how-create-theme-switcher-deno-fresh.ts";
+import { createFreshThemeSwitcher } from "../../data/blog/how-create-theme-switcher-deno-fresh.ts";
+import { experienceDenoFreshPost } from "../../data/blog/experience-deno-fresh.ts";
 
 export default function Home() {
   return (
@@ -34,8 +35,12 @@ export default function Home() {
       {/* Back button */}
       <NavigationButtons
         back={{
-          title: previousPost.title,
-          link: previousPost.link,
+          title: experienceDenoFreshPost.title,
+          link: experienceDenoFreshPost.link,
+        }}
+        next={{
+          title: createFreshThemeSwitcher.title,
+          link: createFreshThemeSwitcher.link,
         }}
       />
       <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
@@ -54,8 +59,8 @@ export default function Home() {
         <p class="my-2 text-justify">
           In the{" "}
           <GradientLink
-            link={previousPost.link}
-            title={previousPost.title}
+            link={createFreshThemeSwitcher.link}
+            title={createFreshThemeSwitcher.title}
             content="previous post"
             customRel="prev"
           />

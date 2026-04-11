@@ -18,7 +18,8 @@ import { BlogPostTimestamp } from "@/components/blog/BlogPostTimestamp.tsx";
 //? Add a button to scroll to the top on the bottom right corner of the page
 import ScrollToTop from "../../islands/misc/ScrollToTop.tsx";
 //? Import post summary
-import { createCategoryPost as previousPost } from "../../data/blog/how-create-categories-discord-v14.ts";
+import { createFreshThemeSwitcher } from "../../data/blog/how-create-theme-switcher-deno-fresh.ts";
+import { createCategoryPost } from "../../data/blog/how-create-categories-discord-v14.ts";
 import { createRolesPost as postSummary } from "../../data/blog/how-create-roles-discord-v14.ts";
 
 export default function Home() {
@@ -32,7 +33,8 @@ export default function Home() {
       </CustomHead>
       {/* Back button */}
       <NavigationButtons
-        back={{ title: previousPost.title, link: previousPost.link }}
+        back={{ title: createFreshThemeSwitcher.title, link: createFreshThemeSwitcher.link }}
+        next={{ title: createCategoryPost.title, link: createCategoryPost.link }}
       />
       <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
         {/* Title header */}
@@ -44,8 +46,8 @@ export default function Home() {
           This is the fourth and last part of the Discord.JS V14 tutorial that
           I've published. You can read the{" "}
           <DottedLink
-            link={previousPost.link}
-            title={previousPost.title}
+            link={createCategoryPost.link}
+            title={createCategoryPost.title}
             content="third part"
             customRel="prev"
           />{" "}

@@ -9,8 +9,6 @@ import { NavigationButtons } from "../../components/misc/NavigationButtons.tsx";
 //? Link components to pre-format links and reduce boiletplate
 import { GradientLink } from "../../components/UI/GradientLink.tsx";
 import { DottedLink } from "../../components/UI/DottedLink.tsx";
-//? Create a greek list of contents
-import { GreekList } from "../../components/UI/GreekList.tsx";
 //? Import the default post footer
 import { BlogPostFooter } from "../../components/blog/BlogPostFooter.tsx";
 //? Creates default timestamps for the blog posts
@@ -19,8 +17,8 @@ import { BlogPostTimestamp } from "@/components/blog/BlogPostTimestamp.tsx";
 //? Add a button to scroll to the top on the bottom right corner of the page
 import ScrollToTop from "../../islands/misc/ScrollToTop.tsx";
 //? Import post summary
-import { freshTwindV0 as previousPost } from "../../data/blog/fresh-twind-v0.ts";
 import { customizingTwindConfig as postSummary } from "../../data/blog/customizing-fresh-twind.ts";
+import { freshTwindV0 } from "../../data/blog/fresh-twind-v0.ts";
 import { experienceDenoFreshPost } from "../../data/blog/experience-deno-fresh.ts";
 
 export default function Home() {
@@ -34,7 +32,8 @@ export default function Home() {
       </CustomHead>
       {/* Back button */}
       <NavigationButtons
-        back={{ title: previousPost.title, link: previousPost.link }}
+        back={{ title: "Browse more blog posts", link: "/blog" }}
+        next={{ title: freshTwindV0.title, link: freshTwindV0.link }}
       />
       <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
         {/* Title header */}
@@ -51,7 +50,7 @@ export default function Home() {
           and the{" "}
           <DottedLink
             content="problems with Twind v0"
-            link={previousPost.link}
+            link={freshTwindV0.link}
           />. This post won't be negative like the previous two and will,
           instead, offer advice on how to configure your Twind configuration
           file to make it work for you, instead of letting it work against
@@ -109,7 +108,7 @@ export default function Home() {
           having to put yourself through the{" "}
           <DottedLink
             content="pain that is using Twind v0"
-            link={previousPost.link}
+            link={freshTwindV0.link}
           />{" "}
           and neither you need to suffer through migration later. Migrating a
           non-customized

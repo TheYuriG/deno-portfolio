@@ -18,9 +18,10 @@ import { BlogPostTimestamp } from "@/components/blog/BlogPostTimestamp.tsx";
 //? Add a button to scroll to the top on the bottom right corner of the page
 import ScrollToTop from "../../islands/misc/ScrollToTop.tsx";
 //? Import post summary
-import { experienceDenoFreshPost as previousPost } from "../../data/blog/experience-deno-fresh.ts";
+import { experienceDenoFreshPost } from "../../data/blog/experience-deno-fresh.ts";
+import { javascriptPythonSyntaxPost } from "../../data/blog/javascript-python-syntax.ts";
 import { freshTwindV0 as postSummary } from "../../data/blog/fresh-twind-v0.ts";
-import { customizingTwindConfig as nextPost } from "../../data/blog/customizing-fresh-twind.ts";
+import { customizingTwindConfig } from "../../data/blog/customizing-fresh-twind.ts";
 
 
 export default function Home() {
@@ -34,8 +35,8 @@ export default function Home() {
       </CustomHead>
       {/* Back button */}
       <NavigationButtons
-        back={{ title: previousPost.title, link: previousPost.link }}
-        next={{ title: nextPost.title, link: nextPost.link }}
+        back={{ title: customizingTwindConfig.title, link: customizingTwindConfig.link }}
+        next={{ title: javascriptPythonSyntaxPost.title, link: javascriptPythonSyntaxPost.link }}
       />
       <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
         {/* Title header */}
@@ -47,7 +48,7 @@ export default function Home() {
           This is a follow-up of a previous post about{" "}
           <DottedLink
             content="my experience with Deno"
-            link={previousPost.link}
+            link={experienceDenoFreshPost.link}
           />{" "}
           so far, where I mentioned that Twind deserved a whole post, this is
           said post.
@@ -211,7 +212,7 @@ export default function Home() {
           If you want to customize your{" "}
           <span class="shl-inline">twind.config.js</span>{" "}
           file, I have a separate blog post about how to do so{" "}
-          <DottedLink content="here" link={nextPost.link} /> or by clicking
+          <DottedLink content="here" link={customizingTwindConfig.link} /> or by clicking
           {" "}
           <DottedLink content="Next" link="#top" /> on the navigation bar.
         </p>

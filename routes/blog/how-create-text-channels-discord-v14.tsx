@@ -21,7 +21,7 @@ import { BlogPostTimestamp } from "@/components/blog/BlogPostTimestamp.tsx";
 import ScrollToTop from "../../islands/misc/ScrollToTop.tsx";
 //? Import post summary
 import { createTextChannelPost as postSummary } from "../../data/blog/how-create-text-channels-discord-v14.ts";
-import { createVoiceChannelPost as nextPost } from "../../data/blog/how-create-voice-channels-discord-v14.ts";
+import { createVoiceChannelPost } from "../../data/blog/how-create-voice-channels-discord-v14.ts";
 
 export default function Home() {
   return (
@@ -34,8 +34,7 @@ export default function Home() {
       </CustomHead>
       {/* Back button */}
       <NavigationButtons
-        back={{ title: "Browse more blog posts", link: "/blog" }}
-        next={{ title: nextPost.title, link: nextPost.link }}
+        back={{ title: createVoiceChannelPost.title, link: createVoiceChannelPost.link }}
       />
       <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
         {/* Title header */}

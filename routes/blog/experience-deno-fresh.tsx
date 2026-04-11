@@ -19,7 +19,9 @@ import { BlogPostTimestamp } from "@/components/blog/BlogPostTimestamp.tsx";
 import ScrollToTop from "../../islands/misc/ScrollToTop.tsx";
 //? Import post summary
 import { experienceDenoFreshPost as postSummary } from "../../data/blog/experience-deno-fresh.ts";
-import { freshTwindV0 as nextPost } from "../../data/blog/fresh-twind-v0.ts";
+import { freshTwindV0 } from "../../data/blog/fresh-twind-v0.ts";
+import { javascriptPythonSyntaxPost } from "../../data/blog/javascript-python-syntax.ts";
+import { stopThemeFlickering } from "../../data/blog/stopping-theme-flickering-deno-fresh.ts";
 
 export default function Home() {
   return (
@@ -32,8 +34,8 @@ export default function Home() {
       </CustomHead>
       {/* Back button */}
       <NavigationButtons
-        back={{ title: "Browse more blog posts", link: "/blog" }}
-        next={{ title: nextPost.title, link: nextPost.link }}
+        back={{ title: javascriptPythonSyntaxPost.title, link: javascriptPythonSyntaxPost.link }}
+        next={{ title: stopThemeFlickering.title, link: stopThemeFlickering.link }}
       />
       <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
         {/* Title header */}
@@ -369,7 +371,7 @@ export default function Home() {
           <strong class="underline">
             UPDATED August 1st, 2023
           </strong>: I've created said post, you can read it{" "}
-          <DottedLink content="here" link={nextPost.link} /> or by clicking
+          <DottedLink content="here" link={freshTwindV0.link} /> or by clicking
           {" "}
           <DottedLink content="Next" link="#top" />{" "}
           on the Navigation header at the top of the page.

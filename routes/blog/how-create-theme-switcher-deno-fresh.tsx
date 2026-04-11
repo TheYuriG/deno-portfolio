@@ -21,7 +21,8 @@ import { BlogPostTimestamp } from "@/components/blog/BlogPostTimestamp.tsx";
 import ScrollToTop from "../../islands/misc/ScrollToTop.tsx";
 //? Import posts
 import { createFreshThemeSwitcher as postSummary } from "../../data/blog/how-create-theme-switcher-deno-fresh.ts";
-import { stopThemeFlickering as nextPost } from "../../data/blog/stopping-theme-flickering-deno-fresh.ts";
+import { stopThemeFlickering } from "../../data/blog/stopping-theme-flickering-deno-fresh.ts";
+import { createRolesPost } from "../../data/blog/how-create-roles-discord-v14.ts";
 
 const googleLightDarkImage =
   "https://web-dev.imgix.net/image/vS06HQ1YTsbMKSFTIPl2iogUQP73/skKcjSv1gMQRYk1AdEp7.png?auto=format&w=1600";
@@ -38,10 +39,13 @@ export default function Home() {
       </CustomHead>
       {/* Back button */}
       <NavigationButtons
-        back={{ title: "Browse more blog posts", link: "/blog" }}
+        back={{
+          title: stopThemeFlickering.title,
+          link: stopThemeFlickering.link,
+        }}
         next={{
-          title: nextPost.title,
-          link: nextPost.link,
+          title: createRolesPost.title,
+          link: createRolesPost.link,
         }}
       />
       <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
@@ -499,8 +503,8 @@ export default function Home() {
           check for user preferences. Let's address those problems on those on
           the{" "}
           <DottedLink
-            link={nextPost.link}
-            title={nextPost.title}
+            link={stopThemeFlickering.link}
+            title={stopThemeFlickering.title}
             content="next blog post"
             customRel="next"
           />.

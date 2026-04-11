@@ -19,6 +19,8 @@ import { BlogPostTimestamp } from "@/components/blog/BlogPostTimestamp.tsx";
 import ScrollToTop from "../../islands/misc/ScrollToTop.tsx";
 //? Import post summary
 import { javascriptPythonSyntaxPost as postSummary } from "../../data/blog/javascript-python-syntax.ts";
+import { freshTwindV0 } from "../../data/blog/fresh-twind-v0.ts";
+import { experienceDenoFreshPost } from "../../data/blog/experience-deno-fresh.ts";
 
 export default function Home() {
   return (
@@ -31,7 +33,8 @@ export default function Home() {
       </CustomHead>
       {/* Back button */}
       <NavigationButtons
-        back={{ title: "Browse more blog posts", link: "/blog" }}
+        back={{ title: freshTwindV0.title, link: freshTwindV0.link }}
+        next={{ title: experienceDenoFreshPost.title, link: experienceDenoFreshPost.link }}
       />
       {/* The whole thing */}
       <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">

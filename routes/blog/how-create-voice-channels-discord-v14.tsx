@@ -18,9 +18,9 @@ import { BlogPostTimestamp } from "@/components/blog/BlogPostTimestamp.tsx";
 //? Add a button to scroll to the top on the bottom right corner of the page
 import ScrollToTop from "../../islands/misc/ScrollToTop.tsx";
 //? Import post summary
-import { createTextChannelPost as previousPost } from "../../data/blog/how-create-text-channels-discord-v14.ts";
 import { createVoiceChannelPost as postSummary } from "../../data/blog/how-create-voice-channels-discord-v14.ts";
-import { createCategoryPost as nextPost } from "../../data/blog/how-create-categories-discord-v14.ts";
+import { createTextChannelPost } from "../../data/blog/how-create-text-channels-discord-v14.ts";
+import { createCategoryPost } from "../../data/blog/how-create-categories-discord-v14.ts";
 
 export default function Home() {
   return (
@@ -33,8 +33,8 @@ export default function Home() {
       </CustomHead>
       {/* Back button */}
       <NavigationButtons
-        back={{ title: previousPost.title, link: previousPost.link }}
-        next={{ title: nextPost.title, link: nextPost.link }}
+        back={{ title: createCategoryPost.title, link: createCategoryPost.link }}
+        next={{ title: createTextChannelPost.title, link: createTextChannelPost.link }}
       />
       <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
         {/* Title header */}
@@ -46,8 +46,8 @@ export default function Home() {
           This is the second (of four) parts of the Discord.JS V14 tutorial
           that I've published. You can read the{" "}
           <DottedLink
-            link={previousPost.link}
-            title={previousPost.title}
+            link={createTextChannelPost.link}
+            title={createTextChannelPost.title}
             content="first part"
             customRel="prev"
           />{" "}
@@ -819,9 +819,9 @@ export default function Home() {
         <p class="mt-4 text-justify self-start">
           Next post:{" "}
           <DottedLink
-            link={nextPost.link}
-            title={nextPost.title}
-            content={nextPost.title}
+            link={createCategoryPost.link}
+            title={createCategoryPost.title}
+            content={createCategoryPost.title}
           />
         </p>
         {/* Post author */}
