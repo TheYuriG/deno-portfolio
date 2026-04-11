@@ -119,7 +119,7 @@ export default function Home() {
             content="React Router"
             customRel="noopener noreferrer"
           />{" "}
-          (!))had already started working on this in early 2022, they even
+          (!)) had already started working on this in early 2022, they even
           tried to sell a license to use the framework, which{" "}
           <GradientLink
             link="https://twitter.com/remix_run/status/1460652199269179393"
@@ -227,7 +227,9 @@ export default function Home() {
           <span class="shl-oper">&gt;</span>
           {`
             `}
-          <span class="shl-cmnt">// your page response body goes here</span>
+          <span class="shl-cmnt">
+            // your page response body goes here
+          </span>
           {`
         `}
           <span class="shl-oper">&lt;/&gt;</span>
@@ -331,7 +333,7 @@ export default function Home() {
         <p class="my-2 text-justify self-start">In order:</p>
         <GreekList
           items={[
-            <p>
+            <p key='item1'>
               Check if there is a theme already saved on{" "}
               <code class="shl-inline">localStorage</code>. If there isn't
               one, check what's the user preferred color scheme, save it, and
@@ -343,13 +345,13 @@ export default function Home() {
               <code class="shl-inline">window.showDarkMode</code>{" "}
               on/off based on the saved theme.
             </p>,
-            <p>
+            <p key='item2'>
               Check{" "}
               <code class="shl-inline">
                 window.showDarkMode
               </code>{" "}
-              and apply the colors to the <code class="shl-inline">root</code>
-              {"  "}element for either mode based on that being{" "}
+              and apply the colors to the <code class="shl-inline">root</code>{" "}
+              element for either mode based on that being{" "}
               <code class="shl-inline">
                 true
               </code>{" "}

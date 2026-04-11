@@ -135,7 +135,9 @@ export default function Home() {
           <span class="shl-func">setName</span>(<span class="shl-str">
             "createrole"
           </span>){" "}
-          <span class="shl-cmnt">// Command name matching file name</span>
+          <span class="shl-cmnt">
+            // Command name matching file name
+          </span>
           {`
     `}
           <span class="shl-oper">.</span>
@@ -143,7 +145,9 @@ export default function Home() {
             "Creates a new role"
           </span>){`
     `}
-          <span class="shl-cmnt">// Role name</span>
+          <span class="shl-cmnt">
+            // Role name
+          </span>
           {`
     `}
           <span class="shl-oper">.</span>
@@ -169,7 +173,9 @@ export default function Home() {
           <span class="shl-oper">.</span>
           <span class="shl-func">setMinLength</span>(<span class="shl-num">
             1
-          </span>) <span class="shl-cmnt">// A role needs to be named</span>
+          </span>) <span class="shl-cmnt">
+            // A role needs to be named
+          </span>
           {`
         `}
           <span class="shl-oper">.</span>
@@ -203,7 +209,9 @@ export default function Home() {
           </span>
           {`
     `}
-          <span class="shl-cmnt">// create new Channels</span>
+          <span class="shl-cmnt">
+            // create new Channels
+          </span>
           {`
     `}
           <span class="shl-oper">.</span>
@@ -298,7 +306,9 @@ export default function Home() {
     `}
           <span class="shl-kwd">try</span> &#123;{`
       `}
-          <span class="shl-cmnt">// Create the role</span>
+          <span class="shl-cmnt">
+            // Create the role
+          </span>
           {`
       `}
           <span class="shl-kwd">await</span>{" "}
@@ -342,7 +352,9 @@ export default function Home() {
           </span>
           {`
       `}
-          <span class="shl-cmnt">// Log the error to the console</span>
+          <span class="shl-cmnt">
+              // Log the error to the console
+          </span>
           {`
       `}console<span class="shl-oper">.</span>
           <span class="shl-func">log</span>(error);{`
@@ -480,7 +492,9 @@ export default function Home() {
               // initial code unchanged{`
 `}
           </span>
-          <span class="shl-cmnt">// ...</span>
+          <span class="shl-cmnt">
+            // ...
+          </span>
           {`
 
 `}
@@ -732,7 +746,9 @@ export default function Home() {
               // code in between unchanged{`
 `}
           </span>
-          <span class="shl-cmnt">// ...</span>
+          <span class="shl-cmnt">
+            // ...
+          </span>
           {`
 
 `}
@@ -773,7 +789,9 @@ export default function Home() {
               // code in between unchanged{`
 `}
           </span>
-          <span class="shl-cmnt">// ...</span>
+          <span class="shl-cmnt">
+            // ...
+          </span>
           {`
 
 `}name<span class="shl-oper">:</span>{" "}
@@ -792,7 +810,9 @@ export default function Home() {
               // rest of the code unchanged{`
 `}
           </span>
-          <span class="shl-cmnt">// ...</span>
+          <span class="shl-cmnt">
+            // ...
+          </span>
         </div>
         {/* Code link */}
         <ViewOnGitHub githubLink="https://github.com/TheYuriG/blog_lessons/blob/master/discord_create_channels/commands/createcoloredrole.js" />
@@ -1053,7 +1073,9 @@ export default function Home() {
               // initial code unchanged{`
 `}
           </span>
-          <span class="shl-cmnt">// ...</span>
+          <span class="shl-cmnt">
+            // ...
+          </span>
           {`
 
 `}
@@ -1115,7 +1137,9 @@ export default function Home() {
               // code in between unchanged{`
 `}
           </span>
-          <span class="shl-cmnt">// ...</span>
+          <span class="shl-cmnt">
+            // ...
+          </span>
           {`
 
 `}
@@ -1165,7 +1189,9 @@ export default function Home() {
               // code in between unchanged{`
 `}
           </span>
-          <span class="shl-cmnt">// ...</span>
+          <span class="shl-cmnt">
+            // ...
+          </span>
           {`
 
 `}
@@ -1183,7 +1209,9 @@ export default function Home() {
           </span>
           {`
   `}
-          <span class="shl-cmnt">// add the newly created role to them</span>
+          <span class="shl-cmnt">
+            // add the newly created role to them
+          </span>
           {`
   `}
           <span class="shl-kwd">await</span>{" "}
@@ -1273,7 +1301,9 @@ export default function Home() {
           </span>
           {`
   `}
-          <span class="shl-cmnt">// than themselves to receive the role</span>
+          <span class="shl-cmnt">
+            // than themselves to receive the role
+          </span>
           {`
   `}
           <span class="shl-kwd">if</span> ({`
@@ -1291,7 +1321,9 @@ export default function Home() {
           </span>
           {`
     `}
-          <span class="shl-cmnt">// add the newly created role to them</span>
+          <span class="shl-cmnt">
+            // add the newly created role to them
+          </span>
           {`
     `}
           <span class="shl-kwd">await</span>{" "}

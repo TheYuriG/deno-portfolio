@@ -67,22 +67,19 @@ export default function Home() {
         <StyledSubHeader title="Table of Contents" />
         <GreekList
           items={[
-            <DottedLink content="Naming Conventions" link="#naming" />,
-            <DottedLink content="Declaring variables" link="#variables" />,
-            <DottedLink content="Data types" link="#data" />,
-            <DottedLink
-              content="Data Type Conversions"
-              link="#conversions"
-            />,
-            <DottedLink content="Expressions" link="#expressions" />,
-            <DottedLink content="Mathematical Operators" link="#mathops" />,
-            <DottedLink content="Bitwise Operators" link="#bitops" />,
-            <DottedLink content="Utilities" link="#utilities" />,
-            <DottedLink content="Strings" link="#strings" />,
-            <DottedLink content="Arrays/Lists" link="#arrays" />,
-            <DottedLink content="Objects/Dictionaries" link="#objects" />,
-            <DottedLink content="Classes" link="#classes" />,
-            <DottedLink content="Loops" link="#loops" />,
+            <DottedLink key='naming' content="Naming Conventions" link="#naming" />,
+            <DottedLink key='declaring' content="Declaring variables" link="#variables" />,
+            <DottedLink key='data' content="Data types" link="#data" />,
+            <DottedLink key='conversions' content="Data Type Conversions" link="#conversions" />,
+            <DottedLink key='expressions' content="Expressions" link="#expressions" />,
+            <DottedLink key='math-operators' content="Mathematical Operators" link="#mathops" />,
+            <DottedLink key='bitwise' content="Bitwise Operators" link="#bitops" />,
+            <DottedLink key='utilities' content="Utilities" link="#utilities" />,
+            <DottedLink key='strings' content="Strings" link="#strings" />,
+            <DottedLink key='arrays' content="Arrays/Lists" link="#arrays" />,
+            <DottedLink key='objects' content="Objects/Dictionaries" link="#objects" />,
+            <DottedLink key='classes' content="Classes" link="#classes" />,
+            <DottedLink key='loops' content="Loops" link="#loops" />,
           ]}
         />
 

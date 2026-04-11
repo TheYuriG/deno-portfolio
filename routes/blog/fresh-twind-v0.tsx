@@ -96,7 +96,7 @@ export default function Home() {
         <GreekList
           items={[
             // [custom-properties]
-            <p>
+            <p key='custom-properties'>
               You can't use <span class="shl-inline">color-[red]</span>,{" "}
               <span class="shl-inline">bg-[red]</span> or{" "}
               <span class="shl-inline">border-[red]</span>{" "}
@@ -108,7 +108,7 @@ export default function Home() {
               brackets will change the element's color.
             </p>,
             // CSS data types
-            <p>
+            <p key='css-data-types'>
               You can't use{" "}
               <GradientLink
                 content="CSS data types"
@@ -117,7 +117,7 @@ export default function Home() {
               to coerce to the correct attribute either for this issue either.
             </p>,
             // var()
-            <p>
+            <p key='var()'>
               Tailwind doesn't require that you wrap variables with{" "}
               <span class="shl-inline">var()</span>{" "}
               either, but in the rare cases that Twind accepts custom values
@@ -126,7 +126,7 @@ export default function Home() {
               make it work.
             </p>,
             // Twind v0 is Tailwind v2
-            <p>
+            <p key='twind-v0-is-tailwind-v2'>
               Because Twind mimicks Tailwind v2, some classes were renamed
               when Tailwind v3 released and won't be applied correctly. Some
               of the classes that will fail to apply as expected, forcing you
@@ -144,13 +144,13 @@ export default function Home() {
               in Tailwind v2 and Twind v0 and so on).
             </p>,
             // No Tailwind v3 utility classes
-            <p>
+            <p key='no-tailwind-v3-classes'>
               Various utility classes of Tailwind v3 aren't available in
               Tailwind v2/Twind v0, e.g. none of the 'backdrop-blur' classes
               are available.
             </p>,
             // Properties applied in the wrong order
-            <p>
+            <p key='properties-wrong-order'>
               Some Twind properties are applied in the wrong order than
               applied in the class list, you have to use as inline styles
               instead for CSS specificity. Changing the order in which the

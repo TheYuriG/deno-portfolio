@@ -88,18 +88,21 @@ export default function Home() {
         <GreekList
           items={[
             <GradientLink
+              key='discord invite'
               link="https://discord.com/invite/djs"
               title="Discord.JS' Discord support server"
               content="Discord.JS' support server"
               customRel="noopener noreferrer"
             />,
             <GradientLink
+              key='discord guide'
               link="https://discordjs.guide/#before-you-begin"
               title="Guide to starting with Discord.JS"
               content="Discord.JS' guide (currently at v14)"
               customRel="noopener noreferrer"
             />,
             <GradientLink
+              key='discord docs'
               link="https://discord.js.org/#/docs/discord.js/main/general/welcome"
               title="Discord.JS documentation"
               content="Discord.JS' documentation (currently at v14)"
@@ -258,7 +261,9 @@ export default function Home() {
           <span class="shl-func">setName</span>(<span class="shl-str">
             "createnewchannel"
           </span>){" "}
-          <span class="shl-cmnt">// Command name matching file name</span>
+          <span class="shl-cmnt">
+            // Command name matching file name
+          </span>
           {`
     `}
           <span class="shl-oper">.</span>
@@ -282,7 +287,9 @@ export default function Home() {
           </span>
           {`
     `}
-          <span class="shl-cmnt">// create new Channels</span>
+          <span class="shl-cmnt">
+            // create new Channels
+          </span>
           {`
     `}
           <span class="shl-oper">.</span>
@@ -309,7 +316,9 @@ export default function Home() {
           </span>
           {`
     `}
-          <span class="shl-cmnt">// more about them later in this post</span>
+          <span class="shl-cmnt">
+            // more about them later in this post
+          </span>
           {`
     `}
           <span class="shl-oper">.</span>
@@ -368,14 +377,18 @@ export default function Home() {
           <span class="shl-func">create</span>(&#123;{`
         `}name<span class="shl-oper">:</span> <span class="shl-str">"new"</span>
           <span class="shl-oper">,</span>{" "}
-          <span class="shl-cmnt">// The name given to the Channel</span>
+          <span class="shl-cmnt">
+            // The name given to the Channel
+          </span>
           {`
         `}type<span class="shl-oper">:</span>{" "}
           <span class="shl-class">ChannelType</span>
           <span class="shl-oper">.</span>
           <span class="shl-class">GuildText</span>
           <span class="shl-oper">,</span>{" "}
-          <span class="shl-cmnt">// The type of the Channel created.</span>
+          <span class="shl-cmnt">
+            // The type of the Channel created.
+          </span>
           {`
         `}
           <span class="shl-cmnt">
@@ -408,7 +421,9 @@ export default function Home() {
           </span>
           {`
       `}
-          <span class="shl-cmnt">// a success message</span>
+          <span class="shl-cmnt">
+            // a success message
+          </span>
           {`
       `}
           <span class="shl-kwd">await</span>{" "}
@@ -434,7 +449,9 @@ export default function Home() {
           </span>
           {`
       `}
-          <span class="shl-cmnt">// Log the error to the console</span>
+          <span class="shl-cmnt">
+            // Log the error to the console
+          </span>
           {`
       `}console<span class="shl-oper">.</span>
           <span class="shl-func">log</span>(error);{`
@@ -521,7 +538,9 @@ export default function Home() {
               // initial code unchanged{`
 `}
           </span>
-          <span class="shl-cmnt">// ...</span>
+          <span class="shl-cmnt">
+            // ...
+          </span>
           {`
 
 `}
@@ -553,7 +572,9 @@ export default function Home() {
           <span class="shl-func">setMinLength</span>(<span class="shl-num">
             1
           </span>){" "}
-          <span class="shl-cmnt">// A Text Channel needs to be named</span>
+          <span class="shl-cmnt">
+            // A Text Channel needs to be named
+          </span>
           {`
 		`}
           <span class="shl-oper">.</span>
@@ -586,7 +607,9 @@ export default function Home() {
               // code in between unchanged{`
 `}
           </span>
-          <span class="shl-cmnt">// ...</span>
+          <span class="shl-cmnt">
+            // ...
+          </span>
           {`
 
 `}
@@ -607,7 +630,9 @@ export default function Home() {
               // code in between unchanged{`
 `}
           </span>
-          <span class="shl-cmnt">// ...</span>
+          <span class="shl-cmnt">
+            // ...
+          </span>
           {`
 
 `}
@@ -629,7 +654,9 @@ export default function Home() {
           <span class="shl-oper">.</span>
           <span class="shl-class">GuildText</span>
           <span class="shl-oper">,</span>{" "}
-          <span class="shl-cmnt">// The type of the Channel created.</span>
+          <span class="shl-cmnt">
+            // The type of the Channel created.
+          </span>
           {`
     `}
           <span class="shl-cmnt">
@@ -647,7 +674,9 @@ export default function Home() {
               // rest of the code unchanged{`
 `}
           </span>
-          <span class="shl-cmnt">// ...</span>
+          <span class="shl-cmnt">
+            // ...
+          </span>
         </div>
         <ViewOnGitHub githubLink="https://github.com/TheYuriG/blog_lessons/blob/master/discord_create_channels/commands/createchannel.js" />
         <p class="my-2 text-justify">
@@ -801,7 +830,9 @@ export default function Home() {
               // initial code unchanged{`
 `}
           </span>
-          <span class="shl-cmnt">// ...</span>
+          <span class="shl-cmnt">
+            // ...
+          </span>
           {`
 
 `}
@@ -842,7 +873,9 @@ export default function Home() {
           <span class="shl-oper">.</span>
           <span class="shl-class">GuildText</span>
           <span class="shl-oper">,</span>{" "}
-          <span class="shl-cmnt">// The type of the Channel created.</span>
+          <span class="shl-cmnt">
+            // The type of the Channel created.
+          </span>
           {`
 		`}
           <span class="shl-cmnt">
@@ -875,7 +908,9 @@ export default function Home() {
           </span>
           {`
 	`}
-          <span class="shl-cmnt">// a success message</span>
+          <span class="shl-cmnt">
+            // a success message
+          </span>
           {`
 	`}
           <span class="shl-kwd">await</span>{" "}
@@ -932,7 +967,9 @@ export default function Home() {
           <span class="shl-oper">.</span>
           <span class="shl-class">GuildText</span>
           <span class="shl-oper">,</span>{" "}
-          <span class="shl-cmnt">// The type of the Channel created.</span>
+          <span class="shl-cmnt">
+            // The type of the Channel created.
+          </span>
           {`
 		`}
           <span class="shl-cmnt">
@@ -949,7 +986,9 @@ export default function Home() {
           </span>
           {`
 	`}
-          <span class="shl-cmnt">// a success message</span>
+          <span class="shl-cmnt">
+            // a success message
+          </span>
           {`
 	`}
           <span class="shl-kwd">await</span>{" "}
@@ -975,7 +1014,9 @@ export default function Home() {
               // rest of the code unchanged{`
 `}
           </span>
-          <span class="shl-cmnt">// ...</span>
+          <span class="shl-cmnt">
+            // ...
+          </span>
         </div>
         <ViewOnGitHub githubLink="https://github.com/TheYuriG/blog_lessons/blob/master/discord_create_channels/commands/createchannelincategory.js" />
         <p class="my-2 text-justify self-start">
@@ -1207,7 +1248,9 @@ export default function Home() {
           <span class="shl-func">setName</span>(<span class="shl-str">
             "createthread"
           </span>){" "}
-          <span class="shl-cmnt">// Command name matching file name</span>
+          <span class="shl-cmnt">
+            // Command name matching file name
+          </span>
           {`
     `}
           <span class="shl-oper">.</span>
@@ -1215,7 +1258,9 @@ export default function Home() {
             "Creates a new thread"
           </span>){`
     `}
-          <span class="shl-cmnt">// Thread name</span>
+          <span class="shl-cmnt">
+            // Thread name
+          </span>
           {`
     `}
           <span class="shl-oper">.</span>
@@ -1244,7 +1289,9 @@ export default function Home() {
           </span>){`
     `}){`
     `}
-          <span class="shl-cmnt">// Thread starts from message</span>
+          <span class="shl-cmnt">
+            // Thread starts from message
+          </span>
           {`
     `}
           <span class="shl-oper">.</span>
@@ -1399,7 +1446,9 @@ export default function Home() {
           </span>
           {`
         `}
-          <span class="shl-cmnt">// and stop the command</span>
+          <span class="shl-cmnt">
+            // and stop the command
+          </span>
           {`
         `}
           <span class="shl-kwd">await</span>{" "}
@@ -1517,7 +1566,9 @@ export default function Home() {
           </span>
           {`
             `}
-          <span class="shl-cmnt">// create one.</span>
+          <span class="shl-cmnt">
+            // create one.
+          </span>
           {`
             `}
           <span class="shl-kwd">await</span>{" "}
@@ -1533,7 +1584,9 @@ export default function Home() {
           </span>
           {`
             `}
-          <span class="shl-cmnt">// to use the success message below</span>
+          <span class="shl-cmnt">
+            // to use the success message below
+          </span>
           {`
           `}&#125;{`
         `}&#125;{`
@@ -1575,7 +1628,9 @@ export default function Home() {
           </span>
           {`
           `}
-          <span class="shl-cmnt">// to use the success message below</span>
+          <span class="shl-cmnt">
+            // to use the success message below
+          </span>
           {`
         `}&#125;{`
 
@@ -1590,7 +1645,9 @@ export default function Home() {
           </span>
           {`
         `}
-          <span class="shl-cmnt">// with a success message</span>
+          <span class="shl-cmnt">
+            // with a success message
+          </span>
           {`
         `}
           <span class="shl-kwd">await</span>{" "}
@@ -1615,7 +1672,9 @@ export default function Home() {
           </span>
           {`
       `}
-          <span class="shl-cmnt">// Log the error to the console</span>
+          <span class="shl-cmnt">
+            // Log the error to the console
+          </span>
           {`
       `}console<span class="shl-oper">.</span>
           <span class="shl-func">log</span>(error);{`
@@ -1658,7 +1717,7 @@ export default function Home() {
         </p>
         <GreekList
           items={[
-            <p>
+            <p key='storing-message'>
               We are now storing the message sent as a reply to the
               interaction in the constant{" "}
               <span class="shl-inline">
@@ -1686,7 +1745,7 @@ export default function Home() {
               />
               ).
             </p>,
-            <p>
+            <p key='discord-thread'>
               We also handle the case that the user might not want to create a
               {" "}
               <GradientLink
@@ -1718,8 +1777,8 @@ export default function Home() {
         <p class="mt-4 text-justify self-start">
           Next post:{" "}
           <DottedLink
-            content={nextPost.title}
-            link={nextPost.link}
+            content={createVoiceChannelPost.title}
+            link={createVoiceChannelPost.link}
             customRel="next"
           />.
         </p>

@@ -157,7 +157,9 @@ export default function Home() {
               // initial code unchanged{`
 `}
           </span>
-          <span class="shl-cmnt">// ...</span>
+          <span class="shl-cmnt">
+            // ...
+          </span>
           {`
 
 `}
@@ -185,7 +187,9 @@ export default function Home() {
           <span class="shl-func">setMinLength</span>(<span class="shl-num">
             1
           </span>){" "}
-          <span class="shl-cmnt">// A Category needs to be named</span>
+          <span class="shl-cmnt">
+            // A Category needs to be named
+          </span>
           {`
     `}
           <span class="shl-oper">.</span>
@@ -219,7 +223,9 @@ export default function Home() {
               // code in between unchanged{`
 `}
           </span>
-          <span class="shl-cmnt">// ...</span>
+          <span class="shl-cmnt">
+            // ...
+          </span>
           {`
 
 `}
@@ -240,7 +246,9 @@ export default function Home() {
               // code in between unchanged{`
 `}
           </span>
-          <span class="shl-cmnt">// ...</span>
+          <span class="shl-cmnt">
+            // ...
+          </span>
           {`
 
 `}
@@ -387,7 +395,9 @@ export default function Home() {
               // initial code unchanged{`
 `}
           </span>
-          <span class="shl-cmnt">// ...</span>
+          <span class="shl-cmnt">
+            // ...
+          </span>
           {`
 
 `}
@@ -419,7 +429,9 @@ export default function Home() {
           <span class="shl-func">setMinLength</span>(<span class="shl-num">
             1
           </span>){" "}
-          <span class="shl-cmnt">// A Text Channel needs to be named</span>
+          <span class="shl-cmnt">
+            // A Text Channel needs to be named
+          </span>
           {`
     `}
           <span class="shl-oper">.</span>
@@ -471,7 +483,9 @@ export default function Home() {
           <span class="shl-func">setMinLength</span>(<span class="shl-num">
             1
           </span>){" "}
-          <span class="shl-cmnt">// A Voice Channel needs to be named</span>
+          <span class="shl-cmnt">
+            // A Voice Channel needs to be named
+          </span>
           {`
     `}
           <span class="shl-oper">.</span>
@@ -504,7 +518,9 @@ export default function Home() {
               // code in between unchanged{`
 `}
           </span>
-          <span class="shl-cmnt">// ...</span>
+          <span class="shl-cmnt">
+            // ...
+          </span>
           {`
 
 `}
@@ -536,7 +552,9 @@ export default function Home() {
               // code in between unchanged{`
 `}
           </span>
-          <span class="shl-cmnt">// ...</span>
+          <span class="shl-cmnt">
+            // ...
+          </span>
           {`
 
 `}
@@ -591,7 +609,9 @@ export default function Home() {
           <span class="shl-oper">.</span>
           <span class="shl-class">GuildText</span>
           <span class="shl-oper">,</span>{" "}
-          <span class="shl-cmnt">// The type of the Channel created.</span>
+          <span class="shl-cmnt">
+            // The type of the Channel created.
+          </span>
           {`
   `}
           <span class="shl-cmnt">

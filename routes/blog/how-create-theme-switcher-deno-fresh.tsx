@@ -77,7 +77,7 @@ export default function Home() {
         {/* Heading and image introducing to next topic: Fresh */}
         <StyledSubHeader title="What is Fresh?" />
         <img
-          src={"https://fresh.deno.dev/logo.svg?__frsh_c=3171c5e64510907f14fca32f4e0ba9a86bc5247c"}
+          src="https://fresh.deno.dev/logo.svg?__frsh_c=3171c5e64510907f14fca32f4e0ba9a86bc5247c"
           alt="Fresh's logo"
           title="Fresh, the official framework to build Web apps on Deno"
           class="my-4 mx-auto h-40 w-40"
@@ -417,7 +417,7 @@ export default function Home() {
         </p>
         <GreekList
           items={[
-            <p>
+            <p key='theme-saved'>
               Runs on start, checks if there is a theme saved (if not,{" "}
               <code class="shl-inline">
                 savedTheme
@@ -441,7 +441,7 @@ export default function Home() {
               as a dependency so not returning here would cause an infinite
               loop!).
             </p>,
-            <p>
+            <p key='saving-theme-to-local-storage'>
               After setting the{" "}
               <code class="shl-inline">
                 theme
@@ -467,7 +467,7 @@ export default function Home() {
               </code>{" "}
               value and stop.
             </p>,
-            <p>
+            <p key='if-theme-updated'>
               (Optional) If the{" "}
               <code class="shl-inline">
                 theme

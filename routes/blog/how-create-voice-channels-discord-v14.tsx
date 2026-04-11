@@ -148,7 +148,9 @@ export default function Home() {
           <span class="shl-func">setName</span>(<span class="shl-str">
             "createvoicechannel"
           </span>){" "}
-          <span class="shl-cmnt">// Command name matching file name</span>
+          <span class="shl-cmnt">
+            // Command name matching file name
+          </span>
           {`
     `}
           <span class="shl-oper">.</span>
@@ -156,7 +158,9 @@ export default function Home() {
             "Creates a new voice channel"
           </span>){`
     `}
-          <span class="shl-cmnt">// Voice Channel name</span>
+          <span class="shl-cmnt">
+            // Voice Channel name
+          </span>
           {`
     `}
           <span class="shl-oper">.</span>
@@ -183,7 +187,9 @@ export default function Home() {
           <span class="shl-func">setMinLength</span>(<span class="shl-num">
             1
           </span>){" "}
-          <span class="shl-cmnt">// A Voice Channel needs to be named</span>
+          <span class="shl-cmnt">
+            // A Voice Channel needs to be named
+          </span>
           {`
         `}
           <span class="shl-oper">.</span>
@@ -223,7 +229,9 @@ export default function Home() {
           </span>
           {`
     `}
-          <span class="shl-cmnt">// create new Channels</span>
+          <span class="shl-cmnt">
+            // create new Channels
+          </span>
           {`
     `}
           <span class="shl-oper">.</span>
@@ -359,7 +367,9 @@ export default function Home() {
           <span class="shl-oper">.</span>
           <span class="shl-class">GuildVoice</span>
           <span class="shl-oper">,</span>{" "}
-          <span class="shl-cmnt">// The type of the Channel created.</span>
+          <span class="shl-cmnt">
+            // The type of the Channel created.
+          </span>
           {`
         `}&#125;);{`
         `}
@@ -385,7 +395,9 @@ export default function Home() {
           </span>
           {`
         `}
-          <span class="shl-cmnt">// a success message</span>
+          <span class="shl-cmnt">
+            // a success message
+          </span>
           {`
         `}
           <span class="shl-kwd">await</span>{" "}
@@ -443,7 +455,9 @@ export default function Home() {
           <span class="shl-oper">.</span>
           <span class="shl-class">GuildVoice</span>
           <span class="shl-oper">,</span>{" "}
-          <span class="shl-cmnt">// The type of the Channel created.</span>
+          <span class="shl-cmnt">
+            // The type of the Channel created.
+          </span>
           {`
         `}&#125;);{`
 
@@ -454,7 +468,9 @@ export default function Home() {
           </span>
           {`
         `}
-          <span class="shl-cmnt">// a success message</span>
+          <span class="shl-cmnt">
+            // a success message
+          </span>
           {`
         `}
           <span class="shl-kwd">await</span>{" "}
@@ -486,7 +502,9 @@ export default function Home() {
           </span>
           {`
       `}
-          <span class="shl-cmnt">// Log the error to the console</span>
+          <span class="shl-cmnt">
+            // Log the error to the console
+          </span>
           {`
       `}console<span class="shl-oper">.</span>
           <span class="shl-func">log</span>(error);{`
@@ -593,7 +611,9 @@ export default function Home() {
               // initial code unchanged{`
 `}
           </span>
-          <span class="shl-cmnt">// ...</span>
+          <span class="shl-cmnt">
+            // ...
+          </span>
           {`
 
   `}
@@ -661,7 +681,9 @@ export default function Home() {
               // code in between unchanged{`
 `}
           </span>
-          <span class="shl-cmnt">// ...</span>
+          <span class="shl-cmnt">
+            // ...
+          </span>
           {`
 
     `}
@@ -697,7 +719,9 @@ export default function Home() {
               // code in between unchanged{`
 `}
           </span>
-          <span class="shl-cmnt">// ...</span>
+          <span class="shl-cmnt">
+            // ...
+          </span>
           {`
 
     `}name<span class="shl-oper">:</span>{" "}
@@ -711,11 +735,15 @@ export default function Home() {
           <span class="shl-oper">.</span>
           <span class="shl-class">GuildVoice</span>
           <span class="shl-oper">,</span>{" "}
-          <span class="shl-cmnt">// The type of the Channel created.</span>
+          <span class="shl-cmnt">
+            // The type of the Channel created.
+          </span>
           {`
     `}userLimit<span class="shl-oper">:</span>{" "}
           voiceChannelUserLimit<span class="shl-oper">,</span>{" "}
-          <span class="shl-cmnt">// The max number of concurrent users</span>
+          <span class="shl-cmnt">
+            // The max number of concurrent users
+          </span>
           {`
 
 `}
@@ -727,7 +755,9 @@ export default function Home() {
               // rest of the code unchanged{`
 `}
           </span>
-          <span class="shl-cmnt">// ...</span>
+          <span class="shl-cmnt">
+            // ...
+          </span>
         </div>
         {/* Code link */}
         <ViewOnGitHub githubLink="https://github.com/TheYuriG/blog_lessons/blob/master/discord_create_channels/commands/createvoicewithuserlimit.js" />
