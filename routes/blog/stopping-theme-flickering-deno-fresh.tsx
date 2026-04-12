@@ -14,8 +14,6 @@ import { ViewOnGitHub } from "../../components/misc/ViewOnGithub.tsx";
 //? Creates default timestamps for the blog posts
 //! These get converted by the injected i18n script in the blog layout to the user's local time
 import { BlogPostTimestamp } from "@/components/blog/BlogPostTimestamp.tsx";
-//? Add a button to scroll to the top on the bottom right corner of the page
-import ScrollToTop from "../../islands/misc/ScrollToTop.tsx";
 //? Import posts
 import { stopThemeFlickering as postSummary } from "../../data/blog/stopping-theme-flickering-deno-fresh.ts";
 import { createFreshThemeSwitcher } from "../../data/blog/how-create-theme-switcher-deno-fresh.ts";
@@ -491,9 +489,6 @@ export default function Home() {
           instead.
         </p>
       </article>
-
-      {/* Scroll up button */}
-      <ScrollToTop />
     </>
   );
 }

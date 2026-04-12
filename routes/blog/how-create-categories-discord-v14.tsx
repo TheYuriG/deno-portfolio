@@ -13,8 +13,6 @@ import { ViewOnGitHub } from "../../components/misc/ViewOnGithub.tsx";
 //? Creates default timestamps for the blog posts
 //! These get converted by the injected i18n script in the blog layout to the user's local time
 import { BlogPostTimestamp } from "@/components/blog/BlogPostTimestamp.tsx";
-//? Add a button to scroll to the top on the bottom right corner of the page
-import ScrollToTop from "../../islands/misc/ScrollToTop.tsx";
 //? Import post summary
 import { createVoiceChannelPost } from "../../data/blog/how-create-voice-channels-discord-v14.ts";
 import { createCategoryPost as postSummary } from "../../data/blog/how-create-categories-discord-v14.ts";
@@ -804,9 +802,6 @@ export default function Home() {
           />.
         </p>
       </article>
-
-      {/* Scroll up button */}
-      <ScrollToTop />
     </>
   );
 }
