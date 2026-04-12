@@ -14,7 +14,7 @@ export default function ScrollToTop() {
   useEffect(() => {
     //? Create the function that will update the scroll tracking state
     const handleScroll = () => {
-      setScrollTop(window.scrollY);
+      setScrollTop(globalThis.scrollY);
     };
 
     //? Add a scroll event listener when this component is mounted
@@ -34,9 +34,8 @@ export default function ScrollToTop() {
     >
       {/* Outer circle that will get faded in and out */}
       <div
-        class={`w-14 h-14 ${
-          scrollTop < 1000 ? "invisible opacity-0" : "opacity-1"
-        } fixed right-5 bottom-8 duration-1000 transition-opacity custom-bg-bc custom-bo-ac rounded-full border-4`}
+        class={`w-14 h-14 ${scrollTop < 1000 ? "invisible opacity-0" : "opacity-100"
+          } fixed right-5 bottom-8 duration-1000 transition-opacity custom-bg-bc custom-bo-ac rounded-full border-4`}
       >
         {/* Inner circle that renders the SVG centered */}
         <div class="flex h-full items-center justify-center">
