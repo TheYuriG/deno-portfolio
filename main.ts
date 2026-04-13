@@ -1,3 +1,4 @@
+/// <reference lib="deno.unstable" />
 import { App, staticFiles, trailingSlashes } from "fresh";
 import { define, type State } from "./utils.ts";
 
