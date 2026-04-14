@@ -19,7 +19,7 @@ export function HomeContent() {
         My name is{" "}
         <strong class="group">
           <DottedLink content="Yuri" link="/me" />
-          <span class="hidden group-hover:inline-block group-hover:animate-waving">
+          <span class="hidden group-hover:inline-block animate-waving">
             👋
           </span>
         </strong>
@@ -43,7 +43,7 @@ export function HomeContent() {
         <svg
           viewBox="0 0 4 8"
           xmlns="http://www.w3.org/2000/svg"
-          class="inline-block fill-[var(--neutral-color)] relative h-5 animate-blinking"
+          class="inline-block fill-(--neutral-color) relative h-5 animate-blinking"
         >
           <path d="M 0 0 L 4 0 L 4 1 L 2.5 1 L 2.5 7 L 4 7 L 4 8 L 0 8 L 0 7 L 1.5 7 L 1.5 1 L 0 1 L 0 0">
           </path>
