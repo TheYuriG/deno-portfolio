@@ -36,8 +36,8 @@ export function HomeContent() {
         class="block ml-12 animate-slide-top delay-slide-top"
         style="--dur: 1.5;"
       >
-        Working as a Senior Marketing Media Analyst,{" "}
-        <DottedLink content="coding" link="./tools" />/
+        Working as a Networking Engineer at <DottedLink content="NWT Internet" link="https://nwt.net.br/" />, and{" "}
+        < DottedLink content="coding" link="./tools" />/
         <DottedLink content="blogging" link="./blog" /> on the side
         {/* Blinking caret */}
         <svg
