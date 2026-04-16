@@ -144,8 +144,9 @@ export default function Home() {
         <p class="my-2 text-justify">
           It has been a gargantuan task to build everything with just the two
           of us, but we made good progress and hosted a few open betas, which
-          got us good feedback. We are currently tinkering away just the two
-          of us before we do the full launch.
+          got us good feedback. We have currently put the project on hold due
+          to both of us being too busy with our jobs to be able to keep working
+          on it, but we do plan to get back to it eventually, when the time is right.
         </p>
       </article>
     </>
