@@ -27,7 +27,7 @@ export default function Home() {
           src={pictureYuriLink}
           alt="Yuri on the right, standing sideways, looking left with his arms crossed. The entire ground is sand, the background is a rock all and the sun is at 45 degrees creating large shadows."
           title="Jericoacoara, Ceará, Brazil"
-          class="my-4 max-h-88 max-w-56 object-cover"
+          class="my-4 max-h-88 object-cover"
         />
 
         <p class="my-2 text-justify">
