@@ -31,6 +31,7 @@ export default function Home() {
       {/* Back button */}
       <NavigationButtons
         back={{ title: createRolesPost.title, link: createRolesPost.link }}
+        menu={{ title: "Browse more blog posts", link: "/blog", text: "More posts" }}
         next={{ title: createVoiceChannelPost.title, link: createVoiceChannelPost.link }}
       />
       <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">

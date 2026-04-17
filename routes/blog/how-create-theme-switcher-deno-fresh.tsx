@@ -35,14 +35,9 @@ export default function Home() {
       </CustomHead>
       {/* Back button */}
       <NavigationButtons
-        back={{
-          title: stopThemeFlickering.title,
-          link: stopThemeFlickering.link,
-        }}
-        next={{
-          title: createRolesPost.title,
-          link: createRolesPost.link,
-        }}
+        back={{ title: stopThemeFlickering.title, link: stopThemeFlickering.link, }}
+        menu={{ title: "Browse more blog posts", link: "/blog", text: "More posts" }}
+        next={{ title: createRolesPost.title, link: createRolesPost.link, }}
       />
       <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
         {/* Title header */}

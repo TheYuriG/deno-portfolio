@@ -30,14 +30,9 @@ export default function Home() {
       </CustomHead>
       {/* Back button */}
       <NavigationButtons
-        back={{
-          title: experienceDenoFreshPost.title,
-          link: experienceDenoFreshPost.link,
-        }}
-        next={{
-          title: createFreshThemeSwitcher.title,
-          link: createFreshThemeSwitcher.link,
-        }}
+        back={{ title: experienceDenoFreshPost.title, link: experienceDenoFreshPost.link, }}
+        menu={{ title: "Browse more blog posts", link: "/blog", text: "More posts" }}
+        next={{ title: createFreshThemeSwitcher.title, link: createFreshThemeSwitcher.link, }}
       />
       <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">
         {/* Title header */}

@@ -28,7 +28,7 @@ export default function Home() {
       </CustomHead>
       {/* Back button */}
       <NavigationButtons
-        back={{ title: "Browse more blog posts", link: "/blog" }}
+        menu={{ title: "Browse more blog posts", link: "/blog", text: "More posts" }}
         next={{ title: freshTwindV0.title, link: freshTwindV0.link }}
       />
       <article class="flex flex-col h-full w-full max-w-4xl mx-auto items-center">

@@ -32,6 +32,7 @@ export default function Home() {
       {/* Back button */}
       <NavigationButtons
         back={{ title: freshTwindV0.title, link: freshTwindV0.link }}
+        menu={{ title: "Browse more blog posts", link: "/blog", text: "More posts" }}
         next={{ title: experienceDenoFreshPost.title, link: experienceDenoFreshPost.link }}
       />
       {/* The whole thing */}
