@@ -5,6 +5,7 @@ import { LinkProperties } from "../../types/component-properties/LinkProperties.
 //? Define optional properties for the buttons
 interface NavigationButtonsProperties {
   back?: LinkProperties;
+  menu?: LinkProperties & { text?: string };
   next?: LinkProperties;
 }
 
@@ -14,54 +15,49 @@ const navigationClasses =
 
 //? Exports Navigation Buttons to go to the previous page and next Article
 export function NavigationButtons(
-  { back, next }: NavigationButtonsProperties,
+  { back, menu, next }: NavigationButtonsProperties,
 ) {
   //? Creates a back button if a link is provided, otherwise
   //? renders an empty span
   const backButton = back
-    ? (
-      <a
-        class={navigationClasses}
-        href={back.link}
-        title={back.title}
-      >
-        <ChevronIcon iconHeight="1.8em" iconWidth="1.5em" rotation="0" />
-        Back
-      </a>
-    )
-    : (
-      <span class="w-20"></span> //? Empty span to center the Home button
-    );
+    ? <a
+      class={"w-20 " + navigationClasses}
+      href={back.link}
+      title={back.title}
+    >
+      <ChevronIcon iconHeight="1.8em" iconWidth="1.5em" rotation="0" />
+      Back
+    </a> : <span class="w-20"></span> //? Empty span to center the Home button
 
   //? Creates a next button if a link is provided, otherwise
   //? renders an empty span
   const nextButton = next
-    ? (
-      <a
-        class={navigationClasses}
-        href={next.link}
-        title={next.title}
-      >
-        Next
-        <ChevronIcon iconHeight="1.8em" iconWidth="1.5em" rotation="180" />
-      </a>
-    )
-    : <span class="w-20"></span>; //? Empty span to center the Home button
+    ? <a
+      class={"w-20 " + navigationClasses}
+      href={next.link}
+      title={next.title}
+    >
+      Next
+      <ChevronIcon iconHeight="1.8em" iconWidth="1.5em" rotation="180" />
+    </a> : <span class="w-20"></span>; //? Empty span to center the Home button
+
+  const menuButton = menu ?
+    <a
+      class="text-xl "
+      href={menu.link}
+      title={menu.title}
+    >{menu.text ?? "Home"}</a> :
+    <a
+      class={navigationClasses + " text-center"}
+      href="/"
+      title="Visit the Home page"
+    >Home</a>
 
   return (
     <>
       <nav class="flex justify-between w-full">
-        {/* Back button (if link provided) or empty span */}
         {backButton}
-        {/* Home link */}
-        <a
-          class={navigationClasses}
-          href="/"
-          title="Visit the Home page"
-        >
-          Home
-        </a>
-        {/* Next button (if link provided) or empty span */}
+        {menuButton}
         {nextButton}
       </nav>
     </>
