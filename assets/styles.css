@@ -183,18 +183,6 @@
     box-shadow: 0.1em 0.1em 0.3em var(--neutral-color);
 }
 
-.custom-tx-ac {
-    color: var(--accent-color);
-}
-
-.custom-tx-bc {
-    color: var(--base-color);
-}
-
-.custom-tx-nc {
-    color: var(--neutral-color);
-}
-
 .custom-placeholder-ac::placeholder {
     color: var(--accent-color);
 }
