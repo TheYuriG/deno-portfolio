@@ -161,7 +161,7 @@ export default function Home() {
             customRel="noopener noreferrer"
           />, the original creator of Node. If someone out there understands
           about writing Javascript runtimes, it is the guy who made
-          three<sup class="hover:custom-tx-ac custom-tr-tx underline">
+          three<sup class="hover:text-(--accent-color) custom-tr-tx underline">
             <a href="#first-note">
               1
             </a>

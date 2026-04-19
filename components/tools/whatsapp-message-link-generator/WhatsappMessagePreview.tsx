@@ -90,7 +90,7 @@ export function WhatsappMessagePreview(
 //? Returns a highlighted span with the provided string as content
 function renderHighlightedPreviewSpan(text: string) {
   return (
-    <span class="custom-tx-ac custom-tr-tx">
+    <span class="text-(--accent-color) custom-tr-tx">
       {text}
     </span>
   );

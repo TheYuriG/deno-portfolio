@@ -19,9 +19,9 @@ export function StyledButton({
   return (
     <button
       //? Submit the form?
-      type={shouldSubmit === true ? "submit" : undefined}
+      type={shouldSubmit === true ? "submit" : "button"}
       //? Apply default styling classes + additional classes, if provided
-      class={"w-max py-1.5 px-2.5 custom-button-st custom-tx-nc custom-bo-nc hover:(custom-tx-ac custom-bo-ac) custom-bg-bc rounded-xl " +
+      class={"py-1.5 px-2.5 custom-button-st custom-bo-nc hover:text-(--accent-color) hover:border-(--accent-color) rounded-xl " +
         classes}
       //? Apply additional styling, if provided
       style={style}

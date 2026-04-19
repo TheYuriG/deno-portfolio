@@ -11,7 +11,7 @@ interface NavigationButtonsProperties {
 
 //? Reused classes for all navigation buttons
 const navigationClasses =
-  "group flex items-center text-xl hover:custom-tx-ac custom-tr-tx";
+  "group flex items-center text-xl hover:text-(--accent-color) custom-tr-tx";
 
 //? Exports Navigation Buttons to go to the previous page and next Article
 export function NavigationButtons(

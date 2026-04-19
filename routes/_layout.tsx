@@ -5,7 +5,7 @@ import { Footer } from "@/components/base/Footer.tsx";
 export default define.layout(({ Component, state, url }) => {
     return (
         <body
-            class="layout styled-scrollbar custom-bg-bc custom-tx-nc custom-tr-tx-bg-bo"
+            class="layout styled-scrollbar custom-bg-bc text-(--neutral-color) custom-tr-tx-bg-bo"
             style="font-family: 'Fragment Mono', monospace;"
         >
             {/* Main content: name, role, company */}

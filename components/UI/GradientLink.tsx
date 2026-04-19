@@ -11,7 +11,7 @@ export function GradientLink(
 ) {
   return (
     <a
-      class="inline-flex items-center custom-underline-gradient hover:custom-tx-ac"
+      class="inline-flex items-center custom-underline-gradient hover:text-(--accent-color)"
       href={link}
       title={title}
       target="_blank"

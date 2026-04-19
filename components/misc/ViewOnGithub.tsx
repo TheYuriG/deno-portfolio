@@ -5,7 +5,7 @@ import { PullRequestIcon } from "../../assets/PullRequestIcon.tsx";
 export function ViewOnGitHub({ githubLink }: { githubLink: string }) {
   return (
     <a
-      class="flex space-x-2 self-start items-center mb-4 custom-underline-gradient hover:custom-tx-ac group"
+      class="flex space-x-2 self-start items-center mb-4 custom-underline-gradient hover:text-(--accent-color) group"
       href={githubLink}
       title="Link to this file on GitHub"
       target="_self"

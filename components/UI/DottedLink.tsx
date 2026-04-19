@@ -8,7 +8,7 @@ export function DottedLink(
 ) {
   return (
     <a
-      class="inline-flex items-center custom-underline-dotted hover:custom-tx-ac"
+      class="inline-flex items-center custom-underline-dotted hover:text-(--accent-color)"
       href={link}
       title={title}
       target="_self"

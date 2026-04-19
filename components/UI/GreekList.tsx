@@ -10,7 +10,7 @@ export function GreekList({ items }: { items: Array<string | JSX.Element> }) {
       class="greek-list my-4"
     >
       {items.map((item) => (
-        <li class="ml-10 lg:ml-0 custom-tr-ml-tx hover:custom-tx-ac">
+        <li class="ml-10 lg:ml-0 custom-tr-ml-tx hover:text-(--accent-color)">
           {item}
         </li>
       ))}

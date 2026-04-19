@@ -8,7 +8,7 @@ export function BinaryTreeArray(
 ) {
   const numbersWithDisabledStatusElements = numbersWithDisabledStatus.map((index) => (
     <span
-      class={"text-2xl custom-tx-nc mx-2" +
+      class={"text-2xl text-(--neutral-color) mx-2" +
         (index.disabled ? " opacity-60" : "")}
     >
       {index.number}
@@ -17,9 +17,9 @@ export function BinaryTreeArray(
 
   return (
     <div class="flex flex-1 place-items-center w-full -px-2">
-      <span class="custom-tx-ac text-[7rem]">[</span>
+      <span class="text-(--accent-color) text-[7rem]">[</span>
       <div class="flex flex-wrap place-content-between gap-1 -mx-4" children={numbersWithDisabledStatusElements} />
-      <span class="custom-tx-ac text-[7rem]">]</span>
+      <span class="text-(--accent-color) text-[7rem]">]</span>
     </div>
   );
 }
