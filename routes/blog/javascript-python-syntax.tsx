@@ -834,6 +834,12 @@ This is a multiline comment
               itemOne: "",
               itemTwo: "isinstance(10, int)",
             },
+            // Importing functions
+            {
+              label: "Importing functions",
+              itemOne: "import { myFunc } from './module';",
+              itemTwo: "from module import my_func",
+            },
             // Parse JSON
             {
               label: "Parse JSON",
@@ -1449,7 +1455,14 @@ a == b # True`,
             content="@spidersouris"
             link="https://github.com/spidersouris"
             customRel="nofollow noreferrer"
-          />{"  "}
+          />
+          {", "}
+          <GradientLink
+            content="@mardukbp"
+            link="https://github.com/mardukbp"
+            customRel="nofollow noreferrer"
+          />
+          {"  "}
           and{"  "}
           <GradientLink
             content="@tthn0"
